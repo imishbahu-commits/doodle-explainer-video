@@ -8,13 +8,15 @@ fast narration track with no music.
 Media generation runs through the **Unsora MCP**. Assembly is local ffmpeg via
 `scripts/build_video.py`, which encodes the measured format spec.
 
-## Example output
+## The reference format
 
-https://rzowkcqjeadgkwmixtds.supabase.co/storage/v1/object/public/dev/exports/1785243683790-gwn61g.mp4
+[<img src="docs/preview.png" width="280" alt="Play the reference video">](https://rzowkcqjeadgkwmixtds.supabase.co/storage/v1/object/public/dev/exports/1785243683790-gwn61g.mp4)
 
-<video src="https://rzowkcqjeadgkwmixtds.supabase.co/storage/v1/object/public/dev/exports/1785243683790-gwn61g.mp4" controls width="360"></video>
+**[▶ Watch the reference video](https://rzowkcqjeadgkwmixtds.supabase.co/storage/v1/object/public/dev/exports/1785243683790-gwn61g.mp4)** — 4:37, 720x1280
 
-> If the player above does not render in your viewer, open the link directly.
+This is the video every measurement in `references/` was reverse-engineered
+from. Note that it burns karaoke captions into the bottom band; this skill
+deliberately leaves that band empty, so its output differs there by design.
 
 ## What the format is
 
@@ -190,3 +192,21 @@ format's distinctiveness lives in those details.
 - **Fewer images means longer holds.** Capping image count raises the mean hold
   above the reference's 3.4–4.1 s. It still works, but the cutting is slacker.
 - **Publishing is outward-facing.** Confirm before `create_post`.
+
+## Embedding video in this README
+
+GitHub will not play an externally hosted video inline. It strips `<video>`
+tags when sanitizing Markdown, and a bare URL only expands into a player when
+the file is GitHub-hosted. That is why the section above uses a clickable
+poster image instead.
+
+To get a real inline player, the file has to be uploaded through GitHub itself:
+
+1. Open any issue, pull request, or comment box on this repo.
+2. Drag the `.mp4` into it — GitHub uploads it and inserts a
+   `https://github.com/user-attachments/assets/<uuid>` URL.
+3. Copy that URL, cancel the comment, and paste the URL **on its own line** in
+   the README. No Markdown syntax around it.
+
+There is no API for that upload, so it cannot be scripted — it is a manual
+step in the browser.
