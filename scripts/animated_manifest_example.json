@@ -1,0 +1,86 @@
+{
+  "output": "animated-example.mp4",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "background": "#f2eadb",
+  "scenes": [
+    {
+      "duration": 3.0,
+      "background": "#dce9f5",
+      "text": "HOW DID ONE WRONG TURN START A WAR?",
+      "font_size": 92,
+      "motion": "slow_zoom_in",
+      "layers": []
+    },
+    {
+      "duration": 4.0,
+      "background": "#f2eadb",
+      "motion": "pan_right",
+      "layers": [
+        {
+          "type": "rectangle",
+          "size": [1050, 650],
+          "x": 900,
+          "y": 535,
+          "color": "#c7d9a7",
+          "outline": "#202020",
+          "stroke": 9,
+          "enter": "pop"
+        },
+        {
+          "type": "text",
+          "text": "EUROPE — 1914",
+          "x": 900,
+          "y": 180,
+          "width": 780,
+          "font_size": 72,
+          "color": "#202020",
+          "enter": "slide_left"
+        },
+        {
+          "type": "arrow",
+          "from": [0, 150],
+          "to": [450, 0],
+          "x": 930,
+          "y": 560,
+          "color": "#d92727",
+          "stroke": 18,
+          "start": 1.0,
+          "reveal": "wipe"
+        },
+        {
+          "type": "text",
+          "text": "THE TRIPWIRES SNAP",
+          "x": 1220,
+          "y": 850,
+          "width": 620,
+          "font_size": 54,
+          "color": "#9b1c1c",
+          "start": 1.8,
+          "enter": "pop"
+        }
+      ]
+    },
+    {
+      "duration": 3.0,
+      "background": "#20242b",
+      "motion": "slow_zoom_out",
+      "layers": [
+        {
+          "type": "text",
+          "text": "ONE DECISION. MILLIONS OF CONSEQUENCES.",
+          "x": 960,
+          "y": 540,
+          "width": 1450,
+          "font_size": 86,
+          "color": "#f5e6b8",
+          "stroke_color": "#20242b",
+          "enter": "pop",
+          "animation": "bob",
+          "amount": 5
+        }
+      ]
+    }
+  ]
+}

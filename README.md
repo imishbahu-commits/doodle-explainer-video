@@ -45,7 +45,39 @@ the only motion in the frame.
 - `ffmpeg` and `ffprobe` on PATH
 - Python 3 with Pillow
 
-## Quick start
+## Two production modes
+
+### 1. Three-band vertical
+
+The original 720×1280 static doodle format documented below.
+
+### 2. Animated history for YouTube
+
+A separate 16:9 mode for original hand-drawn history explainers: maps, layered
+characters, arrows, labels, camera motion, slide/pop/reveal animation, and
+resumable project checkpoints.
+
+```bash
+bash scripts/setup.sh
+source .venv/bin/activate
+python scripts/project.py init "The History of the Silk Road" \
+  --template entire-history --duration 12
+python scripts/build_animated_video.py scripts/animated_manifest_example.json --draft
+```
+
+Read:
+
+- [`references/unknown-frequencies-style.md`](references/unknown-frequencies-style.md) — analysis of 16 reference videos and four original production templates.
+- [`references/resumable-workflow.md`](references/resumable-workflow.md) — handoffs between Arena chats.
+- [`scripts/animated_manifest_example.json`](scripts/animated_manifest_example.json) — layered animation schema by example.
+
+The animated renderer supports image, text, rectangle, ellipse, and arrow
+layers; timed entrances/exits; slide, pop, fade, bob, shake, wipe reveal;
+per-layer position/scale animation; camera pans and slow zooms; optional
+narration muxing; and final audio normalization. It does not clone another
+channel's drawings, voice, scripts, thumbnails, or branding.
+
+## Quick start — vertical mode
 
 Invoke the skill and name a topic:
 
