@@ -1,0 +1,15 @@
+{
+  "width": 1376, "height": 768, "bg": "#BEE3F2", "seed": 27, "ink": 1.6,
+  "title": "IT'S NOT DANGER. IT'S PREDICTION.",
+  "elements": [
+    {"type": "sky", "x": 1100, "y": 120, "sun": true, "clouds": 2, "birds": 2, "cloudGap": 420},
+    {"type": "hills", "y": 470, "width": 1376, "height": 768},
+    {"type": "tree", "x": 150, "y": 640},
+    {"type": "ground", "y": 620, "width": 1376},
+    {"type": "person", "x": 560, "y": 640, "pose": "point", "emotion": "happy",
+     "hair": "side", "hairColor": "black", "cloth": "hoodie", "outfit": "orange", "outfit2": "navy", "skin": "tan"},
+    {"type": "person", "x": 940, "y": 640, "pose": "shrug", "emotion": "laugh",
+     "hair": "bun", "hairColor": "ginger", "cloth": "sweater", "outfit": "green", "outfit2": "grey", "skin": "brown", "flip": true},
+    {"type": "label", "x": 750, "y": 730, "text": "your brain guessed all of this", "size": 46, "font": "caveat", "color": "#24455C"}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 31,
+  "title": "WILD VS CAPTIVE",
+  "elements": [
+    {"type": "box", "x": 330, "y": 400, "w": 360, "h": 230, "label": "WILD", "sub": "never kills", "fill": "#5FBCE4"},
+    {"type": "check", "x": 330, "y": 590, "s": 1.5},
+    {"type": "box", "x": 1046, "y": 400, "w": 360, "h": 230, "label": "CAPTIVE", "sub": "fatalities", "fill": "#FFE0AC"},
+    {"type": "xmark", "x": 1046, "y": 590, "s": 1.5},
+    {"type": "label", "x": 688, "y": 430, "text": "same species", "size": 56, "font": "caveat", "rot": -2},
+    {"type": "arrow", "x1": 520, "y1": 470, "x2": 856, "y2": 470}
+  ]
+}

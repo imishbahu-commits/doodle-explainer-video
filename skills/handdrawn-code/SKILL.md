@@ -60,7 +60,18 @@ or the video pipeline).
 | Type | Fields | Draws |
 |---|---|---|
 | `label` | x, y, text, size, font (`caveat`/`patrick`/`kalam`), rot, color | hand-lettered text, slight tilt |
-| `stick` | x, y (feet centre), scale, pose: `stand`/`point`/`raise`/`walk`/`sit` | stick figure, dot eyes |
+| **`person`** | x, y (feet), pose, emotion, hair, hairColor, cloth, outfit, outfit2, skin, scale, flip, beard, says | **full ink character** (v2) |
+| `sky` | x, y, sun, clouds, cloudGap, birds | sun with rays, scribble clouds, birds |
+| `ground` | y, width | wavy ground, hatching, grass tufts |
+| `hills` | y, far, near | two layered hand-drawn hills |
+| `tree` | x, y | trunk + hachure foliage |
+| `water` | y, width | wavy water lines |
+| `stars` / `moon` | count / x, y | night sparkles / crescent |
+| `room` | floorY, frameX/Y/W/H, windowX/Y/W/H, rugW | floor, picture, window, rug |
+| `mirror` | x, y, w, h | oval standing mirror with sparkle |
+| `speckle` | count, color | paper-grain dots |
+| `frame` | margin | hand-drawn border (thumbnails) |
+| `stick` | x, y (feet centre), scale, pose: `stand`/`point`/`raise`/`walk`/`sit` | stick figure, dot eyes (v1 diagram mode) |
 | `face` | x, y, r, mood: `plain`/`smile`/`worried` | stick-figure face |
 | `box` | x, y, w, h, label, sub, fill, fillStyle | labelled box, hachure fill |
 | `circle` | x, y, r, fill | circle, hachure fill |
@@ -71,6 +82,37 @@ or the video pipeline).
 | `bubble` | x, y, w, h, text, kind `speech`/`thought`, fromX, fromY | speech/thought bubble |
 | `check` / `xmark` | x, y, s | green check / red cross |
 | `brace` | x1, y1, x2, y2 | vertical panel brace |
+
+### The ink character system (v2)
+
+`person` is a modular hand-drawn character — the idea of mix-and-match parts
+(as pioneered by CC0 libraries like Open Peeps), all paths original:
+
+- **pose**: `stand` `walk` `point` `raise` `wave` `think` `hold` `shrug` `sit`
+- **emotion**: `neutral` `happy` `laugh` `sad` `worried` `angry` `surprised`
+  (eyes, brows, mouth, blush change together)
+- **hair**: `short` `messy` `bun` `side` `long` `bald` `cap` (+ `beard`)
+- **hairColor**: `black` `brown` `ginger` `grey` `slate` `auburn`
+- **cloth**: `shirt` `sweater` `hoodie` `suit` `dress` `coat`
+- **outfit** / **outfit2** (trousers): `blue` `orange` `red` `green` `purple` `grey` `navy` `mustard`
+- **skin**: `light` `tan` `brown` `deep` `dark`
+- **scale** (default 1 ≈ 560px tall), **flip** (mirror facing), **says** (auto speech bubble)
+
+Characters read as pen-and-ink, not clip-art: limbs are double-stroked cartoon
+limbs with elbows/knees, every outline is wobbled by rough.js, and
+`"ink": 1.5-2` adds a feTurbulence displacement wobble over the whole SVG
+(browsers render it; the PNG keeps rough.js wobble only).
+
+Example:
+
+```json
+{"type": "person", "x": 500, "y": 640, "pose": "think", "emotion": "worried",
+ "hair": "long", "hairColor": "auburn", "cloth": "dress", "outfit": "purple",
+ "outfit2": "navy", "skin": "light", "says": "that's not me..."}
+```
+
+See `examples/showcase/v2-*.json` for five full scenes (dim-room mirror,
+park with two friends, lab experiment, 1804 physician, character cast sheet).
 
 ### Visual grammar
 

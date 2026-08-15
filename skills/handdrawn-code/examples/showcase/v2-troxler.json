@@ -1,0 +1,12 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFE0AC", "seed": 13, "ink": 1.8,
+  "title": "TROXLER, 1804",
+  "elements": [
+    {"type": "person", "x": 500, "y": 620, "pose": "hold", "emotion": "surprised",
+     "hair": "bald", "hairColor": "grey", "beard": true, "cloth": "coat", "outfit": "grey", "outfit2": "navy", "skin": "light"},
+    {"type": "box", "x": 880, "y": 360, "w": 380, "h": 200, "label": "UNCHANGING", "sub": "fades from sight", "fill": "#FFFFFF"},
+    {"type": "box", "x": 880, "y": 600, "w": 380, "h": 200, "label": "NEURONS", "sub": "get bored", "fill": "#BEE3F2"},
+    {"type": "arrow", "x1": 880, "y1": 470, "x2": 880, "y2": 490},
+    {"type": "label", "x": 690, "y": 730, "text": "a swiss physician saw your blind spot first", "size": 44, "font": "caveat"}
+  ]
+}

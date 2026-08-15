@@ -1,0 +1,10 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFE0AC", "seed": 42,
+  "title": "YOUR BRAIN PREDICTS",
+  "elements": [
+    {"type": "box", "x": 280, "y": 480, "w": 340, "h": 240, "label": "EYES", "sub": "noisy input", "fill": "#FFFFFF"},
+    {"type": "arrow", "x1": 460, "y1": 480, "x2": 690, "y2": 480, "label": "signal"},
+    {"type": "box", "x": 960, "y": 480, "w": 420, "h": 270, "label": "BRAIN", "sub": "predicts the gaps", "fill": "#5FBCE4"},
+    {"type": "bubble", "x": 960, "y": 220, "w": 360, "h": 130, "text": "BEST GUESS", "textSize": 46, "kind": "thought", "fromX": 960, "fromY": 360}
+  ]
+}

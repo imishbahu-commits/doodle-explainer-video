@@ -1,0 +1,9 @@
+{
+  "kind": "pie",
+  "bg": "#FFFFFF",
+  "title": "WHAT PEOPLE SAW IN THE MIRROR",
+  "labels": ["deformed face", "monster", "stranger", "animal"],
+  "values": [66, 48, 28, 18],
+  "color": "#F2A63B",
+  "font": "caveat"
+}

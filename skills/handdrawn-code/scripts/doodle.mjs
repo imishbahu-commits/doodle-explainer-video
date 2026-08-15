@@ -42,6 +42,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import rough from "roughjs";
 import { Resvg } from "@resvg/resvg-js";
+import { inkPerson, inkSky, inkGround, inkHills, inkTree, inkWater,
+         inkStars, inkMoon, inkRoom, inkMirror, inkSpeckle, inkFrame } from "./ink-elements.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const FONTS = path.join(HERE, "..", "fonts");
@@ -139,7 +141,9 @@ export function renderScene(scene) {
     },
   });
 
-  const append = (node) => svg.appendChild(node);
+  // Draw into a content group so the optional ink filter can wrap it all.
+  const content = document.createElementNS(SVG_NS, "g");
+  const append = (node) => content.appendChild(node);
 
   // ------------------------------------------------------------ text helper
   function text(el) {
@@ -159,6 +163,7 @@ export function renderScene(scene) {
   }
 
   // ----------------------------------------------------------- stick figure
+  const ctx2 = { rc, rnd, append, text };
   function stick(el) {
     const s = el.scale ?? 1;
     const y = el.y;
@@ -304,6 +309,18 @@ export function renderScene(scene) {
   const draw = {
     label: (e) => append(text(e)),
     stick, face, box, bubble,
+    person: (e) => inkPerson(ctx2, e),
+    sky: (e) => inkSky(ctx2, e),
+    ground: (e) => inkGround(ctx2, e),
+    hills: (e) => inkHills(ctx2, e),
+    tree: (e) => inkTree(ctx2, e),
+    water: (e) => inkWater(ctx2, e),
+    stars: (e) => inkStars(ctx2, e),
+    moon: (e) => inkMoon(ctx2, e),
+    room: (e) => inkRoom(ctx2, e),
+    mirror: (e) => inkMirror(ctx2, e),
+    speckle: (e) => inkSpeckle(ctx2, e),
+    frame: (e) => inkFrame(ctx2, e),
     circle: (e) => append(rc.circle(e.x, e.y, (e.r ?? 60) * 2, {
       fill: e.fill ?? "none", fillStyle: e.fillStyle ?? "hachure",
     })),
@@ -347,12 +364,44 @@ export function renderScene(scene) {
     fn(el);
   }
 
+  // Optional hand-drawn ink wobble (feTurbulence + feDisplacementMap) over
+  // the whole drawing. Scale 1.5-3 reads as a slightly nervous pen hand.
+  // Kept in the SVG only: resvg's displacement at 2x raster is memory-hungry,
+  // and rough.js already wobbles every stroke in the PNG.
+  if (scene.ink > 0 && scene.inkSvg !== false) {
+    const defs = document.createElementNS(SVG_NS, "defs");
+    const filter = document.createElementNS(SVG_NS, "filter");
+    filter.setAttribute("id", "inkwobble");
+    filter.setAttribute("x", "-5%"); filter.setAttribute("y", "-5%");
+    filter.setAttribute("width", "110%"); filter.setAttribute("height", "110%");
+    const turb = document.createElementNS(SVG_NS, "feTurbulence");
+    turb.setAttribute("type", "fractalNoise");
+    turb.setAttribute("baseFrequency", scene.inkFreq ?? "0.012");
+    turb.setAttribute("numOctaves", "2");
+    turb.setAttribute("seed", String(seed));
+    turb.setAttribute("result", "noise");
+    const disp = document.createElementNS(SVG_NS, "feDisplacementMap");
+    disp.setAttribute("in", "SourceGraphic");
+    disp.setAttribute("in2", "noise");
+    disp.setAttribute("scale", String(scene.ink));
+    disp.setAttribute("xChannelSelector", "R");
+    disp.setAttribute("yChannelSelector", "G");
+    filter.appendChild(turb);
+    filter.appendChild(disp);
+    defs.appendChild(filter);
+    svg.appendChild(defs);
+    content.setAttribute("filter", "url(#inkwobble)");
+  }
+  svg.appendChild(content);
+
   return { svg, document };
 }
 
 function svgString(scene) {
   const { svg } = renderScene(scene);
-  return svg.serialize();
+  // rough.js marks fills evenodd; its wobbled closed curves self-intersect,
+  // which makes evenodd cancel the whole fill. Nonzero keeps fills solid.
+  return svg.serialize().replace(/fill-rule="evenodd"/g, 'fill-rule="nonzero"');
 }
 
 export function renderFiles(scene, outName) {
@@ -361,9 +410,11 @@ export function renderFiles(scene, outName) {
   const svgPath = `${outName}.svg`;
   fs.writeFileSync(svgPath, str);
 
+  // PNG raster: drop the displacement filter (memory) — rough.js wobble stays.
+  const pngScene = scene.ink > 0 ? { ...scene, inkSvg: false } : scene;
   const fontFiles = fs.readdirSync(FONTS).filter((f) => f.endsWith(".ttf"))
     .map((f) => path.join(FONTS, f));
-  const resvg = new Resvg(str, {
+  const resvg = new Resvg(svgString(pngScene), {
     font: { fontFiles, loadSystemFonts: false, defaultFontFamily: "Caveat" },
     fitTo: { mode: "zoom", value: 2 },
   });

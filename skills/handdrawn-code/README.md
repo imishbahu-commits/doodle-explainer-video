@@ -43,6 +43,22 @@ handdrawn-code/
 
 ## Example outputs
 
-- `out/brain-prediction.png` — boxes, arrow, stick figure, thought bubble
-- `out/two-thirds.png` — giant numeral, faces, check/cross, measure arrow
-- `out/mirror-study.png` — xkcd-style bar chart of the strange-face study
+**v2 — ink characters & scenes** (the high-end look):
+- `out/v2-mirror.png` — worried character in a dim room, mirror, moon
+- `out/v2-park.png` — two friends outdoors: sky, sun, hills, ground
+- `out/v2-experiment.png` — scientist + subject + experiment flow
+- `out/v2-troxler.png` — bearded 1804 physician
+- `out/v2-cast.png` — character sheet: 5 hairstyles × emotions × outfits
+- `out/v2-contact-sheet.png` — all of the above in one grid
+
+v1 — diagram mode (sticks, boxes, numerals, charts):
+- `out/brain-prediction.png`, `out/two-thirds.png`, `out/mirror-study.png`
+
+## The character system
+
+`person` is a modular hand-drawn character system in the spirit of CC0
+libraries like Open Peeps (idea only — all paths here are original):
+9 poses, 7 emotions, 7 hairstyles + beard, 6 clothings, 8+8 colours,
+5 skin tones. Every stroke goes through rough.js (wobble + overdraw) and an
+optional feTurbulence ink filter, so it reads as pen-and-ink rather than
+clip-art.
