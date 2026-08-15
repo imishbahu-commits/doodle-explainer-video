@@ -32,6 +32,51 @@ def ease(value: float) -> float:
     return value * value * (3 - 2 * value)
 
 
+def ease_in_cubic(value: float) -> float:
+    value = max(0.0, min(1.0, value))
+    return value * value * value
+
+
+def ease_out_back(value: float) -> float:
+    """Overshoot settle — the cartoon 'boing' when something slaps in."""
+    value = max(0.0, min(1.0, value))
+    c1, c3 = 1.70158, 2.70158
+    v = value - 1
+    return 1 + c3 * v * v * v + c1 * v * v
+
+
+def ease_in_back(value: float) -> float:
+    """Anticipation pull-back before a fast launch."""
+    value = max(0.0, min(1.0, value))
+    c1, c3 = 1.70158, 2.70158
+    return c3 * value * value * value - c1 * value * value
+
+
+def ease_out_bounce(value: float) -> float:
+    """Grounded bounce for falling objects."""
+    value = max(0.0, min(1.0, value))
+    n1, d1 = 7.5625, 2.75
+    if value < 1 / d1:
+        return n1 * value * value
+    if value < 2 / d1:
+        value -= 1.5 / d1
+        return n1 * value * value + 0.75
+    if value < 2.5 / d1:
+        value -= 2.25 / d1
+        return n1 * value * value + 0.9375
+    value -= 2.625 / d1
+    return n1 * value * value + 0.984375
+
+
+EASINGS = {
+    "smooth": ease,
+    "back": ease_out_back,
+    "in_back": ease_in_back,
+    "bounce": ease_out_bounce,
+    "in_cubic": ease_in_cubic,
+}
+
+
 def lerp(a: float, b: float, t: float) -> float:
     return a + (b - a) * t
 
@@ -144,6 +189,33 @@ def draw_shape_layer(layer: dict) -> Image.Image:
     return image
 
 
+def draw_arrow_progress(layer: dict, progress: float) -> Image.Image:
+    """An arrow drawn tail-to-head as `progress` goes 0 -> 1 — the
+    OverSimplified map-sweep / route-trace move."""
+    x1, y1 = layer.get("from", [0, 0])
+    x2, y2 = layer.get("to", [300, 0])
+    pad = int(layer.get("stroke", 12) * 3)
+    width, height = abs(x2 - x1) + pad * 2, abs(y2 - y1) + pad * 2
+    image = Image.new("RGBA", (max(1, width), max(1, height)), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(image)
+    a = (pad + max(0, x1 - x2), pad + max(0, y1 - y2))
+    b = (pad + max(0, x2 - x1), pad + max(0, y2 - y1))
+    stroke = int(layer.get("stroke", 12))
+    fill = color(layer.get("color"), "#d92727")
+    p = max(0.0, min(1.0, progress))
+    tip = (lerp(a[0], b[0], p), lerp(a[1], b[1], p))
+    draw.line([a, tip], fill=fill, width=stroke)
+    if p >= 0.98:
+        angle = math.atan2(b[1] - a[1], b[0] - a[0])
+        head = int(layer.get("head", stroke * 2.5))
+        points = [b]
+        for delta in (2.55, -2.55):
+            points.append((b[0] + head * math.cos(angle + delta),
+                           b[1] + head * math.sin(angle + delta)))
+        draw.polygon(points, fill=fill)
+    return image
+
+
 def layer_image(layer: dict, base: Path, cache: dict[str, Image.Image], canvas_size: tuple[int, int]) -> Image.Image:
     kind = layer.get("type", "image")
     if kind == "text":
@@ -179,18 +251,42 @@ def render_layer(canvas: Image.Image, layer: dict, source: Image.Image, scene_ti
         x += random.uniform(-amount, amount)
         y += random.uniform(-amount, amount)
     entrance = layer.get("enter", "fade")
+    entrance_ease = EASINGS.get(layer.get("enter_ease", "smooth"), ease)
+    # per-frame draw-on arrow (route sweep / map trace)
+    if layer.get("type") == "arrow" and layer.get("reveal") == "draw":
+        source = draw_arrow_progress(layer, progress)
     if visibility < 1:
+        v = entrance_ease(visibility)
         if entrance == "slide_left":
-            x -= (1 - visibility) * float(layer.get("slide_distance", 160))
+            x -= (1 - v) * float(layer.get("slide_distance", 160))
         elif entrance == "slide_right":
-            x += (1 - visibility) * float(layer.get("slide_distance", 160))
+            x += (1 - v) * float(layer.get("slide_distance", 160))
+        elif entrance == "slide_up":
+            y += (1 - v) * float(layer.get("slide_distance", 160))
+        elif entrance == "slide_down":
+            y -= (1 - v) * float(layer.get("slide_distance", 160))
         elif entrance == "pop":
-            scale *= 0.55 + 0.45 * visibility
+            scale *= 0.55 + 0.45 * v
+        elif entrance == "pop_boing":
+            scale *= 0.4 + 0.6 * v   # v overshoots >1, then settles — the boing
+        elif entrance == "stamp":
+            scale *= 2.4 - 1.4 * v   # slams in from large with settle-back
+        elif entrance == "drop":
+            y -= (1 - v) * float(layer.get("drop_distance", 300))
     rendered = source
+    # typewriter: text reveals left-to-right like typing
+    if entrance == "typewriter" and layer.get("type") == "text":
+        shown = max(1, round(rendered.width * ease(visibility)))
+        rendered = rendered.crop((0, 0, shown, rendered.height))
     if scale != 1:
-        rendered = source.resize((max(1, round(source.width * scale)), max(1, round(source.height * scale))), Image.Resampling.LANCZOS)
+        rendered = rendered.resize((max(1, round(rendered.width * scale)), max(1, round(rendered.height * scale))), Image.Resampling.LANCZOS)
     opacity = float(layer.get("opacity", 1)) * visibility
+    if animation == "flash":
+        opacity *= 0.55 + 0.45 * abs(math.sin(scene_time * 6.5))
     rendered = alpha_scale(rendered, opacity)
+    if animation == "wobble":
+        rendered = rendered.rotate(math.sin(scene_time * float(layer.get("speed", 9.0))) * float(layer.get("amount", 4)),
+                                   resample=Image.Resampling.BICUBIC, expand=True)
     if layer.get("reveal") == "wipe":
         shown = max(1, round(rendered.width * progress))
         rendered = rendered.crop((0, 0, shown, rendered.height))
@@ -200,7 +296,7 @@ def render_layer(canvas: Image.Image, layer: dict, source: Image.Image, scene_ti
     canvas.alpha_composite(rendered, (left, top))
 
 
-def camera(frame: Image.Image, motion: str, progress: float) -> Image.Image:
+def camera(frame: Image.Image, motion: str, progress: float, focus: tuple | None = None) -> Image.Image:
     width, height = frame.size
     if motion in ("none", "hold", None):
         return frame
@@ -214,6 +310,15 @@ def camera(frame: Image.Image, motion: str, progress: float) -> Image.Image:
         zoom, cx = 1.08, lerp(width * 0.54, width * 0.46, progress)
     elif motion == "pan_right":
         zoom, cx = 1.08, lerp(width * 0.46, width * 0.54, progress)
+    elif motion == "punch_in":
+        # fast dramatic zoom onto the focus point (default: centre)
+        zoom = lerp(1.0, 1.45, ease_in_cubic(progress))
+        if focus:
+            cx, cy = focus
+    elif motion == "punch_out":
+        zoom = lerp(1.45, 1.0, ease_in_cubic(progress))
+        if focus:
+            cx, cy = focus
     crop_w, crop_h = width / zoom, height / zoom
     box = (round(cx - crop_w / 2), round(cy - crop_h / 2), round(cx + crop_w / 2), round(cy + crop_h / 2))
     return frame.crop(box).resize((width, height), Image.Resampling.LANCZOS)
@@ -293,7 +398,8 @@ def main() -> None:
                     frame = bg.copy()
                     for layer, source in sources:
                         render_layer(frame, layer, source, t, duration, rendered_count)
-                    frame = camera(frame, scene.get("motion", "hold"), ease(progress)).convert("RGB")
+                    frame = camera(frame, scene.get("motion", "hold"), ease(progress),
+                                   focus=tuple(scene["focus"]) if scene.get("focus") else None).convert("RGB")
                     proc.stdin.write(frame.tobytes())
                     rendered_count += 1
             proc.stdin.close()

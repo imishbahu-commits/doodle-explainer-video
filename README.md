@@ -68,6 +68,7 @@ python scripts/build_animated_video.py scripts/animated_manifest_example.json --
 Read:
 
 - [`references/unknown-frequencies-style.md`](references/unknown-frequencies-style.md) — analysis of 16 reference videos and four original production templates.
+- [`references/oversimplified-style.md`](references/oversimplified-style.md) — the limited-animation grammar (slides, punches, stamps, sweeps) implemented by the animated renderer.
 - [`references/resumable-workflow.md`](references/resumable-workflow.md) — handoffs between Arena chats.
 - [`scripts/animated_manifest_example.json`](scripts/animated_manifest_example.json) — layered animation schema by example.
 
@@ -76,6 +77,15 @@ layers; timed entrances/exits; slide, pop, fade, bob, shake, wipe reveal;
 per-layer position/scale animation; camera pans and slow zooms; optional
 narration muxing; and final audio normalization. It does not clone another
 channel's drawings, voice, scripts, thumbnails, or branding.
+
+For OverSimplified-style limited animation — the cartoon grammar of
+slide-in characters, punch-in cameras, text slaps, stamps, draw-on arrows,
+wobble and flash — read
+[`references/oversimplified-style.md`](references/oversimplified-style.md).
+The renderer implements every move it documents (`enter_ease`, `pop_boing`,
+`stamp`, `drop`, `typewriter`, `reveal: "draw"`, `motion: "punch_in/out"`
+with `focus`); a 15-second demo lives at
+`projects/oversimplified-demo/manifest.json`.
 
 ## Quick start — vertical mode
 

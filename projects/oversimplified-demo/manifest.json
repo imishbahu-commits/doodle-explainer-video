@@ -1,0 +1,78 @@
+{
+  "output": "oversimplified-demo.mp4",
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "background": "#f2eadb",
+  "scenes": [
+    {
+      "duration": 2.6,
+      "motion": "slow_zoom_in",
+      "text": "THE MIRROR EXPERIMENT",
+      "font_size": 84,
+      "layers": [
+        {"type": "text", "text": "10 MINUTES. ONE DIM ROOM.", "x": 640, "y": 470,
+         "font_size": 54, "color": "#9b1c1c", "enter": "stamp", "start": 0.5,
+         "enter_duration": 0.45, "animation": "shake", "amount": 3, "seed": 7,
+         "end": 2.2}
+      ]
+    },
+    {
+      "duration": 3.2,
+      "background_image": "../../skills/handdrawn-code/out/v2-experiment.png",
+      "layers": [
+        {"type": "text", "text": "50 PEOPLE", "x": 210, "y": 120, "font_size": 110,
+         "color": "#111111", "enter": "pop_boing", "enter_duration": 0.5,
+         "box_color": "#fceb00", "stroke_width": 3, "stroke_color": "#111111",
+         "animation": "bob", "amount": 5, "speed": 3.0},
+        {"type": "text", "text": "Caputo's volunteers stare at their own faces...", "x": 640, "y": 660,
+         "width": 1100, "font_size": 42, "color": "#333333", "enter": "typewriter",
+         "start": 0.8, "enter_duration": 1.6}
+      ]
+    },
+    {
+      "duration": 2.6,
+      "motion": "punch_in",
+      "focus": [640, 360],
+      "background_image": "../../skills/handdrawn-code/out/v2-mirror.png",
+      "layers": [
+        {"type": "text", "text": "TWO OUT OF THREE", "x": 640, "y": 90, "font_size": 74,
+         "color": "#111111", "box_color": "#fceb00", "stroke_width": 3,
+         "stroke_color": "#111111", "enter": "pop_boing", "enter_duration": 0.5,
+         "start": 0.5, "animation": "shake", "amount": 4, "seed": 3},
+        {"type": "ellipse", "size": [520, 130], "x": 640, "y": 600, "color": "#d92727",
+         "outline": "#111111", "stroke": 8, "enter": "stamp", "start": 1.3,
+         "enter_duration": 0.4, "animation": "flash"}
+      ]
+    },
+    {
+      "duration": 3.4,
+      "background_image": "../../skills/handdrawn-code/out/giant.png",
+      "layers": [
+        {"type": "text", "text": "66%", "x": 300, "y": 250, "font_size": 190,
+         "color": "#9b1c1c", "enter": "stamp", "enter_duration": 0.5,
+         "animation": "shake", "amount": 5, "seed": 11},
+        {"type": "arrow", "from": [0, 60], "to": [760, 60], "x": 700, "y": 360,
+         "color": "#d92727", "stroke": 18, "head": 44, "reveal": "draw",
+         "start": 0.7, "end": 2.2},
+        {"type": "text", "text": "saw their own face deform", "x": 820, "y": 500,
+         "width": 720, "font_size": 46, "color": "#333333", "enter": "slide_up",
+         "enter_ease": "back", "start": 1.2, "enter_duration": 0.45}
+      ]
+    },
+    {
+      "duration": 3.2,
+      "background_image": "../../skills/handdrawn-code/out/v2-troxler.png",
+      "layers": [
+        {"type": "text", "text": "TROXLER — 1804", "x": 640, "y": 100, "font_size": 88,
+         "color": "#111111", "box_color": "#fceb00", "stroke_width": 3,
+         "stroke_color": "#111111", "enter": "drop", "enter_ease": "bounce",
+         "drop_distance": 260, "enter_duration": 0.9},
+        {"type": "text", "text": "NOTHING CHANGES", "x": 640, "y": 620, "font_size": 54,
+         "color": "#111111", "box_color": "#ffffff", "stroke_width": 3,
+         "stroke_color": "#9b1c1c", "enter": "stamp", "start": 1.1,
+         "enter_duration": 0.4, "animation": "wobble", "amount": 5, "speed": 9}
+      ]
+    }
+  ]
+}

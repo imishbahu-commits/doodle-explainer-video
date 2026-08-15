@@ -12,7 +12,9 @@ Builds original faceless explainer videos in two modes:
    hand-drawn art, maps, staged motion, and fast historical narration. Use this
    mode for “entire history,” “POV,” “every rank,” and battle-cause videos. Read
    `references/unknown-frequencies-style.md` and
-   `references/resumable-workflow.md` first.
+   `references/resumable-workflow.md` first. For the limited-animation comedy
+   grammar (slide-ins, punch-ins, stamps, draw-on arrows), read
+   `references/oversimplified-style.md` — the renderer implements every move.
 
 Never copy a reference creator's exact drawings, script, voice, thumbnail,
 branding, or scene sequence. Extract only high-level production techniques and
