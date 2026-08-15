@@ -203,7 +203,8 @@ doodle-explainer-video/
 │   ├── script-formula.md        # the nine-move arc and sentence craft
 │   └── art-direction.md         # banner + doodle templates, visual grammar
 ├── skills/
-│   └── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
+│   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
+│   └── video-polish/            # quality gates: script doctor, audio report, pacing check
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
