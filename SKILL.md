@@ -5,32 +5,16 @@ description: Produce faceless 9:16 doodle-explainer videos in the viral three-ba
 
 # Doodle explainer video
 
-Builds original faceless explainer videos in two modes:
+Builds original faceless explainer videos in one mode:
 
-1. **Three-band vertical** — the original static 9:16 Reel/Short format.
-2. **Animated history** — an original 16:9 YouTube format using simple
-   hand-drawn art, maps, staged motion, and fast historical narration. Use this
-   mode for “entire history,” “POV,” “every rank,” and battle-cause videos. Read
-   `references/unknown-frequencies-style.md` and
-   `references/resumable-workflow.md` first. For the limited-animation comedy
-   grammar (slide-ins, punch-ins, stamps, draw-on arrows), read
-   `references/oversimplified-style.md` — the renderer implements every move.
+**Three-band vertical** — the static 9:16 Reel/Short format: a clickbait
+banner on top, one static doodle illustration per narration beat in the
+middle, and an empty black band on the bottom, over a single fast narration
+track. No animation — illustration cuts are the only motion in the frame.
 
 Never copy a reference creator's exact drawings, script, voice, thumbnail,
 branding, or scene sequence. Extract only high-level production techniques and
 build an original identity.
-
-For work expected to span chats, initialize a checkpoint immediately:
-
-```bash
-python3 scripts/project.py init "Video title" --template entire-history --duration 12
-```
-
-At every phase gate, update `project.json` and `HANDOFF.md` with
-`scripts/project.py advance`, commit, and push. A replacement chat must run
-`status` and `validate` before generating anything.
-
-The instructions below describe **three-band vertical mode only**.
 
 **Do not add subtitles or captions.** The bottom band stays empty black. It is
 part of the layout — it keeps the illustration in the upper-middle of the frame,

@@ -25,6 +25,5 @@ cat <<EOF
 Setup complete.
 Activate: source "$VENV/bin/activate"
 Ensure local tools are visible: export PATH="\$HOME/.local/bin:\$PATH"
-Check original renderer: python scripts/build_video.py --help
-Check animated renderer: python scripts/build_animated_video.py --help
+Check renderer: python scripts/build_video.py --help
 EOF
