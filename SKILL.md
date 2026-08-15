@@ -122,6 +122,12 @@ images coherent:
 Batch these and poll with `wait_for_image`. Collect the returned URLs — the
 build script accepts URLs directly and downloads them.
 
+**When the image tool is capped per turn (e.g. Arena Agent Mode, 10/turn),
+use the `skills/image-batcher` skill:** `init` a ledger with every beat's
+prompt up front, generate min(10, pending) in parallel each turn, `mark`
+them done, commit, and end the turn with "send any one word to continue".
+The human never explains anything twice; a new chat resumes with one word.
+
 ### 6. Generate the voiceover
 
 `list_voiceover_voices` first and let the user pick. A steady male narrator

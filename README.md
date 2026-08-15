@@ -204,7 +204,8 @@ doodle-explainer-video/
 │   └── art-direction.md         # banner + doodle templates, visual grammar
 ├── skills/
 │   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
-│   └── video-polish/            # quality gates: script doctor, audio report, pacing check
+│   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
+│   └── image-batcher/           # hands-free generation ledger across the per-turn image cap
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
