@@ -178,7 +178,9 @@ doodle-explainer-video/
 ├── skills/
 │   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
 │   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
-│   └── image-batcher/           # hands-free generation ledger across the per-turn image cap
+│   ├── image-batcher/           # hands-free generation ledger across the per-turn image cap
+│   ├── cinematic-director/      # film director: beat sheet, shot plan, 20 director lenses, QC repair
+│   └── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
