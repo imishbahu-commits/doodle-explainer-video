@@ -202,6 +202,8 @@ doodle-explainer-video/
 │   ├── format-spec.md           # measured geometry, colours, cadence, audio
 │   ├── script-formula.md        # the nine-move arc and sentence craft
 │   └── art-direction.md         # banner + doodle templates, visual grammar
+├── skills/
+│   └── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json

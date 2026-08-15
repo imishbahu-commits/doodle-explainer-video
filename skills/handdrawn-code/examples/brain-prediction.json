@@ -1,0 +1,11 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 42,
+  "title": "YOUR BRAIN IS A PREDICTION MACHINE",
+  "elements": [
+    {"type": "box", "x": 240, "y": 400, "w": 330, "h": 220, "label": "EYES", "sub": "noisy input"},
+    {"type": "arrow", "x1": 420, "y1": 400, "x2": 620, "y2": 400, "label": "guess"},
+    {"type": "box", "x": 800, "y": 400, "w": 420, "h": 260, "label": "BRAIN", "sub": "fills the gaps", "fill": "#FFE0AC"},
+    {"type": "stick", "x": 1200, "y": 560, "pose": "point", "scale": 1.05},
+    {"type": "bubble", "x": 1130, "y": 300, "w": 250, "h": 120, "text": "that's me?", "kind": "thought", "fromX": 1200, "fromY": 330}
+  ]
+}
