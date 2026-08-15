@@ -1,0 +1,36 @@
+{
+  "output": "final.mp4",
+  "banner": "assets/banner.png",
+  "sections": [
+    {
+      "audio": "audio/01.mp3",
+      "beats": [
+        {
+          "image": "assets/001.png",
+          "text": "Imagine you are floating in the open ocean."
+        },
+        {
+          "image": "assets/002.png",
+          "text": "The water is dark and cold beneath you."
+        },
+        {
+          "image": "assets/003.png",
+          "text": "Something massive moves below."
+        }
+      ]
+    },
+    {
+      "audio": "audio/02.mp3",
+      "beats": [
+        {
+          "image": "assets/004.png",
+          "text": "Forty feet long, twelve thousand pounds."
+        },
+        {
+          "image": "assets/005.png",
+          "text": "It can detect your outline from a hundred meters away using nothing but sound."
+        }
+      ]
+    }
+  ]
+}

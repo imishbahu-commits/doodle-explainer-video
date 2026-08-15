@@ -1,0 +1,13 @@
+{
+  "width": 1376, "height": 768, "bg": "#F2A63B", "seed": 7,
+  "elements": [
+    {"type": "giant", "x": 300, "y": 400, "text": "2/3"},
+    {"type": "label", "x": 300, "y": 600, "text": "of people see their face deform", "size": 52, "font": "patrick"},
+    {"type": "face", "x": 700, "y": 300, "r": 95, "mood": "worried"},
+    {"type": "xmark", "x": 900, "y": 320, "s": 1.6},
+    {"type": "face", "x": 1080, "y": 300, "r": 95, "mood": "smile"},
+    {"type": "check", "x": 1210, "y": 320, "s": 1.6},
+    {"type": "label", "x": 890, "y": 600, "text": "in a dim mirror, ten minutes", "size": 52, "font": "patrick"},
+    {"type": "doubleArrow", "x1": 700, "y1": 640, "x2": 1080, "y2": 640}
+  ]
+}
