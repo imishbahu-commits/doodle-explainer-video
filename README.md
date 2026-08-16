@@ -183,11 +183,13 @@ doodle-explainer-video/
 │   ├── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
 │   ├── handdrawn-style-lock/    # locks the human hand-drawn art style across all images
 │   ├── ae-motion/               # AE-grade keyframes: bezier easing, puppet pins, motion blur, 22 moves
+│   ├── motion-design/           # LottieFiles official: Disney principles, emotion→motion, choreography
 │   ├── content-router/          # the orchestrator: which skill fires when, one specialist at a time
 │   ├── character-animation-skill/   # one PNG -> looping animated sprite (walk/wave/blink)
 │   ├── wiggle-claude-skill/     # logo/icon motion via Lottie (AE's keyframe format)
 │   ├── Ultimate-Video-Editing-Skills/ # 600+ ffmpeg recipes: transitions, kinetic text, grading
-│   └── claude-skill-klingai-animation/ # Kling AI image->video for character actions (needs API key)
+│   ├── claude-skill-klingai-animation/ # Kling AI image->video for character actions (needs API key)
+│   └── asset-library/           # on-demand fetch from 5,000+ Kenney CC0 assets + LPC (no clone, no commit)
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
