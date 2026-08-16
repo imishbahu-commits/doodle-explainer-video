@@ -1,0 +1,32 @@
+{
+  "lpc": {
+    "repo": "makrohn/Universal-LPC-spritesheet",
+    "license": "CC-BY-SA 3.0 + GPL 3.0",
+    "note": "Liberated Pixel Cup characters (2,755 files): bodies, hair, clothes, walk cycles. Attribution + share-alike required."
+  },
+  "kenney": {
+    "repo": "iwenzhou/kenney",
+    "license": "CC0 (public domain)",
+    "note": "The COMPLETE Kenney asset pack (5,190 files): sprites, tilesets, UI, props. Zero restrictions — safe for commercial videos."
+  },
+  "kenney-particles": {
+    "repo": "Calinou/kenney-particle-pack",
+    "license": "CC0",
+    "note": "Kenney particle textures (smoke, dust, fire, sparkles) — perfect for ae-motion impact scenes."
+  },
+  "kenney-textures": {
+    "repo": "Calinou/kenney-prototype-textures",
+    "license": "CC0",
+    "note": "Kenney prototype textures (grass, stone, wood patterns) — hand-drawn background fills."
+  },
+  "kenney-ui-sounds": {
+    "repo": "Calinou/kenney-ui-audio",
+    "license": "CC0",
+    "note": "Kenney UI sound effects (clicks, pops, alerts) — free SFX for transitions."
+  },
+  "kenney-interface-sounds": {
+    "repo": "Calinou/kenney-interface-sounds",
+    "license": "CC0",
+    "note": "Kenney interface sound pack."
+  }
+}
