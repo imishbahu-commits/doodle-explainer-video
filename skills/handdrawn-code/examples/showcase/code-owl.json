@@ -1,0 +1,26 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 24, "ink": 1.4,
+  "title": "THE WISE OWL",
+  "elements": [
+    {"type": "line", "x1": 280, "y1": 620, "x2": 1000, "y2": 620},
+    {"type": "line", "x1": 320, "y1": 620, "x2": 320, "y2": 590},
+    {"type": "line", "x1": 420, "y1": 620, "x2": 420, "y2": 600},
+    {"type": "circle", "x": 640, "y": 500, "r": 158, "fill": "#4A3A2B"},
+    {"type": "circle", "x": 640, "y": 285, "r": 128, "fill": "#4A3A2B"},
+    {"type": "shape", "points": [[600, 660], [640, 630], [680, 660]], "fill": "#976240"},
+    {"type": "circle", "x": 585, "y": 265, "r": 52, "fill": "#EDE1B1"},
+    {"type": "circle", "x": 695, "y": 265, "r": 52, "fill": "#EDE1B1"},
+    {"type": "circle", "x": 585, "y": 265, "r": 14, "fill": "#16161A"},
+    {"type": "circle", "x": 695, "y": 265, "r": 14, "fill": "#16161A"},
+    {"type": "circle", "x": 585, "y": 265, "r": 70, "fill": "none"},
+    {"type": "circle", "x": 695, "y": 265, "r": 70, "fill": "none"},
+    {"type": "line", "x1": 655, "y1": 262, "x2": 625, "y2": 262},
+    {"type": "shape", "points": [[598, 312], [682, 312], [640, 368]], "fill": "#976240"},
+    {"type": "shape", "points": [[540, 392], [740, 392], [718, 432], [562, 432]], "fill": "#D9534F"},
+    {"type": "shape", "points": [[702, 420], [744, 418], [738, 502], [714, 504]], "fill": "#D9534F"},
+    {"type": "line", "x1": 892, "y1": 620, "x2": 892, "y2": 572},
+    {"type": "circle", "x": 892, "y": 556, "r": 26, "fill": "#EDE1B1"},
+    {"type": "shape", "points": [[884, 560], [900, 560], [892, 542]], "fill": "#D9534F"},
+    {"type": "label", "x": 640, "y": 730, "text": "eyes, beak, scarf and lantern - one palette, few clean shapes", "size": 40, "font": "patrick"}
+  ]
+}

@@ -352,6 +352,12 @@ export function renderScene(scene) {
         [mx + 8, e.y1 - 6], [mx + 4, (e.y1 + e.y2) / 2], [mx + 8, e.y2 + 6],
       ]));
     },
+    shape: (e) => append(rc.polygon(e.points, {
+      fill: e.fill ?? "none",
+      fillStyle: e.fillStyle ?? "solid",
+      roughness: e.roughness ?? 0.9,
+      strokeWidth: e.strokeWidth ?? 5,
+    })),
   };
 
   if (scene.title) {
