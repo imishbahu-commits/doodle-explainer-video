@@ -1,0 +1,9 @@
+{
+  "width": 1280, "height": 720, "fps": 60,
+  "background": "assets/background.png",
+  "character": {
+    "image": "assets/cyclops.png",
+    "x": 640, "y": 540, "height": 560
+  },
+  "motion": { "bvh": "../../skills/ae-motion/motions/wave_hello.bvh", "start": 0.2, "duration": 2.8 }
+}

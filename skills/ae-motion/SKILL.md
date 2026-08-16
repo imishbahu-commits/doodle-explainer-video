@@ -106,6 +106,42 @@ move owns the beat.
 AE-style blur on fast moves. Use 6 for slides/punches, 1 (off) for
 holds. This single setting is what separates "slideshow" from "film".
 
+## Puppet warp — Photoshop-grade ARAP
+
+The puppet mode now deforms with **ARAP (As-Rigid-As-Possible)** — the same
+deformation family Photoshop's Puppet Warp uses (`scripts/arap.py`,
+clean-room implementation: cotangent Laplacian + two-step solve + full-frame
+vectorised triangle warp). Pins hold the body rigidly; drag pins bend limbs
+without rubber-band distortion. Only the character's ink bbox is meshed, so
+a warp costs ~0.4s.
+
+## Mocap — real human motion on a hand-drawn PNG
+
+`scripts/mocap.py` applies **recorded human motion (BVH mocap)** to a
+hand-drawn character: parse the skeleton → forward kinematics → project to
+2D → retarget onto the drawing's joints → ARAP-deform every frame.
+
+```json
+{
+  "width": 1280, "height": 720, "fps": 60,
+  "background": "assets/background.png",
+  "character": {"image": "assets/cyclops.png", "x": 640, "y": 540,
+                "height": 560},
+  "motion": {"bvh": "motions/wave_hello.bvh", "start": 0.2,
+             "duration": 2.8}
+}
+```
+
+```bash
+python3 scripts/mocap.py scene.json -o out.mp4
+```
+
+Shipped motions (`motions/`, MIT, from Meta's Animated Drawings):
+`wave_hello.bvh`, `dab.bvh` (+ add any .bvh). Joint placement is automatic
+(ink-distribution fractions) or set manually in the character's `joints`.
+Render is 60fps, ~0.4s/frame. The character performs the recorded move —
+wave, dance, jump — as a real person would.
+
 ## Render
 
 ```bash
