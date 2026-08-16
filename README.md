@@ -1,5 +1,31 @@
 # Doodle Explainer Video
 
+> ## ⭐ Default mode: Paint Explainer style (animated hand-drawn PNGs)
+>
+> A new chat should produce **animated hand-drawn explainer videos**:
+> hand-drawn PNG characters + backgrounds, real keyframe motion (slide-ins,
+> pops, punch-ins, puppet-rigged limbs), hard cuts every 2–6 s, 60 fps.
+> The entry point is `SKILL.md` + `skills/content-router/`; the measured
+> formula lives in `references/paint-explainer-autopsy.md`. The old static
+> three-band vertical format below is now the **legacy option**, used only
+> when explicitly requested.
+
+### Quick start — Paint Explainer mode (the default)
+
+```bash
+# new chat: read SKILL.md, then the router decides the stages
+python3 skills/video-polish/scripts/script_doctor.py script.md   # 5-act check
+python3 skills/ae-motion/scripts/ae_motion.py scene.json -o out.mp4
+python3 skills/ae-motion/scripts/ae_motion.py --plan "the beat text"
+python3 skills/asset-library/scripts/asset_fetch.py search dragon
+```
+
+Key files: `SKILL.md` (formula + workflow) · `skills/content-router/SKILL.md`
+(stage map) · `references/paint-explainer-autopsy.md` (measured numbers) ·
+`references/paint-explainer-style.md` (motion grammar).
+
+## Legacy mode — three-band vertical (still available)
+
 A Claude Code skill that produces faceless 9:16 doodle-explainer videos in the
 viral three-band format: a static clickbait banner on top, crude stick-figure
 illustrations in the middle, an empty black band on the bottom, over a single
@@ -45,12 +71,14 @@ the only motion in the frame.
 - `ffmpeg` and `ffprobe` on PATH
 - Python 3 with Pillow
 
-## Production mode
+## Legacy production mode (three-band vertical)
 
 The single 720×1280 static three-band vertical format documented below.
 No animation, no transitions — hard cuts between static illustrations.
+**Use only when explicitly requested; the default is the animated
+Paint Explainer workflow in SKILL.md.**
 
-## Quick start — vertical mode
+## Quick start — vertical mode (legacy)
 
 Invoke the skill and name a topic:
 

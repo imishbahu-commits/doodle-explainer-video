@@ -1,194 +1,92 @@
 ---
 name: doodle-explainer-video
-description: Produce faceless 9:16 doodle-explainer videos in the viral three-band format — static clickbait banner on top, crude stick-figure illustrations in the middle, an empty black band on the bottom, over a single fast narration track with no music. Use when the user wants to make a video like this reference format, a faceless explainer/documentary short, an orca-style "paradox" video, or a long-form narrated Reel/Short/TikTok. Covers script, voiceover, images, banner, and final assembly.
+description: Produce faceless hand-drawn explainer videos in the Paint Explainer style — human hand-drawn PNG characters and backgrounds animated with real keyframes (slide-ins, pops, punch-ins, puppet-rigged limbs, mouth shapes), fast AI narration, hard cuts every 2-6 seconds. Use when the user wants a faceless explainer video, a myth/creature/history list video, a "5-act" story video, or any narrated YouTube video with hand-drawn art. Covers script, style lock, image batching, keyframe animation, character rigging, audio, and assembly.
 ---
 
-# Doodle explainer video
+# Hand-drawn explainer video (Paint Explainer style)
 
-Builds original faceless explainer videos in one mode:
+**The default mode is ANIMATED hand-drawn PNGs, not static stills.**
 
-**Three-band vertical** — the static 9:16 Reel/Short format: a clickbait
-banner on top, one static doodle illustration per narration beat in the
-middle, and an empty black band on the bottom, over a single fast narration
-track. No animation — illustration cuts are the only motion in the frame.
+Reference: The Paint Explainer channel. Every measurement below was taken
+from the actual reference video ("Ancient Greek Myths That Turned Out to
+Be True", 11:09, 768K views) — see
+`references/paint-explainer-autopsy.md` for the full analysis.
 
-Never copy a reference creator's exact drawings, script, voice, thumbnail,
-branding, or scene sequence. Extract only high-level production techniques and
-build an original identity.
+## The measured formula (follow these numbers)
 
-**Do not add subtitles or captions.** The bottom band stays empty black. It is
-part of the layout — it keeps the illustration in the upper-middle of the frame,
-clear of platform UI overlays — but no text goes in it. The build script leaves
-it empty by default; do not pass `--captions` unless the user explicitly asks
-for burned-in subtitles.
+| Rule | Value |
+|---|---|
+| Cut rhythm | **one cut every 2–6 seconds**, hard cuts only |
+| Motion budget | **55% frozen stills / 25% slow zoom / 20% active motion** |
+| Subject position | **dead center horizontally (x=0.50), slightly low (y≈0.58)** |
+| Backgrounds | **white or pastel — never dark** (avg brightness 0.71) |
+| Frame rate | **render at 60 fps** for smooth motion |
+| Chapter pauses | **exactly 0.7 s breath** between sections |
+| Art | human hand-drawn look: thick outlines, flat colors, white bg subjects |
+| Voice | steady measured narration; music bed quiet under the voice (−23 dB) |
 
-Media generation goes through the **Unsora MCP**. Assembly is local ffmpeg via
-`scripts/build_video.py`, which already encodes the measured format spec.
+## The smart router is the entry point
 
-## Before starting
+For any video request, first read `skills/content-router/SKILL.md`. It
+decides which skill fires when — one specialist at a time, never all at
+once:
 
-Read `references/format-spec.md` for the measured geometry, then
-`references/script-formula.md` before writing any narration. Read
-`references/art-direction.md` before generating any image. The format's
-distinctiveness lives in those details; skipping them produces something
-generic.
-
-Check `get_credits` early. A 10-minute video is roughly 150 images plus ~20
-voiceover calls — confirm the budget covers it before generating, and offer a
-shorter target length if it does not.
-
-## Pick the target length first
-
-| Length | Words | Sections | Illustrations |
-|---|---|---|---|
-| 60 s | ~215 | 3–4 | ~15 |
-| 3 min | ~650 | 8–10 | ~45 |
-| 10 min | ~2,200 | 18–25 | ~150 |
-
-Narration runs ~217 wpm and one illustration covers 12–15 words. Default to
-3 minutes unless the user asks for the full 10-minute treatment — it is the
-cheapest length that still fits the whole nine-move arc.
-
-## Workflow
-
-### 1. Find the paradox
-
-The format needs a subject with a real, resolvable paradox whose mechanism
-generalises to the viewer's own life. Test the topic on three things:
-
-- Is the central fact verifiable and genuinely surprising?
-- Is the obvious explanation wrong, leaving somewhere to go?
-- Does the real mechanism apply to the viewer personally?
-
-If any answer is no, propose a different angle before writing. This test is what
-makes the last 15% of the video land.
-
-Research the topic properly and keep the real sources — named researchers,
-institutions, and dates are load-bearing in this format. Do not invent
-citations; verify each one, and drop any claim you cannot source.
-
-### 2. Write the script
-
-Follow the nine-move arc in `references/script-formula.md`. Write it as one
-continuous narration, then split it into sections at paragraph boundaries.
-
-Write for the ear, not the page: spell numbers as spoken ("twelve thousand
-pounds", "nineteen seventies"), keep sentences short, and use fragments for
-emphasis.
-
-Show the user the script and get sign-off before generating any media. It is the
-cheapest thing to change and everything else depends on it.
-
-### 3. Break it into beats
-
-Split each section into beats of 12–15 words. One beat is one illustration and
-its narration text. Give every beat a visual concept drawn from the visual
-grammar table in `references/art-direction.md` — match the diagram type to what
-the sentence is actually doing.
-
-### 4. Generate the banner
-
-One image for the whole video, via `create_image` with the banner template in
-`references/art-direction.md`, at `aspectRatio: "16:9"`.
-
-Ask the image model for the artwork only, never the title text — models mangle
-lettering. Compose the title in afterwards: all caps, heavy grotesque, `#FCEB00`
-with exactly one word in `#FF0000`, phrased as a question.
-
-### 5. Generate the illustrations
-
-`create_image` per beat, 16:9, using the doodle template. Two things keep 150
-images coherent:
-
-- Pass the first accepted illustration as `referenceImages` on later calls, or
-  style drifts visibly across the runtime.
-- Cycle the background colour by scene mood using the table in the art
-  direction reference.
-
-Batch these and poll with `wait_for_image`. Collect the returned URLs — the
-build script accepts URLs directly and downloads them.
-
-**When the image tool is capped per turn (e.g. Arena Agent Mode, 10/turn),
-use the `skills/image-batcher` skill:** `init` a ledger with every beat's
-prompt up front, generate min(10, pending) in parallel each turn, `mark`
-them done, commit, and end the turn with "send any one word to continue".
-The human never explains anything twice; a new chat resumes with one word.
-
-### 6. Generate the voiceover
-
-`list_voiceover_voices` first and let the user pick. A steady male narrator
-suits the format; the reference is measured and slightly ominous, not excited.
-
-Generate **one call per section**, not per beat — voiceover bills per 1,000
-characters started, so per-beat calls waste most of every charge. Use
-`stability: 0.5` for expressive-but-consistent delivery, and `<#0.5#>` between
-sentences where you want a beat of silence.
-
-Poll with `wait_for_voiceover` and keep the section order stable.
-
-Two things measured on real output, both handled by the build script:
-
-- **TTS runs slow.** ElevenLabs delivers ~155 wpm against the format's ~217, so
-  a script written to the word budget above lands ~40% longer than planned.
-  Either accept the slower runtime or pass `--tempo 1.4`, which hits the target
-  duration *and* the reference's brisk pacing. Measure the audio before
-  promising the user a duration — do not assume the word count.
-- **TTS is quiet.** Raw output sits ~5 dB under the reference. The script
-  normalises to -16 LUFS by default; `--no-normalize` opts out.
-
-### 7. Assemble
-
-Write a manifest (see `scripts/manifest_example.json`) and run:
-
-```bash
-python3 scripts/build_video.py manifest.json
+```
+1 script   → skills/video-polish (script_doctor)          [5-act structure]
+2 plan     → skills/cinematic-director (beat sheet)        [multi-myth only]
+3 art      → skills/handdrawn-style-lock                   [locks the hand]
+3b batch   → skills/image-batcher                          [10/turn ledger]
+4 motion   → skills/ae-motion + skills/motion-design       [keyframes, easing]
+4b action  → skills/character-animation-skill              [walk/wave/blink]
+4c props   → skills/asset-library                          [CC0 Kenney fetch]
+5 edit     → skills/Ultimate-Video-Editing-Skills          [mix, grade, SFX]
+6 gates    → skills/video-polish (audio + pacing reports)  [verify numbers]
 ```
 
-Beat timings are derived from each section's measured audio duration, weighted
-by character count, so cuts land with the narration. Paths may be local files or
-https URLs.
+## The 5-act story template (from the reference)
 
-The script needs `ffmpeg` plus Pillow. The bottom band is left empty.
+Every chapter (~60 s) repeats the same 5 acts. Write them in order, then
+cut the visuals to the narration clauses:
 
-Useful flags:
+1. **THE MYTH** — dramatic hand-drawn subject + a number/detail
+2. **THE DOUBT** — "of course most people assumed it was just a myth"
+3. **THE DIG** — real evidence enters (ruins, bones, gases, fossils)
+4. **THE EXPLANATION** — drawn diagram/map/mechanism
+5. **THE KICKER** — "this is likely how the story spread" (soft verb)
 
-- `--keep` — keep composed frames for inspection
-- `--gap 0.35` — breath appended after each section
-- `--music bed.mp3 --music-db -26` — optional bed, **off by default**
-- `--captions` — burn in karaoke subtitles; **off by default, leave it off**
+11 chapters = 11 repetitions of this template. The repetition is the format.
 
-Do not add a music bed or sound effects unless the user asks. The reference has
-neither, and that restraint is part of the format — see the audio section of the
-format spec.
+## Workflow per chapter
 
-### 8. Check the result
+1. Write the 5-act narration for the chapter (video-polish grades it).
+2. Generate the subjects via the **style-lock prompt templates**
+   (subject PNG on PURE WHITE + separate empty-middle background PNG).
+   Batch through image-batcher; pass the first accepted image as the
+   style reference on every later call.
+3. Animate with **ae-motion**: slide-in subject, pop label, punch-in on
+   the reveal, puppet-pin any body part that acts (tail, wings, limbs).
+   Use `--plan "narration beat"` to pick the move. 60 fps, motion blur on
+   slides, hand fonts for all text.
+4. A character that WALKS/WAVES/BLINKS → character-animation-skill.
+   A missing prop (boat, tree, shield) → asset-library fetch (CC0).
+5. Assemble: hard cuts at 2–6 s, 0.7 s chapter pauses, music bed ducked
+   under the voice, loudness −23 dB.
+6. video-polish checks: cut cadence ≈ 3.6 s median, pauses 0.7 s, no
+   captions unless asked.
 
-Extract a few frames and actually look at them before handing the video over:
+## Legacy mode (optional — NOT the default)
 
-```bash
-ffmpeg -v error -ss 30 -i final.mp4 -frames:v 1 check.png
-```
+The old "three-band vertical" static format (clickbait banner / static
+doodle / empty black band, no motion) still exists in
+`scripts/build_video.py`. Use it ONLY when the user explicitly asks for
+that specific vertical Reels format. For everything else, this animated
+Paint Explainer workflow is the default.
 
-Verify captions are inside the black band and never overflow the width, the
-banner is legible, and illustration cuts land with the narration.
+## Rules that never change
 
-## Publishing
-
-`create_post` schedules to connected accounts (`get_accounts` to list them).
-Confirm with the user before posting — publishing is outward-facing and not
-reversible.
-
-## Notes
-
-- The bottom band carries no text. Leave it empty black.
-- Illustrations are fully static while held. No Ken Burns, no zooms, no
-  transitions, hard cuts only. With no captions, the illustration cuts are the
-  only motion in the frame, so beat pacing matters more — keep beats to 12–15
-  words so a cut never sits still for too long.
-- Because nothing on screen carries the words, the illustrations have to do more
-  work. Favour the labelled-diagram types in the visual grammar table over
-  purely decorative scenes.
-- The banner never changes. It works as a persistent thumbnail for viewers who
-  arrive mid-video.
-- Speaking rate is brisk by design. Slowing it down loses the retention curve
-  this format depends on.
+- Never copy another creator's drawings, script, voice, or branding —
+  extract technique only, build original work.
+- No captions unless the user asks. No music louder than −23 dB under the
+  voice. Hard cuts only — no transitions between beats.
+- The repo is the memory: commit script, ledger, scenes and manifests at
+  each stage so a new chat resumes without re-asking.
