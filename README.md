@@ -180,7 +180,9 @@ doodle-explainer-video/
 │   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
 │   ├── image-batcher/           # hands-free generation ledger across the per-turn image cap
 │   ├── cinematic-director/      # film director: beat sheet, shot plan, 20 director lenses, QC repair
-│   └── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
+│   ├── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
+│   ├── handdrawn-style-lock/    # locks the human hand-drawn art style across all images
+│   └── ae-motion/               # AE-grade keyframes: bezier easing, puppet pins, motion blur, 22 moves
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
