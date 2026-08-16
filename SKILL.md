@@ -7,6 +7,28 @@ description: Produce faceless hand-drawn explainer videos in the Paint Explainer
 
 **The default mode is ANIMATED hand-drawn PNGs, not static stills.**
 
+## ⚠️ STYLE LOCK — copy these prompts VERBATIM (change ONLY {SUBJECT})
+
+**Subject PNG (characters, creatures, objects):**
+```
+Hand-drawn doodle illustration of {SUBJECT}, on a PURE WHITE background.
+MS-Paint-like style: thick black outlines, flat bold colors, slightly
+imperfect hand-drawn lines, simple and {MOOD}.
+No text, no background scenery, no shadows, no gradients.
+```
+
+**Background PNG (separate image):**
+```
+Simple hand-drawn doodle {SETTING} background, MS-Paint-like style:
+flat {PALETTE} colors, thick black outlines, wavy hand-drawn lines,
+completely EMPTY in the middle. No text.
+```
+
+**Never** write "cinematic", "moody", "painterly", "film grain", or dark
+palettes in an image prompt — that produces the WRONG (Zenn-like) style.
+**Pass the first accepted image as the reference image on every later
+generation.** This lock is what makes 100 images look like one hand.
+
 Reference: The Paint Explainer channel. Every measurement below was taken
 from the actual reference video ("Ancient Greek Myths That Turned Out to
 Be True", 11:09, 768K views) — see
