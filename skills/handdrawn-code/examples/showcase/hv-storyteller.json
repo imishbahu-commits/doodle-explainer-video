@@ -1,0 +1,15 @@
+{
+  "width": 1376, "height": 768, "bg": "#BEE3F2", "seed": 42, "ink": 1.6,
+  "title": "THE STORYTELLER",
+  "elements": [
+    {"type": "sky", "x": 1100, "y": 110, "sun": true, "clouds": 2, "birds": 2, "cloudGap": 420},
+    {"type": "hills", "y": 470, "width": 1376, "height": 768},
+    {"type": "tree", "x": 120, "y": 640},
+    {"type": "tree", "x": 1260, "y": 640},
+    {"type": "ground", "y": 620, "width": 1376},
+    {"type": "person", "x": 640, "y": 640, "pose": "point", "emotion": "happy",
+     "hair": "side", "hairColor": "slate", "beard": true, "cloth": "coat",
+     "outfit": "grey", "outfit2": "navy", "skin": "light", "scale": 1.15,
+     "says": "listen closely...", "sayW": 260, "sayH": 100, "saySize": 32}
+  ]
+}

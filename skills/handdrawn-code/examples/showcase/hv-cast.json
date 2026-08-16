@@ -1,0 +1,17 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 3, "ink": 1.4,
+  "title": "THE CAST — ONE SYSTEM, EVERY FACE",
+  "elements": [
+    {"type": "person", "x": 170, "y": 480, "pose": "stand", "emotion": "happy", "hair": "messy", "hairColor": "ginger", "cloth": "shirt", "outfit": "blue", "outfit2": "navy", "skin": "light", "scale": 0.72},
+    {"type": "person", "x": 450, "y": 480, "pose": "wave", "emotion": "laugh", "hair": "bun", "hairColor": "black", "cloth": "dress", "outfit": "red", "outfit2": "navy", "skin": "tan", "scale": 0.72},
+    {"type": "person", "x": 730, "y": 480, "pose": "raise", "emotion": "surprised", "hair": "cap", "hairColor": "brown", "cloth": "hoodie", "outfit": "green", "outfit2": "grey", "skin": "deep", "scale": 0.72},
+    {"type": "person", "x": 1010, "y": 480, "pose": "think", "emotion": "worried", "hair": "long", "hairColor": "auburn", "cloth": "sweater", "outfit": "purple", "outfit2": "navy", "skin": "brown", "scale": 0.72},
+    {"type": "person", "x": 1270, "y": 480, "pose": "point", "emotion": "angry", "hair": "side", "hairColor": "slate", "cloth": "suit", "outfit": "navy", "outfit2": "navy", "skin": "dark", "scale": 0.72},
+    {"type": "label", "x": 170, "y": 560, "text": "messy", "size": 32, "font": "patrick"},
+    {"type": "label", "x": 450, "y": 560, "text": "bun", "size": 32, "font": "patrick"},
+    {"type": "label", "x": 730, "y": 560, "text": "cap", "size": 32, "font": "patrick"},
+    {"type": "label", "x": 1010, "y": 560, "text": "long", "size": 32, "font": "patrick"},
+    {"type": "label", "x": 1270, "y": 560, "text": "side-swept", "size": 32, "font": "patrick"},
+    {"type": "label", "x": 720, "y": 690, "text": "5 hairstyles · 6 emotions · 8 poses · 8 outfits · 5 skin tones", "size": 44, "font": "caveat"}
+  ]
+}
