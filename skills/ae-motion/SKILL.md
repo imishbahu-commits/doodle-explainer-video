@@ -51,6 +51,22 @@ Puppet pins live in `puppet`: `{"pins": [[x,y]...], "drag": [idx...],
 — the pin drags interpolate like any property, so a fin/tail/limb moves
 inside the PNG while the body slides.
 
+## Hand-drawn fonts for text layers
+
+Text layers carry a `font` field (OFL-licensed fonts shipped in
+`skills/ae-motion/fonts/`, so the skill is self-contained):
+
+| `font` | Face | Use for |
+|---|---|---|
+| `hand` (default) | Caveat | titles, labels — loose marker hand |
+| `hand-note` | Patrick Hand | small notes, captions, fine print |
+| `hand-bold` | Kalam | big numerals, stamps |
+| `sans` | DejaVu Bold | when a clean non-hand look is wanted |
+
+Rule: explainer videos read as hand-drawn when the TEXT is hand-drawn too —
+a machine font on a doodle breaks the illusion faster than any motion.
+Default everything to `hand` unless a beat explicitly wants machine text.
+
 ## The smart move chooser (script-aware)
 
 `scripts/ae_motion.py --plan "beat text"` classifies the sentence by

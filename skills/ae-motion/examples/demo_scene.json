@@ -102,7 +102,7 @@
     {
       "type": "text",
       "text": "ANGLERFISH",
-      "size": 56,
+      "size": 64,
       "tracks": {
         "pos": [
           {
@@ -134,6 +134,37 @@
           },
           {
             "t": 1.1,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      },
+      "font": "hand"
+    },
+    {
+      "type": "text",
+      "text": "the deep sea",
+      "size": 44,
+      "font": "hand-note",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              120
+            ],
+            "e": "hold"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 2.6,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 3.1,
             "v": 1.0,
             "e": "easeOut"
           }

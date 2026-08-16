@@ -161,9 +161,22 @@ def auto_rig(img):
 
 
 # ------------------------------------------------------------------ render
-def draw_text(text, size, fill=(28, 28, 34), w=1280):
+HERE = Path(__file__).resolve().parent
+FONT_DIR = HERE.parent / "fonts"
+
+# hand-drawn fonts (OFL-licensed, shipped with the skill) + fallback
+FONT_MAP = {
+    "hand": FONT_DIR / "caveat-700.ttf",        # loose marker hand
+    "hand-note": FONT_DIR / "patrick-hand.ttf", # neat pencil note
+    "hand-bold": FONT_DIR / "kalam-700.ttf",    # heavy marker
+    "sans": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+}
+
+
+def draw_text(text, size, fill=(28, 28, 34), w=1280, font_name="hand"):
+    path = FONT_MAP.get(font_name, FONT_MAP["sans"])
     try:
-        fnt = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", size)
+        fnt = ImageFont.truetype(str(path), size)
     except Exception:
         fnt = ImageFont.load_default()
     tmp = Image.new("RGBA", (w, size * 3), (0, 0, 0, 0))
@@ -194,7 +207,8 @@ def render_scene(scene, out_path, base_dir=None):
     layers = []
     for spec in scene.get("layers", []):
         if spec["type"] == "text":
-            base = draw_text(spec.get("text", ""), spec.get("size", 48))
+            base = draw_text(spec.get("text", ""), spec.get("size", 48),
+                             font_name=spec.get("font", "hand"))
         elif spec["type"] == "image":
             src = Path(spec["src"])
             if not src.is_absolute():
