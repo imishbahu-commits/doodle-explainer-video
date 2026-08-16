@@ -56,6 +56,18 @@ cut the visuals to the narration clauses:
 
 11 chapters = 11 repetitions of this template. The repetition is the format.
 
+## Hand-drawn asset requirement
+
+Every production must use **original hand-drawn assets** created for that
+video: characters, props, diagrams, and backgrounds should have visibly
+imperfect ink or pencil lines, flat hand-colored fills, and a consistent
+paper texture. Generate subjects and backgrounds as separate PNG layers when
+active motion is planned; full-frame hand-drawn PNGs are acceptable for slow
+camera moves. Do not substitute stock photography, photorealistic AI art,
+generic 3D renders, or clean corporate vectors. Keep all accepted source
+assets in the project's `assets/` directory and record their use in the shot
+plan or manifest.
+
 ## Workflow per chapter
 
 1. Write the 5-act narration for the chapter (video-polish grades it).

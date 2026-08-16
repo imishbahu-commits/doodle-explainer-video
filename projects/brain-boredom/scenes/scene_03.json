@@ -1,0 +1,104 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 10.0,
+  "bg_color": [
+    247,
+    243,
+    232,
+    255
+  ],
+  "motion_blur": 1,
+  "layers": [
+    {
+      "type": "image",
+      "src": "/home/user/doodle-explainer-video/projects/brain-boredom/assets/03_brain_network.png",
+      "isolate": false,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0.0,
+            "v": [
+              655,
+              360
+            ],
+            "e": "hold"
+          },
+          {
+            "t": 10.0,
+            "v": [
+              625,
+              360
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.0,
+            "v": 0.955,
+            "e": "hold"
+          },
+          {
+            "t": 10.0,
+            "v": 1.02,
+            "e": "easeInOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "MEMORY + FUTURE + IDEAS",
+      "size": 50,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0.0,
+            "v": [
+              640,
+              76
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.0,
+            "v": 0.65,
+            "e": "hold"
+          },
+          {
+            "t": 0.55,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0.0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.18,
+            "v": 1.0,
+            "e": "easeOut"
+          },
+          {
+            "t": 8.8,
+            "v": 1.0,
+            "e": "hold"
+          },
+          {
+            "t": 9.35,
+            "v": 0.0,
+            "e": "easeIn"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -16,6 +16,8 @@ mkdir -p "$FONTS"
 PY="python3"
 if [ -d "$ROOT/../../.venv" ]; then PY="$ROOT/../../.venv/bin/python"; fi
 "$PY" -m pip install -q fonttools 2>/dev/null || "$PY" -m pip install --user -q fonttools
+(
+cd "$ROOT"
 "$PY" - <<'EOF'
 from fontTools.ttLib import TTFont
 import os
@@ -30,6 +32,7 @@ for src, dst in pairs:
     f = TTFont(src); f.flavor = None; f.save(dst)
     print("font:", dst)
 EOF
+)
 
 echo "==> python deps (matplotlib for charts)"
 "$PY" -m pip install -q matplotlib
