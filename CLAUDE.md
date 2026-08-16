@@ -1,6 +1,44 @@
 # CLAUDE.md — READ THIS FIRST (auto-loaded in every new chat)
 
-## ⚠️ THE ONE RULE THAT KEEPS GETTING BROKEN
+## ⚠️ THE SECOND RULE THAT KEEPS GETTING BROKEN
+
+**NEVER stretch or reuse images to fill time. 1 beat = 1 image. Always.**
+
+Wrong (forbidden): generating 10 images and then holding each one for 6+
+seconds to "cover" a 60s video, reusing images, or extending beats to
+match a short image list.
+
+Right: count the beats first, then generate exactly that many images.
+
+### The beat math (from the measured reference: one cut every 2-6s)
+
+| Video length | Beats (images) needed | Turns (10/turn) |
+|---|---|---|
+| 60 s | **~17-20** | 2 |
+| 3 min | ~50-60 | 5-6 |
+| 8 min | ~130-160 | 13-16 |
+
+### The batch loop (exactly this)
+
+1. Write ALL image prompts first (one per beat) into the
+   `skills/image-batcher` ledger.
+2. Generate **min(10, pending)** in parallel this turn.
+3. Mark them done, commit.
+4. If images remain, **STOP** and tell the user exactly:
+   `"X images left — type 'go' and I generate the next 10."`
+5. Never skip the stop, never stretch, never reuse. The user's single
+   word starts the next turn, and the cap resets every turn.
+
+### Unlimited paths (when the batch loop is too slow)
+
+- `skills/handdrawn-code` — generates hand-drawn doodles FROM CODE:
+  zero cap, zero cost, runs instantly (doodle.mjs + ink-elements.mjs).
+  Use it for any beat, especially simple diagrams/stick scenes.
+- `skills/asset-library` — 5,000+ CC0 Kenney PNGs, fetched one at a
+  time. Use for props/backgrounds instead of generating.
+- The user's own free generators (Perchance, Bing Creator, Leonardo,
+  or their Qwen key via `tools/qwen_media.py`) — ask the user if they
+  want to generate the bulk themselves and upload.
 
 **Every image in every video MUST look HAND-DRAWN — MS-Paint style.
 Never "cinematic", never "moody painterly", never dark, never photoreal.

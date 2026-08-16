@@ -2,6 +2,14 @@
 
 > One page. No documents to search. Follow top to bottom.
 
+## ⚠️ NEVER STRETCH IMAGES — 1 beat = 1 image
+
+Count beats first (60s ≈ 17-20 images at 2-6s cuts; 3min ≈ 50-60; 8min ≈
+130-160). Generate 10 per turn, then STOP and say `"type 'go' for the
+next 10"`. Never hold one image over many beats, never reuse, never
+extend. Unlimited alternatives when batching is slow: `handdrawn-code`
+(code-drawn doodles, zero cap) and `asset-library` (CC0 fetch).
+
 ## 1. Style lock — COPY THESE PROMPTS VERBATIM
 
 **Every subject image:**
