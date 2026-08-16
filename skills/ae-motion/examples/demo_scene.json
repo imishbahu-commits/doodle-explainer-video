@@ -1,0 +1,144 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 24,
+  "duration": 4.5,
+  "background": "../../../projects/paint-demo/assets/background.png",
+  "motion_blur": 4,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../../../projects/paint-demo/assets/anglerfish.png",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0.0,
+            "v": [
+              -300,
+              340
+            ],
+            "e": "easeOutExpo"
+          },
+          {
+            "t": 1.0,
+            "v": [
+              560,
+              340
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "rot": [
+          {
+            "t": 0.0,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 1.0,
+            "v": -3,
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 3,
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.8,
+            "v": -2,
+            "e": "easeInOut"
+          }
+        ]
+      },
+      "puppet": {
+        "tracks": {
+          "drag0": [
+            {
+              "t": 0.6,
+              "v": [
+                0,
+                0
+              ],
+              "e": "easeInOut"
+            },
+            {
+              "t": 1.1,
+              "v": [
+                0,
+                30
+              ],
+              "e": "easeInOut"
+            },
+            {
+              "t": 1.6,
+              "v": [
+                0,
+                -8
+              ],
+              "e": "easeInOut"
+            },
+            {
+              "t": 2.1,
+              "v": [
+                0,
+                26
+              ],
+              "e": "easeInOut"
+            },
+            {
+              "t": 2.6,
+              "v": [
+                0,
+                0
+              ],
+              "e": "easeInOut"
+            }
+          ]
+        }
+      },
+      "max_dim": 560
+    },
+    {
+      "type": "text",
+      "text": "ANGLERFISH",
+      "size": 56,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0.0,
+            "v": [
+              640,
+              620
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 1.1,
+            "v": 0.6,
+            "e": "hold"
+          },
+          {
+            "t": 1.5,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0.0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 1.1,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}
