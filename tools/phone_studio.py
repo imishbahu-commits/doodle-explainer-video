@@ -102,8 +102,7 @@ PAGE = """<!doctype html>
 <div class="ctrls">
   <label>Model (fallback chain: if it fails, auto-tries the next)</label>
   <select id="modelSel">
-    <option value="auto">Auto — best available (Z-Image → Qwen → FLUX.2 klein → FLUX)</option>
-    <option value="puter:auto">🚀 Puter — FREE UNLIMITED, best models (one-time free login)</option>
+    <option value="puter:auto" selected>🚀 Puter — FREE UNLIMITED, best models (default)</option>
     <option value="puter:openai/gpt-image-2">  Puter · GPT Image 2</option>
     <option value="puter:google/nano-banana-pro">  Puter · Nano Banana Pro (Gemini)</option>
     <option value="puter:black-forest-labs/flux-2-pro">  Puter · FLUX.2 Pro</option>
@@ -141,14 +140,19 @@ PAGE = """<!doctype html>
   <label>Pollinations key (optional — free publishable pk_ key from
   enter.pollinations.ai; unlocks premium models. Stored only in this browser.)</label>
   <input id="keyIn" type="text" placeholder="pk_…">
+  <div style="margin-top:10px;border-top:1px solid #2a3045;padding-top:10px">
+    <label>🚀 Puter (default — best quality: GPT Image 2 / Nano Banana Pro / FLUX.2 Pro)</label>
+    <button class="start" id="puterBtn" type="button" style="width:100%">🔑 Sign in to Puter (one time, free)</button>
+    <div id="puterStatus" style="font-size:12px;color:#9aa;margin-top:6px">checking…</div>
+  </div>
 </div>
 <div id="cards"></div>
-<div class="note">Generation starts <b>automatically ~2 s after this page opens</b>
-— no taps needed. Model chain: Z-Image/Qwen/FLUX.2 (need a free Pollinations
-key), then anonymous FLUX, then <b>AI Horde — no account, no login</b>
-(community GPU network). You can also pick <b>Horde</b> or <b>Puter</b>
-explicitly (Puter = one free sign-in popup, then unlimited GPT Image 2 /
-Nano Banana Pro). Keep this tab open; failed cards show Retry + Upload.</div>
+<div class="note"><b>Default: 🚀 Puter</b> — the best free unlimited engine (GPT
+Image 2 / Nano Banana Pro / FLUX.2 Pro / Grok Imagine). It tries
+<b>anonymously first</b>; if Puter asks for an account, tap <b>🔑 Sign in to
+Puter</b> once (free, ~10 s) and auto-run resumes by itself — after that it's
+unlimited. Fallbacks if Puter is unreachable: AI Horde (no account, no login)
+and Pollinations FLUX. Keep this tab open; failed cards show Retry + Upload.</div>
 
 <script>
 const PROJECT = {{PROJECT_JSON}};
@@ -229,7 +233,7 @@ function saveSettings(){
 }
 function loadSettings(){
   const g = (id, def) => { const v = localStorage.getItem(id); return v || def; };
-  document.getElementById('modelSel').value = g('ps_model','auto');
+  document.getElementById('modelSel').value = g('ps_model','puter:auto');
   document.getElementById('resSel').value = g('ps_res','1536');
   document.getElementById('styleSel').value = g('ps_style','doodle');
   document.getElementById('keyIn').value = g('ps_key','');
@@ -279,31 +283,75 @@ async function fetchImage(id, prompt, model, res, key){
 let autoRunning = false;
 
 // ---------------- PUTER: free unlimited top-model generation ----------------
-// One-time free sign-in (puter.com popup). No API keys. User-Pays model:
-// the logged-in user's own free Puter account covers the AI cost. Unlimited.
+// Default engine. Works ANONYMOUSLY with a small free allowance; signing in
+// once (free Puter account) raises it to the full monthly allowance +
+// 30 req/10s. User-Pays: the logged-in user's own free account covers cost.
+const PUTER_MODELS = {
+  'puter:auto':               { provider: undefined,            model: undefined,
+                                label: 'auto (gpt-image-1-mini default)' },
+  'puter:openai/gpt-image-2': { provider: 'openai-image-generation', model: 'gpt-image-2', quality: 'high' },
+  'puter:google/nano-banana-pro': { provider: 'gemini',         model: 'nano-banana-pro', quality: '1K' },
+  'puter:black-forest-labs/flux-2-pro': { provider: 'replicate-image-generation', model: 'black-forest-labs/flux-2-pro' },
+  'puter:xai/grok-imagine-image': { provider: 'xai',            model: 'grok-imagine-image', quality: '1k' },
+  'puter:stabilityai/stable-diffusion-3.5': { provider: 'replicate-image-generation', model: 'stabilityai/stable-diffusion-3.5' },
+};
+
+async function puterSignedIn(){
+  try { return !!(await window.puter.auth.isSignedIn()); } catch(e){ return false; }
+}
+
+async function puterSignIn(){
+  try { await window.puter.auth.signIn(); return true; } catch(e){ return false; }
+}
+
+async function refreshPuterStatus(){
+  const st = document.getElementById('puterStatus');
+  if (!window.puter){ st.textContent = 'Puter SDK not loaded'; return false; }
+  try {
+    const ok = await puterSignedIn();
+    if (ok){
+      let u = '';
+      try { const uu = await window.puter.auth.getUser(); u = uu ? ' — ' + (uu.username || uu.email || uu.uuid || '') : ''; } catch(e){}
+      st.textContent = '✅ Signed in' + u + ' — unlimited free generation';
+      document.getElementById('puterBtn').textContent = 'Signed in (tap to switch account)';
+      return true;
+    }
+  } catch(e){}
+  st.textContent = 'Not signed in — try anonymous first; sign in if it asks (one time, free)';
+  return false;
+}
+
 async function genPuter(cardObj, modelId, fullPrompt, errEl, card){
   if (!window.puter){
     errEl.textContent = 'Puter SDK not loaded (js.puter.com blocked?)';
     return null;
   }
-  const model = modelId === 'puter:auto' ? undefined : modelId.slice(6);
+  const cfg = PUTER_MODELS[modelId] || { model: undefined };
+  const opts = { prompt: fullPrompt, ratio: { w: 1, h: 1 } };
+  if (cfg.provider) opts.provider = cfg.provider;
+  if (cfg.model) opts.model = cfg.model;
+  if (cfg.quality) opts.quality = cfg.quality;
+  // anonymous-first: only prompt for sign-in if Puter itself refuses
   try {
-    const img = await window.puter.ai.txt2img(fullPrompt, {
-      model: model,
-      aspectRatio: '1:1',
-      notifyOnProgress: true
-    });
+    errEl.textContent = 'Puter: generating (free)…';
+    const img = await window.puter.ai.txt2img(opts);
     if (!img || !img.src) throw new Error('Puter returned no image');
-    // img.src is a data: URI or blob: URL — fetch it and upload
     const blob = await fetch(img.src).then(r => r.blob());
     if (blob.size < 3000) throw new Error('empty image from Puter');
     const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
-      '&id=' + cardObj.id + '&model=' + encodeURIComponent('puter/' + (model || 'auto')),
+      '&id=' + cardObj.id + '&model=' + encodeURIComponent('puter/' + (cfg.model || 'auto')),
       { method:'POST', body: blob });
     if (!up.ok) throw new Error('save failed');
-    return model || 'auto';
+    return cfg.model || 'auto';
   } catch(e){
-    errEl.textContent = 'Puter: ' + e.message + ' — if a login popup appeared, sign in once (free) and retry.';
+    const msg = (e && e.message) || String(e);
+    if (/sign|auth|login|credit|upgrade|402|subscription/i.test(msg)){
+      errEl.textContent = 'Puter needs a free account: tap "🔑 Sign in to Puter" above, then Retry.';
+      document.getElementById('puterBtn').style.display = 'block';
+      document.getElementById('puterStatus').textContent = 'Sign-in required — one time, free, then unlimited';
+      return 'need_signin';
+    }
+    errEl.textContent = 'Puter: ' + msg.slice(0, 200);
     if (card.querySelector('.uploadrow')) card.querySelector('.uploadrow').classList.add('show');
     return null;
   }
@@ -325,13 +373,29 @@ async function genOne(cardObj, forceModel){
   const sel = forceModel || document.getElementById('modelSel').value;
   if (sel.startsWith('puter')){
     const res = await genPuter(cardObj, sel, fullPrompt, err, card);
-    if (res){
+    if (res && res !== 'need_signin'){
       const c = CARDS.find(c => c.id === cardObj.id); c.done = true; c.model = 'puter/' + res;
       err.textContent = '';
       render();
       return { ok:true, model:'puter/' + res };
     }
-    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry (sign in to Puter first)'; }
+    if (res === 'need_signin'){
+      // wait (up to ~5 min) for the user to tap Sign in, then resume
+      err.textContent = '⏸ waiting for Puter sign-in…';
+      const t0 = Date.now();
+      while (Date.now() - t0 < 300000){
+        await sleep(2000);
+        if (await puterSignedIn()){
+          err.textContent = '✅ signed in — generating…';
+          return genOne(cardObj, sel);   // retry with session
+        }
+        refreshPuterStatus();
+      }
+      err.textContent = 'sign-in timed out — tap Retry after signing in';
+      if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
+      return { ok:false, model:null };
+    }
+    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
     return { ok:false, model:null };
   }
   if (sel.startsWith('horde')){
@@ -430,6 +494,23 @@ document.getElementById('regenbtn').onclick = () => {
   render();
   autoRunAll();
 };
+
+// ---- Puter sign-in button (must be called from a user tap) ----
+const pBtn = document.getElementById('puterBtn');
+pBtn.onclick = async () => {
+  pBtn.textContent = '⏳ opening sign-in window…';
+  const ok = await puterSignIn();
+  if (ok){
+    pBtn.textContent = '✅ Signed in!';
+    document.getElementById('puterStatus').textContent = 'Signed in — unlimited. Auto-run continues.';
+    refreshPuterStatus();
+  } else {
+    pBtn.textContent = '🔑 Sign in to Puter (one time, free)';
+    document.getElementById('puterStatus').textContent =
+      'Popup was closed or blocked — allow popups for this site, then tap again.';
+  }
+};
+refreshPuterStatus();
 
 function render(){
   const wrap = document.getElementById('cards');
