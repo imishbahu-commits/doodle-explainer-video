@@ -109,6 +109,13 @@ PAGE = """<!doctype html>
     <option value="puter:black-forest-labs/flux-2-pro">  Puter · FLUX.2 Pro</option>
     <option value="puter:xai/grok-imagine-image">  Puter · Grok Imagine</option>
     <option value="puter:stabilityai/stable-diffusion-3.5">  Puter · Stable Diffusion 3.5</option>
+    <option value="horde:auto">🌐 AI Horde — FREE, NO ACCOUNT, NO LOGIN (community GPU network, 200+ open models)</option>
+    <option value="horde:AlbedoBase XL (SDXL)">  Horde · AlbedoBase XL (SDXL) — recommended</option>
+    <option value="horde:Juggernaut XL">  Horde · Juggernaut XL</option>
+    <option value="horde:flux.1-dev">  Horde · FLUX.1 dev</option>
+    <option value="horde:Deliberate">  Horde · Deliberate</option>
+    <option value="horde:Realistic Vision">  Horde · Realistic Vision</option>
+    <option value="horde:Anything v3">  Horde · Anything v3</option>
     <option value="zimage">Z-Image Turbo — top open model 2026 (Apache-2.0)</option>
     <option value="qwen-image">Qwen-Image — open (Apache-2.0)</option>
     <option value="klein">FLUX.2 klein — open</option>
@@ -137,10 +144,11 @@ PAGE = """<!doctype html>
 </div>
 <div id="cards"></div>
 <div class="note">Generation starts <b>automatically ~2 s after this page opens</b>
-— no taps needed. Each image is drawn by the chosen model on Pollinations
-(free for open models), then saved straight into the project. Keep this tab
-open; if a card fails on every model, tap <b>Retry</b> or use its Upload
-button with a saved image.</div>
+— no taps needed. Model chain: Z-Image/Qwen/FLUX.2 (need a free Pollinations
+key), then anonymous FLUX, then <b>AI Horde — no account, no login</b>
+(community GPU network). You can also pick <b>Horde</b> or <b>Puter</b>
+explicitly (Puter = one free sign-in popup, then unlimited GPT Image 2 /
+Nano Banana Pro). Keep this tab open; failed cards show Retry + Upload.</div>
 
 <script>
 const PROJECT = {{PROJECT_JSON}};
@@ -148,7 +156,63 @@ const CARDS = {{CARDS_JSON}};
 
 const MODEL_IDS = ['zimage','qwen-image','klein','seedream5','nanobanana-2',
   'ideogram-v4-quality','gptimage-large','grok-imagine-pro','flux'];
-const AUTO_CHAIN = ['zimage','qwen-image','klein','flux'];
+const AUTO_CHAIN = ['zimage','qwen-image','klein','flux','horde:AlbedoBase XL (SDXL)'];
+
+// ---------------- AI HORDE: FREE + ANONYMOUS, no account, no login ----------
+// Community GPU network (Haidra-Org/AI-Horde, open source). Anonymous key
+// 0000000000 needs no account. Queue-based; returns base64 in JSON.
+const HORDE = 'https://aihorde.net/api/v2';
+
+async function genHorde(cardObj, fullPrompt, err, card, sel){
+  let model = sel.slice(6);
+  if (!model || model === 'auto') model = 'AlbedoBase XL (SDXL)';
+  try {
+    const body = {
+      prompt: fullPrompt,
+      params: {
+        width: 1024, height: 1024, steps: 22, cfg_scale: 6.5,
+        sampler_name: 'k_euler_a', n: 1, models: [model]
+      },
+      nsfw: false, censor_nsfw: true
+    };
+    err.textContent = 'queueing on AI Horde (anonymous, free)…';
+    const q = await fetch(HORDE + '/generate/async', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': '0000000000' },
+      body: JSON.stringify(body)
+    });
+    if (!q.ok){
+      const qj = await q.json().catch(() => ({}));
+      throw new Error('horde queue: HTTP ' + q.status + ' ' + (qj.message || ''));
+    }
+    const job = await q.json();
+    if (!job.id) throw new Error('horde: no job id — ' + JSON.stringify(job).slice(0, 200));
+    for (let i = 0; i < 100; i++){
+      await sleep(5000);
+      const s = await fetch(HORDE + '/generate/status/' + job.id);
+      const st = await s.json();
+      if (st.done){
+        const g = st.generations && st.generations[0];
+        if (!g || !g.img) throw new Error('horde: done but no image');
+        const blob = await (await fetch('data:image/jpeg;base64,' + g.img)).blob();
+        if (blob.size < 3000) throw new Error('horde: empty image');
+        const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
+          '&id=' + cardObj.id + '&model=' + encodeURIComponent('horde/' + (g.model || model)),
+          { method: 'POST', body: blob });
+        if (!up.ok) throw new Error('horde: save failed');
+        return g.model || model;
+      }
+      const pos = st.queue_position != null ? st.queue_position : (st.processing ? 'processing' : '?');
+      err.textContent = 'horde: ' + pos + ' ahead' + (st.wait_time ? ' (~' + st.wait_time + 's)' : '') +
+                        ' — poll ' + (i + 1) + '/100';
+    }
+    throw new Error('horde: timed out after ~8 min');
+  } catch(e){
+    err.textContent = '❌ ' + e.message;
+    if (card.querySelector('.uploadrow')) card.querySelector('.uploadrow').classList.add('show');
+    return null;
+  }
+}
 
 function el(tag, cls, html){ const e=document.createElement(tag);
   if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
@@ -270,9 +334,32 @@ async function genOne(cardObj, forceModel){
     if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry (sign in to Puter first)'; }
     return { ok:false, model:null };
   }
-  const chain = [sel].concat(chainFor('auto')).filter((m,i,a) => a.indexOf(m) === i);
+  if (sel.startsWith('horde')){
+    const got = await genHorde(cardObj, fullPrompt, err, card, sel);
+    if (got){
+      const c = CARDS.find(c => c.id === cardObj.id); c.done = true; c.model = 'horde/' + got;
+      err.textContent = '';
+      render();
+      return { ok:true, model:'horde/' + got };
+    }
+    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
+    return { ok:false, model:null };
+  }
+  let chain;
+  if (sel === 'auto'){
+    chain = AUTO_CHAIN.slice();
+  } else {
+    const i = MODEL_IDS.indexOf(sel);
+    chain = (i >= 0 ? MODEL_IDS.slice(i) : []).concat(AUTO_CHAIN.filter(m => !MODEL_IDS.includes(m)));
+    chain = chain.filter((m, j, a) => a.indexOf(m) === j);
+  }
   let lastErr = 'no models tried';
   for (const model of chain){
+    if (model.startsWith('horde')){
+      const got = await genHorde(cardObj, fullPrompt, err, card, model);
+      if (got) return { ok:true, model:'horde/' + got };
+      continue;
+    }
     for (const res of [res0, 1024]){   // on failure, drop resolution
       err.textContent = 'trying ' + model + ' @ ' + res + '…';
       try {

@@ -8,11 +8,23 @@ PyPI/GitHub/npm only). This is the honest map of what actually works today.
 
 | # | Source | Cost | Key? | Quality | Where it runs | Verified how |
 |---|---|---|---|---|---|---|
-| 1 | **Puter.js** (`puter.ai.txt2img`) | FREE, unlimited | no key for dev — end user needs a **free Puter login** (once) | **Top-tier: GPT Image 2, Nano Banana Pro, FLUX.2 Pro, Grok Imagine, SD 3.5** | any browser (phone studio) | documented "Free, Unlimited Image Generation API" — puter.com |
+| 0 | **AI Horde** (`aihorde.net`, open source — Haidra-Org) | FREE, unlimited-ish (anonymous daily kudos pool) | **NONE — anonymous key `0000000000`, no account, no login** | good-to-excellent open models: **AlbedoBase XL, Juggernaut XL, SDXL 1.0, FLUX.1 dev, Deliberate, Realistic Vision, Pony XL**, 200+ total | any browser (phone studio — now wired in) | **PROVEN via fetcher this session**: heartbeat `OK v5.1.3`, live model list with queue stats |
+| 1 | **Puter.js** (`puter.ai.txt2img`) | FREE, unlimited | no key for dev — end user needs a **free Puter login** (once, human popup — **no headless signup exists**) | **Top-tier: GPT Image 2, Nano Banana Pro, FLUX.2 Pro, Grok Imagine, SD 3.5** | any browser (phone studio) | documented "Free, Unlimited Image Generation API" — puter.com |
 | 2 | **Pollinations anonymous legacy host** (`image.pollinations.ai/prompt/…`) | FREE, unlimited (rate-capped ~1/15 s, may watermark) | none | good (FLUX.1) | any browser (phone studio) | PROVEN this session: generated "a vibrant red kitten" via fetcher→Jina; generated beats 1–2 from the user's phone |
 | 3 | **Pollinations new platform** (`gen.pollinations.ai`) | free models + **free starter Pollen from Quests** | free account key (`pk_…`) | **Z-Image Turbo (top open model), Qwen-Image, FLUX.2 klein, GPT Image 2, DreamShaper** | anywhere with internet | fetched live model catalogue via fetcher (401 without key, catalogue public) |
 | 4 | **text.pollinations.ai** | FREE, unlimited | none | text (not images) | **even this sandbox, via the fetcher** | PROVEN: returned "Hello, fellow traveller." |
 | 5 | Wikimedia Commons / Pexels / public-domain archives | FREE, unlimited | none | real photos, full-res (up to 5376×3360) | **this sandbox** (image-search) | PROVEN: 10 beat images built this session |
+
+## "Can something create accounts by itself?" — checked, honest answer
+
+- **Puter**: no headless/programmatic signup API exists (docs only show a human
+  `signIn()` popup). Auto-creating accounts would violate their ToS and
+  require CAPTCHA/phone verification anyway.
+- **GitHub search** for auto-account tools (`puter signup`, `puter auto`,
+  `stable horde generator`): nothing legitimate exists.
+- **AI Horde needs NO account at all** — anonymous key, done. This is the
+  real answer to "no login ever".
+- I did not build account-farming — it breaks ToS and gets services banned.
 
 ## Free tiers with an account (not key-less)
 
