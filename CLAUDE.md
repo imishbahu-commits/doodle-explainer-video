@@ -12,22 +12,48 @@ Right: count the beats first, then generate exactly that many images.
 
 ### The beat math (from the measured reference: one cut every 2-6s)
 
-| Video length | Beats (images) needed | Turns (10/turn) |
-|---|---|---|
-| 60 s | **~17-20** | 2 |
-| 3 min | ~50-60 | 5-6 |
-| 8 min | ~130-160 | 13-16 |
+| Video length | Beats (images) needed | AI generations needed | Turns (10/turn) |
+|---|---|---|---|
+| 60 s | **~17** | ~6-9 (the rest come free) | 1 |
+| 3 min | ~50 | ~14-22 | 2-3 |
+| 8 min | ~133 | ~40-60 | 4-6 |
 
-### The batch loop (exactly this)
+### The smart supply chain (skills/image-queue — the standard path)
 
-1. Write ALL image prompts first (one per beat) into the
-   `skills/image-batcher` ledger.
-2. Generate **min(10, pending)** in parallel this turn.
-3. Mark them done, commit.
-4. If images remain, **STOP** and tell the user exactly:
-   `"X images left — type 'go' and I generate the next 10."`
+Every beat gets ONE image, but beats are classified by the CHEAPEST source
+that can draw them, in this order:
+
+1. `doodle` — `skills/handdrawn-code` draws diagrams, maps, arrows, labels
+   from code. FREE, unlimited, local.
+2. `asset` — `skills/asset-library` fetches CC0 Kenney props (coin, sword,
+   key, scroll…). FREE, unlimited, local.
+3. `pose` — a character that was already generated is re-posed from its
+   rig + pose library (ae-motion). FREE, unlimited, local.
+4. `ai` — ONLY genuinely new subjects (a character's first appearance, a
+   unique artifact, a new location). This is the ONLY thing that consumes
+   the 10-images-per-turn cap.
+
+So a 3-minute video costs ~15 AI generations instead of 50. Use
+`skills/image-queue/scripts/queue.py` for the ledger.
+
+### The batch loop (exactly this, for the ai beats only)
+
+1. Classify beats (`queue.py classify`), then generate the ai beats,
+   **min(10, pending) per turn**, in parallel.
+2. Pass the first accepted image as the reference image on every call.
+3. Save each image to `projects/<slug>/assets/`, mark it (`queue.py mark`),
+   and commit — a crash must never cause regeneration.
+4. If ai beats remain, **STOP** and tell the user exactly:
+   `"X of Y images done — type 'go' for the next batch."`
 5. Never skip the stop, never stretch, never reuse. The user's single
    word starts the next turn, and the cap resets every turn.
+
+### Voiceover is the boss — never stretch images to cover it
+
+Record (or generate) the voiceover, then fit the beats to it
+(`script_planner.py fit`). One voiceover segment = one beat = one image.
+A longer voiceover means MORE beats, each with its OWN image — an image
+is never held longer and never reused to fill time.
 
 ### Unlimited paths (when the batch loop is too slow)
 
@@ -82,19 +108,30 @@ templates above instead.
 
 ## The video pipeline (numbered — follow in order)
 
-1. **Script** — write the 5-act story (myth → doubt → dig → explanation →
-   kicker). Read `references/paint-explainer-autopsy.md` for the numbers.
-2. **Images** — one subject PNG per narration clause via the templates
-   above (max 10 generations per turn, use `skills/image-batcher` ledger).
+1. **Script** — `skills/youtube-script`: ANY topic (or propose 3 topics
+   when the user has none), pick a format (myth / misconception / mystery /
+   how-it-works / comparison / timeline / big-question — see
+   `skills/youtube-script/references/formats.md`), research facts, write
+   hooks + but-therefore seams, one spoken beat = one image.
+   `script_planner.py plan` writes the beat math + skeleton.
+2. **Images** — `skills/image-queue`: classify beats (doodle / asset /
+   pose / ai), fill the free beats locally, generate ai beats 10 per turn
+   with the templates above and the style lock. Character + minimalist
+   background are TWO images (background EMPTY in the middle).
 3. **Motion** — `skills/ae-motion/scripts/ae_motion.py`:
-   slide-ins, pops, punch-ins, puppet-rigged limbs. Cuts every 2-6 s,
+   slide-ins, pops, punch-ins, rig-posed limbs. Cuts every 2-6 s,
    subjects centered, 60 fps, hand fonts for text.
 4. **Character actions** — a character walking/waving/blinking uses
    `skills/character-animation-skill`. Missing props: `skills/asset-library`
    (5,000+ CC0 Kenney assets, fetch one file at a time).
 5. **Audio** — voiceover + quiet music bed (−23 dB), 0.7 s pauses between
-   chapters. No captions unless asked.
+   chapters. No captions unless asked. Fit beats to the voiceover with
+   `script_planner.py fit` (longer voiceover = more beats, more images —
+   never stretch).
 6. **Verify** — `skills/video-polish` checks the numbers.
+7. **Package for YouTube** — `skills/youtube-seo`: title variants (Browse
+   vs Search), description, tags, chapters, the 15-second hook line, and
+   the thumbnail concept — generated from the finished script.
 
 ## Files to read as needed
 
@@ -103,6 +140,9 @@ templates above instead.
 | Exact format numbers | `references/paint-explainer-autopsy.md` |
 | Motion grammar (moves) | `references/paint-explainer-style.md` |
 | Which skill fires when | `skills/content-router/SKILL.md` |
+| Script formats for any niche | `skills/youtube-script/references/formats.md` |
+| Image supply chain | `skills/image-queue/SKILL.md` |
+| YouTube SEO playbook | `skills/youtube-seo/README.md` |
 | Keyframe engine docs | `skills/ae-motion/SKILL.md` |
 | Style prompt templates | `skills/handdrawn-style-lock/SKILL.md` |
 
@@ -111,5 +151,7 @@ templates above instead.
 - Do NOT produce static stills synced to voiceover with no motion.
 - Do NOT use cinematic/painterly image prompts.
 - Do NOT skip the style lock (reference image on every call).
-- Do NOT generate more than 10 images per turn (use the batcher).
+- Do NOT generate more than 10 AI images per turn (queue them with
+  `skills/image-queue`, stop for the user's "go").
+- Do NOT stretch or reuse images to cover a longer voiceover — add beats.
 - Do NOT add captions, transitions, or loud music.

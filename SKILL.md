@@ -54,16 +54,27 @@ decides which skill fires when — one specialist at a time, never all at
 once:
 
 ```
-1 script   → skills/video-polish (script_doctor)          [5-act structure]
-2 plan     → skills/cinematic-director (beat sheet)        [multi-myth only]
+1 script   → skills/youtube-script (any topic, 7 formats)  [beats.json]
+1b QC      → skills/video-polish (script_doctor)           [grades the script]
+2 plan     → skills/image-queue (doodle/asset/pose/ai)     [resumable ledger]
 3 art      → skills/handdrawn-style-lock                   [locks the hand]
-3b batch   → skills/image-batcher                          [10/turn ledger]
+3b batch   → skills/image-queue (10 ai per turn, "go")     [image-batcher = legacy]
 4 motion   → skills/ae-motion + skills/motion-design       [keyframes, easing]
 4b action  → skills/character-animation-skill              [walk/wave/blink]
 4c props   → skills/asset-library                          [CC0 Kenney fetch]
 5 edit     → skills/Ultimate-Video-Editing-Skills          [mix, grade, SFX]
 6 gates    → skills/video-polish (audio + pacing reports)  [verify numbers]
+7 SEO      → skills/youtube-seo (title/desc/tags/thumbnail) [upload metadata]
 ```
+
+## Scripts for ANY niche (skills/youtube-script)
+
+The 5-act myth template below is ONE of seven formats. `youtube-script`
+handles any topic: myth, misconception, mystery, how-it-works, comparison,
+timeline, big-question — see `skills/youtube-script/references/formats.md`.
+Depth rules: misconception-first research, but-therefore seams, one
+curiosity gap per minute, every fact sourced, beats fitted to the
+voiceover (a longer voiceover = more beats = more images, never stretch).
 
 ## The 5-act story template (from the reference)
 
@@ -83,8 +94,9 @@ cut the visuals to the narration clauses:
 1. Write the 5-act narration for the chapter (video-polish grades it).
 2. Generate the subjects via the **style-lock prompt templates**
    (subject PNG on PURE WHITE + separate empty-middle background PNG).
-   Batch through image-batcher; pass the first accepted image as the
-   style reference on every later call.
+   Batch through the image-queue ledger (doodle/asset/pose first, then ai
+   10 per turn); pass the first accepted image as the style reference on
+   every later call.
 3. Animate with **ae-motion**: slide-in subject, pop label, punch-in on
    the reveal, puppet-pin any body part that acts (tail, wings, limbs).
    Use `--plan "narration beat"` to pick the move. 60 fps, motion blur on

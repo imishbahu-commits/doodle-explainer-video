@@ -205,8 +205,11 @@ doodle-explainer-video/
 │   └── art-direction.md         # banner + doodle templates, visual grammar
 ├── skills/
 │   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
+│   ├── youtube-script/          # any-niche scripts: 7 formats, hooks, but-therefore, beat math, voiceover fit
+│   ├── youtube-seo/             # deeployCO MIT suite: titles, descriptions, tags, chapters, thumbnail, hook line
 │   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
-│   ├── image-batcher/           # hands-free generation ledger across the per-turn image cap
+│   ├── image-queue/             # smart supply: doodle/asset/pose free first, ai queue 10/turn
+│   ├── image-batcher/           # LEGACY: hands-free ledger for pure-AI image lists
 │   ├── cinematic-director/      # film director: beat sheet, shot plan, 20 director lenses, QC repair
 │   ├── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
 │   ├── handdrawn-style-lock/    # locks the human hand-drawn art style across all images
