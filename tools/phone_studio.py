@@ -83,14 +83,15 @@ PAGE = """<!doctype html>
   <h1>🎨 Batch AI images — {{PROJECT}}</h1>
   <div id="prog">0 / 0</div>
   <div id="bar"><div id="fill"></div></div>
+  <button class="start" id="startbtn" style="display:none">▶ Start now</button>
 </header>
 <div id="status"></div>
 <div id="cards"></div>
-<div class="note">Tap <b>Generate</b> on a card — the image is drawn by the
-open-source <b>FLUX</b> model on Pollinations (free, unlimited), then
-uploaded straight into the project. If a card says the image opened in a
-new tab instead: long-press it, choose <b>Save image</b>, then use the
-Upload button on that card.</div>
+<div class="note">Generation starts <b>automatically ~3 s after this page opens</b>
+— no taps needed. Every image is drawn by the open-source <b>FLUX</b> model on
+Pollinations (free, unlimited) and saved straight into the project. Keep this
+tab open; if a card fails, tap <b>Retry</b> on it (or use its Upload button
+with a saved image).</div>
 
 <script>
 const PROJECT = {{PROJECT_JSON}};
@@ -141,6 +142,84 @@ function render(){
 function pad(n){ return String(n).padStart(3,'0'); }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ---------------- AUTO-RUN: no taps needed, generates every pending beat ----
+let autoRunning = false;
+
+async function genAuto(cardObj){
+  // cardObj: {id, prompt} — generate + save, no tab fallback in auto mode
+  const card = [...document.querySelectorAll('.card')].find(
+      c => c.querySelector('.beat').textContent === 'BEAT ' + cardObj.id);
+  const btn = card.querySelector('button.gen');
+  const err = card.querySelector('.err');
+  if (btn){ btn.disabled = true; btn.textContent = '⏳…'; }
+  err.textContent = 'generating…';
+  const url = pollinationsUrl(cardObj.id, cardObj.prompt);
+  let ok = false;
+  for (let attempt = 1; attempt <= 3; attempt++){
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const blob = await r.blob();
+      if (blob.size < 3000) throw new Error('empty image');
+      const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
+                             '&id=' + cardObj.id, { method:'POST', body: blob });
+      if (!up.ok) throw new Error('save failed');
+      ok = true;
+      break;
+    } catch(e){
+      err.textContent = 'attempt ' + attempt + '/' + 3 + ' — ' + e.message;
+      if (attempt < 3) await sleep(4000);
+    }
+  }
+  if (ok){
+    const c = CARDS.find(c => c.id === cardObj.id); c.done = true;
+    err.textContent = '';
+    render();
+  } else {
+    err.textContent = '❌ failed after 3 tries — tap the card to retry, or use Upload.';
+    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
+    card.querySelector('.uploadrow').classList.add('show');
+  }
+  const left = CARDS.filter(c => !c.done).length;
+  document.getElementById('status').textContent =
+      left ? '⏳ auto-run… ' + left + ' image(s) left' : '✅ BATCH COMPLETE — all images saved!';
+}
+
+async function autoRunAll(){
+  if (autoRunning) return;
+  autoRunning = true;
+  if (navigator.wakeLock){
+    try { await navigator.wakeLock.request('screen'); } catch(e){}
+  }
+  const pending = CARDS.filter(c => !c.done);
+  if (!pending.length){
+    document.getElementById('status').textContent = '✅ All images already done.';
+    return;
+  }
+  document.getElementById('status').textContent =
+      '▶ AUTO-RUN: ' + pending.length + ' images — keep this tab open, no taps needed';
+  const CONC = 2; let idx = 0;
+  async function worker(){
+    while (true){
+      const next = idx++;
+      if (next >= pending.length) return;
+      await genAuto(pending[next]);
+    }
+  }
+  await Promise.all([worker(), worker()]);
+  autoRunning = false;
+}
+
+// auto-start shortly after the page loads
+setTimeout(() => {
+  if (!autoRunning && CARDS.some(c => !c.done)){
+    const sb = document.getElementById('startbtn');
+    if (sb){ sb.style.display = 'block';
+      sb.onclick = () => { sb.style.display = 'none'; autoRunAll(); }; }
+    setTimeout(() => { if (!autoRunning) autoRunAll(); }, 2500);
+  }
+}, 1500);
 
 async function gen(id){
   const card = [...document.querySelectorAll('.card')].find(

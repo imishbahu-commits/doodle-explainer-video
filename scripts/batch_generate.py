@@ -154,6 +154,12 @@ def rank_candidates(src, path, keyword):
         tokens = kw.split()
         score += 15 * sum(1 for t in tokens if t in name)
     score += PRIO.get(src, 5)
+    if "flat" in name:
+        score += 20          # flat emoji = closest to doodle style
+    if "3d" in name:
+        score -= 25          # 3D renders are off-style
+    if "color" in name and "flat" not in name:
+        score -= 5
     if path.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
         score += 4  # no rasterisation step needed
     return score
@@ -289,10 +295,57 @@ def write_credits(d, images):
     lines = ["# CREDITS — open-source artwork used by this project", ""]
     for im in sorted(used, key=lambda x: x["id"]):
         src = im["source"]
-        credit = LIBS[src].get("credit", "")
-        lines.append(f"- `{im['file']}` — **{im['keyword']}** — {src} "
+        credit = LIBS[src].get("credit", "") if src in LIBS else ""
+        lines.append(f"- `{im['file']}` — **{im['keyword'][:60]}** — {src} "
                      f"({im['license']}) {credit}".rstrip())
     (d / "CREDITS.md").write_text("\n".join(lines) + "\n")
+
+
+def cmd_fill(args):
+    """Server-side: generate beats whose open-map entry points at an open
+    library keyword. No phone, no AI API — pure GitHub-fetched CC/PD art."""
+    d, prompts, images = ledgers(args.project)
+    if not prompts:
+        sys.exit(f"no prompts — run init first (projects/{args.project}/prompts.json)")
+    map_path = d / (args.map or "open-map.json")
+    if not map_path.exists():
+        sys.exit(f"no open map at {map_path} — create it as {{beat_id: keyword}}")
+    mapping = json.loads(map_path.read_text())
+    assets = d / "assets"
+    done = done_ids(images, assets)
+    todo = [p for p in prompts
+            if str(p["id"]) in mapping and p["id"] not in done]
+    if args.limit:
+        todo = todo[: args.limit]
+    if not todo:
+        print(f"nothing to fill — all mapped beats already have images "
+              f"in projects/{args.project}/assets/")
+        return
+    log(f"fill project={args.project} beats={len(todo)} (open-library backend)")
+    for i, p in enumerate(todo, 1):
+        num = p["id"]
+        out = assets / f"{num:03d}.png"
+        entry = {"id": num, "keyword": p["keyword"], "backend": "assets",
+                 "file": f"assets/{out.name}"}
+        try:
+            kw = str(mapping[str(num)])
+            data, ext, src, path = gen_assets_one(kw, assets, args.delay)
+            save_asset(data, ext, out)
+            entry.update({"source": src, "asset_path": path,
+                          "license": LIBS[src]["license"], "bytes": len(data),
+                          "open_keyword": kw})
+        except Exception as e:
+            log(f"[{i}/{len(todo)}] FAIL id {num} '{mapping[str(num)]}': {e}")
+            entry["error"] = str(e)[:300]
+            images.append(entry)
+            save_json(d / "images.json", images)
+            continue
+        log(f"[{i}/{len(todo)}] ok id {num} '{mapping[str(num)]}' "
+            f"-> {entry['file']} ({entry.get('license','')})")
+        images.append(entry)
+        save_json(d / "images.json", images)
+    write_credits(d, images)
+    log("done — re-run to retry failures; `status` / `sheet` show progress.")
 
 
 # ------------------------------------------------------------- commands
@@ -449,6 +502,14 @@ def main():
     p.add_argument("--sheet", action="store_true",
                    help="build contact-sheet.png when the run finishes")
     p.set_defaults(fn=cmd_run)
+
+    p = sub.add_parser("fill", help="server-side open-library fill of mapped beats")
+    p.add_argument("project")
+    p.add_argument("--map", default="open-map.json",
+                   help="mapping file inside the project dir")
+    p.add_argument("--limit", type=int, default=0)
+    p.add_argument("--delay", type=float, default=0.25)
+    p.set_defaults(fn=cmd_fill)
 
     p = sub.add_parser("status", help="progress")
     p.add_argument("project")
