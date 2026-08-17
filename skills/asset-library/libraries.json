@@ -2,31 +2,69 @@
   "lpc": {
     "repo": "makrohn/Universal-LPC-spritesheet",
     "license": "CC-BY-SA 3.0 + GPL 3.0",
+    "fmt": "png",
     "note": "Liberated Pixel Cup characters (2,755 files): bodies, hair, clothes, walk cycles. Attribution + share-alike required."
   },
   "kenney": {
     "repo": "iwenzhou/kenney",
     "license": "CC0 (public domain)",
-    "note": "The COMPLETE Kenney asset pack (5,190 files): sprites, tilesets, UI, props. Zero restrictions — safe for commercial videos."
+    "fmt": "png",
+    "note": "The COMPLETE Kenney asset pack (~5,000 files): sprites, tilesets, UI, props, fish (fishSwim/fishPink/fishGreen), tile backgrounds. Zero restrictions — safe for commercial videos."
   },
   "kenney-particles": {
     "repo": "Calinou/kenney-particle-pack",
     "license": "CC0",
+    "fmt": "png",
     "note": "Kenney particle textures (smoke, dust, fire, sparkles) — perfect for ae-motion impact scenes."
   },
   "kenney-textures": {
     "repo": "Calinou/kenney-prototype-textures",
     "license": "CC0",
+    "fmt": "png",
     "note": "Kenney prototype textures (grass, stone, wood patterns) — hand-drawn background fills."
   },
   "kenney-ui-sounds": {
     "repo": "Calinou/kenney-ui-audio",
     "license": "CC0",
+    "fmt": "wav",
     "note": "Kenney UI sound effects (clicks, pops, alerts) — free SFX for transitions."
   },
   "kenney-interface-sounds": {
     "repo": "Calinou/kenney-interface-sounds",
     "license": "CC0",
+    "fmt": "wav",
     "note": "Kenney interface sound pack."
+  },
+  "game-icons": {
+    "repo": "game-icons/icons",
+    "license": "CC BY 3.0 (some CC0)",
+    "fmt": "svg",
+    "credit": "One line in the video description: 'Icons by game-icons.net (Lorc, Delapouite and contributors), CC BY 3.0'.",
+    "note": "4,283 sketchy HAND-DRAWN icons: angler-fish, clownfish, giant-squid, shark-fin, sperm-whale, creatures, weapons, buildings, symbols. SVG — fetch with --rasterize to get a PNG."
+  },
+  "fluent-emoji": {
+    "repo": "microsoft/fluentui-emoji",
+    "license": "MIT",
+    "fmt": "png+svg",
+    "note": "Microsoft Fluent emoji (27,000 files): flat bold colors with dark outlines — a doodle-like look. 3D/*.png files are ready PNGs (fish, crab, whale, octopus, animals, objects); Flat/*.svg need --rasterize."
+  },
+  "humaaans": {
+    "repo": "Calinou/humaaans",
+    "license": "CC BY 4.0",
+    "fmt": "png",
+    "credit": "One line in the video description: 'People by Pablo Stanley (humaaans.com), CC BY 4.0'.",
+    "note": "253 flat hand-drawn people — mix & match standing/sitting/arms/legs, PNG + @2x. The closest asset equivalent of stick-figure characters."
+  },
+  "open-peeps": {
+    "repo": "jenshor/open-peeps",
+    "license": "MIT (originals CC0 by Pablo Stanley)",
+    "fmt": "svg",
+    "note": "Hand-drawn people PARTS (bodies, hair, faces, beards, accessories) to mix & match into characters. SVG — fetch with --rasterize."
+  },
+  "openclipart": {
+    "repo": "cyanidecupcake/openclipart-svg",
+    "license": "Public domain",
+    "fmt": "svg",
+    "note": "36,000+ public-domain clipart SVGs sorted by category (animals, food, scenery, people...). Some files messy/duplicated — pick by filename. SVG — fetch with --rasterize."
   }
 }
