@@ -73,6 +73,9 @@ PAGE = """<!doctype html>
   input[type=file] { width:100%; margin-bottom:8px; }
   button.upload { width:100%; padding:12px; border:0; border-radius:10px;
     background:#f5c63c; color:#000; font-weight:700; font-size:15px; }
+  button.regen { width:82%; padding:12px; border:0; border-radius:10px;
+    background:#b06cf5; color:#fff; font-weight:700; font-size:14px;
+    margin-top:10px; }
   .note { font-size:12px; color:#778; text-align:center; margin:18px 14px 30px;
     line-height:1.6; }
   #status { font-size:13px; color:#f5c63c; text-align:center; min-height:18px; }
@@ -84,6 +87,7 @@ PAGE = """<!doctype html>
   <div id="prog">0 / 0</div>
   <div id="bar"><div id="fill"></div></div>
   <button class="start" id="startbtn" style="display:none">▶ Start now</button>
+  <button class="regen" id="regenbtn">✨ Generate ALL with FLUX (overwrite, high-res)</button>
 </header>
 <div id="status"></div>
 <div id="cards"></div>
@@ -103,7 +107,7 @@ function el(tag, cls, html){ const e=document.createElement(tag);
 function pollinationsUrl(id, prompt){
   const seed = id * 13 + 7;
   return 'https://image.pollinations.ai/prompt/' + encodeURIComponent(prompt) +
-         '?width=1024&height=1024&model=flux&nologo=true&seed=' + seed +
+         '?width=1024&height=1024&model=flux&nologo=true&enhance=true&seed=' + seed +
          '&referrer=doodle-explainer-video';
 }
 
@@ -220,6 +224,15 @@ setTimeout(() => {
     setTimeout(() => { if (!autoRunning) autoRunAll(); }, 2500);
   }
 }, 1500);
+
+// regenerate EVERYTHING with FLUX (overwrite existing, high-res)
+document.getElementById('regenbtn').onclick = () => {
+  if (!confirm('Generate ALL ' + CARDS.length + ' images with FLUX? ' +
+               'This overwrites the current images (2-3 min).')) return;
+  CARDS.forEach(c => { c.done = false; });
+  render();
+  autoRunAll();
+};
 
 async function gen(id){
   const card = [...document.querySelectorAll('.card')].find(

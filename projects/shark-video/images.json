@@ -22,89 +22,97 @@
   {
     "id": 3,
     "keyword": "A massive dark whale-shaped silhouette moving deep below a tiny swimmer, ocean floor far down, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/003.png",
     "source": "game-icons",
     "asset_path": "delapouite/sperm-whale.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 2424,
-    "open_keyword": "sperm-whale@game-icons"
+    "open_keyword": "sperm-whale@game-icons",
+    "scene": "abyss_silhouette"
   },
   {
     "id": 4,
     "keyword": "A giant 40-foot whale shark drawn next to a tiny human swimmer for scale, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/004.png",
     "source": "fluent-emoji",
     "asset_path": "assets/Spouting whale/Flat/spouting_whale_flat.svg",
     "license": "MIT",
     "bytes": 3375,
-    "open_keyword": "spouting-whale@fluent-emoji"
+    "open_keyword": "spouting-whale@fluent-emoji",
+    "scene": "scale_compare"
   },
   {
     "id": 5,
     "keyword": "A shark fin cutting through the ocean surface with small waves around it, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/005.png",
     "source": "game-icons",
     "asset_path": "delapouite/shark-fin.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 1751,
-    "open_keyword": "shark-fin@game-icons"
+    "open_keyword": "shark-fin@game-icons",
+    "scene": "fin_surface"
   },
   {
     "id": 6,
     "keyword": "A boat sonar machine sending curved sound wave rings down into the deep sea, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/006.png",
     "source": "game-icons",
     "asset_path": "lorc/ultrasound.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 2092,
-    "open_keyword": "ultrasound@game-icons"
+    "open_keyword": "ultrasound@game-icons",
+    "scene": "sonar_boat"
   },
   {
     "id": 7,
     "keyword": "A scuba diver with a flashlight in pitch-black deep water, cone of light beam, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/007.png",
     "source": "game-icons",
     "asset_path": "delapouite/diving-helmet.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 4821,
-    "open_keyword": "diving-helmet@game-icons"
+    "open_keyword": "diving-helmet@game-icons",
+    "scene": "diver_light"
   },
   {
     "id": 8,
     "keyword": "A cartoon shark face close-up with a big round eye and rows of sharp teeth, slightly goofy, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/008.png",
     "source": "game-icons",
     "asset_path": "lorc/shark-jaws.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 955,
-    "open_keyword": "shark-jaws@game-icons"
+    "open_keyword": "shark-jaws@game-icons",
+    "scene": "jaws_closeup"
   },
   {
     "id": 9,
     "keyword": "A small fishing boat on a calm ocean at sunset with a tiny fisherman, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/009.png",
     "source": "game-icons",
     "asset_path": "delapouite/fishing-boat.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 938,
-    "open_keyword": "fishing-boat@game-icons"
+    "open_keyword": "fishing-boat@game-icons",
+    "scene": "sunset_boat"
   },
   {
     "id": 10,
     "keyword": "A huge ocean wave about to crash over a tiny boat in front of it, hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark",
-    "backend": "assets",
+    "backend": "compose",
     "file": "assets/010.png",
     "source": "game-icons",
     "asset_path": "lorc/waves.svg",
     "license": "CC BY 3.0 (some CC0)",
     "bytes": 898,
-    "open_keyword": "wave@game-icons"
+    "open_keyword": "wave@game-icons",
+    "scene": "big_wave"
   }
 ]
