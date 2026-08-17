@@ -1,0 +1,50 @@
+name: open-image-gen
+on:
+  push:
+    branches: [ "arena/01a00ea8-doodle-explainer-video" ]
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate images via Pollinations (open-source FLUX)
+        run: |
+          set -e
+          python3 - <<'PYEOF'
+          import pathlib, urllib.parse, urllib.request, sys
+          root = pathlib.Path("projects")
+          jobs = []
+          for proj in sorted(root.iterdir()):
+              pf = proj / "prompts.txt"
+              if pf.exists():
+                  prompts = [l.strip() for l in pf.read_text().splitlines() if l.strip()]
+                  outdir = proj / "generated"
+                  outdir.mkdir(parents=True, exist_ok=True)
+                  jobs.append((proj.name, prompts, outdir))
+          if not jobs:
+              print("no projects/prompts.txt found"); sys.exit(0)
+          for name, prompts, outdir in jobs:
+              for i, p in enumerate(prompts, 1):
+                  f = outdir / f"{i:03d}.png"
+                  if f.exists():
+                      print(f"skip existing {f}", flush=True); continue
+                  url = ("https://image.pollinations.ai/prompt/" +
+                         urllib.parse.quote(p) +
+                         "?width=1024&height=1024&model=flux&nologo=true"
+                         f"&seed={100+i}&referrer=doodle-explainer-video")
+                  print(f"[{name}] {i}/{len(prompts)} {url[:100]}", flush=True)
+                  req = urllib.request.Request(url, headers={"User-Agent": "doodle-explainer-video/1.0"})
+                  data = urllib.request.urlopen(req, timeout=180).read()
+                  f.write_bytes(data)
+                  print(f"[{name}] ok {i} {len(data)} bytes", flush=True)
+          PYEOF
+      - name: Push images to output branch
+        run: |
+          git config user.name "doodle-open-image-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f projects/*/generated projects/gha-test
+          git commit -m "generated open-source images" || echo "nothing to commit"
+          git push --force origin HEAD:refs/heads/gha-output
+          echo "pushed to gha-output"
