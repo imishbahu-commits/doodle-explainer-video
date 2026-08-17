@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "keyword": "wave@game-icons",
+    "backend": "assets",
+    "file": "assets/001.png",
+    "source": "game-icons",
+    "asset_path": "lorc/waves.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 898
+  },
+  {
+    "id": 2,
+    "keyword": "black-sea@game-icons",
+    "backend": "assets",
+    "file": "assets/002.png",
+    "source": "game-icons",
+    "asset_path": "delapouite/black-sea.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 509
+  },
+  {
+    "id": 3,
+    "keyword": "deep-sea-fish@openclipart",
+    "backend": "assets",
+    "file": "assets/003.png",
+    "source": "openclipart",
+    "asset_path": "svg/animals/fish/TomK32_Deep_sea_fish.svg",
+    "license": "Public domain",
+    "bytes": 8163
+  },
+  {
+    "id": 4,
+    "keyword": "shark-fin@game-icons",
+    "backend": "assets",
+    "file": "assets/004.png",
+    "source": "game-icons",
+    "asset_path": "delapouite/shark-fin.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 1751
+  },
+  {
+    "id": 5,
+    "keyword": "shark-jaws@game-icons",
+    "backend": "assets",
+    "file": "assets/005.png",
+    "source": "game-icons",
+    "asset_path": "lorc/shark-jaws.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 955
+  },
+  {
+    "id": 6,
+    "keyword": "sperm-whale@game-icons",
+    "backend": "assets",
+    "file": "assets/006.png",
+    "source": "game-icons",
+    "asset_path": "delapouite/sperm-whale.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 2424
+  },
+  {
+    "id": 7,
+    "keyword": "whale-tail@game-icons",
+    "backend": "assets",
+    "file": "assets/007.png",
+    "source": "game-icons",
+    "asset_path": "delapouite/whale-tail.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 751
+  },
+  {
+    "id": 8,
+    "keyword": "sound-waves@game-icons",
+    "backend": "assets",
+    "file": "assets/008.png",
+    "source": "game-icons",
+    "asset_path": "skoll/sound-waves.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 704
+  },
+  {
+    "id": 9,
+    "keyword": "ultrasound@game-icons",
+    "backend": "assets",
+    "file": "assets/009.png",
+    "source": "game-icons",
+    "asset_path": "lorc/ultrasound.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 2092
+  },
+  {
+    "id": 10,
+    "keyword": "fishing-boat@game-icons",
+    "backend": "assets",
+    "file": "assets/010.png",
+    "source": "game-icons",
+    "asset_path": "delapouite/fishing-boat.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 938
+  },
+  {
+    "id": 11,
+    "keyword": "shark@openclipart",
+    "backend": "assets",
+    "file": "assets/011.png",
+    "source": "openclipart",
+    "asset_path": "svg/unsorted/sharks.svg",
+    "license": "Public domain",
+    "bytes": 6340
+  },
+  {
+    "id": 12,
+    "keyword": "big-wave@game-icons",
+    "backend": "assets",
+    "file": "assets/012.png",
+    "source": "game-icons",
+    "asset_path": "lorc/big-wave.svg",
+    "license": "CC BY 3.0 (some CC0)",
+    "bytes": 1158
+  }
+]
