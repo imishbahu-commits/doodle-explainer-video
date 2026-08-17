@@ -1,0 +1,18 @@
+# Advanced YouTube SEO helper script dependencies
+# Install only what you need.
+
+# Core (fetch_video.py, fetch_channel.py, audio_loudness.py)
+yt-dlp>=2024.1.1
+
+# Thumbnail CV analysis (analyze_thumbnail.py)
+opencv-python>=4.8.0
+numpy>=1.24.0
+pillow>=10.0.0
+
+# CLIP similarity (optional, for SERP differentiation scoring)
+open_clip_torch>=2.23.0
+torch>=2.0.0
+
+# External binary requirements (install separately):
+#   ffmpeg  — for audio_loudness.py loudnorm pass
+#   yt-dlp  — via pip or brew install yt-dlp
