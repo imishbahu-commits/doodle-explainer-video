@@ -61,7 +61,7 @@ once:
 3b batch   → skills/image-queue (10 ai per turn, "go")     [image-batcher = legacy]
 4 motion   → skills/ae-motion + skills/motion-design       [keyframes, easing]
 4b action  → skills/character-animation-skill              [walk/wave/blink]
-4c props   → skills/asset-library                          [CC0 Kenney fetch]
+4c props   → skills/asset-library                          [11 libs: Kenney, game-icons, fluent-emoji, humaaans…]
 5 edit     → skills/Ultimate-Video-Editing-Skills          [mix, grade, SFX]
 6 gates    → skills/video-polish (audio + pacing reports)  [verify numbers]
 7 SEO      → skills/youtube-seo (title/desc/tags/thumbnail) [upload metadata]

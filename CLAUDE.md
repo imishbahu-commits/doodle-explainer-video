@@ -25,8 +25,9 @@ that can draw them, in this order:
 
 1. `doodle` — `skills/handdrawn-code` draws diagrams, maps, arrows, labels
    from code. FREE, unlimited, local.
-2. `asset` — `skills/asset-library` fetches CC0 Kenney props (coin, sword,
-   key, scroll…). FREE, unlimited, local.
+2. `asset` — `skills/asset-library` fetches single files from 11 cloud
+   libraries (Kenney CC0, game-icons sketchy icons, Fluent emoji, humaaans
+   people, openclipart…). FREE, unlimited, never committed.
 3. `pose` — a character that was already generated is re-posed from its
    rig + pose library (ae-motion). FREE, unlimited, local.
 4. `ai` — ONLY genuinely new subjects (a character's first appearance, a
@@ -123,7 +124,8 @@ templates above instead.
    subjects centered, 60 fps, hand fonts for text.
 4. **Character actions** — a character walking/waving/blinking uses
    `skills/character-animation-skill`. Missing props: `skills/asset-library`
-   (5,000+ CC0 Kenney assets, fetch one file at a time).
+   (11 cloud libraries — Kenney CC0, game-icons, Fluent emoji, humaaans,
+   open-peeps, openclipart — fetch one file at a time, never commit).
 5. **Audio** — voiceover + quiet music bed (−23 dB), 0.7 s pauses between
    chapters. No captions unless asked. Fit beats to the voiceover with
    `script_planner.py fit` (longer voiceover = more beats, more images —

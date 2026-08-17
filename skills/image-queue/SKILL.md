@@ -16,7 +16,7 @@ pictures. The smart answer is a **supply chain**, not a longer queue.
 | # | Source | Cost | What it covers |
 |---|---|---|---|
 | 1 | `doodle` — handdrawn-code engine | FREE, unlimited, local | diagrams, maps, arrows, labels, charts, schematics, "the explanation" beats |
-| 2 | `asset` — asset-library (Kenney 4000+ PNGs, CC0) | FREE, unlimited, local | props, icons, coins, swords, tools, small objects |
+| 2 | `asset` — asset-library (11 cloud libraries: Kenney CC0, game-icons, Fluent emoji, humaaans, open-peeps, openclipart) | FREE, unlimited, fetched one file at a time | props, icons, fish, people, small objects |
 | 3 | `pose` — rig + pose library of an already-generated character | FREE, unlimited, local | the SAME character reacting/pointing/looking — the character is generated ONCE, poses are computed |
 | 4 | `ai` — image generation | 10 per turn, queue resumable | ONLY genuinely new subjects: the character's first appearance, a unique artifact, a location |
 
