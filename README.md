@@ -83,11 +83,13 @@ python3 tools/phone_studio.py 8012        # open the live-preview URL on your ph
 
 - Every pending beat in `projects/<name>/prompts.json` is a card with its
   prompt; generation starts **automatically** (zero taps) and runs through
-  a model picker with smart fallback: **Z-Image Turbo** (top open model
-  2026, Apache-2.0), **Qwen-Image**, **FLUX.2 klein**, Seedream 5,
+  a model picker with smart fallback: **Puter** (free unlimited — GPT
+  Image 2 / Nano Banana Pro / FLUX.2 Pro / Grok Imagine / SD 3.5, one free
+  login), **Z-Image Turbo**, **Qwen-Image**, **FLUX.2 klein**, Seedream 5,
   Nano Banana 2, GPT Image, Ideogram 4.0, Grok Imagine, FLUX.1 — with
   resolution (1024/1536/2048) and style (doodle/illustration/photo)
   selectors. The model used is recorded per beat in `images.json`.
+  See `docs/FREE_IMAGE_SOURCES.md` for the full verified source map.
 - Optional free publishable key (`pk_…` from enter.pollinations.ai, stored
   only in the phone's browser) unlocks premium models.
 - If every model fails, a card opens the image in a new tab —

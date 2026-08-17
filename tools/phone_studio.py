@@ -48,6 +48,7 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Phone studio — batch AI images</title>
+<script src="https://js.puter.com/v2/"></script>
 <style>
   body { margin:0; background:#0d0f1a; color:#eee; font-family:system-ui,sans-serif; }
   header { padding:18px 16px 10px; text-align:center; }
@@ -102,6 +103,12 @@ PAGE = """<!doctype html>
   <label>Model (fallback chain: if it fails, auto-tries the next)</label>
   <select id="modelSel">
     <option value="auto">Auto — best available (Z-Image → Qwen → FLUX.2 klein → FLUX)</option>
+    <option value="puter:auto">🚀 Puter — FREE UNLIMITED, best models (one-time free login)</option>
+    <option value="puter:openai/gpt-image-2">  Puter · GPT Image 2</option>
+    <option value="puter:google/nano-banana-pro">  Puter · Nano Banana Pro (Gemini)</option>
+    <option value="puter:black-forest-labs/flux-2-pro">  Puter · FLUX.2 Pro</option>
+    <option value="puter:xai/grok-imagine-image">  Puter · Grok Imagine</option>
+    <option value="puter:stabilityai/stable-diffusion-3.5">  Puter · Stable Diffusion 3.5</option>
     <option value="zimage">Z-Image Turbo — top open model 2026 (Apache-2.0)</option>
     <option value="qwen-image">Qwen-Image — open (Apache-2.0)</option>
     <option value="klein">FLUX.2 klein — open</option>
@@ -207,6 +214,37 @@ async function fetchImage(id, prompt, model, res, key){
 // ---------------- AUTO-RUN: no taps needed, best model with fallback ----
 let autoRunning = false;
 
+// ---------------- PUTER: free unlimited top-model generation ----------------
+// One-time free sign-in (puter.com popup). No API keys. User-Pays model:
+// the logged-in user's own free Puter account covers the AI cost. Unlimited.
+async function genPuter(cardObj, modelId, fullPrompt, errEl, card){
+  if (!window.puter){
+    errEl.textContent = 'Puter SDK not loaded (js.puter.com blocked?)';
+    return null;
+  }
+  const model = modelId === 'puter:auto' ? undefined : modelId.slice(6);
+  try {
+    const img = await window.puter.ai.txt2img(fullPrompt, {
+      model: model,
+      aspectRatio: '1:1',
+      notifyOnProgress: true
+    });
+    if (!img || !img.src) throw new Error('Puter returned no image');
+    // img.src is a data: URI or blob: URL — fetch it and upload
+    const blob = await fetch(img.src).then(r => r.blob());
+    if (blob.size < 3000) throw new Error('empty image from Puter');
+    const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
+      '&id=' + cardObj.id + '&model=' + encodeURIComponent('puter/' + (model || 'auto')),
+      { method:'POST', body: blob });
+    if (!up.ok) throw new Error('save failed');
+    return model || 'auto';
+  } catch(e){
+    errEl.textContent = 'Puter: ' + e.message + ' — if a login popup appeared, sign in once (free) and retry.';
+    if (card.querySelector('.uploadrow')) card.querySelector('.uploadrow').classList.add('show');
+    return null;
+  }
+}
+
 async function genOne(cardObj, forceModel){
   // cardObj: {id, prompt} — returns {ok, model}
   const card = [...document.querySelectorAll('.card')].find(
@@ -220,7 +258,19 @@ async function genOne(cardObj, forceModel){
   const key = document.getElementById('keyIn').value.trim();
   const res0 = parseInt(document.getElementById('resSel').value, 10) || 1536;
 
-  const chain = forceModel ? [forceModel] : chainFor(document.getElementById('modelSel').value);
+  const sel = forceModel || document.getElementById('modelSel').value;
+  if (sel.startsWith('puter')){
+    const res = await genPuter(cardObj, sel, fullPrompt, err, card);
+    if (res){
+      const c = CARDS.find(c => c.id === cardObj.id); c.done = true; c.model = 'puter/' + res;
+      err.textContent = '';
+      render();
+      return { ok:true, model:'puter/' + res };
+    }
+    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry (sign in to Puter first)'; }
+    return { ok:false, model:null };
+  }
+  const chain = [sel].concat(chainFor('auto')).filter((m,i,a) => a.indexOf(m) === i);
   let lastErr = 'no models tried';
   for (const model of chain){
     for (const res of [res0, 1024]){   // on failure, drop resolution
