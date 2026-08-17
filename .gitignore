@@ -6,3 +6,6 @@
 __pycache__/
 build/
 image-search/
+
+# OpenMontage preview demos (not committed per user request)
+projects/openmontage-demo/
