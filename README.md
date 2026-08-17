@@ -74,17 +74,23 @@ the only motion in the frame.
 ## Mobile AI image generation (phone studio)
 
 When the workspace cannot reach image APIs (firewalled sandbox, no GPU),
-your **phone becomes the image generator**: Pollinations serves the
-open-source **FLUX** model to any browser, free and unlimited.
+your **phone becomes the image generator**: Pollinations serves top
+open-source models to any browser, free and unlimited.
 
 ```bash
 python3 tools/phone_studio.py 8012        # open the live-preview URL on your phone
 ```
 
 - Every pending beat in `projects/<name>/prompts.json` is a card with its
-  prompt; **one tap** generates the image on Pollinations and uploads it
-  straight into `projects/<name>/assets/NNN.png` + `images.json`.
-- If the direct fetch fails, the tap opens the image in a new tab —
+  prompt; generation starts **automatically** (zero taps) and runs through
+  a model picker with smart fallback: **Z-Image Turbo** (top open model
+  2026, Apache-2.0), **Qwen-Image**, **FLUX.2 klein**, Seedream 5,
+  Nano Banana 2, GPT Image, Ideogram 4.0, Grok Imagine, FLUX.1 — with
+  resolution (1024/1536/2048) and style (doodle/illustration/photo)
+  selectors. The model used is recorded per beat in `images.json`.
+- Optional free publishable key (`pk_…` from enter.pollinations.ai, stored
+  only in the phone's browser) unlocks premium models.
+- If every model fails, a card opens the image in a new tab —
   long-press → Save image → Upload (lands on the correct beat).
 - The same tool does chunked uploads of videos/audio for assembly.
 

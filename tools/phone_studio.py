@@ -3,22 +3,24 @@
 
 WHY THIS EXISTS
   This sandbox's firewall only allows PyPI / GitHub / npm — it cannot reach
-  image.pollinations.ai or huggingface.co. But YOUR PHONE has normal
-  internet. So this server turns your phone into the image generator:
+  image APIs. But YOUR PHONE has normal internet. So this server turns your
+  phone into the image generator:
 
     1. open the live-preview URL on your phone
-    2. every pending video beat is a card with its FLUX prompt
-    3. ONE TAP per image: the phone's browser asks Pollinations (open-source
-       FLUX model, unlimited + free) to draw it, then uploads the PNG
-       straight into projects/<name>/assets/NNN.png + images.json
-    4. if the direct fetch fails, the tap opens the image in a new tab:
-       long-press -> Save image -> tap Upload (it lands on the right beat)
+    2. every pending video beat is a card with its prompt
+    3. generation starts AUTOMATICALLY (zero taps) and runs through the
+       best available model — the page picks from Pollinations' catalogue
+       (Z-Image Turbo, Qwen-Image, FLUX.2 klein, Seedream 5, Nano Banana 2,
+       GPT Image, Ideogram 4.0, Grok Imagine, FLUX.1) with a smart
+       fallback chain, then uploads each PNG into projects/<name>/assets/
+       + images.json (model used is recorded per beat)
+    4. if every model fails, the card offers a retry + manual Upload
 
 Routes
   GET  /                          project picker
   GET  /studio?project=NAME       tap-to-generate cards
   GET  /img?project=NAME&id=N     show a generated image
-  POST /save?project=NAME&id=N    raw image body -> beat N
+  POST /save?project=NAME&id=N&model=M    raw image body -> beat N
   POST /chunk + /done             chunked upload (+ ?project=&id= target)
   POST /refresh?project=NAME      re-scan images.json
 
@@ -40,10 +42,6 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8012
 MAX_CHUNK = 2 * 1024 * 1024
 MAX_TOTAL = 400 * 1024 * 1024
 
-STYLE_LOCK = ("thick black outlines, flat bold colors, slightly imperfect "
-              "hand-drawn lines, pure white background, no text, no "
-              "watermark")
-
 PAGE = """<!doctype html>
 <html lang="en">
 <head>
@@ -58,10 +56,23 @@ PAGE = """<!doctype html>
   #bar { width:82%; height:10px; background:#161a2b; border-radius:6px;
          margin:8px auto 0; overflow:hidden; }
   #fill { height:100%; width:0%; background:#7ee08a; transition:width .3s; }
+  .ctrls { max-width:520px; margin:12px auto 0; text-align:left;
+           background:#131727; border:1px solid #2a3045; border-radius:12px;
+           padding:12px 14px; font-size:13px; }
+  .ctrls label { display:block; margin:8px 0 3px; color:#9aa; }
+  .ctrls select, .ctrls input { width:100%; padding:9px; border-radius:8px;
+    border:1px solid #2a3045; background:#161a2b; color:#eee; font-size:14px; }
+  button.regen { width:82%; padding:12px; border:0; border-radius:10px;
+    background:#b06cf5; color:#fff; font-weight:700; font-size:14px;
+    margin-top:10px; }
+  button.start { width:82%; padding:12px; border:0; border-radius:10px;
+    background:#7ee08a; color:#000; font-weight:700; font-size:14px;
+    margin-top:10px; }
   .card { margin:12px 14px; background:#161a2b; border:1px solid #2a3045;
           border-radius:14px; padding:14px; }
   .card.done { border-color:#2f6b3f; background:#12241a; }
   .beat { color:#778; font-size:12px; letter-spacing:.5px; }
+  .modelused { color:#b06cf5; font-size:11px; margin-top:4px; }
   .prompt { font-size:14px; line-height:1.45; margin:8px 0 12px; color:#dde; }
   button.gen { width:100%; padding:14px; border:0; border-radius:12px;
     background:#7ee08a; color:#000; font-weight:700; font-size:16px; }
@@ -73,12 +84,10 @@ PAGE = """<!doctype html>
   input[type=file] { width:100%; margin-bottom:8px; }
   button.upload { width:100%; padding:12px; border:0; border-radius:10px;
     background:#f5c63c; color:#000; font-weight:700; font-size:15px; }
-  button.regen { width:82%; padding:12px; border:0; border-radius:10px;
-    background:#b06cf5; color:#fff; font-weight:700; font-size:14px;
-    margin-top:10px; }
   .note { font-size:12px; color:#778; text-align:center; margin:18px 14px 30px;
     line-height:1.6; }
-  #status { font-size:13px; color:#f5c63c; text-align:center; min-height:18px; }
+  #status { font-size:13px; color:#f5c63c; text-align:center; min-height:18px;
+    margin-top:8px; }
 </style>
 </head>
 <body>
@@ -86,113 +95,160 @@ PAGE = """<!doctype html>
   <h1>🎨 Batch AI images — {{PROJECT}}</h1>
   <div id="prog">0 / 0</div>
   <div id="bar"><div id="fill"></div></div>
-  <button class="start" id="startbtn" style="display:none">▶ Start now</button>
-  <button class="regen" id="regenbtn">✨ Generate ALL with FLUX (overwrite, high-res)</button>
+  <button class="regen" id="regenbtn">✨ Generate ALL with best model (overwrite)</button>
 </header>
 <div id="status"></div>
+<div class="ctrls">
+  <label>Model (fallback chain: if it fails, auto-tries the next)</label>
+  <select id="modelSel">
+    <option value="auto">Auto — best available (Z-Image → Qwen → FLUX.2 klein → FLUX)</option>
+    <option value="zimage">Z-Image Turbo — top open model 2026 (Apache-2.0)</option>
+    <option value="qwen-image">Qwen-Image — open (Apache-2.0)</option>
+    <option value="klein">FLUX.2 klein — open</option>
+    <option value="seedream5">Seedream 5 — premium</option>
+    <option value="nanobanana-2">Nano Banana 2 (Gemini) — premium</option>
+    <option value="ideogram-v4-quality">Ideogram 4.0 Quality — premium</option>
+    <option value="gptimage-large">GPT Image — premium</option>
+    <option value="grok-imagine-pro">Grok Imagine — premium</option>
+    <option value="flux">FLUX.1 — free fallback</option>
+  </select>
+  <label>Resolution</label>
+  <select id="resSel">
+    <option value="1024">1024 × 1024 (fast)</option>
+    <option value="1536" selected>1536 × 1536 (high)</option>
+    <option value="2048">2048 × 2048 (ultra — slower)</option>
+  </select>
+  <label>Style</label>
+  <select id="styleSel">
+    <option value="doodle" selected>Doodle — video format (thick black outlines, flat colors)</option>
+    <option value="rich">Premium illustration — rich detail, cinematic lighting</option>
+    <option value="photo">Photorealistic</option>
+  </select>
+  <label>Pollinations key (optional — free publishable pk_ key from
+  enter.pollinations.ai; unlocks premium models. Stored only in this browser.)</label>
+  <input id="keyIn" type="text" placeholder="pk_…">
+</div>
 <div id="cards"></div>
-<div class="note">Generation starts <b>automatically ~3 s after this page opens</b>
-— no taps needed. Every image is drawn by the open-source <b>FLUX</b> model on
-Pollinations (free, unlimited) and saved straight into the project. Keep this
-tab open; if a card fails, tap <b>Retry</b> on it (or use its Upload button
-with a saved image).</div>
+<div class="note">Generation starts <b>automatically ~2 s after this page opens</b>
+— no taps needed. Each image is drawn by the chosen model on Pollinations
+(free for open models), then saved straight into the project. Keep this tab
+open; if a card fails on every model, tap <b>Retry</b> or use its Upload
+button with a saved image.</div>
 
 <script>
 const PROJECT = {{PROJECT_JSON}};
 const CARDS = {{CARDS_JSON}};
 
+const MODEL_IDS = ['zimage','qwen-image','klein','seedream5','nanobanana-2',
+  'ideogram-v4-quality','gptimage-large','grok-imagine-pro','flux'];
+const AUTO_CHAIN = ['zimage','qwen-image','klein','flux'];
+
 function el(tag, cls, html){ const e=document.createElement(tag);
   if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
 
-function pollinationsUrl(id, prompt){
-  const seed = id * 13 + 7;
-  return 'https://image.pollinations.ai/prompt/' + encodeURIComponent(prompt) +
-         '?width=1024&height=1024&model=flux&nologo=true&enhance=true&seed=' + seed +
-         '&referrer=doodle-explainer-video';
-}
-
-function render(){
-  const wrap = document.getElementById('cards');
-  wrap.innerHTML = '';
-  let done = 0;
-  CARDS.forEach(c => {
-    const card = el('div', 'card' + (c.done ? ' done' : ''));
-    card.appendChild(el('div','beat','BEAT ' + c.id));
-    card.appendChild(el('div','prompt', c.prompt));
-    if (c.done){
-      card.appendChild(el('div','ok','✓ done — assets/' + pad(c.id) + '.png'));
-      card.appendChild(el('img','',null) ); // placeholder replaced below
-      const im = card.querySelector('img');
-      im.src = '/img?project=' + encodeURIComponent(PROJECT) + '&id=' + c.id;
-      im.style.cssText = 'width:100%;border-radius:8px;margin-top:8px;';
-      done++;
-    } else {
-      const b = el('button','gen','⚡ Generate image');
-      b.onclick = () => gen(c.id);
-      card.appendChild(b);
-      card.appendChild(el('div','err',''));
-      const row = el('div','uploadrow');
-      row.innerHTML = '<input type="file" accept="image/*"><button class="upload">⬆ Upload saved image</button>';
-      const inp = row.querySelector('input');
-      row.querySelector('button').onclick = () => uploadFile(inp, c.id, card);
-      card.appendChild(row);
-    }
-    wrap.appendChild(card);
-  });
-  document.getElementById('prog').textContent = done + ' / ' + CARDS.length;
-  document.getElementById('fill').style.width = (done / CARDS.length * 100) + '%';
-}
-
 function pad(n){ return String(n).padStart(3,'0'); }
-
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-// ---------------- AUTO-RUN: no taps needed, generates every pending beat ----
-let autoRunning = false;
+// --------------- settings (persisted in this browser only) ---------------
+function saveSettings(){
+  localStorage.setItem('ps_model', document.getElementById('modelSel').value);
+  localStorage.setItem('ps_res', document.getElementById('resSel').value);
+  localStorage.setItem('ps_style', document.getElementById('styleSel').value);
+  localStorage.setItem('ps_key', document.getElementById('keyIn').value.trim());
+}
+function loadSettings(){
+  const g = (id, def) => { const v = localStorage.getItem(id); return v || def; };
+  document.getElementById('modelSel').value = g('ps_model','auto');
+  document.getElementById('resSel').value = g('ps_res','1536');
+  document.getElementById('styleSel').value = g('ps_style','doodle');
+  document.getElementById('keyIn').value = g('ps_key','');
+}
+['modelSel','resSel','styleSel','keyIn'].forEach(id =>
+  document.getElementById(id).addEventListener('change', saveSettings));
 
-async function genAuto(cardObj){
-  // cardObj: {id, prompt} — generate + save, no tab fallback in auto mode
-  const card = [...document.querySelectorAll('.card')].find(
-      c => c.querySelector('.beat').textContent === 'BEAT ' + cardObj.id);
-  const btn = card.querySelector('button.gen');
-  const err = card.querySelector('.err');
-  if (btn){ btn.disabled = true; btn.textContent = '⏳…'; }
-  err.textContent = 'generating…';
-  const url = pollinationsUrl(cardObj.id, cardObj.prompt);
-  let ok = false;
-  for (let attempt = 1; attempt <= 3; attempt++){
+const STYLE_SUFFIX = {
+  doodle: ', hand-drawn doodle style: thick black outlines, flat bold colors, slightly imperfect hand-drawn lines, pure white background, no text, no watermark',
+  rich: ', rich detailed illustration, crisp clean linework, vibrant colors, soft shading, cinematic lighting, clean composition, pure white background, no text, no watermark',
+  photo: ', professional photorealistic render, dramatic natural lighting, sharp focus, high detail, clean studio background, no text, no watermark'
+};
+
+function chainFor(sel){
+  if (sel === 'auto') return AUTO_CHAIN.slice();
+  if (MODEL_IDS.includes(sel)){
+    const i = MODEL_IDS.indexOf(sel);
+    return MODEL_IDS.slice(i).concat(AUTO_CHAIN.filter(m => !MODEL_IDS.includes(m)));
+  }
+  return AUTO_CHAIN.slice();
+}
+
+async function fetchImage(id, prompt, model, res, key){
+  // returns blob; throws on failure
+  const seed = id * 13 + 7;
+  const qs = 'model=' + model + '&width=' + res + '&height=' + res +
+    '&nologo=true&seed=' + seed +
+    ((model.startsWith('gpt') || model.indexOf('grok') === 0) ? '&quality=hd' : '') +
+    (key ? '&key=' + encodeURIComponent(key) : '');
+  let lastErr = null;
+  for (const host of ['gen.pollinations.ai/image/',
+                      'image.pollinations.ai/prompt/']){
+    const url = 'https://' + host + encodeURIComponent(prompt) +
+                (host.startsWith('gen') ? '?' : '?enhance=true&') + qs;
     try {
       const r = await fetch(url);
       if (!r.ok) throw new Error('HTTP ' + r.status);
       const blob = await r.blob();
       if (blob.size < 3000) throw new Error('empty image');
-      const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
-                             '&id=' + cardObj.id, { method:'POST', body: blob });
-      if (!up.ok) throw new Error('save failed');
-      ok = true;
-      break;
-    } catch(e){
-      err.textContent = 'attempt ' + attempt + '/' + 3 + ' — ' + e.message;
-      if (attempt < 3) await sleep(4000);
+      return blob;
+    } catch(e){ lastErr = e; }
+  }
+  throw lastErr || new Error('network failed');
+}
+
+// ---------------- AUTO-RUN: no taps needed, best model with fallback ----
+let autoRunning = false;
+
+async function genOne(cardObj, forceModel){
+  // cardObj: {id, prompt} — returns {ok, model}
+  const card = [...document.querySelectorAll('.card')].find(
+      c => c.querySelector('.beat').textContent === 'BEAT ' + cardObj.id);
+  const btn = card.querySelector('button.gen');
+  const err = card.querySelector('.err');
+  if (btn){ btn.disabled = true; btn.textContent = '⏳…'; }
+  err.textContent = '';
+  const style = document.getElementById('styleSel').value;
+  const fullPrompt = cardObj.prompt + STYLE_SUFFIX[style] || cardObj.prompt;
+  const key = document.getElementById('keyIn').value.trim();
+  const res0 = parseInt(document.getElementById('resSel').value, 10) || 1536;
+
+  const chain = forceModel ? [forceModel] : chainFor(document.getElementById('modelSel').value);
+  let lastErr = 'no models tried';
+  for (const model of chain){
+    for (const res of [res0, 1024]){   // on failure, drop resolution
+      err.textContent = 'trying ' + model + ' @ ' + res + '…';
+      try {
+        const blob = await fetchImage(cardObj.id, fullPrompt, model, res, key);
+        const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
+          '&id=' + cardObj.id + '&model=' + encodeURIComponent(model),
+          { method:'POST', body: blob });
+        if (!up.ok) throw new Error('save failed');
+        const c = CARDS.find(c => c.id === cardObj.id); c.done = true;
+        c.model = model;
+        err.textContent = '';
+        render();
+        return { ok:true, model };
+      } catch(e){ lastErr = model + '@' + res + ': ' + e.message; }
     }
   }
-  if (ok){
-    const c = CARDS.find(c => c.id === cardObj.id); c.done = true;
-    err.textContent = '';
-    render();
-  } else {
-    err.textContent = '❌ failed after 3 tries — tap the card to retry, or use Upload.';
-    if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
-    card.querySelector('.uploadrow').classList.add('show');
-  }
-  const left = CARDS.filter(c => !c.done).length;
-  document.getElementById('status').textContent =
-      left ? '⏳ auto-run… ' + left + ' image(s) left' : '✅ BATCH COMPLETE — all images saved!';
+  err.textContent = '❌ all models failed (' + lastErr.slice(-140) + ') — tap Retry or Upload.';
+  if (btn){ btn.disabled = false; btn.textContent = '🔄 Retry'; }
+  card.querySelector('.uploadrow').classList.add('show');
+  return { ok:false, model:null };
 }
 
 async function autoRunAll(){
   if (autoRunning) return;
   autoRunning = true;
+  saveSettings();
   if (navigator.wakeLock){
     try { await navigator.wakeLock.request('screen'); } catch(e){}
   }
@@ -208,67 +264,67 @@ async function autoRunAll(){
     while (true){
       const next = idx++;
       if (next >= pending.length) return;
-      await genAuto(pending[next]);
+      await genOne(pending[next], null);
     }
   }
   await Promise.all([worker(), worker()]);
   autoRunning = false;
+  const left = CARDS.filter(c => !c.done).length;
+  document.getElementById('status').textContent =
+      left ? '⏸ ' + left + ' failed — tap Retry on those cards.' :
+             '✅ BATCH COMPLETE — all images saved with best available models!';
 }
 
 // auto-start shortly after the page loads
 setTimeout(() => {
+  loadSettings();
   if (!autoRunning && CARDS.some(c => !c.done)){
     const sb = document.getElementById('startbtn');
     if (sb){ sb.style.display = 'block';
       sb.onclick = () => { sb.style.display = 'none'; autoRunAll(); }; }
-    setTimeout(() => { if (!autoRunning) autoRunAll(); }, 2500);
+    setTimeout(() => { if (!autoRunning) autoRunAll(); }, 2000);
   }
-}, 1500);
+}, 1200);
 
-// regenerate EVERYTHING with FLUX (overwrite existing, high-res)
 document.getElementById('regenbtn').onclick = () => {
-  if (!confirm('Generate ALL ' + CARDS.length + ' images with FLUX? ' +
-               'This overwrites the current images (2-3 min).')) return;
+  if (!confirm('Generate ALL ' + CARDS.length + ' images with the chosen model? ' +
+               'This overwrites the current images (2-5 min).')) return;
   CARDS.forEach(c => { c.done = false; });
   render();
   autoRunAll();
 };
 
-async function gen(id){
-  const card = [...document.querySelectorAll('.card')].find(
-      c => c.querySelector('.beat').textContent === 'BEAT ' + id);
-  const btn = card.querySelector('button.gen');
-  const err = card.querySelector('.err');
-  btn.disabled = true; btn.textContent = '⏳ Drawing… (10-30 s)';
-  err.textContent = '';
-  const p = CARDS.find(c => c.id === id).prompt;
-  const url = pollinationsUrl(id, p);
-  for (let attempt = 1; attempt <= 3; attempt++){
-    try {
-      const r = await fetch(url);
-      if (!r.ok) throw new Error('Pollinations HTTP ' + r.status);
-      const blob = await r.blob();
-      if (blob.size < 3000) throw new Error('empty image returned');
-      const up = await fetch('/save?project=' + encodeURIComponent(PROJECT) +
-                             '&id=' + id, { method:'POST', body: blob });
-      if (!up.ok) throw new Error('upload to workspace failed');
-      const c = CARDS.find(c => c.id === id); c.done = true;
-      render();
-      document.getElementById('status').textContent =
-          '✅ Beat ' + id + ' generated & saved. ' +
-          (CARDS.filter(c=>!c.done).length) + ' left.';
-      return;
-    } catch(e){
-      err.textContent = 'attempt ' + attempt + ': ' + e.message;
-      if (attempt === 3){
-        window.open(url, '_blank');
-        err.textContent = '📱 Opened in a new tab — long-press → Save image → ' +
-                          'tap Upload below.';
-        card.querySelector('.uploadrow').classList.add('show');
-        btn.disabled = false; btn.textContent = '🔄 Try again';
-      } else { await sleep(4000); }
+function render(){
+  const wrap = document.getElementById('cards');
+  wrap.innerHTML = '';
+  let done = 0;
+  CARDS.forEach(c => {
+    const card = el('div', 'card' + (c.done ? ' done' : ''));
+    card.appendChild(el('div','beat','BEAT ' + c.id));
+    card.appendChild(el('div','prompt', c.prompt));
+    if (c.done){
+      card.appendChild(el('div','ok','✓ done — assets/' + pad(c.id) + '.png'));
+      if (c.model) card.appendChild(el('div','modelused','model: ' + c.model));
+      const im = el('img');
+      im.src = '/img?project=' + encodeURIComponent(PROJECT) + '&id=' + c.id;
+      im.style.cssText = 'width:100%;border-radius:8px;margin-top:8px;';
+      card.appendChild(im);
+      done++;
+    } else {
+      const b = el('button','gen','⚡ Generate image');
+      b.onclick = () => { genOne(c, document.getElementById('modelSel').value); };
+      card.appendChild(b);
+      card.appendChild(el('div','err',''));
+      const row = el('div','uploadrow');
+      row.innerHTML = '<input type="file" accept="image/*"><button class="upload">⬆ Upload saved image</button>';
+      const inp = row.querySelector('input');
+      row.querySelector('button').onclick = () => uploadFile(inp, c.id, card);
+      card.appendChild(row);
     }
-  }
+    wrap.appendChild(card);
+  });
+  document.getElementById('prog').textContent = done + ' / ' + CARDS.length;
+  document.getElementById('fill').style.width = (done / CARDS.length * 100) + '%';
 }
 
 async function uploadFile(inp, id, card){
@@ -288,7 +344,7 @@ async function uploadFile(inp, id, card){
     const d = await fetch('/done?name=' + encodeURIComponent(name) + '&total=' + total +
       '&project=' + encodeURIComponent(PROJECT) + '&id=' + id, { method:'POST' });
     if (!d.ok) throw new Error('assembly failed');
-    const c = CARDS.find(c => c.id === id); c.done = true;
+    const c = CARDS.find(c => c.id === id); c.done = true; c.model = 'upload';
     render();
   } catch(e){ err.textContent = '❌ ' + e.message; }
 }
@@ -328,7 +384,7 @@ def images_json(name):
     return json.loads((d / "images.json").read_text()) if (d / "images.json").exists() else []
 
 
-def save_beat(project, bid, data):
+def save_beat(project, bid, data, model="zimage"):
     d = PROJECTS / safe_name(project)
     (d / "assets").mkdir(parents=True, exist_ok=True)
     out = d / "assets" / f"{int(bid):03d}.png"
@@ -339,8 +395,7 @@ def save_beat(project, bid, data):
     kw = next((x["keyword"] for x in p if x["id"] == int(bid)), "")
     images.append({"id": int(bid), "keyword": kw, "backend": "pollinations",
                    "file": f"assets/{out.name}", "source": "pollinations",
-                   "model": "flux",
-                   "license": "Pollinations API (open-source FLUX model)",
+                   "model": model, "license": "Pollinations API (open-source models)",
                    "bytes": len(data)})
     images.sort(key=lambda x: x["id"])
     (d / "images.json").write_text(json.dumps(images, indent=2))
@@ -354,9 +409,8 @@ def write_credits(d, images):
         return
     lines = ["# CREDITS — open-source artwork used by this project", ""]
     for im in sorted(used, key=lambda x: x["id"]):
-        lines.append(f"- `{im['file']}` — **{im['keyword']}** — generated via "
-                     f"Pollinations ({im.get('model','flux')}, open-source) — "
-                     f"{im['license']}")
+        lines.append(f"- `{im['file']}` — **{im['keyword'][:60]}** — generated via "
+                     f"Pollinations ({im.get('model', 'zimage')}) — {im['license']}")
     (d / "CREDITS.md").write_text("\n".join(lines) + "\n")
 
 
@@ -437,8 +491,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
             if path == "/save":
                 length = int(self.headers.get("Content-Length", 0))
                 data = self._read(length)
-                out = save_beat(q.get("project", ""), int(q.get("id", 0)), data)
-                print(f"SAVE beat {q.get('id')} -> {out} ({len(data)} B)", flush=True)
+                model = q.get("model", "zimage")[:40]
+                out = save_beat(q.get("project", ""), int(q.get("id", 0)),
+                                data, model)
+                print(f"SAVE beat {q.get('id')} [{model}] -> {out} ({len(data)} B)",
+                      flush=True)
                 self._send(200, "ok")
             elif path == "/chunk":
                 self._chunk(q)
