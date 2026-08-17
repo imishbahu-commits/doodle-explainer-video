@@ -71,6 +71,23 @@ the only motion in the frame.
 - `ffmpeg` and `ffprobe` on PATH
 - Python 3 with Pillow
 
+## Mobile AI image generation (phone studio)
+
+When the workspace cannot reach image APIs (firewalled sandbox, no GPU),
+your **phone becomes the image generator**: Pollinations serves the
+open-source **FLUX** model to any browser, free and unlimited.
+
+```bash
+python3 tools/phone_studio.py 8012        # open the live-preview URL on your phone
+```
+
+- Every pending beat in `projects/<name>/prompts.json` is a card with its
+  prompt; **one tap** generates the image on Pollinations and uploads it
+  straight into `projects/<name>/assets/NNN.png` + `images.json`.
+- If the direct fetch fails, the tap opens the image in a new tab —
+  long-press → Save image → Upload (lands on the correct beat).
+- The same tool does chunked uploads of videos/audio for assembly.
+
 ## Legacy production mode (three-band vertical)
 
 The single 720×1280 static three-band vertical format documented below.
