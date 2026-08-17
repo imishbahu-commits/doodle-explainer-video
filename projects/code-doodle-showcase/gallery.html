@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code-drawn doodles — showcase</title>
+<style>
+  :root { --ink:#16161a; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:32px 20px 64px;
+    background:#EDEDF0; color:var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header { max-width:1180px; margin:0 auto 28px; }
+  h1 { font-size:28px; margin:0 0 8px; letter-spacing:-.02em; }
+  p.sub { margin:0; color:#55555f; font-size:15px; line-height:1.5; }
+  code { background:#dcdce2; padding:1px 6px; border-radius:4px; font-size:13px; }
+  .grid {
+    max-width:1180px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(430px,1fr)); gap:22px;
+  }
+  figure {
+    margin:0; background:#fff; border-radius:12px; overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.14), 0 8px 24px rgba(0,0,0,.06);
+  }
+  figure img { display:block; width:100%; height:auto; }
+  figcaption {
+    padding:11px 15px; font-size:13px; display:flex;
+    justify-content:space-between; gap:12px; border-top:1px solid #ebebf0;
+  }
+  figcaption b { font-weight:600; }
+  figcaption span { color:#7a7a86; }
+  figcaption a { color:#3F81B2; text-decoration:none; }
+  figcaption a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ten doodles drawn entirely by code</h1>
+  <p class="sub">
+    No image model, no API key, offline. Scenes render through
+    <code>rough.js</code> + handwriting fonts; charts through matplotlib xkcd mode.
+    Every tile below is a real file in <code>projects/code-doodle-showcase/out/</code> —
+    each has a 2752&times;1536 PNG and an editable SVG. Rebuild them all in ~3s with
+    <code>bash projects/code-doodle-showcase/render.sh</code>.
+  </p>
+</header>
+<div class="grid" id="grid"></div>
+<script>
+const items = [
+  ["01-cast",           "three characters — poses, emotions, hair, outfits"],
+  ["02-mechanism",      "box + arrow chain, hachure fills"],
+  ["03-cat",            "a creature from circles, triangles and lines"],
+  ["04-compare",        "two-column check / cross comparison"],
+  ["05-giant",          "giant numeral on a flat colour field"],
+  ["06-background-day", "empty-middle daytime background"],
+  ["07-night",          "night palette, stars, moon, speech bubble"],
+  ["08-measure",        "scale comparison with measure arrow"],
+  ["09-sightings",      "hand-inked bar chart"],
+  ["10-retellings",     "hand-inked line chart"],
+];
+document.getElementById("grid").innerHTML = items.map(([n, d]) => `
+  <figure>
+    <img src="out/${n}.png" alt="${d}" loading="lazy">
+    <figcaption>
+      <b>${n}</b>
+      <span>${d} &middot; <a href="out/${n}.svg" target="_blank">svg</a></span>
+    </figcaption>
+  </figure>`).join("");
+</script>
+</body>
+</html>
