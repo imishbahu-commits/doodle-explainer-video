@@ -1,0 +1,354 @@
+{
+  "count": 10,
+  "totalPngKB": 2183,
+  "items": [
+    {
+      "name": "01-cast",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "Three characters \u2014 poses, emotions, hair and outfits from the ink character system.",
+      "spec": "scenes/01-cast.json",
+      "png": "images/01-cast.png",
+      "svg": "images/01-cast.svg",
+      "thumb": "thumbs/01-cast.png",
+      "pngKB": 193,
+      "svgKB": 151,
+      "bg": "#FFFFFF",
+      "title": "DRAWN ENTIRELY BY CODE",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#FFFFFF\",\n  \"seed\": 101,\n  \"ink\": 1.5,\n  \"title\": \"DRAWN ENTIRELY BY CODE\",\n  \"elements\": [\n    {\n      \"type\": \"person\",\n      \"x\": 300,\n      \"y\": 700,\n      \"scale\": 0.82,\n      \"pose\": \"wave\",\n      \"emotion\": \"happy\",\n      \"hair\": \"messy\",\n      \"hairColor\": \"black\",\n      \"cloth\": \"hoodie\",\n      \"outfit\": \"orange\",\n      \"outfit2\": \"navy\",\n      \"skin\": \"tan\"\n    },\n    {\n      \"type\": \"person\",\n      \"x\": 690,\n      \"y\": 700,\n      \"scale\": 0.82,\n      \"pose\": \"think\",\n      \"emotion\": \"worried\",\n      \"hair\": \"bun\",\n      \"hairColor\": \"auburn\",\n      \"cloth\": \"sweater\",\n      \"outfit\": \"purple\",\n      \"outfit2\": \"grey\",\n      \"skin\": \"light\"\n    },\n    {\n      \"type\": \"person\",\n      \"x\": 1080,\n      \"y\": 700,\n      \"scale\": 0.82,\n      \"pose\": \"point\",\n      \"emotion\": \"laugh\",\n      \"hair\": \"short\",\n      \"hairColor\": \"brown\",\n      \"cloth\": \"shirt\",\n      \"outfit\": \"green\",\n      \"outfit2\": \"blue\",\n      \"skin\": \"brown\",\n      \"flip\": true\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 300,\n      \"y\": 742,\n      \"text\": \"no image model\",\n      \"size\": 36,\n      \"font\": \"patrick\",\n      \"color\": \"#4a4a55\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 690,\n      \"y\": 742,\n      \"text\": \"no API key\",\n      \"size\": 36,\n      \"font\": \"patrick\",\n      \"color\": \"#4a4a55\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1080,\n      \"y\": 742,\n      \"text\": \"just rough.js\",\n      \"size\": 36,\n      \"font\": \"patrick\",\n      \"color\": \"#4a4a55\"\n    }\n  ]\n}",
+      "seed": 101,
+      "elementCount": 6,
+      "elements": [
+        {
+          "type": "person",
+          "n": 3
+        },
+        {
+          "type": "label",
+          "n": 3
+        }
+      ],
+      "thumbKB": 87
+    },
+    {
+      "name": "02-mechanism",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "A box-and-arrow chain with hachure fills: the mechanism grammar.",
+      "spec": "scenes/02-mechanism.json",
+      "png": "images/02-mechanism.png",
+      "svg": "images/02-mechanism.svg",
+      "thumb": "thumbs/02-mechanism.png",
+      "pngKB": 296,
+      "svgKB": 33,
+      "bg": "#FFFFFF",
+      "title": "HOW A RUMOUR SPREADS",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#FFFFFF\",\n  \"seed\": 202,\n  \"ink\": 1.3,\n  \"title\": \"HOW A RUMOUR SPREADS\",\n  \"elements\": [\n    {\n      \"type\": \"box\",\n      \"x\": 250,\n      \"y\": 400,\n      \"w\": 300,\n      \"h\": 210,\n      \"label\": \"ONE\",\n      \"sub\": \"says a thing\",\n      \"fill\": \"#FFE0AC\",\n      \"fillStyle\": \"hachure\",\n      \"labelSize\": 62\n    },\n    {\n      \"type\": \"box\",\n      \"x\": 688,\n      \"y\": 400,\n      \"w\": 300,\n      \"h\": 210,\n      \"label\": \"TEN\",\n      \"sub\": \"repeat it\",\n      \"fill\": \"#BEE3F2\",\n      \"fillStyle\": \"hachure\",\n      \"labelSize\": 62\n    },\n    {\n      \"type\": \"box\",\n      \"x\": 1126,\n      \"y\": 400,\n      \"w\": 300,\n      \"h\": 210,\n      \"label\": \"A TOWN\",\n      \"sub\": \"believes it\",\n      \"fill\": \"#CFE8C0\",\n      \"fillStyle\": \"hachure\",\n      \"labelSize\": 56\n    },\n    {\n      \"type\": \"arrow\",\n      \"x1\": 408,\n      \"y1\": 400,\n      \"x2\": 530,\n      \"y2\": 400,\n      \"label\": \"retold\"\n    },\n    {\n      \"type\": \"arrow\",\n      \"x1\": 846,\n      \"y1\": 400,\n      \"x2\": 968,\n      \"y2\": 400,\n      \"label\": \"sworn to\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 688,\n      \"y\": 620,\n      \"text\": \"nobody checked the original\",\n      \"size\": 46,\n      \"font\": \"caveat\",\n      \"color\": \"#4a4a55\"\n    },\n    {\n      \"type\": \"xmark\",\n      \"x\": 688,\n      \"y\": 690,\n      \"s\": 1.1\n    }\n  ]\n}",
+      "seed": 202,
+      "elementCount": 7,
+      "elements": [
+        {
+          "type": "box",
+          "n": 3
+        },
+        {
+          "type": "arrow",
+          "n": 2
+        },
+        {
+          "type": "label",
+          "n": 1
+        },
+        {
+          "type": "xmark",
+          "n": 1
+        }
+      ],
+      "thumbKB": 127
+    },
+    {
+      "name": "03-cat",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "A whole creature built only from circles, triangles and lines, plus a thought bubble.",
+      "spec": "scenes/03-cat.json",
+      "png": "images/03-cat.png",
+      "svg": "images/03-cat.svg",
+      "thumb": "thumbs/03-cat.png",
+      "pngKB": 181,
+      "svgKB": 67,
+      "bg": "#FFFFFF",
+      "title": "THE SUSPICIOUS CAT",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#FFFFFF\",\n  \"seed\": 303,\n  \"ink\": 1.4,\n  \"title\": \"THE SUSPICIOUS CAT\",\n  \"elements\": [\n    {\n      \"type\": \"line\",\n      \"x1\": 300,\n      \"y1\": 655,\n      \"x2\": 1080,\n      \"y2\": 655\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          880,\n          640\n        ],\n        [\n          980,\n          560\n        ],\n        [\n          1010,\n          470\n        ],\n        [\n          960,\n          470\n        ],\n        [\n          935,\n          555\n        ],\n        [\n          850,\n          615\n        ]\n      ],\n      \"fill\": \"#F2A63B\"\n    },\n    {\n      \"type\": \"circle\",\n      \"x\": 700,\n      \"y\": 500,\n      \"r\": 150,\n      \"fill\": \"#F2A63B\",\n      \"fillStyle\": \"solid\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          578,\n          300\n        ],\n        [\n          566,\n          196\n        ],\n        [\n          652,\n          258\n        ]\n      ],\n      \"fill\": \"#F2A63B\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          746,\n          256\n        ],\n        [\n          832,\n          194\n        ],\n        [\n          820,\n          300\n        ]\n      ],\n      \"fill\": \"#F2A63B\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          588,\n          288\n        ],\n        [\n          582,\n          232\n        ],\n        [\n          628,\n          264\n        ]\n      ],\n      \"fill\": \"#F2A0A0\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          770,\n          262\n        ],\n        [\n          816,\n          230\n        ],\n        [\n          810,\n          288\n        ]\n      ],\n      \"fill\": \"#F2A0A0\"\n    },\n    {\n      \"type\": \"circle\",\n      \"x\": 699,\n      \"y\": 320,\n      \"r\": 128,\n      \"fill\": \"#F2A63B\",\n      \"fillStyle\": \"solid\"\n    },\n    {\n      \"type\": \"circle\",\n      \"x\": 648,\n      \"y\": 300,\n      \"r\": 30,\n      \"fill\": \"#EDE1B1\"\n    },\n    {\n      \"type\": \"circle\",\n      \"x\": 752,\n      \"y\": 300,\n      \"r\": 30,\n      \"fill\": \"#EDE1B1\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          644,\n          282\n        ],\n        [\n          652,\n          282\n        ],\n        [\n          652,\n          318\n        ],\n        [\n          644,\n          318\n        ]\n      ],\n      \"fill\": \"#16161A\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          748,\n          282\n        ],\n        [\n          756,\n          282\n        ],\n        [\n          756,\n          318\n        ],\n        [\n          748,\n          318\n        ]\n      ],\n      \"fill\": \"#16161A\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          684,\n          352\n        ],\n        [\n          716,\n          352\n        ],\n        [\n          700,\n          372\n        ]\n      ],\n      \"fill\": \"#D9534F\"\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 700,\n      \"y1\": 372,\n      \"x2\": 700,\n      \"y2\": 388\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 700,\n      \"y1\": 388,\n      \"x2\": 674,\n      \"y2\": 400\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 700,\n      \"y1\": 388,\n      \"x2\": 726,\n      \"y2\": 400\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 610,\n      \"y1\": 352,\n      \"x2\": 486,\n      \"y2\": 336\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 610,\n      \"y1\": 372,\n      \"x2\": 490,\n      \"y2\": 384\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 790,\n      \"y1\": 352,\n      \"x2\": 914,\n      \"y2\": 336\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 790,\n      \"y1\": 372,\n      \"x2\": 910,\n      \"y2\": 384\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          600,\n          640\n        ],\n        [\n          660,\n          640\n        ],\n        [\n          660,\n          664\n        ],\n        [\n          600,\n          664\n        ]\n      ],\n      \"fill\": \"#F2A63B\"\n    },\n    {\n      \"type\": \"shape\",\n      \"points\": [\n        [\n          740,\n          640\n        ],\n        [\n          800,\n          640\n        ],\n        [\n          800,\n          664\n        ],\n        [\n          740,\n          664\n        ]\n      ],\n      \"fill\": \"#F2A63B\"\n    },\n    {\n      \"type\": \"bubble\",\n      \"x\": 1080,\n      \"y\": 250,\n      \"w\": 420,\n      \"h\": 170,\n      \"text\": \"you fed me. i forgot.\",\n      \"kind\": \"thought\",\n      \"fromX\": 830,\n      \"fromY\": 380,\n      \"textSize\": 44\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 688,\n      \"y\": 730,\n      \"text\": \"circles, triangles and a palette - that is the whole cat\",\n      \"size\": 38,\n      \"font\": \"patrick\",\n      \"color\": \"#4a4a55\"\n    }\n  ]\n}",
+      "seed": 303,
+      "elementCount": 24,
+      "elements": [
+        {
+          "type": "shape",
+          "n": 10
+        },
+        {
+          "type": "line",
+          "n": 8
+        },
+        {
+          "type": "circle",
+          "n": 4
+        },
+        {
+          "type": "bubble",
+          "n": 1
+        },
+        {
+          "type": "label",
+          "n": 1
+        }
+      ],
+      "thumbKB": 87
+    },
+    {
+      "name": "04-compare",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "Two-column comparison driven by check and cross marks.",
+      "spec": "scenes/04-compare.json",
+      "png": "images/04-compare.png",
+      "svg": "images/04-compare.svg",
+      "thumb": "thumbs/04-compare.png",
+      "pngKB": 169,
+      "svgKB": 7,
+      "bg": "#FFF9EC",
+      "title": "MYTH  vs  RECORD",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#FFF9EC\",\n  \"seed\": 404,\n  \"ink\": 1.3,\n  \"title\": \"MYTH  vs  RECORD\",\n  \"elements\": [\n    {\n      \"type\": \"line\",\n      \"x1\": 688,\n      \"y1\": 190,\n      \"x2\": 688,\n      \"y2\": 690\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 360,\n      \"y\": 240,\n      \"text\": \"WHAT WAS TOLD\",\n      \"size\": 54,\n      \"font\": \"caveat\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1016,\n      \"y\": 240,\n      \"text\": \"WHAT WAS FOUND\",\n      \"size\": 54,\n      \"font\": \"caveat\"\n    },\n    {\n      \"type\": \"xmark\",\n      \"x\": 180,\n      \"y\": 350,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 420,\n      \"y\": 350,\n      \"text\": \"a giant in the hills\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"xmark\",\n      \"x\": 180,\n      \"y\": 460,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 420,\n      \"y\": 460,\n      \"text\": \"it ate the cattle\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"xmark\",\n      \"x\": 180,\n      \"y\": 570,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 420,\n      \"y\": 570,\n      \"text\": \"the village burned\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"check\",\n      \"x\": 836,\n      \"y\": 350,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1076,\n      \"y\": 350,\n      \"text\": \"a mammoth skull\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"check\",\n      \"x\": 836,\n      \"y\": 460,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1076,\n      \"y\": 460,\n      \"text\": \"one bad winter\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"check\",\n      \"x\": 836,\n      \"y\": 570,\n      \"s\": 0.9\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1076,\n      \"y\": 570,\n      \"text\": \"a kitchen fire\",\n      \"size\": 44,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 688,\n      \"y\": 726,\n      \"text\": \"the story kept the shape, not the facts\",\n      \"size\": 42,\n      \"font\": \"caveat\",\n      \"color\": \"#4a4a55\"\n    }\n  ]\n}",
+      "seed": 404,
+      "elementCount": 16,
+      "elements": [
+        {
+          "type": "label",
+          "n": 9
+        },
+        {
+          "type": "xmark",
+          "n": 3
+        },
+        {
+          "type": "check",
+          "n": 3
+        },
+        {
+          "type": "line",
+          "n": 1
+        }
+      ],
+      "thumbKB": 98
+    },
+    {
+      "name": "05-giant",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "One giant numeral on a flat colour field \u2014 the stat beat.",
+      "spec": "scenes/05-giant.json",
+      "png": "images/05-giant.png",
+      "svg": "images/05-giant.svg",
+      "thumb": "thumbs/05-giant.png",
+      "pngKB": 125,
+      "svgKB": 52,
+      "bg": "#F2A63B",
+      "title": "",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#F2A63B\",\n  \"seed\": 505,\n  \"ink\": 1.6,\n  \"elements\": [\n    {\n      \"type\": \"giant\",\n      \"x\": 500,\n      \"y\": 360,\n      \"text\": \"1 IN 3\",\n      \"size\": 250,\n      \"color\": \"#16161a\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 500,\n      \"y\": 520,\n      \"text\": \"swore they saw it themselves\",\n      \"size\": 54,\n      \"font\": \"caveat\"\n    },\n    {\n      \"type\": \"person\",\n      \"x\": 1130,\n      \"y\": 720,\n      \"scale\": 0.92,\n      \"pose\": \"shrug\",\n      \"emotion\": \"surprised\",\n      \"hair\": \"cap\",\n      \"hairColor\": \"slate\",\n      \"cloth\": \"coat\",\n      \"outfit\": \"navy\",\n      \"outfit2\": \"grey\",\n      \"skin\": \"deep\",\n      \"flip\": true\n    },\n    {\n      \"type\": \"line\",\n      \"x1\": 180,\n      \"y1\": 600,\n      \"x2\": 820,\n      \"y2\": 600\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 500,\n      \"y\": 660,\n      \"text\": \"not one of them wrote it down\",\n      \"size\": 42,\n      \"font\": \"patrick\",\n      \"color\": \"#3a2d17\"\n    }\n  ]\n}",
+      "seed": 505,
+      "elementCount": 5,
+      "elements": [
+        {
+          "type": "label",
+          "n": 2
+        },
+        {
+          "type": "giant",
+          "n": 1
+        },
+        {
+          "type": "person",
+          "n": 1
+        },
+        {
+          "type": "line",
+          "n": 1
+        }
+      ],
+      "thumbKB": 57
+    },
+    {
+      "name": "06-background-day",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "An empty-middle daytime background: sky, hills, trees, ground.",
+      "spec": "scenes/06-background-day.json",
+      "png": "images/06-background-day.png",
+      "svg": "images/06-background-day.svg",
+      "thumb": "thumbs/06-background-day.png",
+      "pngKB": 301,
+      "svgKB": 121,
+      "bg": "#BEE3F2",
+      "title": "",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#BEE3F2\",\n  \"seed\": 606,\n  \"ink\": 1.2,\n  \"elements\": [\n    {\n      \"type\": \"sky\",\n      \"x\": 340,\n      \"y\": 330,\n      \"sun\": true,\n      \"sunX\": 1210,\n      \"sunY\": 165,\n      \"clouds\": 2,\n      \"cloudGap\": 420,\n      \"cloudDy\": 190,\n      \"birds\": 3\n    },\n    {\n      \"type\": \"hills\",\n      \"y\": 470,\n      \"width\": 1376,\n      \"height\": 768\n    },\n    {\n      \"type\": \"tree\",\n      \"x\": 130,\n      \"y\": 660\n    },\n    {\n      \"type\": \"tree\",\n      \"x\": 1265,\n      \"y\": 690\n    },\n    {\n      \"type\": \"ground\",\n      \"y\": 640,\n      \"width\": 1376\n    }\n  ]\n}",
+      "seed": 606,
+      "elementCount": 5,
+      "elements": [
+        {
+          "type": "tree",
+          "n": 2
+        },
+        {
+          "type": "sky",
+          "n": 1
+        },
+        {
+          "type": "hills",
+          "n": 1
+        },
+        {
+          "type": "ground",
+          "n": 1
+        }
+      ],
+      "thumbKB": 150
+    },
+    {
+      "name": "07-night",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "Night palette with stars, moon, paper speckle and a speech bubble.",
+      "spec": "scenes/07-night.json",
+      "png": "images/07-night.png",
+      "svg": "images/07-night.svg",
+      "thumb": "thumbs/07-night.png",
+      "pngKB": 211,
+      "svgKB": 233,
+      "bg": "#DCE6F2",
+      "title": "",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#DCE6F2\",\n  \"seed\": 707,\n  \"ink\": 1.4,\n  \"elements\": [\n    {\n      \"type\": \"stars\",\n      \"count\": 14,\n      \"width\": 1376,\n      \"height\": 300\n    },\n    {\n      \"type\": \"moon\",\n      \"x\": 1190,\n      \"y\": 170\n    },\n    {\n      \"type\": \"hills\",\n      \"y\": 520,\n      \"far\": \"#B9C7D6\",\n      \"near\": \"#9FB2C6\",\n      \"width\": 1376,\n      \"height\": 768\n    },\n    {\n      \"type\": \"ground\",\n      \"y\": 662,\n      \"width\": 1376\n    },\n    {\n      \"type\": \"person\",\n      \"x\": 470,\n      \"y\": 700,\n      \"scale\": 0.72,\n      \"pose\": \"hold\",\n      \"emotion\": \"worried\",\n      \"hair\": \"cap\",\n      \"capColor\": \"navy\",\n      \"cloth\": \"coat\",\n      \"outfit\": \"navy\",\n      \"outfit2\": \"grey\",\n      \"skin\": \"light\",\n      \"says\": \"something moved.\",\n      \"sayW\": 300\n    },\n    {\n      \"type\": \"person\",\n      \"x\": 900,\n      \"y\": 700,\n      \"scale\": 0.72,\n      \"pose\": \"raise\",\n      \"emotion\": \"surprised\",\n      \"hair\": \"long\",\n      \"hairColor\": \"black\",\n      \"cloth\": \"coat\",\n      \"outfit\": \"purple\",\n      \"outfit2\": \"slate\",\n      \"skin\": \"brown\",\n      \"flip\": true\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 300,\n      \"y\": 120,\n      \"text\": \"THE NIGHT WATCH\",\n      \"size\": 62,\n      \"font\": \"caveat\",\n      \"color\": \"#24455C\"\n    },\n    {\n      \"type\": \"speckle\",\n      \"count\": 220,\n      \"color\": \"#8a93a3\",\n      \"width\": 1376,\n      \"height\": 768\n    }\n  ]\n}",
+      "seed": 707,
+      "elementCount": 8,
+      "elements": [
+        {
+          "type": "person",
+          "n": 2
+        },
+        {
+          "type": "stars",
+          "n": 1
+        },
+        {
+          "type": "moon",
+          "n": 1
+        },
+        {
+          "type": "hills",
+          "n": 1
+        },
+        {
+          "type": "ground",
+          "n": 1
+        },
+        {
+          "type": "label",
+          "n": 1
+        },
+        {
+          "type": "speckle",
+          "n": 1
+        }
+      ],
+      "thumbKB": 108
+    },
+    {
+      "name": "08-measure",
+      "kind": "scene",
+      "renderer": "rough.js + resvg",
+      "note": "A scale comparison using a measure arrow.",
+      "spec": "scenes/08-measure.json",
+      "png": "images/08-measure.png",
+      "svg": "images/08-measure.svg",
+      "thumb": "thumbs/08-measure.png",
+      "pngKB": 252,
+      "svgKB": 31,
+      "bg": "#FFFFFF",
+      "title": "IT WAS NEVER THAT BIG",
+      "source": "{\n  \"width\": 1376,\n  \"height\": 768,\n  \"bg\": \"#FFFFFF\",\n  \"seed\": 808,\n  \"ink\": 1.3,\n  \"title\": \"IT WAS NEVER THAT BIG\",\n  \"elements\": [\n    {\n      \"type\": \"circle\",\n      \"x\": 700,\n      \"y\": 420,\n      \"r\": 190,\n      \"fill\": \"#BEE3F2\",\n      \"fillStyle\": \"hachure\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 700,\n      \"y\": 420,\n      \"text\": \"THE BEAST\",\n      \"size\": 58,\n      \"font\": \"caveat\"\n    },\n    {\n      \"type\": \"doubleArrow\",\n      \"x1\": 510,\n      \"y1\": 654,\n      \"x2\": 890,\n      \"y2\": 654,\n      \"label\": \"4 metres, they said\"\n    },\n    {\n      \"type\": \"face\",\n      \"x\": 250,\n      \"y\": 555,\n      \"r\": 50,\n      \"mood\": \"smile\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 250,\n      \"y\": 655,\n      \"text\": \"a person, to scale\",\n      \"size\": 34,\n      \"font\": \"patrick\"\n    },\n    {\n      \"type\": \"circle\",\n      \"x\": 1120,\n      \"y\": 520,\n      \"r\": 76,\n      \"fill\": \"#F2A0A0\",\n      \"fillStyle\": \"solid\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1120,\n      \"y\": 520,\n      \"text\": \"1.6 m\",\n      \"size\": 44,\n      \"font\": \"kalam\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1120,\n      \"y\": 640,\n      \"text\": \"what the bones\",\n      \"size\": 36,\n      \"font\": \"patrick\",\n      \"color\": \"#D9534F\"\n    },\n    {\n      \"type\": \"label\",\n      \"x\": 1120,\n      \"y\": 682,\n      \"text\": \"actually measured\",\n      \"size\": 36,\n      \"font\": \"patrick\",\n      \"color\": \"#D9534F\"\n    },\n    {\n      \"type\": \"arrow\",\n      \"x1\": 1050,\n      \"y1\": 450,\n      \"x2\": 900,\n      \"y2\": 400,\n      \"label\": \"shrink\"\n    }\n  ]\n}",
+      "seed": 808,
+      "elementCount": 10,
+      "elements": [
+        {
+          "type": "label",
+          "n": 5
+        },
+        {
+          "type": "circle",
+          "n": 2
+        },
+        {
+          "type": "doubleArrow",
+          "n": 1
+        },
+        {
+          "type": "face",
+          "n": 1
+        },
+        {
+          "type": "arrow",
+          "n": 1
+        }
+      ],
+      "thumbKB": 108
+    },
+    {
+      "name": "09-sightings",
+      "kind": "chart",
+      "renderer": "matplotlib xkcd",
+      "note": "Hand-inked bar chart via matplotlib xkcd mode.",
+      "spec": "charts/09-sightings.json",
+      "png": "images/09-sightings.png",
+      "svg": "images/09-sightings.svg",
+      "thumb": "thumbs/09-sightings.png",
+      "pngKB": 258,
+      "svgKB": 352,
+      "bg": "#FFFFFF",
+      "title": "WHAT THE WITNESSES REPORTED",
+      "source": "{\n  \"kind\": \"bar\",\n  \"bg\": \"#FFFFFF\",\n  \"title\": \"WHAT THE WITNESSES REPORTED\",\n  \"xlabel\": \"reported shape\",\n  \"ylabel\": \"percent of accounts\",\n  \"labels\": [\n    \"a large\\nanimal\",\n    \"a person\\nin fur\",\n    \"shadow\\nonly\",\n    \"nothing\\nat all\"\n  ],\n  \"values\": [\n    58,\n    34,\n    22,\n    9\n  ],\n  \"color\": \"#F2A63B\",\n  \"font\": \"caveat\"\n}",
+      "chartKind": "bar",
+      "elementCount": 4,
+      "elements": [
+        {
+          "type": "bar",
+          "n": 1
+        }
+      ],
+      "thumbKB": 169
+    },
+    {
+      "name": "10-retellings",
+      "kind": "chart",
+      "renderer": "matplotlib xkcd",
+      "note": "Hand-inked line chart via matplotlib xkcd mode.",
+      "spec": "charts/10-retellings.json",
+      "png": "images/10-retellings.png",
+      "svg": "images/10-retellings.svg",
+      "thumb": "thumbs/10-retellings.png",
+      "pngKB": 197,
+      "svgKB": 270,
+      "bg": "#FFFFFF",
+      "title": "THE STORY GREW WITH EVERY RETELLING",
+      "source": "{\n  \"kind\": \"line\",\n  \"bg\": \"#FFFFFF\",\n  \"title\": \"THE STORY GREW WITH EVERY RETELLING\",\n  \"xlabel\": \"retellings\",\n  \"ylabel\": \"claimed height (m)\",\n  \"labels\": [\n    \"1\",\n    \"5\",\n    \"10\",\n    \"20\",\n    \"50\",\n    \"100\"\n  ],\n  \"values\": [\n    1.6,\n    2.1,\n    2.8,\n    3.4,\n    3.9,\n    4.2\n  ],\n  \"color\": \"#3F81B2\",\n  \"font\": \"caveat\"\n}",
+      "chartKind": "line",
+      "elementCount": 6,
+      "elements": [
+        {
+          "type": "line",
+          "n": 1
+        }
+      ],
+      "thumbKB": 64
+    }
+  ]
+}

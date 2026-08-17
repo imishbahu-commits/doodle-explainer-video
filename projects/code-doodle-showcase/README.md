@@ -13,11 +13,29 @@ code through the repo's own `skills/handdrawn-code`:
 ## Render everything
 
 ```bash
-bash projects/code-doodle-showcase/render.sh
+bash projects/code-doodle-showcase/render.sh          # scenes + charts -> images/
+python3 projects/code-doodle-showcase/build_gallery.py # thumbnails + gallery.json
 ```
 
-Outputs to `out/`: a `.png` (2752x1536, 2x supersampled) and a matching
+Outputs to `images/`: a `.png` (2752x1536, 2x supersampled) and a matching
 `.svg` (editable vector) per item. Takes ~3 seconds for all ten.
+
+## Browse the gallery
+
+```bash
+python3 -m http.server 8000 --bind 0.0.0.0 \
+  --directory projects/code-doodle-showcase
+```
+
+Then open `index.html` — a filterable grid with click-to-enlarge and a
+"source" link on each tile that shows the exact JSON that drew it. It reads
+`gallery.json`, so serve the folder over http; opening the file directly with
+`file://` will be blocked by the browser's fetch policy.
+
+> **Why `images/` and not `out/`?** Directories named `out` — along with
+> `build`, `dist`, `node_modules`, `.venv` and friends — are excluded from
+> workspace snapshots, so renders written there vanish between sessions even
+> after being committed. Keep generated art in `images/`.
 
 Prerequisites (once):
 
@@ -45,7 +63,7 @@ All are 16:9 at the geometry the video pipeline expects, so any PNG drops
 straight into a beat:
 
 ```json
-{"image": "projects/code-doodle-showcase/out/03-cat.png", "text": "..."}
+{"image": "projects/code-doodle-showcase/images/03-cat.png", "text": "..."}
 ```
 
 ## Engine fixes made while building this

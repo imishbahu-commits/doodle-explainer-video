@@ -6,7 +6,7 @@ set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"
 SKILL="$ROOT/skills/handdrawn-code"
-OUT="$HERE/out"
+OUT="$HERE/images"
 PY="$ROOT/.venv/bin/python"
 [ -x "$PY" ] || PY=python3
 
