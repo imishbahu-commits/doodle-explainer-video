@@ -8,17 +8,47 @@ follows.
 
 ## 1. Get the files into Grok (pick ONE)
 
-**Option A — connect Grok to GitHub (recommended):**
+Everything below points at **your fork**
+(`imishbahu-commits/doodle-explainer-video`), **not** the original upstream
+repo (`sadekxD/doodle-explainer-video`). Always use the fork — the upstream
+repo does not have these automation docs.
 
-1. Open `https://github.com/imishbahu-commits/doodle-explainer-video`
-2. Tap **Fork** (top right) → **Create fork**. Now you have your own copy.
-3. In Grok, connect GitHub (Grok's integrations / MCP), point it at your
-   fork, branch `arena/01a002e2-doodle-explainer-video`.
+Use the branch **`arena/01a00e49-doodle-explainer-video`**. It is the newest
+one and it is the only branch that contains this guide. Your fork's `main`
+is behind it.
 
-**Option B — upload the zip:**
+**Option A — upload the zip (fastest):**
 
-1. Download `doodle-explainer-video-bundle.zip` (all files, no git history).
-2. In Grok, attach the zip and start with the prompt below.
+1. Download the fork zip — one of these:
+   - Direct link (fork + correct branch):
+     `https://codeload.github.com/imishbahu-commits/doodle-explainer-video/zip/refs/heads/arena/01a00e49-doodle-explainer-video`
+   - Or in the browser: open
+     `https://github.com/imishbahu-commits/doodle-explainer-video/tree/arena/01a00e49-doodle-explainer-video`
+     → check the top-left branch button says
+     `arena/01a00e49-doodle-explainer-video` (**not** `main`) → green
+     **Code** button → **Download ZIP**.
+   - Or in a terminal:
+     ```bash
+     gh repo clone imishbahu-commits/doodle-explainer-video -- \
+       --branch arena/01a00e49-doodle-explainer-video --depth 1
+     ```
+2. Unzip it if Grok needs loose files, then attach the zip (or the key
+   files: `CLAUDE.md`, `SKILL.md`, `references/`, `skills/`) in Grok and
+   paste the starter prompt below.
+
+Note: Grok's upload limit is per-file/per-chat. If the full zip is too big,
+attach only `CLAUDE.md`, `SKILL.md`, `references/formats.md` and the
+`skills/youtube-script`, `skills/image-queue`, `skills/youtube-seo` folders —
+that is all Grok actually reads.
+
+**Option B — connect Grok to GitHub:**
+
+1. In Grok, connect GitHub (integrations / MCP) and authorize the account
+   that owns the fork.
+2. Point it at repo `imishbahu-commits/doodle-explainer-video`, branch
+   `arena/01a00e49-doodle-explainer-video`.
+3. Tell Grok explicitly: "use the fork `imishbahu-commits/...`, branch
+   `arena/01a00e49-doodle-explainer-video`, not `main`, not `sadekxD`."
 
 ## 2. The starter prompt (paste this into Grok, fill the topic)
 
