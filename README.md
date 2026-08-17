@@ -220,7 +220,7 @@ doodle-explainer-video/
 │   ├── wiggle-claude-skill/     # logo/icon motion via Lottie (AE's keyframe format)
 │   ├── Ultimate-Video-Editing-Skills/ # 600+ ffmpeg recipes: transitions, kinetic text, grading
 │   ├── claude-skill-klingai-animation/ # Kling AI image->video for character actions (needs API key)
-│   └── asset-library/           # on-demand single-file fetch from 11 cloud libs (Kenney CC0, game-icons, Fluent emoji, humaaans, open-peeps, openclipart, LPC…) — never cloned, never committed
+│   └── asset-library/           # on-demand single-file fetch from 23 cloud libs (Kenney CC0, game-icons, fxemoji/twemoji/openmoji/noto, humaaans, open-peeps, openclipart, 0x72 + Pixel Adventure backgrounds, 5 icon sets, LPC…) — never cloned, never committed
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json
