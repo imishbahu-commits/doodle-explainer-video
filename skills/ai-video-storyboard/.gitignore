@@ -1,0 +1,11 @@
+# Internal marketing / strategy docs (not for public repo)
+SUBMISSION_TARGETS.md
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

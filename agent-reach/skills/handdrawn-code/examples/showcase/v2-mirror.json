@@ -1,0 +1,14 @@
+{
+  "width": 1376, "height": 768, "bg": "#1C2340", "seed": 9, "ink": 1.8,
+  "title": "WHY ISN'T YOUR REFLECTION YOU?",
+  "elements": [
+    {"type": "stars", "count": 9, "height": 160},
+    {"type": "moon", "x": 1180, "y": 150},
+    {"type": "room", "floorY": 640, "frameX": 260, "frameY": 300, "windowX": 1080, "windowY": 270, "rugW": 340},
+    {"type": "mirror", "x": 700, "y": 330, "w": 170, "h": 250},
+    {"type": "person", "x": 460, "y": 640, "pose": "think", "emotion": "worried",
+     "hair": "long", "hairColor": "auburn", "cloth": "dress", "outfit": "purple",
+     "outfit2": "navy", "skin": "light", "says": "that's not me...", "sayW": 240, "sayH": 90, "saySize": 30},
+    {"type": "label", "x": 700, "y": 700, "text": "ten minutes. dim light. your face stops being yours.", "size": 44, "font": "patrick", "color": "#F5EFDF"}
+  ]
+}

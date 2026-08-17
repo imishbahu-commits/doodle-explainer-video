@@ -1,0 +1,15 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 44, "ink": 1.7,
+  "title": "THE EXPERIMENT",
+  "elements": [
+    {"type": "person", "x": 330, "y": 620, "pose": "point", "emotion": "neutral",
+     "hair": "short", "hairColor": "slate", "cloth": "coat", "outfit": "grey", "outfit2": "navy", "skin": "light"},
+    {"type": "box", "x": 720, "y": 330, "w": 330, "h": 190, "label": "50 PEOPLE", "sub": "dim light", "fill": "#FFE9B8"},
+    {"type": "box", "x": 1110, "y": 330, "w": 300, "h": 190, "label": "10 MIN", "sub": "mirror gaze", "fill": "#DDEBFA"},
+    {"type": "arrow", "x1": 890, "y1": 330, "x2": 950, "y2": 330},
+    {"type": "person", "x": 900, "y": 620, "pose": "sit", "emotion": "worried",
+     "hair": "cap", "hairColor": "black", "cloth": "shirt", "outfit": "blue", "outfit2": "navy", "skin": "deep"},
+    {"type": "mirror", "x": 1110, "y": 560, "w": 90, "h": 130},
+    {"type": "label", "x": 700, "y": 730, "text": "Caputo 2010 - the strange-face illusion", "size": 42, "font": "patrick"}
+  ]
+}

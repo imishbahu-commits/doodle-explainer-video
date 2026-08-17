@@ -1,0 +1,11 @@
+{
+  "kind": "bar",
+  "bg": "#FFFFFF",
+  "title": "WHAT PEOPLE SAW IN THE MIRROR",
+  "xlabel": "apparition",
+  "ylabel": "percent",
+  "labels": ["deformed\nface", "monster", "stranger", "animal", "dead\nparent"],
+  "values": [66, 48, 28, 18, 10],
+  "color": "#F2A63B",
+  "font": "caveat"
+}

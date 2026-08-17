@@ -1,0 +1,21 @@
+# Secrets — never commit API keys
+key.env
+*.env
+.env*
+*secret*
+*credentials*
+**/character-animation/key.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Scratch / generated working files
+*_work/
+frames/
+norm_frames/
+interp_frames/
+/tmp/
+*.tmp

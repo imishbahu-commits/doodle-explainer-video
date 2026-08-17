@@ -1,0 +1,148 @@
+{
+  "lpc": {
+    "repo": "makrohn/Universal-LPC-spritesheet",
+    "license": "CC-BY-SA 3.0 + GPL 3.0",
+    "fmt": "png",
+    "note": "Liberated Pixel Cup characters (2,755 files): bodies, hair, clothes, walk cycles. Attribution + share-alike required."
+  },
+  "kenney": {
+    "repo": "iwenzhou/kenney",
+    "license": "CC0 (public domain)",
+    "fmt": "png",
+    "note": "The COMPLETE Kenney asset pack (~5,000 files): sprites, tilesets, UI, props, fish (fishSwim/fishPink/fishGreen), tile backgrounds. Zero restrictions — safe for commercial videos."
+  },
+  "kenney-particles": {
+    "repo": "Calinou/kenney-particle-pack",
+    "license": "CC0",
+    "fmt": "png",
+    "note": "Kenney particle textures (smoke, dust, fire, sparkles) — perfect for ae-motion impact scenes."
+  },
+  "kenney-textures": {
+    "repo": "Calinou/kenney-prototype-textures",
+    "license": "CC0",
+    "fmt": "png",
+    "note": "Kenney prototype textures (grass, stone, wood patterns) — hand-drawn background fills."
+  },
+  "kenney-ui-sounds": {
+    "repo": "Calinou/kenney-ui-audio",
+    "license": "CC0",
+    "fmt": "wav",
+    "note": "Kenney UI sound effects (clicks, pops, alerts) — free SFX for transitions."
+  },
+  "kenney-interface-sounds": {
+    "repo": "Calinou/kenney-interface-sounds",
+    "license": "CC0",
+    "fmt": "wav",
+    "note": "Kenney interface sound pack."
+  },
+  "game-icons": {
+    "repo": "game-icons/icons",
+    "license": "CC BY 3.0 (some CC0)",
+    "fmt": "svg",
+    "credit": "One line in the video description: 'Icons by game-icons.net (Lorc, Delapouite and contributors), CC BY 3.0'.",
+    "note": "4,283 sketchy HAND-DRAWN icons: angler-fish, clownfish, giant-squid, shark-fin, sperm-whale, creatures, weapons, buildings, symbols. SVG — fetch with --rasterize to get a PNG."
+  },
+  "fluent-emoji": {
+    "repo": "microsoft/fluentui-emoji",
+    "license": "MIT",
+    "fmt": "png+svg",
+    "note": "Microsoft Fluent emoji (27,000 files): flat bold colors with dark outlines — a doodle-like look. 3D/*.png files are ready PNGs (fish, crab, whale, octopus, animals, objects); Flat/*.svg need --rasterize."
+  },
+  "humaaans": {
+    "repo": "Calinou/humaaans",
+    "license": "CC BY 4.0",
+    "fmt": "png",
+    "credit": "One line in the video description: 'People by Pablo Stanley (humaaans.com), CC BY 4.0'.",
+    "note": "253 flat hand-drawn people — mix & match standing/sitting/arms/legs, PNG + @2x. The closest asset equivalent of stick-figure characters."
+  },
+  "open-peeps": {
+    "repo": "jenshor/open-peeps",
+    "license": "MIT (originals CC0 by Pablo Stanley)",
+    "fmt": "svg",
+    "note": "Hand-drawn people PARTS (bodies, hair, faces, beards, accessories) to mix & match into characters. SVG — fetch with --rasterize."
+  },
+  "openclipart": {
+    "repo": "cyanidecupcake/openclipart-svg",
+    "license": "Public domain",
+    "fmt": "svg",
+    "note": "36,000+ public-domain clipart SVGs sorted by category (animals, food, scenery, people...). Some files messy/duplicated — pick by filename. SVG — fetch with --rasterize."
+  },
+  "twemoji": {
+    "repo": "twitter/twemoji",
+    "license": "CC BY 4.0 (graphics)",
+    "fmt": "png+svg",
+    "credit": "One line in the video description: 'Emoji by Twemoji, CC BY 4.0'.",
+    "note": "7,400+ flat emoji: assets/72x72/<code>.png (ready PNG) and assets/svg/<code>.svg. Files are named by EMOJI CODEPOINT: fish=1f41f, shark=1f988, octopus=1f419, whale=1f40b, crab=1f980, dragon=1f409, owl=1f989, dolphin=1f42c, turtle=1f422."
+  },
+  "fxemoji": {
+    "repo": "mozilla/fxemoji",
+    "license": "CC BY 4.0 (graphics)",
+    "fmt": "png+svg",
+    "credit": "One line in the video description: 'Emoji by Mozilla fxemoji, CC BY 4.0'.",
+    "note": "11,800+ flat emoji with bold outlines — the most doodle-like emoji set. svgs/FirefoxEmoji/u1F41F-fish.svg (search by name works here: fish, shark, whale...). SVG — fetch with --rasterize."
+  },
+  "openmoji": {
+    "repo": "hfg-gmuend/openmoji",
+    "license": "CC BY-SA 4.0",
+    "fmt": "png+svg",
+    "credit": "One line in the video description: 'Emoji by OpenMoji, CC BY-SA 4.0'.",
+    "note": "30,000 files, high-quality open emoji: color/618x618/<CODE>.png ready PNGs + black/svg outlines. Codepoint names (fish=1F41F, shark=1F988, octopus=1F419, dragon=1F409). Share-alike: fine in videos with the credit line."
+  },
+  "noto-emoji": {
+    "repo": "googlefonts/noto-emoji",
+    "license": "OFL-1.1 (SIL Open Font License)",
+    "fmt": "png+svg",
+    "note": "20,000 files, Google's emoji: png/512/emoji_u1f41f.png (ready PNG) + svg. Codepoint names (fish=emoji_u1f41f). Credit 'Noto Emoji, Google' in the description."
+  },
+  "tabler-icons": {
+    "repo": "tabler/tabler-icons",
+    "license": "MIT",
+    "fmt": "svg",
+    "note": "6,100+ outline stroke icons (icons/outline/*.svg + filled). Stroke line-art fits hand-drawn diagrams, arrows, labels. SVG — fetch with --rasterize."
+  },
+  "feather": {
+    "repo": "feathericons/feather",
+    "license": "MIT",
+    "fmt": "svg",
+    "note": "280 minimal stroke icons (icons/*.svg) — clean line drawings for diagrams. SVG — fetch with --rasterize."
+  },
+  "phosphor": {
+    "repo": "phosphor-icons/core",
+    "license": "MIT",
+    "fmt": "svg",
+    "note": "18,000 icons in 6 weights (assets/bold|regular|thin|duotone|fill|light/*.svg). Regular/light look hand-sketched. SVG — fetch with --rasterize."
+  },
+  "bootstrap-icons": {
+    "repo": "twbs/icons",
+    "license": "MIT",
+    "fmt": "svg",
+    "note": "4,200+ icons (icons/*.svg), filled line style. Good for UI-ish labels and markers. SVG — fetch with --rasterize."
+  },
+  "font-awesome": {
+    "repo": "FortAwesome/Font-Awesome",
+    "license": "CC BY 4.0 (icons) + OFL (font) + MIT (code)",
+    "fmt": "svg",
+    "credit": "One line in the video description: 'Icons by Font Awesome, CC BY 4.0'.",
+    "note": "2,000+ free icons in js-packages/@fortawesome/fontawesome-free/svgs/{solid,regular,brands}/*.svg. SVG — fetch with --rasterize."
+  },
+  "simple-icons": {
+    "repo": "simple-icons/simple-icons",
+    "license": "CC0 (public domain)",
+    "fmt": "svg",
+    "note": "3,500+ brand logos (icons/youtube.svg, icons/google.svg...) — for thumbnails, channel art, 'find us on' end cards. SVG — fetch with --rasterize."
+  },
+  "dungeontileset-0x72": {
+    "repo": "marceloferreira357/bun-crawler-client",
+    "license": "CC0 (0x72 DungeonTileset II)",
+    "fmt": "png",
+    "credit": "Optional credit: 'Tiles by 0x72 (DungeonTileset II)'.",
+    "note": "HAND-DRAWN PIXEL BACKGROUNDS: dungeon walls, floors, doors, chests, props — atlases + individual frames under public/sprites/0x72_DungeonTilesetII_v1.7/. Fetch the atlas PNGs or single frame files."
+  },
+  "pixel-adventure": {
+    "repo": "isapign/2d-simple-platform-game",
+    "license": "CC0 (Pixel Frog's Pixel Adventure 1)",
+    "fmt": "png",
+    "credit": "Optional credit: 'Art by Pixel Frog (Pixel Adventure)'.",
+    "note": "HAND-DRAWN PIXEL SCENES: 'Assets/Pixel Adventure 1/Assets/' — terrain tiles (build any scene), characters (Mask Dude, Pink Man, Ninja Frog, Virtual Guy — idle/run/jump frames), enemies, items, doors. Full platformer world in flat bright colors."
+  }
+}

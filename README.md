@@ -1,5 +1,31 @@
 # Doodle Explainer Video
 
+> ## ⭐ Default mode: Paint Explainer style (animated hand-drawn PNGs)
+>
+> A new chat should produce **animated hand-drawn explainer videos**:
+> hand-drawn PNG characters + backgrounds, real keyframe motion (slide-ins,
+> pops, punch-ins, puppet-rigged limbs), hard cuts every 2–6 s, 60 fps.
+> The entry point is `SKILL.md` + `skills/content-router/`; the measured
+> formula lives in `references/paint-explainer-autopsy.md`. The old static
+> three-band vertical format below is now the **legacy option**, used only
+> when explicitly requested.
+
+### Quick start — Paint Explainer mode (the default)
+
+```bash
+# new chat: read SKILL.md, then the router decides the stages
+python3 skills/video-polish/scripts/script_doctor.py script.md   # 5-act check
+python3 skills/ae-motion/scripts/ae_motion.py scene.json -o out.mp4
+python3 skills/ae-motion/scripts/ae_motion.py --plan "the beat text"
+python3 skills/asset-library/scripts/asset_fetch.py search dragon
+```
+
+Key files: `SKILL.md` (formula + workflow) · `skills/content-router/SKILL.md`
+(stage map) · `references/paint-explainer-autopsy.md` (measured numbers) ·
+`references/paint-explainer-style.md` (motion grammar).
+
+## Legacy mode — three-band vertical (still available)
+
 A Claude Code skill that produces faceless 9:16 doodle-explainer videos in the
 viral three-band format: a static clickbait banner on top, crude stick-figure
 illustrations in the middle, an empty black band on the bottom, over a single
@@ -45,7 +71,14 @@ the only motion in the frame.
 - `ffmpeg` and `ffprobe` on PATH
 - Python 3 with Pillow
 
-## Quick start
+## Legacy production mode (three-band vertical)
+
+The single 720×1280 static three-band vertical format documented below.
+No animation, no transitions — hard cuts between static illustrations.
+**Use only when explicitly requested; the default is the animated
+Paint Explainer workflow in SKILL.md.**
+
+## Quick start — vertical mode (legacy)
 
 Invoke the skill and name a topic:
 
@@ -170,6 +203,24 @@ doodle-explainer-video/
 │   ├── format-spec.md           # measured geometry, colours, cadence, audio
 │   ├── script-formula.md        # the nine-move arc and sentence craft
 │   └── art-direction.md         # banner + doodle templates, visual grammar
+├── skills/
+│   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
+│   ├── youtube-script/          # any-niche scripts: 7 formats, hooks, but-therefore, beat math, voiceover fit
+│   ├── youtube-seo/             # deeployCO MIT suite: titles, descriptions, tags, chapters, thumbnail, hook line
+│   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
+│   ├── image-queue/             # smart supply: doodle/asset/pose free first, ai queue 10/turn
+│   ├── image-batcher/           # LEGACY: hands-free ledger for pure-AI image lists
+│   ├── cinematic-director/      # film director: beat sheet, shot plan, 20 director lenses, QC repair
+│   ├── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
+│   ├── handdrawn-style-lock/    # locks the human hand-drawn art style across all images
+│   ├── ae-motion/               # AE-grade keyframes: bezier easing, puppet pins, motion blur, 22 moves
+│   ├── motion-design/           # LottieFiles official: Disney principles, emotion→motion, choreography
+│   ├── content-router/          # the orchestrator: which skill fires when, one specialist at a time
+│   ├── character-animation-skill/   # one PNG -> looping animated sprite (walk/wave/blink)
+│   ├── wiggle-claude-skill/     # logo/icon motion via Lottie (AE's keyframe format)
+│   ├── Ultimate-Video-Editing-Skills/ # 600+ ffmpeg recipes: transitions, kinetic text, grading
+│   ├── claude-skill-klingai-animation/ # Kling AI image->video for character actions (needs API key)
+│   └── asset-library/           # on-demand single-file fetch from 23 cloud libs (Kenney CC0, game-icons, fxemoji/twemoji/openmoji/noto, humaaans, open-peeps, openclipart, 0x72 + Pixel Adventure backgrounds, 5 icon sets, LPC…) — never cloned, never committed
 └── scripts/
     ├── build_video.py           # ffmpeg assembly
     └── manifest_example.json

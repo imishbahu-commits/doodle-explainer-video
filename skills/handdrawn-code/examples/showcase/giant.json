@@ -1,0 +1,12 @@
+{
+  "width": 1376, "height": 768, "bg": "#F2A63B", "seed": 5,
+  "title": "THE BLIND SPOT IN YOUR DAY",
+  "elements": [
+    {"type": "giant", "x": 330, "y": 390, "text": "2", "size": 320},
+    {"type": "label", "x": 330, "y": 630, "text": "HOURS BLIND", "size": 66, "font": "patrick"},
+    {"type": "circle", "x": 940, "y": 390, "r": 150, "fill": "#FFFFFF"},
+    {"type": "line", "x1": 940, "y1": 390, "x2": 940, "y2": 275},
+    {"type": "line", "x1": 940, "y1": 390, "x2": 1040, "y2": 420},
+    {"type": "label", "x": 940, "y": 640, "text": "your eyes are jumping", "size": 46, "font": "caveat", "rot": -1}
+  ]
+}

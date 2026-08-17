@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate Character — Claude Code Skill</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* Live animation showcase */
+    .showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sprite-fox-coding {
+      width: 200px;
+      height: 200px;
+      background: url('fox-coding-sprite.png') left center no-repeat;
+      background-size: 12200px 200px;
+      animation: sprite-fox-coding-play 5.08s steps(61) infinite;
+      overflow: hidden;
+      filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4));
+    }
+
+    @keyframes sprite-fox-coding-play {
+      from { background-position: 0 center; }
+      to { background-position: -12200px center; }
+    }
+
+    @keyframes sprite-fox-sm {
+      from { background-position: 0 center; }
+      to { background-position: -7320px center; }
+    }
+
+    .showcase-caption {
+      font-size: 0.8rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    /* Before/After */
+    .before-after {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .ba-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .ba-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      border: 1px solid #334155;
+      background: #1e293b;
+    }
+
+    .ba-item .ba-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ba-arrow {
+      font-size: 1.5rem;
+      color: #475569;
+    }
+
+    /* Pipeline */
+    .pipeline {
+      width: 100%;
+      background: #1e293b;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .pipeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.35rem 0.5rem;
+      background: #0f172a;
+      border-radius: 0.4rem;
+      border: 1px solid #334155;
+      min-width: 75px;
+    }
+
+    .pipeline-step .step-icon { font-size: 1rem; }
+    .pipeline-step .step-label { font-size: 0.6rem; color: #94a3b8; }
+    .pipeline-arrow { color: #475569; font-size: 1rem; }
+
+    /* Sections */
+    .section {
+      width: 100%;
+      background: #1e293b;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      border: 1px solid #334155;
+    }
+
+    .section h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .section h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section h3:first-of-type { margin-top: 0; }
+
+    .section p, .section li {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .section ol, .section ul {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section li { margin-bottom: 0.25rem; }
+
+    pre, code {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+    }
+
+    pre {
+      background: #0f172a;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #a5f3fc;
+      border: 1px solid #1e293b;
+      margin: 0.5rem 0;
+    }
+
+    code {
+      background: #0f172a;
+      padding: 0.15rem 0.35rem;
+      border-radius: 0.25rem;
+      font-size: 0.8rem;
+      color: #a5f3fc;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #4f46e5;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-right: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-row p { margin: 0; }
+
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 3rem;
+      color: #475569;
+      font-size: 0.8rem;
+    }
+
+    .info-banner {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(56, 189, 248, 0.1));
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .info-banner strong { color: #e2e8f0; }
+
+    @media (max-width: 500px) {
+      .before-after { flex-direction: column; }
+      .ba-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Animate Character</h1>
+  <p class="subtitle">Claude Code Skill &mdash; static image to CSS sprite animation</p>
+
+  <div class="content">
+    <!-- Live animated sprite -->
+    <div class="showcase">
+      <div class="sprite-fox-coding"></div>
+      <p class="showcase-caption">Live CSS sprite animation &mdash; 61 frames, one PNG, zero JavaScript</p>
+    </div>
+
+    <!-- Before / After -->
+    <div class="before-after">
+      <div class="ba-item">
+        <img src="fox-coding.png" alt="Source image">
+        <span class="ba-label">Static image</span>
+      </div>
+      <span class="ba-arrow">&rarr;</span>
+      <div class="ba-item">
+        <div style="width:120px;height:120px;background:url('fox-coding-sprite.png') 0 center no-repeat;background-size:7320px 120px;animation:sprite-fox-sm 5.08s steps(61) infinite;border-radius:0.5rem;border:1px solid #334155;overflow:hidden;"></div>
+        <span class="ba-label">Animated sprite</span>
+      </div>
+    </div>
+
+    <!-- Pipeline -->
+    <div class="pipeline">
+      <div class="pipeline-step"><span class="step-icon">🖼</span><span class="step-label">Your Image</span></div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step"><span class="step-icon">🎬</span><span class="step-label">Kling AI</span></div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step"><span class="step-icon">🔲</span><span class="step-label">Frames</span></div>
+      <span class="pipeline-arrow">&rarr;</span>
+      <div class="pipeline-step"><span class="step-icon">✨</span><span class="step-label">Sprite Sheet</span></div>
+    </div>
+
+    <!-- Install -->
+    <div class="section">
+      <h2>Install the Skill</h2>
+
+      <h3>Prerequisites</h3>
+      <ul>
+        <li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> CLI</li>
+        <li><a href="https://nodejs.org">Node.js</a> 18+</li>
+        <li><a href="https://ffmpeg.org/download.html">ffmpeg</a></li>
+        <li><a href="https://app.klingai.com/global/dev">Kling AI API</a> credentials</li>
+      </ul>
+
+      <h3>One-command install</h3>
+      <p>The installer copies the skill and walks you through setting up your API keys:</p>
+      <pre>git clone https://github.com/TamerinTECH/claude-skill-klingai-animation.git
+cd claude-skill-klingai-animation
+
+# Windows (PowerShell)
+.\install.ps1
+
+# Mac / Linux
+chmod +x install.sh && ./install.sh</pre>
+
+      <h3>Use it</h3>
+      <p>In Claude Code, type:</p>
+      <pre>/animate-character ./character.png "typing excitedly, getting faster"</pre>
+      <p>Claude will analyze your image, craft a Kling AI prompt, generate the video, and produce a sprite sheet PNG with ready-to-paste code.</p>
+    </div>
+
+    <!-- How to use the output -->
+    <div class="section">
+      <h2>Use the Output in Your Website</h2>
+      <p>The skill outputs a single PNG sprite sheet + a JSON metadata file. To add the animation to any web page:</p>
+
+      <div class="step-row"><span class="step-num">1</span><p>Copy the sprite sheet PNG into your project (e.g. <code>/images/fox.png</code>)</p></div>
+      <div class="step-row"><span class="step-num">2</span><p>Add a <code>&lt;div&gt;</code> element where you want the animation</p></div>
+      <div class="step-row"><span class="step-num">3</span><p>Paste the CSS snippet from the skill output</p></div>
+
+      <h3>HTML</h3>
+<pre>&lt;div class="sprite-fox-coding"&gt;&lt;/div&gt;</pre>
+
+      <h3>CSS</h3>
+<pre>.sprite-fox-coding {
+  width: 200px;
+  height: 200px;
+  background: url('fox-coding-sprite.png') 0 center no-repeat;
+  background-size: 12200px 200px;
+  animation: sprite-fox-coding-play 5.08s steps(61) infinite;
+  overflow: hidden;
+}
+
+@keyframes sprite-fox-coding-play {
+  from { background-position: 0 center; }
+  to { background-position: -12200px center; }
+}</pre>
+
+      <p>That's it. No JavaScript, no libraries, no video files. Works in any browser, any framework, any static site.</p>
+
+      <h3>React</h3>
+<pre>&lt;div
+  style={{
+    width: 200,
+    height: 200,
+    backgroundImage: "url('/images/fox-coding-sprite.png')",
+    backgroundSize: '12200px 200px',
+    animation: 'sprite-fox-coding-play 5.08s steps(61) infinite'
+  }}
+/&gt;</pre>
+    </div>
+
+    <div class="info-banner">
+      <strong>Quality options:</strong>
+      Use <code>--quality=low</code> for 8fps (lighter, ~40 frames) or <code>--quality=high</code> for 12fps (smoother, ~60 frames). The default is high.
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://github.com/TamerinTECH/claude-skill-klingai-animation">GitHub</a> &middot; TamerinTech &middot; MIT License
+  </footer>
+</body>
+</html>

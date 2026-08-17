@@ -1,0 +1,15 @@
+{
+  "width": 1376, "height": 768, "bg": "#1C2340", "seed": 9, "ink": 1.8,
+  "title": "THE NIGHT WATCH",
+  "elements": [
+    {"type": "stars", "count": 10, "height": 170},
+    {"type": "moon", "x": 1180, "y": 150},
+    {"type": "ground", "y": 640, "width": 1376},
+    {"type": "person", "x": 520, "y": 640, "pose": "stand", "emotion": "neutral",
+     "hair": "cap", "hairColor": "black", "cloth": "hoodie", "outfit": "navy",
+     "outfit2": "grey", "skin": "deep", "scale": 1.1},
+    {"type": "label", "x": 520, "y": 705, "text": "the watcher", "size": 38, "font": "patrick", "color": "#F5EFDF"},
+    {"type": "mirror", "x": 900, "y": 400, "w": 150, "h": 230},
+    {"type": "label", "x": 900, "y": 700, "text": "the mirror sees back", "size": 38, "font": "patrick", "color": "#F5EFDF"}
+  ]
+}

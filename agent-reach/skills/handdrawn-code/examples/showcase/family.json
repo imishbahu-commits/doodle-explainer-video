@@ -1,0 +1,17 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 17,
+  "title": "A FACE IN THE FAMILY TREE",
+  "elements": [
+    {"type": "line", "x1": 330, "y1": 330, "x2": 1026, "y2": 330},
+    {"type": "line", "x1": 330, "y1": 330, "x2": 330, "y2": 400},
+    {"type": "line", "x1": 688, "y1": 330, "x2": 688, "y2": 400},
+    {"type": "line", "x1": 1026, "y1": 330, "x2": 1026, "y2": 400},
+    {"type": "stick", "x": 330, "y": 620, "pose": "stand", "scale": 0.8},
+    {"type": "label", "x": 330, "y": 715, "text": "grandmother", "size": 44, "font": "patrick"},
+    {"type": "stick", "x": 688, "y": 620, "pose": "stand", "scale": 0.8},
+    {"type": "label", "x": 688, "y": 715, "text": "mother", "size": 44, "font": "patrick"},
+    {"type": "stick", "x": 1026, "y": 620, "pose": "stand", "scale": 0.8},
+    {"type": "label", "x": 1026, "y": 715, "text": "you", "size": 44, "font": "patrick"},
+    {"type": "label", "x": 680, "y": 240, "text": "10% saw a dead parent in the mirror", "size": 52, "font": "caveat", "rot": -1}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "width": 1376, "height": 768, "bg": "#F2A63B", "seed": 11,
+  "title": "WHY CAN'T YOU TICKLE YOURSELF?",
+  "elements": [
+    {"type": "stick", "x": 330, "y": 620, "pose": "stand", "scale": 1.05},
+    {"type": "bubble", "x": 700, "y": 280, "w": 440, "h": 160, "text": "I KNEW THAT WAS COMING", "textSize": 42, "kind": "thought", "fromX": 330, "fromY": 470},
+    {"type": "stick", "x": 1060, "y": 620, "pose": "point", "scale": 1.0},
+    {"type": "label", "x": 330, "y": 720, "text": "you", "size": 48, "font": "patrick", "rot": 0}
+  ]
+}

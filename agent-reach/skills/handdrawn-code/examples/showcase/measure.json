@@ -1,0 +1,12 @@
+{
+  "width": 1376, "height": 768, "bg": "#5FBCE4", "seed": 23,
+  "title": "THE OCEAN'S BIGGEST HUNTER",
+  "elements": [
+    {"type": "giant", "x": 320, "y": 380, "text": "40", "size": 300},
+    {"type": "label", "x": 320, "y": 610, "text": "FEET LONG", "size": 72, "font": "patrick"},
+    {"type": "stick", "x": 700, "y": 640, "pose": "stand", "scale": 0.45},
+    {"type": "label", "x": 700, "y": 710, "text": "you", "size": 40, "font": "patrick", "rot": 2},
+    {"type": "doubleArrow", "x1": 880, "y1": 300, "x2": 1260, "y2": 300, "label": "100 METERS"},
+    {"type": "label", "x": 1070, "y": 200, "text": "it hears your outline", "size": 44, "font": "caveat", "rot": -1}
+  ]
+}

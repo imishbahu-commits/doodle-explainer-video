@@ -1,0 +1,45 @@
+{
+  "output": "final.mp4",
+  "banner": "assets/banner.png",
+  "sections": [
+    {
+      "audio": "audio/01.mp3",
+      "beats": [
+        {"image": "assets/001.png", "text": "Turn off the lights. Sit close to the mirror."},
+        {"image": "assets/002.png", "text": "Stare into your own eyes. Ten minutes. Don't look away."},
+        {"image": "assets/003.png", "text": "By the end, two out of three people watch their own face deform and melt."}
+      ]
+    },
+    {
+      "audio": "audio/02.mp3",
+      "beats": [
+        {"image": "assets/005.png", "text": "In two thousand ten, psychologist Giovanni Caputo ran this exact experiment on fifty people."},
+        {"image": "assets/006.png", "text": "Forty-eight percent saw a monster. Eighteen percent saw an animal."},
+        {"image": "assets/007.png", "text": "Ten percent saw a dead parent."},
+        {"image": "assets/004.png", "text": "Their own face was gone."},
+        {"image": "assets/008.png", "text": "You would assume your brain knows your own face better than anything. That is the mistake."},
+        {"image": "assets/009.png", "text": "Stay to the end, because the real reason will change how much you trust your eyes."}
+      ]
+    },
+    {
+      "audio": "audio/03.mp3",
+      "beats": [
+        {"image": "assets/010.png", "text": "Your eyes are not cameras. They are prediction machines."},
+        {"image": "assets/011.png", "text": "You have never actually seen your face. You have seen your brain's best guess."},
+        {"image": "assets/012.png", "text": "Back in eighteen oh four, Swiss physician Ignaz Troxler found that anything unchanging simply fades."},
+        {"image": "assets/013.png", "text": "Your neurons get bored. In dim light, the guesses fill in the gaps."},
+        {"image": "assets/014.png", "text": "Familiar faces. Old ones. Not yours."}
+      ]
+    },
+    {
+      "audio": "audio/04.mp3",
+      "beats": [
+        {"image": "assets/015.png", "text": "But here is the part that stays with you. The monster was never in the mirror. It was in the model."},
+        {"image": "assets/016.png", "text": "Bright lights, moving eyes, no illusion."},
+        {"image": "assets/017.png", "text": "Dim light and a fixed stare, and the face in the glass stops being yours."},
+        {"image": "assets/018.png", "text": "So ask yourself. When you look at the people you love, how much of them are you actually seeing?"},
+        {"image": "assets/019.png", "text": "And how much is just the face your brain already decided to draw?"}
+      ]
+    }
+  ]
+}
