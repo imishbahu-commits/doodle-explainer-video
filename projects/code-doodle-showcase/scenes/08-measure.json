@@ -1,0 +1,16 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 808, "ink": 1.3,
+  "title": "IT WAS NEVER THAT BIG",
+  "elements": [
+    {"type": "circle", "x": 700, "y": 420, "r": 190, "fill": "#BEE3F2", "fillStyle": "hachure"},
+    {"type": "label", "x": 700, "y": 420, "text": "THE BEAST", "size": 58, "font": "caveat"},
+    {"type": "doubleArrow", "x1": 510, "y1": 654, "x2": 890, "y2": 654, "label": "4 metres, they said"},
+    {"type": "face", "x": 250, "y": 555, "r": 50, "mood": "smile"},
+    {"type": "label", "x": 250, "y": 655, "text": "a person, to scale", "size": 34, "font": "patrick"},
+    {"type": "circle", "x": 1120, "y": 520, "r": 76, "fill": "#F2A0A0", "fillStyle": "solid"},
+    {"type": "label", "x": 1120, "y": 520, "text": "1.6 m", "size": 44, "font": "kalam"},
+    {"type": "label", "x": 1120, "y": 640, "text": "what the bones", "size": 36, "font": "patrick", "color": "#D9534F"},
+    {"type": "label", "x": 1120, "y": 682, "text": "actually measured", "size": 36, "font": "patrick", "color": "#D9534F"},
+    {"type": "arrow", "x1": 1050, "y1": 450, "x2": 900, "y2": 400, "label": "shrink"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "width": 1376, "height": 768, "bg": "#F2A63B", "seed": 505, "ink": 1.6,
+  "elements": [
+    {"type": "giant", "x": 500, "y": 360, "text": "1 IN 3", "size": 250, "color": "#16161a"},
+    {"type": "label", "x": 500, "y": 520, "text": "swore they saw it themselves", "size": 54, "font": "caveat"},
+    {"type": "person", "x": 1130, "y": 720, "scale": 0.92, "pose": "shrug", "emotion": "surprised",
+     "hair": "cap", "hairColor": "slate", "cloth": "coat", "outfit": "navy", "outfit2": "grey", "skin": "deep", "flip": true},
+    {"type": "line", "x1": 180, "y1": 600, "x2": 820, "y2": 600},
+    {"type": "label", "x": 500, "y": 660, "text": "not one of them wrote it down", "size": 42, "font": "patrick", "color": "#3a2d17"}
+  ]
+}

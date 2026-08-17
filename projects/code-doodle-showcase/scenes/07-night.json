@@ -1,0 +1,16 @@
+{
+  "width": 1376, "height": 768, "bg": "#DCE6F2", "seed": 707, "ink": 1.4,
+  "elements": [
+    {"type": "stars", "count": 14, "width": 1376, "height": 300},
+    {"type": "moon", "x": 1190, "y": 170},
+    {"type": "hills", "y": 520, "far": "#B9C7D6", "near": "#9FB2C6", "width": 1376, "height": 768},
+    {"type": "ground", "y": 662, "width": 1376},
+    {"type": "person", "x": 470, "y": 700, "scale": 0.72, "pose": "hold", "emotion": "worried",
+     "hair": "cap", "capColor": "navy", "cloth": "coat", "outfit": "navy", "outfit2": "grey", "skin": "light",
+     "says": "something moved.", "sayW": 300},
+    {"type": "person", "x": 900, "y": 700, "scale": 0.72, "pose": "raise", "emotion": "surprised",
+     "hair": "long", "hairColor": "black", "cloth": "coat", "outfit": "purple", "outfit2": "slate", "skin": "brown", "flip": true},
+    {"type": "label", "x": 300, "y": 120, "text": "THE NIGHT WATCH", "size": 62, "font": "caveat", "color": "#24455C"},
+    {"type": "speckle", "count": 220, "color": "#8a93a3", "width": 1376, "height": 768}
+  ]
+}

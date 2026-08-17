@@ -1,0 +1,10 @@
+{
+  "width": 1376, "height": 768, "bg": "#BEE3F2", "seed": 606, "ink": 1.2,
+  "elements": [
+    {"type": "sky", "x": 340, "y": 330, "sun": true, "sunX": 1210, "sunY": 165, "clouds": 2, "cloudGap": 420, "cloudDy": 190, "birds": 3},
+    {"type": "hills", "y": 470, "width": 1376, "height": 768},
+    {"type": "tree", "x": 130, "y": 660},
+    {"type": "tree", "x": 1265, "y": 690},
+    {"type": "ground", "y": 640, "width": 1376}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 303, "ink": 1.4,
+  "title": "THE SUSPICIOUS CAT",
+  "elements": [
+    {"type": "line", "x1": 300, "y1": 655, "x2": 1080, "y2": 655},
+    {"type": "shape", "points": [[880, 640], [980, 560], [1010, 470], [960, 470], [935, 555], [850, 615]], "fill": "#F2A63B"},
+    {"type": "circle", "x": 700, "y": 500, "r": 150, "fill": "#F2A63B", "fillStyle": "solid"},
+    {"type": "shape", "points": [[578, 300], [566, 196], [652, 258]], "fill": "#F2A63B"},
+    {"type": "shape", "points": [[746, 256], [832, 194], [820, 300]], "fill": "#F2A63B"},
+    {"type": "shape", "points": [[588, 288], [582, 232], [628, 264]], "fill": "#F2A0A0"},
+    {"type": "shape", "points": [[770, 262], [816, 230], [810, 288]], "fill": "#F2A0A0"},
+    {"type": "circle", "x": 699, "y": 320, "r": 128, "fill": "#F2A63B", "fillStyle": "solid"},
+    {"type": "circle", "x": 648, "y": 300, "r": 30, "fill": "#EDE1B1"},
+    {"type": "circle", "x": 752, "y": 300, "r": 30, "fill": "#EDE1B1"},
+    {"type": "shape", "points": [[644, 282], [652, 282], [652, 318], [644, 318]], "fill": "#16161A"},
+    {"type": "shape", "points": [[748, 282], [756, 282], [756, 318], [748, 318]], "fill": "#16161A"},
+    {"type": "shape", "points": [[684, 352], [716, 352], [700, 372]], "fill": "#D9534F"},
+    {"type": "line", "x1": 700, "y1": 372, "x2": 700, "y2": 388},
+    {"type": "line", "x1": 700, "y1": 388, "x2": 674, "y2": 400},
+    {"type": "line", "x1": 700, "y1": 388, "x2": 726, "y2": 400},
+    {"type": "line", "x1": 610, "y1": 352, "x2": 486, "y2": 336},
+    {"type": "line", "x1": 610, "y1": 372, "x2": 490, "y2": 384},
+    {"type": "line", "x1": 790, "y1": 352, "x2": 914, "y2": 336},
+    {"type": "line", "x1": 790, "y1": 372, "x2": 910, "y2": 384},
+    {"type": "shape", "points": [[600, 640], [660, 640], [660, 664], [600, 664]], "fill": "#F2A63B"},
+    {"type": "shape", "points": [[740, 640], [800, 640], [800, 664], [740, 664]], "fill": "#F2A63B"},
+    {"type": "bubble", "x": 1080, "y": 250, "w": 420, "h": 170, "text": "you fed me. i forgot.", "kind": "thought", "fromX": 830, "fromY": 380, "textSize": 44},
+    {"type": "label", "x": 688, "y": 730, "text": "circles, triangles and a palette - that is the whole cat", "size": 38, "font": "patrick", "color": "#4a4a55"}
+  ]
+}

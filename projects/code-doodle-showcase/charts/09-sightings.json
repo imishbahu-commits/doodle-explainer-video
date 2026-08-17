@@ -1,0 +1,11 @@
+{
+  "kind": "bar",
+  "bg": "#FFFFFF",
+  "title": "WHAT THE WITNESSES REPORTED",
+  "xlabel": "reported shape",
+  "ylabel": "percent of accounts",
+  "labels": ["a large\nanimal", "a person\nin fur", "shadow\nonly", "nothing\nat all"],
+  "values": [58, 34, 22, 9],
+  "color": "#F2A63B",
+  "font": "caveat"
+}

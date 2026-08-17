@@ -1,0 +1,22 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFF9EC", "seed": 404, "ink": 1.3,
+  "title": "MYTH  vs  RECORD",
+  "elements": [
+    {"type": "line", "x1": 688, "y1": 190, "x2": 688, "y2": 690},
+    {"type": "label", "x": 360, "y": 240, "text": "WHAT WAS TOLD", "size": 54, "font": "caveat"},
+    {"type": "label", "x": 1016, "y": 240, "text": "WHAT WAS FOUND", "size": 54, "font": "caveat"},
+    {"type": "xmark", "x": 180, "y": 350, "s": 0.9},
+    {"type": "label", "x": 420, "y": 350, "text": "a giant in the hills", "size": 44, "font": "patrick"},
+    {"type": "xmark", "x": 180, "y": 460, "s": 0.9},
+    {"type": "label", "x": 420, "y": 460, "text": "it ate the cattle", "size": 44, "font": "patrick"},
+    {"type": "xmark", "x": 180, "y": 570, "s": 0.9},
+    {"type": "label", "x": 420, "y": 570, "text": "the village burned", "size": 44, "font": "patrick"},
+    {"type": "check", "x": 836, "y": 350, "s": 0.9},
+    {"type": "label", "x": 1076, "y": 350, "text": "a mammoth skull", "size": 44, "font": "patrick"},
+    {"type": "check", "x": 836, "y": 460, "s": 0.9},
+    {"type": "label", "x": 1076, "y": 460, "text": "one bad winter", "size": 44, "font": "patrick"},
+    {"type": "check", "x": 836, "y": 570, "s": 0.9},
+    {"type": "label", "x": 1076, "y": 570, "text": "a kitchen fire", "size": 44, "font": "patrick"},
+    {"type": "label", "x": 688, "y": 726, "text": "the story kept the shape, not the facts", "size": 42, "font": "caveat", "color": "#4a4a55"}
+  ]
+}

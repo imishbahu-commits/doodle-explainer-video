@@ -196,10 +196,14 @@ export function inkPerson(ctx, el) {
   if (cloth === "dress") {
     shape(t([[-56, -384], [0, -370], [56, -384], [80, -298], [62, -206], [-62, -206], [-80, -298]]), outfit);
   } else if (cloth === "coat") {
-    shape(t([[-72, -388], [0, -372], [72, -388], [68, -266], [0, -254], [-68, -266]]), WHITE, 0.7, 5);
-    line(t([[-12, -372], [-20, -296]]), 4);
-    line(t([[12, -372], [20, -296]]), 4);
-    dot(0, -310, 4, INK); dot(0, -280, 4, INK);
+    // body in the character's outfit colour (was hard-coded white, which
+    // made every coat read as a blank bib on coloured backgrounds)
+    shape(t([[-72, -388], [0, -372], [72, -388], [68, -266], [0, -254], [-68, -266]]), outfit, 0.7, 5);
+    // lapels + button placket
+    shape(t([[-12, -372], [-34, -380], [-30, -300], [-18, -300]]), outfit2, 0.6, 4);
+    shape(t([[12, -372], [34, -380], [30, -300], [18, -300]]), outfit2, 0.6, 4);
+    line(t([[0, -366], [0, -262]]), 3.5);
+    dot(0, -340, 4.5, INK); dot(0, -310, 4.5, INK); dot(0, -280, 4.5, INK);
   } else {
     shape(t([[-64, -384], [-6, -370], [64, -384], [70, -322], [56, -252], [-56, -252], [-70, -322]]), outfit);
     // sleeves
@@ -256,10 +260,13 @@ export function inkPerson(ctx, el) {
     line(hx([[-20, -80], [-8, -84]]), 3);
     line(hx([[8, -82], [20, -78]]), 3);
   } else if (hairStyle === "cap") {
-    shape(hx([[-48, -56], [48, -56], [48, -22], [-48, -22]]), OUTFITS.red, 0.7, 5);
-    shape(hx([[8, -22], [66, -14], [64, -4], [8, -12]]), OUTFITS.red, 0.6, 4);
-    const [px0, py0] = E(0, -64);
-    dot(px0, py0, 11, OUTFITS.red);
+    // crown sits ABOVE the eye line (eyes are at y=-30); the old crown
+    // reached y=-22 and the brim y=-4, which drew the hat over the face.
+    const capC = OUTFITS[el.capColor] ?? OUTFITS.red;
+    shape(hx([[-50, -60], [-30, -92], [0, -100], [30, -92], [50, -60], [50, -48], [-50, -48]]), capC, 0.7, 5);
+    shape(hx([[10, -48], [68, -42], [66, -30], [10, -36]]), capC, 0.6, 4);
+    const [px0, py0] = E(0, -100);
+    dot(px0, py0, 10, capC);
   } else { // short (default)
     shape(hx([[-50, -58], [-38, -84], [-16, -96], [8, -92], [28, -76], [42, -48], [44, -24], [32, -18], [-32, -18], [-44, -24]]), hair);
   }
@@ -331,10 +338,24 @@ export function inkPerson(ctx, el) {
   }
   // optional speech/thought bubble above
   if (el.says) {
-    const [bx, by] = M(0, headC[1] - 130);
-    append(rc.ellipse(bx, by, el.sayW ?? 250 * s, el.sayH ?? 100 * s,
-      { fill: WHITE, fillStyle: "solid", roughness: 0.7 }));
-    ctx.text({ x: bx, y: by, text: el.says, size: (el.saySize ?? 34) * s, font: "caveat", rot: -0.6 });
+    // Clear the head: the head top is headC[1] - 90 in local units, so the
+    // bubble is centred well above it and its tail bridges the gap.
+    const bw = el.sayW ?? 260 * s;
+    const bh = el.sayH ?? 110 * s;
+    const [bx, by] = M(0, headC[1] - 90 - bh / (2 * s) - 46);
+    append(rc.ellipse(bx, by, bw, bh,
+      { fill: WHITE, fillStyle: "solid", stroke: INK, strokeWidth: 4 * s, roughness: 0.7 }));
+    // tail — three shrinking dots down toward the head
+    const [hxp, hyp] = M(14, headC[1] - 86);
+    for (let i = 0; i < 3; i++) {
+      const p = 0.34 + i * 0.26;
+      append(rc.circle(bx + (hxp - bx) * p, by + bh / 2 + (hyp - by - bh / 2) * p,
+        (13 - i * 3) * 2 * s,
+        { fill: WHITE, fillStyle: "solid", stroke: INK, strokeWidth: 3.2 * s, roughness: 0.6 }));
+    }
+    // the text node must be APPENDED — previously it was built and dropped,
+    // so every `says` bubble rendered empty.
+    append(ctx.text({ x: bx, y: by, text: el.says, size: (el.saySize ?? 34) * s, font: "caveat", rot: -0.6 }));
   }
   return { top: headC[1] - 90 * s, feet: y };
 }

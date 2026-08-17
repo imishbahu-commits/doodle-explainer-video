@@ -1,0 +1,11 @@
+{
+  "kind": "line",
+  "bg": "#FFFFFF",
+  "title": "THE STORY GREW WITH EVERY RETELLING",
+  "xlabel": "retellings",
+  "ylabel": "claimed height (m)",
+  "labels": ["1", "5", "10", "20", "50", "100"],
+  "values": [1.6, 2.1, 2.8, 3.4, 3.9, 4.2],
+  "color": "#3F81B2",
+  "font": "caveat"
+}

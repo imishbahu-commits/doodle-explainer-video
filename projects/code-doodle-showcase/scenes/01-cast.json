@@ -1,0 +1,15 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 101, "ink": 1.5,
+  "title": "DRAWN ENTIRELY BY CODE",
+  "elements": [
+    {"type": "person", "x": 300, "y": 700, "scale": 0.82, "pose": "wave", "emotion": "happy",
+     "hair": "messy", "hairColor": "black", "cloth": "hoodie", "outfit": "orange", "outfit2": "navy", "skin": "tan"},
+    {"type": "person", "x": 690, "y": 700, "scale": 0.82, "pose": "think", "emotion": "worried",
+     "hair": "bun", "hairColor": "auburn", "cloth": "sweater", "outfit": "purple", "outfit2": "grey", "skin": "light"},
+    {"type": "person", "x": 1080, "y": 700, "scale": 0.82, "pose": "point", "emotion": "laugh",
+     "hair": "short", "hairColor": "brown", "cloth": "shirt", "outfit": "green", "outfit2": "blue", "skin": "brown", "flip": true},
+    {"type": "label", "x": 300, "y": 742, "text": "no image model", "size": 36, "font": "patrick", "color": "#4a4a55"},
+    {"type": "label", "x": 690, "y": 742, "text": "no API key", "size": 36, "font": "patrick", "color": "#4a4a55"},
+    {"type": "label", "x": 1080, "y": 742, "text": "just rough.js", "size": 36, "font": "patrick", "color": "#4a4a55"}
+  ]
+}

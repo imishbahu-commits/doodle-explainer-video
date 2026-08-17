@@ -1,0 +1,16 @@
+{
+  "width": 1376, "height": 768, "bg": "#FFFFFF", "seed": 202, "ink": 1.3,
+  "title": "HOW A RUMOUR SPREADS",
+  "elements": [
+    {"type": "box", "x": 250, "y": 400, "w": 300, "h": 210, "label": "ONE", "sub": "says a thing",
+     "fill": "#FFE0AC", "fillStyle": "hachure", "labelSize": 62},
+    {"type": "box", "x": 688, "y": 400, "w": 300, "h": 210, "label": "TEN", "sub": "repeat it",
+     "fill": "#BEE3F2", "fillStyle": "hachure", "labelSize": 62},
+    {"type": "box", "x": 1126, "y": 400, "w": 300, "h": 210, "label": "A TOWN", "sub": "believes it",
+     "fill": "#CFE8C0", "fillStyle": "hachure", "labelSize": 56},
+    {"type": "arrow", "x1": 408, "y1": 400, "x2": 530, "y2": 400, "label": "retold"},
+    {"type": "arrow", "x1": 846, "y1": 400, "x2": 968, "y2": 400, "label": "sworn to"},
+    {"type": "label", "x": 688, "y": 620, "text": "nobody checked the original", "size": 46, "font": "caveat", "color": "#4a4a55"},
+    {"type": "xmark", "x": 688, "y": 690, "s": 1.1}
+  ]
+}
