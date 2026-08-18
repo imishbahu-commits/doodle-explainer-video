@@ -144,6 +144,9 @@ PAGE = """<!doctype html>
     <label>🚀 Puter (default — best quality: GPT Image 2 / Nano Banana Pro / FLUX.2 Pro)</label>
     <button class="start" id="puterBtn" type="button" style="width:100%">🔑 Sign in to Puter (one time, free)</button>
     <div id="puterStatus" style="font-size:12px;color:#9aa;margin-top:6px">checking…</div>
+    <div style="font-size:11px;color:#778;margin-top:8px">💡 If the preview is embedded and popups are blocked, open the studio in a
+    real tab: <a href="{{SELF_URL}}" target="_blank" rel="noopener" style="color:#7ee08a">open in new tab</a> —
+    popups work fine there.</div>
   </div>
 </div>
 <div id="cards"></div>
@@ -301,12 +304,27 @@ async function puterSignedIn(){
 }
 
 async function puterSignIn(){
-  try { await window.puter.auth.signIn(); return true; } catch(e){ return false; }
+  // attempt_temp_user_creation: Puter can create a temporary guest account
+  // with NO registration — the user just confirms. Docs verified.
+  try {
+    await window.puter.auth.signIn({ attempt_temp_user_creation: true });
+    return { ok: true, code: null, msg: '' };
+  } catch(e){
+    const code = (e && (e.code || e.error)) || 'unknown';
+    const msg = (e && (e.msg || e.message)) || '';
+    return { ok: false, code, msg };
+  }
 }
 
 async function refreshPuterStatus(){
   const st = document.getElementById('puterStatus');
-  if (!window.puter){ st.textContent = 'Puter SDK not loaded'; return false; }
+  if (!window.puter){
+    st.textContent = '⚠ Puter SDK did not load here (embedded preview often blocks it) — ' +
+                     'open the studio in a NEW TAB, then it works.';
+    const b = document.getElementById('puterBtn');
+    if (b){ b.textContent = 'Open studio in new tab →'; b.onclick = () => window.open(window.location.href, '_blank'); }
+    return false;
+  }
   try {
     const ok = await puterSignedIn();
     if (ok){
@@ -317,7 +335,7 @@ async function refreshPuterStatus(){
       return true;
     }
   } catch(e){}
-  st.textContent = 'Not signed in — try anonymous first; sign in if it asks (one time, free)';
+  st.textContent = 'Not signed in — tap "Sign in to Puter" (guest account is automatic, no email needed)';
   return false;
 }
 
@@ -344,11 +362,17 @@ async function genPuter(cardObj, modelId, fullPrompt, errEl, card){
     if (!up.ok) throw new Error('save failed');
     return cfg.model || 'auto';
   } catch(e){
-    const msg = (e && e.message) || String(e);
+    const msg = (e && (e.message || e.msg || String(e))) || String(e);
+    if (/popup.?block|blocked/i.test(msg) && /auth|sign|popup/i.test(msg)){
+      errEl.innerHTML = 'Puter popup blocked by the embedded preview — open the studio in a ' +
+                        '<a href="' + window.location.href + '" target="_blank" rel="noopener" ' +
+                        'style="color:#7ee08a;font-weight:700">new tab</a> and it will just work.';
+      return 'need_signin';
+    }
     if (/sign|auth|login|credit|upgrade|402|subscription/i.test(msg)){
-      errEl.textContent = 'Puter needs a free account: tap "🔑 Sign in to Puter" above, then Retry.';
+      errEl.textContent = 'Puter needs a free account: tap "🔑 Sign in to Puter" above (guest is automatic), then Retry.';
       document.getElementById('puterBtn').style.display = 'block';
-      document.getElementById('puterStatus').textContent = 'Sign-in required — one time, free, then unlimited';
+      document.getElementById('puterStatus').textContent = 'Sign-in required — tap the button, guest account is automatic';
       return 'need_signin';
     }
     errEl.textContent = 'Puter: ' + msg.slice(0, 200);
@@ -498,16 +522,33 @@ document.getElementById('regenbtn').onclick = () => {
 // ---- Puter sign-in button (must be called from a user tap) ----
 const pBtn = document.getElementById('puterBtn');
 pBtn.onclick = async () => {
-  pBtn.textContent = '⏳ opening sign-in window…';
-  const ok = await puterSignIn();
-  if (ok){
+  if (!window.puter){
+    window.open(window.location.href, '_blank');
+    return;
+  }
+  pBtn.textContent = '⏳ opening sign-in…';
+  const r = await puterSignIn();
+  const st = document.getElementById('puterStatus');
+  if (r.ok){
     pBtn.textContent = '✅ Signed in!';
-    document.getElementById('puterStatus').textContent = 'Signed in — unlimited. Auto-run continues.';
+    st.textContent = 'Signed in — unlimited. Auto-run continues.';
     refreshPuterStatus();
+    // kick any pending auto-run
+    if (!autoRunning && CARDS.some(c => !c.done)) autoRunAll();
+  } else if (r.code === 'popup_blocked' || /blocked/i.test(r.msg)){
+    pBtn.textContent = '🔑 Sign in (blocked here — see below)';
+    st.innerHTML = '❌ <b>Popup blocked by the embedded preview.</b> The phone-studio lives ' +
+                   'inside a frame that blocks popups. Fix: open it in a real tab — ' +
+                   'tap here → ' +
+                   '<a href="' + window.location.href + '" target="_blank" rel="noopener" ' +
+                   'style="color:#7ee08a;font-weight:700">open studio in new tab</a> ' +
+                   'and sign in there once. Popups work fine in a normal tab.';
+  } else if (r.code === 'auth_window_closed'){
+    pBtn.textContent = '🔑 Sign in to Puter (one time, free)';
+    st.textContent = 'The sign-in window was closed before finishing — tap the button again and complete it.';
   } else {
     pBtn.textContent = '🔑 Sign in to Puter (one time, free)';
-    document.getElementById('puterStatus').textContent =
-      'Popup was closed or blocked — allow popups for this site, then tap again.';
+    st.textContent = 'Sign-in failed (' + r.code + ': ' + r.msg.slice(0,120) + ') — tap again, or open in a new tab.';
   }
 };
 refreshPuterStatus();
@@ -677,10 +718,12 @@ class Handler(http.server.BaseHTTPRequestHandler):
                         if not im.get("error")}
             cards = [{"id": p["id"], "prompt": p["keyword"],
                       "done": p["id"] in done_ids} for p in prompts]
+            self_url = "http://" + (self.headers.get("Host") or f"localhost:{PORT}") + self.path
             html = (PAGE.replace("{{PROJECT}}", meta["name"])
                         .replace("{{PROJECT_JSON}}",
                                  json.dumps(meta["name"]))
-                        .replace("{{CARDS_JSON}}", json.dumps(cards)))
+                        .replace("{{CARDS_JSON}}", json.dumps(cards))
+                        .replace("{{SELF_URL}}", self_url))
             self._send(200, html)
         elif path == "/img":
             d = PROJECTS / safe_name(q.get("project", ""))
