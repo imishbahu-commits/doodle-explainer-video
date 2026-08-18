@@ -1,0 +1,69 @@
+{
+  "width": 1280,
+  "height": 720,
+  "bg": "#FFF4D2",
+  "seed": 17,
+  "roughness": 1.35,
+  "bowing": 1.05,
+  "strokeWidth": 4.2,
+  "ink": 1.4,
+  "elements": [
+    {"type": "speckle", "count": 40, "color": "#E8D7A8"},
+
+    {"type": "line", "x1": 40, "y1": 150, "x2": 1240, "y2": 158},
+    {"type": "line", "x1": 40, "y1": 230, "x2": 1240, "y2": 236},
+    {"type": "line", "x1": 40, "y1": 310, "x2": 1240, "y2": 304},
+    {"type": "line", "x1": 40, "y1": 390, "x2": 1240, "y2": 398},
+    {"type": "line", "x1": 40, "y1": 470, "x2": 1240, "y2": 466},
+    {"type": "line", "x1": 40, "y1": 550, "x2": 1240, "y2": 558},
+    {"type": "line", "x1": 40, "y1": 630, "x2": 1240, "y2": 624},
+    {"type": "line", "x1": 118, "y1": 20, "x2": 122, "y2": 700},
+
+    {"type": "circle", "x": 70, "y": 70, "r": 16, "fill": "#F5C518", "fillStyle": "solid"},
+    {"type": "circle", "x": 1210, "y": 70, "r": 16, "fill": "#F5C518", "fillStyle": "solid"},
+    {"type": "circle", "x": 70, "y": 650, "r": 16, "fill": "#F5C518", "fillStyle": "solid"},
+    {"type": "circle", "x": 1210, "y": 650, "r": 16, "fill": "#F5C518", "fillStyle": "solid"},
+
+    {"type": "circle", "x": 200, "y": 78, "r": 14, "fill": "#3A3A3E", "fillStyle": "solid"},
+    {"type": "circle", "x": 248, "y": 78, "r": 14, "fill": "#3A3A3E", "fillStyle": "solid"},
+    {"type": "line", "x1": 214, "y1": 78, "x2": 234, "y2": 78},
+    {"type": "circle", "x": 1080, "y": 642, "r": 14, "fill": "#3A3A3E", "fillStyle": "solid"},
+    {"type": "circle", "x": 1128, "y": 642, "r": 14, "fill": "#3A3A3E", "fillStyle": "solid"},
+    {"type": "line", "x1": 1094, "y1": 642, "x2": 1114, "y2": 642},
+
+    {"type": "circle", "x": 470, "y": 250, "r": 28, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "circle", "x": 810, "y": 250, "r": 28, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "circle", "x": 640, "y": 248, "r": 92, "fill": "#8B5A2B", "fillStyle": "solid"},
+    {"type": "circle", "x": 640, "y": 268, "r": 62, "fill": "#A89078", "fillStyle": "solid"},
+    {"type": "circle", "x": 608, "y": 248, "r": 7, "fill": "#16161a", "fillStyle": "solid"},
+    {"type": "circle", "x": 672, "y": 248, "r": 7, "fill": "#16161a", "fillStyle": "solid"},
+    {"type": "line", "x1": 596, "y1": 228, "x2": 624, "y2": 236},
+    {"type": "line", "x1": 684, "y1": 228, "x2": 656, "y2": 236},
+    {"type": "line", "x1": 610, "y1": 300, "x2": 670, "y2": 300},
+    {"type": "line", "x1": 640, "y1": 268, "x2": 640, "y2": 292},
+
+    {"type": "box", "x": 640, "y": 455, "w": 300, "h": 250, "fill": "#8B5A2B", "fillStyle": "solid"},
+    {"type": "box", "x": 640, "y": 430, "w": 168, "h": 150, "fill": "#A89078", "fillStyle": "solid"},
+    {"type": "line", "x1": 610, "y1": 400, "x2": 670, "y2": 400},
+    {"type": "line", "x1": 640, "y1": 380, "x2": 640, "y2": 470},
+
+    {"type": "circle", "x": 430, "y": 430, "r": 62, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "circle", "x": 850, "y": 430, "r": 62, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "circle", "x": 400, "y": 500, "r": 36, "fill": "#A89078", "fillStyle": "solid"},
+    {"type": "circle", "x": 880, "y": 500, "r": 36, "fill": "#A89078", "fillStyle": "solid"},
+
+    {"type": "box", "x": 560, "y": 600, "w": 70, "h": 90, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "box", "x": 720, "y": 600, "w": 70, "h": 90, "fill": "#6B3F22", "fillStyle": "solid"},
+    {"type": "circle", "x": 555, "y": 655, "r": 34, "fill": "#8A8078", "fillStyle": "solid"},
+    {"type": "circle", "x": 725, "y": 655, "r": 34, "fill": "#8A8078", "fillStyle": "solid"},
+
+    {"type": "circle", "x": 640, "y": 455, "r": 155, "fill": "none"},
+    {"type": "arrow", "x1": 920, "y1": 360, "x2": 790, "y2": 455},
+
+    {"type": "label", "x": 640, "y": 52, "text": "IS MONKEY THIN?", "size": 68, "font": "kalam", "rot": -1.2},
+    {"type": "label", "x": 980, "y": 330, "text": "THE CRIME", "size": 34, "font": "patrick", "color": "#D91B1B", "rot": 4},
+    {"type": "label", "x": 640, "y": 698, "text": "NAH. THAT'S A BOX WITH NO SHAPE.", "size": 42, "font": "kalam", "rot": 0.6},
+
+    {"type": "frame", "margin": 10}
+  ]
+}

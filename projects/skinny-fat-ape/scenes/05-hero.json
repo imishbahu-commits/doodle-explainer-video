@@ -1,0 +1,108 @@
+{
+  "name": "05-hero",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 2.4,
+  "background": "../assets/bg-cream.png",
+  "motion_blur": 5,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/00-style-lock-ape.png",
+      "isolate": true,
+      "max_dim": 540,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              -340,
+              418
+            ],
+            "e": "easeOutExpo"
+          },
+          {
+            "t": 0.5,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.35,
+            "v": [
+              640,
+              412
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.2,
+            "v": [
+              640,
+              424
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.4,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "APE SHOWS YOU",
+      "size": 70,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              88
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.55,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.8700000000000001,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.55,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.6000000000000001,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

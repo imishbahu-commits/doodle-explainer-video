@@ -1,0 +1,147 @@
+{
+  "name": "09-nowaist",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 2.5,
+  "background": "../assets/bg-cream.png",
+  "motion_blur": 3,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/07-no-waist-ape.png",
+      "isolate": true,
+      "max_dim": 560,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.85,
+            "v": [
+              640,
+              413
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.7,
+            "v": [
+              640,
+              423
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.5,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "NO WAIST",
+      "size": 76,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              90
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.12,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.44,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.12,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.16999999999999998,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "../assets/x-stamp.png",
+      "isolate": false,
+      "max_dim": 400,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              418
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.7,
+            "v": 1.7,
+            "e": "hold"
+          },
+          {
+            "t": 0.95,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 0.7,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 0.73,
+            "v": 1,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}
