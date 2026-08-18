@@ -1,0 +1,183 @@
+{
+  "name": "06-banana",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 3.3,
+  "background": "../assets/bg-paper.png",
+  "motion_blur": 3,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/05-banana-body-ape.png",
+      "isolate": true,
+      "max_dim": 520,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              424
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.6,
+            "v": [
+              640,
+              414
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.2,
+            "v": [
+              640,
+              434
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.7999999999999998,
+            "v": [
+              640,
+              414
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.4,
+            "v": [
+              640,
+              434
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.0,
+            "v": [
+              640,
+              414
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.3,
+            "v": [
+              640,
+              424
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "rot": [
+          {
+            "t": 0,
+            "v": -4,
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.8,
+            "v": 5,
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.6,
+            "v": -4,
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.4,
+            "v": 4,
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.3,
+            "v": -1,
+            "e": "easeInOut"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0,
+            "v": 1.0,
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.6,
+            "v": 1.08,
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.2,
+            "v": 0.96,
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.8,
+            "v": 1.07,
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.5,
+            "v": 0.98,
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.3,
+            "v": 1.02,
+            "e": "easeInOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "OVERRIPE",
+      "size": 74,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              84
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.2,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.52,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.2,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.25,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

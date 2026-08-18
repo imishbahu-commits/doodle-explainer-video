@@ -1,0 +1,175 @@
+{
+  "name": "03-box",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 3.3,
+  "background": "../assets/bg-cream.png",
+  "motion_blur": 5,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/03-box-ape.png",
+      "isolate": true,
+      "max_dim": 560,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              -360,
+              418
+            ],
+            "e": "easeOutExpo"
+          },
+          {
+            "t": 0.55,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.4,
+            "v": [
+              640,
+              411
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.25,
+            "v": [
+              640,
+              425
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.1,
+            "v": [
+              640,
+              411
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 3.3,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "rot": [
+          {
+            "t": 0,
+            "v": -5,
+            "e": "hold"
+          },
+          {
+            "t": 0.55,
+            "v": 0,
+            "e": "easeOutExpo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "A BOX",
+      "size": 78,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              84
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.7,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 1.02,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.7,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.75,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "NO SHAPE",
+      "size": 52,
+      "font": "hand",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              1088,
+              130
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 1.35,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 1.6700000000000002,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 1.35,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 1.4000000000000001,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

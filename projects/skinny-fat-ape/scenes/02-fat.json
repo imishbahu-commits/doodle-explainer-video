@@ -1,0 +1,214 @@
+{
+  "name": "02-fat",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 2.4,
+  "background": "../assets/bg-cream.png",
+  "motion_blur": 5,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/02-fat-ape.png",
+      "isolate": true,
+      "max_dim": 560,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              1480,
+              418
+            ],
+            "e": "easeOutExpo"
+          },
+          {
+            "t": 0.48,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.33,
+            "v": [
+              640,
+              413
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.18,
+            "v": [
+              640,
+              423
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.4,
+            "v": [
+              640,
+              418
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "rot": [
+          {
+            "t": 0,
+            "v": 6,
+            "e": "hold"
+          },
+          {
+            "t": 0.48,
+            "v": 0,
+            "e": "easeOutExpo"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "FAT?",
+      "size": 86,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              88
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.2,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.52,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.2,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.25,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "../assets/x-stamp.png",
+      "isolate": false,
+      "max_dim": 380,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              408
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 1.2,
+            "v": 1.7,
+            "e": "hold"
+          },
+          {
+            "t": 1.44,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 1.2,
+            "v": 0,
+            "e": "hold"
+          },
+          {
+            "t": 1.23,
+            "v": 1,
+            "e": "easeOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "NO",
+      "size": 80,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              1080,
+              120
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 1.22,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 1.54,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 1.22,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 1.27,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

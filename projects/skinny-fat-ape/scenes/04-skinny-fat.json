@@ -1,0 +1,120 @@
+{
+  "name": "04-skinny-fat",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 2.6,
+  "background": "../assets/bg-paper.png",
+  "motion_blur": 3,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/04-skinny-fat-ape.png",
+      "isolate": true,
+      "max_dim": 540,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              426
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.85,
+            "v": [
+              640,
+              421
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.7,
+            "v": [
+              640,
+              431
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.55,
+            "v": [
+              640,
+              421
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.6,
+            "v": [
+              640,
+              426
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0,
+            "v": 1.0,
+            "e": "hold"
+          },
+          {
+            "t": 2.6,
+            "v": 1.16,
+            "e": "easeInCubic"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "SKINNY FAT",
+      "size": 78,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              90
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.18,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.5,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.18,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.22999999999999998,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "name": "10-recomp",
+  "width": 1280,
+  "height": 720,
+  "fps": 60,
+  "duration": 2.31,
+  "background": "../assets/bg-cream.png",
+  "motion_blur": 4,
+  "layers": [
+    {
+      "type": "image",
+      "src": "../assets/08-jacked-ape.png",
+      "isolate": true,
+      "max_dim": 600,
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              430
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 0.65,
+            "v": [
+              640,
+              424
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.3,
+            "v": [
+              640,
+              436
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 1.9500000000000002,
+            "v": [
+              640,
+              424
+            ],
+            "e": "easeInOut"
+          },
+          {
+            "t": 2.31,
+            "v": [
+              640,
+              430
+            ],
+            "e": "easeInOut"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0,
+            "v": 0.62,
+            "e": "hold"
+          },
+          {
+            "t": 0.36,
+            "v": 1.04,
+            "e": "easeOutBack"
+          },
+          {
+            "t": 2.31,
+            "v": 1.1,
+            "e": "easeInOut"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "BODY RECOMP",
+      "size": 80,
+      "font": "hand-bold",
+      "tracks": {
+        "pos": [
+          {
+            "t": 0,
+            "v": [
+              640,
+              86
+            ],
+            "e": "hold"
+          }
+        ],
+        "scale": [
+          {
+            "t": 0.28,
+            "v": 0.55,
+            "e": "hold"
+          },
+          {
+            "t": 0.6000000000000001,
+            "v": 1.0,
+            "e": "easeOutBack"
+          }
+        ],
+        "opacity": [
+          {
+            "t": 0,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.28,
+            "v": 0.0,
+            "e": "hold"
+          },
+          {
+            "t": 0.33,
+            "v": 1.0,
+            "e": "easeOut"
+          }
+        ]
+      }
+    }
+  ]
+}

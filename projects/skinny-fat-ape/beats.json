@@ -1,0 +1,17 @@
+{
+  "title": "Skinny Fat Ape — THE HOOK",
+  "audio": "audio/hook.mp3",
+  "duration": 26.81,
+  "beats": [
+    {"id": 1, "t": [0.0, 2.4], "image": "assets/01-skinny-ape.png", "text": "Is monkey thin? No.", "move": "hold+slow-zoom-out + cross-out"},
+    {"id": 2, "t": [2.4, 4.8], "image": "assets/02-fat-ape.png", "text": "Is monkey fat? No.", "move": "slide-in + cross-out"},
+    {"id": 3, "t": [4.8, 8.1], "image": "assets/03-box-ape.png", "text": "Monkey looks like a box with no shape.", "move": "slide-in + idle bob"},
+    {"id": 4, "t": [8.1, 10.7], "image": "assets/04-skinny-fat-ape.png", "text": "This is classic skinny fat.", "move": "punch-in"},
+    {"id": 5, "t": [10.7, 13.1], "image": "assets/00-style-lock-ape.png", "text": "Today, Ape shows you", "move": "slide-in + idle bob"},
+    {"id": 6, "t": [13.1, 16.4], "image": "assets/05-banana-body-ape.png", "text": "how to turn that soft, overripe banana body", "move": "puppet"},
+    {"id": 7, "t": [16.4, 18.9], "image": "assets/08-jacked-ape.png", "text": "into a primal masterpiece.", "move": "stamp + punch-in"},
+    {"id": 8, "t": [18.9, 22.0], "image": "assets/06-shredded-skinny-ape.png", "text": "No more looking like a crackhead with abs", "move": "cross-out"},
+    {"id": 9, "t": [22.0, 24.5], "image": "assets/07-no-waist-ape.png", "text": "or a banana shaw with no waist.", "move": "cross-out"},
+    {"id": 10, "t": [24.5, 26.81], "image": "assets/08-jacked-ape.png", "text": "We do body recomposition.", "move": "pop_boing"}
+  ]
+}
