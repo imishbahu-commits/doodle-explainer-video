@@ -32,7 +32,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import unquote, parse_qs
+from urllib.parse import unquote, parse_qs, quote
 
 ROOT = Path(__file__).resolve().parent.parent
 PROJECTS = ROOT / "projects"
@@ -688,17 +688,55 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _send_video(self, path):
+        """Serve an mp4 with HTTP Range support so browsers can seek."""
+        size = path.stat().st_size
+        data = path.read_bytes()
+        rng = self.headers.get("Range")
+        m = re.match(r"bytes=(\d*)-(\d*)", rng or "")
+        if rng and m:
+            start = int(m.group(1) or 0)
+            end = int(m.group(2) or size - 1)
+            end = min(end, size - 1)
+            chunk = data[start:end + 1]
+            self.send_response(206)
+            self.send_header("Content-Type", "video/mp4")
+            self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Length", str(len(chunk)))
+            self.end_headers()
+            self.wfile.write(chunk)
+            return
+        self.send_response(200)
+        self.send_header("Content-Type", "video/mp4")
+        self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Content-Length", str(size))
+        self.end_headers()
+        self.wfile.write(data)
+
     def do_GET(self):
         q = self._q()
         path = self.path.split("?", 1)[0]
         if path in ("/", "/index.html"):
             projects = project_names()
-            cards = "".join(
-                f'<a style="display:block;margin:10px 20px;padding:16px;'
-                f'background:#161a2b;border-radius:12px;color:#eee;'
-                f'text-decoration:none" href="/studio?project={m["name"]}">'
-                f'<b>{m["name"]}</b> — {m["done"]}/{m["total"]} done</a>'
-                for m in [project_meta(n) for n in projects] if m)
+            cards = ""
+            for n in projects:
+                m = project_meta(n)
+                if not m:
+                    continue
+                watch = ""
+                if (PROJECTS / m["name"] / "final.mp4").exists():
+                    watch = (f'<a style="display:inline-block;margin-top:8px;padding:8px 14px;'
+                             f'background:#f5c63c;color:#000;font-weight:700;border-radius:10px;'
+                             f'text-decoration:none" href="/watch?project={quote(m["name"])}">'
+                             f'▶ Watch video</a>')
+                cards += (f'<div style="margin:10px 20px;padding:16px;background:#161a2b;'
+                          f'border-radius:12px;color:#eee;text-align:center">'
+                          f'<b>{m["name"]}</b> — {m["done"]}/{m["total"]} done<br>'
+                          f'<a style="display:inline-block;margin-top:8px;padding:8px 14px;'
+                          f'background:#2a3045;color:#eee;font-weight:700;border-radius:10px;'
+                          f'text-decoration:none" href="/studio?project={quote(m["name"])}">'
+                          f'🎨 Image studio</a> {watch}</div>')
             html = ("<!doctype html><html><head><meta charset=utf-8>"
                     "<meta name=viewport content='width=device-width,initial-scale=1'>"
                     "<title>Phone studio</title></head><body style='background:#0d0f1a;"
@@ -707,6 +745,39 @@ class Handler(http.server.BaseHTTPRequestHandler):
                     "pick a project</h1>" + cards +
                     "</body></html>")
             self._send(200, html)
+        elif path == "/watch":
+            meta = project_meta(q.get("project", ""))
+            if not meta:
+                self._send(404, "unknown project")
+                return
+            f = PROJECTS / meta["name"] / "final.mp4"
+            if not f.exists():
+                self._send(404, "no final.mp4 yet — build it first")
+                return
+            html = (f"<!doctype html><html><head><meta charset=utf-8>"
+                    f"<meta name=viewport content='width=device-width,initial-scale=1'>"
+                    f"<title>▶ {meta['name']}</title><style>"
+                    f"body{{margin:0;background:#0d0f1a;color:#eee;font-family:system-ui;"
+                    f"display:flex;flex-direction:column;align-items:center;padding:20px 0}}"
+                    f"h1{{font-size:18px;margin:0 0 12px}}"
+                    f"video{{width:100%;max-width:960px;border-radius:12px;background:#000}}"
+                    f"p{{color:#778;font-size:12px}}</style></head><body>"
+                    f"<h1>▶ {meta['name']}</h1>"
+                    f'<video controls autoplay playsinline preload="auto" '
+                    f'src="/media?project={quote(meta["name"])}"></video>'
+                    f"<p>If it doesn't start, tap play. 1:42 · 1280x720 · H.264 + AAC</p>"
+                    f"</body></html>")
+            self._send(200, html)
+        elif path == "/media":
+            meta = project_meta(q.get("project", ""))
+            if not meta:
+                self._send(404, "unknown project")
+                return
+            f = PROJECTS / meta["name"] / "final.mp4"
+            if not f.exists():
+                self._send(404, "no final.mp4 yet")
+                return
+            self._send_video(f)
         elif path == "/studio":
             meta = project_meta(q.get("project", ""))
             if not meta:
