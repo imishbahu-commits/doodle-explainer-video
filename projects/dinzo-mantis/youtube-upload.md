@@ -67,25 +67,60 @@ Google Key Moments (adds ~11% average view duration) → CTA → 3 hashtags.
 
 ---
 
-## 🏷️ TAGS — paste into the Tags field in YouTube Studio (comma separated)
+## 🏷️ TAGS — MAIN SET (paste into Studio Tags field, comma-separated)
+
+This is the full recommended set — ~480 characters, just under the 500-char
+limit. Ordered by value: exact-match phrase → topic → long-tail → format.
 
 ```
-praying mantis, why it sucks to be born as, praying mantis mating, sexual cannibalism, mantis eats mate, headless mantis, praying mantis facts, praying mantis life cycle, ootheca, insect facts, animal explainer, nature documentary
+praying mantis, why it sucks to be born as, praying mantis mating, sexual cannibalism, praying mantis facts, mantis eats male, mantis eats head, headless mantis, praying mantis life cycle, praying mantis egg case, ootheca, mantis cannibalism, why do praying mantis eat their mate, insect facts, animal facts, weird animal facts, animal explainer, nature documentary, animals
 ```
 
-(12 tags ≈ 160 chars — well under the 500-char limit. 2026 note: tags are low
-priority vs. transcript, but they still help seed initial indexing.)
+(19 tags. Swap any 2–3 out for the extras below if you want.)
+
+### 🔁 SWAP-IN EXTRAS (long-tail / query / related — same length class)
+```
+praying mantis eating mate, male praying mantis, praying mantis eggs, praying mantis hatching, mantis nymph, praying mantis hunting, praying mantis vs, insects, bugs, nature shorts, dark comedy animals
+```
 
 ---
 
-## #️⃣ HASHTAGS — paste at the very end of the description (3–5 max)
+## #️⃣ HASHTAGS — three tiers (use 3–5 at the end of the description)
 
+**Tier 1 — Series/brand (build THIS, use every video):**
 ```
-#prayingmantis #mantis #animalfacts
+#whysucks
 ```
 
-(Add `#whysucks` as a 4th if you want to build a branded series tag across
-all your videos.)
+**Tier 2 — Topic/niche (what the video is actually about):**
+```
+#prayingmantis #mantis #insects #animalfacts
+```
+
+**Tier 3 — Broad discovery (widens reach, lower relevance):**
+```
+#nature #wildlife #animalexplainer #sciencefacts
+```
+
+**Recommended final line (4 tags — YouTube surfaces top 3):**
+```
+#prayingmantis #mantis #whysucks #animalfacts
+```
+
+**Why:** keep `#whysucks` in every upload so it becomes *your* branded series
+hashtag (the way search users later find your whole channel, not one video).
+YouTube ignores anything beyond 15 total, so don't dump all 9 above — pick
+the 4 above (or swap `#animalfacts` for `#insects` on bug videos).
+
+---
+
+## ⚠️ 2026 reality check on tags vs hashtags
+- **Tags** are now a *minor* signal — YouTube mostly reads your auto-generated
+  transcript (your narration already says "praying mantis" constantly, which
+  does 10× more than tags). Tags mainly help *initial* indexing.
+- **Hashtags** in the description are a real discovery path (clickable,
+  surface above the title), so the 3–4 you pick matter more than 19 tags.
+- The #1 lever is still **title + thumbnail CTR**, not tags.
 
 ---
 
