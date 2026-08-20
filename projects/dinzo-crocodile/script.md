@@ -1,0 +1,89 @@
+# Why It Sucks to Be Born as a Saltwater Crocodile
+
+## Section 1 — The Beginning (0:00-1:00)
+
+You are born inside an egg buried in a muddy mound on the edge of a mangrove swamp in Northern Australia. The nest is a stinking pile of rotting leaves and mud your mother kicked together a few months ago. She's long gone now. She doesn't care about you. She cares about the next meal.
+
+You crack open the shell using a tiny egg-tooth on the tip of your snout — a temporary feature that serves one purpose and one purpose only: to get you out of this humid tomb. You're about 10 inches long. You weigh less than a candy bar. You have no idea what's waiting above.
+
+Around you, dozens of other hatchlings are also breaking free. Siblings. Roommates. Future competition. You all claw your way up through the mud, emerging into a world of blinding sunlight and immediate danger.
+
+Congratulations. You're alive.
+
+For now.
+
+## Section 2 — The Gauntlet (1:00-2:30)
+
+The journey from the nest to the water is about 50 feet. It is the most dangerous 50 feet of your entire life. Think of it as a warzone where everything bigger than you wants you dead.
+
+Birds of prey circle overhead. Monitor lizards patrol the edges of the swamp. Herons with beaks like spears stand in the shallows, waiting for you to make a move. Even fish — which you'll one day eat without a second thought — would happily take a bite out of you right now.
+
+You do the only thing instinct tells you to do. You run. No, you scramble. Your little legs pump like pistons as you dart across the mud, dodging snapping beaks and grabbing claws. You don't know where your siblings are. You don't care. Every croc for themselves.
+
+About half of you will not make this journey. Statistically speaking, if you're reading this, you're probably already dead.
+
+But you make it. You hit the water. And for the first time in your short miserable existence, you feel safe. The water is murky, warm, and full of things that want to eat you. But it's yours. You'll learn to love it.
+
+## Section 3 — Childhood (2:30-4:00)
+
+The first year of your life is best described as "trying not to die." You spend most of your time hiding in the dense mangroves where the water is shallow and the big predators can't reach you. Your diet consists of insects, small fish, tadpoles, and anything else unfortunate enough to drift within range of your tiny jaws.
+
+You're cold-blooded, which means your body temperature depends entirely on the sun. Too hot and you cook. Too cold and you slow down and become an easy meal. You spend your days shuttling between sunny rocks and shady pools, a constant game of thermal chicken.
+
+You grow. Slowly. At this rate, you'll add about 12 inches per year. It's not fast enough.
+
+Every day is a survival challenge. A larger croc takes over your sunny spot. You don't argue. A snake tries to eat you. You swim away. A bird mistakes you for lunch. You learn that staying still is sometimes your best defense. You look like a floating log. You act like one too.
+
+The truth is, being a baby saltwater croc is being at the bottom of the food chain in an ecosystem where everything has teeth. You have no mother. No father. No mentor. Just instinct and a genetic memory that says: keep moving, keep hiding, and for the love of all that is scaly, don't get eaten.
+
+## Section 4 — Becoming a Predator (4:00-5:30)
+
+By year three, you've reached about three feet in length. You have graduated from "snack" to "minor concern." Fish that once ignored you now flee. You're learning to hunt properly.
+
+Your hunting technique is patience. You pick a spot near the water's edge where prey comes to drink. And you wait. Not for minutes. For hours. For most of the day if needed. You float just beneath the surface, only your eyes and nostrils above water, looking exactly like a log. You look so much like a log that actual logs sometimes float past and fool you. It's embarasing.
+
+When the moment comes, you strike. Your tail propels you forward with explosive force. Your jaws open and clamp down on whatever is unlucky enough to be in front of them. The force of a croc bite is measured in tons per square inch. Yours isn't there yet, but you're working on it.
+
+You drag your prey underwater. This is the classic crocodile move. Drowning is how you kill things that could otherwise hurt you. You don't have the teeth for chewing yet — you'll grow into those — so you spin. The death roll. You grab a limb and rotate your entire body. The limb comes off. You swallow it whole. Your stomach acid is strong enough to dissolve bones, shells, and most of your regrets.
+
+Life is getting better. You are no longer prey. You are a predator. But you're still not the top.
+
+## Section 5 — Territory and Growing Up (5:30-7:00)
+
+By year seven, you're about 8 feet long. You are now a legitimate threat to most things in the swamp. But the swamp is crowded. Every decent stretch of river is already claimed by a croc bigger than you.
+
+You need to find your own territory. This means leaving the familiar mangroves and heading out into unknown waters. You travel at night, mostly, sliding through the dark water like a ghost. Other crocs hiss at you. You hiss back but keep moving. You are a teenager with a bad attitude and no place to call home.
+
+You find an empty stretch of river near a small island. It's not prime real estate — the fishing is mediocre and the basking spots are small — but it has something you desperately need. Solitude. You claim it.
+
+Territory means everything to a saltwater croc. You patrol your borders. You fight off intruders. You grow bigger, stronger, and scarred. Each scar tells a story. The V-shaped one on your snout is from a monitor lizard that got too close. The missing tooth is from a turtle shell that fought back. The bite mark on your tail is from another croc who thought he could take your spot. He was wrong.
+
+At 10 feet, you start thinking about things besides survival. Specifically, you start thinking about females.
+
+## Section 6 — Love and Death (7:00-8:00)
+
+Mating season arrives with a change in the water temperature. You don't know how you know — you just know. Thousands of years of evolution whisper in your reptile brain: time to make more crocs.
+
+You find a female by bellowing. You float low in the water and let out a deep rumble that travels through the river like thunder. It sounds impressive. It's meant to.
+
+She responds, or she doesn't. Sometimes she tells you to get lost. Sometimes she tells you to come closer. Courtship is a delicate dance of grunts, head rubs, and not accidentally eating each other.
+
+You mate. Afterward, she leaves to build her nest. Your job is done. You will never see her or the offspring again. You're a saltwater crocodile. You don't do families.
+
+You're 12 feet long now. You've survived twenty years. In croc years, you're in your prime. You eat wild boar, water buffalow, and the occasional shark that wanders too close to shore. You fear nothing.
+
+But time catches up. At 30 years, you're 15 feet long and slowing down. Younger crocs test you. Your territory shrinks. You eat less, sleep more. Your teeth wear down. Hunting becomes harder.
+
+One morning you're basking on your favorite mud bank. The sun feels warm on your scales. A younger croc slides into the water nearby, eyeing your spot. You don't have the energy to fight anymore.
+
+And that's okay. You've done what a crocodile does. You hatched. You survived. You killed. You mated. You passed on your genes.
+
+The younger croc takes the bank. You slip into the water one last time. The current carries you away. The mangroves swallow you.
+
+And just like that, the world's most perfect predator — a living dinosaur that outlived the actual dinosaurs — drifts into silence.
+
+As far as endings go, it could be worse. At least you're not being a handbag.
+
+## Section 7 — Credits (8:00-8:15)
+
+Thanks for watching. If you enjoyed this video, consider subscribing. And remember: next time you see a log floating in a river, give it some respect. It might just be watching you back.

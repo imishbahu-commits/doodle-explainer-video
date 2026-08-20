@@ -1,0 +1,82 @@
+[
+  {
+    "beat": 1,
+    "stage": "Birth / Hatching",
+    "age": "Day 0 — just hatched",
+    "narration": "You are born inside an egg buried in a muddy mound on the edge of a mangrove swamp in Northern Australia.",
+    "scene": "A crocodile egg buried in a mud mound, mangrove roots behind it",
+    "label": "NORTHERN AUSTRALIA"
+  },
+  {
+    "beat": 2,
+    "stage": "Birth / The Nest",
+    "age": "Day 0 — just hatched",
+    "narration": "The nest is a stinking pile of rotting leaves and mud your mother kicked together a few months ago.",
+    "scene": "A big stinking nest mound of mud and leaves, steam/smell lines",
+    "label": "THE NEST"
+  },
+  {
+    "beat": 3,
+    "stage": "Abandonment",
+    "age": "Day 0 — mother left",
+    "narration": "She's long gone now. She doesn't care about you. She cares about the next meal.",
+    "scene": "A large stick-figure mother crocodile swimming away, tiny egg behind her, thought bubble of a fish meal",
+    "label": "GOODBYE MOM"
+  },
+  {
+    "beat": 4,
+    "stage": "Hatching",
+    "age": "Day 0 — hatching",
+    "narration": "You crack open the shell using a tiny egg-tooth on the tip of your snout.",
+    "scene": "Close-up of an egg cracking, tiny snout with egg-tooth poking through",
+    "label": "EGG-TOOTH"
+  },
+  {
+    "beat": 5,
+    "stage": "Hatching",
+    "age": "Day 0 — hatching",
+    "narration": "It's a temporary feature that serves one purpose and one purpose only: to get you out of this humid tomb.",
+    "scene": "Diagram: egg-tooth labeled with an arrow, pointing to a cramped egg interior",
+    "label": "ONE JOB"
+  },
+  {
+    "beat": 6,
+    "stage": "Newborn size",
+    "age": "Day 0 — newborn",
+    "narration": "You're about 10 inches long. You weigh less than a candy bar.",
+    "scene": "Tiny stick-figure croc beside a full-size candy bar for comparison",
+    "label": "10 INCHES"
+  },
+  {
+    "beat": 7,
+    "stage": "The unknown above",
+    "age": "Day 0 — newborn",
+    "narration": "You have no idea what's waiting above.",
+    "scene": "Tiny hatchling at the bottom of the frame looking up at dark silhouettes of birds in a bright sky",
+    "label": "?"
+  },
+  {
+    "beat": 8,
+    "stage": "Siblings",
+    "age": "Day 0 — newborn",
+    "narration": "Around you, dozens of other hatchlings are also breaking free. Siblings. Roommates. Future competition.",
+    "scene": "Many stick-figure hatchlings emerging from eggs, looking at each other warily",
+    "label": "SIBLINGS"
+  },
+  {
+    "beat": 9,
+    "stage": "Emerging",
+    "age": "Day 0 — newborn",
+    "narration": "You all claw your way up through the mud, emerging into blinding sunlight and immediate danger.",
+    "scene": "Hatchlings climbing out of a mud nest into blazing sun rays",
+    "label": "UP AND OUT"
+  },
+  {
+    "beat": 10,
+    "stage": "Alive... for now",
+    "age": "Day 0 — newborn",
+    "narration": "Congratulations. You're alive. For now.",
+    "scene": "Single exhausted hatchling standing in sunlight, dramatic shadow behind it",
+    "label": "FOR NOW"
+  }
+]
