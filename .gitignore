@@ -26,3 +26,8 @@ projects/dinzo-octopus/parts/
 projects/dinzo-honeybee/audio/
 projects/dinzo-honeybee/build_work/
 projects/dinzo-honeybee/parts/
+
+# Anglerfish project: regenerable TTS audio + render scratch + rendered parts
+projects/dinzo-anglerfish/audio/
+projects/dinzo-anglerfish/build_work/
+projects/dinzo-anglerfish/parts/

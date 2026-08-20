@@ -1,0 +1,1028 @@
+[
+  {
+    "id": 1,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 egg",
+    "narration": "You are born in a floating raft of eggs, drifting at the surface of the open ocean.",
+    "scene": "A jelly raft of many tiny round eggs floating on a simple ocean surface",
+    "label": "OPEN OCEAN"
+  },
+  {
+    "id": 2,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 egg",
+    "narration": "Your mother is already a thousand meters below you.",
+    "scene": "Tiny eggs at the top of the frame, a long arrow pointing down to a small female anglerfish far below",
+    "label": "1,000 METERS DOWN"
+  },
+  {
+    "id": 3,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 egg",
+    "narration": "And she is not coming back.",
+    "scene": "A female anglerfish swimming away, leaving an egg raft behind",
+    "label": "SHE'S GONE"
+  },
+  {
+    "id": 4,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 egg",
+    "narration": "She dumped tens of thousands of you in a jelly raft, then swam away.",
+    "scene": "A big jelly blob packed with thousands of tiny eggs, mother swimming off",
+    "label": "JELLY RAFT"
+  },
+  {
+    "id": 5,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 egg",
+    "narration": "You are not special. You are a number.",
+    "scene": "One tiny egg highlighted among thousands with an arrow pointing at it",
+    "label": "NOT SPECIAL"
+  },
+  {
+    "id": 6,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 hatched",
+    "narration": "You hatch at the size of a grain of rice.",
+    "scene": "A tiny larval fish next to an actual grain of rice for scale",
+    "label": "GRAIN OF RICE"
+  },
+  {
+    "id": 7,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 hatched",
+    "narration": "You look nothing like the monster on the thumbnail.",
+    "scene": "Cute tiny larval fish looking confused at a scary adult anglerfish with a lure",
+    "label": "NOT YET"
+  },
+  {
+    "id": 8,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 hatched",
+    "narration": "No fishing rod. No fangs. No light.",
+    "scene": "Tiny larva beside three crossed-out icons: a fishing rod, fangs, and a lightbulb",
+    "label": "NOTHING"
+  },
+  {
+    "id": 9,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 hatched",
+    "narration": "Just a speck with a will to live.",
+    "scene": "A tiny determined larval fish alone in empty water",
+    "label": "A SPECK"
+  },
+  {
+    "id": 10,
+    "part": 1,
+    "stage": "The Beginning",
+    "age": "Day 0 \u2014 hatched",
+    "narration": "Congratulations. You're alive. For now.",
+    "scene": "Tiny larva giving a small wave, simple and funny-scary",
+    "label": "FOR NOW"
+  },
+  {
+    "id": 11,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "Everything in the sunlit water wants to eat you.",
+    "scene": "Tiny larva surrounded by bigger fish, a bird, and a jellyfish all looking hungry",
+    "label": "EVERYONE EATS YOU"
+  },
+  {
+    "id": 12,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "Fish. Birds. Even jellyfish.",
+    "scene": "Three simple doodles in a row: a fish, a bird, a jellyfish",
+    "label": "FISH. BIRDS. JELLYFISH."
+  },
+  {
+    "id": 13,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "Most of your siblings are gone before the first week is over.",
+    "scene": "A calendar showing week 1 with most egg dots crossed out",
+    "label": "WEEK 1"
+  },
+  {
+    "id": 14,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "You do the only thing a baby anglerfish can do. You drift.",
+    "scene": "Tiny larva drifting with the current, doing nothing",
+    "label": "DRIFT"
+  },
+  {
+    "id": 15,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "You eat what's smaller than you.",
+    "scene": "Tiny larva eating an even tinier speck",
+    "label": "EAT SMALLER"
+  },
+  {
+    "id": 16,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Week 1 \u2014 larva",
+    "narration": "And you hope the bigger things miss.",
+    "scene": "A big fish swimming past, missing the tiny larva",
+    "label": "HOPE THEY MISS"
+  },
+  {
+    "id": 17,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Month 1 \u2014 sinking",
+    "narration": "Then, if you're still alive, you do the stupidest thing a surface animal can do.",
+    "scene": "Tiny larva looking down into darker water with a worried face",
+    "label": "STUPID IDEA"
+  },
+  {
+    "id": 18,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Month 1 \u2014 sinking",
+    "narration": "You sink.",
+    "scene": "Tiny larva falling downward with motion lines",
+    "label": "SINK"
+  },
+  {
+    "id": 19,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Month 1 \u2014 sinking",
+    "narration": "Down past the last of the sunlight.",
+    "scene": "A fading sun at the top, larva sinking below it",
+    "label": "LAST LIGHT"
+  },
+  {
+    "id": 20,
+    "part": 2,
+    "stage": "The Drop",
+    "age": "Month 1 \u2014 midnight zone",
+    "narration": "Down into a place with a name that is not a metaphor. The midnight zone.",
+    "scene": "Simple signpost in empty water reading midnight zone, larva arriving",
+    "label": "MIDNIGHT ZONE"
+  },
+  {
+    "id": 21,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "There is no sun here. Ever.",
+    "scene": "A crossed-out sun icon above empty water",
+    "label": "NO SUN. EVER."
+  },
+  {
+    "id": 22,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "The water is just above freezing.",
+    "scene": "A thermometer next to a shivering little fish",
+    "label": "JUST ABOVE FREEZING"
+  },
+  {
+    "id": 23,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "The pressure would fold a human like paper.",
+    "scene": "A stick-figure human folded like a paper airplane",
+    "label": "HUMAN ORIGAMI"
+  },
+  {
+    "id": 24,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "Food is whatever dead stuff rains down from above. Scientists call it marine snow.",
+    "scene": "Little specks falling like snow, a tiny fish looking up",
+    "label": "MARINE SNOW"
+  },
+  {
+    "id": 25,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "You call it dinner. If you're lucky.",
+    "scene": "Tiny fish with a fork waiting under falling specks",
+    "label": "DINNER?"
+  },
+  {
+    "id": 26,
+    "part": 3,
+    "stage": "The Drop",
+    "age": "Midnight zone",
+    "narration": "Most animals down here starve.",
+    "scene": "Empty plates floating in the water",
+    "label": "MOST STARVE"
+  },
+  {
+    "id": 27,
+    "part": 3,
+    "stage": "The Split",
+    "age": "Metamorphosis",
+    "narration": "You are about to become two completely different animals, depending on one thing.",
+    "scene": "One tiny larva splitting into two arrows, left and right",
+    "label": "TWO ANIMALS"
+  },
+  {
+    "id": 28,
+    "part": 3,
+    "stage": "The Split",
+    "age": "Metamorphosis",
+    "narration": "Whether you hatched female, or male.",
+    "scene": "Two doors labeled female and male",
+    "label": "FEMALE OR MALE"
+  },
+  {
+    "id": 29,
+    "part": 3,
+    "stage": "The Split",
+    "age": "Metamorphosis",
+    "narration": "And if you hatched male \u2014 I am sorry.",
+    "scene": "A tiny male fish with a sad face and a tiny apology card",
+    "label": "I AM SORRY"
+  },
+  {
+    "id": 30,
+    "part": 3,
+    "stage": "The Split",
+    "age": "Metamorphosis",
+    "narration": "Let's start with the girls. They have it better. Relatively.",
+    "scene": "A female anglerfish with a small trophy that says relatively",
+    "label": "RELATIVELY"
+  },
+  {
+    "id": 31,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Juvenile female",
+    "narration": "If you're female, you grow a fishing rod out of your forehead.",
+    "scene": "Female anglerfish with a simple pole growing from her forehead",
+    "label": "FISHING ROD"
+  },
+  {
+    "id": 32,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Juvenile female",
+    "narration": "It is a spine that used to be a fin, now bent forward like a pole.",
+    "scene": "Diagram of a fin turning into a bent fishing pole",
+    "label": "USED TO BE A FIN"
+  },
+  {
+    "id": 33,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Juvenile female",
+    "narration": "At the end of it is a bulb. And inside the bulb, bacteria live rent-free.",
+    "scene": "Close-up of a round lure bulb with tiny smiling bacteria inside",
+    "label": "RENT-FREE"
+  },
+  {
+    "id": 34,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Juvenile female",
+    "narration": "They make light. The only light you will ever see.",
+    "scene": "The lure glowing as a flat yellow circle, nothing else lit",
+    "label": "THE ONLY LIGHT"
+  },
+  {
+    "id": 35,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "You sit in the dark, and you wave it.",
+    "scene": "Female anglerfish sitting still, waving her lure",
+    "label": "WAVE IT"
+  },
+  {
+    "id": 36,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "A tiny glowing lantern in an ocean of nothing.",
+    "scene": "Tiny lantern lure in a huge empty frame of water",
+    "label": "OCEAN OF NOTHING"
+  },
+  {
+    "id": 37,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Hungry things swim up to look.",
+    "scene": "A curious fish swimming toward the glowing lure",
+    "label": "THEY LOOK"
+  },
+  {
+    "id": 38,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "That is the last decision they ever make.",
+    "scene": "The curious fish about to be eaten, shocked face",
+    "label": "LAST DECISION"
+  },
+  {
+    "id": 39,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Your mouth is a trap door. Your teeth are needles.",
+    "scene": "Huge simple mouth with needle teeth like a trap door",
+    "label": "TRAP DOOR"
+  },
+  {
+    "id": 40,
+    "part": 4,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Your stomach is a suitcase. You can swallow things bigger than you.",
+    "scene": "Anglerfish with a suitcase-shaped belly swallowing a bigger fish",
+    "label": "SUITCASE STOMACH"
+  },
+  {
+    "id": 41,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "You don't chase. Chasing wastes energy, and energy is the one thing you don't have.",
+    "scene": "Anglerfish on a couch holding her lure, not chasing",
+    "label": "DON'T CHASE"
+  },
+  {
+    "id": 42,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "You wait. Days. Weeks. Sometimes months between meals.",
+    "scene": "A calendar with many empty days and one circled dinner",
+    "label": "MONTHS BETWEEN MEALS"
+  },
+  {
+    "id": 43,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "When something finally bites, you don't chew. You inhale.",
+    "scene": "Anglerfish vacuuming a fish into her mouth in one gulp",
+    "label": "INHALE"
+  },
+  {
+    "id": 44,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Your jaws unhinge. Your belly swells like a balloon.",
+    "scene": "Anglerfish with unhinged jaws and a round balloon belly",
+    "label": "BALLOON BELLY"
+  },
+  {
+    "id": 45,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "You look pregnant. You're not. You're just full.",
+    "scene": "Round anglerfish with a sign that says just full",
+    "label": "JUST FULL"
+  },
+  {
+    "id": 46,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Life as a female anglerfish is sitting in a cave of water, holding a lamp, hoping dinner is stupid.",
+    "scene": "Anglerfish holding a lamp, waiting, looking bored",
+    "label": "HOPE DINNER IS STUPID"
+  },
+  {
+    "id": 47,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "It works. You grow. You get rounder, uglier, and harder to kill.",
+    "scene": "Three sizes of female anglerfish getting rounder",
+    "label": "ROUNDER. UGLIER."
+  },
+  {
+    "id": 48,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "You might live for years down here.",
+    "scene": "A simple cake with a few candles next to the anglerfish",
+    "label": "YEARS"
+  },
+  {
+    "id": 49,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "But there is one problem even a lamp and a suitcase stomach can't solve.",
+    "scene": "Anglerfish looking worried, lamp and suitcase not helping",
+    "label": "ONE PROBLEM"
+  },
+  {
+    "id": 50,
+    "part": 5,
+    "stage": "If You're Female",
+    "age": "Adult female",
+    "narration": "Finding a boyfriend. In the dark. In an ocean the size of a planet.",
+    "scene": "Tiny lonely hearts floating in a huge empty ocean",
+    "label": "FINDING A BOYFRIEND"
+  },
+  {
+    "id": 51,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Juvenile male",
+    "narration": "If you're male, you do not get the lamp.",
+    "scene": "Tiny male fish with a crossed-out lamp",
+    "label": "NO LAMP"
+  },
+  {
+    "id": 52,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Juvenile male",
+    "narration": "You do not get the jaws. You do not get the suitcase stomach.",
+    "scene": "Tiny male beside a crossed-out big mouth and crossed-out suitcase",
+    "label": "NO JAWS. NO SUITCASE."
+  },
+  {
+    "id": 53,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Juvenile male",
+    "narration": "You stay tiny. In some species, she is sixty times your size.",
+    "scene": "Tiny male next to a huge female, a label 60x",
+    "label": "60 TIMES YOUR SIZE"
+  },
+  {
+    "id": 54,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Juvenile male",
+    "narration": "You are a few centimeters long. She is a monster.",
+    "scene": "A tiny ruler next to the male, the female filling the rest of the frame",
+    "label": "A FEW CM"
+  },
+  {
+    "id": 55,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "Your entire adult body is basically a nose.",
+    "scene": "Tiny male fish that is mostly a huge nose",
+    "label": "BASICALLY A NOSE"
+  },
+  {
+    "id": 56,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "Huge nostrils. A brain built to smell one thing.",
+    "scene": "Close-up of giant nostrils on a tiny fish",
+    "label": "HUGE NOSTRILS"
+  },
+  {
+    "id": 57,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "A female. Her pheromones. In the largest habitat on Earth.",
+    "scene": "Tiny male sniffing dotted scent lines in empty water",
+    "label": "SMELL HER"
+  },
+  {
+    "id": 58,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You cannot hunt. After you grow up, some of you never eat again.",
+    "scene": "Tiny male looking at food he cannot eat, empty plate",
+    "label": "NEVER EAT AGAIN"
+  },
+  {
+    "id": 59,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You have enough fat to last a little while. That's your clock.",
+    "scene": "Tiny male with a ticking clock on his belly",
+    "label": "THE CLOCK"
+  },
+  {
+    "id": 60,
+    "part": 6,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You are a lottery ticket with fins.",
+    "scene": "Tiny male with lottery numbers on his fins",
+    "label": "LOTTERY TICKET"
+  },
+  {
+    "id": 61,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You swim. You smell. You hope.",
+    "scene": "Tiny male swimming with dotted smell lines, hopeful face",
+    "label": "SWIM. SMELL. HOPE."
+  },
+  {
+    "id": 62,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "There is no map. There is no light. There is no second chance.",
+    "scene": "Tiny male holding a blank map in the dark",
+    "label": "NO MAP"
+  },
+  {
+    "id": 63,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "Most of you never find her.",
+    "scene": "A huge crowd of tiny males, almost all with X marks",
+    "label": "MOST NEVER"
+  },
+  {
+    "id": 64,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You burn your last calorie in the dark, a few centimeters long.",
+    "scene": "Tiny exhausted male with an empty fuel gauge",
+    "label": "LAST CALORIE"
+  },
+  {
+    "id": 65,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "You die having never seen another of your kind.",
+    "scene": "Tiny male alone, eyes closed, empty water",
+    "label": "NEVER SAW ANYONE"
+  },
+  {
+    "id": 66,
+    "part": 7,
+    "stage": "If You're Male",
+    "age": "Adult male",
+    "narration": "That is the normal ending. That is what usually happens.",
+    "scene": "A simple stamp that says the normal ending",
+    "label": "THE NORMAL ENDING"
+  },
+  {
+    "id": 67,
+    "part": 7,
+    "stage": "The Bite",
+    "age": "Adult male",
+    "narration": "But suppose you get lucky.",
+    "scene": "Tiny male with a lucky four-leaf clover",
+    "label": "SUPPOSE YOU GET LUCKY"
+  },
+  {
+    "id": 68,
+    "part": 7,
+    "stage": "The Bite",
+    "age": "Adult male",
+    "narration": "You smell her. You follow. You see a glow.",
+    "scene": "Tiny male following dotted lines toward a yellow glow",
+    "label": "A GLOW"
+  },
+  {
+    "id": 69,
+    "part": 7,
+    "stage": "The Bite",
+    "age": "Adult male",
+    "narration": "There she is. A fish the size of a nightmare, with a lantern on her face.",
+    "scene": "Huge female anglerfish with a lantern lure, tiny male staring",
+    "label": "THERE SHE IS"
+  },
+  {
+    "id": 70,
+    "part": 7,
+    "stage": "The Bite",
+    "age": "Adult male",
+    "narration": "This is the best day of your life. It is also the last day you are a fish.",
+    "scene": "Tiny male looking happy then worried, a calendar that says last day",
+    "label": "LAST DAY AS A FISH"
+  },
+  {
+    "id": 71,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "You bite her belly. You do not let go.",
+    "scene": "Tiny male biting the side of the huge female",
+    "label": "YOU BITE"
+  },
+  {
+    "id": 72,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "Your teeth lock in. Your skin starts to melt into hers.",
+    "scene": "Tiny male's skin joining the female's side",
+    "label": "SKIN MELTS IN"
+  },
+  {
+    "id": 73,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "This is not a metaphor.",
+    "scene": "A stamp that says not a metaphor",
+    "label": "NOT A METAPHOR"
+  },
+  {
+    "id": 74,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "Your tissues fuse. Your blood vessels hook up to hers.",
+    "scene": "Simple doodle of two blood-vessel tubes connecting",
+    "label": "HOOKED UP"
+  },
+  {
+    "id": 75,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "You are now on her bloodstream. She is feeding you.",
+    "scene": "Tiny male attached, a food arrow going from her to him",
+    "label": "SHE FEEDS YOU"
+  },
+  {
+    "id": 76,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "You will never swim again.",
+    "scene": "Tiny attached male with crossed-out swimming fins",
+    "label": "NEVER SWIM AGAIN"
+  },
+  {
+    "id": 77,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "Your eyes dissolve. You don't need them.",
+    "scene": "Tiny male's eyes fading, X over them",
+    "label": "EYES DISSOLVE"
+  },
+  {
+    "id": 78,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "Your stomach withers. You don't need that either.",
+    "scene": "Tiny stomach shrinking to nothing",
+    "label": "STOMACH GOES"
+  },
+  {
+    "id": 79,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "Your fins go. Your guts go. What's left of your brain shrinks.",
+    "scene": "Tiny male becoming a smaller lump, leftover parts falling off",
+    "label": "SHRINKING"
+  },
+  {
+    "id": 80,
+    "part": 8,
+    "stage": "The Bite",
+    "age": "Fusion",
+    "narration": "You become a pair of testes with a leftover tail.",
+    "scene": "A tiny lump with a leftover tail hanging off the female",
+    "label": "A LEFTOVER TAIL"
+  },
+  {
+    "id": 81,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "Scientists have a polite name for this. Sexual parasitism.",
+    "scene": "A scientist stick figure labeling the lump sexual parasitism",
+    "label": "SEXUAL PARASITISM"
+  },
+  {
+    "id": 82,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "You are not a husband. You are a spare part.",
+    "scene": "Tiny lump next to a toolbox labeled spare parts",
+    "label": "SPARE PART"
+  },
+  {
+    "id": 83,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "She might already have six of you hanging off her.",
+    "scene": "Female anglerfish with six tiny male lumps attached",
+    "label": "SIX OF YOU"
+  },
+  {
+    "id": 84,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "Little lumps. Former boys. Now just plumbing.",
+    "scene": "Six lumps with little name tags that say former boys",
+    "label": "FORMER BOYS"
+  },
+  {
+    "id": 85,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "In return, you give her sperm whenever she wants it.",
+    "scene": "A tiny vending machine on her side labeled sperm on demand",
+    "label": "ON DEMAND"
+  },
+  {
+    "id": 86,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "She never has to find a male again. She already glued them on.",
+    "scene": "Female with glued-on males and a glue bottle",
+    "label": "GLUED ON"
+  },
+  {
+    "id": 87,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "This only works because her body doesn't reject you.",
+    "scene": "Female body with a welcome mat under the tiny male",
+    "label": "NO REJECTION"
+  },
+  {
+    "id": 88,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "Most animals would treat a fused stranger as a disease.",
+    "scene": "A normal fish with an immune shield kicking a stranger away",
+    "label": "ANYONE ELSE WOULD"
+  },
+  {
+    "id": 89,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "Anglerfish deleted that part of their immune system.",
+    "scene": "A delete key erasing an immune-system icon",
+    "label": "DELETED"
+  },
+  {
+    "id": 90,
+    "part": 9,
+    "stage": "The Parasite",
+    "age": "Fused male",
+    "narration": "They turned off the alarm so the roommate could move in.",
+    "scene": "An alarm clock switched off, tiny male moving in with a suitcase",
+    "label": "ALARM OFF"
+  },
+  {
+    "id": 91,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Spawning",
+    "narration": "When she's ready, she lays another jelly raft of eggs.",
+    "scene": "Female releasing a jelly raft of eggs",
+    "label": "ANOTHER RAFT"
+  },
+  {
+    "id": 92,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Spawning",
+    "narration": "Tens of thousands of them. They float up, toward the sun you will never see again.",
+    "scene": "Egg raft rising toward a tiny sun, female staying below",
+    "label": "FLOATING UP"
+  },
+  {
+    "id": 93,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Spawning",
+    "narration": "The raft drifts. The eggs hatch. The cycle starts over.",
+    "scene": "A circle of icons: raft, hatch, sink, fuse",
+    "label": "THE CYCLE"
+  },
+  {
+    "id": 94,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Spawning",
+    "narration": "A few of those babies will sink. Almost none will make it.",
+    "scene": "Thousands of dots, only one or two surviving",
+    "label": "ALMOST NONE"
+  },
+  {
+    "id": 95,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Next generation",
+    "narration": "If they're female, they grow a lamp and wait.",
+    "scene": "Baby female growing a tiny lamp",
+    "label": "GIRLS WAIT"
+  },
+  {
+    "id": 96,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Next generation",
+    "narration": "If they're male, they grow a nose and pray.",
+    "scene": "Baby male with a huge nose, praying",
+    "label": "BOYS PRAY"
+  },
+  {
+    "id": 97,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Fused male",
+    "narration": "You, the original you, are still up there on her side.",
+    "scene": "The original tiny lump still attached, waving weakly",
+    "label": "STILL THERE"
+  },
+  {
+    "id": 98,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Fused male",
+    "narration": "Not thinking. Not hunting. Not even really being a fish.",
+    "scene": "The lump with crossed-out brain, crossed-out hunt, crossed-out fish",
+    "label": "NOT A FISH"
+  },
+  {
+    "id": 99,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Fused male",
+    "narration": "You found the only girl in a thousand miles of black water.",
+    "scene": "A tiny heart between the lump and the huge female",
+    "label": "THE ONLY GIRL"
+  },
+  {
+    "id": 100,
+    "part": 10,
+    "stage": "The Deal",
+    "age": "Fused male",
+    "narration": "And the price was everything that made you you.",
+    "scene": "A price tag covering the tiny male",
+    "label": "THE PRICE"
+  },
+  {
+    "id": 101,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "As far as endings go, it could be worse.",
+    "scene": "The lump shrugging",
+    "label": "COULD BE WORSE"
+  },
+  {
+    "id": 102,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "You don't have to hunt. You don't have to see. You don't have to be alone.",
+    "scene": "Three crossed-out icons: hunt, eyes, lonely stick figure",
+    "label": "NO HUNT. NO EYES. NOT ALONE."
+  },
+  {
+    "id": 103,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "You just have to stop being a person. Sorry. A fish.",
+    "scene": "A tiny apology note that says sorry, a fish",
+    "label": "SORRY. A FISH."
+  },
+  {
+    "id": 104,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "This is the most successful dating strategy in the largest habitat on Earth.",
+    "scene": "A trophy that says dating strategy, next to a huge empty ocean",
+    "label": "BEST WORST DATE"
+  },
+  {
+    "id": 105,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "You didn't choose it. Evolution chose it, fifty million years ago, when your family moved into the dark.",
+    "scene": "A simple timeline arrow marked 50 million years",
+    "label": "50 MILLION YEARS AGO"
+  },
+  {
+    "id": 106,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "The lamp. The nose. The fusion. The missing immune system.",
+    "scene": "Four icons in a row: lamp, nose, fuse, deleted shield",
+    "label": "THE KIT"
+  },
+  {
+    "id": 107,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "All of it, so two animals could find each other once, and never lose each other again.",
+    "scene": "Female and tiny attached male with a small lock",
+    "label": "NEVER LOSE EACH OTHER"
+  },
+  {
+    "id": 108,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "Next time you see that nightmare fish with a light on its head \u2014",
+    "scene": "A person looking at an anglerfish drawing",
+    "label": "NEXT TIME"
+  },
+  {
+    "id": 109,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "Look closer. The tiny lump on her side? That used to be someone.",
+    "scene": "A zoom arrow on the tiny lump on her side",
+    "label": "LOOK CLOSER"
+  },
+  {
+    "id": 110,
+    "part": 11,
+    "stage": "The Kicker",
+    "age": "After",
+    "narration": "He won.",
+    "scene": "Tiny leftover-tail lump with a small winner flag",
+    "label": "HE WON"
+  },
+  {
+    "id": 111,
+    "part": 12,
+    "stage": "Credits",
+    "age": "\u2014",
+    "narration": "Thanks for watching. If you enjoyed this, consider subscribing.",
+    "scene": "Anglerfish pointing at a subscribe button",
+    "label": "SUBSCRIBE"
+  },
+  {
+    "id": 112,
+    "part": 12,
+    "stage": "Credits",
+    "age": "\u2014",
+    "narration": "And remember: in the deep sea, love is not a feeling.",
+    "scene": "A heart icon with a crossed-out feeling face",
+    "label": "NOT A FEELING"
+  },
+  {
+    "id": 113,
+    "part": 12,
+    "stage": "Credits",
+    "age": "\u2014",
+    "narration": "It's a medical procedure.",
+    "scene": "A tiny operating-room doodle on the female's side",
+    "label": "A MEDICAL PROCEDURE"
+  },
+  {
+    "id": 114,
+    "part": 12,
+    "stage": "Credits",
+    "age": "\u2014",
+    "narration": "See you in the next one. There's an animal that has it even worse.",
+    "scene": "Anglerfish pointing off-screen to a mystery silhouette",
+    "label": "NEXT TIME"
+  }
+]
