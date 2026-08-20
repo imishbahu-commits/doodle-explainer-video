@@ -21,3 +21,8 @@ projects/dinzo-crocodile/segments/
 projects/dinzo-octopus/audio/
 projects/dinzo-octopus/build_work/
 projects/dinzo-octopus/parts/
+
+# Honeybee project: regenerable TTS audio + render scratch + rendered parts
+projects/dinzo-honeybee/audio/
+projects/dinzo-honeybee/build_work/
+projects/dinzo-honeybee/parts/
