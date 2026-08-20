@@ -1,0 +1,141 @@
+# Why It Sucks to Be Born as a Spotted Hyena (Male)
+
+> Dinzo-style second-person deadpan explainer, WITH A TWIST: born a cub, you
+> fight your twin for your life within minutes — then the real twist: you're
+> the MALE, the permanent underclass of the most female-dominated society in
+> the animal kingdom. Landscape 16:9, crude hand-drawn doodles, flat colours,
+> thick black outlines, hard cuts, one spoken beat = one image.
+>
+> Sources: San Diego Zoo (matriarchal clan, cubs outrank immigrant males),
+> Turpentine Creek + Ranger Buck Safaris (male dispersal, bottom of ladder),
+> AP News / L. Frank (Science, siblicide, ~25% cub death), New Scientist
+> (neonatal aggression), Springer (pseudo-penis greeting/submission),
+> Frontiers in Ecology & Evolution (infanticide, maternal neglect).
+
+## Section 1 — Born Fighting (0:00-0:55)
+
+You are born in a hole in the ground, in the dark, with your eyes already
+open and your teeth already in. And the very first thing that happens in your
+entire life is that someone tries to kill you.
+
+Your twin. She's born about an hour before you, and she's been waiting.
+Hyena cubs are born armed — full canines, full incisors, ready to fight — and
+she is not your sibling so much as your first predator. Within minutes of you
+drawing your first breath, she has you by the shoulders and she's shaking
+you. In the wild, about one cub in four dies this way. Murdered by its own
+twin before it ever sees the sun.
+
+Scientists didn't even believe it at first. Siblicide — a sibling killing a
+sibling at birth — had never been seen in a mammal before. Congratulations,
+you're not even an hour old, and you're already a scientific breakthrough.
+
+So yeah. Life in a hyena clan starts with a cage match. And trust me, it
+does not get easier from here.
+
+## Section 2 — The Twist (0:55-1:55)
+
+Because here's the part nobody tells you about the hyena. You know the image:
+the laughing, cackling villain from the cartoons, the cowardly scavenger. And
+you know what? All of it's wrong. Hyenas are smart, they're loyal, and they
+are ruled, completely, absolutely, by females.
+
+And here's the twist. You're not one of them. You're a boy.
+
+In a hyena clan, the females are bigger than you. Stronger than you. Meaner
+than you. The biggest female can outweigh you by fifty pounds, and she is
+filled with the same hormones that make males aggressive everywhere else on
+Earth — except here, they went to the girls. Every single female in your
+clan, down to the smallest cub, outranks you. A baby girl who was born last
+Tuesday can push you off your food. And you have to let her.
+
+Welcome to the only society in the animal kingdom where being born male means
+being born at the bottom. And you will never, ever reach the top.
+
+## Section 3 — The Bottom (1:55-3:00)
+
+Life at the bottom is a masterclass in humility. You eat last. Always. The
+females and their cubs eat first at every kill, tearing the meat apart while
+you stand at the edge of the circle, watching, stomach growling, waiting for
+whatever's left. Sometimes there is nothing left. Sometimes you wait in
+vain.
+
+When a higher-ranking hyena walks past, you greet them the way a hyena must:
+head low, ears back, and you offer them the most intimate, humiliating hello
+in all of nature — you show them your... well, your manhood. Every time.
+Over and over. In hyena society, greeting your superiors means presenting
+your genitals as a flag of surrender. Imagine starting every conversation at
+work like that. That's your whole life.
+
+And if you forget? If you fail to grovel, if you look a female in the eye a
+second too long? She bites you. On the neck. Hard enough to draw blood.
+That's how you learn where you belong.
+
+## Section 4 — The Exile (3:00-4:05)
+
+Then, when you're about three years old, the clan does something that would
+be called a betrayal if anyone bothered to ask you. They kick you out. Not
+because you did anything wrong. Just because you're male, and males are not
+family — males are a resource, and resources get moved around.
+
+So you leave. You walk away from the only home you've ever known, into the
+savanna, completely alone. A teenager with nothing, wandering through lion
+territory, hoping to find a clan that will take you.
+
+And when you finally find one, a clan full of strangers who owe you nothing,
+you have to start all over again. At the bottom. Below every female. Below
+their cubs. Below the males who got there first. You will spend years —
+actual years — bowing, waiting, and slowly, patiently, earning your way up,
+one dead rival at a time. A hyena male doesn't conquer his way to the top. He
+outlives his way there.
+
+## Section 5 — The Mating Game (4:05-5:10)
+
+And the payoff for all that groveling? Maybe, eventually, if you're
+patient and lucky, a female might let you mate with her. Emphasis on might.
+She chooses. Not you. Ever.
+
+Here's the truly absurd part. Female hyenas have a body part that looks
+exactly like a male's — a pseudo-penis. They're so masculinised that, for
+centuries, people literally could not tell male and female hyenas apart. They
+thought hyenas were all one sex. And she uses it to give birth, through a
+canal so narrow it kills the first litter outright more often than not.
+
+So being a female hyena isn't exactly a prize either. But at least she rules.
+You don't rule. You don't choose. Your entire romantic life is auditioning,
+for years, for a female who could kill you with one bite and wouldn't even
+feel bad about it. And the worst part? You'll wait your whole life for a
+chance that might never come.
+
+## Section 6 — The Hard Truth (5:10-6:10)
+
+Because here's the thing they never put in the documentaries. About half of
+all hyena cubs never make it to adulthood. Your twin might kill you. A lion
+might kill you. Starvation might get you. And even if you survive all of
+that, you get to live the rest of your life as a permanent foreigner — no
+rank, no allies, no inheritance, sleeping on the edge of a family that isn't
+yours, eating their scraps, bowing to their babies.
+
+And yet. And yet the hyena clan works. It's one of the most successful
+societies in nature, a matriarchy so stable it's lasted millions of years.
+The females run everything, the cubs survive, the clan hunts and laughs and
+rules the savanna. You were just never the main character. You're the
+supporting cast. The one they move around when they need fresh blood.
+
+## Section 7 — The Point (6:10-7:00)
+
+So yeah. Being born as a spotted hyena — a male spotted hyena — really kind
+of sucks. You start your life getting beaten up by your own sister, and you
+spend the rest of it bowing to a society where you're legally outranked by
+every woman you meet, including the ones still drinking milk.
+
+But you know what? You survive. Against your twin. Against the lions.
+Against the cold and the hunger and the exile. You eat last and you live
+anyway. You wait, and you wait, and one day — if you're lucky, if you're
+patient, if you outlive enough of your rivals — a female looks at you and
+picks you. And for one glorious moment, at the bottom of the most
+female-dominated society on Earth, you matter.
+
+It's not much. But for a hyena, it's the whole point.
+
+Good luck out there, little guy. Try not to get bitten on the neck on your
+way out.
