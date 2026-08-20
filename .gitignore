@@ -31,3 +31,9 @@ projects/dinzo-honeybee/parts/
 projects/dinzo-anglerfish/audio/
 projects/dinzo-anglerfish/build_work/
 projects/dinzo-anglerfish/parts/
+
+# Keep the frozen assembly pack in git so a later chat can concat
+!projects/dinzo-anglerfish/assembly/
+!projects/dinzo-anglerfish/assembly/*.mp4
+!projects/dinzo-anglerfish/assembly/audio/
+!projects/dinzo-anglerfish/assembly/audio/*.mp3

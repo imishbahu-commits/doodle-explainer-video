@@ -1,0 +1,35 @@
+{
+  "title": "Why It Sucks to Be Born as an Anglerfish",
+  "slug": "dinzo-anglerfish",
+  "format": "16:9 1920x1080 30fps Dinzo doodle, hard cuts, no music, no captions",
+  "total_beats": 114,
+  "total_parts": 12,
+  "done_beats": "1-20",
+  "next_beats": "21-30",
+  "next_part": 3,
+  "running_cut": "running-cut.mp4",
+  "running_cut_seconds": 87.27,
+  "clips": [
+    {
+      "file": "part01.mp4",
+      "part": 1,
+      "beats": "1-10",
+      "stage": "The Beginning",
+      "seconds": 44.66
+    },
+    {
+      "file": "part02.mp4",
+      "part": 2,
+      "beats": "11-20",
+      "stage": "The Drop",
+      "seconds": 42.6
+    }
+  ],
+  "audio_dir": "audio/",
+  "images_dir": "../assets/",
+  "script": "../script.md",
+  "beats": "../beats.json",
+  "status": "../STATUS.md",
+  "concat": "concat.txt",
+  "how_to_final": "ffmpeg -y -f concat -safe 0 -i concat.txt -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart FINAL.mp4"
+}
