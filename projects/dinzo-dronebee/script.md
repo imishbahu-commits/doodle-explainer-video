@@ -1,0 +1,142 @@
+# Why It Sucks to Be Born as a Drone Bee
+
+> Dinzo-style second-person deadpan explainer, WITH A TWIST: the video opens
+> as if you are the beloved busy worker bee everyone pictures — then flips to
+> reveal you are actually the drone, the one useless brother whose entire
+> life is a single mating flight that kills him. Landscape 16:9, crude
+> hand-drawn doodles, flat colours, thick black outlines, hard cuts, one
+> spoken beat = one image.
+>
+> Sources: The Holy Habibee (drone congregation areas, mating mechanics),
+> Blythewood Bee Company (drone eviction, no stinger), Reddit r/TIL + bee
+> biology (haploid drones — a mother and a grandfather but no father),
+> beekeeping literature (queen mates with 8–15 drones, stores sperm for years).
+
+## Section 1 — The Hive (0:00-0:55)
+
+You are born into a city of fifty thousand sisters. A city with no walls, no
+doors, and no men — except you. You hatch from a cell in the honeycomb, and
+the first thing you notice is that everyone around you is working. Scraping
+pollen. Building wax. Fanning air. Dying of exhaustion. The beehive is the
+busiest, most hardworking, most legendary factory on Earth.
+
+And you're about to find out that you have no job in it.
+
+Because here's the thing about the bee in every nature documentary, the busy
+little hero everyone loves, the one with the stinger and the work ethic and
+the inspirational bumper sticker — that's not you. That's your sister. You
+are something else entirely.
+
+Congratulations. You're born. And you are completely useless.
+
+## Section 2 — The Twist (0:55-1:55)
+
+You are a drone. The male. And in the most successful, most ruthless, most
+efficient society on the planet, the male exists for exactly one reason, and
+it is not helping.
+
+You have no stinger. The workers defend the hive with their lives; you
+couldn't defend a cupcake. You have no pollen baskets. You can't build comb.
+You can't even feed yourself — your mouth is basically a straw, and your
+sisters have to feed you, face to face, like a mother feeding a baby. You are
+the only member of the hive who is waited on hand and foot, and you pay for
+it in the most humiliating currency that exists: being tolerated.
+
+For the first few weeks of your life, you do nothing. You lounge in the warm
+hive. You eat the honey your sisters gathered. You take little flights to
+stretch your wings and smell the flowers, and then you come home and eat
+again. It's a genuinely great life.
+
+Which is how you know it's about to go horribly wrong.
+
+## Section 3 — The One Job (1:55-2:55)
+
+Because you were born for one thing, and everyone knows it. When the sun is
+warm and the air is calm, you and every other drone in the neighbourhood fly
+to the same invisible meeting spot in the sky. A bachelor party, miles wide,
+held about ten metres in the air. It's called a drone congregation area. And
+you're all waiting for one person to show up.
+
+The queen.
+
+She's bigger than you, she's faster than you, and she's about to be pursued
+by an entire cloud of you. And here's the catch that nobody told you when you
+hatched: only a handful of you will ever touch her. In a hive of fifty
+thousand bees, a few hundred of you are drones. Of those few hundred, maybe
+one will actually get to do the thing he was born to do.
+
+The rest of you will wait all summer. And winter is coming.
+
+## Section 4 — The Prize (2:55-3:55)
+
+Then one day she arrives. The queen cuts through the congregation like a
+comet, and every drone in the sky hurls himself after her, climbing, chasing,
+burning every calorie his sisters ever fed him. This is the race your whole
+life has been pointing at. The winner gets everything. The losers get to
+watch.
+
+The drone that catches her wins the only prize a drone can ever win. But the
+prize has a catch. And the catch is the reason you should maybe, just maybe,
+have stayed home.
+
+Because when a drone bee mates, it kills him.
+
+Not eventually. Not in a few days. Immediately. Right there, in the air, in
+about two seconds.
+
+## Section 5 — The End of the Date (3:55-4:55)
+
+Here's how it happens. The moment you make contact with the queen, your
+entire body commits to one explosive act. The internal pressure builds, your
+insides push outward with enough force to rupture you, and then — pop. You
+hear it. It's an actual sound. The end of your entire existence is a small
+wet pop, ten metres off the ground.
+
+After that, you're done. You fall. You drift down to the grass like a little
+furry leaf, and you die there, upside down, while she flies home with a
+piece of you still attached — storing it away so she can lay thousands of
+eggs without ever needing another one of you again.
+
+That's the whole romance. Two seconds. One pop. And the best part? You don't
+even have a father to explain it to you. Because a drone has a mother and a
+grandfather, but no dad. That's just how bee genetics works. You were born
+from an egg your mother never bothered to fertilise.
+
+You were, quite literally, born for the one thing you'll never survive.
+
+## Section 6 — The Cull (4:55-5:55)
+
+And here's the darkest part of the whole story. Most of you will never even
+get the two seconds.
+
+Autumn comes. The flowers die. The honey stores get counted. And the workers
+— your own sisters, the ones who fed you face to face all summer — start
+doing math. Every mouth in the hive that doesn't work is a mouth they can't
+afford to feed through winter. And you don't work.
+
+So they stop feeding you. They start pushing you toward the door. And when
+you won't leave, they bite you. Your own sisters drag you, kicking, to the
+edge of the hive and throw you out into the cold, where you can't feed
+yourself, can't fight, can't even sting the people who are killing you.
+
+They call it the drone eviction. It happens every year. And you will die
+either freezing on the ground or starving at the door, begging a sister who
+used to feed you to let you back in. She won't.
+
+## Section 7 — The Point (5:55-6:40)
+
+So that's the life of a drone bee. You're born useless, you live like
+royalty for a few weeks, and then you get exactly one of two endings: a
+two-second death in the sky, or a slow one in the cold, thrown out by your
+own family.
+
+And the weirdest part? It kind of works. The hive survives. The queen has
+thousands of children. The species marches on. You were just the spark plug —
+a disposable part whose entire purpose was to fire once and fall away.
+
+Being born as a drone bee... it sucks. But you know what? You got fed honey
+by fifty thousand sisters, you spent your summer flying in the sun, and if
+you were lucky, you went out doing the one thing you were born for, at
+maximum volume, ten metres in the air.
+
+Most of us just die at a desk. So hey. Could be worse.
