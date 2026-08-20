@@ -16,3 +16,8 @@ tools/models/
 # Intermediate TTS audio + segments (regenerable from beat prompts + script)
 projects/dinzo-crocodile/audio/
 projects/dinzo-crocodile/segments/
+
+# Octopus project: regenerable TTS audio + render scratch + rendered parts
+projects/dinzo-octopus/audio/
+projects/dinzo-octopus/build_work/
+projects/dinzo-octopus/parts/
