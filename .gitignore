@@ -16,3 +16,11 @@ tools/models/
 # Intermediate TTS audio + segments (regenerable from beat prompts + script)
 projects/dinzo-crocodile/audio/
 projects/dinzo-crocodile/segments/
+
+# Per-beat narration audio + assembly scratch (regenerable via TTS + make_video.py)
+projects/dinzo-mosquito/audio/
+projects/dinzo-mosquito/work/
+projects/dinzo-mantis/audio/
+projects/dinzo-mantis/work/
+projects/dinzo-anglerfish/audio/
+projects/dinzo-anglerfish/work/
