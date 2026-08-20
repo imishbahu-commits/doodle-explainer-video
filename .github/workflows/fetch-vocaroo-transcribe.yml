@@ -1,0 +1,73 @@
+name: fetch-vocaroo-transcribe
+on:
+  workflow_dispatch:
+    inputs:
+      short_url:
+        description: 'Vocaroo short link (voca.ro/XXXX)'
+        required: true
+        default: 'https://voca.ro/18aCF4TpG6QM'
+      media_url:
+        description: 'Direct media URL override (optional)'
+        required: false
+        default: ''
+
+jobs:
+  fetch-and-transcribe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download audio from vocaroo
+        run: |
+          set -x
+          MEDIA="${{ github.event.inputs.media_url }}"
+          if [ -z "$MEDIA" ]; then
+            SHORT="${{ github.event.inputs.short_url }}"
+            # Follow redirects and find the real media file
+            curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -o page.html "$SHORT"
+            MEDIA=$(grep -oE 'https://media[0-9]*\.vocaroo\.com/mp3/[A-Za-z0-9]+' page.html | head -1)
+            if [ -z "$MEDIA" ]; then
+              MEDIA="${SHORT/https:\/\/voca.ro/https:\/\/media1.vocaroo.com\/mp3}"
+              MEDIA="${MEDIA/\/voca.ro\//\/mp3\/}"
+              MEDIA="https://media1.vocaroo.com/mp3/${SHORT##*/}"
+            fi
+            echo "Resolved media URL: $MEDIA"
+          fi
+          curl -sL -A "Mozilla/5.0" -o voiceover.mp3 "$MEDIA"
+          ls -la voiceover.mp3
+          file voiceover.mp3 || true
+          # If we got HTML instead of audio, extract again
+          if ! file voiceover.mp3 | grep -qiE 'audio|mp3|mpeg'; then
+            MEDIA2=$(grep -oE 'https://media[0-9]*\.vocaroo\.com/mp3/[A-Za-z0-9]+' voiceover.mp3 | head -1)
+            echo "Retry with $MEDIA2"
+            curl -sL -A "Mozilla/5.0" -o voiceover.mp3 "$MEDIA2"
+            file voiceover.mp3 || true
+          fi
+
+      - name: Install Whisper
+        run: |
+          pip install -q --no-input faster-whisper
+
+      - name: Transcribe with faster-whisper
+        run: |
+          python - <<'EOF'
+          from faster_whisper import WhisperModel
+          model = WhisperModel("small", device="cpu", compute_type="int8")
+          segments, info = model.transcribe("voiceover.mp3", beam_size=5, vad_filter=True)
+          lines = []
+          lines.append(f"# Language: {info.language} (p={info.language_probability:.2f})")
+          lines.append(f"# Duration: {info.duration:.1f}s")
+          lines.append("")
+          for seg in segments:
+              lines.append(f"[{seg.start:8.2f} -> {seg.end:8.2f}] {seg.text.strip()}")
+          with open("transcript.txt", "w", encoding="utf-8") as f:
+              f.write("\n".join(lines) + "\n")
+          print("\n".join(lines))
+          EOF
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: vocaroo-audio-and-transcript
+          path: |
+            transcript.txt
+            voiceover.mp3
+          retention-days: 7

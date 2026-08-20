@@ -1,0 +1,62 @@
+[
+  {
+    "beat": 1,
+    "text": "You are born inside an egg buried in a muddy mound on the",
+    "prompt": "A stick-figure crocodile egg buried in a mound of mud and leaves. A tiny snout with an egg-tooth pokes through the shell. Thick black outlines, flat colours, cream background. Hand-lettered label: 'HATCHING'",
+    "filename": "beat01.png"
+  },
+  {
+    "beat": 2,
+    "text": "edge of a mangrove swamp in Northern Australia. The nest is a stinking",
+    "prompt": "A tiny stick-figure baby crocodile beside a full-size candy bar for size comparison. Thick black outlines, flat yellow-green fill, white background. Hand-lettered label: '10 INCHES'",
+    "filename": "beat02.png"
+  },
+  {
+    "beat": 3,
+    "text": "pile of rotting leaves and mud your mother kicked together a few months",
+    "prompt": "A dozen tiny stick-figure crocodile hatchlings crawling up through mud toward the surface. Sunlight beams from above. Thick black outlines, flat earthy colours, dark brown background. Label: 'LITTERMATES'",
+    "filename": "beat03.png"
+  },
+  {
+    "beat": 4,
+    "text": "ago. She's long gone now. She doesn't care about you. She cares about",
+    "prompt": "A tiny stick-figure crocodile on mudflat surrounded by huge stick-figure birds of prey circling overhead. Giant spears (heron beaks) in the water. Thick black outlines, flat sky-blue background. Label: '50 FEET OF HELL'",
+    "filename": "beat04.png"
+  },
+  {
+    "beat": 5,
+    "text": "the next meal. You crack open the shell using a tiny egg-tooth on",
+    "prompt": "A small stick-figure crocodile scrambling across mud with legs pumping. A giant bird beak snapping behind it. Thick black outlines, flat colours, cream background. Label: 'RUN'",
+    "filename": "beat05.png"
+  },
+  {
+    "beat": 6,
+    "text": "the tip of your snout a temporary feature that serves one purpose and",
+    "prompt": "A cross-section diagram showing statistics: '50%' crossed out, with small croc silhouettes and a big X. Thick black outlines, flat white background. Label: 'HALF WILL NOT MAKE IT'",
+    "filename": "beat06.png"
+  },
+  {
+    "beat": 7,
+    "text": "one purpose only to get you out of this humid tomb. You're about",
+    "prompt": "A stick-figure baby crocodile floating in murky water with only eyes and nostrils above the surface. Tiny fish nearby. Thick black outlines, dark blue-green water, flat fill. Label: 'SAFE AT LAST'",
+    "filename": "beat07.png"
+  },
+  {
+    "beat": 8,
+    "text": "10 inches long. You weigh less than a candy bar. You have no",
+    "prompt": "A stick-figure baby croc hiding under mangrove roots while a huge fish swims past. Thick black outlines, flat murky green background. Hand-lettered: 'HIDE'",
+    "filename": "beat08.png"
+  },
+  {
+    "beat": 9,
+    "text": "idea what's waiting above. Around you dozens of other hatchlings are also breaking",
+    "prompt": "A thermometer diagram showing 'TOO HOT' at the top and 'TOO COLD' at the bottom, with a small croc in the middle. Thick black outlines, flat cream background. Label: 'THERMAL CHICKEN'",
+    "filename": "beat09.png"
+  },
+  {
+    "beat": 10,
+    "text": "free. Future competition. You all claw your way up through the mud emerging",
+    "prompt": "A stick-figure baby croc on a sunny rock with a larger croc looming nearby. The baby looks nervously at the bigger one. Thick black outlines, flat colours, warm orange background. Label: 'YOUR SPOT'",
+    "filename": "beat10.png"
+  }
+]
