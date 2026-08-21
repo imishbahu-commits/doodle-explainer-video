@@ -87,6 +87,16 @@ def travel(dur, dx, t0=0.0):
     return [kf(t0, [0, 0], "linear"), kf(t0 + dur, [dx, 0], "linear")]
 
 
+def sine_rot(dur, amp_deg, freq=0.6, t0=0.0, step=0.15):
+    """Scalar stepped sine for rotation (bob/sway). amp in degrees."""
+    tr, t = [], t0
+    while t <= dur + 1e-6:
+        tr.append(hold(t, round(amp_deg * math.sin(2 * math.pi * freq * t), 2)))
+        t += step
+    tr[-1] = hold(dur, 0.0)
+    return tr
+
+
 def jolt(t0, amp=6.0, dur=0.5):
     """Anticipation + snap (spec D7 bite staging): -amp then +amp, settle."""
     return [hold(t0, 0.0), kf(t0 + 0.12, -amp, "easeInOut"),
@@ -190,12 +200,12 @@ SCENES = {
     9: dict(bg="bg_openwater", cam="punch",
             chars=[dict(src="char_baby", max=340,
                         pos=[hold(0, [CX, CY + 40])],
-                        rot=sine_wave(5.0, 3.0, 0.35), puppet="swim")]),
+                        rot=sine_rot(5.0, 3.0, 0.35), puppet="swim")]),
     10: dict(bg="bg_openwater", cam="lock",
              chars=[dict(src="char_baby", max=330,
                          pos=[kf(0.0, [CX + 200, CY - 40], "linear"),
                               kf(4.8, [CX - 180, CY + 30], "linear")],
-                         rot=sine_wave(4.8, 3.0, 0.35), puppet="swim")]),
+                         rot=sine_rot(4.8, 3.0, 0.35), puppet="swim")]),
 }
 
 CAM = {
