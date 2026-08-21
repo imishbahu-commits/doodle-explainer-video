@@ -36,6 +36,8 @@ EASINGS = {
     "easeIn":     (0.42, 0.0, 1.0, 1.0),
     "easeOut":    (0.0, 0.0, 0.58, 1.0),
     "easeInCubic":(0.55, 0.055, 0.675, 0.19),
+    "easeOutCubic":(0.215, 0.61, 0.355, 1.0),
+    "easeInOutCubic":(0.645, 0.045, 0.355, 1.0),
     "easeOutExpo":(0.16, 1.0, 0.3, 1.0),
     "easeOutBack":(0.175, 0.885, 0.32, 1.275),
     "easeInBack": (0.6, -0.28, 0.735, 0.045),
@@ -208,6 +210,7 @@ def render_scene(scene, out_path, base_dir=None):
     for spec in scene.get("layers", []):
         if spec["type"] == "text":
             base = draw_text(spec.get("text", ""), spec.get("size", 48),
+                             fill=tuple(spec.get("fill", (28, 28, 34))),
                              font_name=spec.get("font", "hand"))
         elif spec["type"] == "image":
             src = Path(spec["src"])

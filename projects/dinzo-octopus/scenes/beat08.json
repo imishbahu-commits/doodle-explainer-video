@@ -1,0 +1,178 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 7.97,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_den.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_mother_weak_cut.png",
+   "isolate": false,
+   "max_dim": 860,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       434.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 3.4,
+      "v": 1.0,
+      "e": "hold"
+     },
+     {
+      "t": 5.2,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "SHE DIES",
+   "size": 72,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.9,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.25,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.9,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 0.97,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "NEVER MEET HER",
+   "size": 44,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 2.6,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 2.95,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 2.6,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 2.67,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}

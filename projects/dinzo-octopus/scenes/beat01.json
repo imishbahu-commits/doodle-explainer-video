@@ -1,0 +1,206 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 4.17,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_den.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.17,
+      "v": 1.09,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 720,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       -520,
+       444.0
+      ],
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 0.5,
+      "v": [
+       688.0,
+       444.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "THE EGG",
+   "size": 58,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.95,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.3,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.95,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 1.02,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "GRAIN OF RICE",
+   "size": 42,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.5,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.85,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.5,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 1.57,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}

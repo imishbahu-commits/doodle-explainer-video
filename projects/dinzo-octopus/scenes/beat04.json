@@ -1,0 +1,337 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 3.11,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_den.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 680,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       424.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.7,
+      "v": 0.6,
+      "e": "easeOutBack"
+     },
+     {
+      "t": 1.2,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.8,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 520,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.25,
+      "v": [
+       -700,
+       514.0
+      ],
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 0.75,
+      "v": [
+       268.0,
+       514.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 520,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.5,
+      "v": [
+       760,
+       544.0
+      ],
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 1.0,
+      "v": [
+       1108.0,
+       544.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "100,000",
+   "size": 84,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.1,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.45,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.1,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 1.17,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "SIBLINGS",
+   "size": 42,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.65,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 2.0,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.65,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 1.72,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}

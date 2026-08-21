@@ -1,0 +1,203 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 5.63,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_den.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.09,
+      "e": "easeInOut"
+     },
+     {
+      "t": 5.63,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 720,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       434.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -1.6,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 1.6,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -1.6,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 1.6,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": -1.6,
+      "e": "easeInOut"
+     },
+     {
+      "t": 5.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "TINY PEARL",
+   "size": 56,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.9,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.25,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.9,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 0.97,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "DARK DEN",
+   "size": 42,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.5,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 1.85,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.5,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 1.57,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}
