@@ -1,129 +1,137 @@
 ---
 name: doodle-explainer-video
-description: Produce faceless hand-drawn explainer videos in the measured Paint Explainer style — human hand-drawn PNG characters and backgrounds, locked camera, hard noun-synced cuts, and sparse local keyframes (slide-ins, labels, pose swaps, puppet-rigged limbs; no routine lip sync). Use when the user wants a faceless explainer video, a myth/creature/history list video, a "5-act" story video, or any narrated YouTube video with hand-drawn art. Covers script, style lock, image batching, keyframe animation, character rigging, audio, and assembly.
+description: Produce original faceless hand-drawn explainers using the measured four-video Paint Explainer profile: illustrated world plates, persistent chapter titles, locked camera, noun-anticipated hard cuts, sparse local PNG motion, controlled narration/mix, deterministic QC, and YouTube packaging.
 ---
 
-# Hand-drawn explainer video (Paint Explainer style)
+# Doodle Explainer Video — measured Paint Explainer production
 
-**The default mode is ANIMATED hand-drawn PNGs, not static stills.**
+## Authority and target
 
-## ⚠️ STYLE LOCK — copy these prompts VERBATIM (change ONLY {SUBJECT})
+Always begin with:
 
-**Subject PNG (characters, creatures, objects):**
-```
-Hand-drawn doodle illustration of {SUBJECT}, on a PURE WHITE background.
-MS-Paint-like style: thick black outlines, flat bold colors, slightly
-imperfect hand-drawn lines, simple and {MOOD}.
-No text, no background scenery, no shadows, no gradients.
-```
+- `skills/paint-explainer-recreation/SKILL.md` — master production profile;
+- `references/paint-explainer-analysis-4v/style_rules.json` — authoritative
+  machine rules;
+- `references/paint-explainer-analysis-4v/STYLE_SPEC.md` — human evidence and
+  implementation specification;
+- `skills/content-router/SKILL.md` — stage routing.
 
-**Background PNG (separate image):**
-```
-Simple hand-drawn doodle {SETTING} background, MS-Paint-like style:
-flat {PALETTE} colors, thick black outlines, wavy hand-drawn lines,
-completely EMPTY in the middle. No text.
-```
+The rules were measured from four user-supplied videos: 98,705 frames,
+3,290.167 s, 845 shots, and 841 abrupt edit events. When any generic skill
+default conflicts, `style_rules.json` wins.
 
-**Never** write "cinematic", "moody", "painterly", "film grain", or dark
-palettes in an image prompt — that produces the WRONG (Zenn-like) style.
-**Pass the first accepted image as the reference image on every later
-generation.** This lock is what makes 100 images look like one hand.
+Primary target: the newest supplied sea-world version (2026-08-16), with its
+slower voice, quieter mix, illustrated environments, and persistent title
+strip. White-history, immersive-environment, and incident-listicle are named
+secondary modes in the machine rules.
 
-Reference: The Paint Explainer channel. The current authority is a four-video,
-54:50 corpus scanned across 98,705 frames. Read
-`references/paint-explainer-analysis-4v/STYLE_SPEC.md` and
-`references/paint-explainer-analysis-4v/style_rules.json`. These supersede the
-older single-video autopsy when values conflict.
+## Non-negotiable profile
 
-## The measured formula (follow these numbers)
-
-| Rule | Value |
+| Dimension | Rule |
 |---|---|
-| Cut rhythm | **2.77 s median**; 70.30% of shots are 1–6 s; hard cuts/step swaps |
-| Word sync | visual changes **0.050 s before** nearest word start (median) |
-| Motion budget | **46.27% frozen / 40.83% active local / 11.72% subtle local / 0.95% canvas slides** |
-| Camera | **locked; zero sustained whole-scene zooms verified** |
-| Subject position | **center x≈0.50, slightly low y≈0.54–0.58** |
-| Backgrounds | topic-driven: white void, simple plate, or illustrated environment; no global film grain |
-| Timing source | measured at 30 fps (±0.033 s); author keyframe times independently of render fps |
-| Chapter pauses | **0.60–0.80 s target**; measured median 0.615 s |
-| Art | ~0.31%-width black contour, flat character fills, gradients reserved for world plates |
-| Voice | current target **204–209 WPM**, **−20.6 to −20.7 LUFS** master |
+| Frame timing | 30 fps source timing, ±0.0333 s measured uncertainty |
+| Edit cadence | 2.7667 s corpus median; production envelope 2.3–3.1 s |
+| Word sync | picture change median ~0.050 s before nearest word; implement 1–2 frames early |
+| Transitions | 65.52% full-frame hard cut, 29.85% same-palette hard cut, 4.64% local one-frame swap/pop, 0% verified dissolve/fade |
+| Motion | ~46.27% frozen; ~40.83% active local; ~11.72% subtle local |
+| Camera | locked; zero verified sustained zoom/pan-follow/orbit |
+| Active parts | normally 1–3; pose swap, local translation, arm/prop rotation, or 2–4 pins |
+| Idle | none by default; no routine blink, lip-sync, breathing, or walk cycle |
+| Ink | near-black `#101010`; ~2 px at 640 width / ~6 px at 1920; clean imperfect contour |
+| Composition | subject typically ~25–65% width; ink center x≈0.50, y≈0.54–0.58 |
+| Chapter title | centered black uppercase hand lettering on white top ~10%; persists for full chapter |
+| Voice | current mode 204–209 recognized WPM |
+| Mix | −20.7 to −20.6 LUFS; true peak ≤−2.3 dBTP; LRA 1.8–3.8 LU |
+| Music/SFX | low continuous electronic/ambient bed; sparse semantic SFX, no whoosh-per-cut |
+| Captions | none unless explicitly requested |
 
-## The smart router is the entry point
+## Approved production stack
 
-For any video request, first read `skills/content-router/SKILL.md`. It
-decides which skill fires when — one specialist at a time, never all at
-once:
+| Responsibility | Skill |
+|---|---|
+| Orchestration | `content-router` |
+| Research/script/beats | `youtube-script` |
+| Visual-state and asset ledger | `image-queue` |
+| Art language | `handdrawn-style-lock` |
+| Deterministic diagrams/marks | `handdrawn-code` |
+| PNG layers and MLS puppet motion | `ae-motion` |
+| Exceptional repeated character actions | `character-animation-skill` |
+| Script/audio/cadence checks | `video-polish` |
+| Publishing metadata | `youtube-seo` |
+| Clean alpha/cutouts | `transparent-asset-prep` |
+| Repository-specific enforcement | `paint-style-qc` |
+| Master profile | `paint-explainer-recreation` |
+| Browser composition/runtime | `hyperframes-core` |
+| Keyframe diagnostics | `hyperframes-keyframes` |
+| Seekable animation adapters | `hyperframes-animation` |
+| Preview/lint/render CLI | `hyperframes-cli` |
 
+The four HyperFrames skills are a pinned Apache-2.0 subset. Provenance is in
+`skills/hyperframes-upstream/UPSTREAM.md`. Do not import its generic
+faceless/creative presets into this profile.
+
+## Workflow
+
+1. **Select mode and write.** Use `youtube-script`; retain word-level timing.
+   Run `video-polish` script QC.
+2. **Plan semantic visual states.** Use `image-queue`, but do not force one
+   image per beat. Record holds, reuse, hard cuts, source swaps, local actions,
+   title continuity, and anticipated event times.
+3. **Make art.** Lock the mode palette and contour with
+   `handdrawn-style-lock`; use `handdrawn-code` for diagrams. Approve first
+   subject and world-plate masters as references.
+4. **Prepare assets.** Use `transparent-asset-prep` only when clean alpha is
+   missing. Keep original sources. Run image QC.
+5. **Choose one renderer per composition.** Use `ae-motion` for transparent
+   PNG/MLS work, or the selected HyperFrames subset for deterministic browser
+   layout and diagnostics. Keep the camera locked and blur off.
+6. **Use character rigging sparingly.** Fire `character-animation-skill` only
+   for a genuinely repeated action; simpler pose swaps/part rotation win.
+7. **Assemble to narration.** Put hard changes 1–2 source frames before the
+   emphasized word; preserve chapter breath and title strip. Add the measured
+   low bed and only semantic SFX.
+8. **Gate the result.** Run `paint-style-qc` and `video-polish`; manually spot
+   check events because flattened local animation can resemble a scene cut.
+9. **Package.** Use `youtube-seo` only after the master passes.
+
+## Minimum artifacts
+
+```text
+projects/SLUG/
+  script.md
+  beats.json
+  audio/word-timings.json
+  assets/source/
+  assets/cutouts/
+  scenes/
+  manifest.json
+  qc/
+  final.mp4
+  metadata.md
 ```
-1 script   → skills/youtube-script (any topic, 7 formats)  [beats.json]
-1b QC      → skills/video-polish (script_doctor)           [grades the script]
-2 plan     → skills/image-queue (doodle/asset/pose/ai)     [resumable ledger]
-3 art      → skills/handdrawn-style-lock                   [locks the hand]
-3b batch   → skills/image-queue (10 ai per turn, "go")     [image-batcher = legacy]
-4 motion   → skills/ae-motion + skills/motion-design       [keyframes, easing]
-4b action  → skills/character-animation-skill              [walk/wave/blink]
-4c props   → skills/asset-library                          [23 libs: Kenney, game-icons, 4 emoji sets, humaaans, 0x72 + Pixel Adventure backgrounds…]
-5 edit     → skills/Ultimate-Video-Editing-Skills          [mix, grade, SFX]
-6 gates    → skills/video-polish (audio + pacing reports)  [verify numbers]
-7 SEO      → skills/youtube-seo (title/desc/tags/thumbnail) [upload metadata]
-```
 
-## Scripts for ANY niche (skills/youtube-script)
+The master profile defines the fuller artifact contract. Keep source masters,
+scene manifests, event timing, and machine reports; do not commit render caches
+or unneeded frame sequences.
 
-The 5-act myth template below is ONE of seven formats. `youtube-script`
-handles any topic: myth, misconception, mystery, how-it-works, comparison,
-timeline, big-question — see `skills/youtube-script/references/formats.md`.
-Depth rules: misconception-first research, but-therefore seams, one
-curiosity gap per minute, every fact sourced, beats fitted to the
-voiceover (a longer voiceover = more beats = more images, never stretch).
+## Stop conditions
 
-## The 5-act story template (from the reference)
+Do not approve a final when any of these remains:
 
-Every chapter (~60 s) repeats the same 5 acts. Write them in order, then
-cut the visuals to the narration clauses:
+- generic zoom/pan/parallax, dissolve, or idle loop;
+- more than three local moving elements without a measured exception;
+- chapter title absent or drifting;
+- cuts timed after the noun when anticipation was intended;
+- off-style outline/palette, alpha fringe, AI text, or anatomy error;
+- narration/mix outside current measured targets;
+- captions added without request;
+- generic skill presets have replaced repository authority.
 
-1. **THE MYTH** — dramatic hand-drawn subject + a number/detail
-2. **THE DOUBT** — "of course most people assumed it was just a myth"
-3. **THE DIG** — real evidence enters (ruins, bones, gases, fossils)
-4. **THE EXPLANATION** — drawn diagram/map/mechanism
-5. **THE KICKER** — "this is likely how the story spread" (soft verb)
+## Legacy vertical mode
 
-11 chapters = 11 repetitions of this template. The repetition is the format.
+The old static three-band 9:16 builder remains in `scripts/build_video.py` for
+explicit legacy requests only. Its geometry/audio defaults are not Paint
+Explainer defaults and must not leak into the measured 16:9 workflow.
 
-## Workflow per chapter
-
-1. Write the 5-act narration for the chapter (video-polish grades it).
-2. Generate the subjects via the **style-lock prompt templates**
-   (subject PNG on PURE WHITE + separate empty-middle background PNG).
-   Batch through the image-queue ledger (doodle/asset/pose first, then ai
-   10 per turn); pass the first accepted image as the style reference on
-   every later call.
-3. Animate with **ae-motion**: slide-in subject, pop label, punch-in on
-   the reveal, puppet-pin any body part that acts (tail, wings, limbs).
-   Use `--plan "narration beat"` to pick the move. 60 fps, motion blur on
-   slides, hand fonts for all text.
-4. A character that WALKS/WAVES/BLINKS → character-animation-skill.
-   A missing prop (boat, tree, shield) → asset-library fetch (CC0).
-5. Assemble: hard cuts at 2–6 s, 0.7 s chapter pauses, music bed ducked
-   under the voice, loudness −23 dB.
-6. video-polish checks: cut cadence ≈ 3.6 s median, pauses 0.7 s, no
-   captions unless asked.
-
-## Legacy mode (optional — NOT the default)
-
-The old "three-band vertical" static format (clickbait banner / static
-doodle / empty black band, no motion) still exists in
-`scripts/build_video.py`. Use it ONLY when the user explicitly asks for
-that specific vertical Reels format. For everything else, this animated
-Paint Explainer workflow is the default.
-
-## Rules that never change
-
-- Never copy another creator's drawings, script, voice, or branding —
-  extract technique only, build original work.
-- No captions unless the user asks. No music louder than −23 dB under the
-  voice. Hard cuts only — no transitions between beats.
-- The repo is the memory: commit script, ledger, scenes and manifests at
-  each stage so a new chat resumes without re-asking.
+Never copy another creator's drawings, script, voice, or branding. Reproduce
+measured production technique with original content and assets.

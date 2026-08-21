@@ -1,95 +1,78 @@
-# Grok Automation Guide — run this video pipeline from Grok
+# Grok Automation Guide — measured Paint Explainer workflow
 
-This repo builds **Paint Explainer style hand-drawn explainer videos**. This
-guide explains how to make **Grok** drive the pipeline: Grok writes the
-script, plans the beats, writes the image prompts, generates the images, and
-packages the YouTube metadata — using the same rules the Arena workspace
-follows.
+This is a handoff guide for using an external agent to prepare scripts, state
+plans, art masters, and metadata. Current authority is
+`references/paint-explainer-analysis-4v/style_rules.json`; read `CLAUDE.md`,
+`SKILL.md`, and `skills/paint-explainer-recreation/SKILL.md` first.
 
-## 1. Get the files into Grok (pick ONE)
-
-**Option A — connect Grok to GitHub (recommended):**
-
-1. Open `https://github.com/imishbahu-commits/doodle-explainer-video`
-2. Tap **Fork** (top right) → **Create fork**. Now you have your own copy.
-3. In Grok, connect GitHub (Grok's integrations / MCP), point it at your
-   fork, branch `arena/01a002e2-doodle-explainer-video`.
-
-**Option B — upload the zip:**
-
-1. Download `doodle-explainer-video-bundle.zip` (all files, no git history).
-2. In Grok, attach the zip and start with the prompt below.
-
-## 2. The starter prompt (paste this into Grok, fill the topic)
+## Starter prompt
 
 ```text
-Read CLAUDE.md and SKILL.md first — they are the master rules.
+Read CLAUDE.md, SKILL.md, skills/paint-explainer-recreation/SKILL.md, and
+references/paint-explainer-analysis-4v/style_rules.json. The JSON rules override
+all generic defaults.
 
-I want a Paint Explainer style hand-drawn explainer video about
-[TOPIC]. Follow the repo workflow exactly:
+Create original preparation artifacts for a Paint Explainer-style video about
+[TOPIC]:
 
-1. Script: use the youtube-script skill (pick the right format from
-   references/formats.md). One spoken beat = one sentence = one image,
-   2-6 seconds each. Hooks, but-therefore seams, misconception-first,
-   facts from research. Output script.md and beats.json (the exact
-   schema from the skill).
-2. Image plan: classify every beat doodle / asset / pose / ai
-   (image-queue skill). Only "ai" beats get generated images.
-3. Images: for every ai beat, generate with your image generator using
-   the VERBATIM prompt templates in CLAUDE.md — PURE WHITE background,
-   thick black outlines, flat colors. Backgrounds and characters are
-   SEPARATE images. No "cinematic", no "moody", no dark colors, no text.
-   Generate one image per beat — never stretch, never reuse.
-4. SEO: after the script is approved, run the youtube-seo skill —
-   title (Browse + Search versions), description, tags, chapters,
-   15-second hook line, thumbnail concept.
-5. Output: script.md, beats.json, the SEO metadata, and all generated
-   images, clearly numbered by beat.
+1. Research and script using youtube-script. Cite claims in research.md. Target
+   204–209 spoken WPM and retain final word-level timing.
+2. Build beats.json as spoken timing rows plus semantic visual states. A beat
+   may hold or reuse the previous state; do not force one image per beat.
+3. Classify assets with image-queue: hold / doodle / asset / pose / ai. Generate
+   only genuinely new ai masters and record every source/reuse decision.
+4. Follow handdrawn-style-lock: one clean imperfect near-black #101010 contour,
+   measured mode palette, flat character fills, and illustrated world plates
+   where appropriate. Keep the top 10% clear for the persistent white title
+   strip. No embedded text, photorealism, 3D rendering, cinematic lighting, or
+   film grain.
+5. For each justified visual change, record hard_cut / source_swap /
+   local_motion and schedule it about 0.033–0.067 seconds before the keyword.
+   Camera remains locked; do not prescribe generic zoom, pan, parallax,
+   dissolve, idle breathing, blink, or lip-sync.
+6. After approval, prepare youtube-seo metadata. Do not change production style
+   or loudness for generic SEO advice.
+
+Output research.md, script.md, beats.json, word timings, source masters, style
+references, and metadata.md. Keep original artwork rather than copying reference
+creator assets or branding.
 ```
 
-## 3. What Grok can and cannot do
+## What an external agent can prepare
 
-| Task | Where it happens |
+| Artifact | External preparation |
 |---|---|
-| Script, beat plan, image prompts, SEO metadata | ✅ Grok (using the skills' rules) |
-| Generating the hand-drawn images | ✅ Grok's image generator (use the verbatim templates) |
-| Free beats: diagrams, charts, stick figures | ✅ Grok can write the doodle-engine JSON or generate them |
-| Fetched library assets (Kenney, game-icons…) | ⚠️ needs GitHub access — the asset-library skill's `search`/`get` commands work in any terminal with `gh` |
-| Final video assembly (ae-motion keyframes, ffmpeg, 60 fps, audio mix) | ⚠️ in this Arena workspace — upload the images here and say "uploaded" |
-| Voiceover | ✅ Grok's voice / or your own recording |
+| research, script, state/event ledger | yes |
+| new art masters | yes, if its generator supports reference images |
+| deterministic diagram scene JSON/SVG | yes |
+| word timings | yes, if it can align the final narration |
+| YouTube metadata | yes |
+| final ae-motion/HyperFrames render and repository QC | preferably this repository environment |
 
-## 4. Bring the results back here to finish
+## Return package
 
-1. Put every image in the uploads folder (or use the phone studio page —
-   it uploads straight from your phone).
-2. Put `script.md` + `beats.json` in the project folder.
-3. Tell the agent: "uploaded — assemble the video".
+Place the approved files under `projects/SLUG/`:
 
-The workspace then does: style check → ae-motion animation (slide-ins,
-pops, punch-ins, 60 fps, hard cuts every 2-6 s) → audio (−23 dB, 0.7 s
-chapter pauses) → quality gates → final.mp4.
+```text
+research.md
+script.md
+beats.json
+audio/word-timings.json
+assets/source/
+metadata.md
+```
 
-## 5. Non-negotiable rules (Grok must not break these)
+The repository then performs transparent asset prep, renderer selection,
+scene authoring, audio assembly, and measured QC.
 
-1. **1 beat = 1 image.** A longer voiceover = more beats = more images.
-   Never stretch an image to cover time.
-2. **Style lock.** First accepted image is the reference for every later
-   generation. All prompts from the CLAUDE.md templates.
-3. **Forbidden words in image prompts:** cinematic, moody, painterly,
-   film grain, dark palettes, shadows, gradients, photorealism.
-4. **Subjects centered** (x = 0.50), bright white/pastel backgrounds.
-5. **No captions unless asked. Hard cuts only.**
-6. **Batch stops:** if an image generator limits images per message,
-   generate a batch, mark it in beats.json, then continue in the next
-   message — the same "go" loop the Arena agent uses.
+## Non-negotiable handoff rules
 
-## 6. Handy numbers
-
-| Video length | Beats (images) | Typical AI images needed |
-|---|---|---|
-| 1 min | ~17 | 6-9 |
-| 3 min | ~50 | 14-22 |
-| 8 min | ~133 | 40-60 |
-
-The rest come free: doodle engine (diagrams), asset-library (23 cloud
-sources), pose reuse (characters re-posed from one generation).
+1. Spoken beat count does not determine image count.
+2. Reuse stable approved subject/world masters intentionally.
+3. Camera stays locked and only 1–3 local elements normally move.
+4. Preserve the persistent chapter-title strip and noun-anticipated event time.
+5. Current final mix target is −20.7 to −20.6 LUFS, true peak ≤−2.3 dBTP,
+   LRA 1.8–3.8 LU.
+6. A low ambient/electronic bed is allowed; captions require an explicit request.
+7. Generation batching affects only pending `ai` masters. Keep the ledger so a
+   later turn resumes without regenerating accepted assets.

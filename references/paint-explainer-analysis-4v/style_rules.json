@@ -129,6 +129,7 @@
     "older_wpm_range": [220, 221],
     "integrated_lufs_corpus_median": -19.34,
     "target_newest_integrated_lufs_range": [-20.7, -20.6],
+    "target_newest_true_peak_dbtp_max": -2.3,
     "older_integrated_lufs_range": [-18.1, -17.7],
     "lra_lu_range": [1.8, 3.8],
     "estimated_mixed_onset_tempo_bpm_range": [117, 134],

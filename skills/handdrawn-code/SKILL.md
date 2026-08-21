@@ -124,13 +124,20 @@ thing.
 
 ### Style rules
 
-- One flat background colour per scene (`#FFFFFF`, `#FFE0AC`, `#F2A63B`,
-  `#5FBCE4`…). No gradients, no shading.
-- Ink is near-black `#16161a`; accents only where the grammar asks (green
-  check, red cross).
-- 2–4 elements per scene. Empty space is the style.
-- Labels short, ALL CAPS, `caveat` for titles, `patrick` for small notes,
-  `kalam` for numerals.
+For Paint Explainer projects, `style_rules.json` overrides generic examples:
+
+- ink is `#101010`, typically ~6 px at 1920-wide production (~2 px at 640);
+- use one clean imperfect contour, not multi-pass sketch scribble;
+- flat character/diagram fills; gradients only on sky/water/world plates;
+- use the selected measured mode palette from `handdrawn-style-lock`;
+- titles are centered uppercase on a fixed white top strip ~10% of frame
+  height and persist for the full chapter (do not use a decorative underline
+  as a substitute);
+- labels remain short and semantic; they are not captions;
+- keep scenes legible and sparse, and later animate only 0–3 local elements.
+
+Outside that profile, a flat background and restrained accents remain safe
+generic defaults.
 
 ## Hand-drawn charts
 
@@ -185,7 +192,8 @@ build script centre-crops for band B. Point a beat at the PNG directly:
 
 - Text is positioned by centre and does not wrap — keep labels short, and
   check the render for overflow.
-- The same `seed` + scene = same sketch, always. Vary `seed` per beat so
-  repeated scenes don't look copy-pasted.
+- The same `seed` + scene = the same sketch. In Paint Explainer projects,
+  preserve the seed for reused visual states; vary it only for a genuinely new
+  authored plate, not to disguise intentional reuse.
 - `roughness` above 2.5 starts to break labels into scribbles; keep it
   ≤ 1.8 for scenes with small text.

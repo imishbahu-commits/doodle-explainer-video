@@ -1,89 +1,93 @@
-# MAKE_VIDEO.md — the 10-line recipe (read this, then just copy)
+# MAKE_VIDEO.md — measured Paint Explainer quick recipe
 
-> One page. No documents to search. Follow top to bottom.
+For full detail read `SKILL.md`, `skills/paint-explainer-recreation/SKILL.md`,
+and `references/paint-explainer-analysis-4v/style_rules.json`.
 
-## ⚠️ NEVER STRETCH IMAGES — 1 beat = 1 image
+## 1. Script and align
 
-Count beats first (60s ≈ 17-20 images at 2-6s cuts; 3min ≈ 50-60; 8min ≈
-130-160). Generate 10 per turn, then STOP and say `"type 'go' for the
-next 10"`. Never hold one image over many beats, never reuse, never
-extend. Unlimited alternatives when batching is slow: `handdrawn-code`
-(code-drawn doodles, zero cap) and `asset-library` (CC0 fetch).
-
-## 1. Style lock — COPY THESE PROMPTS VERBATIM
-
-**Every subject image:**
-```
-Hand-drawn doodle illustration of {SUBJECT}, on a PURE WHITE background.
-MS-Paint-like style: thick black outlines, flat bold colors, slightly
-imperfect hand-drawn lines, simple and {MOOD: funny-scary | grumpy | cute}.
-No text, no background scenery, no shadows, no gradients.
-```
-
-**Every background image:**
-```
-Simple hand-drawn doodle {SETTING} background, MS-Paint-like style:
-flat {PALETTE} colors, thick black outlines, wavy hand-drawn lines,
-completely EMPTY in the middle. No text.
-```
-
-❌ Forbidden words: `cinematic` `moody` `painterly` `film grain` `dark palette`
-✅ Rule: generate image 1 → accept it → pass it as the reference image
-   for EVERY later generation.
-
-## 2. Script — the 5 acts (repeat per chapter)
-
-THE MYTH → THE DOUBT ("most people assumed it was just a story") →
-THE DIG (real evidence) → THE EXPLANATION (diagram) → THE KICKER
-("this is likely how the story spread").
-
-## 3. Generate — max 10 images per turn
+Use `youtube-script`, research every claim, write at the current 204–209 WPM
+target, and retain final word-level timing. Mark ~0.6–0.8 s chapter breaths.
 
 ```bash
-python3 skills/image-batcher/scripts/batch_images.py init my-video --prompts prompts.txt
-# then: generate 10 in parallel → mark 1..10 → commit → "send 'go'" for next 10
+python3 skills/youtube-script/scripts/script_planner.py plan PROJECT "topic" \
+  --duration 180 --format myth
+python3 skills/video-polish/scripts/script_doctor.py projects/PROJECT/script.md
 ```
 
-## 4. Motion — keyframes, not stills
+## 2. Plan visual states
+
+Use `image-queue`. A spoken beat may hold or reuse the prior visual. Record only
+semantic events: hard cut, source swap, or local action. Schedule justified
+changes ~0.033–0.067 s before their keyword.
 
 ```bash
-python3 skills/ae-motion/scripts/ae_motion.py scene.json -o out.mp4
-python3 skills/ae-motion/scripts/ae_motion.py --plan "the beat text"
+python3 skills/image-queue/scripts/queue.py classify PROJECT
+python3 skills/image-queue/scripts/queue.py ai-prompts PROJECT
 ```
 
-Rules: cuts every 2–6 s · subjects centered · 60 fps · slide-ins with
-easeOutExpo · label pops with easeOutBack · punch-in on the reveal ·
-puppet-pin any body part that acts (tail, wings, limbs) · hand fonts.
+Generate only genuinely new masters, up to 10 pending AI assets in a turn. Do
+not regenerate subjects/plates merely to avoid intentional reuse.
 
-## 5. Character does something? / missing a prop?
+## 3. Lock and prepare art
+
+Use the measured mode palette in `handdrawn-style-lock`: near-black `#101010`
+single-pass contour, ~6 px at 1920, flat character fills, and gradients only on
+world plates. Preserve a white top title strip ~10% of frame height.
 
 ```bash
-# walk / wave / blink: skills/character-animation-skill
-# missing prop: fetch one CC0 file (never clone, never commit assets)
-python3 skills/asset-library/scripts/asset_fetch.py search dragon
-python3 skills/asset-library/scripts/asset_fetch.py get kenney "<path>" --out assets
+python3 skills/transparent-asset-prep/scripts/prepare_asset.py in.png out.png \
+  --mode auto --report qc/alpha.json
+python3 skills/paint-style-qc/scripts/paint_style_qc.py image out.png \
+  --kind subject --json qc/image.json
 ```
 
-## 6. Audio + assembly
+## 4. Render one composition
 
-Voiceover → music bed −26 dB under voice → 0.7 s pause between chapters →
-final loudness −23 dB → hard cuts, no transitions, no captions.
-
-## 7. Verify
+Use `ae-motion` for transparent PNG/MLS work:
 
 ```bash
-python3 skills/video-polish/scripts/script_doctor.py script.md
-python3 skills/video-polish/scripts/audio_report.py final.mp4
-python3 skills/video-polish/scripts/qa_pacing.py final.mp4
+python3 skills/paint-style-qc/scripts/paint_style_qc.py scene scene.json
+python3 skills/ae-motion/scripts/ae_motion.py scene.json -o shot.mp4
 ```
 
-## Full worked example (copy it)
+Defaults: 30 fps timing, locked camera, `motion_blur: 1`, holds/cuts/source
+swaps, and 0–3 moving local elements. No routine idle, blink, lip-sync, bounce,
+parallax, zoom, pan, dissolve, or fade.
 
-`references/worked-example.md` — a complete Minotaur chapter: 10 exact
-prompts + per-beat motion.
+Use the selected HyperFrames core/keyframes/animation/CLI subset instead when a
+deterministic browser composition and its diagnostics are more useful. Never
+load generic creative/faceless presets.
 
-## If in doubt
+## 5. Character action exception
 
-Read `CLAUDE.md`, `references/paint-explainer-analysis-4v/STYLE_SPEC.md`, and `references/paint-explainer-analysis-4v/style_rules.json`
-(the measured numbers). The reference style is The Paint Explainer —
-hand-drawn, bright, fast cuts. NOT cinematic, NOT dark, NOT static stills.
+Use `character-animation-skill` only for a genuinely repeated semantic action
+that cannot be expressed by a pose swap, whole-layer translation, arm/prop
+rotation, or 2–4-pin local deformation.
+
+## 6. Assemble and mix
+
+Hard-cut/source-swap on anticipated word timing. Preserve the persistent title
+strip and chapter breaths. Use the measured low electronic/ambient bed and
+sparse semantic SFX. Do not add captions unless requested.
+
+Current master: **−20.7 to −20.6 LUFS, true peak ≤−2.3 dBTP, LRA 1.8–3.8 LU**.
+
+## 7. Gate
+
+```bash
+python3 skills/video-polish/scripts/audio_report.py final.mp4 --json
+python3 skills/video-polish/scripts/qa_pacing.py final.mp4 \
+  --manifest manifest.json --json
+python3 skills/paint-style-qc/scripts/paint_style_qc.py metrics \
+  qc/final-metrics.json --json qc/final-style.json
+```
+
+Target median shot envelope: 2.3–3.1 s. Flattened local motion can resemble an
+edit, so compare machine detection with the authored event manifest and spot
+check frames.
+
+## 8. Package
+
+After all gates pass, use `youtube-seo` for title, description, chapters, tags,
+and thumbnail brief. Its generic loudness/caption suggestions do not override
+the measured production profile.

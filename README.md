@@ -1,30 +1,38 @@
 # Doodle Explainer Video
 
-> ## ⭐ Default mode: Paint Explainer style (animated hand-drawn PNGs)
+> ## ⭐ Default mode: measured Paint Explainer recreation
 >
-> A new chat should produce **animated hand-drawn explainer videos**:
-> hand-drawn PNG characters + backgrounds, real keyframe motion (slide-ins,
-> local pose/prop/label moves and puppet-rigged limbs), noun-synced hard cuts,
-> and a locked camera. The entry point is `SKILL.md` +
-> `skills/content-router/`; the current four-video measured authority lives in
-> `references/paint-explainer-analysis-4v/`. The old static
-> three-band vertical format below is now the **legacy option**, used only
-> when explicitly requested.
+> The default is an original 16:9 hand-drawn explainer with illustrated world
+> plates, a persistent white chapter-title strip, noun-anticipated hard cuts,
+> a locked camera, many frozen holds, and sparse local PNG/part motion. The
+> four-video, 98,705-frame ruleset in
+> `references/paint-explainer-analysis-4v/style_rules.json` overrides all
+> older/generic defaults. The static three-band vertical builder below is a
+> legacy option used only when explicitly requested.
 
-### Quick start — Paint Explainer mode (the default)
+### Quick start — Paint Explainer mode
 
 ```bash
-# new chat: read SKILL.md, then the router decides the stages
-python3 skills/video-polish/scripts/script_doctor.py script.md   # 5-act check
-python3 skills/ae-motion/scripts/ae_motion.py scene.json -o out.mp4
-python3 skills/ae-motion/scripts/ae_motion.py --plan "the beat text"
-python3 skills/asset-library/scripts/asset_fetch.py search dragon
+# Read the master profile and route only the needed stage.
+cat skills/paint-explainer-recreation/SKILL.md
+cat skills/content-router/SKILL.md
+
+# Representative measured gates.
+python3 skills/transparent-asset-prep/scripts/prepare_asset.py in.png out.png --report qc/alpha.json
+python3 skills/paint-style-qc/scripts/paint_style_qc.py image out.png --kind subject
+python3 skills/paint-style-qc/scripts/paint_style_qc.py scene scene.json
+python3 skills/video-polish/scripts/audio_report.py final.mp4 --json
+python3 skills/video-polish/scripts/qa_pacing.py final.mp4 --manifest manifest.json --json
 ```
 
-Key files: `SKILL.md` (formula + workflow) · `skills/content-router/SKILL.md`
-(stage map) · `references/paint-explainer-analysis-4v/STYLE_SPEC.md` (current
-98,705-frame specification) · `references/paint-explainer-analysis-4v/style_rules.json`
-(machine-readable rules).
+Key files: `SKILL.md` (approved stack) ·
+`skills/paint-explainer-recreation/SKILL.md` (master profile) ·
+`skills/content-router/SKILL.md` (stage map) ·
+`references/paint-explainer-analysis-4v/STYLE_SPEC.md` (human specification) ·
+`references/paint-explainer-analysis-4v/style_rules.json` (authoritative
+machine rules). Selected deterministic browser rendering support is vendored
+under `skills/hyperframes-{core,keyframes,animation,cli}/`; provenance and
+license live under `skills/hyperframes-upstream/`.
 
 ## Legacy mode — three-band vertical (still available)
 
@@ -195,53 +203,52 @@ be local files or https URLs — the script downloads them.
 - **TTS is quiet.** Raw output sits ~5 dB under the reference. The script
   normalises to -16 LUFS by default.
 
-## Layout
+## Current production layout
 
-```
+```text
 doodle-explainer-video/
-├── SKILL.md                     # the skill instructions Claude follows
-├── README.md
+├── SKILL.md                         # approved measured stack and workflow
+├── CLAUDE.md                        # repository execution invariants
 ├── references/
-│   ├── format-spec.md           # measured geometry, colours, cadence, audio
-│   ├── script-formula.md        # the nine-move arc and sentence craft
-│   └── art-direction.md         # banner + doodle templates, visual grammar
+│   └── paint-explainer-analysis-4v/
+│       ├── STYLE_SPEC.md            # human evidence/specification
+│       └── style_rules.json         # authoritative machine rules
 ├── skills/
-│   ├── handdrawn-code/          # code → hand-drawn SVG/PNG (rough.js + xkcd)
-│   ├── youtube-script/          # any-niche scripts: 7 formats, hooks, but-therefore, beat math, voiceover fit
-│   ├── youtube-seo/             # deeployCO MIT suite: titles, descriptions, tags, chapters, thumbnail, hook line
-│   ├── video-polish/            # quality gates: script doctor, audio report, pacing check
-│   ├── image-queue/             # smart supply: doodle/asset/pose free first, ai queue 10/turn
-│   ├── image-batcher/           # LEGACY: hands-free ledger for pure-AI image lists
-│   ├── cinematic-director/      # film director: beat sheet, shot plan, 20 director lenses, QC repair
-│   ├── ai-video-storyboard/     # quick multi-shot storyboard with consistent visual prompts
-│   ├── handdrawn-style-lock/    # locks the human hand-drawn art style across all images
-│   ├── ae-motion/               # AE-grade keyframes: bezier easing, puppet pins, motion blur, 22 moves
-│   ├── motion-design/           # LottieFiles official: Disney principles, emotion→motion, choreography
-│   ├── content-router/          # the orchestrator: which skill fires when, one specialist at a time
-│   ├── character-animation-skill/   # one PNG -> looping animated sprite (walk/wave/blink)
-│   ├── wiggle-claude-skill/     # logo/icon motion via Lottie (AE's keyframe format)
-│   ├── Ultimate-Video-Editing-Skills/ # 600+ ffmpeg recipes: transitions, kinetic text, grading
-│   ├── claude-skill-klingai-animation/ # Kling AI image->video for character actions (needs API key)
-│   └── asset-library/           # on-demand single-file fetch from 23 cloud libs (Kenney CC0, game-icons, fxemoji/twemoji/openmoji/noto, humaaans, open-peeps, openclipart, 0x72 + Pixel Adventure backgrounds, 5 icon sets, LPC…) — never cloned, never committed
-└── scripts/
-    ├── build_video.py           # ffmpeg assembly
-    └── manifest_example.json
+│   ├── paint-explainer-recreation/  # master measured profile
+│   ├── content-router/              # trigger-driven stage routing
+│   ├── youtube-script/              # sourced narration + timing rows
+│   ├── image-queue/                 # hold/reuse/doodle/asset/pose/ai ledger
+│   ├── handdrawn-style-lock/        # contour, mode palette, world plates
+│   ├── handdrawn-code/              # deterministic diagrams/SVG/PNG
+│   ├── transparent-asset-prep/      # flat-background + ML alpha preparation
+│   ├── ae-motion/                   # locked PNG/MLS local motion renderer
+│   ├── character-animation-skill/   # exceptional repeated actions only
+│   ├── hyperframes-{core,keyframes,animation,cli}/
+│   │                                 # selected deterministic browser stack
+│   ├── paint-style-qc/              # image/scene/final measured enforcement
+│   ├── video-polish/                # script, EBU R128, cadence checks
+│   └── youtube-seo/                  # packaging after final approval
+└── scripts/build_video.py            # explicit legacy vertical builder
 ```
 
-Read `format-spec.md` before changing geometry, `script-formula.md` before
-writing narration, and `art-direction.md` before generating images. The
-format's distinctiveness lives in those details.
+HyperFrames provenance/license is under `skills/hyperframes-upstream/`.
+Generic HyperFrames creative/faceless skills are deliberately not vendored.
 
-## Gotchas
+## Current gotchas
 
-- **Lettering fails sometimes.** Roughly one image in fifteen comes back with
-  smudged or illegible hand-lettered labels. Review every illustration before
-  assembly and regenerate the failures — with no captions, an unreadable label
-  means that beat conveys nothing on screen.
-- **Style drift.** Without `referenceImages`, line weight and character design
-  wander noticeably over a 10-minute runtime.
-- **Budget first.** A 10-minute video is roughly 150 images plus ~20 voiceover
-  calls. Check `get_credits` before generating, not after.
-- **Fewer images means longer holds.** Capping image count raises the mean hold
-  above the reference's 3.4–4.1 s. It still works, but the cutting is slacker.
-- **Publishing is outward-facing.** Confirm before `create_post`.
+- Transparent RGB zeroes are not black ink; composite over white when checking
+  a cutout's palette/line coverage.
+- Flattened local animation can trigger a visual-change detector. Compare it
+  with the authored event manifest and spot check frames.
+- A beat is not a cut or a unique asset. Reuse stable subjects/plates and
+  record holds explicitly.
+- Check every generated illustration for alpha fringe, malformed text,
+  anatomy/identity drift, line doubling, and palette drift.
+- Preserve final word timing after any audio edit; automatic silence deletion
+  can destroy noun anticipation and chapter breaths.
+- The repository may expose a duration-only `ffprobe` compatibility shim;
+  production QC falls back to parsing frame rate from ffmpeg.
+- Publishing is outward-facing. Confirm before any upload/post action.
+
+Older `format-spec.md`, `script-formula.md`, `art-direction.md`, and the
+three-band instructions above belong to the explicit legacy vertical mode.

@@ -1,126 +1,132 @@
 ---
 name: ae-motion
-description: After-Effects-grade keyframe motion for still hand-drawn PNGs. Implements AE's exact keyframe semantics — per-property keyframes (position, scale, rotation, opacity, puppet-pin drags) with cubic-bezier easing, plus motion blur, springs and overshoot — and a script-aware move chooser that reads the narration beat and picks the right move automatically. Use when animating explainer-video stills, layering subjects over hand-drawn backgrounds, making part-motion inside a PNG (limbs, tails, fins, mouths), or whenever motion must feel buttery rather than robotic.
+description: Measured Paint Explainer keyframe renderer for transparent hand-drawn PNG layers. Implements per-property position, scale, rotation, opacity, hold/source-swap, and MLS puppet-pin tracks. Defaults to locked camera, crisp holds, noun-anticipated cuts, no blur, and only 1–3 moving local elements.
 ---
 
-# AE Motion — keyframes like After Effects, in code
+# AE Motion — measured PNG and puppet renderer
 
-The renderer `scripts/ae_motion.py` uses the SAME keyframe math AE uses:
-per-property tracks, cubic-bezier easing (AE's own curve definitions),
-anchor-point transforms, and motion blur by sub-frame accumulation. A
-layer's position, scale, rotation, opacity — and its puppet pins — are
-independent tracks, so a subject can slide in, overshoot, settle and wag
-a fin at once.
+`scripts/ae_motion.py` renders layers directly with Pillow and uses OpenCV for
+rigid MLS puppet deformation. It supports AE-like independent tracks and cubic
+Bezier easing without requiring After Effects.
 
-## The one rule that makes it buttery
+Authority: `references/paint-explainer-analysis-4v/style_rules.json`.
 
-**Never linear.** Every interpolating keyframe carries an easing. Use:
-`easeInOut` (default), `easeOutExpo` (fast settle), `easeOutBack`
-(overshoot — the cartoon boing), `easeOutBounce`, `easeInCubic`
-(weight), `linear` (only for constant pans). If motion feels robotic,
-the cause is always an uneased keyframe.
+## Measured defaults
+
+- `fps: 30` (source timing baseline);
+- `motion_blur: 1` (off/crisp);
+- no camera/global transform track;
+- still holds and hard step/source swaps are first-class;
+- only 1–3 local elements move in an active shot;
+- visual event normally lands ~0.033–0.067 s before word onset;
+- no idle breathe, automatic blink, lip-sync, perpetual loop, bounce,
+  parallax, or routine entrance;
+- no whole-scene pan/zoom/orbit/shake.
 
 ## Scene JSON
 
 ```json
 {
-  "width": 1280, "height": 720, "fps": 24,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
   "duration": 3.0,
-  "background": "assets/background.png",
-  "motion_blur": 6,
+  "background": "assets/worlds/sea.png",
+  "motion_blur": 1,
   "layers": [
-    {"type": "image", "src": "assets/anglerfish.png",
-     "tracks": {
-       "pos":  [{"t": 0.0, "v": [-300, 320], "e": "easeOutExpo"},
-                {"t": 1.0, "v": [580, 320], "e": "easeInOut"}],
-       "rot":  [{"t": 0.0, "v": 0, "e": "hold"},
-                {"t": 1.0, "v": -4, "e": "easeInOut"},
-                {"t": 2.0, "v": 4, "e": "easeInOut"}]
-     }},
-    {"type": "text", "text": "ANGLERFISH", "size": 52,
-     "tracks": {"scale": [{"t": 1.0, "v": 0.6, "e": "hold"},
-                          {"t": 1.4, "v": 1.0, "e": "easeOutBack"}]}}
+    {
+      "type": "image",
+      "name": "fish-body",
+      "src": "assets/cutouts/fish.png",
+      "tracks": {
+        "pos": [
+          {"t": 0.0, "v": [960, 610], "e": "hold"},
+          {"t": 3.0, "v": [960, 610], "e": "hold"}
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "name": "fish-fin",
+      "src": "assets/cutouts/fin.png",
+      "tracks": {
+        "rot": [
+          {"t": 0.0, "v": 0, "e": "hold"},
+          {"t": 0.35, "v": 22, "e": "easeInOut"},
+          {"t": 0.55, "v": 22, "e": "hold"}
+        ]
+      }
+    }
   ]
 }
 ```
 
-`e: "hold"` = no interpolation from the previous key (AE's hold
-keyframe). `pos` values are the layer's anchor (default: center).
-Puppet pins live in `puppet`: `{"pins": [[x,y]...], "drag": [idx...],
-"tracks": {"drag0": [{"t":0,"v":[0,0]},{"t":1,"v":[0,40],"e":"easeInOut"}]}}`
-— the pin drags interpolate like any property, so a fin/tail/limb moves
-inside the PNG while the body slides.
+`e: "hold"` means no interpolation from the previous key. Position values are
+layer-anchor coordinates; the default anchor is center.
 
-## Hand-drawn fonts for text layers
+## Puppet pins
 
-Text layers carry a `font` field (OFL-licensed fonts shipped in
-`skills/ae-motion/fonts/`, so the skill is self-contained):
+A layer may define:
 
-| `font` | Face | Use for |
-|---|---|---|
-| `hand` (default) | Caveat | titles, labels — loose marker hand |
-| `hand-note` | Patrick Hand | small notes, captions, fine print |
-| `hand-bold` | Kalam | big numerals, stamps |
-| `sans` | DejaVu Bold | when a clean non-hand look is wanted |
-
-Rule: explainer videos read as hand-drawn when the TEXT is hand-drawn too —
-a machine font on a doodle breaks the illusion faster than any motion.
-Default everything to `hand` unless a beat explicitly wants machine text.
-
-## The smart move chooser (script-aware)
-
-`scripts/ae_motion.py --plan "beat text"` classifies the sentence by
-function and returns the move. The decision tree:
-
-| The narration does this | Choose this move | Keyframe shape |
-|---|---|---|
-| Introduces a subject / new idea | `slide-in` from off-frame | easeOutExpo 0.3–0.5s, then idle bob |
-| States a number / date / stat | `pop` the numeral | scale 0.5→1 easeOutBack, 0.3s |
-| A threat / a reveal / "but here's" | `punch-in` on the subject | easeInCubic, 10–20% zoom |
-| Travel / movement / a journey | `slide-across` + `parallax` | linear pan bg, subject counter-drift |
-| A list item / catalog entry | `stamp` + label pop | scale 1.6→1 easeOutBack |
-| Negates / refutes ("not", "never") | `cross-out` (X layer) | stamp the X, 0.2s |
-| Asks a question / turn to viewer | `hold + slow-zoom-out` | 8% zoom over 2s, quiet |
-| Action by the subject (eats, swims) | `puppet` the part | pin drag loop at 0.5–1Hz |
-| A joke / punchline | `pop_boing` + micro-shake | easeOutBack + 2-frame shake |
-| Describes a mechanism | `draw-on` arrow + boxes | wipe reveal 0.4s each |
-| Lists options | `stagger-pop` items | 0.15s offsets between pops |
-| Ends the video | `slow-zoom-in` + fade | 5% zoom, 0.8s fade |
-
-## The full move catalog (22)
-
-slide-in (4 dirs) · slide-across · pop · pop_boing · stamp · drop/bounce ·
-punch-in · punch-out · slow-zoom-in/out · pan (4 dirs) · whip · shake ·
-wobble · bob (idle breathe) · blink/expression swap · typewriter ·
-wipe reveal · draw-on · orbit (2.5D tilt) · parallax · puppet pins ·
-follow-through (part keeps moving after the body stops).
-
-Stagger rule: entrances animate 2–3 properties together (pos+rot+scale);
-exits are faster than entrances; idle elements always breathe (sin-wave
-bob, 1.5–2.5s cycle); every still gets a slow zoom unless a stronger
-move owns the beat.
-
-## Motion blur
-
-`motion_blur: N` accumulates N sub-frame samples per output frame — true
-AE-style blur on fast moves. Use 6 for slides/punches, 1 (off) for
-holds. This single setting is what separates "slideshow" from "film".
-
-## Render
-
-```bash
-python3 scripts/ae_motion.py scene.json -o out.mp4
-python3 scripts/ae_motion.py --plan "Forty eight percent saw a monster."
+```json
+{
+  "puppet": {
+    "pins": [[120, 80], [200, 90], [280, 100]],
+    "drag": [2],
+    "tracks": {
+      "drag0": [
+        {"t": 0.0, "v": [0, 0], "e": "hold"},
+        {"t": 0.4, "v": [0, 30], "e": "easeInOut"},
+        {"t": 0.8, "v": [0, 30], "e": "hold"}
+      ]
+    }
+  }
+}
 ```
 
-Frames pipe straight to ffmpeg (no moviepy). Verify by extracting frames
-and watching the move land on its word.
+Use 2–4 semantic pins on a tail, fin, jaw, arm, or flexible prop. Do not
+whole-body-puppet a still merely to keep it moving.
 
-## Not used here (and why)
+## Move planner
 
-AE/Premiere themselves need a GUI + license (can't run headless here).
-Lottie (AE's JSON format, via `lottie-nodejs`) and Remotion are the
-open-source equivalents — both need node-canvas/Chrome which this
-sandbox blocks. This engine reproduces their *math* (bezier tracks,
-overshoot, blur) with zero extra installs, and any new chat can run it
-immediately.
+```bash
+python3 skills/ae-motion/scripts/ae_motion.py --plan "Forty eight percent survived."
+```
+
+The planner is intentionally conservative:
+
+| Narration function | Recommendation |
+|---|---|
+| new noun, place, statistic, or state | hard cut/source swap 1–2 frames early |
+| semantic body action | one named local part motion, then hold |
+| negation | semantic source swap or one local X |
+| list progression | hard cut/source swap; do not auto-stagger |
+| default | preserve the hold; no invented motion |
+
+The engine retains additional easing/move capabilities for explicit exceptions,
+but their existence does not make them style defaults.
+
+## Fonts and title strip
+
+The shipped OFL fonts are `hand` (Caveat), `hand-note` (Patrick Hand), and
+`hand-bold` (Kalam). Use centered uppercase hand lettering for the chapter
+title on a white strip occupying ~10% of frame height. Keep it fixed for the
+full chapter. Labels are sparse semantic elements, not subtitles.
+
+## Render and gate
+
+```bash
+python3 skills/ae-motion/scripts/ae_motion.py scene.json -o out.mp4
+python3 skills/paint-style-qc/scripts/paint_style_qc.py scene scene.json \
+  --json qc/scene.json
+```
+
+Verify rendered event frames against aligned word onsets and manually inspect
+alpha edges at 100%/200% scale.
+
+## Renderer boundary
+
+Choose this renderer for transparent-PNG compositing and MLS puppet work.
+Choose the vendored HyperFrames core/keyframes/animation/CLI subset for
+browser-authored HTML/CSS composition, diagnostics, preview, and snapshots.
+Neither renderer may import generic creative presets over the measured profile.

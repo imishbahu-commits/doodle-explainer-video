@@ -16,6 +16,26 @@ description: >-
 
 # Character Animation
 
+## Paint Explainer profile gate
+
+When routed from `paint-explainer-recreation`, this is an **exception tool**, not
+the default renderer. `style_rules.json` overrides the generic looping/idle advice
+below:
+
+- do not generate routine idle breathing, blink cycles, lip-sync, or perpetual
+  character loops;
+- prefer a one-frame pose swap, whole-layer translation, arm/prop rotation, or
+  2–4-pin local deformation in `ae-motion`;
+- use this sprite pipeline only for a genuinely repeated semantic action that
+  cannot be expressed cleanly with those simpler methods;
+- preserve the locked camera and 1–3 moving-element budget;
+- render a one-shot/held action for the shot unless repetition is explicitly
+  required; do not add in-betweens merely for smoothness;
+- run `transparent-asset-prep` and `paint-style-qc` on production output.
+
+The remaining sections document the skill's broader standalone capabilities;
+they are not Paint Explainer style defaults.
+
 Turn one static character image into a looping animation. The pipeline is:
 
 ```

@@ -1,152 +1,207 @@
 #!/usr/bin/env python3
-"""qa_pacing.py — verify a finished video's cut cadence against the measured
-format spec (references/format-spec.md).
+"""Measure flattened visual-change cadence against the Paint Explainer corpus.
 
-Method: decode every frame, area-average it to 32x32 grayscale (which
-cancels the encoder's ±1-2 rounding noise between duplicate stills), then
-run-length segment against the current segment's reference frame. A hard
-illustration cut jumps the mean pixel difference by orders of magnitude, so
-threshold 1.5 separates cuts from noise cleanly. Zero new dependencies —
-ffmpeg + Python stdlib only.
-
-Reference cadence:
-    median hold   2-3 s
-    mean hold     3.4-4.1 s
-    longest hold  ~14 s (allowed); anything > 8 s is worth a look
-
-Usage:
-    python3 qa_pacing.py final.mp4
-    python3 qa_pacing.py final.mp4 --manifest manifest.json   # compare expected beats
-    python3 qa_pacing.py final.mp4 --json
+This detector is deliberately called a visual-change detector: local animation
+in a flattened render can look like an edit. Use the scene manifest and manual
+spot checks to distinguish hard cuts, source swaps, and in-shot motion.
 """
 
 import argparse
 import json
 import re
+import shutil
 import statistics
 import subprocess
-import sys
 from pathlib import Path
 
-THRESHOLD = 1.5        # mean |diff| per pixel (0-255) that counts as a cut
-MIN_HOLD = 0.4         # seconds between distinct cuts (drops GOP-boundary noise)
+REPO = Path(__file__).resolve().parents[3]
+RULES_PATH = REPO / "references" / "paint-explainer-analysis-4v" / "style_rules.json"
+EDITING_RULES = json.loads(RULES_PATH.read_text(encoding="utf-8"))["editing"]
+THRESHOLD = 1.5
+MIN_EVENT_GAP = float(EDITING_RULES["shot_duration_seconds"]["min"])
 
 
 def ffmpeg():
-    import shutil
     return shutil.which("ffmpeg") or "ffmpeg"
 
 
-def duration_of(path):
-    p = subprocess.run([ffmpeg(), "-i", str(path)],
-                       capture_output=True, text=True)
-    m = re.search(r"Duration:\s*(\d+):(\d+):(\d+\.\d+)", p.stderr)
-    if not m:
-        raise SystemExit("could not read duration")
-    h, mi, s = m.groups()
-    return int(h) * 3600 + int(mi) * 60 + float(s)
+def ffprobe():
+    return shutil.which("ffprobe") or "ffprobe"
 
 
-def frame_means(path):
-    """Yield (timestamp, 32x32-gray bytes) for every decoded frame."""
-    p = subprocess.Popen(
-        [ffmpeg(), "-i", str(path),
-         "-vf", "scale=32:32:flags=area,format=gray",
+def probe(path):
+    process = subprocess.run(
+        [ffprobe(), "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=avg_frame_rate:format=duration",
+         "-of", "json", str(path)],
+        capture_output=True, text=True,
+    )
+    if process.returncode == 0:
+        try:
+            data = json.loads(process.stdout)
+            if isinstance(data, dict):
+                duration = float(data["format"]["duration"])
+                numerator, denominator = data["streams"][0]["avg_frame_rate"].split("/")
+                fps = float(numerator) / max(float(denominator), 1.0)
+                return duration, fps
+        except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+            pass
+    # Some repository environments expose a duration-only ffprobe shim.
+    # Parse both duration and fps from ffmpeg in that case.
+    process = subprocess.run([ffmpeg(), "-i", str(path)], capture_output=True, text=True)
+    match = re.search(r"Duration:\s*(\d+):(\d+):(\d+\.\d+)", process.stderr)
+    fps_match = re.search(r"(?:,|\s)(\d+(?:\.\d+)?)\s+fps(?:,|\s)", process.stderr)
+    if not match:
+        raise SystemExit("could not read video duration/frame rate")
+    hours, minutes, seconds = match.groups()
+    duration = int(hours) * 3600 + int(minutes) * 60 + float(seconds)
+    fps = float(fps_match.group(1)) if fps_match else 30.0
+    return duration, fps
+
+
+def frame_means(path, fps):
+    # Keep RGB so equal-luminance palette cuts (for example red to dark green)
+    # are not lost by grayscale conversion.
+    frame_bytes = 16 * 16 * 3
+    process = subprocess.Popen(
+        [ffmpeg(), "-i", str(path), "-vf", "scale=16:16:flags=area,format=rgb24",
          "-f", "rawvideo", "-"],
-        stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    i = 0
+        stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+    )
+    index = 0
     while True:
-        buf = p.stdout.read(1024)
-        if len(buf) < 1024:
+        buffer = process.stdout.read(frame_bytes)
+        if len(buffer) < frame_bytes:
             break
-        yield i / 30.0, buf  # assumes 30 fps output like the pipeline renders
-        i += 1
-    p.stdout.close()
-    p.wait()
+        yield index / fps, buffer
+        index += 1
+    process.stdout.close()
+    process.wait()
 
 
-def cut_times(path):
-    ref = None
-    seg_start = None
-    cuts = []
-    for t, buf in frame_means(path):
-        if ref is None:
-            ref, seg_start = buf, t
+def visual_event_times(path, fps):
+    reference = None
+    segment_start = None
+    starts = []
+    for timestamp, buffer in frame_means(path, fps):
+        if reference is None:
+            reference, segment_start = buffer, timestamp
             continue
-        diff = sum(abs(a - b) for a, b in zip(ref, buf)) / 1024.0
-        if diff > THRESHOLD and t - seg_start >= MIN_HOLD:
-            cuts.append(seg_start)
-            ref, seg_start = buf, t
-    if ref is not None:
-        cuts.append(seg_start)   # the final segment's start has no later cut
-    return cuts
+        difference = sum(abs(a - b) for a, b in zip(reference, buffer)) / len(buffer)
+        if difference > THRESHOLD and timestamp - segment_start >= MIN_EVENT_GAP:
+            starts.append(segment_start)
+            reference, segment_start = buffer, timestamp
+    if reference is not None:
+        starts.append(segment_start)
+    return starts
 
 
-def expected_beats(manifest_path):
-    m = json.loads(Path(manifest_path).read_text())
-    if "sections" in m:
-        return sum(len(s["beats"]) for s in m["sections"])
-    if "beats" in m:
-        return len(m["beats"])
-    return None
+def manifest_counts(path):
+    manifest = json.loads(Path(path).read_text(encoding="utf-8"))
+    if "sections" in manifest:
+        beats = [beat for section in manifest["sections"] for beat in section.get("beats", [])]
+        events = [event for section in manifest["sections"] for event in section.get("visual_events", [])]
+    else:
+        beats = manifest.get("beats", [])
+        events = manifest.get("visual_events", [])
+    if not events and beats:
+        events = [beat for beat in beats if beat.get("event_type") not in (None, "hold")]
+    return {"beat_count": len(beats), "explicit_visual_event_count": len(events)}
+
+
+def percentage(predicate, values):
+    return round(100 * sum(predicate(value) for value in values) / max(1, len(values)), 2)
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("video")
-    ap.add_argument("--manifest", help="compare cuts against expected beats")
-    ap.add_argument("--json", action="store_true")
-    args = ap.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("video")
+    parser.add_argument("--manifest", help="report beat and explicit visual-event counts")
+    parser.add_argument("--json", action="store_true")
+    args = parser.parse_args()
 
-    dur = duration_of(args.video)
-    cuts = cut_times(args.video)
-    holds = [round(b - a, 2) for a, b in zip(cuts, cuts[1:])]
-    if cuts:
-        holds.append(round(dur - cuts[-1], 2))
+    duration, fps = probe(args.video)
+    starts = visual_event_times(args.video, fps)
+    holds = [round(end - start, 4) for start, end in zip(starts, starts[1:])]
+    if starts:
+        holds.append(round(duration - starts[-1], 4))
 
-    n = len(holds)
     median = statistics.median(holds) if holds else 0.0
     mean = statistics.mean(holds) if holds else 0.0
-    lo, hi = (max(holds), min(holds)) if holds else (0.0, 0.0)
-    fast = [(i + 1, h) for i, h in enumerate(holds) if h < 1.5]
-    slack = [(i + 1, h) for i, h in enumerate(holds) if h > 8.0]
-
-    rep = {
-        "duration": round(dur, 2), "cuts": n,
-        "cut_times": cuts,
-        "median_hold": round(median, 2), "mean_hold": round(mean, 2),
-        "shortest_hold": hi, "longest_hold": lo,
-        "too_fast": fast, "too_slow": slack,
+    shortest = min(holds) if holds else 0.0
+    longest = max(holds) if holds else 0.0
+    distribution = {
+        "under_1s": percentage(lambda value: value < 1.0, holds),
+        "between_1_and_6s": percentage(lambda value: 1.0 <= value <= 6.0, holds),
+        "over_10s": percentage(lambda value: value > 10.0, holds),
     }
+    extreme_short = [
+        {"segment": index + 1, "duration": hold}
+        for index, hold in enumerate(holds) if hold < 0.2
+    ]
+    corpus_max = float(EDITING_RULES["shot_duration_seconds"]["max"])
+    extreme_long = [
+        {"segment": index + 1, "duration": hold}
+        for index, hold in enumerate(holds) if hold > corpus_max + 0.1
+    ]
+    median_ok = 2.3 <= median <= 3.1
+
+    report = {
+        "file": args.video,
+        "duration_seconds": round(duration, 3),
+        "fps": round(fps, 4),
+        "editing": {
+            "detected_visual_change_segments": len(holds),
+            "visual_change_times_seconds": [round(value, 4) for value in starts],
+            "shot_duration_seconds": {
+                "median": round(median, 4),
+                "mean": round(mean, 4),
+                "min": round(shortest, 4),
+                "max": round(longest, 4),
+            },
+            "distribution_pct": distribution,
+        },
+        "targets": {
+            "median_shot_seconds": [2.3, 3.1],
+            "corpus_distribution_pct": EDITING_RULES["distribution_pct"],
+        },
+        "extreme_short_segments": extreme_short,
+        "extreme_long_segments": extreme_long,
+        "detector_note": (
+            "Flattened abrupt visual changes are not guaranteed semantic cuts; "
+            "spot-check local animation and compare the authored event manifest."
+        ),
+        "ok": median_ok and not extreme_short and not extreme_long,
+    }
+    if args.manifest:
+        report["manifest"] = manifest_counts(args.manifest)
 
     if args.json:
-        print(json.dumps(rep, indent=2))
+        print(json.dumps(report, indent=2))
         return
 
-    print(f"PACING CHECK — {args.video}  ({dur:.1f}s)")
-    print(f"  illustration cuts:  {n}")
-    print(f"  hold times:         median {median:.2f}s | mean {mean:.2f}s | "
-          f"range {hi:.2f}-{lo:.2f}s")
-    print(f"  format target:      median 2-3s | mean 3.4-4.1s | longest ~14s")
-    if fast:
-        print(f"  ⚠ {len(fast)} cut(s) held under 1.5s — reads as flashing:")
-        for i, h in fast[:8]:
-            print(f"      beat {i:>3}: {h:.2f}s")
-    if slack:
-        print(f"  ⚠ {len(slack)} cut(s) held over 8s — cutting goes slack:")
-        for i, h in slack[:8]:
-            print(f"      beat {i:>3}: {h:.2f}s")
-    if not fast and not slack:
-        print("  ✓ cadence matches the format")
-
+    print(f"PACING CHECK — {args.video} ({duration:.1f}s @ {fps:.3f} fps)")
+    print(f"  detected visual-change segments: {len(holds)}")
+    print(
+        f"  durations: median {median:.2f}s | mean {mean:.2f}s | "
+        f"range {shortest:.2f}–{longest:.2f}s"
+    )
+    print("  target median: 2.3–3.1s (newest reference 2.50s)")
+    print(
+        "  distribution: "
+        f"<1s {distribution['under_1s']:.2f}% | "
+        f"1–6s {distribution['between_1_and_6s']:.2f}% | "
+        f">10s {distribution['over_10s']:.2f}%"
+    )
+    print("  " + ("PASS" if report["ok"] else "REVIEW"))
+    print("  note: flattened local motion can trigger this detector; spot-check events")
     if args.manifest:
-        exp = expected_beats(args.manifest)
-        if exp is not None:
-            tag = "match ✓" if exp == n else f"MISMATCH — expected {exp}"
-            print(f"  manifest beats:     {exp}  ({tag})")
-            if exp != n:
-                print("      a mismatch usually means images were reused in the")
-                print("      manifest or the video was built from a different one.")
+        counts = report["manifest"]
+        print(
+            f"  manifest: {counts['beat_count']} beats, "
+            f"{counts['explicit_visual_event_count']} explicit visual events"
+        )
+        print("  beat count is not expected to equal cut/event count")
 
 
 if __name__ == "__main__":

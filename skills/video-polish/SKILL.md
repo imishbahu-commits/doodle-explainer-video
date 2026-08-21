@@ -1,70 +1,80 @@
 ---
 name: video-polish
-description: Quality-check and tighten narration videos before publishing — grade a script like an editor (hook, paradox, promise, re-hook, closing question, sources, rhythm), measure audio loudness and dead air against the measured format spec, and verify the illustration cut cadence of a finished video. Use after writing a script, after recording narration, and after assembling a video in the doodle-explainer-video or animated pipelines.
+description: Quality-check Paint Explainer scripts, narration/mix, and finished edits. Measures structure, EBU R128 loudness, chapter breaths, and cut cadence, then hands repository-specific style enforcement to paint-style-qc. Use after writing, after voice/mix, and after final assembly.
 ---
 
-# Video polish — the quality pass
+# Video polish — measured quality gates
 
-Three zero-dependency tools (ffmpeg + Python only; the repo already ships
-both). Run them at three gates: after the script, after the voiceover, after
-assembly. Each prints a report; none modify files unless asked.
+Authority: `references/paint-explainer-analysis-4v/style_rules.json` overrides
+older `references/format-spec.md` targets where they conflict.
 
-## Gate 1 — after writing the script: `scripts/script_doctor.py`
-
-```bash
-python3 scripts/script_doctor.py projects/<slug>/script.md
-# or reconstruct the script straight from a build manifest:
-python3 scripts/script_doctor.py --manifest projects/<slug>/manifest.json
-```
-
-Grades the script against the nine-move arc in
-`references/script-formula.md`:
-
-- cold open in second person (~15s)
-- the impossible fact in the first third
-- an explicit retention promise
-- a mid-video re-hook
-- a closing question aimed at the viewer
-- real named sources (names, institutions, dates)
-- sentence rhythm: avg/max length, fragments
-- numbers spelled out for TTS
-- word budget vs target length
-
-Fails print an exact fix. Never generate media below 8/10; restructure
-below 6/10. `--json` gives a machine-readable scorecard.
-
-## Gate 2 — after the voiceover: `scripts/audio_report.py`
+## Gate 1 — script
 
 ```bash
-python3 scripts/audio_report.py projects/<slug>/audio/section.mp3
-python3 scripts/audio_report.py final.mp4 --tighten final_tight.m4a
+python3 skills/video-polish/scripts/script_doctor.py projects/SLUG/script.md
 ```
 
-Measures with ffmpeg's silencedetect + volumedetect against the reference
-(references/format-spec.md): mean −17.5 dBFS, peak ~0 dBFS, pauses 0.4–0.8s
-at section boundaries. Flags every gap over 1.0s as dead air. `--tighten`
-writes a copy with dead air removed (it keeps ≤1s of each pause, so
-natural breaths survive) — then re-measure before muxing.
+Review hook, promise, re-hook, sources, rhythm, TTS numbers, and word budget.
+For the current target, plan **204–209 recognized WPM**, 12 chapters per
+reference-length video, ~68.5 s median chapter, and a ~0.6–0.8 s breath at a
+chapter boundary. Narrative formulas are aids, not license to add generic
+captions or visual effects.
 
-## Gate 3 — after assembly: `scripts/qa_pacing.py`
+## Gate 2 — voice and final mix
 
 ```bash
-python3 scripts/qa_pacing.py projects/<slug>/final.mp4 \
-  --manifest projects/<slug>/manifest.json
+python3 skills/video-polish/scripts/audio_report.py projects/SLUG/final.mp4 --json
 ```
 
-Recovers the exact cut list with ffmpeg's scene-change detector (every
-illustration cut in a stills-based video is a hard cut), then checks the
-hold-time cadence against the format: median 2–3s, mean 3.4–4.1s, longest
-~14s. Flags holds under 1.5s (reads as flashing) and over 8s (slack
-cutting). With `--manifest` it also verifies the cut count equals the beat
-count — a mismatch means images were reused or the wrong manifest was built.
+Current master targets:
+
+- integrated loudness: **−20.7 to −20.6 LUFS**;
+- true peak: **≤−2.3 dBTP**;
+- LRA: **1.8–3.8 LU**;
+- chapter breath: **~0.6–0.8 s**.
+
+The measured format includes a continuous low electronic/ambient bed under the
+narration. Keep it subordinate. Use sparse semantic SFX only; do not add a
+whoosh to every cut.
+
+`--tighten` is diagnostic and potentially destructive. Never run it blindly on
+a final mix: it may remove intentional chapter breaths or alter alignment.
+Re-measure and resync after any use.
+
+## Gate 3 — final edit cadence
+
+```bash
+python3 skills/video-polish/scripts/qa_pacing.py projects/SLUG/final.mp4 \
+  --manifest projects/SLUG/manifest.json --json
+```
+
+Target envelope:
+
+- median shot: 2.3–3.1 s (corpus 2.7667 s; newest target 2.50 s);
+- mean shot: ~3.4–4.1 s;
+- ~13.61% may be under 1 s and ~6.51% may exceed 10 s;
+- verified transitions: 65.52% full-frame hard cut, 29.85% same-palette hard
+  cut, 4.64% localized one-frame swap/pop, 0% verified dissolve/fade;
+- visual event median: ~0.050 s before nearest word onset.
+
+A beat is not necessarily a cut. Manifest comparison reports both beat count
+and explicit visual-event count where available; intentional holds/reuse are
+valid.
+
+## Gate 4 — repository-specific style
+
+Run `paint-style-qc` on images, ae-motion scenes, and final metrics. Also inspect:
+
+- persistent white ~10%-height chapter title strip;
+- locked camera, no generic Ken Burns moves;
+- 35–60% frozen shots;
+- 0–3 moving local elements;
+- no regular blink, lip-sync, idle breathe, captions, dissolve, or global zoom
+  unless explicitly required and reference-supported.
 
 ## Rules
 
-- These are checks, not restyles. Report first; change only what a report
-  flags.
-- The format's restraints are load-bearing: no music, no sound effects,
-  no captions (unless the user asks), hard cuts only. Polishing must not
-  smuggle them back in.
-- Always re-run the check after a fix and show the before/after.
+- These are checks, not restyles. Report first and change only supported faults.
+- Music is measured and allowed; generic transition sounds/effects are not.
+- No captions/subtitles unless the user asks.
+- Re-run all affected gates after every fix and retain machine-readable reports.

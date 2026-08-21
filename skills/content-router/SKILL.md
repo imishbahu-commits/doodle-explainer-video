@@ -1,58 +1,97 @@
 ---
 name: content-router
-description: The smart orchestrator for video production. Decides WHICH skill fires at WHICH moment and NEVER loads skills that are not needed for the current stage. Load this skill first for any video task; it routes to the right specialist, chains their outputs, and keeps the workflow clean instead of messy.
+description: Orchestrates the approved Paint Explainer production stack. Starts with the measured paint-explainer-recreation profile, routes script, visual-state planning, art, alpha prep, one of two deterministic renderers, QC, and SEO, and prevents generic creative presets from overriding style_rules.json.
 ---
 
-# Content Router — one skill active at a time
+# Content router — measured profile first
 
-Every other skill in this repo is DORMANT until its trigger. This router
-is the only one that starts: it reads the request, identifies the stage,
-activates exactly the skills that stage needs, passes artifacts between
-them, and deactivates them when the stage ends. No skill ever runs "just
-because it exists".
+For Paint Explainer work, first load:
 
-## The stage map
+1. `skills/paint-explainer-recreation/SKILL.md`;
+2. `references/paint-explainer-analysis-4v/style_rules.json`;
+3. only the specialist needed for the current stage.
 
-| Stage | Trigger (what the user/state says) | Skill(s) that fire | Handoff artifact |
+The machine rules are authoritative. Skills are capabilities, not permission to
+apply their generic defaults.
+
+## Approved stage map
+
+| Stage | Trigger/state | Skill(s) | Required handoff |
 |---|---|---|---|
-| 0 Route | any video request | content-router | stage decision |
-| 1 Script | "write a script / story / narration" | `youtube-script` (any topic, any niche; formats: myth/misconception/mystery/how-it-works/comparison/timeline/big-question) — `video-polish` (script_doctor) runs as QC after | `script.md` + `beats.json` |
-| 2 Plan | "plan shots / multiple scenes / storyboard" | `image-queue` (beat → doodle/asset/pose/ai classification + resumable ledger) — `cinematic-director` only adds camera grammar | `beats.json` classified + queue |
-| 3 Art lock | any image generation | `handdrawn-style-lock` (sets the style rules, picks the palette) | style reference PNG |
-| 3b Batch | more ai beats than one turn allows | `image-queue` ledger (10/turn, stop for "go"); `image-batcher` is the LEGACY fallback for pure-AI lists | `beats.json` statuses |
-| 4 Motion | "animate / add motion / keyframes" | `ae-motion` (keyframes, puppet pins, motion blur, hand fonts) | `scene.json` → mp4 |
-| 4b Character does something | a character must WALK/WAVE/BLINK/repeat an action | `character-animation-skill` (sprite from one PNG) — and ONLY then | sprite sheet |
-| 4c Character acts via AI video (needs an API key) | action is complex/photographic, user has Qwen/Kling key | `claude-skill-klingai-animation` | mp4 clip |
-| 4d Logo/badge/icon motion | animating a LOGO or icon (not a scene) | `wiggle-claude-skill` | lottie/gif/mp4 |
-| 5 Editing | "add transitions / effects / captions / color" | `Ultimate-Video-Editing-Skills` (ffmpeg recipes) | graded mp4 |
-| 6 Quality gates | before delivery, and after any stage that changed audio/pacing | `video-polish` (audio_report, qa_pacing) | report |
-| 7 Packaging | "title / description / tags / thumbnail / upload" or script approved | `youtube-seo` (optimize + keywords + thumbnail; audit/video/competitor only when YouTube data is available) | metadata.md + thumbnail concept |
-| 8 Done | — | nothing fires. | final.mp4 |
+| 0 Profile | any Paint Explainer request | `paint-explainer-recreation` | target mode + constraints |
+| 1 Script | no approved narration/word times | `youtube-script`, then `video-polish` script gate | `script.md`, `beats.json`, word timings |
+| 2 Visual states | narration exists, scenes do not | `image-queue` | visual-state/event ledger; holds/reuse explicit |
+| 3 Art | missing subjects/plates/diagrams | `handdrawn-style-lock`; `handdrawn-code` for deterministic diagrams | accepted source masters |
+| 3a Alpha | source subject lacks clean alpha | `transparent-asset-prep` | RGBA cutout + QC report |
+| 4 Render selection | authored visual events exist | `ae-motion` **or** HyperFrames subset | scene/composition + deterministic render |
+| 4b Repeated action exception | a recurring character action truly needs a sprite/rig | `character-animation-skill` | minimal sprite/parts; no routine idle/lip-sync |
+| 5 Assembly | rendered shots + final mix | deterministic ffmpeg/editing tools | final master + event manifest |
+| 6 QC | after art, scene authoring, or assembly | `paint-style-qc` plus `video-polish` | machine reports + repaired render |
+| 7 Package | final is approved | `youtube-seo` | title, description, chapters, tags, thumbnail brief |
+| 8 Done | all gates pass | none | delivery artifacts |
+
+## Renderer decision
+
+### Choose `ae-motion` when
+
+- the scene is mostly transparent PNG layers;
+- a named arm/prop/tail needs 2–4-pin MLS deformation;
+- direct Pillow/OpenCV composition is simplest.
+
+Defaults: 30 fps timing source, locked camera, `motion_blur: 1`, hard cuts and
+hold/source-swap keys, 0–3 moving local elements.
+
+### Choose the vendored HyperFrames subset when
+
+- deterministic HTML/CSS layout is useful;
+- keyframe diagnostics, browser preview, snapshotting, or CLI rendering help;
+- the composition benefits from its seekable adapters.
+
+Load only:
+
+- `hyperframes-core`;
+- `hyperframes-keyframes`;
+- `hyperframes-animation`;
+- `hyperframes-cli`.
+
+Do not import generic HyperFrames creative/faceless presets. Its CLI/lint rules
+supplement rather than replace `paint-style-qc`.
+
+## Invariants passed to every stage
+
+- camera locked; no routine zoom, pan, orbit, or parallax;
+- hard noun/idea cuts/source swaps, normally ~0.033–0.067 s before word onset;
+- persistent white chapter-title strip, ~10% of frame height;
+- median shot target 2.3–3.1 s; ~35–60% frozen;
+- no dissolve/fade by default;
+- no regular idle, blink, lip-sync, or full walk rig;
+- one clean imperfect near-black contour; mode-specific restrained palette;
+- current narration 204–209 WPM;
+- final mix −20.7 to −20.6 LUFS, true peak ≤−2.3 dBTP, LRA 1.8–3.8 LU;
+- low ambient/electronic bed allowed; sparse semantic SFX only;
+- no captions/subtitles unless requested.
 
 ## Routing rules
 
-1. **One specialist at a time.** Stages run in order; a stage loads its
-   skill, does the work, writes the artifact, and releases the skill.
-2. **Trigger-driven.** 4b/4c/4d only fire on their specific triggers.
-   A video with no character actions never loads 4b. A video with no logo
-   never loads 4d. A video under the image cap never loads 3b.
-3. **Missing input = stop and ask.** No script → stage 1 first. No images
-   → stage 3 first. Never skip a stage and never generate without the
-   artifact the next stage needs.
-4. **The repo is the memory.** Every artifact lands in `projects/<slug>/`
-   and is committed — a new chat resumes by reading the artifacts, not by
-   re-asking the user.
-5. **Small jobs skip the router.** A single image request = stage 3 only.
-   A single keyframe tweak = stage 4 only. The router scales with the job.
+1. **Resume from artifacts.** Inspect `projects/SLUG/` before creating work.
+2. **Do not equate beats with images/cuts.** Holds and reuse are intentional.
+3. **Missing prerequisites stop the stage.** Do not animate unapproved art or
+   time pictures to unaligned narration.
+4. **Use the smallest renderer/capability set.** Character rigging and ML alpha
+   removal are exceptions, not routine stages.
+5. **Run QC incrementally.** Image gate after prep, scene gate before render,
+   final metrics/audio gates after assembly.
+6. **Repair measured violations, not taste.** Do not polish by adding motion,
+   captions, transitions, or effects.
+7. **Commit durable project artifacts.** Source masters, manifests, scenes, and
+   reports are the cross-chat memory; generated caches are not.
 
-## Example routing
+## Example
 
-User: "make me a 3-minute video about the Minotaur myth"
-→ 1 script (youtube-script: myth format, ~50 beats, then script_doctor QC)
-→ 2 plan (image-queue: ~15 beats ai, rest doodle/asset/pose) → 3 art lock
-(handdrawn-style-lock) → 3b batches (image-queue ledger, 10 ai per turn,
-"go" between turns) → 4 motion (ae-motion; 4b only when a beat shows the
-minotaur CHARGING) → 5 edit (Ultimate-Video-Editing) → 6 gates
-(video-polish) → 7 packaging (youtube-seo: title/description/tags/thumb)
-→ 8 deliver.
-That is 8 skills across 8 moments — never more than one at once.
+A new sea-animal chapter routes as:
+
+`paint-explainer-recreation` → `youtube-script` + word alignment →
+`image-queue` state/event ledger → `handdrawn-style-lock` / `handdrawn-code` →
+`transparent-asset-prep` only where alpha is missing → `ae-motion` for a local
+fin action **or** HyperFrames for deterministic plate layout →
+`paint-style-qc` + `video-polish` → `youtube-seo`.

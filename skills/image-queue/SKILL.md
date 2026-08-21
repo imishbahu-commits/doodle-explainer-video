@@ -1,98 +1,91 @@
 ---
 name: image-queue
-description: Smart image supply for long videos. Every script beat gets ONE image, but not every beat needs an AI generation: the queue classifies beats as doodle (free local vector), asset (free local library), pose (reuse of an already-generated rigged character), or ai (genuinely new subject). Only ai beats consume the platform's 10-images-per-turn cap, so a 3-minute video typically needs 2 turns of generation instead of 6. The queue lives in a committed JSON file, so progress survives restarts and new chats; the user only ever types "go". Use at content-router stage 2 for every multi-beat video.
+description: Persistent visual-asset ledger for Paint Explainer production. Classifies script beats as doodle, asset, pose/reuse, hold, or genuinely new AI subject, so generation is spent only on new semantic masters. A beat may hold or reuse an approved plate; do not force a new image per sentence. Use after youtube-script and before rendering.
 ---
 
-# Image queue — beat math beats the image cap
+# Image queue — semantic states, not image churn
 
-## The problem (stated plainly)
+Authority: `references/paint-explainer-analysis-4v/style_rules.json` overrides
+all generic timing or asset-count advice here.
 
-A 3-minute video has ~50 beats and the image tool allows 10 generations per
-turn. Blindly generating 50 AI images = 5-6 turns AND a wall of near-duplicate
-pictures. The smart answer is a **supply chain**, not a longer queue.
+A narration beat is a timing row, **not a requirement for a unique image**.
+Measured edits are usually noun/idea changes, with long frozen holds and sparse
+local motion. Reuse approved subjects and plates whenever continuity calls for
+it; record the state in the ledger so reuse is intentional.
 
-## The four sources (in priority order)
+## Sources, in priority order
 
-| # | Source | Cost | What it covers |
-|---|---|---|---|
-| 1 | `doodle` — handdrawn-code engine | FREE, unlimited, local | diagrams, maps, arrows, labels, charts, schematics, "the explanation" beats |
-| 2 | `asset` — asset-library (23 cloud libraries: Kenney CC0, game-icons, 4 emoji sets, humaaans, 0x72 + Pixel Adventure pixel backgrounds, 5 icon sets, openclipart) | FREE, unlimited, fetched one file at a time | props, icons, fish, people, backgrounds, small objects |
-| 3 | `pose` — rig + pose library of an already-generated character | FREE, unlimited, local | the SAME character reacting/pointing/looking — the character is generated ONCE, poses are computed |
-| 4 | `ai` — image generation | 10 per turn, queue resumable | ONLY genuinely new subjects: the character's first appearance, a unique artifact, a location |
+| Source | Cost | Use |
+|---|---:|---|
+| `hold` | local | preserve the preceding visual state unchanged |
+| `doodle` | local | diagrams, maps, arrows, labels, charts, schematics |
+| `asset` | local/download | permitted props, icons, objects, backgrounds |
+| `pose` | local | reuse an accepted character/subject; optional semantic pose/source swap |
+| `ai` | generation | first appearance of a genuinely new subject, artifact, or location |
 
-A beat is `ai` only when none of 1-3 can draw it. Characters appear once as
-`ai`, then every later beat reuses them as `pose`. Backgrounds appear once as
-`ai` (or doodle), then every later beat reuses them.
+A character is normally `ai` once and then `pose`/`hold`. A background is
+normally sourced once and then reused. Do not regenerate near-duplicates.
 
 ## Workflow
 
-1. **Classify.** With `beats.json` from youtube-script in hand:
+1. Start from `beats.json` and classify:
 
    ```bash
    python3 skills/image-queue/scripts/queue.py classify PROJECT
    ```
 
-   The agent then corrects `source` per beat by hand: same `subject` name
-   across beats = first beat `ai`, later beats `pose` (name the pose from the
-   character's pose library); diagram/explanation beats = `doodle`; props =
-   `asset` (verify with `asset-library` search before trusting).
+2. Correct the heuristic output manually. Add `hold` where a beat does not need
+   a visual event. For each event record:
 
-2. **Free beats first.** Render every `doodle` beat (doodle engine), fetch
-   every `asset` beat (asset-library), and compute every `pose` beat
-   (character rig + ae-motion). Commit. The queue now shows how many `ai`
-   beats remain — usually far fewer than the beat count.
+   - `visual_state_id` and reusable asset paths;
+   - event type: `hard_cut`, `source_swap`, `local_motion`, or `hold`;
+   - `event_time`, usually ~0.033–0.067 s before the noun onset;
+   - persistent chapter title;
+   - moving element list, normally zero and never more than three.
 
-3. **Generate the ai beats, 10 per turn.** Read the pending prompts:
+3. Render/fetch local sources first. Pass subject images through
+   `transparent-asset-prep`; pass all masters through
+   `handdrawn-style-lock` and `paint-style-qc image`.
+
+4. Generate only pending `ai` masters:
 
    ```bash
    python3 skills/image-queue/scripts/queue.py ai-prompts PROJECT
    ```
 
-   Generate up to 10 in parallel this turn — with the style-lock: the first
-   accepted image becomes the reference image for every later generation.
-   Save each result to `projects/PROJECT/assets/beatNN.png`, then:
+   Generate up to 10 per turn with the accepted style reference. Save results
+   under `projects/PROJECT/assets/`, mark them, and commit the ledger:
 
    ```bash
-   python3 skills/image-queue/scripts/queue.py mark PROJECT 7 9 12 --image beat07.png beat09.png beat12.png
+   python3 skills/image-queue/scripts/queue.py mark PROJECT 7 9 12 \
+     --image assets/beat07.png assets/beat09.png assets/beat12.png
    ```
 
-   Commit. Then tell the user: **"18 of 24 images done — type 'go' for the
-   next batch."** The ledger is the memory; a crash or a new chat resumes
-   from the committed file with zero re-asking.
-
-4. **Progress page** (so the user SEES images as they land, never asks twice):
+5. Review the progress page:
 
    ```bash
    python3 skills/image-queue/scripts/queue.py progress PROJECT --page
-   # serve: python3 -m http.server 8000 --directory projects/PROJECT
    ```
 
-5. **Voiceover arrives late / is longer than planned.** Re-fit, never stretch:
+6. If voice timing changes, re-fit beats and update event times. Do not stretch
+   the entire edit or add visual changes merely to fill time.
 
-   ```bash
-   python3 skills/youtube-script/scripts/script_planner.py fit PROJECT --segments vo_segments.txt
-   python3 skills/image-queue/scripts/queue.py classify PROJECT   # re-classify new beats
-   ```
+## Hard rules
 
-   More voiceover segments = MORE beats = MORE images. An image is NEVER
-   shown longer than its beat, and a beat NEVER borrows another beat's image.
+1. Script beats and visual events are separate concepts.
+2. A beat may intentionally hold/reuse the prior visual.
+3. A new visual state is justified by a noun, idea, relationship, or action.
+4. Default to hard cuts/source swaps; do not invent dissolves or entrances.
+5. Camera remains locked. No generic pan/zoom/parallax/Ken Burns treatment.
+6. In-shot motion is local and sparse: normally 0–3 moving elements.
+7. Every generated/fetched asset path and reuse decision is recorded.
+8. The first accepted generated master is the style reference for later AI art.
+9. Do not add lower-third captions or subtitles unless explicitly requested.
+10. `style_rules.json` is authoritative over this skill.
 
-## Hard rules (do not bend)
+## Planning budget
 
-1. 1 beat = 1 image. No stretching, no reuse, no freeze-frames to fill time.
-2. The `ai` queue is the ONLY thing that consumes the 10-per-turn cap.
-3. After every batch of up to 10: mark, commit, report, and stop for "go".
-4. The first accepted image is the style reference for all later `ai` beats.
-5. Every image lands in `projects/PROJECT/assets/` and the path goes into the
-   ledger. The ledger is committed. Untracked images do not exist.
-
-## Beat-count cheat sheet
-
-| Video | Beats (~3.6 s) | Typical ai beats after classification | Turns at 10/turn |
-|---|---|---|---|
-| 1 min | ~17 | 6-9 | 1 |
-| 3 min | ~50 | 14-22 | 2-3 |
-| 8 min | ~133 | 40-60 | 4-6 |
-
-The 8-minute row is why the supply chain matters: 50 AI images instead of
-133, and the rest come free from local sources.
+Do not estimate image count from runtime alone. Estimate **new semantic
+masters** after reuse/hold classification. Cadence is checked separately:
+median shot duration should remain within the measured 2.3–3.1 s envelope,
+while ~35–60% of shots are frozen holds.

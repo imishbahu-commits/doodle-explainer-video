@@ -4,7 +4,7 @@
 classify PROJECT        -> hint sources per beat (agent then corrects by hand)
 ai-prompts PROJECT      -> pending ai prompts, one per line
 mark PROJECT ID...      -> set status=done, image paths via --image in same order
-free-report PROJECT     -> beats servable without AI (doodle/asset/pose)
+free-report PROJECT     -> beats servable without AI (hold/doodle/asset/pose)
 progress PROJECT --page -> table + progress.html gallery (images inline)
 """
 import argparse, json, os
@@ -27,7 +27,10 @@ ASSET_WORDS = ["coin", "sword", "tool", "shield", "key", "gem", "scroll",
 
 def classify_beat(b, subjects_seen):
     v = (b.get("visual", "") + " " + b.get("spoken", "")).lower()
+    visual = b.get("visual", "").strip().lower()
     subj = b.get("subject", "").strip()
+    if visual in ("hold", "same", "reuse previous", "no change", "") and not subj:
+        return "hold"
     if any(w in v for w in DOODLE_WORDS):
         return "doodle"
     if any(w in v for w in ASSET_WORDS):
@@ -44,12 +47,14 @@ def cmd_classify(p):
     seen = set()
     for b in data["beats"]:
         b["source"] = classify_beat(b, seen)
-        if b.get("status", "planned") == "planned":
+        if b["source"] == "hold":
+            b["status"] = "done"
+        elif b.get("status", "planned") == "planned":
             b["status"] = "pending"
     save(p, data)
     ai = sum(1 for b in data["beats"] if b["source"] == "ai")
     free = len(data["beats"]) - ai
-    print(f"{len(data['beats'])} beats: {free} free-ish (doodle/asset/pose), "
+    print(f"{len(data['beats'])} beats: {free} local/hold (hold/doodle/asset/pose), "
           f"{ai} ai. Agent: correct each beat's source by hand, then run "
           f"ai-prompts.")
 
@@ -80,8 +85,8 @@ def cmd_mark(p, ids, images):
 
 def cmd_free(p):
     data = ledger(p)
-    free = [b for b in data["beats"] if b["source"] in ("doodle", "asset", "pose")]
-    print(f"{len(free)} free beats: " + ", ".join(str(b['id']) for b in free))
+    free = [b for b in data["beats"] if b["source"] in ("hold", "doodle", "asset", "pose")]
+    print(f"{len(free)} local/hold beats: " + ", ".join(str(b['id']) for b in free))
 
 def cmd_progress(p, page):
     data = ledger(p)
@@ -102,8 +107,9 @@ def cmd_progress(p, page):
                 "td{padding:6px;border-bottom:1px solid #ddd;vertical-align:top}"
                 "img{border:2px solid #111;border-radius:4px}</style></head><body>"
                 f"<h2>{p} — image progress</h2>"
-                "<p>1 beat = 1 image. 'pose' = rig reuse, 'doodle' = vector, "
-                "'asset' = library. Only 'ai' beats cost generations.</p>"
+                "<p>A beat may hold or reuse a visual state. 'pose' = subject reuse, "
+                "'doodle' = local diagram, 'asset' = library. Only 'ai' beats cost "
+                "generations.</p>"
                 "<table>")
         for r in rows:
             head += (f"<tr><td>{r[0]}</td><td>{r[1]}s</td><td>{r[2]}</td>"
