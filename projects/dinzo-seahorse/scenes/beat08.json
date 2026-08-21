@@ -64,13 +64,8 @@
     "scale": [
      {
       "t": 0.0,
-      "v": 0.92,
-      "e": "easeOutCubic"
-     },
-     {
-      "t": 0.2,
       "v": 1.0,
-      "e": "easeOutCubic"
+      "e": "hold"
      }
     ],
     "opacity": [
@@ -116,8 +111,13 @@
     "scale": [
      {
       "t": 0.0,
+      "v": 1.09,
+      "e": "easeInOut"
+     },
+     {
+      "t": 6.17,
       "v": 1.0,
-      "e": "hold"
+      "e": "easeInOut"
      }
     ],
     "opacity": [

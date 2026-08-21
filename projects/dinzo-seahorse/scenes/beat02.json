@@ -59,13 +59,8 @@
     "scale": [
      {
       "t": 0.0,
-      "v": 0.92,
-      "e": "easeOutCubic"
-     },
-     {
-      "t": 0.2,
       "v": 1.0,
-      "e": "easeOutCubic"
+      "e": "hold"
      }
     ],
     "opacity": [

@@ -125,3 +125,59 @@ joke pops 8–12% overshoot).
 - Easing: zoom = `easeInOut` (0.42,0,0.58,1) ✓; punch/slide = easeOutCubic;
   pops = easeOutBack; motion_blur = 1 (crisp)
 - Audio: narration loudnorm −16; bed −19 dB under voice; SFX −14 dB
+
+## Part II — Recipe cards & production rules (user-provided continuation)
+
+### Recipe cards (the 10 most common moves)
+
+1. **Cold open TOC grid** — When: 0:00, table of contents. Duration
+   2.0–3.5 s then cut. Camera: scale 1.00→1.10 (or pos x 0→−6% if grid wider
+   than frame), ease-in-out. Audio: TTS thesis line + bed (NO whoosh).
+   Grid = ONE precomposed PNG (never spawn cards one-by-one).
+2. **Chapter title slam** — every chapter start. 0.20 s, scale 0.92→1.00,
+   opacity 0→1 in 0.08 s, ease-out-cubic, overshoot 0, hold rest of chapter.
+   Audio: period name lands here.
+3. **Documentary slow zoom (hero)** — "here is the animal" hold. 5.0 s
+   (12–25 s ok). Camera scale 1.00→1.12, anchor on eye/jaw, cubic-bezier
+   (0.42,0,0.58,1). Creature swim loop underneath. Audio bed+TTS, NO whoosh.
+4. **Noun punch-in** — cut hard, put the noun on screen at the word, chapter
+   title glued on top. One black stroke weight per character class. White
+   air around icons. Let the camera zoom carry the "animation budget."
+   Puppet 2–5 pins, not a full rig. Flat fills, red for emphasis only.
+   Stick people for humans; inked silhouettes for beasts. Loop swims, hold faces.
+
+### DON'T list
+Dissolves, wipes, film grain, handheld. Lip-sync the TTS. Walk cycles as
+default locomotion. 3D lighting / drop shadows on characters. Gradient fills
+on bodies. Comic-book speed lines / anime smear frames. Busy multi-layer
+parallax. Lower-thirds and caption karaoke. Raw photos in 2026-style void
+scenes. Bounce/overshoot on documentary zooms.
+
+### What makes it feel expensive (ranked)
+1. **Noun-locked editing** — every cut is a word (title at chapter
+   timestamps, arrow at the jaw, "extinction" on the gray plate).
+2. **Restraint of motion** — ~45% of shots are a still with tiny puppetry;
+   zooms 2–3%/s. Looks like a designed AE board, not effects junk.
+3. **Stroke discipline** — one weight, round joins, no sketch noise. Reads
+   as a brand.
+4. **Compositional air + lockups** — top title bar, huge heads, empty white
+   (50%+ negative space still balanced).
+5. **Systemized chapter machine** — 12× ~67 s blocks, same title treatment,
+   same sting. Industrial, not one-off.
+
+### Implementation stack (PNG + keyframe engine)
+- Timeline 60 fps
+- Layer = { png, parent, anchor, tracks: posX posY scale rot opacity,
+  pins[]: {bind, rot, scale} }
+- Camera = { scale, pos, anchor }  // never rotate
+- Title = always-on text layer, top 12%
+- Cut = instantaneous layer-set swap (no mix)
+- Asset sheet per shot: bg.png (white or gradient), env.png (optional
+  floor), char_body.png + char_jaw.png / pin mesh, arrow.png / label.png,
+  title string
+
+### First three things to replicate (priority)
+1. Hard-cut noun sync + top chapter title bar (if wrong, nothing reads as
+   the channel).
+2. Still PNG + slow ~2.5%/s ease-in-out zoom as the default "animation".
+3. Black ~8 px stroke, flat fill, stick-host / inked-beast, red arrow pops.

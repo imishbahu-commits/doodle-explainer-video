@@ -34,6 +34,8 @@ AUDIO = HERE / "audio"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 AE = HERE.parent.parent / "skills" / "ae-motion" / "scripts" / "ae_motion.py"
 PY = sys.executable
+sys.path.insert(0, str(AE.parent))
+from ae_motion import sample_track      # exact AE easing math for baking
 W, H, FPS = 1376, 768, 60
 GAP = 0.25
 CX, CY = W / 2, H / 2
@@ -138,38 +140,48 @@ def prep_assets():
     work = HERE / "work"
     work.mkdir(exist_ok=True)
     cuts, bgs = {}, {}
-    for src in sorted((HERE / "assets").glob("char_*.png")):
-        out = work / (src.stem + "_cut.png")
-        key_character(src, out)
-        cuts[src.stem] = out
+    for pat in ("char_*.png", "fx_*.png"):
+        for src in sorted((HERE / "assets").glob(pat)):
+            out = work / (src.stem + "_cut.png")
+            key_character(src, out)
+            cuts[src.stem] = out
     for src in sorted((HERE / "assets").glob("bg_*.png")):
         out = work / (src.stem + "_bar.png")
-        bg_with_strip(src, out)
+        if src.stem == "bg_toc":
+            Image.open(src).convert("RGB").resize((W, H), Image.LANCZOS).save(out)
+        else:
+            bg_with_strip(src, out)
         bgs[src.stem] = out
     return cuts, bgs
 
 
 # ------------------------------------------------------------- scenes
 # chapter structure (spec: title bar persists for the whole chapter)
-CHAPTERS = {1: "THE POUCH", 6: "THE BIRTH"}
+CHAPTERS = {0: None, 1: "THE POUCH", 6: "THE BIRTH"}
 
 def chapter_for(i):
-    c = "THE POUCH"
+    c = None
     for k in sorted(CHAPTERS):
-        if i >= k:
+        if i >= k and CHAPTERS[k]:
             c = CHAPTERS[k]
     return c
 
-# per-beat: bg, camera (lock|zoom-in|zoom-out|punch), chars [dict]
+# per-beat: bg, cam (lock|zoom-in|zoom-out|punch|toc), anchor (optional
+# camera anchor point for hero zooms), bar (title bar on/off), chars, fx
 # camera budget: lock x5, zoom x3, punch x2  (50/30/20)
 SCENES = {
-    1: dict(bg="bg_seaweed", cam="zoom-in",
+    0: dict(bg="bg_toc", cam="toc", bar=False, chars=[], fx=[]),
+    1: dict(bg="bg_seaweed", cam="zoom-in", anchor=[CX, CY + 140],
             chars=[dict(src="char_dad", max=760, pos=[hold(0, [CX, CY + 60])],
-                        puppet="swim", bob=0.0)]),
+                        puppet="swim", bob=0.0)],
+            fx=[dict(src="fx_arrow", max=170,
+                     pos=[hold(0, [CX - 330, CY + 170])],
+                     scale=pop(0.05, 0.30, 0.4, 1.08),
+                     rot=[hold(0, 0.0), *sine_rot(6.0, 2.0, 0.5, 0.35)])]),
     2: dict(bg="bg_reef", cam="lock",
             chars=[dict(src="char_dad", max=660, pos=[hold(0, [CX - 220, CY + 80])], puppet="swim"),
                    dict(src="char_mom", max=520, pos=[hold(0, [CX + 230, CY + 20])], puppet="swim")]),
-    3: dict(bg="bg_reef", cam="zoom-in",
+    3: dict(bg="bg_reef", cam="zoom-in", anchor=[CX, CY + 80],
             chars=[dict(src="char_dad", max=660, pos=[hold(0, [CX - 160, CY + 70])], puppet="swim"),
                    dict(src="char_mom", max=520,
                         pos=[kf(0.0, [CX + 340, CY], "easeInOut"),
@@ -179,7 +191,7 @@ SCENES = {
                    dict(src="char_mom", max=480,
                         pos=[kf(0.0, [CX + 180, CY - 20], "linear"),
                              kf(4.2, [CX + 900, CY - 40], "linear")], puppet="swim")]),
-    5: dict(bg="bg_seaweed", cam="zoom-in",
+    5: dict(bg="bg_seaweed", cam="zoom-in", anchor=[CX, CY + 140],
             chars=[dict(src="char_dad", max=860, pos=[hold(0, [CX, CY + 70])], puppet="swim")]),
     6: dict(bg="bg_seaweed", cam="punch",
             chars=[dict(src="char_dad", max=880,
@@ -208,12 +220,43 @@ SCENES = {
                          rot=sine_rot(4.8, 3.0, 0.35), puppet="swim")]),
 }
 
-CAM = {
-    "lock": lambda d: {},
-    "zoom-in": lambda d: {"scale": slow_zoom(d, 1.09, 1)},
-    "zoom-out": lambda d: {"scale": slow_zoom(d, 1.09, -1)},
-    "punch": lambda d: {"scale": punch(0.45, 1.18)},
-}
+
+def camera(dur, cam, ax=None, ay=None):
+    """Return (scale_track, pos_track) for the camera. pos only when anchored."""
+    if cam == "lock":
+        return None, None
+    if cam == "toc":
+        scale = [kf(0, 1.0), kf(dur, 1.10, "easeInOut")]
+    elif cam == "zoom-in":
+        scale = slow_zoom(dur, 1.09, 1)
+    elif cam == "zoom-out":
+        scale = slow_zoom(dur, 1.09, -1)
+    elif cam == "punch":
+        scale = punch(0.45, 1.18)
+    if ax is None:
+        return scale, None
+    pos = []
+    for k in scale:
+        s = k["v"]
+        pos.append(kf(k["t"], [CX + (1 - s) * (ax - CX), CY + (1 - s) * (ay - CY)], k["e"]))
+    return scale, pos
+
+
+def apply_cam(layer, scale_tr, pos_tr, has_own_pos=False, has_own_scale=False):
+    """Camera rides every layer (whole-plate zoom). Title is NOT a layer here."""
+    tr = layer["tracks"]
+    if scale_tr is not None and not has_own_scale:
+        tr["scale"] = scale_tr
+    if pos_tr is not None:
+        if not has_own_pos:
+            tr["pos"] = pos_tr
+        else:
+            # screen = camera_pos + own_pos - center (bake at own key times)
+            combined = []
+            for k in tr["pos"]:
+                px, py = sample_track(pos_tr, k["t"])
+                combined.append(kf(k["t"], [k["v"][0] + px - CX, k["v"][1] + py - CY], k["e"]))
+            tr["pos"] = combined
 
 
 def build_scene(idx, d, cuts, bgs):
@@ -221,22 +264,35 @@ def build_scene(idx, d, cuts, bgs):
     chapter = chapter_for(idx)
     scene = {"width": W, "height": H, "fps": FPS, "duration": round(d, 4),
              "layers": []}
-    # background with title strip (world clipped below bar)
+    ax, ay = spec.get("anchor", (None, None))
+    scale_tr, pos_tr = camera(d, spec["cam"], ax, ay)
+
+    # background with title strip (world clipped below bar) — rides camera
     bg = {"type": "image", "src": f"../work/{bgs[spec['bg']].name}", "isolate": False,
           "tracks": {"pos": [hold(0, [CX, CY])], "rot": [hold(0, 0)],
                      "scale": [hold(0, 1.0)]}}
-    bg["tracks"].update(CAM[spec["cam"]](d))
+    apply_cam(bg, scale_tr, pos_tr)
     scene["layers"].append(bg)
-    # chapter title (sans, ALL CAPS, strip center; pop at chapter start)
-    first = idx == min(i for i in SCENES if chapter_for(i) == chapter)
-    title = {"type": "text", "text": chapter, "size": 54, "font": "sans",
-             "fill": [0, 0, 0],
-             "tracks": {"pos": [hold(0, [CX, BAR_H / 2])],
-                        "scale": [kf(0.0, 0.92, "easeOutCubic"), kf(0.2, 1.0, "easeOutCubic")],
-                        "opacity": [hold(0, 1.0)]}}
-    scene["layers"].append(title)
-    # characters
-    for c in spec["chars"]:
+
+    # chapter title (sans, ALL CAPS, strip center). Slam ONLY on chapter
+    # start: scale 0.92->1.00 in 0.20s, opacity 0->1 in 0.08s, ease-out-cubic.
+    # Otherwise held. TOC beat (bar=False) has no title.
+    if spec.get("bar", True) and chapter:
+        first = idx == min(i for i in SCENES if chapter_for(i) == chapter)
+        if first:
+            tscale = [kf(0.0, 0.92, "easeOutCubic"), kf(0.20, 1.0, "easeOutCubic")]
+            topac = [hold(0.0, 0.0), kf(0.08, 1.0, "easeOutCubic")]
+        else:
+            tscale = [hold(0.0, 1.0)]
+            topac = [hold(0.0, 1.0)]
+        scene["layers"].append({
+            "type": "text", "text": chapter, "size": 54, "font": "sans",
+            "fill": [0, 0, 0],
+            "tracks": {"pos": [hold(0, [CX, BAR_H / 2])],
+                       "scale": tscale, "opacity": topac}})
+
+    # characters + fx (red arrow etc.) — all ride the camera
+    for c in spec.get("chars", []) + spec.get("fx", []):
         layer = {"type": "image", "src": f"../work/{cuts[c['src']].name}",
                  "isolate": False, "max_dim": c.get("max", 700),
                  "tracks": {"pos": [hold(0, [CX, CY])], "rot": [hold(0, 0)],
@@ -250,6 +306,8 @@ def build_scene(idx, d, cuts, bgs):
             layer["puppet"] = {"tracks": {
                 "drag0": sine_wave(d, amp, 0.6),
                 "drag1": sine_wave(d, amp * 0.6, 0.6, 0.075)}}
+        apply_cam(layer, scale_tr, pos_tr,
+                  has_own_pos=bool(c.get("pos")), has_own_scale=bool(c.get("scale")))
         scene["layers"].append(layer)
     return scene
 
