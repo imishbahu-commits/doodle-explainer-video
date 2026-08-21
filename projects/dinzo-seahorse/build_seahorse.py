@@ -154,7 +154,8 @@ def prep_assets():
 
 # ------------------------------------------------------------- scenes
 # chapter structure (spec: title bar persists for the whole chapter)
-CHAPTERS = {0: None, 1: "THE POUCH", 6: "THE BIRTH"}
+CHAPTERS = {0: None, 1: "THE POUCH", 6: "THE BIRTH",
+             11: "THE DRIFT", 15: "THE HUNGER", 20: "THE SURVIVOR"}
 
 def chapter_for(i):
     c = None
@@ -219,6 +220,64 @@ SCENES = {
                          pos=[kf(0.0, [CX + 200, CY - 40], "linear"),
                               kf(4.8, [CX - 180, CY + 30], "linear")],
                          rot=sine_rot(4.8, 3.0, 0.35), puppet="swim")]),
+    11: dict(bg="bg_openwater", cam="lock",
+             chars=[dict(src="char_baby", max=340, pos=[hold(0, [CX - 250, CY + 80])],
+                         rot=sine_rot(4.2, 4.0, 0.8), puppet="swim")]),
+    12: dict(bg="bg_openwater", cam="lock",
+             chars=[dict(src="char_baby", max=300,
+                         pos=[kf(0.0, [-650, CY - 20], "linear"),
+                              kf(4.0, [1150, CY + 60], "linear")],
+                         rot=sine_rot(4.0, 9.0, 0.9), puppet="swim")]),
+    13: dict(bg="bg_openwater", cam="punch",
+             chars=[dict(src="char_baby", max=300, pos=[hold(0, [CX - 150, CY + 70])], puppet="swim"),
+                    dict(src="char_crab", max=430,
+                         pos=[kf(0.4, [-520, CY + 150], "easeOutCubic"),
+                              kf(1.0, [CX - 420, CY + 150])], puppet="swim"),
+                    dict(src="char_fish", max=640,
+                         pos=[kf(1.1, [980, CY + 30], "easeOutCubic"),
+                              kf(1.7, [CX + 300, CY + 30])], puppet="swim"),
+                    dict(src="char_turtle", max=480,
+                         pos=[kf(2.1, [1040, CY - 90], "easeOutCubic"),
+                              kf(2.7, [CX + 320, CY - 90])], puppet="swim")]),
+    14: dict(bg="bg_openwater", cam="lock",
+             chars=[dict(src="char_dad", max=300,
+                         pos=[kf(0.0, [CX + 300, CY + 40], "linear"),
+                              kf(4.6, [CX + 820, CY + 10], "linear")], puppet="swim"),
+                    dict(src="char_baby", max=260, pos=[hold(0, [CX - 380, CY + 80])],
+                         rot=sine_rot(4.6, 3.0, 0.35), puppet="swim")]),
+    15: dict(bg="bg_reef", cam="zoom-in", anchor=[CX, CY + 80],
+             chars=[dict(src="char_belly", max=740, pos=[hold(0, [CX, CY + 40])],
+                         puppet="swim")]),
+    16: dict(bg="bg_reef", cam="lock",
+             chars=[dict(src="char_belly", max=680, pos=[hold(0, [CX - 150, CY + 50])], puppet="swim"),
+                    dict(src="char_shrimp", max=140,
+                         pos=[kf(0.0, [CX + 430, CY - 30], "linear"),
+                              kf(0.9, [CX + 170, CY - 30], "easeInCubic"),
+                              kf(1.9, [CX + 430, CY - 30], "linear"),
+                              kf(2.4, [CX + 170, CY - 30], "easeInCubic")],
+                         opacity=[hold(0.0, 0.0), kf(0.05, 1.0), kf(0.85, 1.0),
+                                  kf(0.95, 0.0), hold(1.0, 0.0), kf(1.9, 1.0),
+                                  kf(2.35, 1.0), kf(2.45, 0.0)])]),
+    17: dict(bg="bg_openwater", cam="punch",
+             chars=[dict(src="char_shrimpcloud", max=920, pos=[hold(0, [CX, CY + 20])],
+                         scale=pop(0.25, 0.45, 0.4, 1.08), puppet="swim")]),
+    18: dict(bg="bg_openwater", cam="lock",
+             chars=[dict(src="char_belly", max=720, pos=[hold(0, [CX - 170, CY + 40])], puppet="swim"),
+                    dict(src="char_shrimp", max=150,
+                         pos=[kf(0.0, [CX + 400, CY - 20], "linear"),
+                              kf(0.8, [CX + 160, CY - 20], "easeInCubic"),
+                              kf(0.95, [CX + 150, CY - 25], "hold")],
+                         opacity=[hold(0.0, 0.0), kf(0.1, 1.0), kf(0.9, 0.0)])]),
+    19: dict(bg="bg_openwater", cam="zoom-out",
+             chars=[dict(src="char_cloud", max=660,
+                         pos=[kf(0.0, [CX, CY - 80], "linear"),
+                              kf(5.0, [CX + 50, CY + 240], "linear")],
+                         opacity=[hold(0.0, 0.9), kf(4.5, 0.35)], puppet="swim"),
+                    dict(src="char_baby", max=300, pos=[hold(0, [CX - 260, CY + 60])],
+                         puppet="swim")]),
+    20: dict(bg="bg_seaweed", cam="zoom-in", anchor=[CX, CY + 100],
+             chars=[dict(src="char_grown", max=800, pos=[hold(0, [CX, CY + 60])],
+                         puppet="swim")]),
 }
 
 
@@ -347,7 +406,11 @@ def thud(dur=0.18):
 # SFX timeline: beat -> [(t_abs, kind)]  (whoosh same frame as punch key)
 SFX = {6: [(0.05, "whoosh"), (0.45, "thud")],
        7: [(0.72, "pop")],
-       9: [(0.10, "whoosh")]}
+       9: [(0.10, "whoosh")],
+       12: [(0.05, "whoosh")],
+       13: [(0.05, "whoosh")],
+       16: [(0.05, "pop")],
+       17: [(0.05, "whoosh")]}
 
 
 def build_sfx(total):

@@ -116,6 +116,7 @@ def render_page():
 class Handler(http.server.BaseHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Accept-Ranges", "bytes")
+        self.send_header("Cache-Control", "no-store")
         super().end_headers()
 
     def do_GET(self):
