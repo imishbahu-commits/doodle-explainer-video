@@ -69,12 +69,7 @@
      {
       "t": 0.0,
       "v": 1.0,
-      "e": "easeInOut"
-     },
-     {
-      "t": 5.15,
-      "v": 1.09,
-      "e": "easeInOut"
+      "e": "hold"
      }
     ],
     "opacity": [
