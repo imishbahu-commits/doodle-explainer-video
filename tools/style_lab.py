@@ -449,10 +449,21 @@ drop.onclick = () => fi.click();
 drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
 drop.ondragleave = () => drop.classList.remove('over');
 drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over');
-  if (e.dataTransfer.files[0]) upload(e.dataTransfer.files[0]); };
-fi.onchange = () => { if (fi.files[0]) upload(fi.files[0]); };
+  uploadMany([...e.dataTransfer.files]); };
+fi.onchange = () => { uploadMany([...fi.files]); fi.value = ''; };
 
-async function upload(file) {
+// queue: uploads EVERY dropped file one after another (fixes multi-drop)
+let qBusy = false;
+async function uploadMany(files) {
+  if (!files.length) return;
+  const st = document.getElementById('status');
+  for (let n = 0; n < files.length; n++) {
+    st.textContent = `Uploading file ${n+1} of ${files.length}: ${files[n].name}`;
+    await upload(files[n], files.length, n + 1);
+  }
+}
+
+async function upload(file, totalFiles = 1, fileNum = 1) {
   const st = document.getElementById('status');
   const CHUNK = 4 * 1024 * 1024;            // 4 MB chunks
   const CONC = 4;                           // 4 parallel uploads
