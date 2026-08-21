@@ -1,0 +1,140 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 8.48,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_openwater.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 8.48,
+      "v": 1.1,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/char_baby_cut.png",
+   "isolate": false,
+   "max_dim": 400,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       424.0
+      ],
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.2,
+      "v": [
+       648.0,
+       394.0
+      ],
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": [
+       688.0,
+       414.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 0.7,
+      "v": 6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.4,
+      "v": -6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.1,
+      "v": 6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.8,
+      "v": -6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.5,
+      "v": 6.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.5,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.4,
+      "v": 0.3,
+      "e": "easeOutBack"
+     },
+     {
+      "t": 0.9,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.5,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  }
+ ]
+}

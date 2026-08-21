@@ -1,0 +1,182 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 4.85,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_openwater.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       468.0,
+       384.0
+      ],
+      "e": "linear"
+     },
+     {
+      "t": 4.85,
+      "v": [
+       908.0,
+       384.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/char_dad_cut.png",
+   "isolate": false,
+   "max_dim": 640,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       428.0,
+       424.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -1.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.5,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 2.4,
+      "v": 1.0,
+      "e": "hold"
+     },
+     {
+      "t": 3.3,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/char_mom_cut.png",
+   "isolate": false,
+   "max_dim": 520,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       888.0,
+       374.0
+      ],
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.4,
+      "v": [
+       1328.0,
+       324.0
+      ],
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.6,
+      "v": [
+       1788.0,
+       354.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 0.8,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.6,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.4,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.5,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 6.17,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_openwater.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       468.0,
+       384.0
+      ],
+      "e": "linear"
+     },
+     {
+      "t": 6.17,
+      "v": [
+       908.0,
+       384.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/char_cloud_cut.png",
+   "isolate": false,
+   "max_dim": 980,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       568.0,
+       384.0
+      ],
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "easeOutExpo"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 0.9,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.8,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.7,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.6,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 5.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.25,
+      "v": 0.5,
+      "e": "easeOutBack"
+     },
+     {
+      "t": 0.85,
+      "v": 1.15,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.45,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  }
+ ]
+}

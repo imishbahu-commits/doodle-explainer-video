@@ -1,0 +1,130 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 5.53,
+ "motion_blur": 4,
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/bg_openwater.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       908.0,
+       384.0
+      ],
+      "e": "linear"
+     },
+     {
+      "t": 5.53,
+      "v": [
+       468.0,
+       384.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/char_baby_cut.png",
+   "isolate": false,
+   "max_dim": 360,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       888.0,
+       324.0
+      ],
+      "e": "linear"
+     },
+     {
+      "t": 4.5,
+      "v": [
+       488.0,
+       424.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 0.6,
+      "v": 7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.2,
+      "v": -7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.8,
+      "v": 7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.4,
+      "v": -7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.6,
+      "v": -7.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.5,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ]
+   }
+  }
+ ]
+}
