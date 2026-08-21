@@ -2,18 +2,12 @@
  "width": 1376,
  "height": 768,
  "fps": 30,
- "duration": 15.71,
- "motion_blur": 2,
- "bg_color": [
-  63,
-  129,
-  178,
-  255
- ],
+ "duration": 4.17,
+ "motion_blur": 4,
  "layers": [
   {
    "type": "image",
-   "src": "../assets/beat01.png",
+   "src": "../assets/bg_den.png",
    "isolate": false,
    "tracks": {
     "pos": [
@@ -26,69 +20,136 @@
       "e": "hold"
      }
     ],
-    "scale": [
-     {
-      "t": 0.0,
-      "v": 1.0,
-      "e": "easeInOut"
-     },
-     {
-      "t": 15.71,
-      "v": 1.13,
-      "e": "easeInOut"
-     }
-    ],
     "rot": [
      {
       "t": 0.0,
       "v": 0,
       "e": "hold"
      }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.17,
+      "v": 1.09,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 720,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       -520,
+       444.0
+      ],
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 0.5,
+      "v": [
+       688.0,
+       444.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.0,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
     ]
    }
   },
   {
    "type": "text",
-   "text": "100,000 EGGS",
+   "text": "THE EGG",
    "size": 58,
    "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
    "tracks": {
     "pos": [
      {
       "t": 0.0,
       "v": [
        688.0,
-       676
+       672
       ],
       "e": "hold"
      }
     ],
     "scale": [
      {
-      "t": 0.55,
+      "t": 0.95,
       "v": 0.6,
       "e": "hold"
      },
      {
-      "t": 0.95,
+      "t": 1.3,
       "v": 1.0,
       "e": "easeOutBack"
      }
     ],
     "opacity": [
      {
-      "t": 0.0,
-      "v": 0,
+      "t": 0.95,
+      "v": 0.0,
       "e": "hold"
      },
      {
-      "t": 0.55,
-      "v": 0,
-      "e": "hold"
-     },
-     {
-      "t": 0.62,
-      "v": 1,
+      "t": 1.02,
+      "v": 1.0,
       "e": "easeInOut"
      }
     ]
@@ -96,46 +157,46 @@
   },
   {
    "type": "text",
-   "text": "WHY IT SUCKS TO BE BORN AS AN OCTOPUS",
-   "size": 40,
-   "font": "hand",
+   "text": "GRAIN OF RICE",
+   "size": 42,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
    "tracks": {
     "pos": [
      {
       "t": 0.0,
       "v": [
        688.0,
-       96
+       672
       ],
       "e": "hold"
      }
     ],
     "scale": [
      {
-      "t": 0.9,
-      "v": 0.7,
+      "t": 1.5,
+      "v": 0.6,
       "e": "hold"
      },
      {
-      "t": 1.4,
+      "t": 1.85,
       "v": 1.0,
       "e": "easeOutBack"
      }
     ],
     "opacity": [
      {
-      "t": 0.0,
-      "v": 0,
+      "t": 1.5,
+      "v": 0.0,
       "e": "hold"
      },
      {
-      "t": 0.9,
-      "v": 0,
-      "e": "hold"
-     },
-     {
-      "t": 1.0,
-      "v": 1,
+      "t": 1.57,
+      "v": 1.0,
       "e": "easeInOut"
      }
     ]

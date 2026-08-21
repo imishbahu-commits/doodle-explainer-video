@@ -2,18 +2,12 @@
  "width": 1376,
  "height": 768,
  "fps": 30,
- "duration": 15.03,
- "motion_blur": 2,
- "bg_color": [
-  63,
-  129,
-  178,
-  255
- ],
+ "duration": 5.15,
+ "motion_blur": 4,
  "layers": [
   {
    "type": "image",
-   "src": "../assets/beat10.png",
+   "src": "../assets/bg_den.png",
    "isolate": false,
    "tracks": {
     "pos": [
@@ -26,18 +20,6 @@
       "e": "hold"
      }
     ],
-    "scale": [
-     {
-      "t": 0.0,
-      "v": 1.0,
-      "e": "easeInOut"
-     },
-     {
-      "t": 15.03,
-      "v": 1.08,
-      "e": "easeInOut"
-     }
-    ],
     "rot": [
      {
       "t": 0.0,
@@ -45,20 +27,139 @@
       "e": "hold"
      }
     ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.09,
+      "e": "easeInOut"
+     },
+     {
+      "t": 5.15,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_baby_cut.png",
+   "isolate": false,
+   "max_dim": 640,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       504.0
+      ],
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 0.6,
+      "v": [
+       948.0,
+       504.0
+      ],
+      "e": "easeInOut"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.2,
+      "v": 0.3,
+      "e": "easeOutBack"
+     },
+     {
+      "t": 0.7,
+      "v": 0.85,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.3,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": -2.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.0,
+      "v": 2.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.0,
+      "v": -2.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 2.5,
+      "e": "easeInOut"
+     },
+     {
+      "t": 4.5,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ],
     "opacity": [
      {
       "t": 0.0,
       "v": 1.0,
-      "e": "easeInOut"
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "TINY GHOST",
+   "size": 56,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.2,
+      "v": 0.6,
+      "e": "hold"
      },
      {
-      "t": 14.33,
+      "t": 1.55,
       "v": 1.0,
-      "e": "easeInOut"
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.2,
+      "v": 0.0,
+      "e": "hold"
      },
      {
-      "t": 15.03,
-      "v": 0.0,
+      "t": 1.27,
+      "v": 1.0,
       "e": "easeInOut"
      }
     ]
@@ -66,46 +167,46 @@
   },
   {
    "type": "text",
-   "text": "1 IN 100,000",
-   "size": 50,
+   "text": "HATCHING",
+   "size": 40,
    "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
    "tracks": {
     "pos": [
      {
       "t": 0.0,
       "v": [
        688.0,
-       676
+       672
       ],
       "e": "hold"
      }
     ],
     "scale": [
      {
-      "t": 0.55,
+      "t": 1.8,
       "v": 0.6,
       "e": "hold"
      },
      {
-      "t": 0.95,
+      "t": 2.15,
       "v": 1.0,
       "e": "easeOutBack"
      }
     ],
     "opacity": [
      {
-      "t": 0.0,
-      "v": 0,
+      "t": 1.8,
+      "v": 0.0,
       "e": "hold"
      },
      {
-      "t": 0.55,
-      "v": 0,
-      "e": "hold"
-     },
-     {
-      "t": 0.62,
-      "v": 1,
+      "t": 1.87,
+      "v": 1.0,
       "e": "easeInOut"
      }
     ]

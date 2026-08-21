@@ -2,19 +2,45 @@
  "width": 1376,
  "height": 768,
  "fps": 30,
- "duration": 14.21,
- "motion_blur": 2,
- "bg_color": [
-  63,
-  129,
-  178,
-  255
- ],
+ "duration": 2.5,
+ "motion_blur": 4,
  "layers": [
   {
    "type": "image",
-   "src": "../assets/beat02.png",
+   "src": "../assets/bg_den.png",
    "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1,
+      "e": "hold"
+     }
+    ]
+   }
+  },
+  {
+   "type": "image",
+   "src": "../work/sub_eggs_cut.png",
+   "isolate": false,
+   "max_dim": 720,
    "tracks": {
     "pos": [
      {
@@ -28,13 +54,18 @@
     ],
     "scale": [
      {
-      "t": 0.0,
-      "v": 1.14,
-      "e": "easeInOut"
+      "t": 0.25,
+      "v": 0.72,
+      "e": "easeInCubic"
      },
      {
-      "t": 14.21,
-      "v": 1.0,
+      "t": 0.75,
+      "v": 1.1,
+      "e": "easeOutExpo"
+     },
+     {
+      "t": 1.25,
+      "v": 1.05,
       "e": "easeInOut"
      }
     ],
@@ -44,51 +75,105 @@
       "v": 0,
       "e": "hold"
      }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "hold"
+     }
     ]
    }
   },
   {
    "type": "text",
-   "text": "SHE NEVER EATS",
-   "size": 50,
+   "text": "NOT A NEST",
+   "size": 56,
    "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
    "tracks": {
     "pos": [
      {
       "t": 0.0,
       "v": [
        688.0,
-       676
+       672
       ],
       "e": "hold"
      }
     ],
     "scale": [
      {
-      "t": 0.55,
+      "t": 0.5,
       "v": 0.6,
       "e": "hold"
      },
      {
-      "t": 0.95,
+      "t": 0.85,
       "v": 1.0,
       "e": "easeOutBack"
      }
     ],
     "opacity": [
      {
+      "t": 0.5,
+      "v": 0.0,
+      "e": "hold"
+     },
+     {
+      "t": 0.57,
+      "v": 1.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "NOT A POUCH",
+   "size": 56,
+   "font": "hand-bold",
+   "fill": [
+    250,
+    250,
+    245
+   ],
+   "tracks": {
+    "pos": [
+     {
       "t": 0.0,
-      "v": 0,
+      "v": [
+       688.0,
+       672
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 1.15,
+      "v": 0.6,
       "e": "hold"
      },
      {
-      "t": 0.55,
-      "v": 0,
+      "t": 1.5,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 1.15,
+      "v": 0.0,
       "e": "hold"
      },
      {
-      "t": 0.62,
-      "v": 1,
+      "t": 1.22,
+      "v": 1.0,
       "e": "easeInOut"
      }
     ]

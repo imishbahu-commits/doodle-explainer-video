@@ -208,6 +208,7 @@ def render_scene(scene, out_path, base_dir=None):
     for spec in scene.get("layers", []):
         if spec["type"] == "text":
             base = draw_text(spec.get("text", ""), spec.get("size", 48),
+                             fill=tuple(spec.get("fill", (28, 28, 34))),
                              font_name=spec.get("font", "hand"))
         elif spec["type"] == "image":
             src = Path(spec["src"])
