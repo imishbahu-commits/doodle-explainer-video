@@ -1,0 +1,123 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 13.02,
+ "motion_blur": 2,
+ "bg_color": [
+  255,
+  255,
+  255,
+  255
+ ],
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/beat06.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 13.02,
+      "v": 1.07,
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.5,
+      "v": -2.4,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.2,
+      "v": 2.4,
+      "e": "easeInOut"
+     },
+     {
+      "t": 1.9,
+      "v": -2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 2.6,
+      "v": 2.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 13.02,
+      "v": 0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "MOOD RING",
+   "size": 50,
+   "font": "hand-bold",
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       676
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.55,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 0.95,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.55,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.62,
+      "v": 1,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}

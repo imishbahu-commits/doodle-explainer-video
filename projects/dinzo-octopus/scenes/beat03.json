@@ -1,0 +1,121 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 16.43,
+ "motion_blur": 2,
+ "bg_color": [
+  95,
+  188,
+  228,
+  255
+ ],
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/beat03.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       948.0,
+       384.0
+      ],
+      "e": "linear"
+     },
+     {
+      "t": 16.43,
+      "v": [
+       428.0,
+       384.0
+      ],
+      "e": "linear"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.1,
+      "e": "easeInOut"
+     },
+     {
+      "t": 16.43,
+      "v": 1.1,
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 1.0,
+      "v": -1.2,
+      "e": "easeInOut"
+     },
+     {
+      "t": 3.0,
+      "v": 1.2,
+      "e": "easeInOut"
+     },
+     {
+      "t": 16.43,
+      "v": 0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "DRIFTING LUNCH",
+   "size": 50,
+   "font": "hand-bold",
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       676
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.55,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 0.95,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.55,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.62,
+      "v": 1,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}

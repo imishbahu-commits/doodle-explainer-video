@@ -1,0 +1,115 @@
+{
+ "width": 1376,
+ "height": 768,
+ "fps": 30,
+ "duration": 15.03,
+ "motion_blur": 2,
+ "bg_color": [
+  63,
+  129,
+  178,
+  255
+ ],
+ "layers": [
+  {
+   "type": "image",
+   "src": "../assets/beat10.png",
+   "isolate": false,
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       384.0
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 15.03,
+      "v": 1.08,
+      "e": "easeInOut"
+     }
+    ],
+    "rot": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 14.33,
+      "v": 1.0,
+      "e": "easeInOut"
+     },
+     {
+      "t": 15.03,
+      "v": 0.0,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  },
+  {
+   "type": "text",
+   "text": "1 IN 100,000",
+   "size": 50,
+   "font": "hand-bold",
+   "tracks": {
+    "pos": [
+     {
+      "t": 0.0,
+      "v": [
+       688.0,
+       676
+      ],
+      "e": "hold"
+     }
+    ],
+    "scale": [
+     {
+      "t": 0.55,
+      "v": 0.6,
+      "e": "hold"
+     },
+     {
+      "t": 0.95,
+      "v": 1.0,
+      "e": "easeOutBack"
+     }
+    ],
+    "opacity": [
+     {
+      "t": 0.0,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.55,
+      "v": 0,
+      "e": "hold"
+     },
+     {
+      "t": 0.62,
+      "v": 1,
+      "e": "easeInOut"
+     }
+    ]
+   }
+  }
+ ]
+}
