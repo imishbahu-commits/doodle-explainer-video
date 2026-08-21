@@ -91,21 +91,37 @@ def frames(path, fps=SAMPLE_FPS):
 
 
 def analyze(path):
-    """Full motion autopsy -> style profile dict."""
+    """Full motion autopsy -> style profile dict. STREAMING (low memory):
+    frames are consumed one at a time; only tiny stats are kept, so even
+    long videos analyze in seconds without eating memory."""
     info = probe(path)
     if not info["duration"]:
         raise ValueError("cannot read duration (bad video?)")
-    fr = list(frames(path))
-    if len(fr) < 3:
+
+    diffs, gmeans, lmaxes, color_samples = [], [], [], []
+    prev = None
+    n = 0
+    for t, rgb in frames(path):
+        g = rgb.mean(axis=2).astype(np.float32)
+        if prev is not None:
+            d = np.abs(g - prev)
+            diffs.append(float(d.mean()))
+            bh, bw = GH // 5, GW // 9
+            blocks = np.array([[d[y:y + bh, x:x + bw].mean()
+                                for x in range(0, GW - bw + 1, bw)]
+                               for y in range(0, GH - bh + 1, bh)])
+            gmeans.append(float(d.mean()))
+            lmaxes.append(float(blocks.max()))
+        prev = g
+        if n % 12 == 0:
+            color_samples.append((t, rgb[10:80, 10:120].reshape(-1, 3).mean(axis=0)))
+        n += 1
+        if n > 20000:
+            break
+    if n < 3:
         raise ValueError("too few frames to analyze")
-    grays = [rgb.mean(axis=2).astype(np.float32) for _, rgb in fr]
-    times = [t for t, _ in fr]
 
-    diffs = [0.0]
-    for i in range(1, len(fr)):
-        diffs.append(float(np.abs(grays[i] - grays[i - 1]).mean()))
     diffs = np.array(diffs)
-
     thr = max(6.0, float(np.percentile(diffs, 96)))
     cuts = [0]
     for i, d in enumerate(diffs[1:], 1):
@@ -118,63 +134,31 @@ def analyze(path):
         a, b = cuts[c], cuts[c + 1]
         if b - a < 2:
             continue
-        durs = (b - a) / SAMPLE_FPS
-        gmeans, active = [], 0
-        for i in range(a + 1, b):
-            g = np.abs(grays[i] - grays[i - 1]).mean()
-            gmeans.append(g)
-            d = np.abs(grays[i] - grays[i - 1])
-            bh, bw = GH // 5, GW // 9
-            blocks = np.array([[d[y:y + bh, x:x + bw].mean()
-                                for x in range(0, GW - bw + 1, bw)]
-                               for y in range(0, GH - bh + 1, bh)])
-            if blocks.max() > 3 * max(g, 0.4):
-                active += 1
-        n = len(gmeans)
-        frozen = sum(1 for g in gmeans if g < 0.6)
-        cam = n - frozen - active
-        segs.append(dict(start=round(a / SAMPLE_FPS, 2), dur=round(durs, 2),
-                         frozen=round(frozen / n * 100), cam=round(cam / n * 100),
-                         active=round(active / n * 100)))
+        n2 = b - a
+        frozen = sum(1 for g in gmeans[a:b] if g < 0.6)
+        active = sum(1 for i in range(a, b) if lmaxes[i] > 3 * max(gmeans[i], 0.4))
+        cam = n2 - frozen - active
+        segs.append(dict(start=round(a / SAMPLE_FPS, 2), dur=round((b - a) / SAMPLE_FPS, 2),
+                         frozen=round(frozen / n2 * 100), cam=round(max(0, cam) / n2 * 100),
+                         active=round(active / n2 * 100)))
 
-    shots = [s["dur"] for s in segs]
+    shots = [sg["dur"] for sg in segs]
     srt = sorted(shots)
+
     def pct(p):
         return round(srt[min(len(srt) - 1, int(len(srt) * p))], 2)
 
-    # dominant colors + brightness (sample first frames of first 12 segments)
-    colors, brights = [], []
-    for s in segs[:12]:
-        idx = min(int(s["start"] * SAMPLE_FPS), len(fr) - 1)
-        rgb = fr[idx][1].reshape(-1, 3).mean(axis=0)
-        brights.append(float(rgb.mean()))
-        colors.append([int(v) for v in rgb])
-    # top colors from corner samples of a few frames
-    top_colors = []
-    for s in segs[:8]:
-        idx = min(int(s["start"] * SAMPLE_FPS), len(fr) - 1)
-        im = fr[idx][1]
-        corner = im[10:80, 10:120].reshape(-1, 3).mean(axis=0)
-        top_colors.append([int(v) for v in corner])
+    brights = [float(c[1].mean()) for c in color_samples]
+    colors = [[int(v) for v in c[1]] for c in color_samples]
 
-    # motion budget from raw frame counts (no per-seg rounding drift)
-    tf = sum(round(s["frozen"] * len(range(cuts[i], cuts[i+1])) / 100)
-             for i, s in enumerate(segs)) if False else 0
-    raw_f = raw_a = 0
-    for i, s in enumerate(segs):
-        n = int(round(s["dur"] * SAMPLE_FPS))
-        raw_f += int(round(s["frozen"] / 100 * n))
-        raw_a += int(round(s["active"] / 100 * n))
-    total_n = sum(int(round(s["dur"] * SAMPLE_FPS)) for s in segs)
-    raw_c = max(0, total_n - raw_f - raw_a)
-    motion = {
-        "frozen_pct": round(raw_f / max(total_n, 1) * 100),
-        "camera_pct": round(raw_c / max(total_n, 1) * 100),
-        "character_pct": round(raw_a / max(total_n, 1) * 100),
-    }
-    # camera estimate: zoom-heavy if diffs low but scale drifts — use
-    # percentage of segments classified cam (>30% cam => "slow zoom channel")
-    cam_heavy = sum(1 for s in segs if s["cam"] >= 50)
+    raw_f = sum(round(sg["frozen"] / 100 * round(sg["dur"] * SAMPLE_FPS)) for sg in segs)
+    raw_a = sum(round(sg["active"] / 100 * round(sg["dur"] * SAMPLE_FPS)) for sg in segs)
+    tot = sum(round(sg["dur"] * SAMPLE_FPS) for sg in segs)
+    raw_c = max(0, tot - raw_f - raw_a)
+    motion = {"frozen_pct": round(raw_f / max(tot, 1) * 100),
+              "camera_pct": round(raw_c / max(tot, 1) * 100),
+              "character_pct": round(raw_a / max(tot, 1) * 100)}
+    cam_heavy = sum(1 for sg in segs if sg["cam"] >= 50)
     cam_est = "slow zoom / Ken Burns" if cam_heavy / max(len(segs), 1) > 0.4 else "locked + puppets"
 
     return {
@@ -190,7 +174,7 @@ def analyze(path):
         "camera_estimate": cam_est,
         "bg_color": [int(v) for v in np.mean([c for c in colors], axis=0)] if colors else [255, 255, 255],
         "brightness": round(sum(brights) / len(brights)) if brights else 200,
-        "palette": [f"rgb({c[0]},{c[1]},{c[2]})" for c in top_colors[:6]],
+        "palette": [f"rgb({int(c[0])},{int(c[1])},{int(c[2])})" for c in colors[:6]],
         "shot_table": segs[:60],
         "detected_at": time.strftime("%Y-%m-%d %H:%M:%S"),
     }
@@ -345,8 +329,19 @@ class Handler(BaseHTTPRequestHandler):
                 for p in parts:
                     out.write(p.read_bytes())
                     p.unlink()
-            threading.Thread(target=run_job, args=(job, str(dest)), daemon=True).start()
-            self._json({"job": job, "file": dest.name})
+            self._json({"job": job, "file": dest.name, "uploaded": True})
+            return
+        # ---- analyze an uploaded file: POST /analyze?job=X&file=NAME
+        if path == "/analyze":
+            q = self.path.split("?", 1)[1] if "?" in self.path else ""
+            params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
+            job = params.get("job", "")
+            f = UPLOADS / params.get("file", "")
+            if not f.is_file():
+                self._json({"error": "no uploaded file for job"}, 400)
+                return
+            threading.Thread(target=run_job, args=(job, str(f)), daemon=True).start()
+            self._json({"job": job, "analyzing": True})
             return
         # ---- simple single-shot upload
         if path != "/upload":
@@ -488,10 +483,11 @@ async function upload(file, totalFiles = 1, fileNum = 1) {
     }
   }
   await Promise.all(Array.from({length: Math.min(CONC, total)}, worker));
-  st.textContent = 'Upload done. Analyzing…';
+  st.textContent = 'Upload complete ✓ — starting analysis…';
   const r = await fetch(`/complete?job=${job}&name=${encodeURIComponent(file.name)}`, {method: 'POST'});
   const j = await r.json();
   if (j.error) { st.textContent = 'Error: ' + j.error; return; }
+  await fetch(`/analyze?job=${job}&file=${encodeURIComponent(j.file)}`, {method: 'POST'});
   poll(j.job, j.file);
 }
 

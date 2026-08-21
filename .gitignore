@@ -40,3 +40,6 @@ projects/dinzo-mammoth/work/
 !projects/dinzo-seahorse/*.mp4
 !projects/dinzo-tiger/*.mp4
 !projects/dinzo-mammoth/*.mp4
+
+# raw reference uploads are big — never commit; reports+frames ARE committed
+tools/uploads/

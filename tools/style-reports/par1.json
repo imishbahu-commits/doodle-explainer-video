@@ -1,0 +1,115 @@
+{
+  "file": "par1_big.mp4",
+  "duration": 60.52,
+  "fps": 60.0,
+  "resolution": "1376x768",
+  "shots": 11,
+  "cut_cadence": {
+    "min": 0.5,
+    "p25": 1.17,
+    "median": 4.67,
+    "mean": 5.41,
+    "p75": 6.17,
+    "max": 20.0
+  },
+  "motion_budget": {
+    "frozen_pct": 18,
+    "camera_pct": 0,
+    "character_pct": 90
+  },
+  "camera_estimate": "locked + puppets",
+  "bg_color": [
+    102,
+    152,
+    143
+  ],
+  "brightness": 133,
+  "palette": [
+    "rgb(227,219,212)",
+    "rgb(136,208,203)",
+    "rgb(127,228,231)",
+    "rgb(127,228,231)",
+    "rgb(127,228,231)",
+    "rgb(136,208,203)"
+  ],
+  "shot_table": [
+    {
+      "start": 0.0,
+      "dur": 5.5,
+      "frozen": 100,
+      "cam": 0,
+      "active": 0
+    },
+    {
+      "start": 5.5,
+      "dur": 6.17,
+      "frozen": 8,
+      "cam": -8,
+      "active": 100
+    },
+    {
+      "start": 11.67,
+      "dur": 4.5,
+      "frozen": 4,
+      "cam": -4,
+      "active": 100
+    },
+    {
+      "start": 16.17,
+      "dur": 4.67,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    },
+    {
+      "start": 20.83,
+      "dur": 4.83,
+      "frozen": 11,
+      "cam": -7,
+      "active": 96
+    },
+    {
+      "start": 25.67,
+      "dur": 10.0,
+      "frozen": 12,
+      "cam": -10,
+      "active": 98
+    },
+    {
+      "start": 35.67,
+      "dur": 1.17,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    },
+    {
+      "start": 37.0,
+      "dur": 1.5,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    },
+    {
+      "start": 38.83,
+      "dur": 0.5,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    },
+    {
+      "start": 39.5,
+      "dur": 0.67,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    },
+    {
+      "start": 40.33,
+      "dur": 20.0,
+      "frozen": 15,
+      "cam": -15,
+      "active": 100
+    }
+  ],
+  "detected_at": "2026-08-21 12:45:04"
+}

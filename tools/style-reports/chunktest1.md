@@ -1,0 +1,20 @@
+# Style profile — chunktest1_chunky.mp4
+
+| Metric | Value |
+|---|---|
+| Duration | 20.03s · 60.0fps · 1376x768 |
+| Shots | 5 |
+| Cut cadence | min 1.0s · p25 3.5 · median **3.5s** · mean 3.93 · p75 5.5 · max 6.17 |
+| Motion budget | 31% frozen / 0% camera / 72% character |
+| Camera | locked + puppets |
+| Bg color | rgb(121, 164, 158) · brightness 148 |
+| Palette | rgb(227,219,212), rgb(136,208,203), rgb(127,228,231), rgb(127,228,231), rgb(127,228,231) |
+
+## Shots
+| # | start | dur | frozen% | camera% | character% |
+|---|---|---|---|---|---|
+| 1 | 0.0 | 5.5 | 100 | 0 | 0 |
+| 2 | 5.5 | 6.17 | 8 | -8 | 100 |
+| 3 | 11.67 | 3.5 | 5 | -5 | 100 |
+| 4 | 15.17 | 1.0 | 0 | 0 | 100 |
+| 5 | 16.33 | 3.5 | 0 | 0 | 100 |
