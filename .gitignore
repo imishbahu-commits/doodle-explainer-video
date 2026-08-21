@@ -26,6 +26,8 @@ projects/dinzo-dronebee/work/
 projects/dinzo-hyena/work/
 projects/dinzo-octopus/work/
 projects/dinzo-seahorse/work/
+projects/dinzo-tiger/work/
+projects/dinzo-mammoth/work/
 
 # Keep the assembled dinzo mp4s (deliverables + rebuildable checkpoints)
 # even though *.mp4 is ignored globally.
@@ -36,3 +38,5 @@ projects/dinzo-seahorse/work/
 !projects/dinzo-hyena/*.mp4
 !projects/dinzo-octopus/*.mp4
 !projects/dinzo-seahorse/*.mp4
+!projects/dinzo-tiger/*.mp4
+!projects/dinzo-mammoth/*.mp4
