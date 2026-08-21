@@ -4,9 +4,10 @@
 >
 > A new chat should produce **animated hand-drawn explainer videos**:
 > hand-drawn PNG characters + backgrounds, real keyframe motion (slide-ins,
-> pops, punch-ins, puppet-rigged limbs), hard cuts every 2–6 s, 60 fps.
-> The entry point is `SKILL.md` + `skills/content-router/`; the measured
-> formula lives in `references/paint-explainer-autopsy.md`. The old static
+> local pose/prop/label moves and puppet-rigged limbs), noun-synced hard cuts,
+> and a locked camera. The entry point is `SKILL.md` +
+> `skills/content-router/`; the current four-video measured authority lives in
+> `references/paint-explainer-analysis-4v/`. The old static
 > three-band vertical format below is now the **legacy option**, used only
 > when explicitly requested.
 
@@ -21,8 +22,9 @@ python3 skills/asset-library/scripts/asset_fetch.py search dragon
 ```
 
 Key files: `SKILL.md` (formula + workflow) · `skills/content-router/SKILL.md`
-(stage map) · `references/paint-explainer-autopsy.md` (measured numbers) ·
-`references/paint-explainer-style.md` (motion grammar).
+(stage map) · `references/paint-explainer-analysis-4v/STYLE_SPEC.md` (current
+98,705-frame specification) · `references/paint-explainer-analysis-4v/style_rules.json`
+(machine-readable rules).
 
 ## Legacy mode — three-band vertical (still available)
 

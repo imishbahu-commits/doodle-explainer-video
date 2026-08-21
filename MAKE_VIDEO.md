@@ -84,6 +84,6 @@ prompts + per-beat motion.
 
 ## If in doubt
 
-Read `CLAUDE.md` (style rules) and `references/paint-explainer-autopsy.md`
+Read `CLAUDE.md`, `references/paint-explainer-analysis-4v/STYLE_SPEC.md`, and `references/paint-explainer-analysis-4v/style_rules.json`
 (the measured numbers). The reference style is The Paint Explainer —
 hand-drawn, bright, fast cuts. NOT cinematic, NOT dark, NOT static stills.

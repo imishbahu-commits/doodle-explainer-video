@@ -1,5 +1,9 @@
 # The Paint Explainer — animation style profile
 
+> **LEGACY HIGH-LEVEL PROFILE:** current measured rules are in
+> `paint-explainer-analysis-4v/STYLE_SPEC.md` and `style_rules.json`; those
+> values win whenever this profile conflicts.
+
 > High-level technique analysis of a public channel, for building original
 > work. Never copy their drawings, scripts, narration, or branding — extract
 > only the grammar. (Their own disclosures confirm the recipe: human-drawn

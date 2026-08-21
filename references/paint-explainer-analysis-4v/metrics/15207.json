@@ -1,0 +1,323 @@
+{
+  "identity": {
+    "file_id": "15207",
+    "file": "uploads/15207.mp4",
+    "sha256": "5459dc15e17f28353f7868087d8e2848d2eb0fec17d70c4fe5effaebdda2a8c5",
+    "youtube_id": "0Ms82OrNaF4",
+    "title": "The Craziest Ways History's Deadliest Warriors Died",
+    "upload_date": "2026-08-02"
+  },
+  "source_specs": {
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "frame_count": 22708,
+    "duration_seconds": 756.9333,
+    "timing_precision_seconds": 0.033333
+  },
+  "editing": {
+    "detected_shot_count": 224,
+    "detected_edit_event_count": 223,
+    "shot_duration_seconds": {
+      "min": 0.2,
+      "p25": 1.625,
+      "median": 2.6667,
+      "mean": 3.3792,
+      "p75": 3.8583,
+      "p90": 6.2733,
+      "max": 20.2
+    },
+    "shots_under_1s": 30,
+    "shots_1_to_6s": 169,
+    "shots_over_10s": 9,
+    "transition_counts": {
+      "hard_cut_full_frame": 166,
+      "hard_cut_same_palette": 56,
+      "localized_swap_or_pop": 1
+    },
+    "cut_to_nearest_word_abs_seconds": {
+      "min": 0.0,
+      "p25": 0.0333,
+      "median": 0.05,
+      "mean": 0.0537,
+      "p75": 0.0667,
+      "p90": 0.08,
+      "max": 0.43
+    },
+    "cuts_within_0_20s_of_word_start_pct": 99.55,
+    "cuts_within_0_35s_of_word_start_pct": 99.55
+  },
+  "motion": {
+    "shot_counts": {
+      "character_or_graphic_animation": 88,
+      "subtle_local_motion": 24,
+      "frozen_hold": 106,
+      "whole_canvas_slide": 5,
+      "short_graphic_sting": 1
+    },
+    "shot_percentages": {
+      "character_or_graphic_animation": 39.29,
+      "subtle_local_motion": 10.71,
+      "frozen_hold": 47.32,
+      "whole_canvas_slide": 2.23,
+      "short_graphic_sting": 0.45
+    },
+    "zoom_distance_pct": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    },
+    "zoom_speed_pct_per_s": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    }
+  },
+  "visual": {
+    "brightness": {
+      "min": 0.3536,
+      "p25": 0.7193,
+      "median": 0.7799,
+      "mean": 0.7803,
+      "p75": 0.8518,
+      "p90": 0.9394,
+      "max": 0.9846
+    },
+    "saturation": {
+      "min": 0.0,
+      "p25": 0.0726,
+      "median": 0.1247,
+      "mean": 0.1364,
+      "p75": 0.1725,
+      "p90": 0.2651,
+      "max": 0.4616
+    },
+    "white_background_fraction": {
+      "min": 0.074,
+      "p25": 0.275,
+      "median": 0.4944,
+      "mean": 0.4775,
+      "p75": 0.6333,
+      "p90": 0.8504,
+      "max": 0.9746
+    },
+    "frames_majority_white_pct": 48.66,
+    "significant_colors_per_frame": {
+      "min": 2.0,
+      "p25": 9.0,
+      "median": 13.0,
+      "mean": 13.8616,
+      "p75": 18.0,
+      "p90": 23.7,
+      "max": 32.0
+    },
+    "ink_centroid_x_normalized": {
+      "min": 0.1995,
+      "p25": 0.4642,
+      "median": 0.4972,
+      "mean": 0.4904,
+      "p75": 0.5177,
+      "p90": 0.5671,
+      "max": 0.7142
+    },
+    "ink_centroid_y_normalized": {
+      "min": 0.4092,
+      "p25": 0.5155,
+      "median": 0.553,
+      "mean": 0.5589,
+      "p75": 0.6011,
+      "p90": 0.6381,
+      "max": 0.7898
+    },
+    "estimated_black_stroke_width_px_at_360p": {
+      "min": 2.0,
+      "p25": 2.0,
+      "median": 2.0,
+      "mean": 2.7418,
+      "p75": 2.8,
+      "p90": 4.0,
+      "max": 8.0
+    },
+    "estimated_black_stroke_width_px_at_1080p": {
+      "min": 6.0,
+      "p25": 6.0,
+      "median": 6.0,
+      "mean": 8.225,
+      "p75": 8.4,
+      "p90": 12.0,
+      "max": 24.0
+    },
+    "dominant_quantized_palette": [
+      {
+        "hex": "#F0F0F0",
+        "relative_weight": 0.55739
+      },
+      {
+        "hex": "#101010",
+        "relative_weight": 0.05897
+      },
+      {
+        "hex": "#B0B0B0",
+        "relative_weight": 0.02823
+      },
+      {
+        "hex": "#909090",
+        "relative_weight": 0.02565
+      },
+      {
+        "hex": "#D0D0D0",
+        "relative_weight": 0.02103
+      },
+      {
+        "hex": "#909070",
+        "relative_weight": 0.01944
+      },
+      {
+        "hex": "#707070",
+        "relative_weight": 0.01895
+      },
+      {
+        "hex": "#907050",
+        "relative_weight": 0.01891
+      },
+      {
+        "hex": "#D0B0B0",
+        "relative_weight": 0.01745
+      },
+      {
+        "hex": "#B09070",
+        "relative_weight": 0.01744
+      },
+      {
+        "hex": "#B0F0F0",
+        "relative_weight": 0.01413
+      },
+      {
+        "hex": "#303030",
+        "relative_weight": 0.01374
+      }
+    ]
+  },
+  "audio": {
+    "integrated_lufs": -20.6,
+    "true_peak_dbfs": -2.77,
+    "lra_lu": 2.0,
+    "threshold_lufs": -30.68,
+    "sample_peak_dbfs": 0.221,
+    "sample_rms_dbfs": -20.659,
+    "estimated_tempo_bpm": 133.93,
+    "tempo_caveat": "Onset estimate includes narration and SFX; use as music-bed range evidence, not a clean stem BPM.",
+    "strongest_transient_times_seconds": [
+      67.008,
+      137.056,
+      162.56,
+      181.152,
+      214.88,
+      286.208,
+      294.304,
+      318.688,
+      339.552,
+      367.552,
+      386.176,
+      436.256,
+      455.936,
+      480.416,
+      603.36,
+      705.568,
+      718.912,
+      735.648,
+      741.216,
+      750.752
+    ],
+    "recognized_word_count": 2632,
+    "recognized_wpm_full_runtime": 208.63,
+    "recognized_wpm_speech_span": 208.81,
+    "inter_word_pause_seconds_ge_0_20": {
+      "min": 0.21,
+      "p25": 0.6,
+      "median": 0.63,
+      "mean": 0.6048,
+      "p75": 0.63,
+      "p90": 0.648,
+      "max": 0.66
+    },
+    "pause_count_ge_0_20": 25,
+    "pause_count_ge_0_50": 24,
+    "pause_count_ge_0_70": 0
+  },
+  "chapters": [
+    {
+      "start_seconds": 0,
+      "start": "00:00.000",
+      "title": "Sigurd the Mighty"
+    },
+    {
+      "start_seconds": 48,
+      "start": "00:48.000",
+      "title": "Dian Wei"
+    },
+    {
+      "start_seconds": 118,
+      "start": "01:58.000",
+      "title": "Emperor Valerian"
+    },
+    {
+      "start_seconds": 194,
+      "start": "03:14.000",
+      "title": "Gen. John Sedgwick"
+    },
+    {
+      "start_seconds": 244,
+      "start": "04:04.000",
+      "title": "Oleg of Novgorod"
+    },
+    {
+      "start_seconds": 300,
+      "start": "05:00.000",
+      "title": "Qin Shi Huang"
+    },
+    {
+      "start_seconds": 367,
+      "start": "06:07.000",
+      "title": "Attila the Hun"
+    },
+    {
+      "start_seconds": 456,
+      "start": "07:36.000",
+      "title": "Eleazar Maccabeus"
+    },
+    {
+      "start_seconds": 512,
+      "start": "08:32.000",
+      "title": "Mithridates VI of Pontus"
+    },
+    {
+      "start_seconds": 576,
+      "start": "09:36.000",
+      "title": "Frederick I (Barbarossa)"
+    },
+    {
+      "start_seconds": 620,
+      "start": "10:20.000",
+      "title": "Blackbeard"
+    },
+    {
+      "start_seconds": 680,
+      "start": "11:20.000",
+      "title": "Audie Murphy"
+    }
+  ],
+  "measurement_notes": [
+    "Edit events are one-frame abrupt visual boundaries at 30 fps. Localized swaps/pops are separated from full-frame hard cuts by changed-pixel area.",
+    "Motion transforms are inferred from flattened frames using ORB/RANSAC; exact AE curves and hidden layer anchors cannot be recovered.",
+    "Vosk transcript is used for timing/WPM; proper-noun spelling should be checked against the chapter list."
+  ]
+}

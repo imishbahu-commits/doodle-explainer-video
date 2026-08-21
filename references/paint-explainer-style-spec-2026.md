@@ -1,8 +1,14 @@
 # The Paint Explainer — Complete Animation Style Specification (2026)
 
+> **LEGACY / SUPERSEDED:** use `paint-explainer-analysis-4v/STYLE_SPEC.md`
+> and `paint-explainer-analysis-4v/style_rules.json`. The current four-video,
+> 98,705-frame analysis verified a locked camera and no sustained whole-scene
+> zooms; this older document contains speculative zoom/motion assumptions.
+
 > User-provided analysis (vision AI, frame-by-frame), target = "The
 > Deadliest Sea Animal From Every Single Period" (x2x0kjTBs48, 2026-08-16,
-> 13:25, 1920×1080, 60 fps). This file is the AUTHORITY for builds.
+> 13:25, 1920×1080, 60 fps). Historical note: this file is no longer the
+> authority for builds; use the four-video corpus linked above.
 > Engine: still hand-drawn PNGs + AE-style keyframe tracks (pos/scale/
 > rot/opacity + puppet-pin deformation).
 

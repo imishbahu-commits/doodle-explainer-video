@@ -1,6 +1,6 @@
 ---
 name: doodle-explainer-video
-description: Produce faceless hand-drawn explainer videos in the Paint Explainer style — human hand-drawn PNG characters and backgrounds animated with real keyframes (slide-ins, pops, punch-ins, puppet-rigged limbs, mouth shapes), fast AI narration, hard cuts every 2-6 seconds. Use when the user wants a faceless explainer video, a myth/creature/history list video, a "5-act" story video, or any narrated YouTube video with hand-drawn art. Covers script, style lock, image batching, keyframe animation, character rigging, audio, and assembly.
+description: Produce faceless hand-drawn explainer videos in the measured Paint Explainer style — human hand-drawn PNG characters and backgrounds, locked camera, hard noun-synced cuts, and sparse local keyframes (slide-ins, labels, pose swaps, puppet-rigged limbs; no routine lip sync). Use when the user wants a faceless explainer video, a myth/creature/history list video, a "5-act" story video, or any narrated YouTube video with hand-drawn art. Covers script, style lock, image batching, keyframe animation, character rigging, audio, and assembly.
 ---
 
 # Hand-drawn explainer video (Paint Explainer style)
@@ -29,23 +29,26 @@ palettes in an image prompt — that produces the WRONG (Zenn-like) style.
 **Pass the first accepted image as the reference image on every later
 generation.** This lock is what makes 100 images look like one hand.
 
-Reference: The Paint Explainer channel. Every measurement below was taken
-from the actual reference video ("Ancient Greek Myths That Turned Out to
-Be True", 11:09, 768K views) — see
-`references/paint-explainer-autopsy.md` for the full analysis.
+Reference: The Paint Explainer channel. The current authority is a four-video,
+54:50 corpus scanned across 98,705 frames. Read
+`references/paint-explainer-analysis-4v/STYLE_SPEC.md` and
+`references/paint-explainer-analysis-4v/style_rules.json`. These supersede the
+older single-video autopsy when values conflict.
 
 ## The measured formula (follow these numbers)
 
 | Rule | Value |
 |---|---|
-| Cut rhythm | **one cut every 2–6 seconds**, hard cuts only |
-| Motion budget | **55% frozen stills / 25% slow zoom / 20% active motion** |
-| Subject position | **dead center horizontally (x=0.50), slightly low (y≈0.58)** |
-| Backgrounds | **white or pastel — never dark** (avg brightness 0.71) |
-| Frame rate | **render at 60 fps** for smooth motion |
-| Chapter pauses | **exactly 0.7 s breath** between sections |
-| Art | human hand-drawn look: thick outlines, flat colors, white bg subjects |
-| Voice | steady measured narration; music bed quiet under the voice (−23 dB) |
+| Cut rhythm | **2.77 s median**; 70.30% of shots are 1–6 s; hard cuts/step swaps |
+| Word sync | visual changes **0.050 s before** nearest word start (median) |
+| Motion budget | **46.27% frozen / 40.83% active local / 11.72% subtle local / 0.95% canvas slides** |
+| Camera | **locked; zero sustained whole-scene zooms verified** |
+| Subject position | **center x≈0.50, slightly low y≈0.54–0.58** |
+| Backgrounds | topic-driven: white void, simple plate, or illustrated environment; no global film grain |
+| Timing source | measured at 30 fps (±0.033 s); author keyframe times independently of render fps |
+| Chapter pauses | **0.60–0.80 s target**; measured median 0.615 s |
+| Art | ~0.31%-width black contour, flat character fills, gradients reserved for world plates |
+| Voice | current target **204–209 WPM**, **−20.6 to −20.7 LUFS** master |
 
 ## The smart router is the entry point
 

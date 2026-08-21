@@ -1,0 +1,247 @@
+event,boundary_frame,timestamp_seconds,timestamp,preceding_shot_duration_seconds,chapter,transition_class,mean_abs_rgb,changed_fraction_gt20,changed_fraction_gt45,nearest_spoken_word,cut_minus_word_start_seconds
+1,56,1.8667,00:01.867,1.8667,The Ambulance Attack,hard_cut_same_palette,0.219588,0.408507,0.386198,in,-0.0833
+2,98,3.2667,00:03.267,1.4,The Ambulance Attack,hard_cut_full_frame,0.702467,0.879878,0.865156,a,-0.0633
+3,254,8.4667,00:08.467,5.2,The Ambulance Attack,hard_cut_full_frame,0.336746,0.843021,0.792552,the,-0.0533
+4,399,13.3,00:13.300,4.8333,The Ambulance Attack,hard_cut_full_frame,0.343013,0.846337,0.800017,that,-0.08
+5,429,14.3,00:14.300,1.0,The Ambulance Attack,hard_cut_full_frame,0.392639,0.858472,0.818733,and,-0.04
+6,481,16.0333,00:16.033,1.7333,The Ambulance Attack,hard_cut_same_palette,0.159742,0.353212,0.316667,he,-0.0767
+7,521,17.3667,00:17.367,1.3333,The Ambulance Attack,hard_cut_same_palette,0.156414,0.362066,0.330816,what,-0.0333
+8,537,17.9,00:17.900,0.5333,The Ambulance Attack,hard_cut_same_palette,0.0822,0.220903,0.013594,did,-0.04
+9,623,20.7667,00:20.767,2.8667,The Ambulance Attack,hard_cut_full_frame,0.361864,0.863524,0.846962,was,-0.0533
+10,811,27.0333,00:27.033,6.2667,The Ambulance Attack,hard_cut_full_frame,0.324818,0.857431,0.795885,capable,-0.0267
+11,894,29.8,00:29.800,2.7667,The Ambulance Attack,hard_cut_full_frame,0.264015,0.865955,0.647014,she,-0.05
+12,1064,35.4667,00:35.467,5.6667,The Ambulance Attack,hard_cut_full_frame,0.346776,0.877222,0.651875,the,-0.0533
+13,1179,39.3,00:39.300,3.8333,The Ambulance Attack,hard_cut_full_frame,0.296206,0.82059,0.719618,with,-0.06
+14,1524,50.8,00:50.800,11.5,The Ambulance Attack,hard_cut_full_frame,0.378269,0.854288,0.815278,then,-0.05
+15,1775,59.1667,00:59.167,8.3667,The Ambulance Attack,hard_cut_full_frame,0.388324,0.850764,0.803681,the,-0.0533
+16,1840,61.3333,01:01.333,2.1667,The Ambulance Attack,hard_cut_full_frame,0.284878,0.760503,0.689913,and,-0.0467
+17,1892,63.0667,01:03.067,1.7333,The Ambulance Attack,hard_cut_full_frame,0.161144,0.536545,0.277118,she,-0.0533
+18,1983,66.1,01:06.100,3.0333,The Ambulance Attack,hard_cut_full_frame,0.204292,0.570903,0.326024,her,-0.02
+19,2135,71.1667,01:11.167,5.0667,Bishnu Shrestha's Train,hard_cut_full_frame,0.339355,0.834931,0.758472,bishnu,-0.0533
+20,2158,71.9333,01:11.933,0.7667,Bishnu Shrestha's Train,hard_cut_same_palette,0.113373,0.293767,0.218403,shrestha,0.1433
+21,2205,73.5,01:13.500,1.5667,Bishnu Shrestha's Train,hard_cut_full_frame,0.324533,0.606979,0.546389,on,-0.03
+22,2266,75.5333,01:15.533,2.0333,Bishnu Shrestha's Train,hard_cut_full_frame,0.496547,0.888802,0.887604,a,-0.0667
+23,2331,77.7,01:17.700,2.1667,Bishnu Shrestha's Train,hard_cut_full_frame,0.326214,0.737344,0.621493,boarded,-0.03
+24,2433,81.1,01:21.100,3.4,Bishnu Shrestha's Train,hard_cut_full_frame,0.32564,0.754792,0.641372,they,-0.05
+25,2610,87.0,01:27.000,5.9,Bishnu Shrestha's Train,hard_cut_full_frame,0.188703,0.478333,0.420677,and,-0.06
+26,2695,89.8333,01:29.833,2.8333,Bishnu Shrestha's Train,hard_cut_full_frame,0.199695,0.493142,0.43533,then,-0.0467
+27,3111,103.7,01:43.700,13.8667,Bishnu Shrestha's Train,hard_cut_same_palette,0.066344,0.221476,0.161667,what,-0.04
+28,3217,107.2333,01:47.233,3.5333,Bishnu Shrestha's Train,hard_cut_full_frame,0.484196,0.879288,0.861806,bishnu,-0.0467
+29,3274,109.1333,01:49.133,1.9,Bishnu Shrestha's Train,hard_cut_full_frame,0.271179,0.53316,0.47526,the,0.0533
+30,3334,111.1333,01:51.133,2.0,Bishnu Shrestha's Train,hard_cut_full_frame,0.28146,0.612882,0.510833,one,-0.0467
+31,3400,113.3333,01:53.333,2.2,Bishnu Shrestha's Train,hard_cut_full_frame,0.23602,0.562066,0.444149,gurkhas,-0.0967
+32,3454,115.1333,01:55.133,1.8,Bishnu Shrestha's Train,hard_cut_full_frame,0.246053,0.58717,0.47,with,-0.0667
+33,3551,118.3667,01:58.367,3.2333,Bishnu Shrestha's Train,hard_cut_same_palette,0.200888,0.324375,0.315017,and,-0.0733
+34,3658,121.9333,02:01.933,3.5667,Bishnu Shrestha's Train,hard_cut_full_frame,0.48188,0.881059,0.861892,that,-0.0767
+35,3764,125.4667,02:05.467,3.5333,Bishnu Shrestha's Train,hard_cut_same_palette,0.075312,0.251719,0.177726,shrestha,-0.0533
+36,3990,133.0,02:13.000,7.5333,Bishnu Shrestha's Train,hard_cut_same_palette,0.075512,0.224549,0.173021,killing,-0.05
+37,4074,135.8,02:15.800,2.8,Bishnu Shrestha's Train,hard_cut_same_palette,0.076191,0.215278,0.162708,at,-0.07
+38,4395,146.5,02:26.500,10.7,Bishnu Shrestha's Train,hard_cut_full_frame,0.360322,0.826285,0.769288,when,-0.02
+39,4542,151.4,02:31.400,4.9,Bishnu Shrestha's Train,hard_cut_same_palette,0.185904,0.313455,0.308906,he,-0.07
+40,4763,158.7667,02:38.767,7.3667,Bishnu Shrestha's Train,hard_cut_full_frame,0.330292,0.630833,0.558385,the,-0.0533
+41,4786,159.5333,02:39.533,0.7667,The Viral Thief,hard_cut_same_palette,0.106676,0.253507,0.193628,thief,0.2033
+42,4808,160.2667,02:40.267,0.7333,The Viral Thief,hard_cut_full_frame,0.321206,0.575017,0.515399,in,-0.0833
+43,4862,162.0667,02:42.067,1.8,The Viral Thief,hard_cut_full_frame,0.372056,0.859722,0.854253,a,-0.0533
+44,4888,162.9333,02:42.933,0.8667,The Viral Thief,hard_cut_full_frame,0.30847,0.858125,0.784427,was,-0.0567
+45,4955,165.1667,02:45.167,2.2333,The Viral Thief,hard_cut_full_frame,0.30856,0.835608,0.75908,the,-0.0133
+46,5110,170.3333,02:50.333,5.1667,The Viral Thief,hard_cut_same_palette,0.09352,0.228142,0.206094,their,-0.0667
+47,5163,172.1,02:52.100,1.7667,The Viral Thief,hard_cut_full_frame,0.380001,0.822986,0.817969,among,-0.07
+48,5328,177.6,02:57.600,5.5,The Viral Thief,hard_cut_full_frame,0.404586,0.875764,0.86816,but,-0.03
+49,5428,180.9333,03:00.933,3.3333,The Viral Thief,hard_cut_full_frame,0.147849,0.538316,0.218663,made,-0.0567
+50,5476,182.5333,03:02.533,1.6,The Viral Thief,hard_cut_full_frame,0.388882,0.860382,0.848802,he,-0.0767
+51,5543,184.7667,03:04.767,2.2333,The Viral Thief,hard_cut_full_frame,0.374889,0.872344,0.855799,and,-0.0633
+52,5626,187.5333,03:07.533,2.7667,The Viral Thief,hard_cut_full_frame,0.38634,0.86776,0.850243,as,-0.0267
+53,5649,188.3,03:08.300,0.7667,The Viral Thief,localized_swap_or_pop,0.087528,0.12974,0.126285,every,-0.04
+54,5828,194.2667,03:14.267,5.9667,The Viral Thief,hard_cut_same_palette,0.135028,0.247483,0.238819,she,-0.0733
+55,5860,195.3333,03:15.333,1.0667,The Viral Thief,hard_cut_same_palette,0.163776,0.305399,0.27408,she,-0.0567
+56,5992,199.7333,03:19.733,4.4,The Viral Thief,hard_cut_full_frame,0.26512,0.546823,0.505486,her,-0.0367
+57,6070,202.3333,03:22.333,2.6,The Viral Thief,hard_cut_full_frame,0.26714,0.532691,0.494479,the,-0.0467
+58,6227,207.5667,03:27.567,5.2333,The Viral Thief,hard_cut_same_palette,0.113389,0.262899,0.238437,the,-0.0333
+59,6343,211.4333,03:31.433,3.8667,The Viral Thief,hard_cut_full_frame,0.286193,0.583924,0.530799,and,-0.0367
+60,6437,214.5667,03:34.567,3.1333,The Viral Thief,hard_cut_full_frame,0.279336,0.617726,0.565712,the,-0.0533
+61,6460,215.3333,03:35.333,0.7667,The Viral Thief,localized_swap_or_pop,0.036897,0.110191,0.076024,went,-0.0067
+62,6499,216.6333,03:36.633,1.3,The Viral Thief,hard_cut_same_palette,0.121329,0.27276,0.248542,with,-0.0567
+63,6629,220.9667,03:40.967,4.3333,The Viral Thief,hard_cut_full_frame,0.260021,0.554097,0.513837,that,-0.0433
+64,6647,221.5667,03:41.567,0.6,The Viral Thief,localized_swap_or_pop,0.059724,0.177969,0.133247,had,-0.0733
+65,6673,222.4333,03:42.433,0.8667,The Viral Thief,hard_cut_full_frame,0.330632,0.8575,0.798889,and,-0.0767
+66,6768,225.6,03:45.600,3.1667,The Viral Thief,hard_cut_full_frame,0.366893,0.861146,0.769306,the,-0.09
+67,6789,226.3,03:46.300,0.7,The Ecole-Valentin Incident,hard_cut_same_palette,0.093051,0.205833,0.16566,valentine,-0.14
+68,6844,228.1333,03:48.133,1.8333,The Ecole-Valentin Incident,hard_cut_same_palette,0.232125,0.398229,0.344427,on,-0.0467
+69,6915,230.5,03:50.500,2.3667,The Ecole-Valentin Incident,hard_cut_full_frame,0.217896,0.851892,0.348733,two,0.01
+70,6985,232.8333,03:52.833,2.3333,The Ecole-Valentin Incident,hard_cut_full_frame,0.291331,0.830087,0.586736,and,0.0333
+71,7019,233.9667,03:53.967,1.1333,The Ecole-Valentin Incident,hard_cut_full_frame,0.23788,0.48875,0.44941,a,-0.0633
+72,7075,235.8333,03:55.833,1.8667,The Ecole-Valentin Incident,hard_cut_full_frame,0.248358,0.797552,0.407361,the,-0.0567
+73,7221,240.7,04:00.700,4.8667,The Ecole-Valentin Incident,hard_cut_same_palette,0.103582,0.260764,0.203038,and,-0.05
+74,7310,243.6667,04:03.667,2.9667,The Ecole-Valentin Incident,hard_cut_same_palette,0.117071,0.273681,0.22842,what,-0.0533
+75,7402,246.7333,04:06.733,3.0667,The Ecole-Valentin Incident,hard_cut_same_palette,0.1212,0.299479,0.204809,eleven,-0.1067
+76,7476,249.2,04:09.200,2.4667,The Ecole-Valentin Incident,hard_cut_full_frame,0.32523,0.822378,0.587691,were,-0.07
+77,7584,252.8,04:12.800,3.6,The Ecole-Valentin Incident,hard_cut_full_frame,0.343554,0.632934,0.581042,described,-0.07
+78,7685,256.1667,04:16.167,3.3667,The Ecole-Valentin Incident,hard_cut_full_frame,0.250507,0.760503,0.36474,the,-0.0333
+79,7740,258.0,04:18.000,1.8333,The Ecole-Valentin Incident,hard_cut_full_frame,0.260791,0.805347,0.403108,containing,0.0
+80,7815,260.5,04:20.500,2.5,The Ecole-Valentin Incident,hard_cut_full_frame,0.269728,0.803941,0.423507,the,-0.08
+81,7881,262.7,04:22.700,2.2,The Ecole-Valentin Incident,hard_cut_same_palette,0.136649,0.301597,0.247986,they,-0.07
+82,7924,264.1333,04:24.133,1.4333,The Ecole-Valentin Incident,hard_cut_same_palette,0.137206,0.335799,0.274219,so,-0.0467
+83,7985,266.1667,04:26.167,2.0333,The Ecole-Valentin Incident,hard_cut_same_palette,0.152562,0.378872,0.271198,the,-0.0833
+84,8088,269.6,04:29.600,3.4333,The Ecole-Valentin Incident,hard_cut_full_frame,0.216484,0.707031,0.360382,they,-0.04
+85,8518,283.9333,04:43.933,14.3333,The Ecole-Valentin Incident,hard_cut_full_frame,0.206848,0.690017,0.303941,none,-0.0767
+86,8597,286.5667,04:46.567,2.6333,The Ecole-Valentin Incident,hard_cut_full_frame,0.294943,0.860382,0.469687,the,-0.0233
+87,8621,287.3667,04:47.367,0.8,The Medieval Battle,hard_cut_same_palette,0.15686,0.378142,0.292587,battle,0.1467
+88,8645,288.1667,04:48.167,0.8,The Medieval Battle,hard_cut_full_frame,0.288975,0.542569,0.515365,on,-0.0733
+89,8720,290.6667,04:50.667,2.5,The Medieval Battle,hard_cut_full_frame,0.341998,0.864045,0.64941,a,-0.0633
+90,8880,296.0,04:56.000,5.3333,The Medieval Battle,hard_cut_full_frame,0.377168,0.868229,0.699861,she,-0.07
+91,8980,299.3333,04:59.333,3.3333,The Medieval Battle,hard_cut_full_frame,0.362251,0.861337,0.68842,but,-0.0367
+92,9185,306.1667,05:06.167,6.8333,The Medieval Battle,hard_cut_same_palette,0.121586,0.409913,0.268316,who,-0.0433
+93,9273,309.1,05:09.100,2.9333,The Medieval Battle,hard_cut_same_palette,0.12298,0.408906,0.260451,when,-0.05
+94,9344,311.4667,05:11.467,2.3667,The Medieval Battle,hard_cut_same_palette,0.108139,0.282326,0.244236,and,-0.0533
+95,9414,313.8,05:13.800,2.3333,The Medieval Battle,hard_cut_full_frame,0.181439,0.487882,0.342552,then,-0.09
+96,9464,315.4667,05:15.467,1.6667,The Medieval Battle,hard_cut_full_frame,0.317116,0.869219,0.628333,two,-0.0433
+97,9487,316.2333,05:16.233,0.7667,The Medieval Battle,hard_cut_full_frame,0.346651,0.841042,0.677413,the,-0.0267
+98,9690,323.0,05:23.000,6.7667,The Medieval Battle,hard_cut_full_frame,0.351127,0.857882,0.65434,was,-0.07
+99,9764,325.4667,05:25.467,2.4667,The Medieval Battle,hard_cut_full_frame,0.324745,0.863125,0.655833,who's,-0.0333
+100,10046,334.8667,05:34.867,9.4,The Medieval Battle,hard_cut_same_palette,0.154139,0.404358,0.266233,the,-0.0533
+101,10085,336.1667,05:36.167,1.3,The Medieval Battle,hard_cut_same_palette,0.158008,0.414844,0.268872,ball,-0.0133
+102,10119,337.3,05:37.300,1.1333,The Medieval Battle,hard_cut_full_frame,0.335007,0.86099,0.669948,his,-0.05
+103,10181,339.3667,05:39.367,2.0667,The Medieval Battle,hard_cut_full_frame,0.344978,0.870052,0.66684,door,-0.0833
+104,10504,350.1333,05:50.133,10.7667,The Medieval Battle,hard_cut_full_frame,0.278522,0.801215,0.695087,police,-0.0567
+105,10589,352.9667,05:52.967,2.8333,The Medieval Battle,hard_cut_same_palette,0.071937,0.219653,0.142795,directly,-0.0733
+106,10615,353.8333,05:53.833,0.8667,The Medieval Battle,hard_cut_full_frame,0.344967,0.796389,0.654601,raul,-0.0767
+107,10660,355.3333,05:55.333,1.5,The Medieval Battle,hard_cut_full_frame,0.335382,0.742049,0.611875,before,-0.0467
+108,10786,359.5333,05:59.533,4.2,The Clifton Man,hard_cut_full_frame,0.424362,0.88776,0.789062,the,-0.0467
+109,10810,360.3333,06:00.333,0.8,The Clifton Man,hard_cut_same_palette,0.13534,0.34599,0.247934,man,0.2433
+110,10829,360.9667,06:00.967,0.6333,The Clifton Man,hard_cut_full_frame,0.421473,0.797778,0.719444,in,-0.0533
+111,10931,364.3667,06:04.367,3.4,The Clifton Man,hard_cut_full_frame,0.40882,0.909566,0.888281,a,-0.0733
+112,11009,366.9667,06:06.967,2.6,The Clifton Man,hard_cut_full_frame,0.313756,0.911094,0.848906,had,-0.0533
+113,11117,370.5667,06:10.567,3.6,The Clifton Man,hard_cut_full_frame,0.699567,0.937726,0.922535,fear,-0.1133
+114,11159,371.9667,06:11.967,1.4,The Clifton Man,hard_cut_full_frame,0.298774,0.574253,0.54599,and,-0.0633
+115,11224,374.1333,06:14.133,2.1667,The Clifton Man,hard_cut_same_palette,0.176022,0.318854,0.291406,police,-0.0567
+116,11479,382.6333,06:22.633,8.5,The Clifton Man,hard_cut_full_frame,0.611228,0.938819,0.929444,and,-0.0467
+117,11519,383.9667,06:23.967,1.3333,The Clifton Man,hard_cut_full_frame,0.618062,0.940556,0.928698,female,-0.0633
+118,11658,388.6,06:28.600,4.6333,The Clifton Man,hard_cut_full_frame,0.622293,0.941302,0.934323,operation,-0.08
+119,11694,389.8,06:29.800,1.2,The Clifton Man,hard_cut_full_frame,0.636013,0.944792,0.944097,these,-0.08
+120,11761,392.0333,06:32.033,2.2333,The Clifton Man,hard_cut_full_frame,0.60099,0.936701,0.92474,night,-0.0367
+121,11895,396.5,06:36.500,4.4667,The Clifton Man,hard_cut_full_frame,0.751109,0.950052,0.947118,then,-0.07
+122,12018,400.6,06:40.600,4.1,The Clifton Man,hard_cut_full_frame,0.459688,0.944618,0.937431,a,-0.08
+123,12154,405.1333,06:45.133,4.5333,The Clifton Man,hard_cut_same_palette,0.08918,0.273715,0.220608,the,-0.0467
+124,12297,409.9,06:49.900,4.7667,The Clifton Man,hard_cut_same_palette,0.080017,0.249427,0.197726,what,-0.08
+125,12357,411.9,06:51.900,2.0,The Clifton Man,hard_cut_same_palette,0.074393,0.227587,0.187083,was,-0.03
+126,12561,418.7,06:58.700,6.8,The Clifton Man,hard_cut_same_palette,0.083564,0.251615,0.198854,evans,-0.04
+127,12677,422.5667,07:02.567,3.8667,The Clifton Man,hard_cut_same_palette,0.08919,0.22533,0.188906,the,-0.0433
+128,12762,425.4,07:05.400,2.8333,The Clifton Man,hard_cut_full_frame,0.348915,0.695538,0.671701,they,-0.06
+129,12812,427.0667,07:07.067,1.6667,The Clifton Man,hard_cut_full_frame,0.371593,0.682135,0.59559,a,-0.0733
+130,12892,429.7333,07:09.733,2.6667,The Clifton Man,hard_cut_full_frame,0.223051,0.714514,0.414288,but,-0.0467
+131,12966,432.2,07:12.200,2.4667,The Clifton Man,hard_cut_full_frame,0.410434,0.910521,0.884427,and,-0.07
+132,12996,433.2,07:13.200,1.0,The Clifton Man,hard_cut_full_frame,0.705014,0.947396,0.93901,before,-0.06
+133,13038,434.6,07:14.600,1.4,The Clifton Man,hard_cut_full_frame,0.324949,0.877014,0.76684,he,-0.04
+134,13113,437.1,07:17.100,2.5,The Clifton Man,hard_cut_full_frame,0.436232,0.852205,0.826944,becoming,-0.03
+135,13184,439.4667,07:19.467,2.3667,The Clifton Man,hard_cut_full_frame,0.403578,0.842118,0.803038,having,-0.0933
+136,13268,442.2667,07:22.267,2.8,The Clifton Man,hard_cut_full_frame,0.465799,0.858542,0.852622,however,-0.1133
+137,13549,451.6333,07:31.633,9.3667,The Clifton Man,hard_cut_full_frame,0.391775,0.807899,0.707847,the,-0.0467
+138,13573,452.4333,07:32.433,0.8,The Clifton Man,hard_cut_same_palette,0.104742,0.285469,0.197292,tub,0.0033
+139,13598,453.2667,07:33.267,0.8333,The Clifton Man,hard_cut_full_frame,0.439159,0.785538,0.703351,between,-0.0033
+140,13697,456.5667,07:36.567,3.3,The Acid Bathtub,hard_cut_full_frame,0.186876,0.443698,0.33309,murdered,-0.0333
+141,13805,460.1667,07:40.167,3.6,The Acid Bathtub,hard_cut_full_frame,0.417852,0.853733,0.796007,dissolving,-0.0333
+142,13872,462.4,07:42.400,2.2333,The Acid Bathtub,hard_cut_full_frame,0.483891,0.863802,0.829028,in,-0.05
+143,13910,463.6667,07:43.667,1.2667,The Acid Bathtub,hard_cut_same_palette,0.213607,0.370347,0.362882,he,-0.0433
+144,14141,471.3667,07:51.367,7.7,The Acid Bathtub,hard_cut_full_frame,0.358046,0.738299,0.647639,halo,-0.0533
+145,14231,474.3667,07:54.367,3.0,The Acid Bathtub,localized_swap_or_pop,0.040283,0.01724,0.015017,she,-0.0533
+146,14256,475.2,07:55.200,0.8333,The Acid Bathtub,localized_swap_or_pop,0.04204,0.025069,0.021076,but,-0.06
+147,14304,476.8,07:56.800,1.6,The Acid Bathtub,hard_cut_same_palette,0.096388,0.21809,0.201632,and,0.04
+148,14438,481.2667,08:01.267,4.4667,The Acid Bathtub,localized_swap_or_pop,0.043533,0.022674,0.018194,hey,-0.0833
+149,14478,482.6,08:02.600,1.3333,The Acid Bathtub,hard_cut_full_frame,0.519136,0.87776,0.858837,which,-0.07
+150,14517,483.9,08:03.900,1.3,The Acid Bathtub,hard_cut_same_palette,0.230465,0.415503,0.404774,unlike,-0.06
+151,14639,487.9667,08:07.967,4.0667,The Acid Bathtub,hard_cut_full_frame,0.234968,0.622778,0.43375,forcing,-0.0733
+152,14740,491.3333,08:11.333,3.3667,The Acid Bathtub,hard_cut_full_frame,0.239538,0.785069,0.492465,over,-0.0667
+153,14843,494.7667,08:14.767,3.4333,The Acid Bathtub,hard_cut_full_frame,0.246647,0.793906,0.522951,then,-0.0533
+154,14978,499.2667,08:19.267,4.5,The Acid Bathtub,hard_cut_full_frame,0.197678,0.720816,0.338663,in,-0.0533
+155,15154,505.1333,08:25.133,5.8667,The Acid Bathtub,hard_cut_full_frame,0.209448,0.711962,0.381875,however,-0.0967
+156,15241,508.0333,08:28.033,2.9,The Acid Bathtub,hard_cut_full_frame,0.207919,0.712257,0.377812,three,-0.0767
+157,15410,513.6667,08:33.667,5.6333,The Acid Bathtub,hard_cut_full_frame,0.179061,0.831997,0.34901,as,-0.0533
+158,15540,518.0,08:38.000,4.3333,The Acid Bathtub,hard_cut_full_frame,0.480635,0.874566,0.845486,mrs,-0.04
+159,15836,527.8667,08:47.867,9.8667,The Acid Bathtub,hard_cut_full_frame,0.441393,0.788542,0.712344,the,-0.0433
+160,15859,528.6333,08:48.633,0.7667,The Acid Bathtub,hard_cut_same_palette,0.104463,0.261424,0.19533,bag,0.1233
+161,15885,529.5,08:49.500,0.8667,The Acid Bathtub,hard_cut_full_frame,0.305046,0.542882,0.472465,on,-0.03
+162,15967,532.2333,08:52.233,2.7333,The Venomous Bag,hard_cut_full_frame,0.273907,0.494931,0.481719,a,-0.0867
+163,16365,545.5,09:05.500,13.2667,The Venomous Bag,hard_cut_same_palette,0.145301,0.283403,0.254306,the,-0.05
+164,16565,552.1667,09:12.167,6.6667,The Venomous Bag,hard_cut_full_frame,0.268022,0.637691,0.578646,inside,-0.0733
+165,16626,554.2,09:14.200,2.0333,The Venomous Bag,localized_swap_or_pop,0.046449,0.099722,0.040069,red,-0.02
+166,16696,556.5333,09:16.533,2.3333,The Venomous Bag,hard_cut_full_frame,0.264191,0.634479,0.565191,the,-0.0567
+167,16818,560.6,09:20.600,4.0667,The Venomous Bag,hard_cut_full_frame,0.288788,0.493038,0.466944,it's,-0.07
+168,16844,561.4667,09:21.467,0.8667,The Venomous Bag,localized_swap_or_pop,0.11472,0.168472,0.157292,significant,-0.0433
+169,16927,564.2333,09:24.233,2.7667,The Venomous Bag,localized_swap_or_pop,0.113733,0.169253,0.158316,and,-0.0667
+170,16967,565.5667,09:25.567,1.3333,The Venomous Bag,hard_cut_same_palette,0.256015,0.418611,0.411042,if,-0.0533
+171,17149,571.6333,09:31.633,6.0667,The Venomous Bag,hard_cut_full_frame,0.253384,0.441007,0.428073,luckily,-0.0767
+172,17201,573.3667,09:33.367,1.7333,The Venomous Bag,hard_cut_full_frame,0.263229,0.45283,0.437934,and,-0.0533
+173,17493,583.1,09:43.100,9.7333,The Venomous Bag,hard_cut_full_frame,0.344755,0.694583,0.61625,sauces,-0.07
+174,17517,583.9,09:43.900,0.8,The Venomous Bag,hard_cut_same_palette,0.107491,0.26158,0.198681,revenge,0.22
+175,17543,584.7667,09:44.767,0.8667,The Venomous Bag,hard_cut_full_frame,0.311679,0.624531,0.548889,if,-0.0533
+176,17587,586.2333,09:46.233,1.4667,Zoz's Revenge,hard_cut_same_palette,0.188209,0.290347,0.287101,the,-0.0567
+177,17850,595.0,09:55.000,8.7667,Zoz's Revenge,hard_cut_full_frame,0.359695,0.522344,0.501962,at,0.01
+178,17936,597.8667,09:57.867,2.8667,Zoz's Revenge,hard_cut_full_frame,0.359548,0.840434,0.571701,when,-0.0333
+179,18085,602.8333,10:02.833,4.9667,Zoz's Revenge,hard_cut_full_frame,0.218649,0.793299,0.321111,was,-0.0767
+180,18200,606.6667,10:06.667,3.8333,Zoz's Revenge,hard_cut_full_frame,0.219679,0.793247,0.335469,he,-0.0833
+181,18236,607.8667,10:07.867,1.2,Zoz's Revenge,hard_cut_same_palette,0.041956,0.240017,0.013819,critical,-0.0533
+182,18261,608.7,10:08.700,0.8333,Zoz's Revenge,hard_cut_full_frame,0.270033,0.829253,0.409392,he,-0.09
+183,18307,610.2333,10:10.233,1.5333,Zoz's Revenge,hard_cut_same_palette,0.211963,0.390104,0.321094,the,-0.0167
+184,18364,612.1333,10:12.133,1.9,Zoz's Revenge,hard_cut_same_palette,0.204681,0.352066,0.318056,czars,-0.0967
+185,18426,614.2,10:14.200,2.0667,Zoz's Revenge,hard_cut_same_palette,0.153645,0.289653,0.256771,he,-0.07
+186,18532,617.7333,10:17.733,3.5333,Zoz's Revenge,hard_cut_same_palette,0.175305,0.351771,0.31592,to,-0.0467
+187,18629,620.9667,10:20.967,3.2333,Zoz's Revenge,hard_cut_same_palette,0.170216,0.382969,0.331944,he,-0.0833
+188,18844,628.1333,10:28.133,7.1667,Zoz's Revenge,hard_cut_same_palette,0.173115,0.388507,0.336337,czars,-0.0567
+189,18979,632.6333,10:32.633,4.5,Zoz's Revenge,hard_cut_same_palette,0.176403,0.384618,0.333941,his,-0.0567
+190,19373,645.7667,10:45.767,13.1333,Zoz's Revenge,hard_cut_same_palette,0.190385,0.412708,0.35342,and,-0.0933
+191,19455,648.5,10:48.500,2.7333,Zoz's Revenge,hard_cut_same_palette,0.115028,0.267569,0.226979,czars,-0.09
+192,19574,652.4667,10:52.467,3.9667,Zoz's Revenge,hard_cut_same_palette,0.166104,0.319826,0.293906,he,-0.0833
+193,19653,655.1,10:55.100,2.6333,Zoz's Revenge,hard_cut_full_frame,0.32202,0.844757,0.785625,which,-0.06
+194,19733,657.7667,10:57.767,2.6667,Zoz's Revenge,hard_cut_full_frame,0.255993,0.764809,0.572795,czars,-0.0633
+195,19863,662.1,11:02.100,4.3333,Zoz's Revenge,hard_cut_same_palette,0.158022,0.291372,0.260556,and,-0.08
+196,19941,664.7,11:04.700,2.6,Zoz's Revenge,hard_cut_full_frame,0.475123,0.735174,0.676076,the,-0.06
+197,19964,665.4667,11:05.467,0.7667,Zoz's Revenge,hard_cut_same_palette,0.108672,0.269566,0.189288,case,0.1967
+198,19987,666.2333,11:06.233,0.7667,Zoz's Revenge,hard_cut_full_frame,0.326741,0.607778,0.547656,this,-0.0567
+199,20242,674.7333,11:14.733,8.5,The McVey Case,hard_cut_full_frame,0.690143,0.873142,0.861181,on,-0.0467
+200,20751,691.7,11:31.700,16.9667,The McVey Case,hard_cut_full_frame,0.692249,0.862448,0.858142,he,-0.09
+201,20842,694.7333,11:34.733,3.0333,The McVey Case,hard_cut_same_palette,0.249843,0.382378,0.364097,across,0.0333
+202,20880,696.0,11:36.000,1.2667,The McVey Case,hard_cut_full_frame,0.529645,0.799392,0.705122,to,-0.05
+203,20951,698.3667,11:38.367,2.3667,The McVey Case,hard_cut_full_frame,0.241201,0.882326,0.763281,while,-0.0533
+204,21102,703.4,11:43.400,5.0333,The McVey Case,hard_cut_full_frame,0.456679,0.858056,0.840972,she,-0.06
+205,21192,706.4,11:46.400,3.0,The McVey Case,hard_cut_full_frame,0.427757,0.800469,0.785573,committed,-0.09
+206,21594,719.8,11:59.800,13.4,The McVey Case,hard_cut_full_frame,0.346079,0.865035,0.697587,and,-0.07
+207,21615,720.5,12:00.500,0.7,The McVey Case,hard_cut_full_frame,0.254678,0.861788,0.398194,when,-0.03
+208,21741,724.7,12:04.700,4.2,The McVey Case,hard_cut_full_frame,0.343929,0.862378,0.826389,officers,-0.06
+209,21856,728.5333,12:08.533,3.8333,The McVey Case,hard_cut_full_frame,0.222718,0.594253,0.502951,long,-0.0367
+210,21926,730.8667,12:10.867,2.3333,The McVey Case,hard_cut_full_frame,0.469214,0.854062,0.851042,then,-0.0733
+211,22005,733.5,12:13.500,2.6333,The McVey Case,hard_cut_full_frame,0.304749,0.884774,0.628108,lisa,-0.08
+212,22278,742.6,12:22.600,9.1,The McVey Case,hard_cut_full_frame,0.328271,0.88375,0.728646,the,-0.04
+213,22302,743.4,12:23.400,0.8,The McVey Case,hard_cut_same_palette,0.101521,0.264757,0.188542,incident,0.222
+214,22326,744.2,12:24.200,0.8,The McVey Case,hard_cut_full_frame,0.34025,0.587899,0.527986,in,-0.06
+215,22358,745.2667,12:25.267,1.0667,The McVey Case,hard_cut_same_palette,0.174944,0.345139,0.340365,twenty,-0.0733
+216,22502,750.0667,12:30.067,4.8,The Corti Incident,hard_cut_full_frame,0.240425,0.869028,0.347847,possibly,-0.0433
+217,22626,754.2,12:34.200,4.1333,The Corti Incident,hard_cut_full_frame,0.240309,0.844375,0.342656,the,-0.05
+218,22686,756.2,12:36.200,2.0,The Corti Incident,hard_cut_full_frame,0.255994,0.86566,0.40401,it,0.0
+219,22870,762.3333,12:42.333,6.1333,The Corti Incident,localized_swap_or_pop,0.073788,0.084774,0.048802,but,-0.0467
+220,22923,764.1,12:44.100,1.7667,The Corti Incident,localized_swap_or_pop,0.076625,0.094427,0.05684,much,-0.08
+221,23154,771.8,12:51.800,7.7,The Corti Incident,hard_cut_full_frame,0.338365,0.873889,0.499479,who,-0.09
+222,23230,774.3333,12:54.333,2.5333,The Corti Incident,hard_cut_full_frame,0.335363,0.874392,0.491962,corti,-0.0467
+223,23482,782.7333,13:02.733,8.4,The Corti Incident,hard_cut_full_frame,0.19546,0.444149,0.355087,when,-0.0767
+224,23667,788.9,13:08.900,6.1667,The Corti Incident,hard_cut_full_frame,0.279451,0.816389,0.627934,the,-0.06
+225,23714,790.4667,13:10.467,1.5667,The Corti Incident,hard_cut_full_frame,0.276411,0.817083,0.636979,told,-0.0833
+226,23753,791.7667,13:11.767,1.3,The Corti Incident,hard_cut_full_frame,0.26902,0.855503,0.614705,before,-0.0733
+227,23844,794.8,13:14.800,3.0333,The Corti Incident,hard_cut_full_frame,0.396244,0.897361,0.815677,escape,-0.07
+228,23866,795.5333,13:15.533,0.7333,The Corti Incident,hard_cut_same_palette,0.104256,0.250955,0.193507,escape,-0.0867
+229,23905,796.8333,13:16.833,1.3,The Corti Incident,hard_cut_same_palette,0.23162,0.406233,0.354045,in,-0.0767
+230,23990,799.6667,13:19.667,2.8333,The Corti Incident,hard_cut_full_frame,0.364854,0.869549,0.856528,a,-0.0633
+231,24137,804.5667,13:24.567,4.9,Escape from Escape Room,hard_cut_full_frame,0.190685,0.751389,0.441163,the,-0.0533
+232,24206,806.8667,13:26.867,2.3,Escape from Escape Room,hard_cut_full_frame,0.257092,0.869896,0.543924,and,-0.0633
+233,24362,812.0667,13:32.067,5.2,Escape from Escape Room,hard_cut_full_frame,0.207988,0.565781,0.478385,unfortunately,-0.0833
+234,24611,820.3667,13:40.367,8.3,Escape from Escape Room,hard_cut_full_frame,0.499737,0.867083,0.851615,and,-0.0933
+235,24672,822.4,13:42.400,2.0333,Escape from Escape Room,hard_cut_full_frame,0.678787,0.884097,0.875573,according,-0.07
+236,24699,823.3,13:43.300,0.9,Escape from Escape Room,hard_cut_full_frame,0.676265,0.883889,0.875903,the,-0.0433
+237,24876,829.2,13:49.200,5.9,Escape from Escape Room,hard_cut_full_frame,0.324045,0.84875,0.801111,wardlaw,-0.08
+238,24957,831.9,13:51.900,2.7,Escape from Escape Room,hard_cut_full_frame,0.333831,0.855052,0.823038,trying,-0.05
+239,25034,834.4667,13:54.467,2.5667,Escape from Escape Room,hard_cut_full_frame,0.415695,0.871042,0.84184,he,-0.0633
+240,25124,837.4667,13:57.467,3.0,Escape from Escape Room,hard_cut_full_frame,0.218039,0.711997,0.43026,so,-0.0633
+241,25276,842.5333,14:02.533,5.0667,Escape from Escape Room,hard_cut_full_frame,0.279539,0.710191,0.489358,by,-0.0667
+242,25375,845.8333,14:05.833,3.3,Escape from Escape Room,hard_cut_full_frame,0.229608,0.702187,0.491597,but,-0.0667
+243,25471,849.0333,14:09.033,3.2,Escape from Escape Room,hard_cut_full_frame,0.250774,0.86691,0.411458,he,-0.0467
+244,25530,851.0,14:11.000,1.9667,Escape from Escape Room,hard_cut_full_frame,0.301993,0.673073,0.565816,the,-0.06
+245,25558,851.9333,14:11.933,0.9333,Escape from Escape Room,hard_cut_full_frame,0.228066,0.696163,0.450833,had,-0.0567
+246,25790,859.6667,14:19.667,7.7333,Escape from Escape Room,hard_cut_full_frame,0.363188,0.872812,0.814306,if,-0.0933

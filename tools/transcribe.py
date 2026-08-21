@@ -15,6 +15,7 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
 
 import imageio_ffmpeg
 from vosk import KaldiRecognizer, Model
@@ -73,7 +74,14 @@ def main():
     args = ap.parse_args()
 
     workdir = os.path.dirname(os.path.abspath(args.input)) or "."
-    wav = os.path.join(workdir, "_tmp_16k.wav")
+    # A fixed `_tmp_16k.wav` races when several videos are transcribed in
+    # parallel. Give every process its own scratch file in the media folder.
+    fd, wav = tempfile.mkstemp(
+        prefix=f"_{os.path.splitext(os.path.basename(args.input))[0]}_",
+        suffix="_16k.wav",
+        dir=workdir,
+    )
+    os.close(fd)
     try:
         print(f"[1/3] converting {args.input} -> 16kHz mono wav", file=sys.stderr)
         to_wav16k(args.input, wav)

@@ -139,10 +139,20 @@ templates above instead.
 
 ## Files to read as needed
 
+> **Current measured authority (read first for Paint Explainer builds):**
+> `references/paint-explainer-analysis-4v/STYLE_SPEC.md` plus
+> `references/paint-explainer-analysis-4v/style_rules.json`. This four-video,
+> 98,705-frame corpus supersedes older single-video/speculative motion numbers.
+> Critical correction: camera is locked; no sustained whole-scene zoom was
+> verified. Use hard cuts plus local pose/prop/label animation.
+
 | Question | File |
 |---|---|
-| Exact format numbers | `references/paint-explainer-autopsy.md` |
-| Motion grammar (moves) | `references/paint-explainer-style.md` |
+| Current complete style specification | `references/paint-explainer-analysis-4v/STYLE_SPEC.md` |
+| Machine-readable current rules | `references/paint-explainer-analysis-4v/style_rules.json` |
+| Every measured cut/shot | `references/paint-explainer-analysis-4v/CUT_LIST.md` + `cuts/` |
+| Legacy single-video format numbers | `references/paint-explainer-autopsy.md` |
+| Legacy motion grammar | `references/paint-explainer-style.md` |
 | Which skill fires when | `skills/content-router/SKILL.md` |
 | Script formats for any niche | `skills/youtube-script/references/formats.md` |
 | Image supply chain | `skills/image-queue/SKILL.md` |

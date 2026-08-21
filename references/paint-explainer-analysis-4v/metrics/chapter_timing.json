@@ -1,0 +1,376 @@
+{
+  "method": "Gap from last recognized word end before chapter timestamp to first recognized word start after it; Vosk timing, \u00b10.03 s typical.",
+  "videos": [
+    {
+      "file_id": "15204",
+      "title": "The Deadliest Sea Animal From Every Single Period",
+      "boundary_count": 11,
+      "gap_summary_seconds": {
+        "min": 0.0,
+        "median": 0.63,
+        "mean": 0.8046,
+        "max": 1.29
+      },
+      "boundaries": [
+        {
+          "chapter": "Ordovician",
+          "chapter_start_seconds": 50,
+          "gap_seconds": 1.29,
+          "word_before": "it's",
+          "word_after": "or"
+        },
+        {
+          "chapter": "Silurian",
+          "chapter_start_seconds": 117,
+          "gap_seconds": 1.26,
+          "word_before": "top",
+          "word_after": "on"
+        },
+        {
+          "chapter": "Devonian",
+          "chapter_start_seconds": 178,
+          "gap_seconds": 0.63,
+          "word_before": "period",
+          "word_after": "devonian"
+        },
+        {
+          "chapter": "Carboniferous",
+          "chapter_start_seconds": 241,
+          "gap_seconds": 0.6,
+          "word_before": "history",
+          "word_after": "carboniferous"
+        },
+        {
+          "chapter": "Permian",
+          "chapter_start_seconds": 300,
+          "gap_seconds": 0.6,
+          "word_before": "predator",
+          "word_after": "permian"
+        },
+        {
+          "chapter": "Triassic",
+          "chapter_start_seconds": 370,
+          "gap_seconds": 1.02,
+          "word_before": "totally",
+          "word_after": "triassic"
+        },
+        {
+          "chapter": "Jurassic",
+          "chapter_start_seconds": 434,
+          "gap_seconds": 0.63,
+          "word_before": "important",
+          "word_after": "jurassic"
+        },
+        {
+          "chapter": "Cretaceous",
+          "chapter_start_seconds": 517,
+          "gap_seconds": 1.1109,
+          "word_before": "player",
+          "word_after": "cretaceous"
+        },
+        {
+          "chapter": "Paleogene",
+          "chapter_start_seconds": 571,
+          "gap_seconds": 1.23,
+          "word_before": "went",
+          "word_after": "paleo"
+        },
+        {
+          "chapter": "Neogene",
+          "chapter_start_seconds": 657,
+          "gap_seconds": 0.48,
+          "word_before": "most",
+          "word_after": "member"
+        },
+        {
+          "chapter": "Quaternary",
+          "chapter_start_seconds": 728,
+          "gap_seconds": 0.0,
+          "word_before": "on",
+          "word_after": "went"
+        }
+      ]
+    },
+    {
+      "file_id": "15207",
+      "title": "The Craziest Ways History's Deadliest Warriors Died",
+      "boundary_count": 11,
+      "gap_summary_seconds": {
+        "min": 0.4834,
+        "median": 0.63,
+        "mean": 0.7367,
+        "max": 1.17
+      },
+      "boundaries": [
+        {
+          "chapter": "Dian Wei",
+          "chapter_start_seconds": 48,
+          "gap_seconds": 0.63,
+          "word_before": "dead",
+          "word_after": "deanne"
+        },
+        {
+          "chapter": "Emperor Valerian",
+          "chapter_start_seconds": 118,
+          "gap_seconds": 0.63,
+          "word_before": "alive",
+          "word_after": "emperor"
+        },
+        {
+          "chapter": "Gen. John Sedgwick",
+          "chapter_start_seconds": 194,
+          "gap_seconds": 1.05,
+          "word_before": "temple",
+          "word_after": "john"
+        },
+        {
+          "chapter": "Oleg of Novgorod",
+          "chapter_start_seconds": 244,
+          "gap_seconds": 1.08,
+          "word_before": "military",
+          "word_after": "oh"
+        },
+        {
+          "chapter": "Qin Shi Huang",
+          "chapter_start_seconds": 300,
+          "gap_seconds": 0.4834,
+          "word_before": "chin",
+          "word_after": "one"
+        },
+        {
+          "chapter": "Attila the Hun",
+          "chapter_start_seconds": 367,
+          "gap_seconds": 0.63,
+          "word_before": "army",
+          "word_after": "attila"
+        },
+        {
+          "chapter": "Eleazar Maccabeus",
+          "chapter_start_seconds": 456,
+          "gap_seconds": 1.17,
+          "word_before": "place",
+          "word_after": "maccabees"
+        },
+        {
+          "chapter": "Mithridates VI of Pontus",
+          "chapter_start_seconds": 512,
+          "gap_seconds": 0.6,
+          "word_before": "elephant",
+          "word_after": "mithridate"
+        },
+        {
+          "chapter": "Frederick I (Barbarossa)",
+          "chapter_start_seconds": 576,
+          "gap_seconds": 0.6,
+          "word_before": "instead",
+          "word_after": "frederick"
+        },
+        {
+          "chapter": "Blackbeard",
+          "chapter_start_seconds": 620,
+          "gap_seconds": 0.6,
+          "word_before": "river",
+          "word_after": "black"
+        },
+        {
+          "chapter": "Audie Murphy",
+          "chapter_start_seconds": 680,
+          "gap_seconds": 0.63,
+          "word_before": "dead",
+          "word_after": "audie"
+        }
+      ]
+    },
+    {
+      "file_id": "15215",
+      "title": "How You'd Die In Every Prehistoric Era",
+      "boundary_count": 11,
+      "gap_summary_seconds": {
+        "min": 0.57,
+        "median": 0.87,
+        "mean": 0.9736,
+        "max": 1.95
+      },
+      "boundaries": [
+        {
+          "chapter": "Cambrian",
+          "chapter_start_seconds": 41,
+          "gap_seconds": 0.87,
+          "word_before": "up",
+          "word_after": "cambrian"
+        },
+        {
+          "chapter": "Silurian",
+          "chapter_start_seconds": 113,
+          "gap_seconds": 0.57,
+          "word_before": "alive",
+          "word_after": "silurian"
+        },
+        {
+          "chapter": "Devonian",
+          "chapter_start_seconds": 188,
+          "gap_seconds": 1.14,
+          "word_before": "into",
+          "word_after": "devonian"
+        },
+        {
+          "chapter": "Carboniferous",
+          "chapter_start_seconds": 247,
+          "gap_seconds": 0.57,
+          "word_before": "you",
+          "word_after": "carboniferous"
+        },
+        {
+          "chapter": "Permian",
+          "chapter_start_seconds": 362,
+          "gap_seconds": 0.57,
+          "word_before": "coal",
+          "word_after": "permian"
+        },
+        {
+          "chapter": "Triassic",
+          "chapter_start_seconds": 432,
+          "gap_seconds": 1.86,
+          "word_before": "meal",
+          "word_after": "the"
+        },
+        {
+          "chapter": "Jurassic",
+          "chapter_start_seconds": 517,
+          "gap_seconds": 0.57,
+          "word_before": "happens",
+          "word_after": "jurassic"
+        },
+        {
+          "chapter": "Cretaceous",
+          "chapter_start_seconds": 598,
+          "gap_seconds": 0.57,
+          "word_before": "dark",
+          "word_after": "cretaceous"
+        },
+        {
+          "chapter": "Paleogene",
+          "chapter_start_seconds": 658,
+          "gap_seconds": 1.11,
+          "word_before": "produced",
+          "word_after": "gene"
+        },
+        {
+          "chapter": "Neogene",
+          "chapter_start_seconds": 730,
+          "gap_seconds": 0.93,
+          "word_before": "forever",
+          "word_after": "gene"
+        },
+        {
+          "chapter": "Quaternary",
+          "chapter_start_seconds": 807,
+          "gap_seconds": 1.95,
+          "word_before": "earth",
+          "word_after": "the"
+        }
+      ]
+    },
+    {
+      "file_id": "15219",
+      "title": "Criminals Who Accidentally Picked the Worst Possible Victims",
+      "boundary_count": 11,
+      "gap_summary_seconds": {
+        "min": 0.15,
+        "median": 0.39,
+        "mean": 0.4383,
+        "max": 1.08
+      },
+      "boundaries": [
+        {
+          "chapter": "Bishnu Shrestha's Train",
+          "chapter_start_seconds": 71,
+          "gap_seconds": 0.63,
+          "word_before": "tough",
+          "word_after": "bishnu"
+        },
+        {
+          "chapter": "The Viral Thief",
+          "chapter_start_seconds": 159,
+          "gap_seconds": 0.39,
+          "word_before": "the",
+          "word_after": "thief"
+        },
+        {
+          "chapter": "The Ecole-Valentin Incident",
+          "chapter_start_seconds": 226,
+          "gap_seconds": 0.15,
+          "word_before": "the",
+          "word_after": "call"
+        },
+        {
+          "chapter": "The Medieval Battle",
+          "chapter_start_seconds": 287,
+          "gap_seconds": 0.48,
+          "word_before": "the",
+          "word_after": "battle"
+        },
+        {
+          "chapter": "The Clifton Man",
+          "chapter_start_seconds": 359,
+          "gap_seconds": 1.08,
+          "word_before": "home",
+          "word_after": "the"
+        },
+        {
+          "chapter": "The Acid Bathtub",
+          "chapter_start_seconds": 454,
+          "gap_seconds": 0.24,
+          "word_before": "nineteen",
+          "word_after": "four"
+        },
+        {
+          "chapter": "The Venomous Bag",
+          "chapter_start_seconds": 530,
+          "gap_seconds": 0.42,
+          "word_before": "a",
+          "word_after": "night"
+        },
+        {
+          "chapter": "Zoz's Revenge",
+          "chapter_start_seconds": 586,
+          "gap_seconds": 0.54,
+          "word_before": "a",
+          "word_after": "the"
+        },
+        {
+          "chapter": "The McVey Case",
+          "chapter_start_seconds": 669,
+          "gap_seconds": 0.27,
+          "word_before": "who",
+          "word_after": "up"
+        },
+        {
+          "chapter": "The Corti Incident",
+          "chapter_start_seconds": 747,
+          "gap_seconds": 0.2616,
+          "word_before": "mchale",
+          "word_after": "had"
+        },
+        {
+          "chapter": "Escape from Escape Room",
+          "chapter_start_seconds": 800,
+          "gap_seconds": 0.36,
+          "word_before": "a",
+          "word_after": "year"
+        }
+      ]
+    }
+  ],
+  "corpus": {
+    "boundary_count": 44,
+    "gap_summary_seconds": {
+      "min": 0.0,
+      "p25": 0.5259,
+      "median": 0.615,
+      "mean": 0.7383,
+      "p75": 1.0575,
+      "max": 1.95
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "analysis_date": "2026-08-21",
+  "channel": "The Paint Explainer",
+  "source_note": "Four user-uploaded 360p reference copies. The user previously confirmed redistribution/analysis authorization.",
+  "method": {
+    "frame_scan": "Every decoded source frame scanned at 30 fps with PySceneDetect ContentDetector threshold 18 and minimum scene length 6 frames; representative boundaries manually spot-checked.",
+    "transcript": "Offline Vosk small English model with word-level timestamps; proper nouns may contain recognition errors.",
+    "motion": "Per-shot sampled-frame optical registration and residual-motion analysis; values marked estimated where source compression or baked composite art prevents exact layer recovery.",
+    "limitations": "The supplied copies are 640x360/30 fps transcodes. Stroke widths and one-frame timings are measured at this resolution and scaled when implementation values are given. Original AE/project files were not available."
+  },
+  "videos": [
+    {
+      "file_id": "15204",
+      "path": "uploads/15204.mp4",
+      "youtube_id": "x2x0kjTBs48",
+      "title": "The Deadliest Sea Animal From Every Single Period",
+      "upload_date": "2026-08-16",
+      "duration_seconds": 805.34,
+      "chapters": [
+        [0, "Cambrian"], [50, "Ordovician"], [117, "Silurian"],
+        [178, "Devonian"], [241, "Carboniferous"], [300, "Permian"],
+        [370, "Triassic"], [434, "Jurassic"], [517, "Cretaceous"],
+        [571, "Paleogene"], [657, "Neogene"], [728, "Quaternary"]
+      ]
+    },
+    {
+      "file_id": "15207",
+      "path": "uploads/15207.mp4",
+      "youtube_id": "0Ms82OrNaF4",
+      "title": "The Craziest Ways History's Deadliest Warriors Died",
+      "upload_date": "2026-08-02",
+      "duration_seconds": 756.97,
+      "chapters": [
+        [0, "Sigurd the Mighty"], [48, "Dian Wei"], [118, "Emperor Valerian"],
+        [194, "Gen. John Sedgwick"], [244, "Oleg of Novgorod"], [300, "Qin Shi Huang"],
+        [367, "Attila the Hun"], [456, "Eleazar Maccabeus"], [512, "Mithridates VI of Pontus"],
+        [576, "Frederick I (Barbarossa)"], [620, "Blackbeard"], [680, "Audie Murphy"]
+      ]
+    },
+    {
+      "file_id": "15215",
+      "path": "uploads/15215.mp4",
+      "youtube_id": "FRgeEalwpAA",
+      "title": "How You'd Die In Every Prehistoric Era",
+      "upload_date": "2026-07-13",
+      "duration_seconds": 863.48,
+      "chapters": [
+        [0, "Precambrian"], [41, "Cambrian"], [113, "Silurian"],
+        [188, "Devonian"], [247, "Carboniferous"], [362, "Permian"],
+        [432, "Triassic"], [517, "Jurassic"], [598, "Cretaceous"],
+        [658, "Paleogene"], [730, "Neogene"], [807, "Quaternary"]
+      ]
+    },
+    {
+      "file_id": "15219",
+      "path": "uploads/15219.mp4",
+      "youtube_id": "RZtCvhmWG6o",
+      "title": "Criminals Who Accidentally Picked the Worst Possible Victims",
+      "upload_date": "2026-06-14",
+      "duration_seconds": 864.60,
+      "chapters": [
+        [0, "The Ambulance Attack"], [71, "Bishnu Shrestha's Train"], [159, "The Viral Thief"],
+        [226, "The Ecole-Valentin Incident"], [287, "The Medieval Battle"], [359, "The Clifton Man"],
+        [454, "The Acid Bathtub"], [530, "The Venomous Bag"], [586, "Zoz's Revenge"],
+        [669, "The McVey Case"], [747, "The Corti Incident"], [800, "Escape from Escape Room"]
+      ]
+    }
+  ]
+}
