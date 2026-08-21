@@ -324,9 +324,9 @@ class Handler(BaseHTTPRequestHandler):
             total = int(params.get("total", 1))
             length = int(self.headers.get("Content-Length", 0))
             data = self.rfile.read(length) if length else b""
-            part = UPLOADS / f"{job}.part"
-            with open(part, "ab") as f:
-                f.write(data)
+            # per-index part file -> parallel-safe (concatenated on /complete)
+            part = UPLOADS / f"{job}.part.{idx:05d}"
+            part.write_bytes(data)
             self._json({"job": job, "index": idx, "total": total, "bytes": len(data)})
             return
         # ---- finish chunked: POST /complete?job=X&name=FILE.mp4
@@ -336,12 +336,15 @@ class Handler(BaseHTTPRequestHandler):
             job = params.get("job", "")
             name = params.get("name", "video.mp4")
             safe = re.sub(r"[^A-Za-z0-9._-]", "_", name)
-            part = UPLOADS / f"{job}.part"
-            if not part.exists():
+            parts = sorted(UPLOADS.glob(f"{job}.part.*"))
+            if not parts:
                 self._json({"error": "no chunks for job"}, 400)
                 return
             dest = UPLOADS / f"{job}_{safe}"
-            part.rename(dest)
+            with open(dest, "wb") as out:
+                for p in parts:
+                    out.write(p.read_bytes())
+                    p.unlink()
             threading.Thread(target=run_job, args=(job, str(dest)), daemon=True).start()
             self._json({"job": job, "file": dest.name})
             return
@@ -451,26 +454,29 @@ fi.onchange = () => { if (fi.files[0]) upload(fi.files[0]); };
 
 async function upload(file) {
   const st = document.getElementById('status');
-  const CHUNK = 2 * 1024 * 1024;            // 2 MB chunks
+  const CHUNK = 4 * 1024 * 1024;            // 4 MB chunks
+  const CONC = 4;                           // 4 parallel uploads
   const total = Math.max(1, Math.ceil(file.size / CHUNK));
   const job = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
-  let sent = 0;
+  let sent = 0, next = 0;
   const t0 = performance.now();
-  st.textContent = `Uploading ${file.name} (${(file.size/1e6).toFixed(1)} MB in ${total} chunks)…`;
-  for (let i = 0; i < total; i++) {
+  st.textContent = `Uploading ${file.name} (${(file.size/1e6).toFixed(1)} MB in ${total} chunks, ${CONC} parallel)…`;
+  async function send(i) {
     const blob = file.slice(i * CHUNK, Math.min((i + 1) * CHUNK, file.size));
-    try {
-      await fetch(`/chunk?job=${job}&index=${i}&total=${total}`, {method: 'POST', body: blob});
-    } catch (e) {
-      st.textContent = 'Upload failed at chunk ' + i + ': ' + e;
-      return;
-    }
+    await fetch(`/chunk?job=${job}&index=${i}&total=${total}`, {method: 'POST', body: blob});
     sent += blob.size;
     const el = (performance.now() - t0) / 1000;
     const mbps = sent / 1e6 / Math.max(el, 0.01);
     const pct = Math.round(sent / file.size * 100);
-    st.innerHTML = `Uploading… <b>${pct}%</b> — ${(sent/1e6).toFixed(1)}/${(file.size/1e6).toFixed(1)} MB — <b>${mbps.toFixed(1)} MB/s</b>`;
+    st.innerHTML = `Uploading… <b>${pct}%</b> — ${(sent/1e6).toFixed(1)}/${(file.size/1e6).toFixed(1)} MB — <b>${mbps.toFixed(1)} MB/s</b> (${CONC} parallel)`;
   }
+  async function worker() {
+    while (next < total) {
+      const i = next++;
+      try { await send(i); } catch (e) { st.textContent = 'Upload failed at chunk ' + i + ': ' + e; return; }
+    }
+  }
+  await Promise.all(Array.from({length: Math.min(CONC, total)}, worker));
   st.textContent = 'Upload done. Analyzing…';
   const r = await fetch(`/complete?job=${job}&name=${encodeURIComponent(file.name)}`, {method: 'POST'});
   const j = await r.json();
