@@ -536,6 +536,73 @@ async def combined_file(name: str) -> Response:
                     media_type="application/json; charset=utf-8")
 
 
+@app.get("/api/deliverables")
+async def deliverables() -> JSONResponse:
+    """Produced videos found under projects/*/final.mp4, ready to watch."""
+    items: list[dict[str, Any]] = []
+    for proj in sorted(ROOT.glob("projects/*")):
+        if not proj.is_dir():
+            continue
+        final = proj / "final.mp4"
+        if not final.exists():
+            continue
+        info: dict[str, Any] = {
+            "name": proj.name,
+            "size_bytes": final.stat().st_size,
+            "mtime": final.stat().st_mtime,
+        }
+        beats = proj / "beats.json"
+        if beats.exists():
+            try:
+                data = json.loads(beats.read_text(encoding="utf-8"))
+                info["duration_seconds"] = (data.get("video") or {}).get("duration_seconds")
+                info["style_profile"] = data.get("style_profile")
+                info["stats"] = data.get("stats")
+            except (json.JSONDecodeError, OSError):
+                pass
+        items.append(info)
+    return JSONResponse({"deliverables": items})
+
+
+@app.get("/api/deliverables/{name}/video")
+async def deliverable_video(name: str, request: Request) -> Response:
+    if not re.fullmatch(r"[A-Za-z0-9._-]+", name):
+        raise HTTPException(404, "unknown project")
+    path = ROOT / "projects" / name / "final.mp4"
+    if not path.exists():
+        raise HTTPException(404, "no final.mp4 for this project")
+    media = "video/mp4"
+    size = path.stat().st_size
+    range_header = request.headers.get("range")
+    if range_header:
+        match = re.match(r"bytes=(\d*)-(\d*)", range_header)
+        if match:
+            start = int(match.group(1)) if match.group(1) else 0
+            end = int(match.group(2)) if match.group(2) else size - 1
+            end = min(end, size - 1)
+            start = max(0, min(start, end))
+
+            def stream():
+                with path.open("rb") as handle:
+                    handle.seek(start)
+                    remaining = end - start + 1
+                    while remaining > 0:
+                        block = handle.read(min(1024 * 1024, remaining))
+                        if not block:
+                            break
+                        remaining -= len(block)
+                        yield block
+
+            return StreamingResponse(
+                stream(), status_code=206, media_type=media,
+                headers={
+                    "Content-Range": f"bytes {start}-{end}/{size}",
+                    "Accept-Ranges": "bytes",
+                    "Content-Length": str(end - start + 1),
+                })
+    return FileResponse(path, media_type=media)
+
+
 @app.get("/api/videos/{vid}/shots")
 async def shots(vid: str) -> JSONResponse:
     profile = _profile_or_404(vid)

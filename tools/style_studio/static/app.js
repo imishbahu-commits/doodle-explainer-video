@@ -1,7 +1,7 @@
 /* Reference Studio — frontend logic. All requests are relative to this origin. */
 
 const $ = (sel) => document.querySelector(sel);
-const state = { videos: [], combined: null, current: null, selected: null, polling: null };
+const state = { videos: [], deliverables: [], selectedDeliverable: null, combined: null, current: null, selected: null, polling: null };
 
 const MOTION_COLORS = {
   frozen_hold: "#8fd14f",
@@ -41,7 +41,11 @@ async function refresh() {
     state.videos = data.videos || [];
     state.combined = data.combined || null;
     state.current = data.current || null;
+    let deliverables = [];
+    try { deliverables = (await api("/api/deliverables")).deliverables || []; } catch (_) {}
+    state.deliverables = deliverables;
     renderList();
+    renderDeliverables();
     renderCurrent();
     renderCombined();
     if (state.selected) {
@@ -64,6 +68,70 @@ function schedulePolling(busy) {
     clearInterval(state.polling);
     state.polling = null;
   }
+}
+
+function renderDeliverables() {
+  const list = $("#deliverables-list");
+  if (!state.deliverables.length) {
+    list.innerHTML = `<div class="empty">No produced videos yet.<br>They appear here once built from your style.</div>`;
+    return;
+  }
+  list.innerHTML = "";
+  for (const d of state.deliverables) {
+    const el = document.createElement("div");
+    el.className = "video-item" + (state.selectedDeliverable === d.name ? " selected" : "");
+    const dur = d.duration_seconds != null
+      ? fmtDuration(d.duration_seconds) : "—";
+    const stats = d.stats ? ` · ${d.stats.shot_count} shots · ${d.stats.zoom_shot_pct}% zooms` : "";
+    el.innerHTML = `
+      <div class="vi-thumb">▶</div>
+      <div>
+        <div class="vi-name" title="${esc(d.name)}">${esc(titleCase(d.name))}</div>
+        <div class="vi-meta">${dur}${stats}</div>
+        <div class="vi-status"><span class="chip done">ready</span>
+          <a class="btn small" href="/api/deliverables/${d.name}/video" download>download</a></div>
+      </div>`;
+    el.onclick = () => {
+      state.selectedDeliverable = d.name;
+      state.selected = null;
+      renderList();
+      renderDeliverables();
+      renderPlayer(d);
+    };
+    list.appendChild(el);
+  }
+}
+
+function renderPlayer(d) {
+  const detail = $("#detail");
+  detail.innerHTML = `
+    <div class="detail-wrap">
+      <div class="card">
+        <div class="d-head">
+          <div style="flex:1;min-width:0">
+            <h1 class="d-title">▶ ${esc(titleCase(d.name))}</h1>
+            <div class="d-sub">Built to the style measured from your reference uploads.</div>
+            <div class="d-actions" style="margin-top:10px">
+              <a class="btn" href="/api/deliverables/${d.name}/video" download>Download mp4</a>
+              <a class="btn" href="/api/deliverables/${d.name}/video" target="_blank">Open raw</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <video id="deliverable-player" controls autoplay playsinline
+               style="width:100%;max-height:70vh;background:#000;border-radius:10px;display:block"
+               src="/api/deliverables/${d.name}/video"></video>
+        ${d.stats ? `<div class="muted" style="margin-top:10px">
+          ${d.stats.shot_count} shots · median ${d.stats.median_shot_seconds}s ·
+          ${d.stats.zoom_shot_pct}% zoom shots · cuts ${d.stats.cut_lead_seconds}s before the word ·
+          mix ${d.stats.mix_targets.lufs} LUFS — all measured from your reference.</div>` : ""}
+      </div>
+    </div>`;
+}
+
+function titleCase(name) {
+  return String(name || "").replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 /* -------------------------------------------------------------------- list */
@@ -106,7 +174,13 @@ function renderList() {
         <div class="vi-meta">${meta}</div>
         <div class="vi-status">${statusHtml}</div>
       </div>`;
-    el.onclick = () => { state.selected = v.id; renderList(); renderDetail(v); };
+    el.onclick = () => {
+      state.selected = v.id;
+      state.selectedDeliverable = null;
+      renderList();
+      renderDeliverables();
+      renderDetail(v);
+    };
     list.appendChild(el);
   }
 }
