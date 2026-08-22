@@ -49,3 +49,7 @@ projects/dinzo-seahorse/work/
 !projects/dinzo-hyena/*.mp4
 !projects/dinzo-octopus/*.mp4
 !projects/dinzo-seahorse/*.mp4
+
+# Roman wakeup demo: keep the deliverable + work dir is scratch
+!projects/roman-wakeup/*.mp4
+projects/roman-wakeup/work/

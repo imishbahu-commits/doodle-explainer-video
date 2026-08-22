@@ -1,0 +1,220 @@
+{
+  "style_profile": "stylehub/profiles/91d967adab/style_rules.json (user reference 15289.mp4)",
+  "video": {
+    "duration_seconds": 106.02,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "shots": [
+    {
+      "shot": 1,
+      "plate": "rome-street",
+      "mode": "wide",
+      "start": 0.0,
+      "end": 5.2525,
+      "sentence": "You open your eyes.",
+      "chapter": "01-hook"
+    },
+    {
+      "shot": 2,
+      "plate": "rome-street",
+      "mode": "zoom:upper",
+      "start": 5.2525,
+      "end": 12.4964,
+      "sentence": "You're one of a million people stacked inside apartment blocks so badly built, they collapse for fun.",
+      "chapter": "01-hook"
+    },
+    {
+      "shot": 3,
+      "plate": "character-neutral",
+      "mode": "char",
+      "start": 12.4964,
+      "end": 15.59,
+      "sentence": "Welcome to the year one seventeen.",
+      "chapter": "01-hook"
+    },
+    {
+      "shot": 4,
+      "plate": "insula-room",
+      "mode": "wide",
+      "start": 15.59,
+      "end": 17.9677,
+      "sentence": "Your home is an insula. Seven floors.",
+      "chapter": "02-home"
+    },
+    {
+      "shot": 5,
+      "plate": "insula-room",
+      "mode": "zoom:window",
+      "start": 17.9677,
+      "end": 24.8057,
+      "sentence": "The rich live at the bottom. You live at the top, where the walls are thinnest and the rent is cheapest.",
+      "chapter": "02-home"
+    },
+    {
+      "shot": 6,
+      "plate": "character-shocked",
+      "mode": "char",
+      "start": 24.8057,
+      "end": 31.97,
+      "sentence": "There's no kitchen. No toilet. One room.",
+      "chapter": "02-home"
+    },
+    {
+      "shot": 7,
+      "plate": "breakfast",
+      "mode": "wide",
+      "start": 31.97,
+      "end": 35.6327,
+      "sentence": "Breakfast is bread. Maybe some olives, if you're lucky.",
+      "chapter": "03-breakfast"
+    },
+    {
+      "shot": 8,
+      "plate": "breakfast",
+      "mode": "zoom:flies",
+      "start": 35.6327,
+      "end": 38.4041,
+      "sentence": "No coffee. That hasn't been invented yet.",
+      "chapter": "03-breakfast"
+    },
+    {
+      "shot": 9,
+      "plate": "character-neutral",
+      "mode": "char",
+      "start": 38.4041,
+      "end": 43.25,
+      "sentence": "You eat standing up, because chairs are for people with money.",
+      "chapter": "03-breakfast"
+    },
+    {
+      "shot": 10,
+      "plate": "grain-market",
+      "mode": "wide",
+      "start": 43.25,
+      "end": 49.0407,
+      "sentence": "You're a porter at the grain market. All day, you haul sacks. The pay is one loaf a day.",
+      "chapter": "04-work"
+    },
+    {
+      "shot": 11,
+      "plate": "latrine",
+      "mode": "wide",
+      "start": 49.0407,
+      "end": 53.2921,
+      "sentence": "But at least there's the public toilet. A long bench with holes.",
+      "chapter": "04-work"
+    },
+    {
+      "shot": 12,
+      "plate": "latrine",
+      "mode": "zoom:sponge",
+      "start": 53.2921,
+      "end": 57.8,
+      "sentence": "And the sponge on a stick. Shared. By everyone. Good luck.",
+      "chapter": "04-work"
+    },
+    {
+      "shot": 13,
+      "plate": "baths",
+      "mode": "wide",
+      "start": 57.8,
+      "end": 61.2246,
+      "sentence": "After work, the baths. You pay a quarter coin.",
+      "chapter": "05-baths"
+    },
+    {
+      "shot": 14,
+      "plate": "baths",
+      "mode": "zoom:pool",
+      "start": 61.2246,
+      "end": 70.73,
+      "sentence": "For that, you get hot water, cold water, and gossip.",
+      "chapter": "05-baths"
+    },
+    {
+      "shot": 15,
+      "plate": "colosseum",
+      "mode": "wide",
+      "start": 70.73,
+      "end": 74.8813,
+      "sentence": "On holidays, the Colosseum opens. Free entry. Free bread.",
+      "chapter": "06-games"
+    },
+    {
+      "shot": 16,
+      "plate": "colosseum",
+      "mode": "zoom:arena",
+      "start": 74.8813,
+      "end": 83.58,
+      "sentence": "You sit at the very top, a hundred meters from the sand.",
+      "chapter": "06-games"
+    },
+    {
+      "shot": 17,
+      "plate": "doctor",
+      "mode": "wide",
+      "start": 83.58,
+      "end": 88.0868,
+      "sentence": "Got a fever? The doctor will balance your four humors. Maybe with leeches.",
+      "chapter": "07-health"
+    },
+    {
+      "shot": 18,
+      "plate": "doctor",
+      "mode": "zoom:pipe",
+      "start": 88.0868,
+      "end": 89.628,
+      "sentence": "The water pipes are lead.",
+      "chapter": "07-health"
+    },
+    {
+      "shot": 19,
+      "plate": "character-shocked",
+      "mode": "char",
+      "start": 89.628,
+      "end": 94.29,
+      "sentence": "The average Roman lives to about thirty-five. So enjoy the bread.",
+      "chapter": "07-health"
+    },
+    {
+      "shot": 20,
+      "plate": "rome-street",
+      "mode": "zoom:center",
+      "start": 94.29,
+      "end": 101.1833,
+      "sentence": "And yet, they built aqueducts that still stand. Roads we still drive on. Laws we still quote.",
+      "chapter": "08-outro"
+    },
+    {
+      "shot": 21,
+      "plate": "character-neutral",
+      "mode": "char",
+      "start": 101.1833,
+      "end": 103.6489,
+      "sentence": "You woke up in the wrong century.",
+      "chapter": "08-outro"
+    },
+    {
+      "shot": 22,
+      "plate": "rome-street",
+      "mode": "wide",
+      "start": 103.6489,
+      "end": 106.02,
+      "sentence": "But not the wrong civilization.",
+      "chapter": "08-outro"
+    }
+  ],
+  "stats": {
+    "shot_count": 22,
+    "median_shot_seconds": 4.508,
+    "zoom_shot_pct": 36.4,
+    "chapter_breath_seconds": 0.6,
+    "cut_lead_seconds": 0.055,
+    "mix_targets": {
+      "lufs": -18.6,
+      "true_peak": -2.3
+    }
+  }
+}
