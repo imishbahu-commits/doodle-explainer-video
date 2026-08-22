@@ -169,17 +169,43 @@ def illustration_crop(frame: np.ndarray, vertical: bool) -> np.ndarray:
 # proxy (analysis-resolution copy) so HD uploads scan quickly
 # ----------------------------------------------------------------------------
 
-def make_proxy(path: Path, work: Path, progress: ProgressFn) -> Path | None:
-    probe = probe_video(path)
-    if probe is None:
+def _last_decodable(cap: cv2.VideoCapture, frame_count: int) -> int | None:
+    """Decodable frame count of the file prefix, or None if it all decodes."""
+    if frame_count <= 0:
         return None
-    if probe["height"] <= 480 and probe["width"] <= 854:
+    cap.set(cv2.CAP_PROP_POS_FRAMES, frame_count - 1)
+    ok, _ = cap.read()
+    if ok:
+        return None
+    lo, hi = 0, frame_count - 1
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        cap.set(cv2.CAP_PROP_POS_FRAMES, mid)
+        ok, _ = cap.read()
+        if ok:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo + 1
+
+def make_proxy(
+    path: Path,
+    work: Path,
+    progress: ProgressFn,
+    probe: dict[str, Any],
+    force: bool = False,
+    map_index: int | None = None,
+) -> Path | None:
+    """Analysis-resolution copy, optionally forced from a chosen video stream."""
+    need = force or map_index is not None
+    if not need and probe["height"] <= 480 and probe["width"] <= 854:
         return None
     proxy = work / "proxy.mp4"
-    progress("proxy", 8, "Downscaling to analysis proxy")
+    progress("proxy", 8, "Preparing analysis proxy")
+    maps = ["-map", f"0:V:{0 if map_index is None else map_index}"] if need else []
     subprocess.run(
         ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-         "-i", str(path), "-an",
+         "-i", str(path), *maps, "-an",
          "-vf", "scale='min(640,iw)':-2",
          "-c:v", "libx264", "-preset", "veryfast", "-crf", "28",
          str(proxy)],
@@ -188,42 +214,88 @@ def make_proxy(path: Path, work: Path, progress: ProgressFn) -> Path | None:
     return proxy
 
 
+# Codec preference for picking the "real" video stream when a container holds
+# several (e.g. an attached cover image before the actual video).
+_CODEC_PRIORITY = [
+    "h264", "hevc", "vp9", "av1", "hvc1", "avc1", "vp8",
+    "mpeg4", "mpeg2video", "msmpeg4v3", "theora", "mjpeg", "png", "gif",
+]
+
+
 def probe_video(path: Path) -> dict[str, Any] | None:
-    """Probe via the imageio ffmpeg binary (no ffprobe is shipped with it)."""
+    """Tolerant probe via the imageio ffmpeg binary (no ffprobe is shipped).
+
+    Parses every video stream line and picks the best one, because real files
+    print pixel-format fields with commas (``yuv420p(tv, bt709)``), some list
+    only ``tbr``/``tbn`` without ``fps``, and some put an attached cover
+    stream before the actual video.
+    """
     proc = subprocess.run(
         ["ffmpeg", "-hide_banner", "-i", str(path)],
         text=True, capture_output=True,
     )
-    # `ffmpeg -i file` always exits 1 (no output file given); the stream info
-    # is what matters, so parse stderr regardless of the return code.
+    # `ffmpeg -i file` always exits 1 (no output file given); parse stderr.
     if "Stream #" not in proc.stderr:
         return None
     stderr = proc.stderr
-    duration = 0.0
+    duration: float | None = None
     match = re.search(r"Duration:\s*(\d+):(\d+):([\d.]+)", stderr)
     if match:
-        duration = int(match.group(1)) * 3600 + int(match.group(2)) * 60 + float(match.group(3))
-    video = re.search(
-        r"Stream #\S+: Video:\s*(\w+)[^,]*,\s*[^,]*,\s*(\d+)x(\d+)"
-        r".*?([\d.]+)\s*fps", stderr)
-    if video is None:
+        duration = (int(match.group(1)) * 3600 + int(match.group(2)) * 60
+                    + float(match.group(3)))
+
+    streams: list[dict[str, Any]] = []
+    for line in stderr.splitlines():
+        sm = re.match(r"\s*Stream #\d+:(\d+)[^\n]*: Video:\s*([A-Za-z0-9]+)", line)
+        if not sm:
+            continue
+        codec = sm.group(2).lower()
+        res = re.search(r"(\d{2,5})x(\d{2,5})", line)
+        if not res:
+            continue
+        fps = None
+        fm = re.search(r"([\d.]+)\s*(?:fps|tbr|tbn)", line)
+        if fm:
+            fps = round(float(fm.group(1)), 4)
+        priority = (_CODEC_PRIORITY.index(codec)
+                    if codec in _CODEC_PRIORITY else 99)
+        if "attached pic" in line:
+            priority += 100
+        streams.append({
+            "index": int(sm.group(1)),
+            "codec": codec,
+            "width": int(res.group(1)),
+            "height": int(res.group(2)),
+            "fps": fps,
+            "priority": priority,
+        })
+    if not streams:
         return None
-    fps = float(video.group(4)) or 30.0
-    has_audio = re.search(r"Stream #\S+: Audio:", stderr) is not None
-    audio_codec = None
-    ac_match = re.search(r"Stream #\S+: Audio:\s*(\w+)", stderr)
-    if ac_match:
-        audio_codec = ac_match.group(1)
+    best = min(streams, key=lambda s: (-s["width"] * s["height"], s["priority"]))
+    same_size = [s for s in streams
+                 if s["width"] == best["width"] and s["height"] == best["height"] and s["fps"]]
+    if same_size:
+        best = min(same_size, key=lambda s: s["priority"])
+    has_audio = bool(re.search(r"Stream #\S+: Audio:", stderr))
+    ac = re.search(r"Stream #\S+: Audio:\s*([A-Za-z0-9]+)", stderr)
+    image_input = bool(re.search(
+        r"Input #\d+,\s*(?:image2|image2pipe|jpeg_pipe|png_pipe|webp_pipe|bmp_pipe|tiff_pipe)\b",
+        stderr))
     return {
         "file": path.name,
         "size_bytes": path.stat().st_size,
-        "width": int(video.group(2)),
-        "height": int(video.group(3)),
-        "fps": round(fps, 4),
-        "duration_seconds": round(duration, 4),
-        "video_codec": video.group(1),
+        "width": best["width"],
+        "height": best["height"],
+        "fps": best["fps"] or 30.0,
+        "fps_estimated": best["fps"] is None,
+        "duration_seconds": round(duration, 4) if duration is not None else None,
+        "video_codec": best["codec"],
         "has_audio": has_audio,
-        "audio_codec": audio_codec,
+        "audio_codec": ac.group(1) if ac else None,
+        "stream_index": best["index"],
+        "first_video_index": streams[0]["index"],
+        "video_stream_count": len(streams),
+        "image_input": image_input,
         "sha256": corpus.sha256(path),
     }
 
@@ -308,8 +380,15 @@ def analyze_video(
     probe = probe_video(source)
     if probe is None:
         raise RuntimeError(f"cannot probe {source.name} — is it a valid video file?")
+    if probe.get("image_input") or (
+        probe["duration_seconds"] is not None and probe["duration_seconds"] < 0.5
+    ):
+        raise RuntimeError("file looks like an image or a sub-second clip, not a video")
 
-    proxy = make_proxy(source, work, progress)
+    need_stream = probe["stream_index"] != probe["first_video_index"]
+    proxy = make_proxy(source, work, progress, probe,
+                       force=need_stream,
+                       map_index=probe["stream_index"] if need_stream else None)
     scan_path = proxy or source
     scan_is_proxy = proxy is not None
 
@@ -320,7 +399,30 @@ def analyze_video(
     frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    duration = frame_count / fps if fps else probe["duration_seconds"]
+    # If cv2 grabbed a different stream than the probe chose (e.g. an attached
+    # cover image before the real video), re-decode from the chosen stream.
+    if not scan_is_proxy and (width, height) != (probe["width"], probe["height"]):
+        cap.release()
+        proxy = make_proxy(source, work, progress, probe,
+                           force=True, map_index=probe["stream_index"])
+        scan_path = proxy
+        scan_is_proxy = True
+        cap = cv2.VideoCapture(str(scan_path))
+        if not cap.isOpened():
+            raise RuntimeError(f"cannot decode {scan_path}")
+        fps = float(cap.get(cv2.CAP_PROP_FPS)) or probe["fps"]
+        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    # Truncated uploads still carry full-duration headers; find the last
+    # decodable frame so the analysis covers what actually exists.
+    container_frame_count = frame_count
+    truncated_frames = 0
+    last = _last_decodable(cap, frame_count)
+    if last is not None and last < frame_count:
+        truncated_frames = frame_count - last
+        frame_count = last
+    duration = frame_count / fps if fps else (probe["duration_seconds"] or 0.0)
     if limit_frames:
         frame_count = min(frame_count, limit_frames)
 
@@ -486,9 +588,14 @@ def analyze_video(
             "width": probe["width"],
             "height": probe["height"],
             "fps": fps,
+            "fps_estimated": bool(probe.get("fps_estimated")),
             "frame_count": frame_count,
+            "container_frame_count": container_frame_count,
+            "truncated_frames": truncated_frames,
             "duration_seconds": round(duration, 4),
             "timing_precision_seconds": round(1.0 / fps, 6),
+            "video_stream_index": probe["stream_index"],
+            "video_stream_count": probe.get("video_stream_count", 1),
             "analysis_proxy": {
                 "used": scan_is_proxy,
                 "width": width,
@@ -1007,6 +1114,15 @@ def build_style_rules(
             "should be checked.",
             "Templates in keyframe_recipes are corpus defaults included for buildability, "
             "not values measured from these uploads.",
+            *(["Container did not report a frame rate; timing was measured from decoded "
+               "frames."] if spec.get("fps_estimated") else []),
+            *([f"Decoded video stream #{spec['video_stream_index']} of "
+               f"{spec.get('video_stream_count', 1)} (container lists several video "
+               f"streams)."] if spec.get("video_stream_count", 1) > 1 else []),
+            *([f"Upload is truncated or incomplete: {spec.get('truncated_frames', 0)} of "
+               f"{spec.get('container_frame_count', 0)} container frames are undecodable; "
+               f"analysis covers the decodable prefix. Re-upload the full file for "
+               f"complete results."] if spec.get("truncated_frames", 0) > 0 else []),
         ],
     }
 

@@ -55,6 +55,14 @@ ALLOWED_EXT = {".mp4", ".mov", ".webm", ".mkv", ".m4v", ".avi", ".mpeg", ".mpg"}
 MAX_UPLOAD_BYTES = 2 * 1024 * 1024 * 1024  # 2 GB per file
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
+# Codec preference for picking the "real" video stream when a container holds
+# several (e.g. an attached cover image before the actual video).
+VIDEO_CODEC_PRIORITY = [
+    "h264", "hevc", "vp9", "av1", "hvc1", "avc1", "vp8",
+    "mpeg4", "mpeg2video", "msmpeg4v3", "theora", "mjpeg", "png", "gif",
+]
+MIN_DURATION_SECONDS = 0.5
+
 app = FastAPI(title="Reference Studio")
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
@@ -327,13 +335,12 @@ async def upload(files: list[UploadFile] = File(...)) -> JSONResponse:
     accepted: list[dict[str, Any]] = []
     rejected: list[dict[str, str]] = []
     for file in files:
-        original = file.filename or "video.mp4"
-        ext = Path(original).suffix.lower()
-        if ext not in ALLOWED_EXT:
-            rejected.append({"name": original, "reason": f"unsupported type {ext or 'unknown'}"})
-            continue
+        original = file.filename or "video"
         vid = uuid.uuid4().hex[:10]
         stamp = time.strftime("%Y%m%d-%H%M%S")
+        ext = Path(original).suffix.lower()[:8]
+        if not re.fullmatch(r"[A-Za-z0-9.]+", ext):
+            ext = ".mp4"
         safe_stem = re.sub(r"[^A-Za-z0-9._-]+", "-", Path(original).stem)[:60] or "video"
         stored = UPLOADS / f"{stamp}-{vid}-{safe_stem}{ext}"
         size = 0
@@ -354,10 +361,10 @@ async def upload(files: list[UploadFile] = File(...)) -> JSONResponse:
                 stored.unlink(missing_ok=True)
                 rejected.append({"name": original, "reason": "empty file"})
             continue
-        probe = _probe(stored)
+        probe, probe_reason = _probe(stored)
         if probe is None:
             stored.unlink(missing_ok=True)
-            rejected.append({"name": original, "reason": "not a readable video file"})
+            rejected.append({"name": original, "reason": probe_reason or "not a readable video file"})
             continue
         profile = PROFILES / vid
         profile.mkdir(parents=True, exist_ok=True)
@@ -380,32 +387,87 @@ async def upload(files: list[UploadFile] = File(...)) -> JSONResponse:
     return JSONResponse({"accepted": accepted, "rejected": rejected})
 
 
-def _probe(path: Path) -> dict[str, Any] | None:
+def _probe(path: Path) -> tuple[dict[str, Any] | None, str | None]:
+    """Probe a file with the imageio ffmpeg binary (no ffprobe is shipped).
+
+    Tolerant of the many stream-line shapes real files produce: pixel-format
+    fields can contain commas (``yuv420p(tv, bt709)``), some containers list
+    only ``tbr``/``tbn`` with no ``fps``, and some put an attached cover
+    stream before the actual video. Returns (probe_dict, None) on success or
+    (None, human_reason) on failure.
+    """
     proc = subprocess.run(
         [FFMPEG, "-hide_banner", "-i", str(path)],
         text=True, capture_output=True,
     )
     # `ffmpeg -i file` always exits 1 (no output file given); parse stderr.
-    if "Stream #" not in proc.stderr:
-        return None
     stderr = proc.stderr
-    duration = 0.0
+    if "Stream #" not in stderr:
+        if re.search(r"moov atom not found|Premature end of file|End of file", stderr):
+            return None, ("file looks truncated or incomplete — the upload may not have "
+                          "finished; retry the upload")
+        tail = " ".join(line.strip() for line in stderr.strip().splitlines()[-2:] if line.strip())
+        if "Invalid data" in stderr or not tail:
+            return None, "not a readable media file — is this actually a video?"
+        return None, f"not a readable media file ({tail[:160]})"
+
+    duration: float | None = None
     match = re.search(r"Duration:\s*(\d+):(\d+):([\d.]+)", stderr)
     if match:
-        duration = int(match.group(1)) * 3600 + int(match.group(2)) * 60 + float(match.group(3))
-    video = re.search(
-        r"Stream #\S+: Video:\s*(\w+)[^,]*,\s*[^,]*,\s*(\d+)x(\d+)"
-        r".*?([\d.]+)\s*fps", stderr)
-    if video is None:
-        return None
+        duration = (int(match.group(1)) * 3600 + int(match.group(2)) * 60
+                    + float(match.group(3)))
+
+    streams: list[dict[str, Any]] = []
+    for line in stderr.splitlines():
+        sm = re.match(r"\s*Stream #\d+:(\d+)[^\n]*: Video:\s*([A-Za-z0-9]+)", line)
+        if not sm:
+            continue
+        codec = sm.group(2).lower()
+        res = re.search(r"(\d{2,5})x(\d{2,5})", line)
+        if not res:
+            continue
+        fps = None
+        fm = re.search(r"([\d.]+)\s*(?:fps|tbr|tbn)", line)
+        if fm:
+            fps = round(float(fm.group(1)), 4)
+        priority = (VIDEO_CODEC_PRIORITY.index(codec)
+                    if codec in VIDEO_CODEC_PRIORITY else 99)
+        if "attached pic" in line:
+            priority += 100
+        streams.append({
+            "index": int(sm.group(1)),
+            "codec": codec,
+            "width": int(res.group(1)),
+            "height": int(res.group(2)),
+            "fps": fps,
+            "priority": priority,
+        })
+    if not streams:
+        return None, "no video stream found — is this an audio or image file?"
+
+    if re.search(r"Input #\d+,\s*(?:image2|image2pipe|jpeg_pipe|png_pipe|webp_pipe|bmp_pipe|tiff_pipe)\b",
+                 stderr):
+        return None, "that is an image or a sub-second clip, not a video"
+
+    best = min(streams, key=lambda s: (-s["width"] * s["height"], s["priority"]))
+    same_size = [s for s in streams
+                 if s["width"] == best["width"] and s["height"] == best["height"] and s["fps"]]
+    if same_size:
+        best = min(same_size, key=lambda s: s["priority"])
+    if duration is not None and duration < MIN_DURATION_SECONDS:
+        return None, "that is an image or a sub-second clip, not a video"
+
     return {
-        "duration_seconds": round(duration, 2),
-        "width": int(video.group(2)),
-        "height": int(video.group(3)),
-        "fps": float(video.group(4)) or 30.0,
-        "codec": video.group(1),
-        "has_audio": re.search(r"Stream #\S+: Audio:", stderr) is not None,
-    }
+        "duration_seconds": round(duration, 2) if duration is not None else None,
+        "width": best["width"],
+        "height": best["height"],
+        "fps": best["fps"] or 30.0,
+        "fps_estimated": best["fps"] is None,
+        "codec": best["codec"],
+        "has_audio": bool(re.search(r"Stream #\S+: Audio:", stderr)),
+        "stream_index": best["index"],
+        "first_video_index": streams[0]["index"],
+    }, None
 
 
 @app.post("/api/combine")

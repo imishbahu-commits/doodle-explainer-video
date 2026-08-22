@@ -394,10 +394,10 @@ function setupUpload() {
 
 async function uploadFiles(files) {
   if (!files.length) return;
-  const vids = files.filter((f) => /\.(mp4|mov|webm|mkv|m4v|avi|mpeg|mpg)$/i.test(f.name));
+  // Send everything; the server checks the actual content and reports a
+  // specific reason per file (extension whitelists reject too many good files).
   const form = new FormData();
-  for (const f of vids) form.append("files", f);
-  if (!vids.length) { alert("No supported video files selected (mp4, mov, webm, mkv)."); return; }
+  for (const f of files) form.append("files", f);
 
   $("#upload-progress").classList.remove("hidden");
   $("#upload-status").textContent = `Uploading ${vids.length} file(s)…`;
