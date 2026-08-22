@@ -56,6 +56,7 @@ MAX_UPLOAD_BYTES = 2 * 1024 * 1024 * 1024  # 2 GB per file
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
 app = FastAPI(title="Reference Studio")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # ----------------------------------------------------------------------------
 # state
