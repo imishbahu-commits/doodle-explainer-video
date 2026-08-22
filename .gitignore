@@ -20,6 +20,12 @@ projects/openmontage-demo/
 # Speech-to-text model (68MB; reproducible from public GitHub repo)
 tools/models/
 
+# Reference Studio: uploaded videos + measured profiles are session-local
+# data (never committed; the frozen corpus under references/ is the only
+# analysis corpus that ships with the repo).
+stylehub/*
+!stylehub/README.md
+
 # Intermediate TTS audio + segments (regenerable from beat prompts + script)
 projects/dinzo-crocodile/audio/
 projects/dinzo-crocodile/segments/

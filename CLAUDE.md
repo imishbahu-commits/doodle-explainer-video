@@ -5,14 +5,19 @@
 For any current Paint Explainer build, read in this order:
 
 1. `SKILL.md`
-2. `skills/paint-explainer-recreation/SKILL.md`
-3. `references/paint-explainer-analysis-4v/style_rules.json`
-4. `skills/content-router/SKILL.md`
+2. `skills/style-analyzer/SKILL.md` — if the user uploaded reference videos
+3. `skills/paint-explainer-recreation/SKILL.md`
+4. The active style profile (first one that exists):
+   - `stylehub/current.json` → its `style_rules` (promoted in Reference Studio)
+   - `stylehub/combined/style_rules.json` (merged uploads)
+   - `references/paint-explainer-analysis-4v/style_rules.json` (built-in default)
+5. `skills/content-router/SKILL.md`
 
-`style_rules.json` is authoritative. It comes from four user-supplied videos,
-98,705 scanned frames, 3,290.167 s, 845 shots, and 841 abrupt edit events. It
-supersedes older single-video, vertical-format, or speculative notes whenever
-values conflict.
+`style_rules.json` is authoritative. The built-in default comes from four
+user-supplied videos, 98,705 scanned frames, 3,290.167 s, 845 shots, and 841
+abrupt edit events. A promoted upload profile supersedes it when the user has
+chosen one. It supersedes older single-video, vertical-format, or speculative
+notes whenever values conflict.
 
 ## Rules that must not regress
 

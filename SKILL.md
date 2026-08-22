@@ -16,6 +16,11 @@ Always begin with:
   implementation specification;
 - `skills/content-router/SKILL.md` — stage routing.
 
+When the user uploads reference videos (Reference Studio /
+`skills/style-analyzer`), a promoted profile in `stylehub/current.json` — or
+the merged `stylehub/combined/style_rules.json` — **overrides the built-in
+corpus rules** for that build. See `REFERENCE_STUDIO.md`.
+
 The rules were measured from four user-supplied videos: 98,705 frames,
 3,290.167 s, 845 shots, and 841 abrupt edit events. When any generic skill
 default conflicts, `style_rules.json` wins.

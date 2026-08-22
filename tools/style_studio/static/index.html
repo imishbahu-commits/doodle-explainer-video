@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference Studio — Style Analyzer</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23ffd43b' stroke-width='8'/><path d='M50 22 L60 50 L50 78 L40 50 Z' fill='%23ff6b6b'/></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">◉</span>
+    <div>
+      <h1>Reference Studio</h1>
+      <p>Upload your reference videos → we measure the style → you build videos that match it</p>
+    </div>
+  </div>
+  <div id="current-badge" class="current-badge hidden"></div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <section class="card" id="upload-card">
+      <h2>Add references</h2>
+      <div id="dropzone" class="dropzone">
+        <div class="dz-icon">⤒</div>
+        <div class="dz-title">Drop videos here</div>
+        <div class="dz-sub">or click to browse — mp4 · mov · webm · mkv</div>
+        <input type="file" id="file-input" multiple accept=".mp4,.mov,.webm,.mkv,.m4v,.avi,.mpeg,.mpg" hidden>
+      </div>
+      <div id="upload-progress" class="upload-progress hidden">
+        <div class="bar"><div id="upload-bar-fill"></div></div>
+        <div id="upload-status" class="muted"></div>
+      </div>
+      <div id="upload-notes"></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>References</h2>
+        <button id="merge-btn" class="btn ghost small hidden">Merge → one style</button>
+      </div>
+      <div id="video-list" class="video-list">
+        <div class="empty">No references yet.<br>Upload a video to measure its style.</div>
+      </div>
+    </section>
+
+    <section class="card" id="combined-card" hidden>
+      <h2>Merged style bible</h2>
+      <div id="combined-body"></div>
+    </section>
+  </aside>
+
+  <section class="detail" id="detail">
+    <div class="empty-detail">
+      <div class="empty-detail-glyph">◉</div>
+      <h3>Every video you upload becomes a measured style bible</h3>
+      <p class="muted">The analyzer scans every frame — shots and hard cuts, motion per shot,
+        palette, linework width, composition, loudness, narration pace and cut-to-word timing —
+        then writes a <code>style_rules.json</code> the video pipeline already understands.</p>
+      <ol class="how">
+        <li><b>1.</b> Upload one or more reference videos</li>
+        <li><b>2.</b> The studio measures the style (frame-by-frame)</li>
+        <li><b>3.</b> Promote a profile (or merge several) as the current style</li>
+        <li><b>4.</b> The production pipeline builds new videos to those measured rules</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Analyzer: <code>scripts/analyze_style.py</code> · Pipeline: <code>skills/style-analyzer</code> → <code>skills/content-router</code> · Built-in default: Paint Explainer 4-video corpus</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

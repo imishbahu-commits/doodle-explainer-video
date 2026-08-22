@@ -1,0 +1,4 @@
+# Web deps for tools/style_studio/server.py (Reference Studio UI + API)
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9,<1

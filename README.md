@@ -9,6 +9,27 @@
 > `references/paint-explainer-analysis-4v/style_rules.json` overrides all
 > older/generic defaults. The static three-band vertical builder below is a
 > legacy option used only when explicitly requested.
+>
+> ## 📤 Reference Studio — analyze YOUR reference videos
+>
+> Upload reference videos and the repo measures their style, then builds
+> videos that match it:
+>
+> ```bash
+> python3 -m venv .venv
+> .venv/bin/pip install -r requirements-analysis.txt \
+>                       -r tools/style_studio/requirements.txt
+> .venv/bin/python tools/style_studio/server.py --host 0.0.0.0 --port 8765
+> # → open the studio UI, drop videos, watch the frame-by-frame analysis
+> #   (shots/cuts, motion budget, palette, stroke width, loudness, WPM,
+> #   cut-to-word timing), then "Use as current style".
+> ```
+>
+> Headless equivalent: `scripts/analyze_style.py analyze/combine` (see
+> `skills/style-analyzer/SKILL.md` and `REFERENCE_STUDIO.md`). A promoted
+> profile writes `stylehub/current.json`; the production pipeline then
+> substitutes its measured numbers wherever it would use the built-in corpus
+> rules.
 
 ### Quick start — Paint Explainer mode
 

@@ -10,4 +10,4 @@ scikit-image>=0.25,<1
 librosa>=0.11,<1
 soundfile>=0.13,<1
 vosk>=0.3.45,<1
-scenedetect==0.6.6.2
+scenedetect==0.6.6
