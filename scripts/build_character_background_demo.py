@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 from scipy import ndimage
 
 RESAMPLE = Image.Resampling.LANCZOS
@@ -61,15 +61,54 @@ def white_background_cutout(path: Path) -> Image.Image:
     return rgba.crop((x0, y0, x1, y1))
 
 
+def add_long_robe(character: Image.Image, phase: float = 0.0) -> Image.Image:
+    """Cover the legs with a simple robe whose hem can sway during translation."""
+    actor = character.copy()
+    width, height = actor.size
+    overlay = Image.new("RGBA", actor.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    sway = math.sin(phase) * width * 0.018
+    lift = math.cos(phase) * height * 0.006
+    top_y = height * 0.685
+    hem_y = height * 0.975
+    points = [
+        (width * 0.285, top_y),
+        (width * 0.695, top_y),
+        (width * 0.755 + sway, hem_y - lift),
+        (width * 0.49 + sway * 0.25, hem_y + lift),
+        (width * 0.225 + sway, hem_y - lift),
+    ]
+    ink = (48, 29, 23, 255)
+    cloth = (139, 128, 76, 255)
+    draw.polygon(points, fill=cloth)
+    draw.line(points + [points[0]], fill=ink, width=max(3, round(width * 0.012)), joint="curve")
+    # The top line reads as the existing belt; restrained folds keep the body crude.
+    draw.line((width * 0.29, top_y + 2, width * 0.69, top_y + 2), fill=(88, 70, 39, 255), width=3)
+    for fraction in (0.38, 0.50, 0.62):
+        x = width * fraction + sway * (fraction - 0.5)
+        draw.line((x, top_y + height * 0.04, x + sway * 0.2, hem_y - height * 0.045),
+                  fill=(103, 91, 54, 150), width=2)
+    # A few fixed marks preserve the lightly handmade texture without visual noise.
+    for x_fraction, y_fraction in ((.34, .77), (.57, .81), (.67, .9), (.43, .93)):
+        x, y = width * x_fraction + sway * .2, height * y_fraction
+        draw.line((x, y, x + width * .018, y - height * .006), fill=(112, 99, 58, 125), width=2)
+    actor.alpha_composite(overlay)
+    return actor
+
+
 def ease(value: float) -> float:
     return value * value * (3.0 - 2.0 * value)
 
 
 def build(character_path: Path, background_path: Path, output_path: Path,
-          poster_path: Path, seconds: float, fps: int) -> None:
+          poster_path: Path, seconds: float, fps: int, long_robe: bool = False,
+          robe_master_path: Path | None = None) -> None:
     width, height = 1280, 720
     background = cover(Image.open(background_path).convert("RGB"), (width, height))
     character = white_background_cutout(character_path)
+    if long_robe and robe_master_path:
+        robe_master_path.parent.mkdir(parents=True, exist_ok=True)
+        add_long_robe(character).save(robe_master_path)
     total = max(2, round(seconds * fps))
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -86,12 +125,14 @@ def build(character_path: Path, background_path: Path, output_path: Path,
     for frame_number in range(total):
         t = frame_number / (total - 1)
         travel = ease(t)
+        phase = 2 * math.pi * 4 * t
+        source_actor = add_long_robe(character, phase) if long_robe else character
         # Approximately 35–39% of frame height: small enough to belong in the plate.
         target_height = round(260 + 22 * travel)
-        scale = target_height / character.height
-        actor = character.resize((round(character.width * scale), target_height), RESAMPLE)
-        bob = round(3.5 * math.sin(2 * math.pi * 4 * t))
-        angle = 1.2 * math.sin(2 * math.pi * 4 * t + math.pi / 2)
+        scale = target_height / source_actor.height
+        actor = source_actor.resize((round(source_actor.width * scale), target_height), RESAMPLE)
+        bob = round(3.5 * math.sin(phase))
+        angle = 1.2 * math.sin(phase + math.pi / 2)
         actor = actor.rotate(angle, resample=Image.Resampling.BICUBIC, expand=True)
 
         x = round(-actor.width * 0.15 + travel * (width - actor.width * 0.75))
@@ -117,8 +158,11 @@ def main() -> None:
     parser.add_argument("--poster", type=Path, default=Path("poster.jpg"))
     parser.add_argument("--seconds", type=float, default=6.0)
     parser.add_argument("--fps", type=int, default=30)
+    parser.add_argument("--long-robe", action="store_true", help="cover legs with an animated robe")
+    parser.add_argument("--robe-master", type=Path, help="optionally save the transparent robed puppet")
     args = parser.parse_args()
-    build(args.character, args.background, args.output, args.poster, args.seconds, args.fps)
+    build(args.character, args.background, args.output, args.poster, args.seconds, args.fps,
+          long_robe=args.long_robe, robe_master_path=args.robe_master)
 
 
 if __name__ == "__main__":
