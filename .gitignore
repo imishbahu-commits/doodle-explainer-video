@@ -21,6 +21,8 @@ projects/openmontage-demo/
 # Rebuilt from the committed per-beat voice clips by the expressive sample renderer.
 projects/ancient-medicine-expressive/audio/timed/
 projects/ancient-medicine-expressive/audio/narration.wav
+projects/ancient-medicine-expressive-v2/audio/timed/
+projects/ancient-medicine-expressive-v2/audio/narration.wav
 
 # Speech-to-text model (68MB; reproducible from public GitHub repo)
 tools/models/

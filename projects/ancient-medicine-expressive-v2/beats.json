@@ -1,0 +1,14 @@
+{
+  "fps": 30,
+  "duration_seconds": 26.47,
+  "beats": [
+    {"id": 1, "start": 0.0, "duration": 3.41, "words": 12, "visual": "alarm pose; chalk rule, hurt and works reveal"},
+    {"id": 2, "start": 3.41, "duration": 3.32, "words": 13, "visual": "patient-to-healer reframe; spirit overlays"},
+    {"id": 3, "start": 6.73, "duration": 3.26, "words": 12, "visual": "symbolic red-ribbon treatment reveal; microbes remain"},
+    {"id": 4, "start": 9.99, "duration": 3.09, "words": 12, "visual": "energy loss; patient-to-confident-healer reframe; second bowl"},
+    {"id": 5, "start": 13.08, "duration": 3.45, "words": 12, "visual": "mercury sparkle followed by sequential organ damage"},
+    {"id": 6, "start": 16.53, "duration": 2.77, "words": 12, "visual": "healer exit direction; patient recovery; despite-treatment stamp"},
+    {"id": 7, "start": 19.3, "duration": 3.61, "words": 12, "visual": "sequential group reveal; comparison; outcome check/cross"},
+    {"id": 8, "start": 22.91, "duration": 3.54, "words": 13, "visual": "grimace hold; no-skull-drill board payoff and rejection mark"}
+  ]
+}

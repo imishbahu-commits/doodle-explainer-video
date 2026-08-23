@@ -1,0 +1,45 @@
+{
+  "project": "ancient-medicine-expressive-v2",
+  "title": "Ancient Medicine — Quality and Speed Pass",
+  "output": "ancient-medicine-expressive-v2.mp4",
+  "duration_seconds": 26.47,
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "voice": {
+    "voice_id": "voice-02",
+    "direction": "masculine educational comic",
+    "tempo_multiplier": 2.0,
+    "integrated_lufs": -19.32,
+    "true_peak_dbfs": -2.31
+  },
+  "timing": {
+    "beat_count": 8,
+    "words_per_beat": [12, 13, 12, 12, 12, 12, 12, 13],
+    "beat_duration_seconds": [3.41, 3.32, 3.26, 3.09, 3.45, 2.77, 3.61, 3.54],
+    "hard_cut_seconds": [3.41, 6.73, 9.99, 13.08, 16.53, 19.3, 22.91]
+  },
+  "generated_image_asset_count": 7,
+  "generated_image_assets": [
+    "art/beat-01-classroom-rule.png",
+    "art/beat-02-skull-drill.png",
+    "art/beat-03-bloodletting-card.png",
+    "art/beat-05-mercury-card.png",
+    "art/beat-06-despite-treatment.png",
+    "art/beat-07-testing-card.png",
+    "art/beat-08-classroom-payoff.png"
+  ],
+  "manual_post_art": [
+    "word-synchronised chalk writing",
+    "motivated patient-to-healer reframing",
+    "spirit overlays",
+    "symbolic treatment reveal mask",
+    "energy meter and second-bowl beat",
+    "sequential organ damage marks",
+    "doctor exit direction and despite-treatment stamp",
+    "sequential comparison-group reveals and results",
+    "final chalkboard strike-through"
+  ],
+  "quality_change": "Generated polished editorial keyframes replace the first version's programmatic primitive graphics. Motion remains semantic and narration-led rather than generic idle movement.",
+  "originality": "Original script and character adaptation using broad techniques measured from supplied references; no exact external character or frame was copied."
+}

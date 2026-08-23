@@ -1,0 +1,39 @@
+{
+  "file": "projects/ancient-medicine-expressive-v2/ancient-medicine-expressive-v2.mp4",
+  "duration": 26.47,
+  "audio": {
+    "integrated_lufs": -19.32,
+    "true_peak_dbfs": -2.31,
+    "lra_lu": 1.1,
+    "threshold_lufs": -29.38
+  },
+  "sample_mean_dbfs": -19.0,
+  "sample_peak_dbfs": -2.3,
+  "silence_count": 0,
+  "total_silence_seconds": 0,
+  "silence_pct": 0.0,
+  "median_silence_seconds": 0.0,
+  "chapter_breath_candidate_count": 0,
+  "silences_over_1s_for_review": [],
+  "targets": {
+    "integrated_lufs": [
+      -20.7,
+      -20.6
+    ],
+    "true_peak_dbfs_max": -2.3,
+    "lra_lu": [
+      1.8,
+      3.8
+    ],
+    "chapter_breath_seconds": [
+      0.6,
+      0.8
+    ]
+  },
+  "checks": {
+    "integrated_loudness": false,
+    "true_peak": true,
+    "lra": false
+  },
+  "ok": false
+}
