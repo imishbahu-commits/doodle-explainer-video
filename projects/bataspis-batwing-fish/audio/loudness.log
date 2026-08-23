@@ -1,0 +1,31 @@
+Input #0, mp3, from 'projects/bataspis-batwing-fish/audio/voiceover.mp3':
+  Metadata:
+    artist          : AudioLab
+    encoder         : Lavf62.3.100
+  Duration: 00:07:15.70, start: 0.011995, bitrate: 128 kb/s
+  Stream #0:0: Audio: mp3 (mp3float), 44100 Hz, mono, fltp, 128 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (mp3 (mp3float) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    artist          : AudioLab
+    encoder         : Lavf61.1.100
+  Stream #0:0: Audio: pcm_s16le, 192000 Hz, mono, s16, 3072 kb/s
+      Metadata:
+        encoder         : Lavc61.3.100 pcm_s16le
+size=N/A time=00:00:24.80 bitrate=N/A speed=49.6x    size=N/A time=00:00:51.90 bitrate=N/A speed=51.9x    size=N/A time=00:01:19.00 bitrate=N/A speed=52.6x    size=N/A time=00:01:45.70 bitrate=N/A speed=52.8x    size=N/A time=00:02:13.30 bitrate=N/A speed=53.3x    size=N/A time=00:02:40.90 bitrate=N/A speed=53.6x    size=N/A time=00:03:08.40 bitrate=N/A speed=53.8x    size=N/A time=00:03:35.90 bitrate=N/A speed=  54x    size=N/A time=00:04:03.30 bitrate=N/A speed=  54x    size=N/A time=00:04:30.10 bitrate=N/A speed=  54x    size=N/A time=00:04:57.20 bitrate=N/A speed=  54x    size=N/A time=00:05:24.60 bitrate=N/A speed=54.1x    size=N/A time=00:05:52.40 bitrate=N/A speed=54.2x    size=N/A time=00:06:20.50 bitrate=N/A speed=54.3x    size=N/A time=00:06:48.50 bitrate=N/A speed=54.4x    [Parsed_loudnorm_0 @ 0x7fbecc0020c0] 
+{
+	"input_i" : "-18.29",
+	"input_tp" : "-1.21",
+	"input_lra" : "3.50",
+	"input_thresh" : "-28.73",
+	"output_i" : "-20.73",
+	"output_tp" : "-2.30",
+	"output_lra" : "2.80",
+	"output_thresh" : "-31.12",
+	"normalization_type" : "dynamic",
+	"target_offset" : "0.08"
+}
+[out#0/null @ 0x37727400] video:0KiB audio:163382KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:07:15.70 bitrate=N/A speed=54.7x    

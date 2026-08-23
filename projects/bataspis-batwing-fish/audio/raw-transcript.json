@@ -1,0 +1,7809 @@
+{
+  "duration": 435.36,
+  "word_count": 1215,
+  "text": "if you found a fish with no jewels and know pet fins you might already have questions then you notice it's head is almost three times wider than it is long at that point you stop asking questions and call it a swimming dinner plate but four hundred and ninety million years ago that ridiculous head may have worked like an underwater wing that should not be possible a giant ahmed skull ought to create drag waste energy and make steering miserable instead a new study suggests this one generated an unusual amount of left without generating much dragged all scientist of name the animal better spare crux from above it's skull looked like a bat spreading it's wings stay with me because the way researchers tested that head reveal something bigger early vertebrates we're solving movement problems before evolution gave them the equipment modern fish take for granted first forget the ocean you know this is the early devonian period there are no wales know marine reptiles and definitely no pelicans waiting to steal lunch vertebrates a still experimenting with the basics jaws are not standard pet fins and not standard even the familiar fish silhouette is more of a suggestion that a rule one group in this evolutionary workshop is called the gallia spades they were ahmed joyless fishes found in what is now china and northern vietnam a gala spade carried a rigid shield over the front of it's body behind it came a soft a trunk and tail know movable jaw know flexible pectoral fins just armor eyes sensory canals and the confidence to into the ocean wearing a survey trey most gillespie had shields followed recognizable shapes rounded spike forked or domed the task is ignored the menu it's shield swept out would into long projections the front edge curved forward the rear edge curved in would from above it resembled a bat a boomerang or a stealth aircraft designed from of very confusing phone description the fossil was collected nick urging in china's union province during the nineteen eighties he came from the session can formation preserved in fine yellow grace sandstone here is the important limitation scientists do not have a complete but hospice the only known specimen is nearly complete had shield and it's counterpart in the rock the shield measures about five centimeters down the middle based on symmetry researchers estimate roughly fourteen centimeters between the outer tips yes the head really was dramatically wider than it was long the missing body had to be reconstructed from related glass beds every picture of the living animal therefore combines fossil evidence with informed modeling the head is the star the rest of the fish is supporting car past that creates a problem you cannot watch a devonian animal swim and there is no modern fish with the same design so the researchers built one digitally know ancient fish were inconvenienced they reconstructed the animal in three dimensions and placed it inside computational fluid dynamics simulations think of it as a virtual water tunnel the computer calculates her water moves around the body were pressure changes and how strongly the shape resist motion to measurements matter dragon lift drag is water saying door you stop lift his water saying rum fine but you're going this way now a good cruising shape produces useful live without paying an enormous drag penalty engineers described the balance with a lift to drag ratio more live for less drag means greater efficiency better space reached a ratio above four point five at an angle of attack of ten degrees among every goliaths been tested in the study that was the highest result the next best model came in close to three at the same angle the fish that looks least like sensible transportation may have been exceptionally good at moving through water evolution enjoys that joke far too much but that's only half the mystery a strange result means nothing unless the shape can explain it the projections had a cross section that behave somewhat like an airfoil water accelerated over the curved up a surface and move differently underneath the pressure difference generated left it is the same broad principle that helps an aircraft wing work except under water and attached directly to a his face the crescent outline also helped it's long span reduce the swelling vortices that waste energy at the tips smooth connections between the projections and the shield reduced interference drag small changes in angle at the model trade a little resistance for more left know but as piece was not flapping it skull and launching into the devonian sky please do not draw that reconstruction actually draw at once then hide it from paleontologists the serious interpretation is that task miss may have been an efficient gliding cruiser it's rigid head generated useful left even though the animal lacked flexible pad fins researchers also tested whether the effect depended on staying close to the sea floor adding a virtual ground plane produced nearly the same live to drag pattern so the design may have worked near the bottom and higher in the water this was not necessarily a biological hovercraft trapped above the sand that makes one strange skull part of a much larger story jealous bedsit sit close to the evolutionary branch leading towards george vertebrates the show what vertebrate life was doing before jaws and paired appendages became dominant it is tempting to imagine ahmed july as fishes is limited prototypes slow awkward waiting for evolution to install the important upgrades the task is makes that picture hardest defend it had no jaws and know flexible pad fins yet the simulation suggests it could occupy especially swimming nice by turning it's head shield into hydro dynamic equipment that is not evolution failing to invent a modern fish that is evolution finding a completely different answer still a simulation is not a time machine it shows what the reconstructed shape could do and modeled water he cannot prove exactly how fast protests be swam or where it spent most of it's time it also cannot prove that the she yield evolved only for locomotion the virtual body matters to the fossil preserves the head shield not the complete fish change the missing body and some details of the flow may change what would help most is obvious another specimen preferably one that remember to bring the rest of itself a complete trunk and tail could test the reconstruction more individuals could reveal whether the had changed with age or sex better ecological evidence could show where the animal actually lived until then the careful conclusion is not that this fish flew under water it is that a bat wings shaped ahmed head produced unusually efficient left in the best model scientists concurrently build which is already wonderfully strange four hundred nineteen million years ago vertebrates had not settled on the standard fish blueprint a task crossed the water with no jaw know pad fins and an unreasonable amount of forehead somehow the for had worked if the next fossil landed on your desk which clue would you want first the missing tail the complete body or evidence of where this living dinner plate actually swam",
+  "words": [
+    {
+      "conf": 1.0,
+      "end": 0.21,
+      "start": 0.09,
+      "word": "if"
+    },
+    {
+      "conf": 0.735043,
+      "end": 0.3,
+      "start": 0.21,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 0.54,
+      "start": 0.3,
+      "word": "found"
+    },
+    {
+      "conf": 1.0,
+      "end": 0.6,
+      "start": 0.54,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 0.9,
+      "start": 0.6,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 1.05,
+      "start": 0.9,
+      "word": "with"
+    },
+    {
+      "conf": 0.753995,
+      "end": 1.23,
+      "start": 1.05,
+      "word": "no"
+    },
+    {
+      "conf": 0.807383,
+      "end": 1.68,
+      "start": 1.23,
+      "word": "jewels"
+    },
+    {
+      "conf": 0.914192,
+      "end": 1.77,
+      "start": 1.68,
+      "word": "and"
+    },
+    {
+      "conf": 0.426406,
+      "end": 1.89,
+      "start": 1.77,
+      "word": "know"
+    },
+    {
+      "conf": 0.624336,
+      "end": 2.16,
+      "start": 1.89,
+      "word": "pet"
+    },
+    {
+      "conf": 0.473169,
+      "end": 2.67,
+      "start": 2.16,
+      "word": "fins"
+    },
+    {
+      "conf": 1.0,
+      "end": 3.09,
+      "start": 2.94,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 3.3,
+      "start": 3.09,
+      "word": "might"
+    },
+    {
+      "conf": 1.0,
+      "end": 3.54,
+      "start": 3.3,
+      "word": "already"
+    },
+    {
+      "conf": 1.0,
+      "end": 3.69,
+      "start": 3.54,
+      "word": "have"
+    },
+    {
+      "conf": 1.0,
+      "end": 4.38,
+      "start": 3.69,
+      "word": "questions"
+    },
+    {
+      "conf": 0.408076,
+      "end": 5.13,
+      "start": 4.95,
+      "word": "then"
+    },
+    {
+      "conf": 0.810317,
+      "end": 5.25,
+      "start": 5.13,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 5.76,
+      "start": 5.25,
+      "word": "notice"
+    },
+    {
+      "conf": 1.0,
+      "end": 5.91,
+      "start": 5.76,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 6.12,
+      "start": 5.91,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 6.24,
+      "start": 6.12,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 6.48,
+      "start": 6.24,
+      "word": "almost"
+    },
+    {
+      "conf": 1.0,
+      "end": 6.72,
+      "start": 6.48,
+      "word": "three"
+    },
+    {
+      "conf": 1.0,
+      "end": 7.05,
+      "start": 6.72,
+      "word": "times"
+    },
+    {
+      "conf": 1.0,
+      "end": 7.41,
+      "start": 7.05,
+      "word": "wider"
+    },
+    {
+      "conf": 1.0,
+      "end": 7.59,
+      "start": 7.41,
+      "word": "than"
+    },
+    {
+      "conf": 1.0,
+      "end": 7.74,
+      "start": 7.59,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 7.89,
+      "start": 7.74,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 8.31,
+      "start": 7.89,
+      "word": "long"
+    },
+    {
+      "conf": 1.0,
+      "end": 8.91,
+      "start": 8.76,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 9.09,
+      "start": 8.91,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 9.48,
+      "start": 9.09,
+      "word": "point"
+    },
+    {
+      "conf": 1.0,
+      "end": 9.9,
+      "start": 9.75,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 10.17,
+      "start": 9.9,
+      "word": "stop"
+    },
+    {
+      "conf": 1.0,
+      "end": 10.47,
+      "start": 10.17,
+      "word": "asking"
+    },
+    {
+      "conf": 1.0,
+      "end": 11.04,
+      "start": 10.47,
+      "word": "questions"
+    },
+    {
+      "conf": 1.0,
+      "end": 11.19,
+      "start": 11.04,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 11.43,
+      "start": 11.19,
+      "word": "call"
+    },
+    {
+      "conf": 1.0,
+      "end": 11.539159,
+      "start": 11.43,
+      "word": "it"
+    },
+    {
+      "conf": 0.638639,
+      "end": 11.61,
+      "start": 11.55,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 11.94,
+      "start": 11.61,
+      "word": "swimming"
+    },
+    {
+      "conf": 1.0,
+      "end": 12.15,
+      "start": 11.94,
+      "word": "dinner"
+    },
+    {
+      "conf": 1.0,
+      "end": 12.51,
+      "start": 12.15,
+      "word": "plate"
+    },
+    {
+      "conf": 1.0,
+      "end": 13.41,
+      "start": 13.23,
+      "word": "but"
+    },
+    {
+      "conf": 0.818927,
+      "end": 13.8,
+      "start": 13.41,
+      "word": "four"
+    },
+    {
+      "conf": 1.0,
+      "end": 14.19,
+      "start": 13.8,
+      "word": "hundred"
+    },
+    {
+      "conf": 0.946407,
+      "end": 14.278434,
+      "start": 14.19,
+      "word": "and"
+    },
+    {
+      "conf": 0.5344,
+      "end": 14.7,
+      "start": 14.278434,
+      "word": "ninety"
+    },
+    {
+      "conf": 1.0,
+      "end": 15.36,
+      "start": 14.741904,
+      "word": "million"
+    },
+    {
+      "conf": 1.0,
+      "end": 15.66,
+      "start": 15.36,
+      "word": "years"
+    },
+    {
+      "conf": 1.0,
+      "end": 16.02,
+      "start": 15.66,
+      "word": "ago"
+    },
+    {
+      "conf": 1.0,
+      "end": 16.56,
+      "start": 16.38,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 17.25,
+      "start": 16.56,
+      "word": "ridiculous"
+    },
+    {
+      "conf": 1.0,
+      "end": 17.49,
+      "start": 17.25,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 17.64,
+      "start": 17.49,
+      "word": "may"
+    },
+    {
+      "conf": 1.0,
+      "end": 17.73,
+      "start": 17.64,
+      "word": "have"
+    },
+    {
+      "conf": 0.846209,
+      "end": 18.0,
+      "start": 17.73,
+      "word": "worked"
+    },
+    {
+      "conf": 1.0,
+      "end": 18.18,
+      "start": 18.0,
+      "word": "like"
+    },
+    {
+      "conf": 1.0,
+      "end": 18.27,
+      "start": 18.18,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 18.75,
+      "start": 18.27,
+      "word": "underwater"
+    },
+    {
+      "conf": 1.0,
+      "end": 19.11,
+      "start": 18.75,
+      "word": "wing"
+    },
+    {
+      "conf": 1.0,
+      "end": 20.04,
+      "start": 19.92,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 20.19,
+      "start": 20.04,
+      "word": "should"
+    },
+    {
+      "conf": 1.0,
+      "end": 20.37,
+      "start": 20.19,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 20.46,
+      "start": 20.37,
+      "word": "be"
+    },
+    {
+      "conf": 1.0,
+      "end": 21.03,
+      "start": 20.46,
+      "word": "possible"
+    },
+    {
+      "conf": 1.0,
+      "end": 21.51,
+      "start": 21.42,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 22.02,
+      "start": 21.51,
+      "word": "giant"
+    },
+    {
+      "conf": 1.0,
+      "end": 22.44,
+      "start": 22.05,
+      "word": "ahmed"
+    },
+    {
+      "conf": 1.0,
+      "end": 22.92,
+      "start": 22.44,
+      "word": "skull"
+    },
+    {
+      "conf": 1.0,
+      "end": 23.13,
+      "start": 22.92,
+      "word": "ought"
+    },
+    {
+      "conf": 1.0,
+      "end": 23.22,
+      "start": 23.13,
+      "word": "to"
+    },
+    {
+      "conf": 0.7793,
+      "end": 23.52,
+      "start": 23.22,
+      "word": "create"
+    },
+    {
+      "conf": 1.0,
+      "end": 24.03,
+      "start": 23.52,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 24.42,
+      "start": 24.06,
+      "word": "waste"
+    },
+    {
+      "conf": 1.0,
+      "end": 24.93,
+      "start": 24.42,
+      "word": "energy"
+    },
+    {
+      "conf": 1.0,
+      "end": 25.32,
+      "start": 25.14,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 25.53,
+      "start": 25.32,
+      "word": "make"
+    },
+    {
+      "conf": 1.0,
+      "end": 26.01,
+      "start": 25.53,
+      "word": "steering"
+    },
+    {
+      "conf": 1.0,
+      "end": 26.61,
+      "start": 26.01,
+      "word": "miserable"
+    },
+    {
+      "conf": 1.0,
+      "end": 27.72,
+      "start": 27.12,
+      "word": "instead"
+    },
+    {
+      "conf": 0.696765,
+      "end": 28.14,
+      "start": 28.05,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 28.32,
+      "start": 28.14,
+      "word": "new"
+    },
+    {
+      "conf": 1.0,
+      "end": 28.71,
+      "start": 28.32,
+      "word": "study"
+    },
+    {
+      "conf": 1.0,
+      "end": 29.19,
+      "start": 28.71,
+      "word": "suggests"
+    },
+    {
+      "conf": 1.0,
+      "end": 29.37,
+      "start": 29.19,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 29.55,
+      "start": 29.37,
+      "word": "one"
+    },
+    {
+      "conf": 1.0,
+      "end": 30.18,
+      "start": 29.55,
+      "word": "generated"
+    },
+    {
+      "conf": 1.0,
+      "end": 30.33,
+      "start": 30.18,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 30.81,
+      "start": 30.33,
+      "word": "unusual"
+    },
+    {
+      "conf": 1.0,
+      "end": 31.08,
+      "start": 30.81,
+      "word": "amount"
+    },
+    {
+      "conf": 1.0,
+      "end": 31.17,
+      "start": 31.08,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 31.5,
+      "start": 31.17,
+      "word": "left"
+    },
+    {
+      "conf": 1.0,
+      "end": 31.8,
+      "start": 31.5,
+      "word": "without"
+    },
+    {
+      "conf": 1.0,
+      "end": 32.34,
+      "start": 31.8,
+      "word": "generating"
+    },
+    {
+      "conf": 1.0,
+      "end": 32.52,
+      "start": 32.34,
+      "word": "much"
+    },
+    {
+      "conf": 0.773011,
+      "end": 32.94,
+      "start": 32.52,
+      "word": "dragged"
+    },
+    {
+      "conf": 1.0,
+      "end": 33.21,
+      "start": 32.94,
+      "word": "all"
+    },
+    {
+      "conf": 0.680154,
+      "end": 34.29,
+      "start": 33.63,
+      "word": "scientist"
+    },
+    {
+      "conf": 0.796892,
+      "end": 34.38,
+      "start": 34.29,
+      "word": "of"
+    },
+    {
+      "conf": 0.796283,
+      "end": 34.68,
+      "start": 34.38,
+      "word": "name"
+    },
+    {
+      "conf": 1.0,
+      "end": 34.77,
+      "start": 34.68,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 35.16,
+      "start": 34.77,
+      "word": "animal"
+    },
+    {
+      "conf": 0.674993,
+      "end": 35.7,
+      "start": 35.4,
+      "word": "better"
+    },
+    {
+      "conf": 0.414344,
+      "end": 36.06,
+      "start": 35.7,
+      "word": "spare"
+    },
+    {
+      "conf": 1.0,
+      "end": 36.75,
+      "start": 36.09,
+      "word": "crux"
+    },
+    {
+      "conf": 1.0,
+      "end": 37.41,
+      "start": 37.17,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 37.83,
+      "start": 37.41,
+      "word": "above"
+    },
+    {
+      "conf": 0.499292,
+      "end": 38.270251,
+      "start": 38.04,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 38.61,
+      "start": 38.270251,
+      "word": "skull"
+    },
+    {
+      "conf": 1.0,
+      "end": 38.88,
+      "start": 38.61,
+      "word": "looked"
+    },
+    {
+      "conf": 1.0,
+      "end": 39.06,
+      "start": 38.88,
+      "word": "like"
+    },
+    {
+      "conf": 1.0,
+      "end": 39.12,
+      "start": 39.06,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 39.48,
+      "start": 39.12,
+      "word": "bat"
+    },
+    {
+      "conf": 1.0,
+      "end": 39.87,
+      "start": 39.48,
+      "word": "spreading"
+    },
+    {
+      "conf": 1.0,
+      "end": 40.05,
+      "start": 39.87,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 40.47,
+      "start": 40.08,
+      "word": "wings"
+    },
+    {
+      "conf": 1.0,
+      "end": 41.13,
+      "start": 40.86,
+      "word": "stay"
+    },
+    {
+      "conf": 1.0,
+      "end": 41.34,
+      "start": 41.13,
+      "word": "with"
+    },
+    {
+      "conf": 1.0,
+      "end": 41.64,
+      "start": 41.34,
+      "word": "me"
+    },
+    {
+      "conf": 1.0,
+      "end": 42.09,
+      "start": 41.79,
+      "word": "because"
+    },
+    {
+      "conf": 1.0,
+      "end": 42.18,
+      "start": 42.09,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 42.39,
+      "start": 42.18,
+      "word": "way"
+    },
+    {
+      "conf": 1.0,
+      "end": 42.96,
+      "start": 42.39,
+      "word": "researchers"
+    },
+    {
+      "conf": 1.0,
+      "end": 43.35,
+      "start": 42.96,
+      "word": "tested"
+    },
+    {
+      "conf": 1.0,
+      "end": 43.53,
+      "start": 43.35,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 43.8,
+      "start": 43.53,
+      "word": "head"
+    },
+    {
+      "conf": 0.811567,
+      "end": 44.13,
+      "start": 43.8,
+      "word": "reveal"
+    },
+    {
+      "conf": 1.0,
+      "end": 44.52,
+      "start": 44.141305,
+      "word": "something"
+    },
+    {
+      "conf": 1.0,
+      "end": 44.88,
+      "start": 44.52,
+      "word": "bigger"
+    },
+    {
+      "conf": 1.0,
+      "end": 45.69,
+      "start": 45.42,
+      "word": "early"
+    },
+    {
+      "conf": 1.0,
+      "end": 46.29,
+      "start": 45.69,
+      "word": "vertebrates"
+    },
+    {
+      "conf": 1.0,
+      "end": 46.38,
+      "start": 46.29,
+      "word": "we're"
+    },
+    {
+      "conf": 1.0,
+      "end": 46.77,
+      "start": 46.38,
+      "word": "solving"
+    },
+    {
+      "conf": 1.0,
+      "end": 47.13,
+      "start": 46.77,
+      "word": "movement"
+    },
+    {
+      "conf": 1.0,
+      "end": 47.49,
+      "start": 47.13,
+      "word": "problems"
+    },
+    {
+      "conf": 1.0,
+      "end": 47.85,
+      "start": 47.49,
+      "word": "before"
+    },
+    {
+      "conf": 1.0,
+      "end": 48.39,
+      "start": 47.85,
+      "word": "evolution"
+    },
+    {
+      "conf": 1.0,
+      "end": 48.6,
+      "start": 48.39,
+      "word": "gave"
+    },
+    {
+      "conf": 1.0,
+      "end": 48.75,
+      "start": 48.6,
+      "word": "them"
+    },
+    {
+      "conf": 1.0,
+      "end": 48.84,
+      "start": 48.75,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 49.29,
+      "start": 48.84,
+      "word": "equipment"
+    },
+    {
+      "conf": 1.0,
+      "end": 49.56,
+      "start": 49.29,
+      "word": "modern"
+    },
+    {
+      "conf": 1.0,
+      "end": 49.83,
+      "start": 49.56,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 50.04,
+      "start": 49.83,
+      "word": "take"
+    },
+    {
+      "conf": 1.0,
+      "end": 50.16,
+      "start": 50.04,
+      "word": "for"
+    },
+    {
+      "conf": 1.0,
+      "end": 50.67,
+      "start": 50.16,
+      "word": "granted"
+    },
+    {
+      "conf": 1.0,
+      "end": 51.69,
+      "start": 51.21,
+      "word": "first"
+    },
+    {
+      "conf": 1.0,
+      "end": 52.2,
+      "start": 51.9,
+      "word": "forget"
+    },
+    {
+      "conf": 1.0,
+      "end": 52.32,
+      "start": 52.2,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 52.62,
+      "start": 52.32,
+      "word": "ocean"
+    },
+    {
+      "conf": 1.0,
+      "end": 52.77,
+      "start": 52.62,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 53.16,
+      "start": 52.77,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 53.64,
+      "start": 53.43,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 53.76,
+      "start": 53.64,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 53.88,
+      "start": 53.76,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 54.12,
+      "start": 53.88,
+      "word": "early"
+    },
+    {
+      "conf": 1.0,
+      "end": 54.6,
+      "start": 54.12,
+      "word": "devonian"
+    },
+    {
+      "conf": 1.0,
+      "end": 55.08,
+      "start": 54.6,
+      "word": "period"
+    },
+    {
+      "conf": 1.0,
+      "end": 55.59,
+      "start": 55.44,
+      "word": "there"
+    },
+    {
+      "conf": 1.0,
+      "end": 55.65,
+      "start": 55.59,
+      "word": "are"
+    },
+    {
+      "conf": 1.0,
+      "end": 55.8,
+      "start": 55.65,
+      "word": "no"
+    },
+    {
+      "conf": 0.713227,
+      "end": 56.31,
+      "start": 55.8,
+      "word": "wales"
+    },
+    {
+      "conf": 0.529101,
+      "end": 56.46,
+      "start": 56.31,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 56.7,
+      "start": 56.46,
+      "word": "marine"
+    },
+    {
+      "conf": 1.0,
+      "end": 57.3,
+      "start": 56.7,
+      "word": "reptiles"
+    },
+    {
+      "conf": 1.0,
+      "end": 57.42,
+      "start": 57.3,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 57.84,
+      "start": 57.45,
+      "word": "definitely"
+    },
+    {
+      "conf": 0.77172,
+      "end": 58.02,
+      "start": 57.84,
+      "word": "no"
+    },
+    {
+      "conf": 1.0,
+      "end": 58.53,
+      "start": 58.02,
+      "word": "pelicans"
+    },
+    {
+      "conf": 1.0,
+      "end": 58.83,
+      "start": 58.53,
+      "word": "waiting"
+    },
+    {
+      "conf": 1.0,
+      "end": 58.92,
+      "start": 58.83,
+      "word": "to"
+    },
+    {
+      "conf": 0.758211,
+      "end": 59.19,
+      "start": 58.92,
+      "word": "steal"
+    },
+    {
+      "conf": 1.0,
+      "end": 59.64,
+      "start": 59.19,
+      "word": "lunch"
+    },
+    {
+      "conf": 1.0,
+      "end": 60.96,
+      "start": 60.3,
+      "word": "vertebrates"
+    },
+    {
+      "conf": 0.419871,
+      "end": 61.01825,
+      "start": 60.96,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 61.32,
+      "start": 61.01825,
+      "word": "still"
+    },
+    {
+      "conf": 1.0,
+      "end": 62.01,
+      "start": 61.32,
+      "word": "experimenting"
+    },
+    {
+      "conf": 1.0,
+      "end": 62.13,
+      "start": 62.01,
+      "word": "with"
+    },
+    {
+      "conf": 1.0,
+      "end": 62.19,
+      "start": 62.13,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 62.79,
+      "start": 62.19,
+      "word": "basics"
+    },
+    {
+      "conf": 0.768015,
+      "end": 63.51,
+      "start": 63.18,
+      "word": "jaws"
+    },
+    {
+      "conf": 0.550479,
+      "end": 63.57,
+      "start": 63.51,
+      "word": "are"
+    },
+    {
+      "conf": 1.0,
+      "end": 63.75,
+      "start": 63.578906,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 64.32,
+      "start": 63.75,
+      "word": "standard"
+    },
+    {
+      "conf": 0.545827,
+      "end": 64.92,
+      "start": 64.65,
+      "word": "pet"
+    },
+    {
+      "conf": 0.857827,
+      "end": 65.22,
+      "start": 64.92,
+      "word": "fins"
+    },
+    {
+      "conf": 0.651457,
+      "end": 65.331328,
+      "start": 65.22,
+      "word": "and"
+    },
+    {
+      "conf": 0.927804,
+      "end": 65.46,
+      "start": 65.331328,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 66.0,
+      "start": 65.46,
+      "word": "standard"
+    },
+    {
+      "conf": 1.0,
+      "end": 66.6,
+      "start": 66.33,
+      "word": "even"
+    },
+    {
+      "conf": 1.0,
+      "end": 66.69,
+      "start": 66.6,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 67.11,
+      "start": 66.69,
+      "word": "familiar"
+    },
+    {
+      "conf": 1.0,
+      "end": 67.41,
+      "start": 67.11,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 67.83,
+      "start": 67.41,
+      "word": "silhouette"
+    },
+    {
+      "conf": 1.0,
+      "end": 67.95,
+      "start": 67.83,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 68.19,
+      "start": 67.95,
+      "word": "more"
+    },
+    {
+      "conf": 1.0,
+      "end": 68.28,
+      "start": 68.19,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 68.31,
+      "start": 68.28,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 68.85,
+      "start": 68.31,
+      "word": "suggestion"
+    },
+    {
+      "conf": 0.626535,
+      "end": 69.0,
+      "start": 68.85,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 69.06,
+      "start": 69.0,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 69.48,
+      "start": 69.06,
+      "word": "rule"
+    },
+    {
+      "conf": 1.0,
+      "end": 70.38,
+      "start": 70.11,
+      "word": "one"
+    },
+    {
+      "conf": 1.0,
+      "end": 70.68,
+      "start": 70.38,
+      "word": "group"
+    },
+    {
+      "conf": 1.0,
+      "end": 70.77,
+      "start": 70.68,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 70.98,
+      "start": 70.77,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 71.49,
+      "start": 70.98,
+      "word": "evolutionary"
+    },
+    {
+      "conf": 1.0,
+      "end": 72.03,
+      "start": 71.49,
+      "word": "workshop"
+    },
+    {
+      "conf": 1.0,
+      "end": 72.12,
+      "start": 72.03,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 72.33,
+      "start": 72.12,
+      "word": "called"
+    },
+    {
+      "conf": 1.0,
+      "end": 72.42,
+      "start": 72.33,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 72.84,
+      "start": 72.42,
+      "word": "gallia"
+    },
+    {
+      "conf": 0.676202,
+      "end": 73.41,
+      "start": 72.84,
+      "word": "spades"
+    },
+    {
+      "conf": 1.0,
+      "end": 74.16,
+      "start": 74.01,
+      "word": "they"
+    },
+    {
+      "conf": 1.0,
+      "end": 74.25,
+      "start": 74.16,
+      "word": "were"
+    },
+    {
+      "conf": 1.0,
+      "end": 74.55,
+      "start": 74.25,
+      "word": "ahmed"
+    },
+    {
+      "conf": 1.0,
+      "end": 75.0,
+      "start": 74.58,
+      "word": "joyless"
+    },
+    {
+      "conf": 0.706819,
+      "end": 75.45,
+      "start": 75.0,
+      "word": "fishes"
+    },
+    {
+      "conf": 1.0,
+      "end": 75.72,
+      "start": 75.45,
+      "word": "found"
+    },
+    {
+      "conf": 1.0,
+      "end": 75.84,
+      "start": 75.72,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 75.99,
+      "start": 75.84,
+      "word": "what"
+    },
+    {
+      "conf": 1.0,
+      "end": 76.08,
+      "start": 75.99,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 76.38,
+      "start": 76.08,
+      "word": "now"
+    },
+    {
+      "conf": 1.0,
+      "end": 76.83,
+      "start": 76.38,
+      "word": "china"
+    },
+    {
+      "conf": 0.486835,
+      "end": 76.940193,
+      "start": 76.83,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 77.25,
+      "start": 76.940193,
+      "word": "northern"
+    },
+    {
+      "conf": 1.0,
+      "end": 77.85,
+      "start": 77.25,
+      "word": "vietnam"
+    },
+    {
+      "conf": 1.0,
+      "end": 78.51,
+      "start": 78.42,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 78.81,
+      "start": 78.51,
+      "word": "gala"
+    },
+    {
+      "conf": 0.663951,
+      "end": 79.11,
+      "start": 78.81,
+      "word": "spade"
+    },
+    {
+      "conf": 1.0,
+      "end": 79.44,
+      "start": 79.11,
+      "word": "carried"
+    },
+    {
+      "conf": 1.0,
+      "end": 79.5,
+      "start": 79.44,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 79.83,
+      "start": 79.5,
+      "word": "rigid"
+    },
+    {
+      "conf": 1.0,
+      "end": 80.28,
+      "start": 79.83,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 80.43,
+      "start": 80.28,
+      "word": "over"
+    },
+    {
+      "conf": 1.0,
+      "end": 80.55,
+      "start": 80.43,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 80.85,
+      "start": 80.55,
+      "word": "front"
+    },
+    {
+      "conf": 1.0,
+      "end": 80.94,
+      "start": 80.85,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 81.06,
+      "start": 80.94,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 81.45,
+      "start": 81.06,
+      "word": "body"
+    },
+    {
+      "conf": 1.0,
+      "end": 82.5,
+      "start": 82.08,
+      "word": "behind"
+    },
+    {
+      "conf": 1.0,
+      "end": 82.62,
+      "start": 82.5,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 82.86,
+      "start": 82.62,
+      "word": "came"
+    },
+    {
+      "conf": 0.724428,
+      "end": 82.92,
+      "start": 82.86,
+      "word": "a"
+    },
+    {
+      "conf": 0.514857,
+      "end": 83.28,
+      "start": 82.93218,
+      "word": "soft"
+    },
+    {
+      "conf": 0.514857,
+      "end": 83.31,
+      "start": 83.28,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 83.73,
+      "start": 83.31,
+      "word": "trunk"
+    },
+    {
+      "conf": 1.0,
+      "end": 83.85,
+      "start": 83.73,
+      "word": "and"
+    },
+    {
+      "conf": 0.577294,
+      "end": 84.33,
+      "start": 83.85,
+      "word": "tail"
+    },
+    {
+      "conf": 0.529101,
+      "end": 84.93,
+      "start": 84.72,
+      "word": "know"
+    },
+    {
+      "conf": 0.673323,
+      "end": 85.44,
+      "start": 84.93,
+      "word": "movable"
+    },
+    {
+      "conf": 1.0,
+      "end": 85.89,
+      "start": 85.44,
+      "word": "jaw"
+    },
+    {
+      "conf": 0.529101,
+      "end": 86.4,
+      "start": 86.19,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 86.97,
+      "start": 86.4,
+      "word": "flexible"
+    },
+    {
+      "conf": 1.0,
+      "end": 87.39,
+      "start": 86.97,
+      "word": "pectoral"
+    },
+    {
+      "conf": 1.0,
+      "end": 87.96,
+      "start": 87.39,
+      "word": "fins"
+    },
+    {
+      "conf": 1.0,
+      "end": 88.8,
+      "start": 88.47,
+      "word": "just"
+    },
+    {
+      "conf": 0.623367,
+      "end": 89.25,
+      "start": 88.8,
+      "word": "armor"
+    },
+    {
+      "conf": 1.0,
+      "end": 90.09,
+      "start": 89.55,
+      "word": "eyes"
+    },
+    {
+      "conf": 0.860878,
+      "end": 90.66,
+      "start": 90.15,
+      "word": "sensory"
+    },
+    {
+      "conf": 1.0,
+      "end": 91.32,
+      "start": 90.66,
+      "word": "canals"
+    },
+    {
+      "conf": 1.0,
+      "end": 91.77,
+      "start": 91.62,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 91.86,
+      "start": 91.77,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 92.43,
+      "start": 91.86,
+      "word": "confidence"
+    },
+    {
+      "conf": 1.0,
+      "end": 92.55,
+      "start": 92.43,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 92.79,
+      "start": 92.55,
+      "word": "into"
+    },
+    {
+      "conf": 1.0,
+      "end": 92.91,
+      "start": 92.79,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 93.3,
+      "start": 92.91,
+      "word": "ocean"
+    },
+    {
+      "conf": 1.0,
+      "end": 93.69,
+      "start": 93.3,
+      "word": "wearing"
+    },
+    {
+      "conf": 1.0,
+      "end": 93.72,
+      "start": 93.69,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 94.08,
+      "start": 93.72,
+      "word": "survey"
+    },
+    {
+      "conf": 0.657754,
+      "end": 94.53,
+      "start": 94.17,
+      "word": "trey"
+    },
+    {
+      "conf": 1.0,
+      "end": 95.61,
+      "start": 95.31,
+      "word": "most"
+    },
+    {
+      "conf": 1.0,
+      "end": 96.06,
+      "start": 95.61,
+      "word": "gillespie"
+    },
+    {
+      "conf": 1.0,
+      "end": 96.3,
+      "start": 96.12,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 96.72,
+      "start": 96.3,
+      "word": "shields"
+    },
+    {
+      "conf": 1.0,
+      "end": 97.05,
+      "start": 96.72,
+      "word": "followed"
+    },
+    {
+      "conf": 0.679572,
+      "end": 97.77,
+      "start": 97.05,
+      "word": "recognizable"
+    },
+    {
+      "conf": 1.0,
+      "end": 98.28,
+      "start": 97.77,
+      "word": "shapes"
+    },
+    {
+      "conf": 1.0,
+      "end": 99.27,
+      "start": 98.7,
+      "word": "rounded"
+    },
+    {
+      "conf": 1.0,
+      "end": 99.81,
+      "start": 99.27,
+      "word": "spike"
+    },
+    {
+      "conf": 1.0,
+      "end": 100.5,
+      "start": 99.96,
+      "word": "forked"
+    },
+    {
+      "conf": 1.0,
+      "end": 100.65,
+      "start": 100.5,
+      "word": "or"
+    },
+    {
+      "conf": 1.0,
+      "end": 101.19,
+      "start": 100.65,
+      "word": "domed"
+    },
+    {
+      "conf": 1.0,
+      "end": 102.0,
+      "start": 101.88,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 102.33,
+      "start": 102.0,
+      "word": "task"
+    },
+    {
+      "conf": 1.0,
+      "end": 102.48,
+      "start": 102.33,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 102.87,
+      "start": 102.48,
+      "word": "ignored"
+    },
+    {
+      "conf": 1.0,
+      "end": 102.96,
+      "start": 102.87,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 103.38,
+      "start": 102.96,
+      "word": "menu"
+    },
+    {
+      "conf": 1.0,
+      "end": 103.98,
+      "start": 103.8,
+      "word": "it's"
+    },
+    {
+      "conf": 0.792269,
+      "end": 104.4,
+      "start": 103.98,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 104.94,
+      "start": 104.412466,
+      "word": "swept"
+    },
+    {
+      "conf": 1.0,
+      "end": 105.12,
+      "start": 104.94,
+      "word": "out"
+    },
+    {
+      "conf": 0.866719,
+      "end": 105.3,
+      "start": 105.12,
+      "word": "would"
+    },
+    {
+      "conf": 1.0,
+      "end": 105.48,
+      "start": 105.3,
+      "word": "into"
+    },
+    {
+      "conf": 1.0,
+      "end": 105.69,
+      "start": 105.48,
+      "word": "long"
+    },
+    {
+      "conf": 1.0,
+      "end": 106.41,
+      "start": 105.69,
+      "word": "projections"
+    },
+    {
+      "conf": 1.0,
+      "end": 107.01,
+      "start": 106.89,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 107.28,
+      "start": 107.01,
+      "word": "front"
+    },
+    {
+      "conf": 1.0,
+      "end": 107.46,
+      "start": 107.28,
+      "word": "edge"
+    },
+    {
+      "conf": 1.0,
+      "end": 107.79,
+      "start": 107.46,
+      "word": "curved"
+    },
+    {
+      "conf": 1.0,
+      "end": 108.21,
+      "start": 107.79,
+      "word": "forward"
+    },
+    {
+      "conf": 1.0,
+      "end": 108.78,
+      "start": 108.66,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 109.11,
+      "start": 108.78,
+      "word": "rear"
+    },
+    {
+      "conf": 1.0,
+      "end": 109.29,
+      "start": 109.11,
+      "word": "edge"
+    },
+    {
+      "conf": 1.0,
+      "end": 109.68,
+      "start": 109.29,
+      "word": "curved"
+    },
+    {
+      "conf": 0.849753,
+      "end": 109.8,
+      "start": 109.68,
+      "word": "in"
+    },
+    {
+      "conf": 0.655531,
+      "end": 110.07,
+      "start": 109.8,
+      "word": "would"
+    },
+    {
+      "conf": 1.0,
+      "end": 110.79,
+      "start": 110.58,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 111.21,
+      "start": 110.79,
+      "word": "above"
+    },
+    {
+      "conf": 1.0,
+      "end": 111.54,
+      "start": 111.39,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 111.93,
+      "start": 111.54,
+      "word": "resembled"
+    },
+    {
+      "conf": 1.0,
+      "end": 111.96,
+      "start": 111.93,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 112.38,
+      "start": 111.96,
+      "word": "bat"
+    },
+    {
+      "conf": 1.0,
+      "end": 112.74,
+      "start": 112.62,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 113.25,
+      "start": 112.74,
+      "word": "boomerang"
+    },
+    {
+      "conf": 0.68669,
+      "end": 113.67,
+      "start": 113.52,
+      "word": "or"
+    },
+    {
+      "conf": 1.0,
+      "end": 113.7,
+      "start": 113.67,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 114.12,
+      "start": 113.7,
+      "word": "stealth"
+    },
+    {
+      "conf": 1.0,
+      "end": 114.72,
+      "start": 114.15,
+      "word": "aircraft"
+    },
+    {
+      "conf": 0.694559,
+      "end": 115.11,
+      "start": 114.72,
+      "word": "designed"
+    },
+    {
+      "conf": 0.82651,
+      "end": 115.29,
+      "start": 115.11,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 115.44,
+      "start": 115.29,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 115.59,
+      "start": 115.44,
+      "word": "very"
+    },
+    {
+      "conf": 1.0,
+      "end": 116.19,
+      "start": 115.59,
+      "word": "confusing"
+    },
+    {
+      "conf": 1.0,
+      "end": 116.46,
+      "start": 116.19,
+      "word": "phone"
+    },
+    {
+      "conf": 1.0,
+      "end": 117.03,
+      "start": 116.46,
+      "word": "description"
+    },
+    {
+      "conf": 1.0,
+      "end": 117.87,
+      "start": 117.75,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 118.26,
+      "start": 117.87,
+      "word": "fossil"
+    },
+    {
+      "conf": 1.0,
+      "end": 118.41,
+      "start": 118.26,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 118.89,
+      "start": 118.41,
+      "word": "collected"
+    },
+    {
+      "conf": 0.635649,
+      "end": 119.13,
+      "start": 118.89,
+      "word": "nick"
+    },
+    {
+      "conf": 0.920442,
+      "end": 119.52,
+      "start": 119.13,
+      "word": "urging"
+    },
+    {
+      "conf": 1.0,
+      "end": 119.97,
+      "start": 119.82,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 120.45,
+      "start": 119.97,
+      "word": "china's"
+    },
+    {
+      "conf": 0.792022,
+      "end": 120.84,
+      "start": 120.45,
+      "word": "union"
+    },
+    {
+      "conf": 1.0,
+      "end": 121.32,
+      "start": 120.84,
+      "word": "province"
+    },
+    {
+      "conf": 1.0,
+      "end": 121.59,
+      "start": 121.32,
+      "word": "during"
+    },
+    {
+      "conf": 1.0,
+      "end": 121.68,
+      "start": 121.59,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 122.04,
+      "start": 121.68,
+      "word": "nineteen"
+    },
+    {
+      "conf": 1.0,
+      "end": 122.49,
+      "start": 122.04,
+      "word": "eighties"
+    },
+    {
+      "conf": 0.840207,
+      "end": 123.21,
+      "start": 123.12,
+      "word": "he"
+    },
+    {
+      "conf": 1.0,
+      "end": 123.48,
+      "start": 123.21479,
+      "word": "came"
+    },
+    {
+      "conf": 1.0,
+      "end": 123.63,
+      "start": 123.48,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 123.72,
+      "start": 123.63,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 124.05,
+      "start": 123.72,
+      "word": "session"
+    },
+    {
+      "conf": 0.835644,
+      "end": 124.23,
+      "start": 124.05,
+      "word": "can"
+    },
+    {
+      "conf": 0.835644,
+      "end": 124.83,
+      "start": 124.23,
+      "word": "formation"
+    },
+    {
+      "conf": 1.0,
+      "end": 125.64,
+      "start": 125.16,
+      "word": "preserved"
+    },
+    {
+      "conf": 0.638558,
+      "end": 125.76,
+      "start": 125.64,
+      "word": "in"
+    },
+    {
+      "conf": 0.661144,
+      "end": 126.21,
+      "start": 125.76,
+      "word": "fine"
+    },
+    {
+      "conf": 1.0,
+      "end": 126.48,
+      "start": 126.21,
+      "word": "yellow"
+    },
+    {
+      "conf": 0.3405,
+      "end": 126.799995,
+      "start": 126.48,
+      "word": "grace"
+    },
+    {
+      "conf": 0.609168,
+      "end": 127.44,
+      "start": 126.799995,
+      "word": "sandstone"
+    },
+    {
+      "conf": 1.0,
+      "end": 128.19,
+      "start": 127.98,
+      "word": "here"
+    },
+    {
+      "conf": 1.0,
+      "end": 128.31,
+      "start": 128.19,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 128.4,
+      "start": 128.31,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 128.82,
+      "start": 128.4,
+      "word": "important"
+    },
+    {
+      "conf": 1.0,
+      "end": 129.48,
+      "start": 128.82,
+      "word": "limitation"
+    },
+    {
+      "conf": 1.0,
+      "end": 130.59,
+      "start": 130.02,
+      "word": "scientists"
+    },
+    {
+      "conf": 1.0,
+      "end": 130.74,
+      "start": 130.59,
+      "word": "do"
+    },
+    {
+      "conf": 1.0,
+      "end": 130.95,
+      "start": 130.74,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 131.13,
+      "start": 130.95,
+      "word": "have"
+    },
+    {
+      "conf": 1.0,
+      "end": 131.16,
+      "start": 131.13,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 131.61,
+      "start": 131.16,
+      "word": "complete"
+    },
+    {
+      "conf": 1.0,
+      "end": 131.82,
+      "start": 131.61,
+      "word": "but"
+    },
+    {
+      "conf": 1.0,
+      "end": 132.42,
+      "start": 131.82,
+      "word": "hospice"
+    },
+    {
+      "conf": 1.0,
+      "end": 132.96,
+      "start": 132.84,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 133.14,
+      "start": 132.96,
+      "word": "only"
+    },
+    {
+      "conf": 1.0,
+      "end": 133.35,
+      "start": 133.14,
+      "word": "known"
+    },
+    {
+      "conf": 1.0,
+      "end": 133.92,
+      "start": 133.35,
+      "word": "specimen"
+    },
+    {
+      "conf": 0.876939,
+      "end": 134.026348,
+      "start": 133.92,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 134.4,
+      "start": 134.077383,
+      "word": "nearly"
+    },
+    {
+      "conf": 1.0,
+      "end": 134.85,
+      "start": 134.4,
+      "word": "complete"
+    },
+    {
+      "conf": 1.0,
+      "end": 135.03,
+      "start": 134.85,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 135.39,
+      "start": 135.03,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 135.87,
+      "start": 135.69,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 135.99,
+      "start": 135.87,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 136.62,
+      "start": 135.99,
+      "word": "counterpart"
+    },
+    {
+      "conf": 1.0,
+      "end": 136.74,
+      "start": 136.62,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 136.8,
+      "start": 136.74,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 137.19,
+      "start": 136.8,
+      "word": "rock"
+    },
+    {
+      "conf": 1.0,
+      "end": 137.91,
+      "start": 137.79,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 138.27,
+      "start": 137.91,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 138.6,
+      "start": 138.27,
+      "word": "measures"
+    },
+    {
+      "conf": 1.0,
+      "end": 138.81,
+      "start": 138.6,
+      "word": "about"
+    },
+    {
+      "conf": 1.0,
+      "end": 139.14,
+      "start": 138.81,
+      "word": "five"
+    },
+    {
+      "conf": 1.0,
+      "end": 139.74,
+      "start": 139.14,
+      "word": "centimeters"
+    },
+    {
+      "conf": 1.0,
+      "end": 140.01,
+      "start": 139.74,
+      "word": "down"
+    },
+    {
+      "conf": 1.0,
+      "end": 140.1,
+      "start": 140.01,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 140.43,
+      "start": 140.1,
+      "word": "middle"
+    },
+    {
+      "conf": 1.0,
+      "end": 141.21,
+      "start": 140.91,
+      "word": "based"
+    },
+    {
+      "conf": 1.0,
+      "end": 141.33,
+      "start": 141.21,
+      "word": "on"
+    },
+    {
+      "conf": 1.0,
+      "end": 142.05,
+      "start": 141.33,
+      "word": "symmetry"
+    },
+    {
+      "conf": 1.0,
+      "end": 142.89,
+      "start": 142.29,
+      "word": "researchers"
+    },
+    {
+      "conf": 1.0,
+      "end": 143.28,
+      "start": 142.89,
+      "word": "estimate"
+    },
+    {
+      "conf": 1.0,
+      "end": 143.67,
+      "start": 143.28,
+      "word": "roughly"
+    },
+    {
+      "conf": 1.0,
+      "end": 144.3,
+      "start": 143.67,
+      "word": "fourteen"
+    },
+    {
+      "conf": 1.0,
+      "end": 145.08,
+      "start": 144.3,
+      "word": "centimeters"
+    },
+    {
+      "conf": 1.0,
+      "end": 145.68,
+      "start": 145.32,
+      "word": "between"
+    },
+    {
+      "conf": 1.0,
+      "end": 145.8,
+      "start": 145.68,
+      "word": "the"
+    },
+    {
+      "conf": 0.570991,
+      "end": 146.04,
+      "start": 145.8,
+      "word": "outer"
+    },
+    {
+      "conf": 1.0,
+      "end": 146.55,
+      "start": 146.04,
+      "word": "tips"
+    },
+    {
+      "conf": 1.0,
+      "end": 147.66,
+      "start": 147.03,
+      "word": "yes"
+    },
+    {
+      "conf": 1.0,
+      "end": 148.26,
+      "start": 148.14,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 148.47,
+      "start": 148.26,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 148.74,
+      "start": 148.47,
+      "word": "really"
+    },
+    {
+      "conf": 1.0,
+      "end": 149.1,
+      "start": 148.74,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 149.61,
+      "start": 149.1,
+      "word": "dramatically"
+    },
+    {
+      "conf": 1.0,
+      "end": 150.03,
+      "start": 149.61,
+      "word": "wider"
+    },
+    {
+      "conf": 1.0,
+      "end": 150.18,
+      "start": 150.03,
+      "word": "than"
+    },
+    {
+      "conf": 1.0,
+      "end": 150.27,
+      "start": 150.18,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 150.42,
+      "start": 150.27,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 150.87,
+      "start": 150.42,
+      "word": "long"
+    },
+    {
+      "conf": 1.0,
+      "end": 151.32,
+      "start": 151.2,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 151.59,
+      "start": 151.32,
+      "word": "missing"
+    },
+    {
+      "conf": 1.0,
+      "end": 151.86,
+      "start": 151.59,
+      "word": "body"
+    },
+    {
+      "conf": 1.0,
+      "end": 152.01,
+      "start": 151.86,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 152.1,
+      "start": 152.01,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 152.19,
+      "start": 152.1,
+      "word": "be"
+    },
+    {
+      "conf": 1.0,
+      "end": 153.0,
+      "start": 152.19,
+      "word": "reconstructed"
+    },
+    {
+      "conf": 1.0,
+      "end": 153.15,
+      "start": 153.0,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 153.6,
+      "start": 153.15,
+      "word": "related"
+    },
+    {
+      "conf": 0.532873,
+      "end": 154.05,
+      "start": 153.6,
+      "word": "glass"
+    },
+    {
+      "conf": 0.684733,
+      "end": 154.53,
+      "start": 154.05,
+      "word": "beds"
+    },
+    {
+      "conf": 1.0,
+      "end": 155.16,
+      "start": 154.92,
+      "word": "every"
+    },
+    {
+      "conf": 1.0,
+      "end": 155.61,
+      "start": 155.16,
+      "word": "picture"
+    },
+    {
+      "conf": 1.0,
+      "end": 155.7,
+      "start": 155.61,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 155.79,
+      "start": 155.7,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 156.06,
+      "start": 155.79,
+      "word": "living"
+    },
+    {
+      "conf": 1.0,
+      "end": 156.39,
+      "start": 156.06,
+      "word": "animal"
+    },
+    {
+      "conf": 1.0,
+      "end": 156.75,
+      "start": 156.39,
+      "word": "therefore"
+    },
+    {
+      "conf": 1.0,
+      "end": 157.29,
+      "start": 156.75,
+      "word": "combines"
+    },
+    {
+      "conf": 1.0,
+      "end": 157.62,
+      "start": 157.29,
+      "word": "fossil"
+    },
+    {
+      "conf": 1.0,
+      "end": 158.07,
+      "start": 157.62,
+      "word": "evidence"
+    },
+    {
+      "conf": 0.658997,
+      "end": 158.22,
+      "start": 158.07,
+      "word": "with"
+    },
+    {
+      "conf": 0.658997,
+      "end": 158.67,
+      "start": 158.22,
+      "word": "informed"
+    },
+    {
+      "conf": 1.0,
+      "end": 159.18,
+      "start": 158.67,
+      "word": "modeling"
+    },
+    {
+      "conf": 1.0,
+      "end": 159.81,
+      "start": 159.66,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 160.14,
+      "start": 159.81,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 160.38,
+      "start": 160.2,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 160.5,
+      "start": 160.38,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 161.01,
+      "start": 160.5,
+      "word": "star"
+    },
+    {
+      "conf": 1.0,
+      "end": 161.61,
+      "start": 161.49,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 161.85,
+      "start": 161.61,
+      "word": "rest"
+    },
+    {
+      "conf": 1.0,
+      "end": 161.91,
+      "start": 161.85,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 162.0,
+      "start": 161.91,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 162.42,
+      "start": 162.0,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 162.69,
+      "start": 162.51,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 163.23,
+      "start": 162.69,
+      "word": "supporting"
+    },
+    {
+      "conf": 0.391168,
+      "end": 163.44,
+      "start": 163.23,
+      "word": "car"
+    },
+    {
+      "conf": 0.427975,
+      "end": 163.8,
+      "start": 163.44,
+      "word": "past"
+    },
+    {
+      "conf": 1.0,
+      "end": 164.49,
+      "start": 164.25,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 164.88,
+      "start": 164.49,
+      "word": "creates"
+    },
+    {
+      "conf": 1.0,
+      "end": 164.91,
+      "start": 164.88,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 165.36,
+      "start": 164.91,
+      "word": "problem"
+    },
+    {
+      "conf": 1.0,
+      "end": 165.84,
+      "start": 165.72,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 166.14,
+      "start": 165.84,
+      "word": "cannot"
+    },
+    {
+      "conf": 1.0,
+      "end": 166.383076,
+      "start": 166.14,
+      "word": "watch"
+    },
+    {
+      "conf": 0.46022,
+      "end": 166.44,
+      "start": 166.383076,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 166.92,
+      "start": 166.452744,
+      "word": "devonian"
+    },
+    {
+      "conf": 1.0,
+      "end": 167.22,
+      "start": 166.92,
+      "word": "animal"
+    },
+    {
+      "conf": 1.0,
+      "end": 167.67,
+      "start": 167.22,
+      "word": "swim"
+    },
+    {
+      "conf": 1.0,
+      "end": 168.15,
+      "start": 168.03,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 168.24,
+      "start": 168.15,
+      "word": "there"
+    },
+    {
+      "conf": 0.864718,
+      "end": 168.33,
+      "start": 168.24,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 168.54,
+      "start": 168.33,
+      "word": "no"
+    },
+    {
+      "conf": 1.0,
+      "end": 168.93,
+      "start": 168.54,
+      "word": "modern"
+    },
+    {
+      "conf": 1.0,
+      "end": 169.26,
+      "start": 168.93,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 169.41,
+      "start": 169.26,
+      "word": "with"
+    },
+    {
+      "conf": 1.0,
+      "end": 169.47,
+      "start": 169.41,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 169.74,
+      "start": 169.47,
+      "word": "same"
+    },
+    {
+      "conf": 1.0,
+      "end": 170.28,
+      "start": 169.74,
+      "word": "design"
+    },
+    {
+      "conf": 1.0,
+      "end": 171.0,
+      "start": 170.79,
+      "word": "so"
+    },
+    {
+      "conf": 1.0,
+      "end": 171.09,
+      "start": 171.0,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 171.69,
+      "start": 171.09,
+      "word": "researchers"
+    },
+    {
+      "conf": 1.0,
+      "end": 172.05,
+      "start": 171.69,
+      "word": "built"
+    },
+    {
+      "conf": 1.0,
+      "end": 172.32,
+      "start": 172.05,
+      "word": "one"
+    },
+    {
+      "conf": 1.0,
+      "end": 173.28,
+      "start": 172.65,
+      "word": "digitally"
+    },
+    {
+      "conf": 0.529101,
+      "end": 173.94,
+      "start": 173.73,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 174.27,
+      "start": 173.94,
+      "word": "ancient"
+    },
+    {
+      "conf": 1.0,
+      "end": 174.57,
+      "start": 174.27,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 174.72,
+      "start": 174.57,
+      "word": "were"
+    },
+    {
+      "conf": 1.0,
+      "end": 175.53,
+      "start": 174.72,
+      "word": "inconvenienced"
+    },
+    {
+      "conf": 0.55202,
+      "end": 175.92,
+      "start": 175.8,
+      "word": "they"
+    },
+    {
+      "conf": 1.0,
+      "end": 176.67,
+      "start": 175.92,
+      "word": "reconstructed"
+    },
+    {
+      "conf": 1.0,
+      "end": 176.79,
+      "start": 176.67,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 177.12,
+      "start": 176.79,
+      "word": "animal"
+    },
+    {
+      "conf": 1.0,
+      "end": 177.24,
+      "start": 177.12,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 177.48,
+      "start": 177.24,
+      "word": "three"
+    },
+    {
+      "conf": 1.0,
+      "end": 178.14,
+      "start": 177.48,
+      "word": "dimensions"
+    },
+    {
+      "conf": 1.0,
+      "end": 178.26,
+      "start": 178.14,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 178.56,
+      "start": 178.26,
+      "word": "placed"
+    },
+    {
+      "conf": 0.932983,
+      "end": 178.679473,
+      "start": 178.56,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 179.01,
+      "start": 178.679473,
+      "word": "inside"
+    },
+    {
+      "conf": 1.0,
+      "end": 179.7,
+      "start": 179.01,
+      "word": "computational"
+    },
+    {
+      "conf": 1.0,
+      "end": 180.06,
+      "start": 179.7,
+      "word": "fluid"
+    },
+    {
+      "conf": 1.0,
+      "end": 180.57,
+      "start": 180.06,
+      "word": "dynamics"
+    },
+    {
+      "conf": 1.0,
+      "end": 181.32,
+      "start": 180.57,
+      "word": "simulations"
+    },
+    {
+      "conf": 1.0,
+      "end": 182.28,
+      "start": 182.01,
+      "word": "think"
+    },
+    {
+      "conf": 1.0,
+      "end": 182.4,
+      "start": 182.28,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 182.52,
+      "start": 182.4,
+      "word": "it"
+    },
+    {
+      "conf": 0.877623,
+      "end": 182.61,
+      "start": 182.52,
+      "word": "as"
+    },
+    {
+      "conf": 1.0,
+      "end": 182.67,
+      "start": 182.61,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 183.12,
+      "start": 182.67,
+      "word": "virtual"
+    },
+    {
+      "conf": 1.0,
+      "end": 183.48,
+      "start": 183.12,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 183.84,
+      "start": 183.48,
+      "word": "tunnel"
+    },
+    {
+      "conf": 1.0,
+      "end": 184.59,
+      "start": 184.5,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 185.01,
+      "start": 184.59,
+      "word": "computer"
+    },
+    {
+      "conf": 1.0,
+      "end": 185.64,
+      "start": 185.01,
+      "word": "calculates"
+    },
+    {
+      "conf": 0.601185,
+      "end": 185.76,
+      "start": 185.64,
+      "word": "her"
+    },
+    {
+      "conf": 1.0,
+      "end": 186.09,
+      "start": 185.771968,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 186.36,
+      "start": 186.09,
+      "word": "moves"
+    },
+    {
+      "conf": 1.0,
+      "end": 186.63,
+      "start": 186.36,
+      "word": "around"
+    },
+    {
+      "conf": 1.0,
+      "end": 186.69,
+      "start": 186.63,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 187.08,
+      "start": 186.69,
+      "word": "body"
+    },
+    {
+      "conf": 0.592878,
+      "end": 187.56,
+      "start": 187.35,
+      "word": "were"
+    },
+    {
+      "conf": 1.0,
+      "end": 187.92,
+      "start": 187.56,
+      "word": "pressure"
+    },
+    {
+      "conf": 1.0,
+      "end": 188.4,
+      "start": 187.92,
+      "word": "changes"
+    },
+    {
+      "conf": 1.0,
+      "end": 188.55,
+      "start": 188.4,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 188.73,
+      "start": 188.55,
+      "word": "how"
+    },
+    {
+      "conf": 1.0,
+      "end": 189.18,
+      "start": 188.73,
+      "word": "strongly"
+    },
+    {
+      "conf": 1.0,
+      "end": 189.3,
+      "start": 189.18,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 189.63,
+      "start": 189.3,
+      "word": "shape"
+    },
+    {
+      "conf": 0.69563,
+      "end": 189.93,
+      "start": 189.63,
+      "word": "resist"
+    },
+    {
+      "conf": 1.0,
+      "end": 190.35,
+      "start": 189.93,
+      "word": "motion"
+    },
+    {
+      "conf": 1.0,
+      "end": 191.1,
+      "start": 190.89,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 191.52,
+      "start": 191.1,
+      "word": "measurements"
+    },
+    {
+      "conf": 1.0,
+      "end": 191.97,
+      "start": 191.52,
+      "word": "matter"
+    },
+    {
+      "conf": 1.0,
+      "end": 192.48,
+      "start": 192.03,
+      "word": "dragon"
+    },
+    {
+      "conf": 0.867204,
+      "end": 192.96,
+      "start": 192.48,
+      "word": "lift"
+    },
+    {
+      "conf": 0.635492,
+      "end": 193.59,
+      "start": 193.29,
+      "word": "drag"
+    },
+    {
+      "conf": 0.568298,
+      "end": 193.71,
+      "start": 193.59,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 194.07,
+      "start": 193.71,
+      "word": "water"
+    },
+    {
+      "conf": 0.857886,
+      "end": 194.37,
+      "start": 194.07,
+      "word": "saying"
+    },
+    {
+      "conf": 0.44939,
+      "end": 194.7,
+      "start": 194.49,
+      "word": "door"
+    },
+    {
+      "conf": 0.567769,
+      "end": 194.85,
+      "start": 194.7,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 195.33,
+      "start": 194.855552,
+      "word": "stop"
+    },
+    {
+      "conf": 0.668948,
+      "end": 196.2,
+      "start": 195.9,
+      "word": "lift"
+    },
+    {
+      "conf": 0.464727,
+      "end": 196.29,
+      "start": 196.2,
+      "word": "his"
+    },
+    {
+      "conf": 1.0,
+      "end": 196.65,
+      "start": 196.29,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 196.95,
+      "start": 196.65,
+      "word": "saying"
+    },
+    {
+      "conf": 0.424758,
+      "end": 197.31,
+      "start": 196.95,
+      "word": "rum"
+    },
+    {
+      "conf": 1.0,
+      "end": 197.91,
+      "start": 197.37,
+      "word": "fine"
+    },
+    {
+      "conf": 1.0,
+      "end": 198.39,
+      "start": 198.24,
+      "word": "but"
+    },
+    {
+      "conf": 1.0,
+      "end": 198.54,
+      "start": 198.39,
+      "word": "you're"
+    },
+    {
+      "conf": 1.0,
+      "end": 198.81,
+      "start": 198.54,
+      "word": "going"
+    },
+    {
+      "conf": 1.0,
+      "end": 198.96,
+      "start": 198.81,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 199.11,
+      "start": 198.96,
+      "word": "way"
+    },
+    {
+      "conf": 1.0,
+      "end": 199.44,
+      "start": 199.11,
+      "word": "now"
+    },
+    {
+      "conf": 1.0,
+      "end": 200.1,
+      "start": 200.01,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 200.28,
+      "start": 200.1,
+      "word": "good"
+    },
+    {
+      "conf": 1.0,
+      "end": 200.73,
+      "start": 200.28,
+      "word": "cruising"
+    },
+    {
+      "conf": 1.0,
+      "end": 201.03,
+      "start": 200.73,
+      "word": "shape"
+    },
+    {
+      "conf": 1.0,
+      "end": 201.54,
+      "start": 201.03,
+      "word": "produces"
+    },
+    {
+      "conf": 1.0,
+      "end": 201.937471,
+      "start": 201.54,
+      "word": "useful"
+    },
+    {
+      "conf": 0.443771,
+      "end": 202.08,
+      "start": 201.937471,
+      "word": "live"
+    },
+    {
+      "conf": 1.0,
+      "end": 202.47,
+      "start": 202.2,
+      "word": "without"
+    },
+    {
+      "conf": 1.0,
+      "end": 202.77,
+      "start": 202.47,
+      "word": "paying"
+    },
+    {
+      "conf": 1.0,
+      "end": 202.89,
+      "start": 202.77,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 203.46,
+      "start": 202.89,
+      "word": "enormous"
+    },
+    {
+      "conf": 0.59257,
+      "end": 203.73,
+      "start": 203.46,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 204.3,
+      "start": 203.733516,
+      "word": "penalty"
+    },
+    {
+      "conf": 1.0,
+      "end": 205.29,
+      "start": 204.78,
+      "word": "engineers"
+    },
+    {
+      "conf": 0.679457,
+      "end": 205.8,
+      "start": 205.29,
+      "word": "described"
+    },
+    {
+      "conf": 1.0,
+      "end": 205.89,
+      "start": 205.8,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 206.34,
+      "start": 205.89,
+      "word": "balance"
+    },
+    {
+      "conf": 1.0,
+      "end": 206.509585,
+      "start": 206.34,
+      "word": "with"
+    },
+    {
+      "conf": 0.652968,
+      "end": 206.58,
+      "start": 206.52,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 206.85,
+      "start": 206.58,
+      "word": "lift"
+    },
+    {
+      "conf": 1.0,
+      "end": 206.94,
+      "start": 206.85,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 207.24,
+      "start": 206.94,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 207.78,
+      "start": 207.24,
+      "word": "ratio"
+    },
+    {
+      "conf": 0.788703,
+      "end": 208.588037,
+      "start": 208.35,
+      "word": "more"
+    },
+    {
+      "conf": 0.439673,
+      "end": 208.762705,
+      "start": 208.59,
+      "word": "live"
+    },
+    {
+      "conf": 1.0,
+      "end": 208.89,
+      "start": 208.762705,
+      "word": "for"
+    },
+    {
+      "conf": 1.0,
+      "end": 209.13,
+      "start": 208.89,
+      "word": "less"
+    },
+    {
+      "conf": 0.712958,
+      "end": 209.37,
+      "start": 209.13,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 209.64,
+      "start": 209.37,
+      "word": "means"
+    },
+    {
+      "conf": 1.0,
+      "end": 210.09,
+      "start": 209.64,
+      "word": "greater"
+    },
+    {
+      "conf": 1.0,
+      "end": 210.84,
+      "start": 210.09,
+      "word": "efficiency"
+    },
+    {
+      "conf": 1.0,
+      "end": 211.92,
+      "start": 211.68,
+      "word": "better"
+    },
+    {
+      "conf": 1.0,
+      "end": 212.22,
+      "start": 211.92,
+      "word": "space"
+    },
+    {
+      "conf": 1.0,
+      "end": 212.545913,
+      "start": 212.22,
+      "word": "reached"
+    },
+    {
+      "conf": 0.4567,
+      "end": 212.579253,
+      "start": 212.55,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 213.03,
+      "start": 212.579253,
+      "word": "ratio"
+    },
+    {
+      "conf": 0.577327,
+      "end": 213.236499,
+      "start": 213.03,
+      "word": "above"
+    },
+    {
+      "conf": 1.0,
+      "end": 213.45,
+      "start": 213.236499,
+      "word": "four"
+    },
+    {
+      "conf": 1.0,
+      "end": 213.66,
+      "start": 213.45,
+      "word": "point"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.08,
+      "start": 213.66,
+      "word": "five"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.2,
+      "start": 214.08,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.32,
+      "start": 214.2,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.56,
+      "start": 214.32,
+      "word": "angle"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.65,
+      "start": 214.56,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 214.98,
+      "start": 214.65,
+      "word": "attack"
+    },
+    {
+      "conf": 0.82764,
+      "end": 215.1,
+      "start": 214.98,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 215.31,
+      "start": 215.1,
+      "word": "ten"
+    },
+    {
+      "conf": 1.0,
+      "end": 215.85,
+      "start": 215.31,
+      "word": "degrees"
+    },
+    {
+      "conf": 1.0,
+      "end": 216.78,
+      "start": 216.48,
+      "word": "among"
+    },
+    {
+      "conf": 1.0,
+      "end": 217.14,
+      "start": 216.81,
+      "word": "every"
+    },
+    {
+      "conf": 0.359166,
+      "end": 217.56,
+      "start": 217.14,
+      "word": "goliaths"
+    },
+    {
+      "conf": 0.88438,
+      "end": 217.77,
+      "start": 217.56,
+      "word": "been"
+    },
+    {
+      "conf": 1.0,
+      "end": 218.22,
+      "start": 217.8,
+      "word": "tested"
+    },
+    {
+      "conf": 1.0,
+      "end": 218.34,
+      "start": 218.22,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 218.4,
+      "start": 218.34,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 218.79,
+      "start": 218.4,
+      "word": "study"
+    },
+    {
+      "conf": 1.0,
+      "end": 218.97,
+      "start": 218.79,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 219.12,
+      "start": 218.97,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 219.21,
+      "start": 219.12,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 219.57,
+      "start": 219.21,
+      "word": "highest"
+    },
+    {
+      "conf": 1.0,
+      "end": 220.02,
+      "start": 219.57,
+      "word": "result"
+    },
+    {
+      "conf": 1.0,
+      "end": 220.68,
+      "start": 220.56,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 221.01,
+      "start": 220.68,
+      "word": "next"
+    },
+    {
+      "conf": 1.0,
+      "end": 221.25,
+      "start": 221.01,
+      "word": "best"
+    },
+    {
+      "conf": 1.0,
+      "end": 221.55,
+      "start": 221.25,
+      "word": "model"
+    },
+    {
+      "conf": 1.0,
+      "end": 221.79,
+      "start": 221.55,
+      "word": "came"
+    },
+    {
+      "conf": 0.621937,
+      "end": 221.88,
+      "start": 221.79,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 222.15,
+      "start": 221.88,
+      "word": "close"
+    },
+    {
+      "conf": 1.0,
+      "end": 222.27,
+      "start": 222.15,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 222.57,
+      "start": 222.27,
+      "word": "three"
+    },
+    {
+      "conf": 1.0,
+      "end": 222.63,
+      "start": 222.57,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 222.72,
+      "start": 222.63,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 223.02,
+      "start": 222.72,
+      "word": "same"
+    },
+    {
+      "conf": 1.0,
+      "end": 223.38,
+      "start": 223.02,
+      "word": "angle"
+    },
+    {
+      "conf": 1.0,
+      "end": 224.01,
+      "start": 223.92,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 224.4,
+      "start": 224.01,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 224.58,
+      "start": 224.4,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 224.82,
+      "start": 224.58,
+      "word": "looks"
+    },
+    {
+      "conf": 1.0,
+      "end": 225.24,
+      "start": 224.82,
+      "word": "least"
+    },
+    {
+      "conf": 1.0,
+      "end": 225.48,
+      "start": 225.24,
+      "word": "like"
+    },
+    {
+      "conf": 1.0,
+      "end": 225.87,
+      "start": 225.48,
+      "word": "sensible"
+    },
+    {
+      "conf": 1.0,
+      "end": 226.68,
+      "start": 225.87,
+      "word": "transportation"
+    },
+    {
+      "conf": 1.0,
+      "end": 227.28,
+      "start": 227.04,
+      "word": "may"
+    },
+    {
+      "conf": 1.0,
+      "end": 227.37,
+      "start": 227.28,
+      "word": "have"
+    },
+    {
+      "conf": 1.0,
+      "end": 227.55,
+      "start": 227.37,
+      "word": "been"
+    },
+    {
+      "conf": 1.0,
+      "end": 228.36,
+      "start": 227.55,
+      "word": "exceptionally"
+    },
+    {
+      "conf": 1.0,
+      "end": 228.6,
+      "start": 228.36,
+      "word": "good"
+    },
+    {
+      "conf": 0.848643,
+      "end": 228.66,
+      "start": 228.6,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 228.99,
+      "start": 228.66,
+      "word": "moving"
+    },
+    {
+      "conf": 1.0,
+      "end": 229.2,
+      "start": 228.99,
+      "word": "through"
+    },
+    {
+      "conf": 1.0,
+      "end": 229.68,
+      "start": 229.2,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 231.03,
+      "start": 230.49,
+      "word": "evolution"
+    },
+    {
+      "conf": 1.0,
+      "end": 231.39,
+      "start": 231.03,
+      "word": "enjoys"
+    },
+    {
+      "conf": 1.0,
+      "end": 231.54,
+      "start": 231.39,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 231.81,
+      "start": 231.54,
+      "word": "joke"
+    },
+    {
+      "conf": 1.0,
+      "end": 232.08,
+      "start": 231.81,
+      "word": "far"
+    },
+    {
+      "conf": 1.0,
+      "end": 232.26,
+      "start": 232.08,
+      "word": "too"
+    },
+    {
+      "conf": 1.0,
+      "end": 232.65,
+      "start": 232.26,
+      "word": "much"
+    },
+    {
+      "conf": 1.0,
+      "end": 233.49,
+      "start": 233.34,
+      "word": "but"
+    },
+    {
+      "conf": 1.0,
+      "end": 233.67,
+      "start": 233.49,
+      "word": "that's"
+    },
+    {
+      "conf": 1.0,
+      "end": 233.85,
+      "start": 233.67,
+      "word": "only"
+    },
+    {
+      "conf": 1.0,
+      "end": 234.18,
+      "start": 233.85,
+      "word": "half"
+    },
+    {
+      "conf": 1.0,
+      "end": 234.27,
+      "start": 234.18,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 234.81,
+      "start": 234.27,
+      "word": "mystery"
+    },
+    {
+      "conf": 0.774065,
+      "end": 235.41,
+      "start": 235.35,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 235.8,
+      "start": 235.416782,
+      "word": "strange"
+    },
+    {
+      "conf": 1.0,
+      "end": 236.13,
+      "start": 235.8,
+      "word": "result"
+    },
+    {
+      "conf": 1.0,
+      "end": 236.37,
+      "start": 236.13,
+      "word": "means"
+    },
+    {
+      "conf": 1.0,
+      "end": 236.94,
+      "start": 236.37,
+      "word": "nothing"
+    },
+    {
+      "conf": 1.0,
+      "end": 237.21,
+      "start": 236.94,
+      "word": "unless"
+    },
+    {
+      "conf": 1.0,
+      "end": 237.3,
+      "start": 237.21,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 237.66,
+      "start": 237.3,
+      "word": "shape"
+    },
+    {
+      "conf": 1.0,
+      "end": 237.81,
+      "start": 237.66,
+      "word": "can"
+    },
+    {
+      "conf": 1.0,
+      "end": 238.26,
+      "start": 237.81,
+      "word": "explain"
+    },
+    {
+      "conf": 1.0,
+      "end": 238.44,
+      "start": 238.26,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 239.79,
+      "start": 239.67,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 240.39,
+      "start": 239.79,
+      "word": "projections"
+    },
+    {
+      "conf": 1.0,
+      "end": 240.54,
+      "start": 240.39,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 240.57,
+      "start": 240.54,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 240.87,
+      "start": 240.57,
+      "word": "cross"
+    },
+    {
+      "conf": 1.0,
+      "end": 241.26,
+      "start": 240.87,
+      "word": "section"
+    },
+    {
+      "conf": 1.0,
+      "end": 241.38,
+      "start": 241.26,
+      "word": "that"
+    },
+    {
+      "conf": 0.443973,
+      "end": 241.68,
+      "start": 241.38,
+      "word": "behave"
+    },
+    {
+      "conf": 1.0,
+      "end": 242.04,
+      "start": 241.70978,
+      "word": "somewhat"
+    },
+    {
+      "conf": 1.0,
+      "end": 242.25,
+      "start": 242.04,
+      "word": "like"
+    },
+    {
+      "conf": 1.0,
+      "end": 242.34,
+      "start": 242.25,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 242.85,
+      "start": 242.34,
+      "word": "airfoil"
+    },
+    {
+      "conf": 0.765004,
+      "end": 243.84,
+      "start": 243.48,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 244.56,
+      "start": 243.84,
+      "word": "accelerated"
+    },
+    {
+      "conf": 1.0,
+      "end": 244.74,
+      "start": 244.56,
+      "word": "over"
+    },
+    {
+      "conf": 1.0,
+      "end": 244.83,
+      "start": 244.74,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 245.22,
+      "start": 244.83,
+      "word": "curved"
+    },
+    {
+      "conf": 1.0,
+      "end": 245.34,
+      "start": 245.22,
+      "word": "up"
+    },
+    {
+      "conf": 1.0,
+      "end": 245.37,
+      "start": 245.34,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 245.85,
+      "start": 245.37,
+      "word": "surface"
+    },
+    {
+      "conf": 1.0,
+      "end": 245.94,
+      "start": 245.85,
+      "word": "and"
+    },
+    {
+      "conf": 0.850068,
+      "end": 246.15,
+      "start": 245.94,
+      "word": "move"
+    },
+    {
+      "conf": 1.0,
+      "end": 246.6,
+      "start": 246.154512,
+      "word": "differently"
+    },
+    {
+      "conf": 1.0,
+      "end": 247.14,
+      "start": 246.6,
+      "word": "underneath"
+    },
+    {
+      "conf": 1.0,
+      "end": 247.92,
+      "start": 247.77,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 248.22,
+      "start": 247.92,
+      "word": "pressure"
+    },
+    {
+      "conf": 1.0,
+      "end": 248.67,
+      "start": 248.22,
+      "word": "difference"
+    },
+    {
+      "conf": 1.0,
+      "end": 249.27,
+      "start": 248.67,
+      "word": "generated"
+    },
+    {
+      "conf": 0.812356,
+      "end": 249.78,
+      "start": 249.27,
+      "word": "left"
+    },
+    {
+      "conf": 1.0,
+      "end": 250.44,
+      "start": 250.29,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 250.53,
+      "start": 250.44,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 250.62,
+      "start": 250.53,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 251.04,
+      "start": 250.62,
+      "word": "same"
+    },
+    {
+      "conf": 1.0,
+      "end": 251.37,
+      "start": 251.04,
+      "word": "broad"
+    },
+    {
+      "conf": 1.0,
+      "end": 251.91,
+      "start": 251.37,
+      "word": "principle"
+    },
+    {
+      "conf": 1.0,
+      "end": 252.06,
+      "start": 251.91,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 252.36,
+      "start": 252.06,
+      "word": "helps"
+    },
+    {
+      "conf": 0.633981,
+      "end": 252.45,
+      "start": 252.36,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 252.84,
+      "start": 252.45,
+      "word": "aircraft"
+    },
+    {
+      "conf": 1.0,
+      "end": 253.2,
+      "start": 252.84,
+      "word": "wing"
+    },
+    {
+      "conf": 1.0,
+      "end": 253.71,
+      "start": 253.2,
+      "word": "work"
+    },
+    {
+      "conf": 1.0,
+      "end": 254.88,
+      "start": 254.28,
+      "word": "except"
+    },
+    {
+      "conf": 1.0,
+      "end": 255.09,
+      "start": 254.88,
+      "word": "under"
+    },
+    {
+      "conf": 1.0,
+      "end": 255.57,
+      "start": 255.09,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 255.96,
+      "start": 255.81,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 256.32,
+      "start": 255.96,
+      "word": "attached"
+    },
+    {
+      "conf": 1.0,
+      "end": 256.83,
+      "start": 256.32,
+      "word": "directly"
+    },
+    {
+      "conf": 1.0,
+      "end": 256.98,
+      "start": 256.83,
+      "word": "to"
+    },
+    {
+      "conf": 0.699963,
+      "end": 257.04,
+      "start": 256.98,
+      "word": "a"
+    },
+    {
+      "conf": 0.322226,
+      "end": 257.37,
+      "start": 257.25,
+      "word": "his"
+    },
+    {
+      "conf": 1.0,
+      "end": 257.85,
+      "start": 257.375684,
+      "word": "face"
+    },
+    {
+      "conf": 1.0,
+      "end": 258.57,
+      "start": 258.48,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 258.96,
+      "start": 258.57,
+      "word": "crescent"
+    },
+    {
+      "conf": 1.0,
+      "end": 259.35,
+      "start": 258.96,
+      "word": "outline"
+    },
+    {
+      "conf": 1.0,
+      "end": 259.65,
+      "start": 259.35,
+      "word": "also"
+    },
+    {
+      "conf": 1.0,
+      "end": 260.04,
+      "start": 259.65,
+      "word": "helped"
+    },
+    {
+      "conf": 0.87212,
+      "end": 260.7,
+      "start": 260.49,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 260.94,
+      "start": 260.7,
+      "word": "long"
+    },
+    {
+      "conf": 1.0,
+      "end": 261.27,
+      "start": 260.94,
+      "word": "span"
+    },
+    {
+      "conf": 0.811454,
+      "end": 261.66,
+      "start": 261.27,
+      "word": "reduce"
+    },
+    {
+      "conf": 1.0,
+      "end": 261.78,
+      "start": 261.665654,
+      "word": "the"
+    },
+    {
+      "conf": 0.555093,
+      "end": 262.41,
+      "start": 261.78,
+      "word": "swelling"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.01,
+      "start": 262.41,
+      "word": "vortices"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.13,
+      "start": 263.01,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.4,
+      "start": 263.13,
+      "word": "waste"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.79,
+      "start": 263.4,
+      "word": "energy"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.88,
+      "start": 263.79,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 263.97,
+      "start": 263.88,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 264.48,
+      "start": 263.97,
+      "word": "tips"
+    },
+    {
+      "conf": 1.0,
+      "end": 265.44,
+      "start": 264.99,
+      "word": "smooth"
+    },
+    {
+      "conf": 1.0,
+      "end": 266.07,
+      "start": 265.44,
+      "word": "connections"
+    },
+    {
+      "conf": 1.0,
+      "end": 266.37,
+      "start": 266.07,
+      "word": "between"
+    },
+    {
+      "conf": 1.0,
+      "end": 266.46,
+      "start": 266.37,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 267.09,
+      "start": 266.46,
+      "word": "projections"
+    },
+    {
+      "conf": 0.822182,
+      "end": 267.206543,
+      "start": 267.09,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 267.27,
+      "start": 267.206543,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 267.72,
+      "start": 267.27,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 268.14,
+      "start": 267.72,
+      "word": "reduced"
+    },
+    {
+      "conf": 1.0,
+      "end": 268.74,
+      "start": 268.14,
+      "word": "interference"
+    },
+    {
+      "conf": 1.0,
+      "end": 269.1,
+      "start": 268.74,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 270.0,
+      "start": 269.64,
+      "word": "small"
+    },
+    {
+      "conf": 1.0,
+      "end": 270.51,
+      "start": 270.0,
+      "word": "changes"
+    },
+    {
+      "conf": 1.0,
+      "end": 270.63,
+      "start": 270.51,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.05,
+      "start": 270.63,
+      "word": "angle"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.14,
+      "start": 271.05,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.23,
+      "start": 271.14,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.5,
+      "start": 271.23,
+      "word": "model"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.77,
+      "start": 271.5,
+      "word": "trade"
+    },
+    {
+      "conf": 1.0,
+      "end": 271.83,
+      "start": 271.77,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 272.07,
+      "start": 271.83,
+      "word": "little"
+    },
+    {
+      "conf": 1.0,
+      "end": 272.64,
+      "start": 272.07,
+      "word": "resistance"
+    },
+    {
+      "conf": 0.705895,
+      "end": 272.76,
+      "start": 272.64,
+      "word": "for"
+    },
+    {
+      "conf": 0.705895,
+      "end": 272.94,
+      "start": 272.76,
+      "word": "more"
+    },
+    {
+      "conf": 0.584829,
+      "end": 273.33,
+      "start": 272.94,
+      "word": "left"
+    },
+    {
+      "conf": 0.793672,
+      "end": 274.08,
+      "start": 273.72,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 274.59,
+      "start": 274.38,
+      "word": "but"
+    },
+    {
+      "conf": 0.641274,
+      "end": 274.74,
+      "start": 274.59,
+      "word": "as"
+    },
+    {
+      "conf": 0.594979,
+      "end": 274.98,
+      "start": 274.74,
+      "word": "piece"
+    },
+    {
+      "conf": 1.0,
+      "end": 275.13,
+      "start": 274.98,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 275.43,
+      "start": 275.13,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 275.79,
+      "start": 275.43,
+      "word": "flapping"
+    },
+    {
+      "conf": 0.627398,
+      "end": 275.88,
+      "start": 275.79,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 276.24,
+      "start": 275.891191,
+      "word": "skull"
+    },
+    {
+      "conf": 1.0,
+      "end": 276.33,
+      "start": 276.24,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 276.75,
+      "start": 276.33,
+      "word": "launching"
+    },
+    {
+      "conf": 1.0,
+      "end": 276.93,
+      "start": 276.75,
+      "word": "into"
+    },
+    {
+      "conf": 1.0,
+      "end": 277.05,
+      "start": 276.93,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 277.62,
+      "start": 277.05,
+      "word": "devonian"
+    },
+    {
+      "conf": 1.0,
+      "end": 278.16,
+      "start": 277.62,
+      "word": "sky"
+    },
+    {
+      "conf": 1.0,
+      "end": 278.91,
+      "start": 278.64,
+      "word": "please"
+    },
+    {
+      "conf": 1.0,
+      "end": 279.03,
+      "start": 278.91,
+      "word": "do"
+    },
+    {
+      "conf": 1.0,
+      "end": 279.24,
+      "start": 279.03,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 279.48,
+      "start": 279.24,
+      "word": "draw"
+    },
+    {
+      "conf": 1.0,
+      "end": 279.63,
+      "start": 279.48,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 280.47,
+      "start": 279.63,
+      "word": "reconstruction"
+    },
+    {
+      "conf": 1.0,
+      "end": 281.34,
+      "start": 280.8,
+      "word": "actually"
+    },
+    {
+      "conf": 1.0,
+      "end": 281.73,
+      "start": 281.43,
+      "word": "draw"
+    },
+    {
+      "conf": 0.653574,
+      "end": 281.85,
+      "start": 281.73,
+      "word": "at"
+    },
+    {
+      "conf": 1.0,
+      "end": 282.42,
+      "start": 281.85,
+      "word": "once"
+    },
+    {
+      "conf": 0.708389,
+      "end": 282.87,
+      "start": 282.69,
+      "word": "then"
+    },
+    {
+      "conf": 1.0,
+      "end": 283.14,
+      "start": 282.87,
+      "word": "hide"
+    },
+    {
+      "conf": 1.0,
+      "end": 283.2,
+      "start": 283.14,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 283.41,
+      "start": 283.2,
+      "word": "from"
+    },
+    {
+      "conf": 1.0,
+      "end": 284.55,
+      "start": 283.41,
+      "word": "paleontologists"
+    },
+    {
+      "conf": 1.0,
+      "end": 285.57,
+      "start": 285.45,
+      "word": "the"
+    },
+    {
+      "conf": 0.876567,
+      "end": 285.99,
+      "start": 285.57,
+      "word": "serious"
+    },
+    {
+      "conf": 1.0,
+      "end": 286.71,
+      "start": 285.99,
+      "word": "interpretation"
+    },
+    {
+      "conf": 1.0,
+      "end": 286.86,
+      "start": 286.71,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 286.98,
+      "start": 286.86,
+      "word": "that"
+    },
+    {
+      "conf": 0.545372,
+      "end": 287.4,
+      "start": 287.079023,
+      "word": "task"
+    },
+    {
+      "conf": 0.545372,
+      "end": 287.61,
+      "start": 287.4,
+      "word": "miss"
+    },
+    {
+      "conf": 1.0,
+      "end": 287.79,
+      "start": 287.61,
+      "word": "may"
+    },
+    {
+      "conf": 1.0,
+      "end": 287.85,
+      "start": 287.79,
+      "word": "have"
+    },
+    {
+      "conf": 1.0,
+      "end": 288.06,
+      "start": 287.85,
+      "word": "been"
+    },
+    {
+      "conf": 1.0,
+      "end": 288.18,
+      "start": 288.06,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 288.66,
+      "start": 288.18,
+      "word": "efficient"
+    },
+    {
+      "conf": 1.0,
+      "end": 289.08,
+      "start": 288.66,
+      "word": "gliding"
+    },
+    {
+      "conf": 1.0,
+      "end": 289.53,
+      "start": 289.08,
+      "word": "cruiser"
+    },
+    {
+      "conf": 1.0,
+      "end": 290.19,
+      "start": 289.98,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 290.55,
+      "start": 290.19,
+      "word": "rigid"
+    },
+    {
+      "conf": 0.52562,
+      "end": 290.82,
+      "start": 290.55,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 291.39,
+      "start": 290.82,
+      "word": "generated"
+    },
+    {
+      "conf": 1.0,
+      "end": 291.78,
+      "start": 291.39,
+      "word": "useful"
+    },
+    {
+      "conf": 0.634252,
+      "end": 292.11,
+      "start": 291.78,
+      "word": "left"
+    },
+    {
+      "conf": 1.0,
+      "end": 292.32,
+      "start": 292.11,
+      "word": "even"
+    },
+    {
+      "conf": 1.0,
+      "end": 292.47,
+      "start": 292.32,
+      "word": "though"
+    },
+    {
+      "conf": 1.0,
+      "end": 292.59,
+      "start": 292.47,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 292.862578,
+      "start": 292.59,
+      "word": "animal"
+    },
+    {
+      "conf": 0.438134,
+      "end": 293.126514,
+      "start": 292.862578,
+      "word": "lacked"
+    },
+    {
+      "conf": 1.0,
+      "end": 293.58,
+      "start": 293.126514,
+      "word": "flexible"
+    },
+    {
+      "conf": 0.637767,
+      "end": 293.88,
+      "start": 293.58,
+      "word": "pad"
+    },
+    {
+      "conf": 0.571137,
+      "end": 294.45,
+      "start": 293.88,
+      "word": "fins"
+    },
+    {
+      "conf": 1.0,
+      "end": 295.77,
+      "start": 295.2,
+      "word": "researchers"
+    },
+    {
+      "conf": 1.0,
+      "end": 296.01,
+      "start": 295.77,
+      "word": "also"
+    },
+    {
+      "conf": 1.0,
+      "end": 296.43,
+      "start": 296.01,
+      "word": "tested"
+    },
+    {
+      "conf": 1.0,
+      "end": 296.7,
+      "start": 296.43,
+      "word": "whether"
+    },
+    {
+      "conf": 1.0,
+      "end": 296.85,
+      "start": 296.7,
+      "word": "the"
+    },
+    {
+      "conf": 0.7707,
+      "end": 297.18,
+      "start": 296.85,
+      "word": "effect"
+    },
+    {
+      "conf": 0.886125,
+      "end": 297.57,
+      "start": 297.18,
+      "word": "depended"
+    },
+    {
+      "conf": 1.0,
+      "end": 297.72,
+      "start": 297.57,
+      "word": "on"
+    },
+    {
+      "conf": 1.0,
+      "end": 297.96,
+      "start": 297.72,
+      "word": "staying"
+    },
+    {
+      "conf": 1.0,
+      "end": 298.23,
+      "start": 297.96,
+      "word": "close"
+    },
+    {
+      "conf": 1.0,
+      "end": 298.32,
+      "start": 298.23,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 298.44,
+      "start": 298.32,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 298.65,
+      "start": 298.44,
+      "word": "sea"
+    },
+    {
+      "conf": 1.0,
+      "end": 299.01,
+      "start": 298.65,
+      "word": "floor"
+    },
+    {
+      "conf": 1.0,
+      "end": 299.76,
+      "start": 299.46,
+      "word": "adding"
+    },
+    {
+      "conf": 1.0,
+      "end": 299.79,
+      "start": 299.76,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 300.15,
+      "start": 299.79,
+      "word": "virtual"
+    },
+    {
+      "conf": 1.0,
+      "end": 300.54,
+      "start": 300.15,
+      "word": "ground"
+    },
+    {
+      "conf": 1.0,
+      "end": 300.87,
+      "start": 300.54,
+      "word": "plane"
+    },
+    {
+      "conf": 0.777485,
+      "end": 301.23,
+      "start": 300.87,
+      "word": "produced"
+    },
+    {
+      "conf": 1.0,
+      "end": 301.53,
+      "start": 301.23,
+      "word": "nearly"
+    },
+    {
+      "conf": 1.0,
+      "end": 301.65,
+      "start": 301.53,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 301.95,
+      "start": 301.65,
+      "word": "same"
+    },
+    {
+      "conf": 0.292706,
+      "end": 302.13,
+      "start": 301.95,
+      "word": "live"
+    },
+    {
+      "conf": 0.883764,
+      "end": 302.25,
+      "start": 302.166621,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 302.58,
+      "start": 302.253486,
+      "word": "drag"
+    },
+    {
+      "conf": 1.0,
+      "end": 303.0,
+      "start": 302.58,
+      "word": "pattern"
+    },
+    {
+      "conf": 1.0,
+      "end": 303.81,
+      "start": 303.63,
+      "word": "so"
+    },
+    {
+      "conf": 1.0,
+      "end": 303.93,
+      "start": 303.81,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 304.38,
+      "start": 303.93,
+      "word": "design"
+    },
+    {
+      "conf": 1.0,
+      "end": 304.53,
+      "start": 304.38,
+      "word": "may"
+    },
+    {
+      "conf": 1.0,
+      "end": 304.62,
+      "start": 304.53,
+      "word": "have"
+    },
+    {
+      "conf": 1.0,
+      "end": 304.95,
+      "start": 304.62,
+      "word": "worked"
+    },
+    {
+      "conf": 1.0,
+      "end": 305.13,
+      "start": 304.98,
+      "word": "near"
+    },
+    {
+      "conf": 1.0,
+      "end": 305.22,
+      "start": 305.13,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 305.64,
+      "start": 305.22,
+      "word": "bottom"
+    },
+    {
+      "conf": 1.0,
+      "end": 306.06,
+      "start": 305.91,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 306.45,
+      "start": 306.06,
+      "word": "higher"
+    },
+    {
+      "conf": 1.0,
+      "end": 306.57,
+      "start": 306.45,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 306.66,
+      "start": 306.57,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 307.08,
+      "start": 306.66,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 308.55,
+      "start": 308.34,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 308.64,
+      "start": 308.55,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 308.82,
+      "start": 308.64,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 309.6,
+      "start": 308.82,
+      "word": "necessarily"
+    },
+    {
+      "conf": 1.0,
+      "end": 309.63,
+      "start": 309.6,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 310.35,
+      "start": 309.63,
+      "word": "biological"
+    },
+    {
+      "conf": 1.0,
+      "end": 310.98,
+      "start": 310.35,
+      "word": "hovercraft"
+    },
+    {
+      "conf": 1.0,
+      "end": 311.31,
+      "start": 310.98,
+      "word": "trapped"
+    },
+    {
+      "conf": 1.0,
+      "end": 311.52,
+      "start": 311.31,
+      "word": "above"
+    },
+    {
+      "conf": 1.0,
+      "end": 311.64,
+      "start": 311.52,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 312.12,
+      "start": 311.64,
+      "word": "sand"
+    },
+    {
+      "conf": 1.0,
+      "end": 312.69,
+      "start": 312.54,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 312.9,
+      "start": 312.69,
+      "word": "makes"
+    },
+    {
+      "conf": 1.0,
+      "end": 313.26,
+      "start": 312.9,
+      "word": "one"
+    },
+    {
+      "conf": 1.0,
+      "end": 313.77,
+      "start": 313.26,
+      "word": "strange"
+    },
+    {
+      "conf": 1.0,
+      "end": 314.13,
+      "start": 313.77,
+      "word": "skull"
+    },
+    {
+      "conf": 1.0,
+      "end": 314.52,
+      "start": 314.13,
+      "word": "part"
+    },
+    {
+      "conf": 1.0,
+      "end": 314.64,
+      "start": 314.52,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 314.67,
+      "start": 314.64,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 314.97,
+      "start": 314.67,
+      "word": "much"
+    },
+    {
+      "conf": 1.0,
+      "end": 315.3,
+      "start": 314.97,
+      "word": "larger"
+    },
+    {
+      "conf": 1.0,
+      "end": 315.84,
+      "start": 315.3,
+      "word": "story"
+    },
+    {
+      "conf": 0.32413,
+      "end": 316.71,
+      "start": 316.32,
+      "word": "jealous"
+    },
+    {
+      "conf": 0.380777,
+      "end": 317.003467,
+      "start": 316.71,
+      "word": "bedsit"
+    },
+    {
+      "conf": 0.519042,
+      "end": 317.16,
+      "start": 317.003467,
+      "word": "sit"
+    },
+    {
+      "conf": 1.0,
+      "end": 317.49,
+      "start": 317.163018,
+      "word": "close"
+    },
+    {
+      "conf": 1.0,
+      "end": 317.58,
+      "start": 317.49,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 317.7,
+      "start": 317.58,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 318.24,
+      "start": 317.7,
+      "word": "evolutionary"
+    },
+    {
+      "conf": 1.0,
+      "end": 318.66,
+      "start": 318.24,
+      "word": "branch"
+    },
+    {
+      "conf": 1.0,
+      "end": 318.93,
+      "start": 318.66,
+      "word": "leading"
+    },
+    {
+      "conf": 1.0,
+      "end": 319.23,
+      "start": 318.93,
+      "word": "towards"
+    },
+    {
+      "conf": 0.731893,
+      "end": 319.65,
+      "start": 319.26,
+      "word": "george"
+    },
+    {
+      "conf": 1.0,
+      "end": 320.4,
+      "start": 319.65,
+      "word": "vertebrates"
+    },
+    {
+      "conf": 1.0,
+      "end": 321.09,
+      "start": 320.97,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 321.33,
+      "start": 321.09,
+      "word": "show"
+    },
+    {
+      "conf": 1.0,
+      "end": 321.51,
+      "start": 321.33,
+      "word": "what"
+    },
+    {
+      "conf": 0.715831,
+      "end": 321.96,
+      "start": 321.51,
+      "word": "vertebrate"
+    },
+    {
+      "conf": 1.0,
+      "end": 322.26,
+      "start": 321.968525,
+      "word": "life"
+    },
+    {
+      "conf": 1.0,
+      "end": 322.41,
+      "start": 322.26,
+      "word": "was"
+    },
+    {
+      "conf": 1.0,
+      "end": 322.74,
+      "start": 322.41,
+      "word": "doing"
+    },
+    {
+      "conf": 1.0,
+      "end": 323.04,
+      "start": 322.74,
+      "word": "before"
+    },
+    {
+      "conf": 1.0,
+      "end": 323.55,
+      "start": 323.04,
+      "word": "jaws"
+    },
+    {
+      "conf": 0.770929,
+      "end": 323.67,
+      "start": 323.55,
+      "word": "and"
+    },
+    {
+      "conf": 0.549003,
+      "end": 324.06,
+      "start": 323.67,
+      "word": "paired"
+    },
+    {
+      "conf": 1.0,
+      "end": 324.63,
+      "start": 324.06,
+      "word": "appendages"
+    },
+    {
+      "conf": 1.0,
+      "end": 324.93,
+      "start": 324.63,
+      "word": "became"
+    },
+    {
+      "conf": 1.0,
+      "end": 325.44,
+      "start": 324.93,
+      "word": "dominant"
+    },
+    {
+      "conf": 1.0,
+      "end": 326.19,
+      "start": 326.04,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 326.28,
+      "start": 326.19,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 326.73,
+      "start": 326.28,
+      "word": "tempting"
+    },
+    {
+      "conf": 1.0,
+      "end": 326.82,
+      "start": 326.73,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 327.27,
+      "start": 326.82,
+      "word": "imagine"
+    },
+    {
+      "conf": 0.632834,
+      "end": 327.69,
+      "start": 327.3,
+      "word": "ahmed"
+    },
+    {
+      "conf": 0.301033,
+      "end": 328.08,
+      "start": 327.723779,
+      "word": "july"
+    },
+    {
+      "conf": 0.770397,
+      "end": 328.2,
+      "start": 328.08,
+      "word": "as"
+    },
+    {
+      "conf": 0.856272,
+      "end": 328.62,
+      "start": 328.205947,
+      "word": "fishes"
+    },
+    {
+      "conf": 0.653014,
+      "end": 328.77,
+      "start": 328.62,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 329.22,
+      "start": 328.77,
+      "word": "limited"
+    },
+    {
+      "conf": 1.0,
+      "end": 330.03,
+      "start": 329.22,
+      "word": "prototypes"
+    },
+    {
+      "conf": 1.0,
+      "end": 331.23,
+      "start": 330.45,
+      "word": "slow"
+    },
+    {
+      "conf": 1.0,
+      "end": 331.98,
+      "start": 331.41,
+      "word": "awkward"
+    },
+    {
+      "conf": 1.0,
+      "end": 332.88,
+      "start": 332.52,
+      "word": "waiting"
+    },
+    {
+      "conf": 1.0,
+      "end": 333.0,
+      "start": 332.88,
+      "word": "for"
+    },
+    {
+      "conf": 1.0,
+      "end": 333.57,
+      "start": 333.0,
+      "word": "evolution"
+    },
+    {
+      "conf": 1.0,
+      "end": 333.69,
+      "start": 333.57,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 334.08,
+      "start": 333.69,
+      "word": "install"
+    },
+    {
+      "conf": 1.0,
+      "end": 334.2,
+      "start": 334.08,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 334.65,
+      "start": 334.2,
+      "word": "important"
+    },
+    {
+      "conf": 1.0,
+      "end": 335.25,
+      "start": 334.65,
+      "word": "upgrades"
+    },
+    {
+      "conf": 1.0,
+      "end": 335.97,
+      "start": 335.85,
+      "word": "the"
+    },
+    {
+      "conf": 0.604125,
+      "end": 336.27,
+      "start": 335.97,
+      "word": "task"
+    },
+    {
+      "conf": 0.604125,
+      "end": 336.45,
+      "start": 336.27,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 336.72,
+      "start": 336.45,
+      "word": "makes"
+    },
+    {
+      "conf": 1.0,
+      "end": 336.87,
+      "start": 336.72,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 337.26,
+      "start": 336.87,
+      "word": "picture"
+    },
+    {
+      "conf": 0.678007,
+      "end": 337.68,
+      "start": 337.26,
+      "word": "hardest"
+    },
+    {
+      "conf": 1.0,
+      "end": 338.25,
+      "start": 337.71,
+      "word": "defend"
+    },
+    {
+      "conf": 1.0,
+      "end": 338.91,
+      "start": 338.76,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 339.03,
+      "start": 338.91,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 339.27,
+      "start": 339.03,
+      "word": "no"
+    },
+    {
+      "conf": 1.0,
+      "end": 339.78,
+      "start": 339.27,
+      "word": "jaws"
+    },
+    {
+      "conf": 1.0,
+      "end": 339.87,
+      "start": 339.78,
+      "word": "and"
+    },
+    {
+      "conf": 0.529101,
+      "end": 339.99,
+      "start": 339.87,
+      "word": "know"
+    },
+    {
+      "conf": 1.0,
+      "end": 340.56,
+      "start": 339.99,
+      "word": "flexible"
+    },
+    {
+      "conf": 0.702537,
+      "end": 340.86,
+      "start": 340.56,
+      "word": "pad"
+    },
+    {
+      "conf": 0.473167,
+      "end": 341.37,
+      "start": 340.86,
+      "word": "fins"
+    },
+    {
+      "conf": 1.0,
+      "end": 342.24,
+      "start": 342.03,
+      "word": "yet"
+    },
+    {
+      "conf": 1.0,
+      "end": 342.36,
+      "start": 342.24,
+      "word": "the"
+    },
+    {
+      "conf": 0.796722,
+      "end": 342.99,
+      "start": 342.36,
+      "word": "simulation"
+    },
+    {
+      "conf": 1.0,
+      "end": 343.5,
+      "start": 343.002187,
+      "word": "suggests"
+    },
+    {
+      "conf": 0.751294,
+      "end": 343.59,
+      "start": 343.5,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 343.74,
+      "start": 343.59,
+      "word": "could"
+    },
+    {
+      "conf": 1.0,
+      "end": 344.19,
+      "start": 343.74,
+      "word": "occupy"
+    },
+    {
+      "conf": 0.598264,
+      "end": 344.7,
+      "start": 344.19,
+      "word": "especially"
+    },
+    {
+      "conf": 1.0,
+      "end": 345.12,
+      "start": 344.754111,
+      "word": "swimming"
+    },
+    {
+      "conf": 1.0,
+      "end": 345.36,
+      "start": 345.12,
+      "word": "nice"
+    },
+    {
+      "conf": 1.0,
+      "end": 345.51,
+      "start": 345.36,
+      "word": "by"
+    },
+    {
+      "conf": 1.0,
+      "end": 345.9,
+      "start": 345.51,
+      "word": "turning"
+    },
+    {
+      "conf": 1.0,
+      "end": 346.02,
+      "start": 345.9,
+      "word": "it's"
+    },
+    {
+      "conf": 0.664607,
+      "end": 346.23,
+      "start": 346.02,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 346.53,
+      "start": 346.23,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 346.74,
+      "start": 346.53,
+      "word": "into"
+    },
+    {
+      "conf": 0.812363,
+      "end": 347.13,
+      "start": 346.74,
+      "word": "hydro"
+    },
+    {
+      "conf": 0.812363,
+      "end": 347.58,
+      "start": 347.13,
+      "word": "dynamic"
+    },
+    {
+      "conf": 1.0,
+      "end": 348.15,
+      "start": 347.585625,
+      "word": "equipment"
+    },
+    {
+      "conf": 1.0,
+      "end": 349.17,
+      "start": 348.96,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 349.29,
+      "start": 349.17,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 349.5,
+      "start": 349.29,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 350.04,
+      "start": 349.5,
+      "word": "evolution"
+    },
+    {
+      "conf": 1.0,
+      "end": 350.4,
+      "start": 350.04,
+      "word": "failing"
+    },
+    {
+      "conf": 1.0,
+      "end": 350.52,
+      "start": 350.4,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 350.85,
+      "start": 350.52,
+      "word": "invent"
+    },
+    {
+      "conf": 1.0,
+      "end": 350.88,
+      "start": 350.85,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 351.15,
+      "start": 350.88,
+      "word": "modern"
+    },
+    {
+      "conf": 1.0,
+      "end": 351.63,
+      "start": 351.15,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 352.26,
+      "start": 352.02,
+      "word": "that"
+    },
+    {
+      "conf": 0.833706,
+      "end": 352.38,
+      "start": 352.26,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 352.89,
+      "start": 352.38,
+      "word": "evolution"
+    },
+    {
+      "conf": 1.0,
+      "end": 353.28,
+      "start": 352.89,
+      "word": "finding"
+    },
+    {
+      "conf": 1.0,
+      "end": 353.34,
+      "start": 353.28,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 354.0,
+      "start": 353.34,
+      "word": "completely"
+    },
+    {
+      "conf": 1.0,
+      "end": 354.39,
+      "start": 354.0,
+      "word": "different"
+    },
+    {
+      "conf": 1.0,
+      "end": 354.84,
+      "start": 354.39,
+      "word": "answer"
+    },
+    {
+      "conf": 1.0,
+      "end": 355.89,
+      "start": 355.29,
+      "word": "still"
+    },
+    {
+      "conf": 1.0,
+      "end": 356.19,
+      "start": 356.07,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 356.79,
+      "start": 356.19,
+      "word": "simulation"
+    },
+    {
+      "conf": 1.0,
+      "end": 356.91,
+      "start": 356.79,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 357.21,
+      "start": 356.91,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 357.27,
+      "start": 357.21,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 357.54,
+      "start": 357.27,
+      "word": "time"
+    },
+    {
+      "conf": 1.0,
+      "end": 357.99,
+      "start": 357.54,
+      "word": "machine"
+    },
+    {
+      "conf": 1.0,
+      "end": 358.44,
+      "start": 358.29,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 358.8,
+      "start": 358.44,
+      "word": "shows"
+    },
+    {
+      "conf": 1.0,
+      "end": 358.95,
+      "start": 358.8,
+      "word": "what"
+    },
+    {
+      "conf": 1.0,
+      "end": 359.04,
+      "start": 358.95,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 359.82,
+      "start": 359.04,
+      "word": "reconstructed"
+    },
+    {
+      "conf": 0.709827,
+      "end": 360.09,
+      "start": 359.82,
+      "word": "shape"
+    },
+    {
+      "conf": 1.0,
+      "end": 360.27,
+      "start": 360.098701,
+      "word": "could"
+    },
+    {
+      "conf": 1.0,
+      "end": 360.472852,
+      "start": 360.27,
+      "word": "do"
+    },
+    {
+      "conf": 0.761502,
+      "end": 360.57,
+      "start": 360.48,
+      "word": "and"
+    },
+    {
+      "conf": 0.557563,
+      "end": 360.93,
+      "start": 360.57,
+      "word": "modeled"
+    },
+    {
+      "conf": 1.0,
+      "end": 361.35,
+      "start": 360.93,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 361.89,
+      "start": 361.77,
+      "word": "he"
+    },
+    {
+      "conf": 1.0,
+      "end": 362.22,
+      "start": 361.89,
+      "word": "cannot"
+    },
+    {
+      "conf": 1.0,
+      "end": 362.49,
+      "start": 362.22,
+      "word": "prove"
+    },
+    {
+      "conf": 1.0,
+      "end": 363.12,
+      "start": 362.49,
+      "word": "exactly"
+    },
+    {
+      "conf": 1.0,
+      "end": 363.3,
+      "start": 363.12,
+      "word": "how"
+    },
+    {
+      "conf": 1.0,
+      "end": 363.69,
+      "start": 363.3,
+      "word": "fast"
+    },
+    {
+      "conf": 0.386325,
+      "end": 364.058145,
+      "start": 363.69,
+      "word": "protests"
+    },
+    {
+      "conf": 0.436196,
+      "end": 364.2,
+      "start": 364.059961,
+      "word": "be"
+    },
+    {
+      "conf": 1.0,
+      "end": 364.71,
+      "start": 364.207969,
+      "word": "swam"
+    },
+    {
+      "conf": 0.407187,
+      "end": 365.094961,
+      "start": 365.01,
+      "word": "or"
+    },
+    {
+      "conf": 0.621959,
+      "end": 365.28,
+      "start": 365.094961,
+      "word": "where"
+    },
+    {
+      "conf": 1.0,
+      "end": 365.37,
+      "start": 365.28,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 365.64,
+      "start": 365.37,
+      "word": "spent"
+    },
+    {
+      "conf": 1.0,
+      "end": 365.88,
+      "start": 365.64,
+      "word": "most"
+    },
+    {
+      "conf": 1.0,
+      "end": 365.97,
+      "start": 365.88,
+      "word": "of"
+    },
+    {
+      "conf": 0.541996,
+      "end": 366.09,
+      "start": 365.97,
+      "word": "it's"
+    },
+    {
+      "conf": 1.0,
+      "end": 366.57,
+      "start": 366.09,
+      "word": "time"
+    },
+    {
+      "conf": 1.0,
+      "end": 367.11,
+      "start": 366.99,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 367.38,
+      "start": 367.11,
+      "word": "also"
+    },
+    {
+      "conf": 1.0,
+      "end": 367.71,
+      "start": 367.38,
+      "word": "cannot"
+    },
+    {
+      "conf": 1.0,
+      "end": 367.98,
+      "start": 367.71,
+      "word": "prove"
+    },
+    {
+      "conf": 1.0,
+      "end": 368.1,
+      "start": 367.98,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 368.19,
+      "start": 368.1,
+      "word": "the"
+    },
+    {
+      "conf": 0.620422,
+      "end": 368.4,
+      "start": 368.19,
+      "word": "she"
+    },
+    {
+      "conf": 0.292453,
+      "end": 368.58,
+      "start": 368.4,
+      "word": "yield"
+    },
+    {
+      "conf": 1.0,
+      "end": 368.94,
+      "start": 368.58,
+      "word": "evolved"
+    },
+    {
+      "conf": 1.0,
+      "end": 369.18,
+      "start": 368.94,
+      "word": "only"
+    },
+    {
+      "conf": 1.0,
+      "end": 369.33,
+      "start": 369.18,
+      "word": "for"
+    },
+    {
+      "conf": 1.0,
+      "end": 369.99,
+      "start": 369.33,
+      "word": "locomotion"
+    },
+    {
+      "conf": 1.0,
+      "end": 370.5,
+      "start": 370.35,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 370.86,
+      "start": 370.5,
+      "word": "virtual"
+    },
+    {
+      "conf": 1.0,
+      "end": 371.16,
+      "start": 370.86,
+      "word": "body"
+    },
+    {
+      "conf": 1.0,
+      "end": 371.52,
+      "start": 371.16,
+      "word": "matters"
+    },
+    {
+      "conf": 1.0,
+      "end": 371.91,
+      "start": 371.52,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 372.36,
+      "start": 372.24,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 372.69,
+      "start": 372.36,
+      "word": "fossil"
+    },
+    {
+      "conf": 1.0,
+      "end": 373.14,
+      "start": 372.69,
+      "word": "preserves"
+    },
+    {
+      "conf": 1.0,
+      "end": 373.26,
+      "start": 373.14,
+      "word": "the"
+    },
+    {
+      "conf": 0.831346,
+      "end": 373.44,
+      "start": 373.26,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 373.83,
+      "start": 373.44,
+      "word": "shield"
+    },
+    {
+      "conf": 1.0,
+      "end": 374.07,
+      "start": 373.86,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 374.16,
+      "start": 374.07,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 374.58,
+      "start": 374.16,
+      "word": "complete"
+    },
+    {
+      "conf": 1.0,
+      "end": 375.06,
+      "start": 374.58,
+      "word": "fish"
+    },
+    {
+      "conf": 0.690549,
+      "end": 375.9,
+      "start": 375.45,
+      "word": "change"
+    },
+    {
+      "conf": 1.0,
+      "end": 376.02,
+      "start": 375.909287,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 376.32,
+      "start": 376.02,
+      "word": "missing"
+    },
+    {
+      "conf": 1.0,
+      "end": 376.71,
+      "start": 376.32,
+      "word": "body"
+    },
+    {
+      "conf": 1.0,
+      "end": 376.89,
+      "start": 376.74,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 377.16,
+      "start": 376.89,
+      "word": "some"
+    },
+    {
+      "conf": 1.0,
+      "end": 377.58,
+      "start": 377.16,
+      "word": "details"
+    },
+    {
+      "conf": 1.0,
+      "end": 377.67,
+      "start": 377.58,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 377.76,
+      "start": 377.67,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 378.03,
+      "start": 377.76,
+      "word": "flow"
+    },
+    {
+      "conf": 1.0,
+      "end": 378.18,
+      "start": 378.03,
+      "word": "may"
+    },
+    {
+      "conf": 1.0,
+      "end": 378.72,
+      "start": 378.18,
+      "word": "change"
+    },
+    {
+      "conf": 1.0,
+      "end": 379.53,
+      "start": 379.35,
+      "word": "what"
+    },
+    {
+      "conf": 1.0,
+      "end": 379.68,
+      "start": 379.53,
+      "word": "would"
+    },
+    {
+      "conf": 1.0,
+      "end": 379.89,
+      "start": 379.68,
+      "word": "help"
+    },
+    {
+      "conf": 1.0,
+      "end": 380.31,
+      "start": 379.89,
+      "word": "most"
+    },
+    {
+      "conf": 1.0,
+      "end": 380.46,
+      "start": 380.31,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 381.06,
+      "start": 380.49,
+      "word": "obvious"
+    },
+    {
+      "conf": 1.0,
+      "end": 381.93,
+      "start": 381.54,
+      "word": "another"
+    },
+    {
+      "conf": 1.0,
+      "end": 382.56,
+      "start": 381.93,
+      "word": "specimen"
+    },
+    {
+      "conf": 1.0,
+      "end": 383.61,
+      "start": 383.07,
+      "word": "preferably"
+    },
+    {
+      "conf": 1.0,
+      "end": 383.88,
+      "start": 383.61,
+      "word": "one"
+    },
+    {
+      "conf": 1.0,
+      "end": 384.0,
+      "start": 383.88,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 384.36,
+      "start": 384.0,
+      "word": "remember"
+    },
+    {
+      "conf": 1.0,
+      "end": 384.51,
+      "start": 384.36,
+      "word": "to"
+    },
+    {
+      "conf": 1.0,
+      "end": 384.72,
+      "start": 384.51,
+      "word": "bring"
+    },
+    {
+      "conf": 1.0,
+      "end": 384.81,
+      "start": 384.72,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 385.08,
+      "start": 384.81,
+      "word": "rest"
+    },
+    {
+      "conf": 1.0,
+      "end": 385.17,
+      "start": 385.08,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 385.65,
+      "start": 385.17,
+      "word": "itself"
+    },
+    {
+      "conf": 1.0,
+      "end": 386.25,
+      "start": 386.19,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 386.7,
+      "start": 386.25,
+      "word": "complete"
+    },
+    {
+      "conf": 0.600301,
+      "end": 387.03,
+      "start": 386.7,
+      "word": "trunk"
+    },
+    {
+      "conf": 0.600301,
+      "end": 387.12,
+      "start": 387.03,
+      "word": "and"
+    },
+    {
+      "conf": 0.577294,
+      "end": 387.48,
+      "start": 387.12,
+      "word": "tail"
+    },
+    {
+      "conf": 1.0,
+      "end": 387.69,
+      "start": 387.48,
+      "word": "could"
+    },
+    {
+      "conf": 1.0,
+      "end": 387.96,
+      "start": 387.69,
+      "word": "test"
+    },
+    {
+      "conf": 1.0,
+      "end": 388.05,
+      "start": 387.96,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 388.86,
+      "start": 388.05,
+      "word": "reconstruction"
+    },
+    {
+      "conf": 1.0,
+      "end": 389.61,
+      "start": 389.34,
+      "word": "more"
+    },
+    {
+      "conf": 1.0,
+      "end": 390.24,
+      "start": 389.61,
+      "word": "individuals"
+    },
+    {
+      "conf": 1.0,
+      "end": 390.42,
+      "start": 390.24,
+      "word": "could"
+    },
+    {
+      "conf": 1.0,
+      "end": 390.78,
+      "start": 390.42,
+      "word": "reveal"
+    },
+    {
+      "conf": 1.0,
+      "end": 391.05,
+      "start": 390.78,
+      "word": "whether"
+    },
+    {
+      "conf": 1.0,
+      "end": 391.17,
+      "start": 391.05,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 391.41,
+      "start": 391.17,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 391.86,
+      "start": 391.41,
+      "word": "changed"
+    },
+    {
+      "conf": 1.0,
+      "end": 392.01,
+      "start": 391.86,
+      "word": "with"
+    },
+    {
+      "conf": 1.0,
+      "end": 392.4,
+      "start": 392.04,
+      "word": "age"
+    },
+    {
+      "conf": 1.0,
+      "end": 392.49,
+      "start": 392.4,
+      "word": "or"
+    },
+    {
+      "conf": 1.0,
+      "end": 393.09,
+      "start": 392.49,
+      "word": "sex"
+    },
+    {
+      "conf": 1.0,
+      "end": 393.84,
+      "start": 393.54,
+      "word": "better"
+    },
+    {
+      "conf": 1.0,
+      "end": 394.44,
+      "start": 393.87,
+      "word": "ecological"
+    },
+    {
+      "conf": 1.0,
+      "end": 394.89,
+      "start": 394.44,
+      "word": "evidence"
+    },
+    {
+      "conf": 1.0,
+      "end": 395.04,
+      "start": 394.89,
+      "word": "could"
+    },
+    {
+      "conf": 1.0,
+      "end": 395.34,
+      "start": 395.04,
+      "word": "show"
+    },
+    {
+      "conf": 1.0,
+      "end": 395.46,
+      "start": 395.34,
+      "word": "where"
+    },
+    {
+      "conf": 1.0,
+      "end": 395.55,
+      "start": 395.46,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 395.85,
+      "start": 395.55,
+      "word": "animal"
+    },
+    {
+      "conf": 1.0,
+      "end": 396.21,
+      "start": 395.85,
+      "word": "actually"
+    },
+    {
+      "conf": 1.0,
+      "end": 396.63,
+      "start": 396.21,
+      "word": "lived"
+    },
+    {
+      "conf": 1.0,
+      "end": 397.59,
+      "start": 397.2,
+      "word": "until"
+    },
+    {
+      "conf": 1.0,
+      "end": 397.92,
+      "start": 397.59,
+      "word": "then"
+    },
+    {
+      "conf": 1.0,
+      "end": 398.31,
+      "start": 398.19,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 398.67,
+      "start": 398.31,
+      "word": "careful"
+    },
+    {
+      "conf": 1.0,
+      "end": 399.3,
+      "start": 398.67,
+      "word": "conclusion"
+    },
+    {
+      "conf": 1.0,
+      "end": 399.45,
+      "start": 399.3,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 399.66,
+      "start": 399.45,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 399.81,
+      "start": 399.66,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 399.99,
+      "start": 399.81,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 400.26,
+      "start": 399.99,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 400.5,
+      "start": 400.26,
+      "word": "flew"
+    },
+    {
+      "conf": 1.0,
+      "end": 400.71,
+      "start": 400.5,
+      "word": "under"
+    },
+    {
+      "conf": 1.0,
+      "end": 401.16,
+      "start": 400.71,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 401.79,
+      "start": 401.64,
+      "word": "it"
+    },
+    {
+      "conf": 1.0,
+      "end": 401.88,
+      "start": 401.79,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 402.06,
+      "start": 401.88,
+      "word": "that"
+    },
+    {
+      "conf": 1.0,
+      "end": 402.09,
+      "start": 402.06,
+      "word": "a"
+    },
+    {
+      "conf": 1.0,
+      "end": 402.45,
+      "start": 402.09,
+      "word": "bat"
+    },
+    {
+      "conf": 1.0,
+      "end": 402.72,
+      "start": 402.45,
+      "word": "wings"
+    },
+    {
+      "conf": 1.0,
+      "end": 403.08,
+      "start": 402.72,
+      "word": "shaped"
+    },
+    {
+      "conf": 0.829014,
+      "end": 403.44,
+      "start": 403.08,
+      "word": "ahmed"
+    },
+    {
+      "conf": 0.859606,
+      "end": 403.77,
+      "start": 403.44,
+      "word": "head"
+    },
+    {
+      "conf": 1.0,
+      "end": 404.22,
+      "start": 403.8,
+      "word": "produced"
+    },
+    {
+      "conf": 1.0,
+      "end": 404.91,
+      "start": 404.25,
+      "word": "unusually"
+    },
+    {
+      "conf": 1.0,
+      "end": 405.33,
+      "start": 404.91,
+      "word": "efficient"
+    },
+    {
+      "conf": 0.742047,
+      "end": 405.75,
+      "start": 405.33,
+      "word": "left"
+    },
+    {
+      "conf": 1.0,
+      "end": 406.2,
+      "start": 406.05,
+      "word": "in"
+    },
+    {
+      "conf": 1.0,
+      "end": 406.32,
+      "start": 406.2,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 406.65,
+      "start": 406.35,
+      "word": "best"
+    },
+    {
+      "conf": 1.0,
+      "end": 406.95,
+      "start": 406.65,
+      "word": "model"
+    },
+    {
+      "conf": 0.581297,
+      "end": 407.52,
+      "start": 406.95,
+      "word": "scientists"
+    },
+    {
+      "conf": 0.768964,
+      "end": 408.12,
+      "start": 407.52,
+      "word": "concurrently"
+    },
+    {
+      "conf": 1.0,
+      "end": 408.54,
+      "start": 408.12,
+      "word": "build"
+    },
+    {
+      "conf": 1.0,
+      "end": 409.44,
+      "start": 409.23,
+      "word": "which"
+    },
+    {
+      "conf": 1.0,
+      "end": 409.56,
+      "start": 409.44,
+      "word": "is"
+    },
+    {
+      "conf": 1.0,
+      "end": 409.89,
+      "start": 409.56,
+      "word": "already"
+    },
+    {
+      "conf": 1.0,
+      "end": 410.4,
+      "start": 409.89,
+      "word": "wonderfully"
+    },
+    {
+      "conf": 1.0,
+      "end": 410.97,
+      "start": 410.4,
+      "word": "strange"
+    },
+    {
+      "conf": 0.848986,
+      "end": 411.78,
+      "start": 411.48,
+      "word": "four"
+    },
+    {
+      "conf": 1.0,
+      "end": 412.14,
+      "start": 411.78,
+      "word": "hundred"
+    },
+    {
+      "conf": 1.0,
+      "end": 412.65,
+      "start": 412.14,
+      "word": "nineteen"
+    },
+    {
+      "conf": 1.0,
+      "end": 413.01,
+      "start": 412.65,
+      "word": "million"
+    },
+    {
+      "conf": 1.0,
+      "end": 413.28,
+      "start": 413.01,
+      "word": "years"
+    },
+    {
+      "conf": 1.0,
+      "end": 413.61,
+      "start": 413.28,
+      "word": "ago"
+    },
+    {
+      "conf": 1.0,
+      "end": 414.45,
+      "start": 413.82,
+      "word": "vertebrates"
+    },
+    {
+      "conf": 1.0,
+      "end": 414.57,
+      "start": 414.45,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 414.87,
+      "start": 414.57,
+      "word": "not"
+    },
+    {
+      "conf": 1.0,
+      "end": 415.29,
+      "start": 414.87,
+      "word": "settled"
+    },
+    {
+      "conf": 1.0,
+      "end": 415.41,
+      "start": 415.29,
+      "word": "on"
+    },
+    {
+      "conf": 1.0,
+      "end": 415.5,
+      "start": 415.41,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 415.98,
+      "start": 415.5,
+      "word": "standard"
+    },
+    {
+      "conf": 1.0,
+      "end": 416.25,
+      "start": 415.98,
+      "word": "fish"
+    },
+    {
+      "conf": 1.0,
+      "end": 416.82,
+      "start": 416.25,
+      "word": "blueprint"
+    },
+    {
+      "conf": 0.679385,
+      "end": 417.51,
+      "start": 417.42,
+      "word": "a"
+    },
+    {
+      "conf": 0.494077,
+      "end": 417.847793,
+      "start": 417.51,
+      "word": "task"
+    },
+    {
+      "conf": 0.816761,
+      "end": 418.375752,
+      "start": 418.059551,
+      "word": "crossed"
+    },
+    {
+      "conf": 1.0,
+      "end": 418.47,
+      "start": 418.375752,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 418.89,
+      "start": 418.47,
+      "word": "water"
+    },
+    {
+      "conf": 1.0,
+      "end": 419.07,
+      "start": 418.89,
+      "word": "with"
+    },
+    {
+      "conf": 0.753747,
+      "end": 419.4,
+      "start": 419.07,
+      "word": "no"
+    },
+    {
+      "conf": 1.0,
+      "end": 419.88,
+      "start": 419.4,
+      "word": "jaw"
+    },
+    {
+      "conf": 0.504814,
+      "end": 420.45,
+      "start": 420.15,
+      "word": "know"
+    },
+    {
+      "conf": 0.65453,
+      "end": 420.81,
+      "start": 420.45,
+      "word": "pad"
+    },
+    {
+      "conf": 0.817465,
+      "end": 421.38,
+      "start": 420.81,
+      "word": "fins"
+    },
+    {
+      "conf": 1.0,
+      "end": 421.8,
+      "start": 421.62,
+      "word": "and"
+    },
+    {
+      "conf": 1.0,
+      "end": 421.92,
+      "start": 421.8,
+      "word": "an"
+    },
+    {
+      "conf": 1.0,
+      "end": 422.52,
+      "start": 421.92,
+      "word": "unreasonable"
+    },
+    {
+      "conf": 1.0,
+      "end": 422.85,
+      "start": 422.52,
+      "word": "amount"
+    },
+    {
+      "conf": 1.0,
+      "end": 422.94,
+      "start": 422.85,
+      "word": "of"
+    },
+    {
+      "conf": 1.0,
+      "end": 423.42,
+      "start": 422.94,
+      "word": "forehead"
+    },
+    {
+      "conf": 1.0,
+      "end": 424.68,
+      "start": 424.11,
+      "word": "somehow"
+    },
+    {
+      "conf": 1.0,
+      "end": 424.98,
+      "start": 424.86,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 425.16,
+      "start": 424.98,
+      "word": "for"
+    },
+    {
+      "conf": 1.0,
+      "end": 425.31,
+      "start": 425.16,
+      "word": "had"
+    },
+    {
+      "conf": 1.0,
+      "end": 425.79,
+      "start": 425.31,
+      "word": "worked"
+    },
+    {
+      "conf": 1.0,
+      "end": 426.51,
+      "start": 426.36,
+      "word": "if"
+    },
+    {
+      "conf": 1.0,
+      "end": 426.6,
+      "start": 426.51,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 426.9,
+      "start": 426.6,
+      "word": "next"
+    },
+    {
+      "conf": 1.0,
+      "end": 427.2,
+      "start": 426.9,
+      "word": "fossil"
+    },
+    {
+      "conf": 1.0,
+      "end": 427.53,
+      "start": 427.2,
+      "word": "landed"
+    },
+    {
+      "conf": 1.0,
+      "end": 427.65,
+      "start": 427.53,
+      "word": "on"
+    },
+    {
+      "conf": 1.0,
+      "end": 427.77,
+      "start": 427.65,
+      "word": "your"
+    },
+    {
+      "conf": 1.0,
+      "end": 428.28,
+      "start": 427.77,
+      "word": "desk"
+    },
+    {
+      "conf": 1.0,
+      "end": 428.67,
+      "start": 428.43,
+      "word": "which"
+    },
+    {
+      "conf": 1.0,
+      "end": 428.94,
+      "start": 428.67,
+      "word": "clue"
+    },
+    {
+      "conf": 0.845864,
+      "end": 429.057744,
+      "start": 428.94,
+      "word": "would"
+    },
+    {
+      "conf": 1.0,
+      "end": 429.18,
+      "start": 429.057744,
+      "word": "you"
+    },
+    {
+      "conf": 1.0,
+      "end": 429.36,
+      "start": 429.18,
+      "word": "want"
+    },
+    {
+      "conf": 1.0,
+      "end": 429.87,
+      "start": 429.36,
+      "word": "first"
+    },
+    {
+      "conf": 1.0,
+      "end": 430.59,
+      "start": 430.47,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 430.89,
+      "start": 430.59,
+      "word": "missing"
+    },
+    {
+      "conf": 0.577294,
+      "end": 431.31,
+      "start": 430.89,
+      "word": "tail"
+    },
+    {
+      "conf": 1.0,
+      "end": 431.64,
+      "start": 431.52,
+      "word": "the"
+    },
+    {
+      "conf": 1.0,
+      "end": 432.0,
+      "start": 431.64,
+      "word": "complete"
+    },
+    {
+      "conf": 1.0,
+      "end": 432.39,
+      "start": 432.0,
+      "word": "body"
+    },
+    {
+      "conf": 1.0,
+      "end": 432.84,
+      "start": 432.63,
+      "word": "or"
+    },
+    {
+      "conf": 1.0,
+      "end": 433.23,
+      "start": 432.84,
+      "word": "evidence"
+    },
+    {
+      "conf": 1.0,
+      "end": 433.35,
+      "start": 433.23,
+      "word": "of"
+    },
+    {
+      "conf": 0.656492,
+      "end": 433.53,
+      "start": 433.35,
+      "word": "where"
+    },
+    {
+      "conf": 1.0,
+      "end": 433.71,
+      "start": 433.53,
+      "word": "this"
+    },
+    {
+      "conf": 1.0,
+      "end": 434.01,
+      "start": 433.71,
+      "word": "living"
+    },
+    {
+      "conf": 1.0,
+      "end": 434.25,
+      "start": 434.01,
+      "word": "dinner"
+    },
+    {
+      "conf": 1.0,
+      "end": 434.52,
+      "start": 434.25,
+      "word": "plate"
+    },
+    {
+      "conf": 1.0,
+      "end": 434.85,
+      "start": 434.52,
+      "word": "actually"
+    },
+    {
+      "conf": 1.0,
+      "end": 435.36,
+      "start": 434.85,
+      "word": "swam"
+    }
+  ],
+  "beats": [
+    {
+      "start": 0.09,
+      "end": 2.67,
+      "text": "if you found a fish with no jewels and know pet fins"
+    },
+    {
+      "start": 2.94,
+      "end": 6.48,
+      "text": "you might already have questions then you notice it's head is almost"
+    },
+    {
+      "start": 6.48,
+      "end": 10.17,
+      "text": "three times wider than it is long at that point you stop"
+    },
+    {
+      "start": 10.17,
+      "end": 14.19,
+      "text": "asking questions and call it a swimming dinner plate but four hundred"
+    },
+    {
+      "start": 14.19,
+      "end": 18.18,
+      "text": "and ninety million years ago that ridiculous head may have worked like"
+    },
+    {
+      "start": 18.18,
+      "end": 22.92,
+      "text": "an underwater wing that should not be possible a giant ahmed skull"
+    },
+    {
+      "start": 22.92,
+      "end": 28.14,
+      "text": "ought to create drag waste energy and make steering miserable instead a"
+    },
+    {
+      "start": 28.14,
+      "end": 31.8,
+      "text": "new study suggests this one generated an unusual amount of left without"
+    },
+    {
+      "start": 31.8,
+      "end": 36.75,
+      "text": "generating much dragged all scientist of name the animal better spare crux"
+    },
+    {
+      "start": 37.17,
+      "end": 41.13,
+      "text": "from above it's skull looked like a bat spreading it's wings stay"
+    },
+    {
+      "start": 41.13,
+      "end": 44.88,
+      "text": "with me because the way researchers tested that head reveal something bigger"
+    },
+    {
+      "start": 45.42,
+      "end": 49.29,
+      "text": "early vertebrates we're solving movement problems before evolution gave them the equipment"
+    },
+    {
+      "start": 49.29,
+      "end": 53.64,
+      "text": "modern fish take for granted first forget the ocean you know this"
+    },
+    {
+      "start": 53.64,
+      "end": 57.3,
+      "text": "is the early devonian period there are no wales know marine reptiles"
+    },
+    {
+      "start": 57.3,
+      "end": 62.01,
+      "text": "and definitely no pelicans waiting to steal lunch vertebrates a still experimenting"
+    },
+    {
+      "start": 62.01,
+      "end": 66.0,
+      "text": "with the basics jaws are not standard pet fins and not standard"
+    },
+    {
+      "start": 66.33,
+      "end": 69.06,
+      "text": "even the familiar fish silhouette is more of a suggestion that a"
+    },
+    {
+      "start": 69.06,
+      "end": 73.41,
+      "text": "rule one group in this evolutionary workshop is called the gallia spades"
+    },
+    {
+      "start": 74.01,
+      "end": 76.940193,
+      "text": "they were ahmed joyless fishes found in what is now china and"
+    },
+    {
+      "start": 76.940193,
+      "end": 80.85,
+      "text": "northern vietnam a gala spade carried a rigid shield over the front"
+    },
+    {
+      "start": 80.85,
+      "end": 84.33,
+      "text": "of it's body behind it came a soft a trunk and tail"
+    },
+    {
+      "start": 84.72,
+      "end": 91.32,
+      "text": "know movable jaw know flexible pectoral fins just armor eyes sensory canals"
+    },
+    {
+      "start": 91.62,
+      "end": 95.61,
+      "text": "and the confidence to into the ocean wearing a survey trey most"
+    },
+    {
+      "start": 95.61,
+      "end": 102.0,
+      "text": "gillespie had shields followed recognizable shapes rounded spike forked or domed the"
+    },
+    {
+      "start": 102.0,
+      "end": 105.69,
+      "text": "task is ignored the menu it's shield swept out would into long"
+    },
+    {
+      "start": 105.69,
+      "end": 110.07,
+      "text": "projections the front edge curved forward the rear edge curved in would"
+    },
+    {
+      "start": 110.58,
+      "end": 114.72,
+      "text": "from above it resembled a bat a boomerang or a stealth aircraft"
+    },
+    {
+      "start": 114.72,
+      "end": 119.13,
+      "text": "designed from of very confusing phone description the fossil was collected nick"
+    },
+    {
+      "start": 119.13,
+      "end": 123.63,
+      "text": "urging in china's union province during the nineteen eighties he came from"
+    },
+    {
+      "start": 123.63,
+      "end": 128.31,
+      "text": "the session can formation preserved in fine yellow grace sandstone here is"
+    },
+    {
+      "start": 128.31,
+      "end": 132.96,
+      "text": "the important limitation scientists do not have a complete but hospice the"
+    },
+    {
+      "start": 132.96,
+      "end": 136.74,
+      "text": "only known specimen is nearly complete had shield and it's counterpart in"
+    },
+    {
+      "start": 136.74,
+      "end": 141.21,
+      "text": "the rock the shield measures about five centimeters down the middle based"
+    },
+    {
+      "start": 141.21,
+      "end": 147.66,
+      "text": "on symmetry researchers estimate roughly fourteen centimeters between the outer tips yes"
+    },
+    {
+      "start": 148.14,
+      "end": 151.59,
+      "text": "the head really was dramatically wider than it was long the missing"
+    },
+    {
+      "start": 151.59,
+      "end": 155.7,
+      "text": "body had to be reconstructed from related glass beds every picture of"
+    },
+    {
+      "start": 155.7,
+      "end": 160.14,
+      "text": "the living animal therefore combines fossil evidence with informed modeling the head"
+    },
+    {
+      "start": 160.2,
+      "end": 163.8,
+      "text": "is the star the rest of the fish is supporting car past"
+    },
+    {
+      "start": 164.25,
+      "end": 168.15,
+      "text": "that creates a problem you cannot watch a devonian animal swim and"
+    },
+    {
+      "start": 168.15,
+      "end": 171.69,
+      "text": "there is no modern fish with the same design so the researchers"
+    },
+    {
+      "start": 171.69,
+      "end": 177.12,
+      "text": "built one digitally know ancient fish were inconvenienced they reconstructed the animal"
+    },
+    {
+      "start": 177.12,
+      "end": 182.28,
+      "text": "in three dimensions and placed it inside computational fluid dynamics simulations think"
+    },
+    {
+      "start": 182.28,
+      "end": 186.09,
+      "text": "of it as a virtual water tunnel the computer calculates her water"
+    },
+    {
+      "start": 186.09,
+      "end": 189.63,
+      "text": "moves around the body were pressure changes and how strongly the shape"
+    },
+    {
+      "start": 189.63,
+      "end": 194.7,
+      "text": "resist motion to measurements matter dragon lift drag is water saying door"
+    },
+    {
+      "start": 194.7,
+      "end": 198.96,
+      "text": "you stop lift his water saying rum fine but you're going this"
+    },
+    {
+      "start": 198.96,
+      "end": 202.89,
+      "text": "way now a good cruising shape produces useful live without paying an"
+    },
+    {
+      "start": 202.89,
+      "end": 207.24,
+      "text": "enormous drag penalty engineers described the balance with a lift to drag"
+    },
+    {
+      "start": 207.24,
+      "end": 212.545913,
+      "text": "ratio more live for less drag means greater efficiency better space reached"
+    },
+    {
+      "start": 212.55,
+      "end": 215.1,
+      "text": "a ratio above four point five at an angle of attack of"
+    },
+    {
+      "start": 215.1,
+      "end": 219.12,
+      "text": "ten degrees among every goliaths been tested in the study that was"
+    },
+    {
+      "start": 219.12,
+      "end": 222.57,
+      "text": "the highest result the next best model came in close to three"
+    },
+    {
+      "start": 222.57,
+      "end": 226.68,
+      "text": "at the same angle the fish that looks least like sensible transportation"
+    },
+    {
+      "start": 227.04,
+      "end": 231.54,
+      "text": "may have been exceptionally good at moving through water evolution enjoys that"
+    },
+    {
+      "start": 231.54,
+      "end": 235.8,
+      "text": "joke far too much but that's only half the mystery a strange"
+    },
+    {
+      "start": 235.8,
+      "end": 240.54,
+      "text": "result means nothing unless the shape can explain it the projections had"
+    },
+    {
+      "start": 240.54,
+      "end": 244.74,
+      "text": "a cross section that behave somewhat like an airfoil water accelerated over"
+    },
+    {
+      "start": 244.74,
+      "end": 248.67,
+      "text": "the curved up a surface and move differently underneath the pressure difference"
+    },
+    {
+      "start": 248.67,
+      "end": 252.84,
+      "text": "generated left it is the same broad principle that helps an aircraft"
+    },
+    {
+      "start": 252.84,
+      "end": 257.85,
+      "text": "wing work except under water and attached directly to a his face"
+    },
+    {
+      "start": 258.48,
+      "end": 263.01,
+      "text": "the crescent outline also helped it's long span reduce the swelling vortices"
+    },
+    {
+      "start": 263.01,
+      "end": 267.206543,
+      "text": "that waste energy at the tips smooth connections between the projections and"
+    },
+    {
+      "start": 267.206543,
+      "end": 271.5,
+      "text": "the shield reduced interference drag small changes in angle at the model"
+    },
+    {
+      "start": 271.5,
+      "end": 275.13,
+      "text": "trade a little resistance for more left know but as piece was"
+    },
+    {
+      "start": 275.13,
+      "end": 279.03,
+      "text": "not flapping it skull and launching into the devonian sky please do"
+    },
+    {
+      "start": 279.03,
+      "end": 283.41,
+      "text": "not draw that reconstruction actually draw at once then hide it from"
+    },
+    {
+      "start": 283.41,
+      "end": 288.18,
+      "text": "paleontologists the serious interpretation is that task miss may have been an"
+    },
+    {
+      "start": 288.18,
+      "end": 292.59,
+      "text": "efficient gliding cruiser it's rigid head generated useful left even though the"
+    },
+    {
+      "start": 292.59,
+      "end": 297.57,
+      "text": "animal lacked flexible pad fins researchers also tested whether the effect depended"
+    },
+    {
+      "start": 297.57,
+      "end": 300.87,
+      "text": "on staying close to the sea floor adding a virtual ground plane"
+    },
+    {
+      "start": 300.87,
+      "end": 304.53,
+      "text": "produced nearly the same live to drag pattern so the design may"
+    },
+    {
+      "start": 304.53,
+      "end": 308.64,
+      "text": "have worked near the bottom and higher in the water this was"
+    },
+    {
+      "start": 308.64,
+      "end": 313.26,
+      "text": "not necessarily a biological hovercraft trapped above the sand that makes one"
+    },
+    {
+      "start": 313.26,
+      "end": 317.49,
+      "text": "strange skull part of a much larger story jealous bedsit sit close"
+    },
+    {
+      "start": 317.49,
+      "end": 321.96,
+      "text": "to the evolutionary branch leading towards george vertebrates the show what vertebrate"
+    },
+    {
+      "start": 321.968525,
+      "end": 326.28,
+      "text": "life was doing before jaws and paired appendages became dominant it is"
+    },
+    {
+      "start": 326.28,
+      "end": 331.98,
+      "text": "tempting to imagine ahmed july as fishes is limited prototypes slow awkward"
+    },
+    {
+      "start": 332.52,
+      "end": 336.72,
+      "text": "waiting for evolution to install the important upgrades the task is makes"
+    },
+    {
+      "start": 336.72,
+      "end": 340.86,
+      "text": "that picture hardest defend it had no jaws and know flexible pad"
+    },
+    {
+      "start": 340.86,
+      "end": 345.51,
+      "text": "fins yet the simulation suggests it could occupy especially swimming nice by"
+    },
+    {
+      "start": 345.51,
+      "end": 350.04,
+      "text": "turning it's head shield into hydro dynamic equipment that is not evolution"
+    },
+    {
+      "start": 350.04,
+      "end": 354.0,
+      "text": "failing to invent a modern fish that is evolution finding a completely"
+    },
+    {
+      "start": 354.0,
+      "end": 358.8,
+      "text": "different answer still a simulation is not a time machine it shows"
+    },
+    {
+      "start": 358.8,
+      "end": 362.49,
+      "text": "what the reconstructed shape could do and modeled water he cannot prove"
+    },
+    {
+      "start": 362.49,
+      "end": 365.97,
+      "text": "exactly how fast protests be swam or where it spent most of"
+    },
+    {
+      "start": 365.97,
+      "end": 369.18,
+      "text": "it's time it also cannot prove that the she yield evolved only"
+    },
+    {
+      "start": 369.18,
+      "end": 373.44,
+      "text": "for locomotion the virtual body matters to the fossil preserves the head"
+    },
+    {
+      "start": 373.44,
+      "end": 377.58,
+      "text": "shield not the complete fish change the missing body and some details"
+    },
+    {
+      "start": 377.58,
+      "end": 381.93,
+      "text": "of the flow may change what would help most is obvious another"
+    },
+    {
+      "start": 381.93,
+      "end": 386.25,
+      "text": "specimen preferably one that remember to bring the rest of itself a"
+    },
+    {
+      "start": 386.25,
+      "end": 390.78,
+      "text": "complete trunk and tail could test the reconstruction more individuals could reveal"
+    },
+    {
+      "start": 390.78,
+      "end": 395.04,
+      "text": "whether the had changed with age or sex better ecological evidence could"
+    },
+    {
+      "start": 395.04,
+      "end": 399.45,
+      "text": "show where the animal actually lived until then the careful conclusion is"
+    },
+    {
+      "start": 399.45,
+      "end": 402.45,
+      "text": "not that this fish flew under water it is that a bat"
+    },
+    {
+      "start": 402.45,
+      "end": 406.95,
+      "text": "wings shaped ahmed head produced unusually efficient left in the best model"
+    },
+    {
+      "start": 406.95,
+      "end": 413.01,
+      "text": "scientists concurrently build which is already wonderfully strange four hundred nineteen million"
+    },
+    {
+      "start": 413.01,
+      "end": 417.51,
+      "text": "years ago vertebrates had not settled on the standard fish blueprint a"
+    },
+    {
+      "start": 417.51,
+      "end": 421.92,
+      "text": "task crossed the water with no jaw know pad fins and an"
+    },
+    {
+      "start": 421.92,
+      "end": 426.9,
+      "text": "unreasonable amount of forehead somehow the for had worked if the next"
+    },
+    {
+      "start": 426.9,
+      "end": 430.59,
+      "text": "fossil landed on your desk which clue would you want first the"
+    },
+    {
+      "start": 430.59,
+      "end": 434.25,
+      "text": "missing tail the complete body or evidence of where this living dinner"
+    },
+    {
+      "start": 434.25,
+      "end": 435.36,
+      "text": "plate actually swam"
+    }
+  ]
+}

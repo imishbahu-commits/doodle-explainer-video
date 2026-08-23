@@ -1,0 +1,20 @@
+{
+  "file": "voiceover.mp3",
+  "sha256": "6c2fe8f14b7e95840402ac6bfcdcdadb27bf1e7d59c31b110f6c9986140072ca",
+  "size_bytes": 6971621,
+  "duration_seconds": 435.70,
+  "duration_timestamp": "07:15.70",
+  "codec": "MP3",
+  "sample_rate_hz": 44100,
+  "channels": 1,
+  "bitrate_bps": 128000,
+  "decode_check": "pass",
+  "script_words": 1173,
+  "effective_words_per_minute": 161.54,
+  "integrated_loudness_lufs": -18.29,
+  "true_peak_dbtp": -1.21,
+  "loudness_range_lu": 3.50,
+  "recommended_fixed_gain_db": -2.36,
+  "target_integrated_loudness_lufs": -20.65,
+  "time_stretch_required": false
+}

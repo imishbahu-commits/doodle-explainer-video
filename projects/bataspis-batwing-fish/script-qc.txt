@@ -1,0 +1,14 @@
+SCRIPT DOCTOR — 1173 words, ≈324s at 217 wpm
+grade: 10/10  [██████████]
+
+[PASS] Hook: second person in the cold open
+[PASS] Paradox: the impossible fact in the first third
+[PASS] Promise: explicit reason to stay
+[PASS] Re-hook: pivot around the midpoint
+[PASS] Close: question to the viewer, no answer
+[PASS] Sources: 18 names, 9 roles, 2 dates
+[PASS] Rhythm: avg 10.3 words/sentence, max 20, 11 fragments
+[PASS] Spoken numbers: 0 digit tokens
+[PASS] Budget: 1173 words ≈ 324s (5.4 min) at 217 wpm
+
+Verdict: ready to record. Generate media.
