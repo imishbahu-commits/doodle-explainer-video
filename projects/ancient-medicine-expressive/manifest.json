@@ -1,0 +1,41 @@
+{
+  "project": "ancient-medicine-expressive",
+  "title": "Ancient Medicine — Expressive Sample",
+  "output": "ancient-medicine-expressive.mp4",
+  "duration_seconds": 31.63,
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "voice": {
+    "voice_id": "voice-01",
+    "language": "en",
+    "direction": "masculine comic teacher",
+    "tempo_multiplier": 1.65,
+    "mix_target_lufs": -19.0,
+    "true_peak_dbfs_max": -2.3
+  },
+  "timing": {
+    "beat_count": 8,
+    "words_per_beat": [12, 13, 12, 12, 12, 12, 12, 13],
+    "beat_duration_seconds": [3.87, 4.36, 3.94, 3.57, 4.18, 3.52, 4.08, 4.11],
+    "hard_cut_seconds": [3.87, 8.23, 12.17, 15.74, 19.92, 23.44, 27.52]
+  },
+  "visual_modes": ["CLASSROOM", "WORLD", "WHITE", "WORLD", "WHITE", "WORLD", "WHITE", "CLASSROOM"],
+  "generated_image_assets": [
+    "../character-workflow-demo/original-character-master.png",
+    "assets/classroom-background.png",
+    "assets/ancient-clinic-background.png"
+  ],
+  "manual_drawing": [
+    "facial source modifications",
+    "patient bandage and weak/alarmed expressions",
+    "independent pointer gesture",
+    "hand drill and escaping spirit overlays",
+    "blood vessel, drops, bowl and microbes",
+    "energy meter and bowl acting",
+    "mercury bottle, shine and organ damage icons",
+    "DESPITE TREATMENT stamp",
+    "comparison groups, result marks and chalkboard payoff"
+  ],
+  "originality": "Original script, character adaptation, sets and drawings using only the broad cutout-animation technique measured from the supplied references. No exact reference character was copied."
+}

@@ -1,0 +1,53 @@
+{
+  "beats": [
+    {
+      "file": "beat-01.wav",
+      "start": 0,
+      "duration": 3.87,
+      "end": 3.87
+    },
+    {
+      "file": "beat-02.wav",
+      "start": 3.87,
+      "duration": 4.36,
+      "end": 8.23
+    },
+    {
+      "file": "beat-03.wav",
+      "start": 8.23,
+      "duration": 3.94,
+      "end": 12.17
+    },
+    {
+      "file": "beat-04.wav",
+      "start": 12.17,
+      "duration": 3.57,
+      "end": 15.74
+    },
+    {
+      "file": "beat-05.wav",
+      "start": 15.74,
+      "duration": 4.18,
+      "end": 19.92
+    },
+    {
+      "file": "beat-06.wav",
+      "start": 19.92,
+      "duration": 3.52,
+      "end": 23.44
+    },
+    {
+      "file": "beat-07.wav",
+      "start": 23.44,
+      "duration": 4.08,
+      "end": 27.52
+    },
+    {
+      "file": "beat-08.wav",
+      "start": 27.52,
+      "duration": 4.11,
+      "end": 31.63
+    }
+  ],
+  "total_seconds": 31.63
+}

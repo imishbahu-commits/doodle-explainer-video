@@ -1,0 +1,21 @@
+{
+  "title": "Ancient Medicine — Expressive Sample",
+  "fps": 30,
+  "duration_seconds": 31.63,
+  "generated_asset_count": 3,
+  "generated_assets": [
+    "../character-workflow-demo/original-character-master.png",
+    "assets/classroom-background.png",
+    "assets/ancient-clinic-background.png"
+  ],
+  "beats": [
+    {"id": 1, "start": 0.0, "duration": 3.87, "words": 12, "mode": "CLASSROOM", "accent_events": [{"at": 0.35, "visual": "host enters and fixes viewer"}, {"at": 1.35, "visual": "TERRIFYING RULE chalks on"}, {"at": 2.45, "visual": "HURT appears"}, {"at": 3.12, "visual": "WORKED? snaps in; host recoils"}]},
+    {"id": 2, "start": 3.87, "duration": 4.36, "words": 13, "mode": "WORLD", "accent_events": [{"at": 0.0, "visual": "hard cut to clinic and patient"}, {"at": 1.2, "visual": "doctor raises hand drill"}, {"at": 2.0, "visual": "tool approaches skull then stops"}, {"at": 3.05, "visual": "spirit spirals escape upward"}]},
+    {"id": 3, "start": 8.23, "duration": 3.94, "words": 12, "mode": "WHITE", "accent_events": [{"at": 0.0, "visual": "FEVER card"}, {"at": 0.85, "visual": "blood vessel draws"}, {"at": 1.7, "visual": "drops fall into bowl"}, {"at": 2.65, "visual": "microbes appear behind crossed-out belief"}]},
+    {"id": 4, "start": 12.17, "duration": 3.57, "words": 12, "mode": "WORLD", "accent_events": [{"at": 0.0, "visual": "patient holds weak pose"}, {"at": 0.75, "visual": "energy meter falls"}, {"at": 1.75, "visual": "physician proudly lifts bowl"}, {"at": 2.7, "visual": "second bowl enters; patient slumps"}]},
+    {"id": 5, "start": 15.74, "duration": 4.18, "words": 12, "mode": "WHITE", "accent_events": [{"at": 0.0, "visual": "MERCURY bottle lands"}, {"at": 1.25, "visual": "shiny cure sparkles"}, {"at": 2.15, "visual": "kidney icon turns red"}, {"at": 2.75, "visual": "brain and mouth icons turn red"}]},
+    {"id": 6, "start": 19.92, "duration": 3.52, "words": 12, "mode": "WORLD", "accent_events": [{"at": 0.0, "visual": "doctor and patient freeze"}, {"at": 0.7, "visual": "doctor exits"}, {"at": 1.55, "visual": "patient rises without doctor"}, {"at": 2.35, "visual": "DESPITE stamp hits"}]},
+    {"id": 7, "start": 23.44, "duration": 4.08, "words": 12, "mode": "WHITE", "accent_events": [{"at": 0.0, "visual": "TEST OUTCOMES heading"}, {"at": 0.8, "visual": "A and B groups enter"}, {"at": 1.8, "visual": "comparison divider draws"}, {"at": 2.65, "visual": "results check and cross"}, {"at": 3.35, "visual": "ADMIT FAILURE underlines"}]},
+    {"id": 8, "start": 27.52, "duration": 4.11, "words": 13, "mode": "CLASSROOM", "accent_events": [{"at": 0.0, "visual": "host returns with medicine cup"}, {"at": 1.05, "visual": "host tastes and grimaces"}, {"at": 2.1, "visual": "NO SKULL DRILL chalks on"}, {"at": 3.0, "visual": "drill bounces away; host holds final look"}]}
+  ]
+}
