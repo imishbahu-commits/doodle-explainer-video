@@ -103,6 +103,20 @@ collects creative notes, and automatically creates a private analysis pack under
 eight representative frames per video, contact sheets, and
 `READY_FOR_ANALYSIS.md`. Uploaded media is ignored by Git.
 
+## Generated video preview studio
+
+Use the separate Preview Room to watch all generated videos under `projects/` and
+to add review copies from a phone or computer:
+
+```bash
+python3 tools/video_preview_studio.py 8014
+```
+
+The browser gallery supports searching, native playback and seeking via HTTP range
+requests. Additional videos upload in parallel chunks to the ignored
+`uploads/preview-studio/videos/` directory; project renders are served in place and
+are not duplicated.
+
 ## Legacy production mode (three-band vertical)
 
 The single 720×1280 static three-band vertical format documented below.
