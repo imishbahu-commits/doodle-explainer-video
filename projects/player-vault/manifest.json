@@ -1,0 +1,22 @@
+[
+  {
+    "file": "medieval_tortures_history.mp4",
+    "title": "Medieval Tortures — Full Pipeline: Script → Doodle Assets → Voiceover → Synced Video",
+    "note": "6 beats · per-beat TTS clips · karaoke captions · reference channel style"
+  },
+  {
+    "file": "stickhunt_true_3d_scene.mp4",
+    "title": "Stickfigure + Mammoth — TRUE 3D Scene (real perspective camera, dolly-zoom)",
+    "note": "mini3d software renderer · orbit + crane + dolly-zoom beat at 4.6-6.4s"
+  },
+  {
+    "file": "stickfigure_hunts_mammoth.mp4",
+    "title": "Stickfigure Hunts a Mammoth — 6 different camera moves",
+    "note": "ancient scene · push_in / slow_drift / truck_right / crash_zoom_in / handheld_shake / crane_up"
+  },
+  {
+    "file": "peasant_four_emotions.mp4",
+    "title": "Peasant — Four Emotions, Keyframed Camera",
+    "note": "content / shocked / sad / furious · push_in / crash_zoom / drift / pull_out"
+  }
+]

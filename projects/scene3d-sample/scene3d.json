@@ -1,0 +1,41 @@
+{
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 10.0,
+  "bg_color": [168, 158, 122],
+  "planes": [
+    {
+      "id": "sky_bg",
+      "src": "assets/ancient_bg3d.png",
+      "center": [0, 5, -10],
+      "width": 46,
+      "height": 34
+    },
+    {
+      "id": "mammoth",
+      "src": "assets/cut_mammoth3d.png",
+      "center": [2.6, 1.4, -2.5],
+      "width": 4.2,
+      "height": 2.87
+    },
+    {
+      "id": "hunter",
+      "src": "assets/cut_hunter.png",
+      "center": [0, 1.1, 0],
+      "width": 1.35,
+      "height": 2.2
+    }
+  ],
+  "camera": {
+    "target": [0.6, 1.2, 0],
+    "keys": [
+      {"t": 0.0,  "azimuth": -18, "elevation": 1, "radius": 15.0, "fov": 44, "e": "easeInOut"},
+      {"t": 3.5,  "azimuth": 4,   "elevation": 5, "radius": 9.5,  "fov": 46, "e": "easeInOut"},
+      {"t": 4.6,  "azimuth": 4,   "elevation": 5, "radius": 8.2,  "fov": 48, "e": "easeInOut"},
+      {"t": 6.4,  "azimuth": 4,   "elevation": 5, "radius": 5.4,  "fov": 70, "e": "easeInOut"},
+      {"t": 8.0,  "azimuth": 10,  "elevation": 6, "radius": 5.2,  "fov": 56, "e": "easeInOut"},
+      {"t": 10.0, "azimuth": 12,  "elevation": 7, "radius": 4.8,  "fov": 52, "e": "easeInOut"}
+    ]
+  }
+}
