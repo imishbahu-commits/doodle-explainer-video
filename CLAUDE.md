@@ -1,161 +1,110 @@
-# CLAUDE.md — READ THIS FIRST (auto-loaded in every new chat)
+# CLAUDE.md — Paint Explainer repository instructions
 
-## ⚠️ THE SECOND RULE THAT KEEPS GETTING BROKEN
+## Read first
 
-**NEVER stretch or reuse images to fill time. 1 beat = 1 image. Always.**
+For any current Paint Explainer build, read in this order:
 
-Wrong (forbidden): generating 10 images and then holding each one for 6+
-seconds to "cover" a 60s video, reusing images, or extending beats to
-match a short image list.
+1. `SKILL.md`
+2. `skills/paint-explainer-recreation/SKILL.md`
+3. `references/paint-explainer-analysis-4v/style_rules.json`
+4. `skills/content-router/SKILL.md`
 
-Right: count the beats first, then generate exactly that many images.
+`style_rules.json` is authoritative. It comes from four user-supplied videos,
+98,705 scanned frames, 3,290.167 s, 845 shots, and 841 abrupt edit events. It
+supersedes older single-video, vertical-format, or speculative notes whenever
+values conflict.
 
-### The beat math (from the measured reference: one cut every 2-6s)
+## Rules that must not regress
 
-| Video length | Beats (images) needed | AI generations needed | Turns (10/turn) |
-|---|---|---|---|
-| 60 s | **~17** | ~6-9 (the rest come free) | 1 |
-| 3 min | ~50 | ~14-22 | 2-3 |
-| 8 min | ~133 | ~40-60 | 4-6 |
+- A spoken beat is **not** a mandatory new image/cut. Record intentional holds
+  and reused visual states in `beats.json`.
+- Justify a visual change with a noun, idea, relationship, or action. Put a
+  cut/source swap ~1–2 source frames (0.033–0.067 s) before its word onset.
+- Camera is locked. No routine zoom, pan, follow, orbit, parallax, or shake.
+- Motion is sparse: ~35–60% frozen shots and normally only 1–3 moving local
+  elements in an active shot.
+- Default to hard cuts, holds, and one-frame pose/source swaps. Do not add
+  dissolve/fade, generic entrances, idle breathing, blink cycles, lip-sync,
+  motion blur, or perpetual loops.
+- Preserve the centered black uppercase chapter title on a white top strip
+  occupying ~10% of frame height for the entire chapter.
+- Use a single clean imperfect near-black `#101010` contour, ~6 px at
+  1920-wide production. Use measured mode palettes and flat character fills;
+  reserve gradients for sky/water/world plates.
+- Current voice target: 204–209 recognized WPM.
+- Current mix: −20.7 to −20.6 LUFS, true peak ≤−2.3 dBTP, LRA 1.8–3.8 LU.
+- A low continuous electronic/ambient bed is measured and allowed. Keep it
+  subordinate; use only sparse semantic SFX and never a whoosh per cut.
+- Do not add captions/subtitles unless requested.
 
-### The smart supply chain (skills/image-queue — the standard path)
+## Approved stack
 
-Every beat gets ONE image, but beats are classified by the CHEAPEST source
-that can draw them, in this order:
-
-1. `doodle` — `skills/handdrawn-code` draws diagrams, maps, arrows, labels
-   from code. FREE, unlimited, local.
-2. `asset` — `skills/asset-library` fetches single files from 23 cloud
-   libraries (Kenney CC0, game-icons sketchy icons, 4 emoji sets, humaaans
-   people, 0x72 + Pixel Adventure pixel backgrounds, openclipart…).
-   FREE, unlimited, never committed.
-3. `pose` — a character that was already generated is re-posed from its
-   rig + pose library (ae-motion). FREE, unlimited, local.
-4. `ai` — ONLY genuinely new subjects (a character's first appearance, a
-   unique artifact, a new location). This is the ONLY thing that consumes
-   the 10-images-per-turn cap.
-
-So a 3-minute video costs ~15 AI generations instead of 50. Use
-`skills/image-queue/scripts/queue.py` for the ledger.
-
-### The batch loop (exactly this, for the ai beats only)
-
-1. Classify beats (`queue.py classify`), then generate the ai beats,
-   **min(10, pending) per turn**, in parallel.
-2. Pass the first accepted image as the reference image on every call.
-3. Save each image to `projects/<slug>/assets/`, mark it (`queue.py mark`),
-   and commit — a crash must never cause regeneration.
-4. If ai beats remain, **STOP** and tell the user exactly:
-   `"X of Y images done — type 'go' for the next batch."`
-5. Never skip the stop, never stretch, never reuse. The user's single
-   word starts the next turn, and the cap resets every turn.
-
-### Voiceover is the boss — never stretch images to cover it
-
-Record (or generate) the voiceover, then fit the beats to it
-(`script_planner.py fit`). One voiceover segment = one beat = one image.
-A longer voiceover means MORE beats, each with its OWN image — an image
-is never held longer and never reused to fill time.
-
-### Unlimited paths (when the batch loop is too slow)
-
-- `skills/handdrawn-code` — generates hand-drawn doodles FROM CODE:
-  zero cap, zero cost, runs instantly (doodle.mjs + ink-elements.mjs).
-  Use it for any beat, especially simple diagrams/stick scenes.
-- `skills/asset-library` — 5,000+ CC0 Kenney PNGs, fetched one at a
-  time. Use for props/backgrounds instead of generating.
-- The user's own free generators (Perchance, Bing Creator, Leonardo,
-  or their Qwen key via `tools/qwen_media.py`) — ask the user if they
-  want to generate the bulk themselves and upload.
-
-**Every image in every video MUST look HAND-DRAWN — MS-Paint style.
-Never "cinematic", never "moody painterly", never dark, never photoreal.
-If the images look cinematic, the video is WRONG and must be redone.**
-
-The style reference: The Paint Explainer channel. Hand-drawn doodle
-characters on PURE WHITE backgrounds, thick black outlines, flat colors.
-
-## Copy these prompts VERBATIM (change ONLY the {SUBJECT} part)
-
-### For a character / creature / object (subject PNG):
-
-```
-Hand-drawn doodle illustration of {SUBJECT}, on a PURE WHITE background.
-MS-Paint-like style: thick black outlines, flat bold colors, slightly
-imperfect hand-drawn lines, simple and {MOOD: funny-scary | grumpy | cute}.
-No text, no background scenery, no shadows, no gradients.
-```
-
-### For a background (separate image):
-
-```
-Simple hand-drawn doodle {SETTING} background, MS-Paint-like style:
-flat {PALETTE} colors, thick black outlines, wavy hand-drawn lines,
-completely EMPTY in the middle (no characters, no subject). No text.
-```
-
-### NEVER use prompts like "cinematic documentary illustration", "moody
-painterly", "film grain", "deep navy palette". Those produce the WRONG
-style. If you find yourself writing those words, stop and use the
-templates above instead.
-
-## The style lock (non-negotiable)
-
-1. Generate the FIRST image with the template above.
-2. **Pass that first image as the reference image on EVERY later
-   generation** (referenceImages / reference_image / style reference —
-   whichever the generator supports).
-3. Every image must match that first image's line weight and look.
-   Regenerate anything that looks different.
-
-## The video pipeline (numbered — follow in order)
-
-1. **Script** — `skills/youtube-script`: ANY topic (or propose 3 topics
-   when the user has none), pick a format (myth / misconception / mystery /
-   how-it-works / comparison / timeline / big-question — see
-   `skills/youtube-script/references/formats.md`), research facts, write
-   hooks + but-therefore seams, one spoken beat = one image.
-   `script_planner.py plan` writes the beat math + skeleton.
-2. **Images** — `skills/image-queue`: classify beats (doodle / asset /
-   pose / ai), fill the free beats locally, generate ai beats 10 per turn
-   with the templates above and the style lock. Character + minimalist
-   background are TWO images (background EMPTY in the middle).
-3. **Motion** — `skills/ae-motion/scripts/ae_motion.py`:
-   slide-ins, pops, punch-ins, rig-posed limbs. Cuts every 2-6 s,
-   subjects centered, 60 fps, hand fonts for text.
-4. **Character actions** — a character walking/waving/blinking uses
-   `skills/character-animation-skill`. Missing props: `skills/asset-library`
-   (23 cloud libraries — Kenney CC0, game-icons, 4 emoji sets, humaaans,
-   open-peeps, openclipart, 0x72 + Pixel Adventure backgrounds — fetch one
-   file at a time, never commit).
-5. **Audio** — voiceover + quiet music bed (−23 dB), 0.7 s pauses between
-   chapters. No captions unless asked. Fit beats to the voiceover with
-   `script_planner.py fit` (longer voiceover = more beats, more images —
-   never stretch).
-6. **Verify** — `skills/video-polish` checks the numbers.
-7. **Package for YouTube** — `skills/youtube-seo`: title variants (Browse
-   vs Search), description, tags, chapters, the 15-second hook line, and
-   the thumbnail concept — generated from the finished script.
-
-## Files to read as needed
-
-| Question | File |
+| Stage | Skill |
 |---|---|
-| Exact format numbers | `references/paint-explainer-autopsy.md` |
-| Motion grammar (moves) | `references/paint-explainer-style.md` |
-| Which skill fires when | `skills/content-router/SKILL.md` |
-| Script formats for any niche | `skills/youtube-script/references/formats.md` |
-| Image supply chain | `skills/image-queue/SKILL.md` |
-| YouTube SEO playbook | `skills/youtube-seo/README.md` |
-| Keyframe engine docs | `skills/ae-motion/SKILL.md` |
-| Style prompt templates | `skills/handdrawn-style-lock/SKILL.md` |
+| profile/orchestration | `paint-explainer-recreation`, `content-router` |
+| script | `youtube-script` |
+| state/asset ledger | `image-queue` |
+| generated/deterministic art | `handdrawn-style-lock`, `handdrawn-code` |
+| clean subject alpha | `transparent-asset-prep` |
+| PNG/MLS renderer | `ae-motion` |
+| exceptional repeated action | `character-animation-skill` |
+| browser renderer/diagnostics | `hyperframes-core`, `hyperframes-keyframes`, `hyperframes-animation`, `hyperframes-cli` |
+| measured gates | `paint-style-qc`, `video-polish` |
+| publishing metadata | `youtube-seo` |
 
-## What NOT to do
+HyperFrames is a pinned Apache-2.0 subset. Do not import its generic
+creative/faceless skills or use camera/transition blueprints that conflict with
+this repository profile.
 
-- Do NOT produce static stills synced to voiceover with no motion.
-- Do NOT use cinematic/painterly image prompts.
-- Do NOT skip the style lock (reference image on every call).
-- Do NOT generate more than 10 AI images per turn (queue them with
-  `skills/image-queue`, stop for the user's "go").
-- Do NOT stretch or reuse images to cover a longer voiceover — add beats.
-- Do NOT add captions, transitions, or loud music.
+## Workflow
+
+1. Resume from durable artifacts in `projects/SLUG/`.
+2. Research and approve narration; retain final word timings.
+3. Plan visual states separately from spoken beats: hold, reuse, hard cut,
+   source swap, or local action.
+4. Approve one subject and one world-plate style reference for the selected
+   mode. Use `handdrawn-code` for deterministic diagrams where useful.
+5. Prepare clean RGBA subjects only when needed. Keep source masters immutable.
+6. Choose one renderer per composition: `ae-motion` for PNG/MLS work or the
+   selected HyperFrames subset for deterministic HTML/CSS work.
+7. Use character sprite generation only when a repeated semantic action cannot
+   be represented with a pose swap, part rotation, or 2–4 pins.
+8. Assemble at word-aligned event times, preserve chapter breaths/titles, and
+   mix to measured targets.
+9. Run `paint-style-qc` after asset prep and scene authoring, then run it with
+   `video-polish` after assembly. Repair and rerun.
+10. Run `youtube-seo` only after the final passes.
+
+## Generation ledger
+
+The image-generation cap applies only to genuinely new `ai` masters. Generate
+up to 10 pending AI assets per turn, pass accepted references when supported,
+record each path in `beats.json`, and retain the ledger. `hold`, `pose`, `asset`,
+and `doodle` rows do not consume generation calls. Never generate
+near-duplicates merely to avoid deliberate reuse.
+
+## Renderer defaults
+
+For `ae-motion`: `fps: 30`, `motion_blur: 1`, no camera track, and no more than
+three moving layers per shot. Its `--plan` output is conservative.
+
+For HyperFrames: use the core contract and seek-safe runtime, then lint/check,
+inspect keyframes, and snapshot. Repository-specific QC remains mandatory.
+
+## Durable artifacts
+
+Retain scripts, research, word timing, source masters, cutouts, state/event
+ledger, scene manifests/compositions, audio, QC reports, final master, and
+metadata. Do not commit render caches, node_modules, frame sequences, or
+unneeded generated intermediates.
+
+## Legacy boundary
+
+`scripts/build_video.py`, old three-band vertical docs, old single-video
+references, and copied Agent Reach examples remain legacy material. Use them
+only when the user explicitly requests that legacy format. Their one-image-per-
+beat, 60 fps, no-music, and loudness defaults are not current Paint Explainer
+rules.
+
+Never copy another creator's drawings, scripts, voice, or branding. Reproduce
+measured production technique with original content and assets.

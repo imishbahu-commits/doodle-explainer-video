@@ -1,6 +1,13 @@
 .DS_Store
 *.zip
 *.mp4
+
+# The repository owner confirmed redistribution rights for this frozen
+# reference set. Large media is stored through Git LFS (see .gitattributes).
+!references/paint-explainer-videos/*.mp4
+!references/paint-explainer-videos/*.webm
+!references/paint-explainer-videos/*.mkv
+
 .env
 .venv/
 __pycache__/

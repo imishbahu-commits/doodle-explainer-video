@@ -190,7 +190,7 @@ def draw_text(text, size, fill=(28, 28, 34), w=1280, font_name="hand"):
 def render_scene(scene, out_path, base_dir=None):
     W = scene.get("width", 1280)
     H = scene.get("height", 720)
-    fps = scene.get("fps", 24)
+    fps = scene.get("fps", 30)
     dur = scene["duration"]
     n_frames = max(1, round(dur * fps))
     blur = max(1, scene.get("motion_blur", 1))
@@ -295,35 +295,24 @@ def render_scene(scene, out_path, base_dir=None):
 
 # -------------------------------------------------------------- move planner
 def plan_move(text):
+    """Conservative measured-profile suggestion; never invent camera motion."""
     t = text.lower()
-    if any(w in t for w in [" percent", "%", " thousand", " million", " in 19", " in 18", " in 20", " in two"]):
-        return {"move": "pop", "why": "stat/date — numeral pops in with overshoot",
-                "shape": [{"t": 0, "v": 0.5, "e": "hold"}, {"t": 0.3, "v": 1.0, "e": "easeOutBack"}]}
-    if any(w in t for w in ["but here", "but that", "the truth", "reveal", "actually", "inside", "never was"]):
-        return {"move": "punch-in", "why": "reversal/reveal — camera eases in on the subject",
-                "shape": [{"t": 0, "v": 1.0, "e": "hold"}, {"t": 1.2, "v": 1.18, "e": "easeInCubic"}]}
-    if any(w in t for w in ["not ", "never", "no ", "wrong", "false", "mistake"]):
-        return {"move": "cross-out", "why": "negation — red X stamps over the thing",
-                "shape": [{"t": 0, "v": 1.6, "e": "hold"}, {"t": 0.25, "v": 1.0, "e": "easeOutBack"}]}
-    if any(w in t for w in ["travel", "moved", "moves", "across", "journey", "drove", "sailed", "walked", "swims", "swam"]):
-        return {"move": "slide-across+parallax", "why": "travel — linear pan, subject counter-drifts",
-                "shape": [{"t": 0, "v": [-300, 360], "e": "linear"}, {"t": 3.0, "v": [1580, 360], "e": "linear"}]}
     if any(w in t for w in ["eats", "bites", "waves", "swims", "crawls", "runs", "attacks", "grabs", "opens"]):
-        return {"move": "puppet", "why": "the subject acts — pin-drag the moving part (tail/fin/limb)",
-                "shape": [{"t": 0, "v": [0, 0], "e": "easeInOut"},
-                          {"t": 0.5, "v": [0, 34], "e": "easeInOut"},
-                          {"t": 1.0, "v": [0, 0], "e": "easeInOut"}]}
+        return {"move": "local-part-action", "why": "the subject acts — animate only the named tail/fin/limb/prop for one beat",
+                "shape": [{"t": 0, "v": [0, 0], "e": "hold"},
+                          {"t": 0.4, "v": [0, 34], "e": "easeInOut"},
+                          {"t": 0.8, "v": [0, 34], "e": "hold"}]}
+    if any(w in t for w in ["not ", "never", "no ", "wrong", "false", "mistake"]):
+        return {"move": "source-swap-or-local-x", "why": "negation — use a semantic cut/swap or draw one local X",
+                "shape": [{"t": 0, "v": 0, "e": "hold"}, {"t": 0.067, "v": 1, "e": "hold"}]}
+    if any(w in t for w in [" percent", "%", " thousand", " million", " in 19", " in 18", " in 20", " in two"]):
+        return {"move": "cut-to-labeled-plate", "why": "stat/date — cut to a legible static plate 1–2 frames before the term",
+                "shape": [{"t": -0.067, "v": 1, "e": "hold"}]}
     if any(w in t for w in ["first", "second", "third", "next", "also", "another", "then"]):
-        return {"move": "stamp+stagger", "why": "list item — stamp in, stagger the next pop by 0.15s",
-                "shape": [{"t": 0, "v": 1.5, "e": "hold"}, {"t": 0.3, "v": 1.0, "e": "easeOutBack"}]}
-    if "?" in t:
-        return {"move": "hold+slow-zoom-out", "why": "question — quiet 8% pull-back, let it breathe",
-                "shape": [{"t": 0, "v": 1.08, "e": "hold"}, {"t": 2.0, "v": 1.0, "e": "easeInOut"}]}
-    if any(w in t for w in ["imagine", "picture", "you are", "you're"]):
-        return {"move": "slide-in", "why": "cold open — subject glides in and settles",
-                "shape": [{"t": 0, "v": [-300, 360], "e": "easeOutExpo"}, {"t": 0.8, "v": [480, 360], "e": "easeInOut"}]}
-    return {"move": "slide-in + idle bob", "why": "default — gentle entrance, then breathe",
-            "shape": [{"t": 0, "v": [-260, 360], "e": "easeOutExpo"}, {"t": 0.7, "v": [520, 360], "e": "easeInOut"}]}
+        return {"move": "hard-cut-or-source-swap", "why": "new list/state — do not auto-stagger; follow noun timing",
+                "shape": [{"t": -0.067, "v": 1, "e": "hold"}]}
+    return {"move": "hold-or-hard-cut", "why": "default — keep the camera and idle elements still; cut 1–2 frames before the noun when a visual change is necessary",
+            "shape": [{"t": -0.067, "v": 1, "e": "hold"}]}
 
 
 # --------------------------------------------------------------------- main

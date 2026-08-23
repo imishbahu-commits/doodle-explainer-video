@@ -1,0 +1,224 @@
+event,boundary_frame,timestamp_seconds,timestamp,preceding_shot_duration_seconds,chapter,transition_class,mean_abs_rgb,changed_fraction_gt20,changed_fraction_gt45,nearest_spoken_word,cut_minus_word_start_seconds
+1,53,1.7667,00:01.767,1.7667,Sigurd the Mighty,hard_cut_full_frame,0.220749,0.478854,0.411233,sigurd,-0.0633
+2,125,4.1667,00:04.167,2.4,Sigurd the Mighty,hard_cut_full_frame,0.240319,0.601632,0.426806,earned,-0.0633
+3,225,7.5,00:07.500,3.3333,Sigurd the Mighty,hard_cut_full_frame,0.162983,0.485451,0.262396,but,-0.06
+4,321,10.7,00:10.700,3.2,Sigurd the Mighty,hard_cut_same_palette,0.222443,0.401319,0.383802,one,-0.04
+5,399,13.3,00:13.300,2.6,Sigurd the Mighty,hard_cut_full_frame,0.264167,0.463889,0.455503,who,-0.05
+6,513,17.1,00:17.100,3.8,Sigurd the Mighty,hard_cut_full_frame,0.261838,0.461701,0.451771,to,-0.06
+7,605,20.1667,00:20.167,3.0667,Sigurd the Mighty,hard_cut_same_palette,0.159308,0.286354,0.268854,each,-0.0533
+8,659,21.9667,00:21.967,1.8,Sigurd the Mighty,hard_cut_same_palette,0.174631,0.34059,0.306615,sigurd,-0.0233
+9,738,24.6,00:24.600,2.6333,Sigurd the Mighty,hard_cut_same_palette,0.163975,0.350694,0.297622,he,-0.03
+10,809,26.9667,00:26.967,2.3667,Sigurd the Mighty,hard_cut_same_palette,0.168617,0.330365,0.291024,and,-0.0333
+11,936,31.2,00:31.200,4.2333,Sigurd the Mighty,hard_cut_full_frame,0.242504,0.441753,0.427066,but,-0.06
+12,1016,33.8667,00:33.867,2.6667,Sigurd the Mighty,hard_cut_full_frame,0.276784,0.463368,0.443646,as,-0.0333
+13,1040,34.6667,00:34.667,0.8,Sigurd the Mighty,hard_cut_full_frame,0.251626,0.508021,0.446302,the,-0.0433
+14,1200,40.0,00:40.000,5.3333,Sigurd the Mighty,hard_cut_full_frame,0.240868,0.501076,0.457726,and,-0.05
+15,1336,44.5333,00:44.533,4.5333,Sigurd the Mighty,hard_cut_same_palette,0.202433,0.383368,0.366024,his,-0.0467
+16,1447,48.2333,00:48.233,3.7,Dian Wei,hard_cut_same_palette,0.164425,0.354896,0.288785,deanne,-0.0067
+17,1462,48.7333,00:48.733,0.5,Dian Wei,hard_cut_same_palette,0.131973,0.312812,0.223958,way,0.0733
+18,1488,49.6,00:49.600,0.8667,Dian Wei,hard_cut_full_frame,0.268961,0.583299,0.497812,dionne,-0.02
+19,1592,53.0667,00:53.067,3.4667,Dian Wei,hard_cut_full_frame,0.190793,0.460365,0.345156,served,-0.0933
+20,1674,55.8,00:55.800,2.7333,Dian Wei,hard_cut_full_frame,0.187535,0.455347,0.344826,and,-0.09
+21,1849,61.6333,01:01.633,5.8333,Dian Wei,localized_swap_or_pop,0.0969,0.155156,0.124201,he,-0.0767
+22,1956,65.2,01:05.200,3.5667,Dian Wei,hard_cut_same_palette,0.219567,0.374792,0.366076,that,-0.02
+23,2160,72.0,01:12.000,6.8,Dian Wei,hard_cut_full_frame,0.674213,0.88809,0.883906,during,-0.03
+24,2195,73.1667,01:13.167,1.1667,Dian Wei,hard_cut_full_frame,0.648873,0.882222,0.871649,when,-0.0633
+25,2224,74.1333,01:14.133,0.9667,Dian Wei,hard_cut_full_frame,0.654848,0.882257,0.871719,launched,-0.0567
+26,2292,76.4,01:16.400,2.2667,Dian Wei,hard_cut_full_frame,0.665194,0.881667,0.872795,they,-0.07
+27,2427,80.9,01:20.900,4.5,Dian Wei,hard_cut_full_frame,0.633644,0.874184,0.853021,an,-0.04
+28,2795,93.1667,01:33.167,12.2667,Dian Wei,hard_cut_full_frame,0.234574,0.693438,0.562934,eventually,-0.0733
+29,3059,101.9667,01:41.967,8.8,Dian Wei,hard_cut_full_frame,0.155678,0.451424,0.341823,until,-0.0033
+30,3172,105.7333,01:45.733,3.7667,Dian Wei,hard_cut_full_frame,0.156262,0.451059,0.351944,as,-0.0467
+31,3547,118.2333,01:58.233,12.5,Emperor Valerian,hard_cut_full_frame,0.366361,0.839965,0.709184,emperor,-0.0267
+32,3553,118.4333,01:58.433,0.2,Emperor Valerian,hard_cut_same_palette,0.130236,0.320052,0.221806,emperor,0.1733
+33,3565,118.8333,01:58.833,0.4,Emperor Valerian,hard_cut_same_palette,0.136144,0.328819,0.229479,valerian,0.1233
+34,3598,119.9333,01:59.933,1.1,Emperor Valerian,hard_cut_full_frame,0.258167,0.844358,0.421927,valerian,-0.0367
+35,3685,122.8333,02:02.833,2.9,Emperor Valerian,hard_cut_full_frame,0.239384,0.744896,0.53191,chaotic,-0.0467
+36,3737,124.5667,02:04.567,1.7333,Emperor Valerian,hard_cut_full_frame,0.268648,0.715365,0.591545,of,-0.0233
+37,3852,128.4,02:08.400,3.8333,Emperor Valerian,hard_cut_full_frame,0.201406,0.581771,0.380868,much,-0.06
+38,3886,129.5333,02:09.533,1.1333,Emperor Valerian,hard_cut_same_palette,0.107076,0.244722,0.231684,trying,-0.0667
+39,4040,134.6667,02:14.667,5.1333,Emperor Valerian,hard_cut_same_palette,0.164657,0.407535,0.304306,led,-0.0633
+40,4108,136.9333,02:16.933,2.2667,Emperor Valerian,hard_cut_full_frame,0.199438,0.483715,0.388681,in,-0.0767
+41,4253,141.7667,02:21.767,4.8333,Emperor Valerian,hard_cut_same_palette,0.129225,0.26151,0.233194,with,-0.0733
+42,4325,144.1667,02:24.167,2.4,Emperor Valerian,hard_cut_full_frame,0.204658,0.439705,0.399931,his,-0.0433
+43,4360,145.3333,02:25.333,1.1667,Emperor Valerian,hard_cut_same_palette,0.172975,0.399983,0.346128,slowly,-0.0767
+44,4398,146.6,02:26.600,1.2667,Emperor Valerian,hard_cut_same_palette,0.186709,0.383125,0.353524,as,-0.07
+45,4511,150.3667,02:30.367,3.7667,Emperor Valerian,hard_cut_full_frame,0.234491,0.477031,0.468299,instead,-0.0533
+46,4584,152.8,02:32.800,2.4333,Emperor Valerian,hard_cut_full_frame,0.240103,0.485087,0.473646,believing,-0.05
+47,4839,161.3,02:41.300,8.5,Emperor Valerian,hard_cut_same_palette,0.142233,0.283785,0.257847,captured,-0.04
+48,4991,166.3667,02:46.367,5.0667,Emperor Valerian,hard_cut_full_frame,0.227739,0.477101,0.46092,according,-0.0733
+49,5053,168.4333,02:48.433,2.0667,Emperor Valerian,hard_cut_full_frame,0.617212,0.866476,0.850556,valerian,-0.0467
+50,5195,173.1667,02:53.167,4.7333,Emperor Valerian,hard_cut_full_frame,0.35239,0.895799,0.839618,some,-0.0233
+51,5285,176.1667,02:56.167,3.0,Emperor Valerian,hard_cut_full_frame,0.286616,0.818351,0.68783,forcing,-0.0233
+52,5431,181.0333,03:01.033,4.8667,Emperor Valerian,hard_cut_full_frame,0.491535,0.871719,0.787569,after,-0.0467
+53,5505,183.5,03:03.500,2.4667,Emperor Valerian,hard_cut_full_frame,0.650804,0.884062,0.874271,the,-0.07
+54,5573,185.7667,03:05.767,2.2667,Emperor Valerian,hard_cut_full_frame,0.641298,0.882882,0.871215,those,-0.0233
+55,5653,188.4333,03:08.433,2.6667,Emperor Valerian,hard_cut_full_frame,0.638358,0.88316,0.87316,his,0.0333
+56,5806,193.5333,03:13.533,5.1,Emperor Valerian,hard_cut_full_frame,0.270809,0.554948,0.499201,general,-0.0567
+57,5866,195.5333,03:15.533,2.0,Gen. John Sedgwick,hard_cut_full_frame,0.225801,0.485868,0.43908,known,-0.0367
+58,5903,196.7667,03:16.767,1.2333,Gen. John Sedgwick,hard_cut_full_frame,0.292385,0.617882,0.560781,he,-0.0333
+59,6005,200.1667,03:20.167,3.4,Gen. John Sedgwick,hard_cut_full_frame,0.318389,0.669097,0.589861,during,-0.0833
+60,6055,201.8333,03:21.833,1.6667,Gen. John Sedgwick,hard_cut_full_frame,0.295199,0.627795,0.561892,commanding,-0.0367
+61,6072,202.4,03:22.400,0.5667,Gen. John Sedgwick,hard_cut_same_palette,0.167762,0.369531,0.338854,thousands,0.02
+62,6167,205.5667,03:25.567,3.1667,Gen. John Sedgwick,hard_cut_full_frame,0.261185,0.685712,0.550434,he,-0.0233
+63,6205,206.8333,03:26.833,1.2667,Gen. John Sedgwick,hard_cut_full_frame,0.264456,0.671944,0.543594,the,-0.0467
+64,6248,208.2667,03:28.267,1.4333,Gen. John Sedgwick,hard_cut_same_palette,0.136066,0.295955,0.261233,in,-0.0533
+65,6443,214.7667,03:34.767,6.5,Gen. John Sedgwick,hard_cut_same_palette,0.142443,0.34066,0.289878,the,-0.0333
+66,6532,217.7333,03:37.733,2.9667,Gen. John Sedgwick,hard_cut_full_frame,0.287168,0.699688,0.607135,during,-0.0367
+67,6598,219.9333,03:39.933,2.2,Gen. John Sedgwick,hard_cut_full_frame,0.314311,0.675069,0.586059,sedgwick,-0.0567
+68,7204,240.1333,04:00.133,20.2,Gen. John Sedgwick,hard_cut_full_frame,0.275796,0.49467,0.47684,his,-0.0767
+69,7337,244.5667,04:04.567,4.4333,Oleg of Novgorod,hard_cut_full_frame,0.23862,0.487969,0.443646,oh,-0.0533
+70,7361,245.3667,04:05.367,0.8,Oleg of Novgorod,hard_cut_same_palette,0.148921,0.371719,0.258038,novgorod,0.1167
+71,7396,246.5333,04:06.533,1.1667,Oleg of Novgorod,hard_cut_full_frame,0.294084,0.63342,0.533212,oh,-0.0367
+72,7492,249.7333,04:09.733,3.2,Oleg of Novgorod,hard_cut_full_frame,0.276923,0.570747,0.524983,in,-0.1367
+73,7563,252.1,04:12.100,2.3667,Oleg of Novgorod,hard_cut_full_frame,0.268273,0.558819,0.524618,and,-0.08
+74,7657,255.2333,04:15.233,3.1333,Oleg of Novgorod,hard_cut_full_frame,0.286849,0.633229,0.587604,was,-0.0367
+75,7733,257.7667,04:17.767,2.5333,Oleg of Novgorod,hard_cut_full_frame,0.2419,0.618212,0.545,he,-0.0533
+76,7854,261.8,04:21.800,4.0333,Oleg of Novgorod,hard_cut_full_frame,0.300133,0.656875,0.631875,sailing,-0.07
+77,7869,262.3,04:22.300,0.5,Oleg of Novgorod,hard_cut_same_palette,0.134271,0.266128,0.260417,hundreds,-0.02
+78,7927,264.2333,04:24.233,1.9333,Oleg of Novgorod,hard_cut_full_frame,0.223402,0.574115,0.457413,scaring,-0.0667
+79,8079,269.3,04:29.300,5.0667,Oleg of Novgorod,hard_cut_full_frame,0.230628,0.455451,0.409167,according,-0.04
+80,8143,271.4333,04:31.433,2.1333,Oleg of Novgorod,hard_cut_full_frame,0.253733,0.449358,0.436094,he,-0.0667
+81,8261,275.3667,04:35.367,3.9333,Oleg of Novgorod,hard_cut_full_frame,0.256784,0.453889,0.437951,however,-0.0633
+82,8426,280.8667,04:40.867,5.5,Oleg of Novgorod,hard_cut_full_frame,0.337753,0.555399,0.536094,a,-0.0533
+83,8532,284.4,04:44.400,3.5333,Oleg of Novgorod,hard_cut_full_frame,0.314291,0.651319,0.54217,so,-0.06
+84,8625,287.5,04:47.500,3.1,Oleg of Novgorod,hard_cut_same_palette,0.208577,0.416667,0.363472,years,-0.02
+85,8648,288.2667,04:48.267,0.7667,Oleg of Novgorod,hard_cut_same_palette,0.209133,0.379028,0.365816,when,-0.0633
+86,8985,299.5,04:59.500,11.2333,Oleg of Novgorod,hard_cut_full_frame,0.302471,0.648941,0.548993,chin,-0.02
+87,9008,300.2667,05:00.267,0.7667,Qin Shi Huang,hard_cut_same_palette,0.130383,0.370486,0.224306,one,0.0267
+88,9036,301.2,05:01.200,0.9333,Qin Shi Huang,hard_cut_full_frame,0.372351,0.773715,0.651667,change,-0.03
+89,9087,302.9,05:02.900,1.7,Qin Shi Huang,hard_cut_same_palette,0.100453,0.347674,0.227517,to,-0.01
+90,9197,306.5667,05:06.567,3.6667,Qin Shi Huang,hard_cut_full_frame,0.216488,0.607118,0.451719,using,-0.0333
+91,9207,306.9,05:06.900,0.3333,Qin Shi Huang,hard_cut_same_palette,0.162709,0.246753,0.22625,massive,-0.03
+92,9264,308.8,05:08.800,1.9,Qin Shi Huang,hard_cut_full_frame,0.293053,0.854375,0.627361,once,-0.08
+93,9399,313.3,05:13.300,4.5,Qin Shi Huang,hard_cut_full_frame,0.304869,0.85276,0.625694,while,-0.02
+94,9557,318.5667,05:18.567,5.2667,Qin Shi Huang,hard_cut_full_frame,0.261044,0.845868,0.537257,as,-0.0633
+95,9739,324.6333,05:24.633,6.0667,Qin Shi Huang,hard_cut_full_frame,0.36355,0.798038,0.771615,death,-0.0267
+96,9763,325.4333,05:25.433,0.8,Qin Shi Huang,hard_cut_full_frame,0.317532,0.701302,0.640486,his,-0.0367
+97,9811,327.0333,05:27.033,1.6,Qin Shi Huang,hard_cut_full_frame,0.2418,0.71434,0.529983,which,-0.0267
+98,9923,330.7667,05:30.767,3.7333,Qin Shi Huang,hard_cut_full_frame,0.232688,0.445417,0.41658,because,-0.0433
+99,10016,333.8667,05:33.867,3.1,Qin Shi Huang,hard_cut_full_frame,0.369397,0.879705,0.838802,a,-0.0633
+100,10387,346.2333,05:46.233,12.3667,Qin Shi Huang,hard_cut_full_frame,0.365722,0.814635,0.785694,the,-0.0267
+101,10471,349.0333,05:49.033,2.8,Qin Shi Huang,hard_cut_full_frame,0.397007,0.888889,0.86776,after,-0.0467
+102,10555,351.8333,05:51.833,2.8,Qin Shi Huang,hard_cut_same_palette,0.164769,0.383698,0.332031,to,-0.0667
+103,10642,354.7333,05:54.733,2.9,Qin Shi Huang,hard_cut_full_frame,0.25612,0.730469,0.437031,while,-0.0467
+104,10718,357.2667,05:57.267,2.5333,Qin Shi Huang,hard_cut_same_palette,0.123585,0.218819,0.203507,back,-0.0333
+105,10857,361.9,06:01.900,4.6333,Qin Shi Huang,hard_cut_full_frame,0.372919,0.728733,0.631858,and,-0.05
+106,10939,364.6333,06:04.633,2.7333,Qin Shi Huang,hard_cut_full_frame,0.289771,0.736858,0.565139,guarded,-0.0467
+107,11023,367.4333,06:07.433,2.8,Attila the Hun,hard_cut_full_frame,0.383957,0.892882,0.754844,attila,-0.0667
+108,11045,368.1667,06:08.167,0.7333,Attila the Hun,hard_cut_same_palette,0.143979,0.393767,0.250903,hun,0.0667
+109,11072,369.0667,06:09.067,0.9,Attila the Hun,hard_cut_full_frame,0.403065,0.820503,0.71309,no,-0.0533
+110,11143,371.4333,06:11.433,2.3667,Attila the Hun,hard_cut_full_frame,0.130578,0.542448,0.355139,because,-0.0567
+111,11307,376.9,06:16.900,5.4667,Attila the Hun,hard_cut_same_palette,0.159476,0.40592,0.315017,forming,-0.02
+112,11402,380.0667,06:20.067,3.1667,Attila the Hun,hard_cut_full_frame,0.35329,0.809358,0.631632,he,-0.0333
+113,11486,382.8667,06:22.867,2.8,Attila the Hun,hard_cut_full_frame,0.353018,0.718889,0.675694,demanding,-0.0233
+114,11785,392.8333,06:32.833,9.9667,Attila the Hun,hard_cut_full_frame,0.32402,0.74842,0.673212,at,-0.0467
+115,12012,400.4,06:40.400,7.5667,Attila the Hun,hard_cut_full_frame,0.187882,0.527188,0.477031,however,-0.07
+116,12052,401.7333,06:41.733,1.3333,Attila the Hun,hard_cut_full_frame,0.280654,0.457882,0.438437,he,-0.0567
+117,12291,409.7,06:49.700,7.9667,Attila the Hun,hard_cut_full_frame,0.326505,0.666962,0.624306,along,-0.07
+118,12377,412.5667,06:52.567,2.8667,Attila the Hun,hard_cut_full_frame,0.338835,0.686319,0.636198,he,-0.0533
+119,12447,414.9,06:54.900,2.3333,Attila the Hun,hard_cut_same_palette,0.131513,0.241979,0.216389,western,-0.06
+120,12558,418.6,06:58.600,3.7,Attila the Hun,hard_cut_full_frame,0.204461,0.62158,0.399896,because,-0.02
+121,12623,420.7667,07:00.767,2.1667,Attila the Hun,hard_cut_full_frame,0.375955,0.735764,0.662465,attila,-0.0733
+122,12735,424.5,07:04.500,3.7333,Attila the Hun,hard_cut_full_frame,0.35387,0.879896,0.787465,after,-0.03
+123,12797,426.5667,07:06.567,2.0667,Attila the Hun,hard_cut_full_frame,0.137116,0.455712,0.306875,he,-0.0633
+124,13084,436.1333,07:16.133,9.5667,Attila the Hun,hard_cut_full_frame,0.280928,0.820156,0.725694,the,-0.0367
+125,13180,439.3333,07:19.333,3.2,Attila the Hun,hard_cut_full_frame,0.323305,0.722951,0.65526,and,-0.0467
+126,13221,440.7,07:20.700,1.3667,Attila the Hun,hard_cut_full_frame,0.232246,0.860851,0.49026,died,-0.06
+127,13267,442.2333,07:22.233,1.5333,Attila the Hun,hard_cut_full_frame,0.264146,0.867309,0.776441,after,-0.0267
+128,13351,445.0333,07:25.033,2.8,Attila the Hun,hard_cut_full_frame,0.271121,0.866476,0.742309,since,-0.0467
+129,13409,446.9667,07:26.967,1.9333,Attila the Hun,hard_cut_full_frame,0.257934,0.775694,0.665781,legend,-0.0633
+130,13567,452.2333,07:32.233,5.2667,Attila the Hun,hard_cut_full_frame,0.22077,0.441337,0.408507,to,-0.0467
+131,13588,452.9333,07:32.933,0.7,Attila the Hun,hard_cut_same_palette,0.179952,0.333125,0.330937,no,-0.0667
+132,13675,455.8333,07:35.833,2.9,Attila the Hun,hard_cut_full_frame,0.386988,0.833785,0.710816,eliezer,-0.0467
+133,13693,456.4333,07:36.433,0.6,Eleazar Maccabeus,hard_cut_same_palette,0.146825,0.368958,0.250833,maccabees,0.0133
+134,13732,457.7333,07:37.733,1.3,Eleazar Maccabeus,hard_cut_full_frame,0.32332,0.689722,0.63342,he,-0.0367
+135,13825,460.8333,07:40.833,3.1,Eleazar Maccabeus,hard_cut_full_frame,0.215191,0.684028,0.427135,against,0.0033
+136,13881,462.7,07:42.700,1.8667,Eleazar Maccabeus,hard_cut_full_frame,0.193311,0.672813,0.393003,and,-0.05
+137,13991,466.3667,07:46.367,3.6667,Eleazar Maccabeus,hard_cut_same_palette,0.140132,0.281545,0.216094,on,-0.0433
+138,14027,467.5667,07:47.567,1.2,Eleazar Maccabeus,hard_cut_same_palette,0.15777,0.351354,0.262674,he,-0.0433
+139,14054,468.4667,07:48.467,0.9,Eleazar Maccabeus,hard_cut_same_palette,0.17316,0.412951,0.295208,one,-0.0133
+140,14138,471.2667,07:51.267,2.8,Eleazar Maccabeus,hard_cut_full_frame,0.22787,0.562101,0.467517,then,-0.0333
+141,14205,473.5,07:53.500,2.2333,Eleazar Maccabeus,hard_cut_full_frame,0.298077,0.77,0.636823,this,-0.02
+142,14656,488.5333,08:08.533,15.0333,Eleazar Maccabeus,hard_cut_same_palette,0.134698,0.391042,0.268889,he,-0.0467
+143,14780,492.6667,08:12.667,4.1333,Eleazar Maccabeus,hard_cut_full_frame,0.152379,0.437569,0.305486,so,-0.0833
+144,14852,495.0667,08:15.067,2.4,Eleazar Maccabeus,hard_cut_full_frame,0.161083,0.447361,0.331163,got,-0.0233
+145,14956,498.5333,08:18.533,3.4667,Eleazar Maccabeus,hard_cut_full_frame,0.323136,0.799948,0.754913,the,-0.0367
+146,15053,501.7667,08:21.767,3.2333,Eleazar Maccabeus,hard_cut_full_frame,0.323025,0.799201,0.755417,as,-0.0433
+147,15369,512.3,08:32.300,10.5333,Mithridates VI of Pontus,hard_cut_full_frame,0.363333,0.866198,0.776944,mithridate,-0.04
+148,15393,513.1,08:33.100,0.8,Mithridates VI of Pontus,hard_cut_same_palette,0.109289,0.291163,0.192222,the,-0.0433
+149,15450,515.0,08:35.000,1.9,Mithridates VI of Pontus,hard_cut_full_frame,0.369696,0.712535,0.651997,mithridate,-0.04
+150,15533,517.7667,08:37.767,2.7667,Mithridates VI of Pontus,hard_cut_full_frame,0.284831,0.758177,0.606233,the,-0.0633
+151,15582,519.4,08:39.400,1.6333,Mithridates VI of Pontus,hard_cut_full_frame,0.187908,0.542934,0.438038,he,-0.08
+152,15652,521.7333,08:41.733,2.3333,Mithridates VI of Pontus,hard_cut_full_frame,0.293112,0.688281,0.554149,who,-0.0267
+153,15688,522.9333,08:42.933,1.2,Mithridates VI of Pontus,hard_cut_same_palette,0.108067,0.240937,0.176962,aggressively,-0.0867
+154,15710,523.6667,08:43.667,0.7333,Mithridates VI of Pontus,hard_cut_full_frame,0.262135,0.677708,0.586545,and,-0.0733
+155,15781,526.0333,08:46.033,2.3667,Mithridates VI of Pontus,hard_cut_full_frame,0.33743,0.793819,0.701198,in,-0.0767
+156,15945,531.5,08:51.500,5.4667,Mithridates VI of Pontus,hard_cut_full_frame,0.264285,0.665347,0.506476,living,-0.07
+157,15977,532.5667,08:52.567,1.0667,Mithridates VI of Pontus,hard_cut_full_frame,0.26426,0.664722,0.506354,were,-0.0233
+158,15992,533.0667,08:53.067,0.5,Mithridates VI of Pontus,hard_cut_same_palette,0.125487,0.304896,0.251059,in,-0.0633
+159,16039,534.6333,08:54.633,1.5667,Mithridates VI of Pontus,hard_cut_same_palette,0.153258,0.397778,0.294375,he,-0.0867
+160,16311,543.7,09:03.700,9.0667,Mithridates VI of Pontus,hard_cut_same_palette,0.162772,0.316771,0.28908,after,-0.05
+161,16337,544.5667,09:04.567,0.8667,Mithridates VI of Pontus,hard_cut_same_palette,0.153663,0.333576,0.303385,holding,-0.0233
+162,16391,546.3667,09:06.367,1.8,Mithridates VI of Pontus,hard_cut_same_palette,0.12921,0.261007,0.237448,his,-0.0533
+163,16475,549.1667,09:09.167,2.8,Mithridates VI of Pontus,hard_cut_full_frame,0.192323,0.443229,0.392813,after,-0.0733
+164,16553,551.7667,09:11.767,2.6,Mithridates VI of Pontus,hard_cut_full_frame,0.239632,0.524792,0.471667,mithridate,-0.0533
+165,16587,552.9,09:12.900,1.1333,Mithridates VI of Pontus,hard_cut_full_frame,0.270678,0.840712,0.717413,and,-0.06
+166,16793,559.7667,09:19.767,6.8667,Mithridates VI of Pontus,hard_cut_full_frame,0.251695,0.658177,0.549028,than,-0.0033
+167,16868,562.2667,09:22.267,2.5,Mithridates VI of Pontus,hard_cut_full_frame,0.262027,0.683941,0.574618,so,-0.0233
+168,16917,563.9,09:23.900,1.6333,Mithridates VI of Pontus,hard_cut_full_frame,0.28741,0.838247,0.730972,but,-0.04
+169,17031,567.7,09:27.700,3.8,Mithridates VI of Pontus,hard_cut_full_frame,0.287062,0.833924,0.726927,that,-0.08
+170,17280,576.0,09:36.000,8.3,Frederick I (Barbarossa),hard_cut_full_frame,0.351692,0.89276,0.791771,frederick,-0.03
+171,17302,576.7333,09:36.733,0.7333,Frederick I (Barbarossa),hard_cut_same_palette,0.1056,0.307917,0.185712,first,0.1333
+172,17353,578.4333,09:38.433,1.7,Frederick I (Barbarossa),hard_cut_full_frame,0.415705,0.863594,0.767552,frederick,-0.0567
+173,17533,584.4333,09:44.433,6.0,Frederick I (Barbarossa),hard_cut_full_frame,0.300558,0.645156,0.598889,and,-0.0567
+174,17616,587.2,09:47.200,2.7667,Frederick I (Barbarossa),hard_cut_full_frame,0.269864,0.869236,0.530347,then,-0.08
+175,17712,590.4,09:50.400,3.2,Frederick I (Barbarossa),hard_cut_full_frame,0.231077,0.753003,0.474601,frederick,-0.06
+176,17837,594.5667,09:54.567,4.1667,Frederick I (Barbarossa),hard_cut_full_frame,0.264695,0.710833,0.543837,he,-0.0333
+177,17932,597.7333,09:57.733,3.1667,Frederick I (Barbarossa),hard_cut_same_palette,0.150756,0.300747,0.277604,many,-0.0467
+178,17974,599.1333,09:59.133,1.4,Frederick I (Barbarossa),hard_cut_same_palette,0.156751,0.314444,0.284983,expected,-0.0867
+179,18039,601.3,10:01.300,2.1667,Frederick I (Barbarossa),hard_cut_full_frame,0.259059,0.521372,0.500052,but,-0.05
+180,18097,603.2333,10:03.233,1.9333,Frederick I (Barbarossa),hard_cut_full_frame,0.242943,0.500729,0.483698,after,-0.0667
+181,18129,604.3,10:04.300,1.0667,Frederick I (Barbarossa),hard_cut_same_palette,0.140836,0.286858,0.257674,through,-0.05
+182,18167,605.5667,10:05.567,1.2667,Frederick I (Barbarossa),hard_cut_full_frame,0.190519,0.483142,0.404931,he,-0.0733
+183,18386,612.8667,10:12.867,7.3,Frederick I (Barbarossa),hard_cut_full_frame,0.219526,0.452569,0.435868,likely,-0.0933
+184,18452,615.0667,10:15.067,2.2,Frederick I (Barbarossa),hard_cut_full_frame,0.220203,0.451545,0.436771,ending,-0.0233
+185,18478,615.9333,10:15.933,0.8667,Frederick I (Barbarossa),hard_cut_full_frame,0.218035,0.535556,0.441198,one,-0.0267
+186,18565,618.8333,10:18.833,2.9,Frederick I (Barbarossa),hard_cut_full_frame,0.218434,0.537587,0.442622,by,-0.0367
+187,18611,620.3667,10:20.367,1.5333,Blackbeard,hard_cut_full_frame,0.428726,0.861441,0.770799,black,-0.0333
+188,18633,621.1,10:21.100,0.7333,Blackbeard,hard_cut_same_palette,0.123745,0.346701,0.222795,beard,0.43
+189,18648,621.6,10:21.600,0.5,Blackbeard,hard_cut_full_frame,0.383951,0.873646,0.772309,you,0.0
+190,18785,626.1667,10:26.167,4.5667,Blackbeard,hard_cut_full_frame,0.25744,0.853316,0.435347,he,-0.0533
+191,18986,632.8667,10:32.867,6.7,Blackbeard,hard_cut_full_frame,0.299771,0.870417,0.478194,and,-0.0733
+192,19047,634.9,10:34.900,2.0333,Blackbeard,hard_cut_full_frame,0.342805,0.860694,0.522101,and,-0.05
+193,19089,636.3,10:36.300,1.4,Blackbeard,hard_cut_same_palette,0.07106,0.182674,0.173542,which,-0.12
+194,19145,638.1667,10:38.167,1.8667,Blackbeard,hard_cut_full_frame,0.219288,0.54783,0.503854,he,-0.0833
+195,19259,641.9667,10:41.967,3.8,Blackbeard,hard_cut_full_frame,0.221284,0.612222,0.469184,made,-0.0933
+196,19310,643.6667,10:43.667,1.7,Blackbeard,hard_cut_full_frame,0.312155,0.788646,0.474705,his,-0.0733
+197,19401,646.7,10:46.700,3.0333,Blackbeard,hard_cut_full_frame,0.350239,0.869774,0.856736,when,-0.04
+198,19585,652.8333,10:52.833,6.1333,Blackbeard,hard_cut_full_frame,0.270939,0.786042,0.68941,two,-0.0267
+199,19623,654.1,10:54.100,1.2667,Blackbeard,hard_cut_full_frame,0.188264,0.501997,0.391406,they,-0.05
+200,19660,655.3333,10:55.333,1.2333,Blackbeard,hard_cut_full_frame,0.243134,0.806944,0.467708,black,0.0133
+201,19736,657.8667,10:57.867,2.5333,Blackbeard,hard_cut_full_frame,0.243772,0.603733,0.52092,boarded,-0.0633
+202,20286,676.2,11:16.200,18.3333,Blackbeard,hard_cut_full_frame,0.211821,0.522517,0.472778,and,-0.03
+203,20401,680.0333,11:20.033,3.8333,Audie Murphy,hard_cut_full_frame,0.438929,0.962118,0.787448,audie,-0.0967
+204,20415,680.5,11:20.500,0.4667,Audie Murphy,hard_cut_same_palette,0.137013,0.337674,0.241649,murphy,0.13
+205,20442,681.4,11:21.400,0.9,Audie Murphy,hard_cut_full_frame,0.352291,0.649583,0.583924,audie,-0.05
+206,20465,682.1667,11:22.167,0.7667,Audie Murphy,hard_cut_full_frame,0.3208,0.77092,0.681927,once,-0.0933
+207,20592,686.4,11:26.400,4.2333,Audie Murphy,hard_cut_full_frame,0.321119,0.750608,0.658542,became,-0.03
+208,20716,690.5333,11:30.533,4.1333,Audie Murphy,hard_cut_same_palette,0.197852,0.398872,0.367118,murphy,-0.0367
+209,20796,693.2,11:33.200,2.6667,Audie Murphy,hard_cut_full_frame,0.233527,0.61974,0.479323,but,-0.04
+210,20962,698.7333,11:38.733,5.5333,Audie Murphy,hard_cut_full_frame,0.253207,0.653455,0.544392,after,-0.0267
+211,21053,701.7667,11:41.767,3.0333,Audie Murphy,hard_cut_same_palette,0.107919,0.25276,0.231858,climbed,-0.0533
+212,21564,718.8,11:58.800,17.0333,Audie Murphy,hard_cut_same_palette,0.135126,0.361302,0.295156,and,-0.06
+213,21622,720.7333,12:00.733,1.9333,Audie Murphy,hard_cut_full_frame,0.247619,0.725747,0.546042,after,-0.0467
+214,21685,722.8333,12:02.833,2.1,Audie Murphy,hard_cut_full_frame,0.354896,0.839861,0.770521,into,-0.0767
+215,21753,725.1,12:05.100,2.2667,Audie Murphy,hard_cut_full_frame,0.40284,0.735104,0.670295,but,-0.06
+216,21868,728.9333,12:08.933,3.8333,Audie Murphy,hard_cut_full_frame,0.426805,0.716007,0.681042,his,-0.0667
+217,21986,732.8667,12:12.867,3.9333,Audie Murphy,hard_cut_full_frame,0.394054,0.865868,0.843733,he,-0.0933
+218,22066,735.5333,12:15.533,2.6667,Audie Murphy,hard_cut_same_palette,0.062004,0.344601,0.173108,and,-0.0667
+219,22120,737.3333,12:17.333,1.8,Audie Murphy,hard_cut_full_frame,0.134967,0.625434,0.221962,crashing,-0.0367
+220,22233,741.1,12:21.100,3.7667,Audie Murphy,hard_cut_full_frame,0.356704,0.908472,0.716684,after,-0.05
+221,22319,743.9667,12:23.967,2.8667,Audie Murphy,hard_cut_full_frame,0.329413,0.712083,0.611823,at,-0.0633
+222,22370,745.6667,12:25.667,1.7,Audie Murphy,hard_cut_full_frame,0.323525,0.686215,0.598316,and,-0.0733
+223,22518,750.6,12:30.600,4.9333,Audie Murphy,hard_cut_full_frame,0.314501,0.507865,0.476042,if,-0.09

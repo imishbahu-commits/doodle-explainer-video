@@ -1,0 +1,321 @@
+{
+  "identity": {
+    "file_id": "15219",
+    "file": "uploads/15219.mp4",
+    "sha256": "f2baabbe9262a09b2aee0cc5cb4997e30c89edb34df7a43075f1755d3e1f2941",
+    "youtube_id": "RZtCvhmWG6o",
+    "title": "Criminals Who Accidentally Picked the Worst Possible Victims",
+    "upload_date": "2026-06-14"
+  },
+  "source_specs": {
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "frame_count": 25936,
+    "duration_seconds": 864.5333,
+    "timing_precision_seconds": 0.033333
+  },
+  "editing": {
+    "detected_shot_count": 247,
+    "detected_edit_event_count": 246,
+    "shot_duration_seconds": {
+      "min": 0.5333,
+      "p25": 1.6,
+      "median": 2.7333,
+      "mean": 3.5001,
+      "p75": 4.4667,
+      "p90": 7.2467,
+      "max": 16.9667
+    },
+    "shots_under_1s": 33,
+    "shots_1_to_6s": 180,
+    "shots_over_10s": 9,
+    "transition_counts": {
+      "hard_cut_same_palette": 66,
+      "hard_cut_full_frame": 169,
+      "localized_swap_or_pop": 11
+    },
+    "cut_to_nearest_word_abs_seconds": {
+      "min": 0.0,
+      "p25": 0.0467,
+      "median": 0.0567,
+      "mean": 0.0621,
+      "p75": 0.0733,
+      "p90": 0.09,
+      "max": 0.2433
+    },
+    "cuts_within_0_20s_of_word_start_pct": 98.37,
+    "cuts_within_0_35s_of_word_start_pct": 100.0
+  },
+  "motion": {
+    "shot_counts": {
+      "character_or_graphic_animation": 106,
+      "frozen_hold": 110,
+      "subtle_local_motion": 30,
+      "whole_canvas_slide": 1
+    },
+    "shot_percentages": {
+      "character_or_graphic_animation": 42.91,
+      "frozen_hold": 44.53,
+      "subtle_local_motion": 12.15,
+      "whole_canvas_slide": 0.4
+    },
+    "zoom_distance_pct": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    },
+    "zoom_speed_pct_per_s": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    }
+  },
+  "visual": {
+    "brightness": {
+      "min": 0.2791,
+      "p25": 0.6604,
+      "median": 0.7752,
+      "mean": 0.7455,
+      "p75": 0.8563,
+      "p90": 0.9455,
+      "max": 0.9879
+    },
+    "saturation": {
+      "min": 0.0,
+      "p25": 0.0295,
+      "median": 0.1561,
+      "mean": 0.1625,
+      "p75": 0.2502,
+      "p90": 0.348,
+      "max": 0.505
+    },
+    "white_background_fraction": {
+      "min": 0.0372,
+      "p25": 0.1176,
+      "median": 0.3204,
+      "mean": 0.4036,
+      "p75": 0.6662,
+      "p90": 0.8832,
+      "max": 0.98
+    },
+    "frames_majority_white_pct": 38.46,
+    "significant_colors_per_frame": {
+      "min": 2.0,
+      "p25": 8.0,
+      "median": 11.0,
+      "mean": 12.6316,
+      "p75": 17.0,
+      "p90": 22.4,
+      "max": 31.0
+    },
+    "ink_centroid_x_normalized": {
+      "min": 0.32,
+      "p25": 0.4813,
+      "median": 0.5036,
+      "mean": 0.4995,
+      "p75": 0.5173,
+      "p90": 0.5411,
+      "max": 0.6931
+    },
+    "ink_centroid_y_normalized": {
+      "min": 0.4185,
+      "p25": 0.4866,
+      "median": 0.5377,
+      "mean": 0.5383,
+      "p75": 0.5814,
+      "p90": 0.6378,
+      "max": 0.8491
+    },
+    "estimated_black_stroke_width_px_at_360p": {
+      "min": 2.0,
+      "p25": 2.0,
+      "median": 2.0,
+      "mean": 2.7478,
+      "p75": 4.0,
+      "p90": 4.0,
+      "max": 8.0
+    },
+    "estimated_black_stroke_width_px_at_1080p": {
+      "min": 6.0,
+      "p25": 6.0,
+      "median": 6.0,
+      "mean": 8.243,
+      "p75": 12.0,
+      "p90": 12.0,
+      "max": 24.0
+    },
+    "dominant_quantized_palette": [
+      {
+        "hex": "#F0F0F0",
+        "relative_weight": 0.46208
+      },
+      {
+        "hex": "#101010",
+        "relative_weight": 0.07807
+      },
+      {
+        "hex": "#909090",
+        "relative_weight": 0.05373
+      },
+      {
+        "hex": "#707070",
+        "relative_weight": 0.03185
+      },
+      {
+        "hex": "#F0F0D0",
+        "relative_weight": 0.02868
+      },
+      {
+        "hex": "#D0D0D0",
+        "relative_weight": 0.027
+      },
+      {
+        "hex": "#505050",
+        "relative_weight": 0.0221
+      },
+      {
+        "hex": "#D0B090",
+        "relative_weight": 0.02132
+      },
+      {
+        "hex": "#F0D0B0",
+        "relative_weight": 0.01866
+      },
+      {
+        "hex": "#B0B0B0",
+        "relative_weight": 0.0186
+      },
+      {
+        "hex": "#907050",
+        "relative_weight": 0.01649
+      },
+      {
+        "hex": "#303030",
+        "relative_weight": 0.01548
+      }
+    ]
+  },
+  "audio": {
+    "integrated_lufs": -17.73,
+    "true_peak_dbfs": -0.02,
+    "lra_lu": 3.3,
+    "threshold_lufs": -27.87,
+    "sample_peak_dbfs": 2.99,
+    "sample_rms_dbfs": -17.76,
+    "estimated_tempo_bpm": 125.0,
+    "tempo_caveat": "Onset estimate includes narration and SFX; use as music-bed range evidence, not a clean stem BPM.",
+    "strongest_transient_times_seconds": [
+      0.352,
+      56.32,
+      135.936,
+      154.944,
+      168.48,
+      172.224,
+      175.776,
+      186.016,
+      190.464,
+      202.464,
+      240.832,
+      246.88,
+      254.304,
+      281.12,
+      303.744,
+      572.64,
+      574.144,
+      720.64,
+      772.256,
+      859.84
+    ],
+    "recognized_word_count": 3177,
+    "recognized_wpm_full_runtime": 220.49,
+    "recognized_wpm_speech_span": 220.64,
+    "inter_word_pause_seconds_ge_0_20": {
+      "min": 0.54,
+      "p25": 0.6,
+      "median": 0.6,
+      "mean": 0.6125,
+      "p75": 0.63,
+      "p90": 0.651,
+      "max": 0.69
+    },
+    "pause_count_ge_0_20": 24,
+    "pause_count_ge_0_50": 24,
+    "pause_count_ge_0_70": 0
+  },
+  "chapters": [
+    {
+      "start_seconds": 0,
+      "start": "00:00.000",
+      "title": "The Ambulance Attack"
+    },
+    {
+      "start_seconds": 71,
+      "start": "01:11.000",
+      "title": "Bishnu Shrestha's Train"
+    },
+    {
+      "start_seconds": 159,
+      "start": "02:39.000",
+      "title": "The Viral Thief"
+    },
+    {
+      "start_seconds": 226,
+      "start": "03:46.000",
+      "title": "The Ecole-Valentin Incident"
+    },
+    {
+      "start_seconds": 287,
+      "start": "04:47.000",
+      "title": "The Medieval Battle"
+    },
+    {
+      "start_seconds": 359,
+      "start": "05:59.000",
+      "title": "The Clifton Man"
+    },
+    {
+      "start_seconds": 454,
+      "start": "07:34.000",
+      "title": "The Acid Bathtub"
+    },
+    {
+      "start_seconds": 530,
+      "start": "08:50.000",
+      "title": "The Venomous Bag"
+    },
+    {
+      "start_seconds": 586,
+      "start": "09:46.000",
+      "title": "Zoz's Revenge"
+    },
+    {
+      "start_seconds": 669,
+      "start": "11:09.000",
+      "title": "The McVey Case"
+    },
+    {
+      "start_seconds": 747,
+      "start": "12:27.000",
+      "title": "The Corti Incident"
+    },
+    {
+      "start_seconds": 800,
+      "start": "13:20.000",
+      "title": "Escape from Escape Room"
+    }
+  ],
+  "measurement_notes": [
+    "Edit events are one-frame abrupt visual boundaries at 30 fps. Localized swaps/pops are separated from full-frame hard cuts by changed-pixel area.",
+    "Motion transforms are inferred from flattened frames using ORB/RANSAC; exact AE curves and hidden layer anchors cannot be recovered.",
+    "Vosk transcript is used for timing/WPM; proper-noun spelling should be checked against the chapter list."
+  ]
+}

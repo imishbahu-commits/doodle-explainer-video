@@ -1,0 +1,74 @@
+{
+  "video_count": 4,
+  "total_runtime_seconds": 3290.167,
+  "total_frames_scanned": 98705,
+  "total_detected_shots": 845,
+  "total_detected_edit_events": 841,
+  "motion_shot_counts": {
+    "character_or_graphic_animation": 345,
+    "frozen_hold": 391,
+    "subtle_local_motion": 99,
+    "whole_canvas_slide": 8,
+    "short_graphic_sting": 2
+  },
+  "motion_shot_percentages": {
+    "character_or_graphic_animation": 40.83,
+    "frozen_hold": 46.27,
+    "subtle_local_motion": 11.72,
+    "whole_canvas_slide": 0.95,
+    "short_graphic_sting": 0.24
+  },
+  "transition_counts": {
+    "hard_cut_full_frame": 551,
+    "hard_cut_same_palette": 251,
+    "localized_swap_or_pop": 39
+  },
+  "corpus_brightness_median_of_shot_weighted_video_medians": 0.7752,
+  "corpus_saturation_median_of_shot_weighted_video_medians": 0.1561,
+  "per_video": [
+    {
+      "file_id": "15204",
+      "title": "The Deadliest Sea Animal From Every Single Period",
+      "upload_date": "2026-08-16",
+      "shots": 236,
+      "median_shot_seconds": 2.5,
+      "mean_shot_seconds": 3.4121,
+      "recognized_wpm": 204.3,
+      "integrated_lufs": -20.68,
+      "majority_white_frames_pct": 16.1
+    },
+    {
+      "file_id": "15207",
+      "title": "The Craziest Ways History's Deadliest Warriors Died",
+      "upload_date": "2026-08-02",
+      "shots": 224,
+      "median_shot_seconds": 2.6667,
+      "mean_shot_seconds": 3.3792,
+      "recognized_wpm": 208.63,
+      "integrated_lufs": -20.6,
+      "majority_white_frames_pct": 48.66
+    },
+    {
+      "file_id": "15215",
+      "title": "How You'd Die In Every Prehistoric Era",
+      "upload_date": "2026-07-13",
+      "shots": 138,
+      "median_shot_seconds": 3.6167,
+      "mean_shot_seconds": 6.2568,
+      "recognized_wpm": 220.14,
+      "integrated_lufs": -18.07,
+      "majority_white_frames_pct": 7.25
+    },
+    {
+      "file_id": "15219",
+      "title": "Criminals Who Accidentally Picked the Worst Possible Victims",
+      "upload_date": "2026-06-14",
+      "shots": 247,
+      "median_shot_seconds": 2.7333,
+      "mean_shot_seconds": 3.5001,
+      "recognized_wpm": 220.49,
+      "integrated_lufs": -17.73,
+      "majority_white_frames_pct": 38.46
+    }
+  ]
+}

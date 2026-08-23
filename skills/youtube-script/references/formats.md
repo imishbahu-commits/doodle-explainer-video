@@ -3,8 +3,9 @@
 Every script picks ONE format. Formats are skeletons; the topic fills them.
 All timings are for a 3-minute video (scale linearly for 1 min / 8 min).
 
-Beats per format assume the measured Paint Explainer pacing: one cut every
-2–6 s (median 3.6 s), one image per beat, never reused.
+Narration beats are speech units, not unique-image slots. The measured visual
+cadence has a 2.7667 s corpus median (production envelope 2.3–3.1 s), but visual
+states may hold/reuse and local actions may occur without a full-frame cut.
 
 ---
 
@@ -34,7 +35,7 @@ misconception-first finding: refuting a wrong belief beats stating facts.)
 |---|---|---|
 | 0–10 s | HOOK | State the belief everyone holds, confidently |
 | 10–30 s | WHY IT FEELS RIGHT | Steelman it. Why does it sound true? |
-| 30–90 s | THE BREAK | The experiment / data point that breaks it. One visual per fact |
+| 30–90 s | THE BREAK | The experiment/data point that breaks it; change the visual only when semantics require it |
 | 90–150 s | THE REAL MECHANISM | Build the true explanation layer by layer |
 | 150–180 s | SO WHAT | What changes now that you know |
 
@@ -46,7 +47,7 @@ For: true stories, cold cases, historical puzzles, unsolved science.
 |---|---|---|
 | 0–12 s | HOOK | The impossible event, in one sentence |
 | 12–40 s | STAKES | Who cared, what was at risk |
-| 40–110 s | CLUE TRAIL | Three clues, each raising the tension (one image per clue) |
+| 40–110 s | CLUE TRAIL | Three clues, each raising tension; states may reuse the established plate |
 | 110–140 s | THE TWIST | The clue that breaks the obvious answer |
 | 140–170 s | THE REVEAL | What really happened / what we now believe |
 | 170–180 s | THE MEANING | Why it still matters |
@@ -59,7 +60,7 @@ For: technology, biology, physics, economics, anything with a mechanism.
 |---|---|---|
 | 0–10 s | HOOK | The result: "This object does X every second" |
 | 10–35 s | BIG PICTURE | The whole system in one diagram, parts named |
-| 35–130 s | LAYERS | Each part explained with its own image; each beat adds ONE piece |
+| 35–130 s | LAYERS | Explain each part; add one semantic piece at a time on the locked plate |
 | 130–160 s | THE KEY INSIGHT | The one trick/idea the whole machine leans on |
 | 160–180 s | IMPLICATIONS | What it means that this works |
 
@@ -70,7 +71,7 @@ For: rival products, animals, countries, ideas, historical choices.
 | Time | Act | Job |
 |---|---|---|
 | 0–10 s | HOOK | The rivalry + who usually wins in people's minds |
-| 10–140 s | ROUNDS | 4–6 categories (speed, size, cost, endurance…), one image per round, score kept |
+| 10–140 s | ROUNDS | 4–6 categories (speed, size, cost, endurance…); score kept in semantic states |
 | 140–165 s | THE DECIDING FACTOR | The one category that flips the result |
 | 165–180 s | VERDICT | Winner + the honest caveat |
 
@@ -81,7 +82,7 @@ For: history, evolution of an idea, biography.
 | Time | Act | Job |
 |---|---|---|
 | 0–10 s | HOOK | The through-line question: "How did X become Y?" |
-| 10–130 s | TURNING POINTS | 4–6 era beats; each = one image + one date + one change |
+| 10–130 s | TURNING POINTS | 4–6 era beats; each marks one date and consequential change |
 | 130–165 s | THE PAYOFF | The modern world the timeline produced |
 | 165–180 s | THE LOOP | Callback to the opening question, answered |
 
@@ -122,6 +123,7 @@ story instead of a list.
 
 ## Palette cleansers
 
-Every ~60 s of runtime: one beat with no new information — a visual gag, a
-"let that sink in" moment, or a 0.7 s silence. It lets the viewer's working
-memory consolidate, which measurably raises retention.
+Use the measured chapter boundary as the breathing structure: roughly 0.6–0.8 s
+of intentional breath, typically around the ~68.5 s median chapter scale in
+reference-length videos. Do not claim an unsourced retention effect or force a
+visual gag at every boundary.

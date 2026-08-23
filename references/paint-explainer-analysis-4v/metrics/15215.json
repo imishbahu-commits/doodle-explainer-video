@@ -1,0 +1,321 @@
+{
+  "identity": {
+    "file_id": "15215",
+    "file": "uploads/15215.mp4",
+    "sha256": "fe479d7dce86f3b048e8caccc053ad0293e4d0250d650f4f64792d6a771c3d39",
+    "youtube_id": "FRgeEalwpAA",
+    "title": "How You'd Die In Every Prehistoric Era",
+    "upload_date": "2026-07-13"
+  },
+  "source_specs": {
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "frame_count": 25903,
+    "duration_seconds": 863.4333,
+    "timing_precision_seconds": 0.033333
+  },
+  "editing": {
+    "detected_shot_count": 138,
+    "detected_edit_event_count": 137,
+    "shot_duration_seconds": {
+      "min": 0.3333,
+      "p25": 1.8,
+      "median": 3.6167,
+      "mean": 6.2568,
+      "p75": 8.4583,
+      "p90": 14.3167,
+      "max": 38.1333
+    },
+    "shots_under_1s": 29,
+    "shots_1_to_6s": 59,
+    "shots_over_10s": 27,
+    "transition_counts": {
+      "hard_cut_full_frame": 95,
+      "hard_cut_same_palette": 37,
+      "localized_swap_or_pop": 5
+    },
+    "cut_to_nearest_word_abs_seconds": {
+      "min": 0.0067,
+      "p25": 0.04,
+      "median": 0.06,
+      "mean": 0.0905,
+      "p75": 0.0733,
+      "p90": 0.1133,
+      "max": 0.6767
+    },
+    "cuts_within_0_20s_of_word_start_pct": 91.97,
+    "cuts_within_0_35s_of_word_start_pct": 92.7
+  },
+  "motion": {
+    "shot_counts": {
+      "character_or_graphic_animation": 66,
+      "subtle_local_motion": 19,
+      "frozen_hold": 52,
+      "short_graphic_sting": 1
+    },
+    "shot_percentages": {
+      "character_or_graphic_animation": 47.83,
+      "subtle_local_motion": 13.77,
+      "frozen_hold": 37.68,
+      "short_graphic_sting": 0.72
+    },
+    "zoom_distance_pct": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    },
+    "zoom_speed_pct_per_s": {
+      "min": null,
+      "p25": null,
+      "median": null,
+      "mean": null,
+      "p75": null,
+      "p90": null,
+      "max": null
+    }
+  },
+  "visual": {
+    "brightness": {
+      "min": 0.1026,
+      "p25": 0.5022,
+      "median": 0.6408,
+      "mean": 0.6154,
+      "p75": 0.7438,
+      "p90": 0.8225,
+      "max": 0.9862
+    },
+    "saturation": {
+      "min": 0.0,
+      "p25": 0.2237,
+      "median": 0.3251,
+      "mean": 0.3351,
+      "p75": 0.432,
+      "p90": 0.5523,
+      "max": 0.7341
+    },
+    "white_background_fraction": {
+      "min": 0.0,
+      "p25": 0.087,
+      "median": 0.1098,
+      "mean": 0.1869,
+      "p75": 0.1891,
+      "p90": 0.4554,
+      "max": 0.972
+    },
+    "frames_majority_white_pct": 7.25,
+    "significant_colors_per_frame": {
+      "min": 2.0,
+      "p25": 16.0,
+      "median": 22.0,
+      "mean": 22.8116,
+      "p75": 27.75,
+      "p90": 36.3,
+      "max": 58.0
+    },
+    "ink_centroid_x_normalized": {
+      "min": 0.2275,
+      "p25": 0.489,
+      "median": 0.501,
+      "mean": 0.5033,
+      "p75": 0.5193,
+      "p90": 0.5625,
+      "max": 0.691
+    },
+    "ink_centroid_y_normalized": {
+      "min": 0.1083,
+      "p25": 0.4975,
+      "median": 0.5751,
+      "mean": 0.574,
+      "p75": 0.6666,
+      "p90": 0.7256,
+      "max": 0.7786
+    },
+    "estimated_black_stroke_width_px_at_360p": {
+      "min": 2.0,
+      "p25": 2.0,
+      "median": 4.0,
+      "mean": 3.743,
+      "p75": 6.0,
+      "p90": 6.0,
+      "max": 8.0
+    },
+    "estimated_black_stroke_width_px_at_1080p": {
+      "min": 6.0,
+      "p25": 6.0,
+      "median": 12.0,
+      "mean": 11.229,
+      "p75": 18.0,
+      "p90": 18.0,
+      "max": 24.0
+    },
+    "dominant_quantized_palette": [
+      {
+        "hex": "#F0F0F0",
+        "relative_weight": 0.27121
+      },
+      {
+        "hex": "#101010",
+        "relative_weight": 0.17769
+      },
+      {
+        "hex": "#30D0F0",
+        "relative_weight": 0.02274
+      },
+      {
+        "hex": "#707050",
+        "relative_weight": 0.01986
+      },
+      {
+        "hex": "#505030",
+        "relative_weight": 0.01976
+      },
+      {
+        "hex": "#D0B070",
+        "relative_weight": 0.01892
+      },
+      {
+        "hex": "#707070",
+        "relative_weight": 0.0188
+      },
+      {
+        "hex": "#503030",
+        "relative_weight": 0.01812
+      },
+      {
+        "hex": "#303030",
+        "relative_weight": 0.01749
+      },
+      {
+        "hex": "#505050",
+        "relative_weight": 0.01709
+      },
+      {
+        "hex": "#D0D090",
+        "relative_weight": 0.01696
+      },
+      {
+        "hex": "#705050",
+        "relative_weight": 0.01572
+      }
+    ]
+  },
+  "audio": {
+    "integrated_lufs": -18.07,
+    "true_peak_dbfs": -0.17,
+    "lra_lu": 3.8,
+    "threshold_lufs": -28.18,
+    "sample_peak_dbfs": 2.819,
+    "sample_rms_dbfs": -18.101,
+    "estimated_tempo_bpm": 125.0,
+    "tempo_caveat": "Onset estimate includes narration and SFX; use as music-bed range evidence, not a clean stem BPM.",
+    "strongest_transient_times_seconds": [
+      1.536,
+      93.472,
+      126.272,
+      143.36,
+      158.592,
+      260.864,
+      274.08,
+      327.872,
+      347.456,
+      372.0,
+      422.848,
+      465.376,
+      523.456,
+      542.88,
+      577.504,
+      605.76,
+      695.008,
+      703.552,
+      766.72,
+      778.688
+    ],
+    "recognized_word_count": 3168,
+    "recognized_wpm_full_runtime": 220.14,
+    "recognized_wpm_speech_span": 220.31,
+    "inter_word_pause_seconds_ge_0_20": {
+      "min": 0.35,
+      "p25": 0.57,
+      "median": 0.57,
+      "mean": 0.5732,
+      "p75": 0.6,
+      "p90": 0.618,
+      "max": 0.63
+    },
+    "pause_count_ge_0_20": 25,
+    "pause_count_ge_0_50": 24,
+    "pause_count_ge_0_70": 0
+  },
+  "chapters": [
+    {
+      "start_seconds": 0,
+      "start": "00:00.000",
+      "title": "Precambrian"
+    },
+    {
+      "start_seconds": 41,
+      "start": "00:41.000",
+      "title": "Cambrian"
+    },
+    {
+      "start_seconds": 113,
+      "start": "01:53.000",
+      "title": "Silurian"
+    },
+    {
+      "start_seconds": 188,
+      "start": "03:08.000",
+      "title": "Devonian"
+    },
+    {
+      "start_seconds": 247,
+      "start": "04:07.000",
+      "title": "Carboniferous"
+    },
+    {
+      "start_seconds": 362,
+      "start": "06:02.000",
+      "title": "Permian"
+    },
+    {
+      "start_seconds": 432,
+      "start": "07:12.000",
+      "title": "Triassic"
+    },
+    {
+      "start_seconds": 517,
+      "start": "08:37.000",
+      "title": "Jurassic"
+    },
+    {
+      "start_seconds": 598,
+      "start": "09:58.000",
+      "title": "Cretaceous"
+    },
+    {
+      "start_seconds": 658,
+      "start": "10:58.000",
+      "title": "Paleogene"
+    },
+    {
+      "start_seconds": 730,
+      "start": "12:10.000",
+      "title": "Neogene"
+    },
+    {
+      "start_seconds": 807,
+      "start": "13:27.000",
+      "title": "Quaternary"
+    }
+  ],
+  "measurement_notes": [
+    "Edit events are one-frame abrupt visual boundaries at 30 fps. Localized swaps/pops are separated from full-frame hard cuts by changed-pixel area.",
+    "Motion transforms are inferred from flattened frames using ORB/RANSAC; exact AE curves and hidden layer anchors cannot be recovered.",
+    "Vosk transcript is used for timing/WPM; proper-noun spelling should be checked against the chapter list."
+  ]
+}

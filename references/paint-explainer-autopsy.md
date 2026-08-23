@@ -1,5 +1,9 @@
 # The Paint Explainer — Full Motion & Production Autopsy
 
+> **LEGACY SINGLE-VIDEO STUDY:** for current production use
+> `paint-explainer-analysis-4v/STYLE_SPEC.md`. The four-video corpus supersedes
+> the motion budget/camera assumptions below when values conflict.
+
 Measured from the actual file: `uploads/13941.mp4`
 (*"Ancient Greek Myths That Turned Out to Be True"*, 11:09, 768K views).
 Every number below was computed by ffmpeg/PIL analysis of the real pixels

@@ -1,0 +1,4 @@
+# Authorized reference videos are large binary assets stored through Git LFS.
+references/paint-explainer-videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
+references/paint-explainer-videos/*.webm filter=lfs diff=lfs merge=lfs -text
+references/paint-explainer-videos/*.mkv filter=lfs diff=lfs merge=lfs -text

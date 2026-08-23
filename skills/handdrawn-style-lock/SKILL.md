@@ -1,82 +1,94 @@
 ---
 name: handdrawn-style-lock
-description: Locks the "human hand-drawn explainer" art style (The Paint Explainer / Dinzo style — MS-Paint-like doodles, thick outlines, flat colors) so every image in a project matches the same hand. Use when generating beat illustrations, characters, or background PNGs for explainer videos, and whenever style consistency across many images matters.
+description: Locks the measured Paint Explainer art language across generated and local assets: near-black single-pass imperfect contours, flat character fills, restrained mode-specific palettes, simple illustrated world plates, and a persistent white chapter-title strip. Use for every subject, prop, diagram, and background; style_rules.json overrides generic prompt defaults.
 ---
 
 # Hand-drawn style lock
 
-The style that reads as *drawn by a human with a marker*, not rendered
-by an AI. Two separate jobs, one hand:
+Authority: `references/paint-explainer-analysis-4v/style_rules.json`.
 
-## 1. Beat subjects (PNG on pure white)
+## Measured visual grammar
 
-Prompt template — copy exactly, change only the subject:
+- Ink: near-black `#101010`, rounded/hand-rounded joins.
+- Typical stroke: ~2 px at 640-wide source, ~6 px at 1920 production.
+  Environment-heavy variants may reach ~12 px at 1920.
+- Contour: one clean imperfect pass, never multi-pass sketch scribble.
+- Character/prop fill: flat color. Gradients are reserved for sky/water/world
+  plates and occasional soft gray host-head modeling.
+- Subject width is typically ~25–65% of frame.
+- Ink centroid is usually around x=50%, y=54–58%.
+- White-mode negative space is typically ~35–70%.
+- Every chapter carries a white ~10%-height top strip with centered black
+  uppercase hand-lettered display text for the entire chapter.
 
-```
-Hand-drawn doodle illustration of {SUBJECT}, on a PURE WHITE background.
-MS-Paint-like style: thick black outlines, flat bold colors, slightly
-imperfect hand-drawn lines, simple and {MOOD}. {SPECIFIC DETAILS}.
-No text, no background scenery, no shadows, no gradients.
-```
+## Subject master prompt
 
-Rules that lock the hand:
+Use white only as a removable acquisition background; final subjects should be
+clean RGBA PNGs.
 
-- **Pure white background, always.** Flat white lets the isolation script
-  cut the subject cleanly (magic wand = border flood-fill), and the same
-  white reads as "scanned marker drawing".
-- **Thick uniform outlines** on everything; **flat fills**; slightly
-  *imperfect* lines (ask for it explicitly — perfect bezier lines read as
-  vector, not hand).
-- **One subject per image.** Two subjects = two PNGs.
-- **Mood words only**: "funny-scary", "grumpy", "cute", "menacing",
-  "childlike". Never "cinematic", "detailed", "photorealistic".
-- **Labels never in the image.** Text is added as a separate layer at
-  edit time (models mangle lettering; the editor layer is also what the
-  motion skill animates).
-
-## 2. Backgrounds (separate image, same hand)
-
-```
-Simple hand-drawn doodle {SETTING} background, MS-Paint-like style:
-flat {PALETTE} colors, thick black outlines, wavy hand-drawn lines,
-completely EMPTY in the middle (no characters, no subject).
-No text.
+```text
+Hand-drawn doodle illustration of {SUBJECT}, isolated on pure white.
+Paint Explainer language: single clean slightly imperfect near-black contour,
+rounded joins, flat restrained colors from {MODE_PALETTE}, simple readable
+silhouette, {SPECIFIC_DETAILS}. No scenery, cast shadow, texture, gradient,
+photorealism, 3D rendering, cinematic lighting, or embedded text.
 ```
 
-- Background and subjects must look like the same marker. Use the same
-  outline thickness and the same palette family.
-- Keep the middle empty — the subject PNG gets composited there.
-- One flat color wash per background, plus simple doodle props (bubbles,
-  grass, rocks, stars).
+Rules:
 
-## 3. The consistency lock (the part that matters over 100 images)
+1. Prefer one independently animatable subject/prop per master.
+2. Preserve design and line weight from the accepted reference image.
+3. Add titles/labels as deterministic editor layers when practical.
+4. Pass masters through `transparent-asset-prep`, then `paint-style-qc image`.
+5. Mood may change the expression; it may not change the rendering language.
 
-1. Generate the FIRST subject. Verify it by eye (or the ink/background
-   checks below).
-2. **Pass that first PNG as the style reference on every later call**
-   (referenceImages / reference image parameter — whichever the generator
-   supports). This is the actual lock: the generator copies line weight
-   and character design from it.
-3. Regenerate anything that breaks the rules; never let one off-style
-   image through — one drift frame undoes the whole hand.
+## World-plate prompt
 
-## 4. Automatic checks (scripts)
+The measured newest mode is **not pure white everywhere**. It uses fully
+illustrated environmental plates under the persistent white title strip.
 
-Isolation (magic wand): `skills/ae-motion/scripts/ae_motion.py --isolate subject.png`
-prints the cut's bounding box. A good cut has no white halo — check the
-corners of the cut are transparent.
+```text
+Simple hand-drawn {SETTING} world plate in Paint Explainer language,
+near-black clean imperfect contours, restrained {MODE_PALETTE}, simple readable
+depth bands, clear staging space for {SUBJECTS}. No embedded labels, cast
+shadows, photographic texture, 3D rendering, lens effects, or cinematic light.
+Leave the top 10% clear for a white chapter-title strip.
+```
 
-Style QC: white background present (corner pixel ≈ 255,255,255), thick
-outline (ink > 2% of pixels), flat fills (few unique colors). Regenerate
-if any fails.
+Backgrounds and subjects must share contour weight and palette family. A
+subtle plate gradient is allowed only for sky/water/world depth; do not put
+gradients on ordinary character fills.
 
-## Palette
+## Mode palettes
 
-| Mood | Palette |
+Use the machine rules exactly; do not reduce every scene to generic primaries.
+
+| Mode | Production palette |
 |---|---|
-| Neutral diagrams | white bg, black ink, one accent |
-| Playful | white bg, primary colors (red/yellow/blue) |
-| Menacing | white bg, black ink, one red accent |
-| Nature | white bg, greens/browns/blue |
+| Core | `#F0F0F0`, `#101010` |
+| Newest sea world | `#30D0F0`, `#1090F0`, `#1070D0`, `#105090`, `#103050`, `#707050` |
+| White history | `#B09070`, `#909070`, `#B0B0B0`, `#707070` |
+| Incident listicle | `#F0D0B0`, `#D0B090`, `#909090`, `#505050` |
+| Emphasis only | red `#E31B23`, yellow `#F0D010` |
 
-Keep palettes small: 2–4 colors + black ink. That restraint IS the style.
+Keep any one object simple; a world plate may use the full mode family.
+
+## Consistency lock
+
+1. Approve one subject and one world plate for the selected mode.
+2. Supply those references to every later generation where supported.
+3. Record palette, production stroke width, title treatment, and recurring
+   character proportions in the project ledger.
+4. Reject drift immediately; never average incompatible generations together.
+
+## Automatic gates
+
+```bash
+python3 skills/transparent-asset-prep/scripts/prepare_asset.py in.png out.png \
+  --mode auto --report qc/out-alpha.json
+python3 skills/paint-style-qc/scripts/paint_style_qc.py image out.png \
+  --kind subject --json qc/out-style.json
+```
+
+Also inspect at 100% and 200% scale for a fringe wider than ~1–2 output pixels,
+line doubling, tiny accidental marks, malformed text, and inconsistent anatomy.

@@ -3,13 +3,14 @@
 video upload into the workspace.
 
 GET  /            -> page: prompt box -> open Flux image in new tab
-GET  /upload      -> chunked file upload (512 KB pieces, progress bar)
-POST /chunk?name=&index=&total=   -> append one chunk (raw body)
-POST /done?name=&total=           -> reassemble into uploads/<name>
+GET  /upload      -> parallel chunked file upload with progress and ETA
+POST /chunk?name=&index=&total=   -> save one chunk (raw body)
+POST /done?name=&total=           -> stream chunks into uploads/<name>
 """
 
 import http.server
 import re
+import shutil
 import sys
 from pathlib import Path
 from urllib.parse import unquote
@@ -17,7 +18,10 @@ from urllib.parse import unquote
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8012
 UPLOAD_DIR = Path("/home/user/doodle-explainer-video/uploads")
 PARTS_DIR = UPLOAD_DIR / ".parts"
-MAX_CHUNK = 2 * 1024 * 1024
+# Five 4 MiB requests can upload concurrently. This removes the round-trip
+# bottleneck of the original sequential 512 KiB uploader while remaining below
+# common reverse-proxy request-size limits.
+MAX_CHUNK = 4 * 1024 * 1024
 MAX_TOTAL = 400 * 1024 * 1024
 
 
@@ -79,8 +83,8 @@ PAGE = """<!doctype html>
   <div id="bar"><div id="fill"></div></div>
   <div id="status"></div>
   <div class="tip">When it shows ✅, go back to the chat and type
-  <b>uploaded</b>. Files are cut into tiny 512 KB pieces, so big videos are
-  fine.</div>
+  <b>uploaded</b>. The fast uploader sends five 4 MB pieces in parallel, so
+  large videos finish much sooner.</div>
 
 <script>
 function openFlux() {
@@ -97,7 +101,8 @@ async function upload() {
   const bar = document.getElementById('bar');
   const fill = document.getElementById('fill');
   if (!f) { status.textContent = '⚠ Pick a file first.'; return; }
-  const CHUNK = 512 * 1024;
+  const CHUNK = 4 * 1024 * 1024;
+  const WORKERS = 5;
   const total = Math.ceil(f.size / CHUNK);
   if (f.size > 400 * 1024 * 1024) {
     status.textContent = '⚠ File too big — compress it first.';
@@ -105,19 +110,46 @@ async function upload() {
   }
   bar.style.display = 'block';
   fill.style.width = '0%';
-  status.textContent = 'Uploading… 0/' + total + ' pieces';
   const name = encodeURIComponent(f.name);
-  try {
-    for (let i = 0; i < total; i++) {
-      const chunk = f.slice(i * CHUNK, (i + 1) * CHUNK);
+  const started = performance.now();
+  let next = 0;
+  let completed = 0;
+  let uploadedBytes = 0;
+
+  function updateProgress() {
+    const elapsed = Math.max((performance.now() - started) / 1000, 0.1);
+    const mbps = uploadedBytes * 8 / 1000000 / elapsed;
+    const remaining = Math.max(f.size - uploadedBytes, 0);
+    const eta = mbps > 0 ? Math.ceil(remaining * 8 / 1000000 / mbps) : 0;
+    const percent = Math.round(uploadedBytes / f.size * 100);
+    fill.style.width = percent + '%';
+    status.textContent = 'Uploading… ' + percent + '% · ' + mbps.toFixed(1) +
+                         ' Mbps · ~' + eta + 's left';
+  }
+
+  async function worker() {
+    while (true) {
+      const i = next++;
+      if (i >= total) return;
+      const start = i * CHUNK;
+      const chunk = f.slice(start, Math.min(start + CHUNK, f.size));
       const r = await fetch('/chunk?name=' + name + '&index=' + i + '&total=' + total,
                             { method: 'POST', body: chunk });
       if (!r.ok) throw new Error('piece ' + i + ' rejected: HTTP ' + r.status);
-      fill.style.width = Math.round((i + 1) / total * 100) + '%';
-      status.textContent = 'Uploading… ' + (i + 1) + '/' + total + ' pieces';
+      completed += 1;
+      uploadedBytes += chunk.size;
+      updateProgress();
     }
+  }
+
+  status.textContent = 'Starting five parallel upload streams…';
+  try {
+    await Promise.all(Array.from({length: Math.min(WORKERS, total)}, worker));
+    if (completed !== total) throw new Error('not all pieces completed');
+    status.textContent = 'Upload complete; assembling file…';
     const d = await fetch('/done?name=' + name + '&total=' + total, { method: 'POST' });
     if (!d.ok) throw new Error('assembly failed: HTTP ' + d.status);
+    fill.style.width = '100%';
     status.innerHTML = '<span style="color:#7ee08a">✅ Uploaded! Go back to the chat and type <b>uploaded</b></span>';
   } catch (e) {
     status.innerHTML = '<span class="err">❌ ' + e.message + '</span>';
@@ -203,7 +235,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
         p = self._params()
         name = safe_name(p.get("name", ""))
         total = int(p.get("total", 0))
-        parts = []
+        if total <= 0:
+            self.send_response(400)
+            self.end_headers()
+            self.wfile.write(b"invalid part count")
+            return
+        part_paths = []
+        total_bytes = 0
         for i in range(total):
             part = PARTS_DIR / f"{name}.{i:05d}"
             if not part.exists():
@@ -211,13 +249,24 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(f"missing part {i}".encode())
                 return
-            parts.append(part.read_bytes())
+            total_bytes += part.stat().st_size
+            if total_bytes > MAX_TOTAL:
+                self.send_response(413)
+                self.end_headers()
+                self.wfile.write(b"assembled file is too large")
+                return
+            part_paths.append(part)
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
         dest = UPLOAD_DIR / name
-        dest.write_bytes(b"".join(parts))
+        assembling = dest.with_name(dest.name + ".assembling")
+        with assembling.open("wb") as target:
+            for part in part_paths:
+                with part.open("rb") as source:
+                    shutil.copyfileobj(source, target, length=1024 * 1024)
+        assembling.replace(dest)
         for part in PARTS_DIR.glob(f"{name}.*"):
             part.unlink()
-        print(f"UPLOADED {len(b''.join(parts)) / 1e6:.1f} MB -> {dest}", flush=True)
+        print(f"UPLOADED {total_bytes / 1e6:.1f} MB -> {dest}", flush=True)
         self.send_response(200)
         self.end_headers()
         self.wfile.write(b"done")

@@ -1,0 +1,13 @@
+# Optional dependencies for scripts/analyze_paint_explainer_corpus.py and
+# scripts/build_paint_explainer_evidence.py. Keep OpenCV headless so analysis
+# works in CI/sandbox hosts without libGL.
+numpy>=2,<3
+opencv-python-headless>=4.11,<5
+Pillow>=11,<13
+imageio-ffmpeg>=0.6,<1
+scipy>=1.14,<2
+scikit-image>=0.25,<1
+librosa>=0.11,<1
+soundfile>=0.13,<1
+vosk>=0.3.45,<1
+scenedetect==0.6.6.2

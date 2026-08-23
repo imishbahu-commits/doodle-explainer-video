@@ -1,32 +1,23 @@
 # video-polish
 
-The quality pass for the doodle-explainer-video pipeline: three checkpoints
-that catch problems at the cheapest moment to fix them.
+Measured quality gates for the Paint Explainer pipeline.
 
-| When | Tool | What it checks | Downloads |
-|---|---|---|---|
-| After the script | `script_doctor.py` | hook, paradox, promise, re-hook, closing question, sources, rhythm, spoken numbers | nothing |
-| After the voiceover | `audio_report.py` | loudness vs reference, dead air, pause rhythm (+ optional `--tighten`) | nothing |
-| After assembly | `qa_pacing.py` | illustration cut cadence vs the measured format, beat-count mismatch | nothing |
-
-Everything runs on ffmpeg + Python, both already installed by the repo's
-setup. No new packages, no internet, no APIs.
-
-## Quick start
+| Gate | Tool | Checks |
+|---|---|---|
+| Script | `script_doctor.py` | structure, sources, rhythm, word budget |
+| Voice/final mix | `audio_report.py` | EBU R128 integrated loudness, true peak, LRA, pauses |
+| Assembly | `qa_pacing.py` | flattened visual-change cadence and manifest event counts |
+| Style | `paint-style-qc` | repository-specific art, camera, motion, timing, and audio rules |
 
 ```bash
-python3 scripts/script_doctor.py projects/strange-face/script.md
-python3 scripts/audio_report.py projects/strange-face/final.mp4
-python3 scripts/qa_pacing.py projects/strange-face/final.mp4 \
-  --manifest projects/strange-face/manifest.json
+python3 skills/video-polish/scripts/script_doctor.py projects/example/script.md
+python3 skills/video-polish/scripts/audio_report.py projects/example/final.mp4 --json
+python3 skills/video-polish/scripts/qa_pacing.py projects/example/final.mp4 \
+  --manifest projects/example/manifest.json --json
 ```
 
-Each prints a PASS/FAIL report with exact fixes; every check accepts
-`--json` for machine-readable output. See `SKILL.md` for the agent-facing
-rules, and `references/format-spec.md` for the numbers everything is
-measured against.
-
-## What it deliberately does NOT do
-
-- No caption generator, no thumbnail builder — kept out to stay lean.
-- No restyling — it reports, and you decide the fix.
+Current authority is
+`references/paint-explainer-analysis-4v/style_rules.json`; it supersedes older
+generic format notes. The tools report first and do not restyle media. Captions
+remain out unless requested; the measured low ambient/electronic music bed is
+allowed and should remain subordinate.

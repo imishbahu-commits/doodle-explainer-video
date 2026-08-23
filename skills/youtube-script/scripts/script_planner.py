@@ -2,12 +2,11 @@
 """Beat math for youtube-script.
 
 plan  PROJECT TOPIC --duration 180 --format myth
-      -> projects/PROJECT/beats.json  (beat count from duration / 3.6s)
+      -> projects/PROJECT/beats.json  (rough row budget from measured cadence)
       -> projects/PROJECT/script.md   (skeleton with act headings)
 fit   PROJECT --segments vo_segments.txt   (one duration per line, seconds)
-      -> redistributes beat durations to match the voiceover;
-         inserts NEW beats when the voiceover has more segments (1 beat =
-         1 image, never stretch, never duplicate)
+      -> maps spoken timing rows to final voiceover segment durations;
+         inserted rows default to a visual hold, not a new image
 report PROJECT
       -> beat table on stdout
 """
@@ -16,7 +15,7 @@ import argparse, json, os, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(ROOT, "..", "..", ".."))
 
-MEDIAN = 3.6   # measured Paint Explainer cut interval
+MEDIAN = 2.7667   # four-video corpus median shot duration; planning hint only
 MIN_B, MAX_B = 2.0, 6.0
 
 FORMATS = {
@@ -92,8 +91,9 @@ def cmd_plan(args):
     beats = []
     for i, d in enumerate(durs, 1):
         beats.append({"id": i, "spoken": "", "visual": "",
-                      "subject": "", "transition": "cut",
-                      "duration": d, "source_hint": "ai", "status": "planned"})
+                      "subject": "", "event_type": "hold", "event_time": None,
+                      "visual_state_id": None, "duration": d,
+                      "source_hint": "hold", "status": "planned"})
     data = {"project": args.project, "topic": args.topic,
             "format": args.format, "target_seconds": args.duration,
             "beat_seconds": n and round(args.duration / n, 2),
@@ -106,9 +106,9 @@ def cmd_plan(args):
         f.write("HOOK (first 15 s, one sentence):\n\n")
         for act in FORMATS.get(args.format, FORMATS["myth"]):
             f.write(f"## {act}\n\n")
-        f.write("\nFill each act beat-by-beat. 1 beat = 1 sentence = 1 image "
-                f"(2-6 s). Seams are 'but' or 'therefore'. "
-                f"~{n} beats planned — see beats.json.\n")
+        f.write("\nFill each act as spoken timing rows. A row may hold/reuse the "
+                f"same visual state; do not force one image per beat. Seams are "
+                f"'but' or 'therefore'. ~{n} planning rows — see beats.json.\n")
     print(f"{n} beats, median {round(args.duration/n,1)}s each "
           f"-> {out} and {skel}")
 
@@ -117,7 +117,10 @@ def cmd_fit(args):
     data = json.load(open(path))
     segs = [float(x) for x in open(args.segments).read().split() if x.strip()]
     segs = [s for s in segs if s > 0.05]
+    if not segs:
+        raise SystemExit("no positive voiceover segment durations found")
     beats = data["beats"]
+    inserted = 0
     # merge short silences into neighbors handled by caller; here: map 1:1
     if len(segs) < len(beats):
         # fewer voiceover segments: merge beats, keep images for reuse order
@@ -137,12 +140,13 @@ def cmd_fit(args):
             idx += take
         data["beats"] = merged
     elif len(segs) > len(beats):
-        # MORE voiceover segments than beats: insert new beats (1 beat = 1 image)
-        need = len(segs) - len(beats)
-        for k in range(need):
+        # New spoken rows default to a visual hold until semantic planning.
+        inserted = len(segs) - len(beats)
+        for _ in range(inserted):
             beats.append({"id": len(beats) + 1, "spoken": "",
-                          "visual": "", "subject": "", "transition": "cut",
-                          "duration": 3.6, "source_hint": "ai",
+                          "visual": "", "subject": "", "event_type": "hold",
+                          "event_time": None, "visual_state_id": None,
+                          "duration": MEDIAN, "source_hint": "hold",
                           "status": "planned", "inserted_by_fit": True})
         data["beats"] = beats
     for b, s in zip(data["beats"], segs):
@@ -151,7 +155,8 @@ def cmd_fit(args):
     json.dump(data, open(path, "w"), indent=2)
     print(f"{len(data['beats'])} beats fitted to {len(segs)} voiceover "
           f"segments ({data['voiceover_seconds']}s)."
-          + (" NEW beats inserted — each needs its own image." if len(segs) > len(beats) else ""))
+          + (f" {inserted} spoken rows inserted; they default to visual hold."
+             if inserted else ""))
 
 def cmd_report(args):
     data = json.load(open(os.path.join(proj_dir(args.project), "beats.json")))

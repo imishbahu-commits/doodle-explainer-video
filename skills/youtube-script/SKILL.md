@@ -1,133 +1,109 @@
 ---
 name: youtube-script
-description: Write deep, interesting explainer scripts for ANY topic (or pick a topic when the user has none), in the measured Paint Explainer style: one spoken beat = one image, cuts every 2-6 s, myth/misconception/mystery/how-it-works/comparison/timeline/big-question formats, but-therefore seams, misconception-first research, and a ready handoff to image planning and YouTube SEO. Use for every new video at script stage (content-router stage 1).
+description: Research and write original Paint Explainer narration for any topic, with sourced facts, but-therefore causality, 204–209 WPM current pacing, clause/beat timing, and a clean handoff to semantic visual-state planning. Spoken beats do not require unique images or cuts; style_rules.json controls editorial cadence.
 ---
 
-# YouTube Script — any niche, deeper and more interesting
+# YouTube Script — sourced narration and timed semantic beats
 
-This skill produces the script every other stage feeds on. It works for any
-topic the user gives, and picks a strong topic itself when none is given.
+This skill writes narration. `image-queue` decides whether each beat produces a
+visual event, reuses a state, or holds. Never force a new image merely because a
+sentence exists.
 
-**The bar:** viewers must feel the next beat is worth staying for. That comes
-from three things only — (1) a format with real tension, (2) but-therefore
-seams instead of "and then", (3) concrete facts (numbers, names, dates, the
-actual find, the actual paper) — never vague filler.
+Authority: `references/paint-explainer-analysis-4v/style_rules.json`.
 
-## 1. Intake (ask once, all questions in one message)
+## Intake
 
-If any of these are missing, ask in ONE batch, never one by one:
+Ask missing decisions together: topic/niche, best-matching format, target
+runtime, audience/language, and whether the user or agent narrates. Supported
+formats in `references/formats.md` include myth, misconception, mystery,
+how-it-works, comparison, timeline, and big-question.
 
-1. Topic or niche (if none: use `references/topic-picker.md` and propose 3
-   picks with a one-line pitch each, let the user tap one)
-2. Format (offer the best match from `references/formats.md`; default to the
-   match, allow override)
-3. Length: ~1 min / ~3 min / ~8+ min
-4. Audience age & language
-5. Voiceover: will the user record it, or should the agent narrate?
-   (If the user will record: script is written to be READ ALOUD — short
-   sentences, no tongue twisters, pauses marked.)
+## Research
 
-## 2. Research — depth is mandatory, filler is banned
+1. Use at least three independent credible sources.
+2. Write `projects/SLUG/research.md`, one claim with its source per entry.
+3. For history/myth, find earliest sources and consequential names/dates. For
+   science, identify the actual study, year, authors, and effect/sample.
+4. Remove any sentence that could be pasted into an unrelated script.
+5. Design roughly one earned curiosity gap per minute.
 
-1. Gather facts with web search + page reading. Minimum 3 independent
-   sources. Myths: find the earliest written source, the excavation/paper
-   that matters, names and dates. Science: find the actual study, its year,
-   authors, and the size of the effect.
-2. Write a `research.md` in the project folder: one fact per line, each with
-   its source link. Every claim in the script must trace to a line here.
-3. Kill filler: any sentence that works in a different video gets cut.
-4. Find the ONE curiosity gap per minute: the question the viewer asks just
-   before the next beat answers it.
+## Draft
 
-## 3. Draft the script
+- Use concrete nouns, numbers, names, mechanisms, and consequences.
+- Prefer but-therefore causality over an “and then” list.
+- Open with the misconception/impossible fact where the format supports it.
+- Write for speech: short readable clauses, deliberate chapter breaths.
+- Current target is 204–209 recognized WPM.
+- The reference-length structure uses 12 chapters with ~68.5 s median duration
+  and ~0.6–0.8 s boundary breath; adapt chapter count to requested runtime.
+- End by answering the hook and opening one relevant next question.
 
-1. Pick the format (references/formats.md) and its act timings for the target
-   length.
-2. Write the hook using the hook table (contrarian / mystery / stakes /
-   outcome / scale).
-3. Fill the acts beat by beat. Rules:
-   - **One spoken beat = one image.** Each beat is one sentence (max two short
-     clauses), 2–6 s spoken (median ~3.6 s). Never let a beat run long to
-     save images; a long beat is split into two beats, each with its own image.
-   - **Seams:** every section boundary is "but" or "therefore" — written
-     literally into the spoken text ("But then, in 1876…", "Therefore the
-     real answer…").
-   - **Misconception-first:** when the format allows, open with what the
-     audience thinks is true, then break it.
-   - **Palette cleanser** every ~60 s (visual gag, "let that sink in", or a
-     0.7 s silence).
-   - **Anti-subjective rule:** the `visual` field of every beat describes
-     what is ON SCREEN (subject, action, camera move), never the emotion.
-     Write "the cyclops' eye widens, head tilts back" — never "epic reveal".
-     Forbidden in visuals: cinematic, moody, painterly, film grain, dark
-     palettes, shadows, gradients, photorealism.
-4. The final beat is the kicker: restate the hook's answer in one sentence +
-   open one new curiosity gap (this is what earns the next video's click).
+A spoken beat is a clause/sentence timing unit. Split it when clarity or word
+alignment needs a boundary, **not** to manufacture image count. A beat may map
+to `hold`, `hard_cut`, `source_swap`, or `local_motion` later.
 
-## 4. Beat schema (what every beat must contain)
+## Beat schema
 
 ```json
 {
   "id": 7,
-  "spoken": "But in 1876, Schliemann's diggers found something that should not exist.",
-  "visual": "Hand-drawn doodle of a digger's trowel lifting a gold mask from dark soil outline, on a PURE WHITE background",
+  "spoken": "But in 1876, the diggers lifted a gold mask from the soil.",
+  "duration": 3.1,
+  "word_start": 42.267,
+  "keywords": ["1876", "gold mask"],
+  "visual": "Gold-mask excavation state; preserve chapter title.",
   "subject": "gold-mask",
-  "transition": "cut",
-  "duration": 3.8,
+  "event_type": "hard_cut",
+  "event_time": 42.200,
+  "visual_state_id": "dig-mask-01",
   "source_hint": "ai"
 }
 ```
 
-- `subject`: the recurring thing on screen (character / object / diagram).
-  Repeated subjects across beats = rig + pose reuse = fewer new images.
-- `transition`: `cut` | `revealing` (new subject enters) | `disappearing`
-  (subject leaves) | `switching` (focus jumps A→B). Written explicitly so the
-  image plan and motion stage never have to guess.
-- `duration`: estimate; final durations come from the voiceover (step 6).
+During drafting, timing/event fields may be null. After alignment:
 
-## 5. Turn beats into a plan
+- use final word timings, not character-count timing;
+- schedule a justified picture change ~0.033–0.067 s before its keyword;
+- use `event_type: hold` if the state should not change;
+- do not write camera moves, emotion adjectives, cinematic lighting, or generic
+  transitions into `visual`;
+- preserve the chapter title across every state in that chapter.
 
-```bash
-python3 scripts/script_planner.py plan PROJECT "topic" --duration 180 --format myth
-```
-
-This writes `projects/PROJECT/beats.json` with the beat math (beat count from
-duration / 3.6 s) and a skeleton `script.md`. Fill the skeleton with the
-draft, then hand `beats.json` to the image-queue skill (stage 2).
-
-## 6. Fit to the voiceover (never stretch, never duplicate)
-
-The script is approved, THEN the voiceover is recorded (or generated). The
-voiceover is the boss:
-
-- One voiceover segment = one beat. If the voiceover has more segments than
-  beats → **new beats are inserted, each needing its own image** (the image
-  queue grows; the rule "1 beat = 1 image" is never bent).
-- If it has fewer → beats merge, images in hand cover more beats.
-- Re-fit durations:
+## Plan skeleton
 
 ```bash
-python3 scripts/script_planner.py fit PROJECT --segments vo_segments.txt
+python3 skills/youtube-script/scripts/script_planner.py plan PROJECT "topic" \
+  --duration 180 --format myth
 ```
 
-Each segment stays inside 2–6 s. A 60 s voiceover ≈ 17 beats; 3 min ≈ 50;
-8 min ≈ 133. Long videos are solved by BEAT MATH, not by stretching images.
+The planner uses the measured ~2.7667 s editorial median only as a rough
+initial row budget. It is not a mandate for a cut or new asset at each row.
 
-## 7. Hand off
+## Fit the final voiceover
 
-- Stage 2 (images): `beats.json` → image-queue skill — it classifies every
-  beat as doodle / asset / pose-reuse / ai, so only genuinely new subjects
-  cost an AI generation (10 per turn, ledger resumable).
-- SEO: when the script is approved, load `youtube-seo` → `youtube-seo-optimize`
-  and `youtube-seo-keywords`: title variants (Browse vs Search), entity-rich
-  description, tags, chapters, the 15-second hook line, thumbnail concept.
+```bash
+python3 skills/youtube-script/scripts/script_planner.py fit PROJECT \
+  --segments vo_segments.txt
+```
 
-## 8. Self-check before the script leaves this skill
+The voiceover is authoritative. Fitting updates/creates spoken timing rows; new
+rows default to `hold` until semantic visual planning. It must not automatically
+request another generated image. Preserve intentional chapter breaths and
+recompute aligned word/event times after any audio edit.
 
-- [ ] Hook + tension complete by second 30
-- [ ] Every seam is "but" or "therefore"
-- [ ] Every beat ≤ 6 s spoken, one image each, `visual` describes the screen
-- [ ] Palette cleanser roughly every 60 s
-- [ ] All claims trace to `research.md`
-- [ ] Kicker answers the hook and opens a new gap
-- [ ] `beats.json` exists and counts match the duration math
+## Handoff
+
+- `beats.json` → `image-queue` for hold/reuse/source/event classification;
+- approved narration + word timing → selected renderer;
+- final approved master → `youtube-seo` for publishing metadata.
+
+## Self-check
+
+- [ ] claims trace to `research.md`;
+- [ ] hook establishes a concrete gap/stake early;
+- [ ] causal seams and chapter progression are clear;
+- [ ] wording reads naturally at 204–209 WPM;
+- [ ] beats are speech units, not forced image slots;
+- [ ] visuals specify semantic on-screen state, never generic camera/effects;
+- [ ] chapter breaths/titles are marked;
+- [ ] final event timing waits for word alignment.
