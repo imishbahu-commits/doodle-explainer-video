@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://doodle-explainer.local/schemas/acting-shot.schema.json",
+  "title": "Expressive Doodle Acting Shot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "duration", "story_function", "characters", "beats", "camera"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "duration": {"type": "number", "exclusiveMinimum": 0},
+    "story_function": {"enum": ["establish", "explain", "react", "reveal", "conflict", "payoff", "transition"]},
+    "line_of_action": {"type": "string"},
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "rig", "screen_side", "eye_line"],
+        "properties": {
+          "name": {"type": "string"},
+          "rig": {"type": "string"},
+          "screen_side": {"enum": ["left", "center", "right"]},
+          "eye_line": {"type": "string"},
+          "silhouette_test": {"type": "boolean"}
+        }
+      }
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["t", "character", "pose", "expression", "hold"],
+        "properties": {
+          "t": {"type": "number", "minimum": 0},
+          "character": {"type": "string"},
+          "pose": {"type": "string"},
+          "expression": {"type": "string"},
+          "action": {"type": "string"},
+          "lead_part": {"type": "string"},
+          "overlap_parts": {"type": "array", "items": {"type": "string"}},
+          "accent_word": {"type": "string"},
+          "hold": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shot_size", "move", "motivation"],
+      "properties": {
+        "shot_size": {"enum": ["extreme-wide", "wide", "medium", "close", "extreme-close"]},
+        "move": {"enum": ["locked", "punch-in", "pull-back", "pan", "reframe", "impact-bump", "character-follow"]},
+        "motivation": {"type": "string", "minLength": 4},
+        "start": {"type": "number", "minimum": 0},
+        "end": {"type": "number", "minimum": 0},
+        "scale_delta": {"type": "number", "minimum": -0.35, "maximum": 0.35}
+      }
+    },
+    "render_method": {"enum": ["pose-swap", "layer-rig", "puppet", "frame-by-frame", "hybrid"]}
+  }
+}

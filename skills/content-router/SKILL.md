@@ -25,6 +25,7 @@ apply their generic defaults.
 | 3a Alpha | source subject lacks clean alpha | `transparent-asset-prep` | RGBA cutout + QC report |
 | 4 Render selection | authored visual events exist | `ae-motion` **or** HyperFrames subset | scene/composition + deterministic render |
 | 4b Repeated action exception | a recurring character action truly needs a sprite/rig | `character-animation-skill` | minimal sprite/parts; no routine idle/lip-sync |
+| 4c Expressive acting (explicit opt-in) | user requests character performance, deformation, expressive secondary action, or motivated camera | `expressive-doodle-acting`, then `ae-motion` or HyperFrames | character bible + acting-shot contract + blocking proof |
 | 5 Assembly | rendered shots + final mix | deterministic ffmpeg/editing tools | final master + event manifest |
 | 6 QC | after art, scene authoring, or assembly | `paint-style-qc` plus `video-polish` | machine reports + repaired render |
 | 7 Package | final is approved | `youtube-seo` | title, description, chapters, tags, thumbnail brief |
@@ -57,7 +58,15 @@ Load only:
 Do not import generic HyperFrames creative/faceless presets. Its CLI/lint rules
 supplement rather than replace `paint-style-qc`.
 
-## Invariants passed to every stage
+## Expressive-mode boundary
+
+If the user explicitly chooses expressive doodle acting, load
+`expressive-doodle-acting` before renderer selection. Its character bible,
+acting-shot schema, silhouette/eyeline gates, and written camera motivation become
+required. This is a separate profile: it does not alter measured Paint Explainer
+recreation, which stays locked-camera and sparse-motion.
+
+## Invariants passed to every measured-profile stage
 
 - camera locked; no routine zoom, pan, orbit, or parallax;
 - hard noun/idea cuts/source swaps, normally ~0.033–0.067 s before word onset;

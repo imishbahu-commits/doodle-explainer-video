@@ -81,6 +81,22 @@ the only motion in the frame.
 - `ffmpeg` and `ffprobe` on PATH
 - Python 3 with Pillow
 
+## Reference video upload studio
+
+Start the mobile-friendly intake page when you want to provide YouTube reference
+videos directly from your phone or computer:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+python3 tools/reference_upload_server.py 8013
+```
+
+The page uploads up to five authorized reference videos in parallel 4 MiB chunks,
+collects creative notes, and automatically creates a private analysis pack under
+`uploads/references/`. Each pack contains the source video, technical metadata,
+eight representative frames per video, contact sheets, and
+`READY_FOR_ANALYSIS.md`. Uploaded media is ignored by Git.
+
 ## Legacy production mode (three-band vertical)
 
 The single 720×1280 static three-band vertical format documented below.
@@ -223,6 +239,7 @@ doodle-explainer-video/
 │   ├── transparent-asset-prep/      # flat-background + ML alpha preparation
 │   ├── ae-motion/                   # locked PNG/MLS local motion renderer
 │   ├── character-animation-skill/   # exceptional repeated actions only
+│   ├── expressive-doodle-acting/    # opt-in acting, deformation, camera + re-ink
 │   ├── hyperframes-{core,keyframes,animation,cli}/
 │   │                                 # selected deterministic browser stack
 │   ├── paint-style-qc/              # image/scene/final measured enforcement

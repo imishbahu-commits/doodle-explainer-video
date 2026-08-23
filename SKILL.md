@@ -56,6 +56,7 @@ secondary modes in the machine rules.
 | Deterministic diagrams/marks | `handdrawn-code` |
 | PNG layers and MLS puppet motion | `ae-motion` |
 | Exceptional repeated character actions | `character-animation-skill` |
+| Opt-in expressive acting/camera direction | `expressive-doodle-acting` |
 | Script/audio/cadence checks | `video-polish` |
 | Publishing metadata | `youtube-seo` |
 | Clean alpha/cutouts | `transparent-asset-prep` |
@@ -86,7 +87,11 @@ faceless/creative presets into this profile.
    PNG/MLS work, or the selected HyperFrames subset for deterministic browser
    layout and diagnostics. Keep the camera locked and blur off.
 6. **Use character rigging sparingly.** Fire `character-animation-skill` only
-   for a genuinely repeated action; simpler pose swaps/part rotation win.
+   for a genuinely repeated action; simpler pose swaps/part rotation win. When
+   the user explicitly selects expressive character storytelling rather than a
+   corpus-faithful recreation, route acting, deformation, secondary motion, and
+   motivated camera decisions through `expressive-doodle-acting`; keep that
+   opt-in profile separate from the measured locked-camera default.
 7. **Assemble to narration.** Put hard changes 1–2 source frames before the
    emphasized word; preserve chapter breath and title strip. Add the measured
    low bed and only semantic SFX.

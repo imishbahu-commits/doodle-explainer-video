@@ -1,0 +1,30 @@
+{
+  "id": "hero-realizes-trap",
+  "duration": 2.8,
+  "story_function": "react",
+  "line_of_action": "C-curve away from the trap, then forward to inspect it",
+  "characters": [
+    {
+      "name": "hero",
+      "rig": "assets/characters/hero/rig.json",
+      "screen_side": "left",
+      "eye_line": "trap at lower right",
+      "silhouette_test": true
+    }
+  ],
+  "beats": [
+    {"t": 0.0, "character": "hero", "pose": "neutral-listen", "expression": "neutral", "hold": 0.3},
+    {"t": 0.3, "character": "hero", "pose": "anticipation-compress", "expression": "processing", "action": "chin retracts before recoil", "lead_part": "eyes", "overlap_parts": ["head", "torso", "hair-tip"], "accent_word": "trap", "hold": 0.07},
+    {"t": 0.57, "character": "hero", "pose": "fear-recoil-extreme", "expression": "shocked", "action": "torso snaps back; hands arrive two frames later", "lead_part": "head", "overlap_parts": ["torso", "hands", "hair-tip"], "accent_word": "trap", "hold": 0.48},
+    {"t": 1.28, "character": "hero", "pose": "cautious-lean", "expression": "suspicious", "action": "settles forward without returning to neutral", "lead_part": "eyes", "overlap_parts": ["head", "torso"], "hold": 1.1}
+  ],
+  "camera": {
+    "shot_size": "medium",
+    "move": "punch-in",
+    "motivation": "The realization is the story beat; the camera accents, not replaces, the pose.",
+    "start": 0.47,
+    "end": 0.7,
+    "scale_delta": 0.11
+  },
+  "render_method": "hybrid"
+}

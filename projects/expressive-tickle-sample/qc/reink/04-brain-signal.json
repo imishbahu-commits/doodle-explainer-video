@@ -1,0 +1,25 @@
+{
+  "input": "projects/expressive-tickle-sample/assets/source/04-brain-signal.png",
+  "output": "projects/expressive-tickle-sample/assets/reinked/04-brain-signal.png",
+  "seed": 71,
+  "parameters": {
+    "colors": 12,
+    "smooth": 3,
+    "sensitivity": 36,
+    "line_width": 2,
+    "wobble": 0.8,
+    "ink": "#101010",
+    "ink_opacity": 246,
+    "background": "white"
+  },
+  "metrics": {
+    "width": 1376,
+    "height": 768,
+    "requested_fill_colors": 12,
+    "observed_quantized_colors": 12,
+    "ink_coverage": 0.10614,
+    "subject_coverage": 1.0,
+    "mean_ink_alpha": 23.758
+  },
+  "warnings": []
+}

@@ -1,0 +1,39 @@
+{
+  "file": "projects/expressive-tickle-sample/expressive-tickle-sample.mp4",
+  "duration": 39.5,
+  "audio": {
+    "integrated_lufs": -20.65,
+    "true_peak_dbfs": -4.97,
+    "lra_lu": 3.4,
+    "threshold_lufs": -31.16
+  },
+  "sample_mean_dbfs": -20.5,
+  "sample_peak_dbfs": -5.0,
+  "silence_count": 10,
+  "total_silence_seconds": 4.81,
+  "silence_pct": 12.2,
+  "median_silence_seconds": 0.47,
+  "chapter_breath_candidate_count": 1,
+  "silences_over_1s_for_review": [],
+  "targets": {
+    "integrated_lufs": [
+      -20.7,
+      -20.6
+    ],
+    "true_peak_dbfs_max": -2.3,
+    "lra_lu": [
+      1.8,
+      3.8
+    ],
+    "chapter_breath_seconds": [
+      0.6,
+      0.8
+    ]
+  },
+  "checks": {
+    "integrated_loudness": true,
+    "true_peak": true,
+    "lra": true
+  },
+  "ok": true
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Why You Cannot Tickle Yourself",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "profile": "expressive-doodle-acting",
+  "assets_max": 8,
+  "shots": [
+    {"asset": "01-hero-master.png", "words": "Try to tickle yourself. Go on.", "acting": "curious challenge; hand anticipates", "camera": "medium locked"},
+    {"asset": "02-self-tickle.png", "words": "Your fingers touch the same skin, but almost nothing happens.", "acting": "effort followed by disappointed deadpan", "camera": "short punch-in"},
+    {"asset": "03-bad-hands.png", "words": "That is not because your hands are bad at tickling.", "acting": "accuses own hands; hands look offended", "camera": "locked"},
+    {"asset": "04-brain-signal.png", "words": "Before you move, your brain sends a prediction to a region called the cerebellum.", "acting": "cutaway diagram with Mira thinking", "camera": "reframe toward brain diagram"},
+    {"asset": "05-volume-down.png", "words": "It estimates where your fingers will land and turns down the expected sensation.", "acting": "brain pulls sensation lever down", "camera": "locked close diagram"},
+    {"asset": "06-other-person.png", "words": "Now let someone else try. Their timing, pressure, and direction are unpredictable.", "acting": "friend hides moving hands; Mira suspicious", "camera": "small pull-back"},
+    {"asset": "07-noodle-reaction.png", "words": "The prediction misses, the alarm stays loud, and suddenly you are twisting like a malfunctioning noodle.", "acting": "large C-to-S body reaction; hair and sleeves overlap", "camera": "impact bump then hold"},
+    {"asset": "08-surprise-payoff.png", "words": "Your brain did not stop the touch. It spoiled the surprise.", "acting": "Mira points to surprise gift held by brain", "camera": "gentle final punch-in"}
+  ]
+}
