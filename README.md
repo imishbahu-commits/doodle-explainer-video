@@ -25,6 +25,12 @@ python3 skills/video-polish/scripts/audio_report.py final.mp4 --json
 python3 skills/video-polish/scripts/qa_pacing.py final.mp4 --manifest manifest.json --json
 ```
 
+The separately measured profile for the two historical classroom/caveman
+references uploaded on 2026-08-23 is documented in
+`references/uploaded-historical-doodle-2v/STYLE_SPEC.md` and implemented by
+`skills/historical-doodle-classroom/SKILL.md`. It is selected only when those
+references are requested; it does not silently change the default profile.
+
 Key files: `SKILL.md` (approved stack) ·
 `skills/paint-explainer-recreation/SKILL.md` (master profile) ·
 `skills/content-router/SKILL.md` (stage map) ·
@@ -240,6 +246,7 @@ doodle-explainer-video/
 │   ├── ae-motion/                   # locked PNG/MLS local motion renderer
 │   ├── character-animation-skill/   # exceptional repeated actions only
 │   ├── expressive-doodle-acting/    # opt-in acting, deformation, camera + re-ink
+│   ├── historical-doodle-classroom/ # uploaded 2-video classroom/history profile
 │   ├── hyperframes-{core,keyframes,animation,cli}/
 │   │                                 # selected deterministic browser stack
 │   ├── paint-style-qc/              # image/scene/final measured enforcement

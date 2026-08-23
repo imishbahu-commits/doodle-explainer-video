@@ -1,0 +1,78 @@
+{
+  "profile": "original_historical_doodle_classroom",
+  "authority": "two user-uploaded reference videos analyzed 2026-08-23",
+  "evidence": {
+    "video_count": 2,
+    "runtime_seconds": 1045.578,
+    "frames_scanned": 31336,
+    "detected_shots": 231,
+    "source": {"width": 640, "height": 360, "fps": 29.97003},
+    "per_video": [
+      {"id": "15289", "frames": 16689, "shots": 129, "median_shot_seconds": 3.6703, "mean_shot_seconds": 4.3167},
+      {"id": "15292", "frames": 14647, "shots": 102, "median_shot_seconds": 4.0373, "mean_shot_seconds": 4.7914}
+    ]
+  },
+  "production": {"width": 1920, "height": 1080, "fps": 30},
+  "scene_modes": {
+    "classroom_host": "recurring ochre classroom, green framed chalkboard, host teacher and evidence insert",
+    "immersive_world": "full-frame historical environment plate with independent character and prop cutouts",
+    "white_explainer": "paper-white card with one diagram, comparison, noun, number, map or literal joke"
+  },
+  "editing": {
+    "normal_shot_seconds": [3.0, 6.0],
+    "long_internal_state_shot_seconds": [8.0, 15.0],
+    "exceptional_composition_max_seconds": 25.2,
+    "boundary_classes": {
+      "full_frame_hard": {"count": 165, "percent": 72.05},
+      "broad_hard": {"count": 46, "percent": 20.09},
+      "local_swap_pop": {"count": 15, "percent": 6.55},
+      "subtle": {"count": 3, "percent": 1.31}
+    },
+    "default_transition": "hard_cut",
+    "dissolve_default": false
+  },
+  "motion": {
+    "adjacent_frame_pairs": {"near_frozen_percent": 56.5, "subtle_percent": 32.64, "active_percent": 10.86},
+    "character_methods": ["whole_layer_translation", "scale_for_depth_or_emphasis", "head_or_torso_rotation", "single_arm_rotation", "eye_mouth_brow_source_swap", "whole_pose_swap", "sequential_clone_pop", "semantic_overlay"],
+    "active_parts_typical": [1, 3],
+    "routine_full_body_interpolation": false,
+    "hold_after_extreme": true
+  },
+  "camera": {
+    "base": "locked_plate",
+    "allowed": ["slow_push_1_to_8_percent", "short_reveal_punch", "lateral_reframe", "scale_reveal_pullback"],
+    "forbidden_defaults": ["orbit", "handheld_drift", "depth_of_field", "motion_blur", "constant_parallax"],
+    "measurement_warning": "flattened foreground motion creates false positives in global-transform estimates; 55-67 percent possible-camera classification is an upper bound"
+  },
+  "characters": {
+    "head_height_fraction_of_character": [0.45, 0.75],
+    "head": "specific asymmetric semi-detailed face, hair and beard",
+    "body": "crude flat costume block with thin near-black noodle limbs",
+    "expression_sources": {"eyes": 6, "brows": 4, "mouths": 5, "head_tilts": 3},
+    "identity_locks": ["skull", "hairline", "beard_edge", "nose", "eye_spacing", "costume", "skin_tone"]
+  },
+  "art": {
+    "source_stroke_px_median": [2.0, 2.8],
+    "production_stroke_px": [6, 8],
+    "contour": "single clean irregular near-black or dark-brown line",
+    "significant_colors_median": [14, 17],
+    "palette": ["#101010", "#303010", "#503010", "#505030", "#705030", "#707050", "#907030", "#909070", "#D09050", "#F0D0B0", "#F0F0F0"],
+    "character_shading": "flat with restrained texture",
+    "world_plate_shading": "broad value regions with gentle atmospheric depth"
+  },
+  "text": {
+    "captions": false,
+    "white_card": "irregular black handwritten print",
+    "chalkboard": "white chalk script",
+    "labels": "short factual labels and arrows",
+    "max_default_words_per_visual_label": 6
+  },
+  "audio": {
+    "integrated_lufs_target": [-19.1, -18.6],
+    "true_peak_dbfs_max": -2.3,
+    "lra_lu": [4.0, 6.0],
+    "median_silence_seconds": 0.46,
+    "silence_share_percent": [18.6, 20.1]
+  },
+  "originality": "apply technique only; do not copy exact characters, drawings, scripts, jokes, classroom branding or channel identity"
+}

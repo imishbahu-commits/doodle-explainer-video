@@ -14,6 +14,12 @@ For Paint Explainer work, first load:
 The machine rules are authoritative. Skills are capabilities, not permission to
 apply their generic defaults.
 
+For requests tied to the two historical classroom/caveman videos uploaded on
+2026-08-23, route first to `historical-doodle-classroom` and its
+`references/uploaded-historical-doodle-2v/style_rules.json`. Its three scene modes,
+facial source swaps, motivated camera and audio targets replace the Paint Explainer
+invariants below.
+
 ## Approved stage map
 
 | Stage | Trigger/state | Skill(s) | Required handoff |

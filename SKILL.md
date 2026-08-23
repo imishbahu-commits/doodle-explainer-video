@@ -20,6 +20,14 @@ The rules were measured from four user-supplied videos: 98,705 frames,
 3,290.167 s, 845 shots, and 841 abrupt edit events. When any generic skill
 default conflicts, `style_rules.json` wins.
 
+**Uploaded-reference override:** when the user asks for the two historical
+classroom/caveman references uploaded on 2026-08-23, load
+`skills/historical-doodle-classroom/SKILL.md` and
+`references/uploaded-historical-doodle-2v/style_rules.json` instead. That measured
+profile permits grouped facial source swaps, actor cutout motion, motivated slow
+pushes and a louder/more dynamic mix; do not apply this file's locked Paint
+Explainer camera or persistent title strip to it.
+
 Primary target: the newest supplied sea-world version (2026-08-16), with its
 slower voice, quieter mix, illustrated environments, and persistent title
 strip. White-history, immersive-environment, and incident-listicle are named
