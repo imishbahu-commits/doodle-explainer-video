@@ -1,0 +1,36 @@
+{
+  "output": "brutal_tortures_hq.mp4",
+  "banner": "assets/banner.png",
+  "beats": [
+    {
+      "image": "assets/beat1_court.png",
+      "audio": "../brutal-punishments-sample/audio/beat1.mp3",
+      "text": "In the year 1343, a merchant in Florence was accused of spying. The court had one question: talk, or don't talk? The answer determined how much pain he would feel. Welcome to the age when pain was a tool of government."
+    },
+    {
+      "image": "assets/beat2_rack.png",
+      "audio": "../brutal-punishments-sample/audio/beat2.mp3",
+      "text": "First, the rack. A wooden frame, two rollers, and your wrists and ankles tied to the ends. Turn the crank, and the frame stretches. Doctors could even set broken bones this way, gently. The torturers just didn't stop."
+    },
+    {
+      "image": "assets/beat3_iron_maiden.png",
+      "audio": "../brutal-punishments-sample/audio/beat3.mp3",
+      "text": "Next, the iron maiden. A chest of spikes, shaped like a coffin, with holes for the face, hands, and feet. The door closes. The spikes press in. Some versions had a second row of spikes, just in case the first row wasn't enough."
+    },
+    {
+      "image": "assets/beat4_wheel.png",
+      "audio": "../brutal-punishments-sample/audio/beat4.mp3",
+      "text": "In medieval France, a criminal caught stealing could be given the wheel. Nails through wrists and ankles, a board across the back, and the body turned slowly on a post. Sometimes they left you up there as a warning to the next village."
+    },
+    {
+      "image": "assets/beat5_crowd.png",
+      "audio": "../brutal-punishments-sample/audio/beat5.mp3",
+      "text": "Here's the weird part. The goal was rarely to kill. The goal was to make an example. Pain, shown publicly, was the original fear campaign. You didn't need to kill the criminal. You needed the crowd to do the math."
+    },
+    {
+      "image": "assets/beat6_cell.png",
+      "audio": "../brutal-punishments-sample/audio/beat6.mp3",
+      "text": "By the 1800s, Europe started doing the math itself. Punishment became quiet, private, and boring, a cell instead of a crowd. Which says a lot about us. The tools changed. The question never did: what do we do with the people who break the rules?"
+    }
+  ]
+}
