@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
-"""Style Lab — upload a reference video, get an instant style profile.
+"""Style Lab — Reference Library: upload reference videos fast, auto-analyze,
+and keep a browsable library of every reference + its style profile.
 
-Drop any MP4 (or paste a URL for yt-dlp), the server:
-  1. saves it in seconds (local disk)
-  2. runs a motion autopsy in a background thread (6fps frame sampling):
-     cuts + shot table, motion budget, camera moves, dominant colors,
-     brightness, fps/resolution
-  3. shows a live STYLE PROFILE + player, and saves the report to
-     style-reports/<name>.json so the agent can rebuild to that spec.
+- Fast upload: 4MB chunks, 4 parallel, live MB/s.
+- Auto-analyze after upload (cuts, motion budget, colors) -> style-reports/.
+- Library: every uploaded video gets a card (thumbnail, size, status,
+  stats, palette). Previously analyzed reports survive server restarts.
+- The agent reads tools/style-reports/*.json to recreate the style.
 
 Usage: python3 style_lab.py [port]
 """
-import io
 import json
 import math
 import mimetypes
-import os
 import re
 import subprocess
 import sys
@@ -29,25 +26,17 @@ import numpy as np
 from PIL import Image
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent
 UPLOADS = HERE / "uploads"
 REPORTS = HERE / "style-reports"
+THUMBS = UPLOADS / "thumbs"
 UPLOADS.mkdir(exist_ok=True)
 REPORTS.mkdir(exist_ok=True)
+THUMBS.mkdir(exist_ok=True)
 
-FF = None
 try:
     import imageio_ffmpeg
     FF = imageio_ffmpeg.get_ffmpeg_exe()
 except Exception:
-    pass
-if not FF or not Path(FF).exists():
-    for cand in ["ffmpeg", "/usr/bin/ffmpeg", str(Path(sys.prefix) / "bin" / "ffmpeg")]:
-        p = subprocess.run(["which", cand], capture_output=True, text=True)
-        if p.returncode == 0:
-            FF = p.stdout.strip()
-            break
-if not FF:
     FF = "ffmpeg"
 
 SAMPLE_FPS = 6
@@ -55,11 +44,10 @@ GW, GH = 480, 270
 STATUS = {}   # job_id -> {state, progress, result, error}
 
 
-# ------------------------------------------------------------------ utils
+# ------------------------------------------------------------------ analyze
 def probe(path):
     p = subprocess.run([FF, "-i", str(path)], capture_output=True, text=True)
-    dur, fps = None, None
-    w = h = None
+    dur = fps = w = h = None
     for line in p.stderr.splitlines():
         m = re.search(r"Duration: (\d+):(\d+):(\d+\.\d+)", line)
         if m:
@@ -91,9 +79,7 @@ def frames(path, fps=SAMPLE_FPS):
 
 
 def analyze(path):
-    """Full motion autopsy -> style profile dict. STREAMING (low memory):
-    frames are consumed one at a time; only tiny stats are kept, so even
-    long videos analyze in seconds without eating memory."""
+    """Streaming motion autopsy (low memory, handles long videos)."""
     info = probe(path)
     if not info["duration"]:
         raise ValueError("cannot read duration (bad video?)")
@@ -218,9 +204,65 @@ def run_job(job_id, path):
         STATUS[job_id] = {"state": "error", "error": str(e)}
 
 
+# ------------------------------------------------------------------ library
+def library():
+    """All known references: from reports (survive restarts) + raw uploads."""
+    entries = []
+    for rep in sorted(REPORTS.glob("*.json")):
+        try:
+            data = json.loads(rep.read_text())
+        except Exception:
+            continue
+        fname = data.get("file", "")
+        if not fname:
+            continue
+        fpath = UPLOADS / fname
+        cc = data.get("cut_cadence") or {}
+        mb = data.get("motion_budget") or {}
+        entries.append({
+            "id": rep.stem, "file": fname, "exists": fpath.exists(),
+            "size": fpath.stat().st_size if fpath.exists() else 0,
+            "analyzed": True,
+            "duration": data.get("duration"), "fps": data.get("fps"),
+            "shots": data.get("shots"),
+            "median": cc.get("median"),
+            "frozen": mb.get("frozen_pct"),
+            "camera": mb.get("camera_pct"),
+            "character": mb.get("character_pct"),
+            "brightness": data.get("brightness"),
+            "palette": data.get("palette", [])[:5],
+            "camera_est": data.get("camera_estimate", ""),
+            "report": rep.name,
+        })
+    seen = {e["file"] for e in entries}
+    for f in sorted(UPLOADS.glob("*.mp4")):
+        if f.name in seen:
+            continue
+        entries.append({
+            "id": f.stem.split("_")[0], "file": f.name, "exists": True,
+            "size": f.stat().st_size, "analyzed": False,
+            "duration": None, "shots": None, "median": None,
+            "frozen": None, "camera": None, "character": None,
+            "palette": [], "camera_est": "", "report": None,
+        })
+    entries.sort(key=lambda e: e["file"])
+    return entries
+
+
+def thumbnail(fname):
+    f = UPLOADS / fname
+    if not f.is_file():
+        return None
+    out = THUMBS / (fname + ".jpg")
+    if not out.exists() or out.stat().st_mtime < f.stat().st_mtime:
+        subprocess.run([FF, "-y", "-v", "error", "-ss", "1", "-i", str(f),
+                        "-frames:v", "1", "-vf", "scale=320:180", str(out)],
+                       capture_output=True)
+    return out if out.exists() else None
+
+
 # ------------------------------------------------------------------ server
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
-JOBS = {}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -242,6 +284,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = self.path.split("?")[0]
+        q = self.path.split("?", 1)[1] if "?" in self.path else ""
+        params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
+
         if path in ("/", "/index.html"):
             self._send(200, PAGE, "text/html; charset=utf-8")
             return
@@ -254,15 +299,23 @@ class Handler(BaseHTTPRequestHandler):
                                         if kk != "shot_table"}
             self._json(out)
             return
+        if path == "/library":
+            self._json(library())
+            return
+        if path == "/thumb":
+            t = thumbnail(params.get("file", ""))
+            if t:
+                self._send(200, t.read_bytes(), "image/jpeg")
+            else:
+                self._send(404, "no thumb")
+            return
         if path.startswith("/report/"):
-            name = path.split("/")[-1]
-            f = REPORTS / name
+            f = REPORTS / path.split("/")[-1]
             if f.exists():
                 self._send(200, f.read_text(), "application/json")
             else:
                 self._send(404, "not found")
             return
-        # static uploads
         m = re.match(r"/uploads/(.+)", path)
         if m:
             f = UPLOADS / m.group(1)
@@ -299,24 +352,19 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = self.path.split("?")[0]
-        # ---- chunked upload: POST /chunk?job=X&index=N&total=T (raw bytes)
+        q = self.path.split("?", 1)[1] if "?" in self.path else ""
+        params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
+
         if path == "/chunk":
-            q = self.path.split("?", 1)[1] if "?" in self.path else ""
-            params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
             job = params.get("job", "")
             idx = int(params.get("index", 0))
-            total = int(params.get("total", 1))
             length = int(self.headers.get("Content-Length", 0))
             data = self.rfile.read(length) if length else b""
-            # per-index part file -> parallel-safe (concatenated on /complete)
             part = UPLOADS / f"{job}.part.{idx:05d}"
             part.write_bytes(data)
-            self._json({"job": job, "index": idx, "total": total, "bytes": len(data)})
+            self._json({"job": job, "index": idx, "bytes": len(data)})
             return
-        # ---- finish chunked: POST /complete?job=X&name=FILE.mp4
         if path == "/complete":
-            q = self.path.split("?", 1)[1] if "?" in self.path else ""
-            params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
             job = params.get("job", "")
             name = params.get("name", "video.mp4")
             safe = re.sub(r"[^A-Za-z0-9._-]", "_", name)
@@ -331,10 +379,7 @@ class Handler(BaseHTTPRequestHandler):
                     p.unlink()
             self._json({"job": job, "file": dest.name, "uploaded": True})
             return
-        # ---- analyze an uploaded file: POST /analyze?job=X&file=NAME
         if path == "/analyze":
-            q = self.path.split("?", 1)[1] if "?" in self.path else ""
-            params = dict(p.split("=", 1) for p in q.split("&") if "=" in p)
             job = params.get("job", "")
             f = UPLOADS / params.get("file", "")
             if not f.is_file():
@@ -343,35 +388,7 @@ class Handler(BaseHTTPRequestHandler):
             threading.Thread(target=run_job, args=(job, str(f)), daemon=True).start()
             self._json({"job": job, "analyzing": True})
             return
-        # ---- simple single-shot upload
-        if path != "/upload":
-            self._send(404, "not found")
-            return
-        ctype = self.headers.get("Content-Type", "")
-        if "multipart/form-data" not in ctype:
-            self._send(400, "multipart required")
-            return
-        # minimal multipart parse
-        boundary = ctype.split("boundary=")[1].encode()
-        body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
-        parts = body.split(b"--" + boundary)
-        fname = None
-        data = b""
-        for part in parts:
-            if b"filename=" in part.split(b"\r\n\r\n", 1)[0]:
-                m = re.search(rb'filename="([^"]+)"', part)
-                if m:
-                    fname = m.group(1).decode("utf-8", "replace")
-                    data = part.split(b"\r\n\r\n", 1)[1].rsplit(b"\r\n", 1)[0]
-        if not fname or not data:
-            self._send(400, "no file")
-            return
-        safe = re.sub(r"[^A-Za-z0-9._-]", "_", fname)
-        job_id = f"{int(time.time()*1000)}"
-        dest = UPLOADS / f"{job_id}_{safe}"
-        dest.write_bytes(data)
-        threading.Thread(target=run_job, args=(job_id, str(dest)), daemon=True).start()
-        self._json({"job": job_id, "file": dest.name, "size": len(data)})
+        self._send(404, "not found")
 
     def log_message(self, *a):
         pass
@@ -380,64 +397,84 @@ class Handler(BaseHTTPRequestHandler):
 PAGE = r"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Style Lab — reference video style analyzer</title>
+<title>Reference Library — upload + style analysis</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
   body { margin:0; background:#0b0d12; color:#e9edf4;
          font-family: system-ui,-apple-system,Segoe UI,sans-serif; }
-  header { padding:22px 18px 8px; text-align:center; }
-  h1 { font-size:20px; margin:0 0 4px; }
-  .sub { font-size:13px; color:#8b95a7; margin:0 0 18px; }
-  .drop { max-width:760px; margin:0 auto 18px; border:2px dashed #2b3444;
-          border-radius:14px; padding:34px 20px; text-align:center;
+  header { padding:22px 18px 6px; text-align:center; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .sub { font-size:13px; color:#8b95a7; margin:0 0 16px; }
+  .drop { max-width:760px; margin:0 auto 14px; border:2px dashed #2b3444;
+          border-radius:14px; padding:28px 20px; text-align:center;
           cursor:pointer; transition:.2s; background:#10141c; }
   .drop.over { border-color:#f5c63c; background:#161b26; }
-  .drop b { font-size:16px; }
-  .drop small { color:#8b95a7; display:block; margin-top:8px; }
-  .urlbar { max-width:760px; margin:0 auto 20px; display:flex; gap:8px; }
+  .drop b { font-size:15px; }
+  .drop small { color:#8b95a7; display:block; margin-top:6px; }
+  .urlbar { max-width:760px; margin:0 auto 18px; display:flex; gap:8px; }
   .urlbar input { flex:1; padding:10px 14px; border-radius:10px; border:1px solid #2b3444;
                   background:#10141c; color:#e9edf4; font-size:13px; }
   .urlbar button { padding:10px 18px; border-radius:10px; border:0;
                    background:#f5c63c; color:#111; font-weight:700; cursor:pointer; }
-  .wrap { max-width:1000px; margin:0 auto; padding:0 16px 40px; display:flex;
-          flex-direction:column; gap:18px; }
-  .card { background:#131722; border:1px solid #232b3a; border-radius:12px; padding:16px; }
-  .card h2 { margin:0 0 12px; font-size:14px; text-transform:uppercase;
-             letter-spacing:.08em; color:#8b95a7; }
-  video { width:100%; border-radius:10px; background:#000; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
-  .metric { background:#0f131b; border:1px solid #232b3a; border-radius:10px; padding:12px; }
-  .metric .k { font-size:11px; color:#8b95a7; text-transform:uppercase; }
-  .metric .v { font-size:20px; font-weight:800; margin-top:4px; }
-  .metric .v small { font-size:12px; color:#8b95a7; font-weight:500; }
-  table { width:100%; border-collapse:collapse; font-size:12px; }
-  th, td { padding:6px 8px; text-align:right; border-bottom:1px solid #1c2230; }
-  th:first-child, td:first-child { text-align:left; }
-  .swatch { display:inline-block; width:14px; height:14px; border-radius:4px;
-            margin-right:6px; vertical-align:middle; border:1px solid #333; }
-  #status { text-align:center; color:#f5c63c; font-size:14px; padding:8px; }
-  .badge { display:inline-block; padding:2px 10px; border-radius:999px;
-           background:#1a202b; color:#cfd6e2; font-size:12px; margin:2px; }
+  #status { text-align:center; color:#f5c63c; font-size:14px; padding:6px 12px 10px; }
+  h2.sec { font-size:14px; text-transform:uppercase; letter-spacing:.08em;
+           color:#8b95a7; margin:22px 18px 10px; text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+          gap:12px; padding:0 16px 30px; max-width:1200px; margin:0 auto; }
+  .card { background:#131722; border:1px solid #232b3a; border-radius:12px;
+          overflow:hidden; cursor:pointer; transition:.15s; }
+  .card:hover { border-color:#f5c63c; transform:translateY(-2px); }
+  .card img { width:100%; aspect-ratio:16/9; object-fit:cover; background:#000; display:block; }
+  .card .body { padding:10px 12px 12px; }
+  .card .name { font-size:12px; color:#cfd6e2; word-break:break-all; }
+  .card .meta { font-size:11px; color:#8b95a7; margin-top:4px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:10px;
+           font-weight:700; letter-spacing:.04em; margin-bottom:6px; }
+  .b-ok { background:#12351f; color:#4ade80; }
+  .b-wait { background:#352a12; color:#f5c63c; }
+  .b-old { background:#22242c; color:#8b95a7; }
+  .stats { display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+  .stat { background:#0f131b; border:1px solid #232b3a; border-radius:8px;
+          padding:4px 8px; font-size:11px; }
+  .stat b { display:block; font-size:13px; }
+  .sw { display:inline-block; width:12px; height:12px; border-radius:3px;
+        margin:0 1px; border:1px solid #333; vertical-align:middle; }
+  .detail { max-width:1000px; margin:0 auto 30px; padding:0 16px; display:none;
+            flex-direction:column; gap:14px; }
+  .detail video { width:100%; border-radius:10px; background:#000; }
+  .card2 { background:#131722; border:1px solid #232b3a; border-radius:12px; padding:16px; }
+  .card2 h3 { margin:0 0 12px; font-size:13px; text-transform:uppercase;
+              letter-spacing:.08em; color:#8b95a7; }
+  .dgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+  .metric { background:#0f131b; border:1px solid #232b3a; border-radius:10px; padding:10px; }
+  .metric .k { font-size:10px; color:#8b95a7; text-transform:uppercase; }
+  .metric .v { font-size:17px; font-weight:800; margin-top:3px; }
+  pre { font-size:11px; white-space:pre-wrap; color:#8b95a7; max-height:200px; overflow:auto; }
 </style></head><body>
-<header><h1>🎬 Style Lab</h1>
-<p class="sub">Drop a reference video → instant style profile → the agent builds your video to match</p></header>
+<header><h1>🎬 Reference Library</h1>
+<p class="sub">Drop reference videos → fast upload → auto style analysis → build videos that match</p></header>
+
 <div class="drop" id="drop">
-  <b>Drop a video here</b>
-  <small>MP4 · any length · analyzed in seconds (cuts, zooms, motion budget, colors)</small>
-  <input type="file" id="file" accept="video/*" hidden>
+  <b>Drop videos here (multiple allowed)</b>
+  <small>MP4 · fast parallel upload · analyzed in seconds</small>
+  <input type="file" id="file" accept="video/*" multiple hidden>
 </div>
 <div class="urlbar">
   <input id="url" placeholder="…or paste a video URL (yt-dlp)">
   <button onclick="fetchUrl()">Grab URL</button>
 </div>
 <div id="status"></div>
-<div class="wrap" id="main" style="display:none">
-  <div class="card"><video id="player" controls playsinline></video></div>
-  <div class="card"><h2>Style profile</h2><div class="grid" id="metrics"></div></div>
-  <div class="card"><h2>Shot table</h2><div style="overflow:auto"><table id="shots"></table></div></div>
-  <div class="card"><h2>Analysis report</h2><pre id="report" style="font-size:12px;white-space:pre-wrap;color:#8b95a7;max-height:220px;overflow:auto"></pre></div>
+
+<h2 class="sec">Your reference library</h2>
+<div class="grid" id="lib"></div>
+
+<div class="detail" id="detail">
+  <div class="card2"><video id="player" controls playsinline></video></div>
+  <div class="card2"><h3>Style profile</h3><div class="dgrid" id="metrics"></div></div>
+  <div class="card2"><h3>Analysis report</h3><pre id="report"></pre></div>
 </div>
+
 <script>
 const drop = document.getElementById('drop'), fi = document.getElementById('file');
 drop.onclick = () => fi.click();
@@ -445,115 +482,111 @@ drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
 drop.ondragleave = () => drop.classList.remove('over');
 drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over');
   uploadMany([...e.dataTransfer.files]); };
-fi.onchange = () => { uploadMany([...fi.files]); fi.value = ''; };
+fi.onchange = () => { uploadMany([...fi.files]); fi.value=''; };
 
-// queue: uploads EVERY dropped file one after another (fixes multi-drop)
-let qBusy = false;
 async function uploadMany(files) {
   if (!files.length) return;
-  const st = document.getElementById('status');
   for (let n = 0; n < files.length; n++) {
-    st.textContent = `Uploading file ${n+1} of ${files.length}: ${files[n].name}`;
-    await upload(files[n], files.length, n + 1);
+    document.getElementById('status').textContent = `Uploading file ${n+1} of ${files.length}: ${files[n].name}`;
+    await upload(files[n], files.length, n+1);
   }
+  refresh();
 }
 
-async function upload(file, totalFiles = 1, fileNum = 1) {
+async function upload(file) {
   const st = document.getElementById('status');
-  const CHUNK = 4 * 1024 * 1024;            // 4 MB chunks
-  const CONC = 4;                           // 4 parallel uploads
-  const total = Math.max(1, Math.ceil(file.size / CHUNK));
-  const job = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
-  let sent = 0, next = 0;
-  const t0 = performance.now();
-  st.textContent = `Uploading ${file.name} (${(file.size/1e6).toFixed(1)} MB in ${total} chunks, ${CONC} parallel)…`;
+  const CHUNK = 4*1024*1024, CONC = 4;
+  const total = Math.max(1, Math.ceil(file.size/CHUNK));
+  const job = Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+  let sent = 0, next = 0; const t0 = performance.now();
+  st.textContent = `Uploading ${file.name} (${(file.size/1e6).toFixed(1)} MB, ${CONC} parallel)…`;
   async function send(i) {
-    const blob = file.slice(i * CHUNK, Math.min((i + 1) * CHUNK, file.size));
-    await fetch(`/chunk?job=${job}&index=${i}&total=${total}`, {method: 'POST', body: blob});
+    const blob = file.slice(i*CHUNK, Math.min((i+1)*CHUNK, file.size));
+    await fetch(`/chunk?job=${job}&index=${i}&total=${total}`, {method:'POST', body: blob});
     sent += blob.size;
-    const el = (performance.now() - t0) / 1000;
-    const mbps = sent / 1e6 / Math.max(el, 0.01);
-    const pct = Math.round(sent / file.size * 100);
-    st.innerHTML = `Uploading… <b>${pct}%</b> — ${(sent/1e6).toFixed(1)}/${(file.size/1e6).toFixed(1)} MB — <b>${mbps.toFixed(1)} MB/s</b> (${CONC} parallel)`;
+    const mbps = sent/1e6/Math.max((performance.now()-t0)/1000, 0.01);
+    st.innerHTML = `Uploading… <b>${Math.round(sent/file.size*100)}%</b> — ${(sent/1e6).toFixed(1)}/${(file.size/1e6).toFixed(1)} MB — <b>${mbps.toFixed(1)} MB/s</b>`;
   }
-  async function worker() {
-    while (next < total) {
-      const i = next++;
-      try { await send(i); } catch (e) { st.textContent = 'Upload failed at chunk ' + i + ': ' + e; return; }
-    }
-  }
-  await Promise.all(Array.from({length: Math.min(CONC, total)}, worker));
-  st.textContent = 'Upload complete ✓ — starting analysis…';
-  const r = await fetch(`/complete?job=${job}&name=${encodeURIComponent(file.name)}`, {method: 'POST'});
+  async function worker() { while (next < total) { const i = next++; try { await send(i); } catch(e) { st.textContent='Upload failed: '+e; return; } } }
+  await Promise.all(Array.from({length: Math.min(CONC,total)}, worker));
+  st.textContent = 'Upload complete ✓ — analyzing…';
+  const r = await fetch(`/complete?job=${job}&name=${encodeURIComponent(file.name)}`, {method:'POST'});
   const j = await r.json();
-  if (j.error) { st.textContent = 'Error: ' + j.error; return; }
-  await fetch(`/analyze?job=${job}&file=${encodeURIComponent(j.file)}`, {method: 'POST'});
-  poll(j.job, j.file);
-}
-
-async function fetchUrl() {
-  const url = document.getElementById('url').value.trim();
-  if (!url) return;
-  const st = document.getElementById('status');
-  st.textContent = 'Trying to grab URL… (note: YouTube is blocked in this sandbox)';
-  const r = await fetch('/upload?url=' + encodeURIComponent(url), {method:'POST'});
-  const j = await r.json();
-  if (j.error) { st.textContent = j.error; return; }
-  st.textContent = 'Downloaded. Analyzing…';
+  if (j.error) { st.textContent = 'Error: '+j.error; return; }
+  await fetch(`/analyze?job=${job}&file=${encodeURIComponent(j.file)}`, {method:'POST'});
   poll(j.job, j.file);
 }
 
 async function poll(job, file) {
   const st = document.getElementById('status');
-  for (let i = 0; i < 120; i++) {
+  for (let i = 0; i < 240; i++) {
     await new Promise(res => setTimeout(res, 1000));
-    const r = await fetch('/jobs');
-    const jobs = await r.json();
+    const jobs = await (await fetch('/jobs')).json();
     const j = jobs[job];
     if (!j) continue;
-    if (j.state === 'error') { st.textContent = 'Error: ' + j.error; return; }
-    if (j.state === 'done') {
-      st.textContent = '';
-      show(j.result, file, job);
-      return;
-    }
+    if (j.state === 'error') { st.textContent = 'Error: '+j.error; return; }
+    if (j.state === 'done') { st.textContent = ''; refresh(); if (file) openDetail(j.result, file, job); return; }
     st.textContent = `Analyzing… ${j.progress || 10}%`;
   }
-  st.textContent = 'Timed out';
 }
 
-function show(p, file, job) {
-  document.getElementById('main').style.display = 'flex';
+async function refresh() {
+  const lib = await (await fetch('/library')).json();
+  const grid = document.getElementById('lib');
+  grid.innerHTML = lib.map(e => {
+    const b = e.analyzed ? (e.exists ? '<span class="badge b-ok">ANALYZED</span>'
+                                     : '<span class="badge b-old">REPORT ONLY</span>')
+                          : '<span class="badge b-wait">UPLOADED — analyze</span>';
+    const stats = e.analyzed
+      ? `<div class="stats">
+           <span class="stat"><b>${e.median}s</b>median cut</span>
+           <span class="stat"><b>${e.frozen}%</b>frozen</span>
+           <span class="stat"><b>${e.camera}%</b>camera</span>
+           <span class="stat"><b>${e.duration}s</b>length</span>
+         </div>
+         <div class="meta" style="margin-top:6px">${(e.palette||[]).map(c=>`<span class="sw" style="background:${c}"></span>`).join('')} ${e.camera_est}</div>`
+      : `<div class="meta">${(e.size/1e6).toFixed(1)} MB — not analyzed yet</div>`;
+    return `<div class="card" data-id="${e.id}" data-file="${e.file}" data-analyzed="${e.analyzed}" data-report="${e.report||''}">
+      <img src="/thumb?file=${encodeURIComponent(e.file)}" loading="lazy"
+           onerror="this.style.visibility='hidden'">
+      <div class="body">${b}<div class="name">${e.file}</div>${stats}</div></div>`;
+  }).join('');
+  grid.querySelectorAll('.card').forEach(c => c.onclick = () => cardClick(c));
+}
+
+async function cardClick(card) {
+  const id = card.dataset.id, file = card.dataset.file, report = card.dataset.report;
+  if (card.dataset.analyzed === 'true' && report) {
+    const data = await (await fetch('/report/' + report)).json();
+    openDetail(data, file, id);
+  } else {
+    document.getElementById('status').textContent = 'Analyzing ' + file + '…';
+    await fetch(`/analyze?job=${id}&file=${encodeURIComponent(file)}`, {method:'POST'});
+    poll(id, file);
+  }
+}
+
+function openDetail(p, file, id) {
+  const d = document.getElementById('detail');
+  d.style.display = 'flex';
   const pl = document.getElementById('player');
   pl.src = '/uploads/' + file;
   const c = p.cut_cadence, m = p.motion_budget;
-  const met = [
-    ['Shots', p.shots], ['Median cut', c.median + 's'],
-    ['Mean cut', c.mean + 's'], ['Range', c.min + '–' + c.max + 's'],
-    ['Duration', p.duration + 's'], ['FPS', p.fps || '?'],
-    ['Frozen', m.frozen_pct + '%'], ['Camera', m.camera_pct + '%'],
-    ['Character', m.character_pct + '%'],
-    ['Brightness', p.brightness],
-    ['Camera style', p.camera_estimate],
-  ];
+  const met = [['Duration', p.duration+'s'], ['FPS', p.fps||'?'], ['Shots', p.shots],
+    ['Median cut', c.median+'s'], ['Range', c.min+'–'+c.max+'s'],
+    ['Frozen', m.frozen_pct+'%'], ['Camera', m.camera_pct+'%'], ['Character', m.character_pct+'%'],
+    ['Brightness', p.brightness], ['Camera style', p.camera_estimate]];
   document.getElementById('metrics').innerHTML = met.map(([k,v]) =>
     `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
-  document.getElementById('metrics').insertAdjacentHTML('beforeend',
-    `<div class="metric"><div class="k">Palette</div><div class="v" style="font-size:14px">` +
-    p.palette.map(c => `<span class="swatch" style="background:${c}"></span>`).join('') + `</div></div>`);
-  const rows = p.shot_table.map((s,i) =>
-    `<tr><td>${i+1}</td><td>${s.start}s</td><td>${s.dur}s</td>
-     <td>${s.frozen}%</td><td>${s.cam}%</td><td>${s.active}%</td></tr>`).join('');
-  document.getElementById('shots').innerHTML =
-    `<tr><th>#</th><th>start</th><th>dur</th><th>frozen</th><th>camera</th><th>char</th></tr>` + rows;
-  document.getElementById('report').textContent =
-    JSON.stringify(p, null, 2).slice(0, 4000);
-  document.title = 'Style Lab — ' + p.file;
+  document.getElementById('report').textContent = JSON.stringify(p, null, 2).slice(0, 5000);
+  d.scrollIntoView({behavior:'smooth'});
 }
+
+refresh();
 </script></body></html>"""
 
 
 if __name__ == "__main__":
     srv = ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
-    print(f"Style Lab on http://0.0.0.0:{PORT}  (uploads -> {UPLOADS}, reports -> {REPORTS})", flush=True)
+    print(f"Reference Library on http://0.0.0.0:{PORT}", flush=True)
     srv.serve_forever()
