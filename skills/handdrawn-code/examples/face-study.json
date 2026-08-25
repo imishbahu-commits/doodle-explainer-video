@@ -1,0 +1,21 @@
+{
+  "width": 1376,
+  "height": 768,
+  "bg": "#FFFFFF",
+  "seed": 17,
+  "roughness": 1.2,
+  "bowing": 1.0,
+  "strokeWidth": 4,
+  "title": "THE STRANGER — FACE STUDY",
+  "elements": [
+    {"type": "ground", "x": 688, "y": 700, "w": 1300, "h": 90, "color": "#E8E0CE"},
+    {"type": "person", "x": 230, "y": 680, "scale": 0.52, "emotion": "worried", "hair": "short", "hairColor": "brown", "cloth": "shirt", "outfit": "grey", "outfit2": "navy", "pose": "stand"},
+    {"type": "label", "x": 230, "y": 720, "text": "worried", "size": 34, "font": "patrick"},
+    {"type": "person", "x": 530, "y": 680, "scale": 0.52, "emotion": "angry", "hair": "messy", "hairColor": "dark", "cloth": "sweater", "outfit": "red", "outfit2": "navy", "pose": "stand"},
+    {"type": "label", "x": 530, "y": 720, "text": "angry", "size": 34, "font": "patrick"},
+    {"type": "person", "x": 830, "y": 680, "scale": 0.52, "emotion": "surprised", "hair": "side", "hairColor": "blonde", "cloth": "shirt", "outfit": "blue", "outfit2": "navy", "pose": "stand"},
+    {"type": "label", "x": 830, "y": 720, "text": "surprised", "size": 34, "font": "patrick"},
+    {"type": "person", "x": 1130, "y": 680, "scale": 0.52, "emotion": "laugh", "hair": "bald", "hairColor": "grey", "cloth": "coat", "outfit": "green", "outfit2": "navy", "pose": "stand"},
+    {"type": "label", "x": 1130, "y": 720, "text": "laugh", "size": 34, "font": "patrick"}
+  ]
+}
