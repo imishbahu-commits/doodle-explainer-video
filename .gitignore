@@ -26,3 +26,7 @@ projects/dinzo-octopus/parts/
 # NOTE: voice clips (audio/) ARE committed — they're the expensive part to recreate.
 projects/dinzo-honeybee/build_work/
 projects/dinzo-honeybee/parts/
+
+# FOODCODE pineapple project: render scratch + parts (regenerable)
+projects/foodcode-pineapple/build_work/
+projects/foodcode-pineapple/parts/
