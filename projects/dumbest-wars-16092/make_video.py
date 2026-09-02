@@ -42,9 +42,10 @@ def main() -> None:
                         "-t",f"{hold:.3f}",
                         "-vf",f"scale={W}:{H}:force_original_aspect_ratio=decrease,"
                               f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+                        "-af","apad",
                         "-r",str(FPS),"-c:v","libx264","-preset","veryfast","-crf","20",
                         "-c:a","aac","-b:a","192k","-ar","44100","-ac","2",
-                        "-shortest",str(seg)])
+                        str(seg)])
         segs.append(seg)
         manifest.append(dict(n=b["n"], vo=d, hold=hold, start=cursor,
                              end=cursor+hold, text=b["text"]))
