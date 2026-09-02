@@ -5,8 +5,8 @@ import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
-KOKORO_MODEL = "projects/dumbest-wars/assets/models/kokoro-quantized.onnx"
-KOKORO_VOICES = "projects/dumbest-wars/assets/models/voices.npz"
+KOKORO_MODEL = "projects/dumbest-wars-16092/assets/models/kokoro-quantized.onnx"
+KOKORO_VOICES = "projects/dumbest-wars-16092/assets/models/voices.npz"
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Kokoro local TTS (offline)")

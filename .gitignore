@@ -1,45 +1,4 @@
-.DS_Store
-*.zip
-*.mp4
-
-# The repository owner confirmed redistribution rights for this frozen
-# reference set. Large media is stored through Git LFS (see .gitattributes).
-!references/paint-explainer-videos/*.mp4
-!references/paint-explainer-videos/*.webm
-!references/paint-explainer-videos/*.mkv
-
-.env
-.venv/
+projects/*/assets/models/
 __pycache__/
-build/
-image-search/
-
-# OpenMontage preview demos (not committed per user request)
-projects/openmontage-demo/
-
-# Speech-to-text model (68MB; reproducible from public GitHub repo)
-tools/models/
-
-# Intermediate TTS audio + segments (regenerable from beat prompts + script)
-projects/dinzo-crocodile/audio/
-projects/dinzo-crocodile/segments/
-
-# Per-beat narration audio clips are SAVED in git (small, and they are the
-# exact clips needed for re-assembly). Only the ffmpeg scratch dir is ignored.
-projects/dinzo-mosquito/work/
-projects/dinzo-mantis/work/
-projects/dinzo-anglerfish/work/
-projects/dinzo-dronebee/work/
-projects/dinzo-hyena/work/
-projects/dinzo-octopus/work/
-projects/dinzo-seahorse/work/
-
-# Keep the assembled dinzo mp4s (deliverables + rebuildable checkpoints)
-# even though *.mp4 is ignored globally.
-!projects/dinzo-mosquito/*.mp4
-!projects/dinzo-mantis/*.mp4
-!projects/dinzo-anglerfish/*.mp4
-!projects/dinzo-dronebee/*.mp4
-!projects/dinzo-hyena/*.mp4
-!projects/dinzo-octopus/*.mp4
-!projects/dinzo-seahorse/*.mp4
+*.pyc
+uploads/
