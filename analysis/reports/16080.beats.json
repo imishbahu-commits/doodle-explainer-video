@@ -1,0 +1,1276 @@
+{
+  "video": "16080.mp4",
+  "path": "/home/user/doodle-explainer-video/uploads/16080.mp4",
+  "fps": 29.97,
+  "width": 640,
+  "height": 360,
+  "duration": 637.9,
+  "beat_count": 158,
+  "avg_beat_duration": 4.037,
+  "beats": [
+    {
+      "index": 0,
+      "start": 0.0,
+      "end": 1.801,
+      "duration": 1.801,
+      "duration_frames": 54.0,
+      "image": "analysis/frames/16080/16080_beat_0000.png"
+    },
+    {
+      "index": 1,
+      "start": 1.802,
+      "end": 2.802,
+      "duration": 1.0,
+      "duration_frames": 30.0,
+      "image": "analysis/frames/16080/16080_beat_0001.png"
+    },
+    {
+      "index": 2,
+      "start": 2.803,
+      "end": 4.17,
+      "duration": 1.367,
+      "duration_frames": 41.0,
+      "image": "analysis/frames/16080/16080_beat_0002.png"
+    },
+    {
+      "index": 3,
+      "start": 4.171,
+      "end": 7.506,
+      "duration": 3.336,
+      "duration_frames": 100.0,
+      "image": "analysis/frames/16080/16080_beat_0003.png"
+    },
+    {
+      "index": 4,
+      "start": 7.508,
+      "end": 11.711,
+      "duration": 4.203,
+      "duration_frames": 126.0,
+      "image": "analysis/frames/16080/16080_beat_0004.png"
+    },
+    {
+      "index": 5,
+      "start": 11.712,
+      "end": 15.514,
+      "duration": 3.803,
+      "duration_frames": 114.0,
+      "image": "analysis/frames/16080/16080_beat_0005.png"
+    },
+    {
+      "index": 6,
+      "start": 15.515,
+      "end": 21.153,
+      "duration": 5.638,
+      "duration_frames": 169.0,
+      "image": "analysis/frames/16080/16080_beat_0006.png"
+    },
+    {
+      "index": 7,
+      "start": 21.154,
+      "end": 27.326,
+      "duration": 6.172,
+      "duration_frames": 185.0,
+      "image": "analysis/frames/16080/16080_beat_0007.png"
+    },
+    {
+      "index": 8,
+      "start": 27.327,
+      "end": 28.995,
+      "duration": 1.667,
+      "duration_frames": 50.0,
+      "image": "analysis/frames/16080/16080_beat_0008.png"
+    },
+    {
+      "index": 9,
+      "start": 28.996,
+      "end": 32.565,
+      "duration": 3.569,
+      "duration_frames": 107.0,
+      "image": "analysis/frames/16080/16080_beat_0009.png"
+    },
+    {
+      "index": 10,
+      "start": 32.566,
+      "end": 42.708,
+      "duration": 10.142,
+      "duration_frames": 304.0,
+      "image": "analysis/frames/16080/16080_beat_0010.png"
+    },
+    {
+      "index": 11,
+      "start": 42.709,
+      "end": 45.711,
+      "duration": 3.002,
+      "duration_frames": 90.0,
+      "image": "analysis/frames/16080/16080_beat_0011.png"
+    },
+    {
+      "index": 12,
+      "start": 45.712,
+      "end": 48.881,
+      "duration": 3.169,
+      "duration_frames": 95.0,
+      "image": "analysis/frames/16080/16080_beat_0012.png"
+    },
+    {
+      "index": 13,
+      "start": 48.882,
+      "end": 51.217,
+      "duration": 2.335,
+      "duration_frames": 70.0,
+      "image": "analysis/frames/16080/16080_beat_0013.png"
+    },
+    {
+      "index": 14,
+      "start": 51.218,
+      "end": 54.954,
+      "duration": 3.736,
+      "duration_frames": 112.0,
+      "image": "analysis/frames/16080/16080_beat_0014.png"
+    },
+    {
+      "index": 15,
+      "start": 54.955,
+      "end": 58.291,
+      "duration": 3.336,
+      "duration_frames": 100.0,
+      "image": "analysis/frames/16080/16080_beat_0015.png"
+    },
+    {
+      "index": 16,
+      "start": 58.292,
+      "end": 61.594,
+      "duration": 3.302,
+      "duration_frames": 99.0,
+      "image": "analysis/frames/16080/16080_beat_0016.png"
+    },
+    {
+      "index": 17,
+      "start": 61.595,
+      "end": 64.697,
+      "duration": 3.102,
+      "duration_frames": 93.0,
+      "image": "analysis/frames/16080/16080_beat_0017.png"
+    },
+    {
+      "index": 18,
+      "start": 64.698,
+      "end": 65.564,
+      "duration": 0.867,
+      "duration_frames": 26.0,
+      "image": "analysis/frames/16080/16080_beat_0018.png"
+    },
+    {
+      "index": 19,
+      "start": 65.566,
+      "end": 67.967,
+      "duration": 2.401,
+      "duration_frames": 72.0,
+      "image": "analysis/frames/16080/16080_beat_0019.png"
+    },
+    {
+      "index": 20,
+      "start": 67.968,
+      "end": 73.973,
+      "duration": 6.005,
+      "duration_frames": 180.0,
+      "image": "analysis/frames/16080/16080_beat_0020.png"
+    },
+    {
+      "index": 21,
+      "start": 73.974,
+      "end": 76.042,
+      "duration": 2.068,
+      "duration_frames": 62.0,
+      "image": "analysis/frames/16080/16080_beat_0021.png"
+    },
+    {
+      "index": 22,
+      "start": 76.043,
+      "end": 78.511,
+      "duration": 2.468,
+      "duration_frames": 74.0,
+      "image": "analysis/frames/16080/16080_beat_0022.png"
+    },
+    {
+      "index": 23,
+      "start": 78.512,
+      "end": 84.417,
+      "duration": 5.905,
+      "duration_frames": 177.0,
+      "image": "analysis/frames/16080/16080_beat_0023.png"
+    },
+    {
+      "index": 24,
+      "start": 84.418,
+      "end": 88.22,
+      "duration": 3.803,
+      "duration_frames": 114.0,
+      "image": "analysis/frames/16080/16080_beat_0024.png"
+    },
+    {
+      "index": 25,
+      "start": 88.221,
+      "end": 92.758,
+      "duration": 4.537,
+      "duration_frames": 136.0,
+      "image": "analysis/frames/16080/16080_beat_0025.png"
+    },
+    {
+      "index": 26,
+      "start": 92.759,
+      "end": 97.797,
+      "duration": 5.037,
+      "duration_frames": 151.0,
+      "image": "analysis/frames/16080/16080_beat_0026.png"
+    },
+    {
+      "index": 27,
+      "start": 97.798,
+      "end": 105.137,
+      "duration": 7.34,
+      "duration_frames": 220.0,
+      "image": "analysis/frames/16080/16080_beat_0027.png"
+    },
+    {
+      "index": 28,
+      "start": 105.138,
+      "end": 110.209,
+      "duration": 5.071,
+      "duration_frames": 152.0,
+      "image": "analysis/frames/16080/16080_beat_0028.png"
+    },
+    {
+      "index": 29,
+      "start": 110.21,
+      "end": 114.413,
+      "duration": 4.203,
+      "duration_frames": 126.0,
+      "image": "analysis/frames/16080/16080_beat_0029.png"
+    },
+    {
+      "index": 30,
+      "start": 114.414,
+      "end": 120.519,
+      "duration": 6.105,
+      "duration_frames": 183.0,
+      "image": "analysis/frames/16080/16080_beat_0030.png"
+    },
+    {
+      "index": 31,
+      "start": 120.52,
+      "end": 125.358,
+      "duration": 4.837,
+      "duration_frames": 145.0,
+      "image": "analysis/frames/16080/16080_beat_0031.png"
+    },
+    {
+      "index": 32,
+      "start": 125.359,
+      "end": 126.125,
+      "duration": 0.766,
+      "duration_frames": 23.0,
+      "image": "analysis/frames/16080/16080_beat_0032.png"
+    },
+    {
+      "index": 33,
+      "start": 126.126,
+      "end": 127.326,
+      "duration": 1.2,
+      "duration_frames": 36.0,
+      "image": "analysis/frames/16080/16080_beat_0033.png"
+    },
+    {
+      "index": 34,
+      "start": 127.327,
+      "end": 128.427,
+      "duration": 1.1,
+      "duration_frames": 33.0,
+      "image": "analysis/frames/16080/16080_beat_0034.png"
+    },
+    {
+      "index": 35,
+      "start": 128.428,
+      "end": 130.763,
+      "duration": 2.335,
+      "duration_frames": 70.0,
+      "image": "analysis/frames/16080/16080_beat_0035.png"
+    },
+    {
+      "index": 36,
+      "start": 130.764,
+      "end": 132.698,
+      "duration": 1.934,
+      "duration_frames": 58.0,
+      "image": "analysis/frames/16080/16080_beat_0036.png"
+    },
+    {
+      "index": 37,
+      "start": 132.699,
+      "end": 134.9,
+      "duration": 2.201,
+      "duration_frames": 66.0,
+      "image": "analysis/frames/16080/16080_beat_0037.png"
+    },
+    {
+      "index": 38,
+      "start": 134.901,
+      "end": 136.268,
+      "duration": 1.367,
+      "duration_frames": 41.0,
+      "image": "analysis/frames/16080/16080_beat_0038.png"
+    },
+    {
+      "index": 39,
+      "start": 136.269,
+      "end": 140.272,
+      "duration": 4.003,
+      "duration_frames": 120.0,
+      "image": "analysis/frames/16080/16080_beat_0039.png"
+    },
+    {
+      "index": 40,
+      "start": 140.273,
+      "end": 145.211,
+      "duration": 4.937,
+      "duration_frames": 148.0,
+      "image": "analysis/frames/16080/16080_beat_0040.png"
+    },
+    {
+      "index": 41,
+      "start": 145.212,
+      "end": 149.882,
+      "duration": 4.67,
+      "duration_frames": 140.0,
+      "image": "analysis/frames/16080/16080_beat_0041.png"
+    },
+    {
+      "index": 42,
+      "start": 149.883,
+      "end": 152.218,
+      "duration": 2.335,
+      "duration_frames": 70.0,
+      "image": "analysis/frames/16080/16080_beat_0042.png"
+    },
+    {
+      "index": 43,
+      "start": 152.219,
+      "end": 157.356,
+      "duration": 5.137,
+      "duration_frames": 154.0,
+      "image": "analysis/frames/16080/16080_beat_0043.png"
+    },
+    {
+      "index": 44,
+      "start": 157.357,
+      "end": 159.492,
+      "duration": 2.134,
+      "duration_frames": 64.0,
+      "image": "analysis/frames/16080/16080_beat_0044.png"
+    },
+    {
+      "index": 45,
+      "start": 159.493,
+      "end": 160.159,
+      "duration": 0.666,
+      "duration_frames": 20.0,
+      "image": "analysis/frames/16080/16080_beat_0045.png"
+    },
+    {
+      "index": 46,
+      "start": 160.16,
+      "end": 160.793,
+      "duration": 0.633,
+      "duration_frames": 19.0,
+      "image": "analysis/frames/16080/16080_beat_0046.png"
+    },
+    {
+      "index": 47,
+      "start": 160.794,
+      "end": 164.03,
+      "duration": 3.236,
+      "duration_frames": 97.0,
+      "image": "analysis/frames/16080/16080_beat_0047.png"
+    },
+    {
+      "index": 48,
+      "start": 164.031,
+      "end": 168.601,
+      "duration": 4.57,
+      "duration_frames": 137.0,
+      "image": "analysis/frames/16080/16080_beat_0048.png"
+    },
+    {
+      "index": 49,
+      "start": 168.602,
+      "end": 176.742,
+      "duration": 8.14,
+      "duration_frames": 244.0,
+      "image": "analysis/frames/16080/16080_beat_0049.png"
+    },
+    {
+      "index": 50,
+      "start": 176.743,
+      "end": 177.443,
+      "duration": 0.7,
+      "duration_frames": 21.0,
+      "image": "analysis/frames/16080/16080_beat_0050.png"
+    },
+    {
+      "index": 51,
+      "start": 177.444,
+      "end": 179.378,
+      "duration": 1.934,
+      "duration_frames": 58.0,
+      "image": "analysis/frames/16080/16080_beat_0051.png"
+    },
+    {
+      "index": 52,
+      "start": 179.379,
+      "end": 185.051,
+      "duration": 5.671,
+      "duration_frames": 170.0,
+      "image": "analysis/frames/16080/16080_beat_0052.png"
+    },
+    {
+      "index": 53,
+      "start": 185.052,
+      "end": 187.053,
+      "duration": 2.001,
+      "duration_frames": 60.0,
+      "image": "analysis/frames/16080/16080_beat_0053.png"
+    },
+    {
+      "index": 54,
+      "start": 187.054,
+      "end": 193.893,
+      "duration": 6.839,
+      "duration_frames": 205.0,
+      "image": "analysis/frames/16080/16080_beat_0054.png"
+    },
+    {
+      "index": 55,
+      "start": 193.894,
+      "end": 199.732,
+      "duration": 5.838,
+      "duration_frames": 175.0,
+      "image": "analysis/frames/16080/16080_beat_0055.png"
+    },
+    {
+      "index": 56,
+      "start": 199.733,
+      "end": 203.903,
+      "duration": 4.17,
+      "duration_frames": 125.0,
+      "image": "analysis/frames/16080/16080_beat_0056.png"
+    },
+    {
+      "index": 57,
+      "start": 203.904,
+      "end": 213.245,
+      "duration": 9.342,
+      "duration_frames": 280.0,
+      "image": "analysis/frames/16080/16080_beat_0057.png"
+    },
+    {
+      "index": 58,
+      "start": 213.246,
+      "end": 218.851,
+      "duration": 5.605,
+      "duration_frames": 168.0,
+      "image": "analysis/frames/16080/16080_beat_0058.png"
+    },
+    {
+      "index": 59,
+      "start": 218.852,
+      "end": 222.121,
+      "duration": 3.269,
+      "duration_frames": 98.0,
+      "image": "analysis/frames/16080/16080_beat_0059.png"
+    },
+    {
+      "index": 60,
+      "start": 222.122,
+      "end": 228.594,
+      "duration": 6.472,
+      "duration_frames": 194.0,
+      "image": "analysis/frames/16080/16080_beat_0060.png"
+    },
+    {
+      "index": 61,
+      "start": 228.595,
+      "end": 230.062,
+      "duration": 1.467,
+      "duration_frames": 44.0,
+      "image": "analysis/frames/16080/16080_beat_0061.png"
+    },
+    {
+      "index": 62,
+      "start": 230.063,
+      "end": 231.864,
+      "duration": 1.801,
+      "duration_frames": 54.0,
+      "image": "analysis/frames/16080/16080_beat_0062.png"
+    },
+    {
+      "index": 63,
+      "start": 231.865,
+      "end": 234.8,
+      "duration": 2.935,
+      "duration_frames": 88.0,
+      "image": "analysis/frames/16080/16080_beat_0063.png"
+    },
+    {
+      "index": 64,
+      "start": 234.801,
+      "end": 240.339,
+      "duration": 5.538,
+      "duration_frames": 166.0,
+      "image": "analysis/frames/16080/16080_beat_0064.png"
+    },
+    {
+      "index": 65,
+      "start": 240.34,
+      "end": 241.14,
+      "duration": 0.8,
+      "duration_frames": 24.0,
+      "image": "analysis/frames/16080/16080_beat_0065.png"
+    },
+    {
+      "index": 66,
+      "start": 241.141,
+      "end": 243.042,
+      "duration": 1.901,
+      "duration_frames": 57.0,
+      "image": "analysis/frames/16080/16080_beat_0066.png"
+    },
+    {
+      "index": 67,
+      "start": 243.043,
+      "end": 246.779,
+      "duration": 3.736,
+      "duration_frames": 112.0,
+      "image": "analysis/frames/16080/16080_beat_0067.png"
+    },
+    {
+      "index": 68,
+      "start": 246.78,
+      "end": 254.62,
+      "duration": 7.84,
+      "duration_frames": 235.0,
+      "image": "analysis/frames/16080/16080_beat_0068.png"
+    },
+    {
+      "index": 69,
+      "start": 254.621,
+      "end": 259.125,
+      "duration": 4.504,
+      "duration_frames": 135.0,
+      "image": "analysis/frames/16080/16080_beat_0069.png"
+    },
+    {
+      "index": 70,
+      "start": 259.126,
+      "end": 260.793,
+      "duration": 1.667,
+      "duration_frames": 50.0,
+      "image": "analysis/frames/16080/16080_beat_0070.png"
+    },
+    {
+      "index": 71,
+      "start": 260.794,
+      "end": 265.197,
+      "duration": 4.403,
+      "duration_frames": 132.0,
+      "image": "analysis/frames/16080/16080_beat_0071.png"
+    },
+    {
+      "index": 72,
+      "start": 265.198,
+      "end": 275.407,
+      "duration": 10.209,
+      "duration_frames": 306.0,
+      "image": "analysis/frames/16080/16080_beat_0072.png"
+    },
+    {
+      "index": 73,
+      "start": 275.408,
+      "end": 280.78,
+      "duration": 5.371,
+      "duration_frames": 161.0,
+      "image": "analysis/frames/16080/16080_beat_0073.png"
+    },
+    {
+      "index": 74,
+      "start": 280.781,
+      "end": 286.418,
+      "duration": 5.638,
+      "duration_frames": 169.0,
+      "image": "analysis/frames/16080/16080_beat_0074.png"
+    },
+    {
+      "index": 75,
+      "start": 286.419,
+      "end": 289.455,
+      "duration": 3.035,
+      "duration_frames": 91.0,
+      "image": "analysis/frames/16080/16080_beat_0075.png"
+    },
+    {
+      "index": 76,
+      "start": 289.456,
+      "end": 292.625,
+      "duration": 3.169,
+      "duration_frames": 95.0,
+      "image": "analysis/frames/16080/16080_beat_0076.png"
+    },
+    {
+      "index": 77,
+      "start": 292.626,
+      "end": 300.432,
+      "duration": 7.807,
+      "duration_frames": 234.0,
+      "image": "analysis/frames/16080/16080_beat_0077.png"
+    },
+    {
+      "index": 78,
+      "start": 300.433,
+      "end": 303.702,
+      "duration": 3.269,
+      "duration_frames": 98.0,
+      "image": "analysis/frames/16080/16080_beat_0078.png"
+    },
+    {
+      "index": 79,
+      "start": 303.703,
+      "end": 310.276,
+      "duration": 6.572,
+      "duration_frames": 197.0,
+      "image": "analysis/frames/16080/16080_beat_0079.png"
+    },
+    {
+      "index": 80,
+      "start": 310.277,
+      "end": 311.177,
+      "duration": 0.9,
+      "duration_frames": 27.0,
+      "image": "analysis/frames/16080/16080_beat_0080.png"
+    },
+    {
+      "index": 81,
+      "start": 311.178,
+      "end": 312.878,
+      "duration": 1.701,
+      "duration_frames": 51.0,
+      "image": "analysis/frames/16080/16080_beat_0081.png"
+    },
+    {
+      "index": 82,
+      "start": 312.879,
+      "end": 319.385,
+      "duration": 6.506,
+      "duration_frames": 195.0,
+      "image": "analysis/frames/16080/16080_beat_0082.png"
+    },
+    {
+      "index": 83,
+      "start": 319.386,
+      "end": 323.522,
+      "duration": 4.136,
+      "duration_frames": 124.0,
+      "image": "analysis/frames/16080/16080_beat_0083.png"
+    },
+    {
+      "index": 84,
+      "start": 323.523,
+      "end": 328.26,
+      "duration": 4.737,
+      "duration_frames": 142.0,
+      "image": "analysis/frames/16080/16080_beat_0084.png"
+    },
+    {
+      "index": 85,
+      "start": 328.261,
+      "end": 332.298,
+      "duration": 4.036,
+      "duration_frames": 121.0,
+      "image": "analysis/frames/16080/16080_beat_0085.png"
+    },
+    {
+      "index": 86,
+      "start": 332.299,
+      "end": 336.669,
+      "duration": 4.37,
+      "duration_frames": 131.0,
+      "image": "analysis/frames/16080/16080_beat_0086.png"
+    },
+    {
+      "index": 87,
+      "start": 336.67,
+      "end": 339.071,
+      "duration": 2.401,
+      "duration_frames": 72.0,
+      "image": "analysis/frames/16080/16080_beat_0087.png"
+    },
+    {
+      "index": 88,
+      "start": 339.072,
+      "end": 344.276,
+      "duration": 5.204,
+      "duration_frames": 156.0,
+      "image": "analysis/frames/16080/16080_beat_0088.png"
+    },
+    {
+      "index": 89,
+      "start": 344.277,
+      "end": 348.247,
+      "duration": 3.97,
+      "duration_frames": 119.0,
+      "image": "analysis/frames/16080/16080_beat_0089.png"
+    },
+    {
+      "index": 90,
+      "start": 348.248,
+      "end": 353.586,
+      "duration": 5.338,
+      "duration_frames": 160.0,
+      "image": "analysis/frames/16080/16080_beat_0090.png"
+    },
+    {
+      "index": 91,
+      "start": 353.587,
+      "end": 360.96,
+      "duration": 7.373,
+      "duration_frames": 221.0,
+      "image": "analysis/frames/16080/16080_beat_0091.png"
+    },
+    {
+      "index": 92,
+      "start": 360.961,
+      "end": 367.333,
+      "duration": 6.372,
+      "duration_frames": 191.0,
+      "image": "analysis/frames/16080/16080_beat_0092.png"
+    },
+    {
+      "index": 93,
+      "start": 367.334,
+      "end": 372.504,
+      "duration": 5.171,
+      "duration_frames": 155.0,
+      "image": "analysis/frames/16080/16080_beat_0093.png"
+    },
+    {
+      "index": 94,
+      "start": 372.505,
+      "end": 373.305,
+      "duration": 0.8,
+      "duration_frames": 24.0,
+      "image": "analysis/frames/16080/16080_beat_0094.png"
+    },
+    {
+      "index": 95,
+      "start": 373.306,
+      "end": 374.874,
+      "duration": 1.567,
+      "duration_frames": 47.0,
+      "image": "analysis/frames/16080/16080_beat_0095.png"
+    },
+    {
+      "index": 96,
+      "start": 374.875,
+      "end": 379.245,
+      "duration": 4.37,
+      "duration_frames": 131.0,
+      "image": "analysis/frames/16080/16080_beat_0096.png"
+    },
+    {
+      "index": 97,
+      "start": 379.246,
+      "end": 383.082,
+      "duration": 3.836,
+      "duration_frames": 115.0,
+      "image": "analysis/frames/16080/16080_beat_0097.png"
+    },
+    {
+      "index": 98,
+      "start": 383.083,
+      "end": 386.886,
+      "duration": 3.803,
+      "duration_frames": 114.0,
+      "image": "analysis/frames/16080/16080_beat_0098.png"
+    },
+    {
+      "index": 99,
+      "start": 386.887,
+      "end": 393.859,
+      "duration": 6.973,
+      "duration_frames": 209.0,
+      "image": "analysis/frames/16080/16080_beat_0099.png"
+    },
+    {
+      "index": 100,
+      "start": 393.86,
+      "end": 397.83,
+      "duration": 3.97,
+      "duration_frames": 119.0,
+      "image": "analysis/frames/16080/16080_beat_0100.png"
+    },
+    {
+      "index": 101,
+      "start": 397.831,
+      "end": 399.565,
+      "duration": 1.734,
+      "duration_frames": 52.0,
+      "image": "analysis/frames/16080/16080_beat_0101.png"
+    },
+    {
+      "index": 102,
+      "start": 399.566,
+      "end": 401.834,
+      "duration": 2.268,
+      "duration_frames": 68.0,
+      "image": "analysis/frames/16080/16080_beat_0102.png"
+    },
+    {
+      "index": 103,
+      "start": 401.835,
+      "end": 406.238,
+      "duration": 4.403,
+      "duration_frames": 132.0,
+      "image": "analysis/frames/16080/16080_beat_0103.png"
+    },
+    {
+      "index": 104,
+      "start": 406.239,
+      "end": 409.308,
+      "duration": 3.069,
+      "duration_frames": 92.0,
+      "image": "analysis/frames/16080/16080_beat_0104.png"
+    },
+    {
+      "index": 105,
+      "start": 409.309,
+      "end": 410.609,
+      "duration": 1.3,
+      "duration_frames": 39.0,
+      "image": "analysis/frames/16080/16080_beat_0105.png"
+    },
+    {
+      "index": 106,
+      "start": 410.61,
+      "end": 418.817,
+      "duration": 8.207,
+      "duration_frames": 246.0,
+      "image": "analysis/frames/16080/16080_beat_0106.png"
+    },
+    {
+      "index": 107,
+      "start": 418.818,
+      "end": 422.588,
+      "duration": 3.769,
+      "duration_frames": 113.0,
+      "image": "analysis/frames/16080/16080_beat_0107.png"
+    },
+    {
+      "index": 108,
+      "start": 422.589,
+      "end": 426.358,
+      "duration": 3.769,
+      "duration_frames": 113.0,
+      "image": "analysis/frames/16080/16080_beat_0108.png"
+    },
+    {
+      "index": 109,
+      "start": 426.359,
+      "end": 429.628,
+      "duration": 3.269,
+      "duration_frames": 98.0,
+      "image": "analysis/frames/16080/16080_beat_0109.png"
+    },
+    {
+      "index": 110,
+      "start": 429.629,
+      "end": 433.032,
+      "duration": 3.402,
+      "duration_frames": 102.0,
+      "image": "analysis/frames/16080/16080_beat_0110.png"
+    },
+    {
+      "index": 111,
+      "start": 433.033,
+      "end": 438.337,
+      "duration": 5.304,
+      "duration_frames": 159.0,
+      "image": "analysis/frames/16080/16080_beat_0111.png"
+    },
+    {
+      "index": 112,
+      "start": 438.338,
+      "end": 439.171,
+      "duration": 0.833,
+      "duration_frames": 25.0,
+      "image": "analysis/frames/16080/16080_beat_0112.png"
+    },
+    {
+      "index": 113,
+      "start": 439.172,
+      "end": 440.606,
+      "duration": 1.434,
+      "duration_frames": 43.0,
+      "image": "analysis/frames/16080/16080_beat_0113.png"
+    },
+    {
+      "index": 114,
+      "start": 440.607,
+      "end": 443.175,
+      "duration": 2.568,
+      "duration_frames": 77.0,
+      "image": "analysis/frames/16080/16080_beat_0114.png"
+    },
+    {
+      "index": 115,
+      "start": 443.176,
+      "end": 445.711,
+      "duration": 2.535,
+      "duration_frames": 76.0,
+      "image": "analysis/frames/16080/16080_beat_0115.png"
+    },
+    {
+      "index": 116,
+      "start": 445.712,
+      "end": 449.848,
+      "duration": 4.136,
+      "duration_frames": 124.0,
+      "image": "analysis/frames/16080/16080_beat_0116.png"
+    },
+    {
+      "index": 117,
+      "start": 449.849,
+      "end": 450.983,
+      "duration": 1.133,
+      "duration_frames": 34.0,
+      "image": "analysis/frames/16080/16080_beat_0117.png"
+    },
+    {
+      "index": 118,
+      "start": 450.984,
+      "end": 456.288,
+      "duration": 5.304,
+      "duration_frames": 159.0,
+      "image": "analysis/frames/16080/16080_beat_0118.png"
+    },
+    {
+      "index": 119,
+      "start": 456.289,
+      "end": 458.624,
+      "duration": 2.335,
+      "duration_frames": 70.0,
+      "image": "analysis/frames/16080/16080_beat_0119.png"
+    },
+    {
+      "index": 120,
+      "start": 458.625,
+      "end": 463.329,
+      "duration": 4.704,
+      "duration_frames": 141.0,
+      "image": "analysis/frames/16080/16080_beat_0120.png"
+    },
+    {
+      "index": 121,
+      "start": 463.33,
+      "end": 471.77,
+      "duration": 8.441,
+      "duration_frames": 253.0,
+      "image": "analysis/frames/16080/16080_beat_0121.png"
+    },
+    {
+      "index": 122,
+      "start": 471.771,
+      "end": 475.174,
+      "duration": 3.402,
+      "duration_frames": 102.0,
+      "image": "analysis/frames/16080/16080_beat_0122.png"
+    },
+    {
+      "index": 123,
+      "start": 475.175,
+      "end": 478.51,
+      "duration": 3.336,
+      "duration_frames": 100.0,
+      "image": "analysis/frames/16080/16080_beat_0123.png"
+    },
+    {
+      "index": 124,
+      "start": 478.511,
+      "end": 484.683,
+      "duration": 6.172,
+      "duration_frames": 185.0,
+      "image": "analysis/frames/16080/16080_beat_0124.png"
+    },
+    {
+      "index": 125,
+      "start": 484.684,
+      "end": 489.755,
+      "duration": 5.071,
+      "duration_frames": 152.0,
+      "image": "analysis/frames/16080/16080_beat_0125.png"
+    },
+    {
+      "index": 126,
+      "start": 489.756,
+      "end": 494.66,
+      "duration": 4.904,
+      "duration_frames": 147.0,
+      "image": "analysis/frames/16080/16080_beat_0126.png"
+    },
+    {
+      "index": 127,
+      "start": 494.661,
+      "end": 495.494,
+      "duration": 0.833,
+      "duration_frames": 25.0,
+      "image": "analysis/frames/16080/16080_beat_0127.png"
+    },
+    {
+      "index": 128,
+      "start": 495.495,
+      "end": 501.033,
+      "duration": 5.538,
+      "duration_frames": 166.0,
+      "image": "analysis/frames/16080/16080_beat_0128.png"
+    },
+    {
+      "index": 129,
+      "start": 501.034,
+      "end": 502.768,
+      "duration": 1.734,
+      "duration_frames": 52.0,
+      "image": "analysis/frames/16080/16080_beat_0129.png"
+    },
+    {
+      "index": 130,
+      "start": 502.769,
+      "end": 507.272,
+      "duration": 4.504,
+      "duration_frames": 135.0,
+      "image": "analysis/frames/16080/16080_beat_0130.png"
+    },
+    {
+      "index": 131,
+      "start": 507.273,
+      "end": 512.644,
+      "duration": 5.371,
+      "duration_frames": 161.0,
+      "image": "analysis/frames/16080/16080_beat_0131.png"
+    },
+    {
+      "index": 132,
+      "start": 512.645,
+      "end": 520.452,
+      "duration": 7.807,
+      "duration_frames": 234.0,
+      "image": "analysis/frames/16080/16080_beat_0132.png"
+    },
+    {
+      "index": 133,
+      "start": 520.453,
+      "end": 523.155,
+      "duration": 2.702,
+      "duration_frames": 81.0,
+      "image": "analysis/frames/16080/16080_beat_0133.png"
+    },
+    {
+      "index": 134,
+      "start": 523.156,
+      "end": 526.158,
+      "duration": 3.002,
+      "duration_frames": 90.0,
+      "image": "analysis/frames/16080/16080_beat_0134.png"
+    },
+    {
+      "index": 135,
+      "start": 526.159,
+      "end": 531.73,
+      "duration": 5.571,
+      "duration_frames": 167.0,
+      "image": "analysis/frames/16080/16080_beat_0135.png"
+    },
+    {
+      "index": 136,
+      "start": 531.731,
+      "end": 539.338,
+      "duration": 7.607,
+      "duration_frames": 228.0,
+      "image": "analysis/frames/16080/16080_beat_0136.png"
+    },
+    {
+      "index": 137,
+      "start": 539.339,
+      "end": 544.643,
+      "duration": 5.304,
+      "duration_frames": 159.0,
+      "image": "analysis/frames/16080/16080_beat_0137.png"
+    },
+    {
+      "index": 138,
+      "start": 544.644,
+      "end": 549.381,
+      "duration": 4.737,
+      "duration_frames": 142.0,
+      "image": "analysis/frames/16080/16080_beat_0138.png"
+    },
+    {
+      "index": 139,
+      "start": 549.382,
+      "end": 551.216,
+      "duration": 1.834,
+      "duration_frames": 55.0,
+      "image": "analysis/frames/16080/16080_beat_0139.png"
+    },
+    {
+      "index": 140,
+      "start": 551.217,
+      "end": 555.888,
+      "duration": 4.67,
+      "duration_frames": 140.0,
+      "image": "analysis/frames/16080/16080_beat_0140.png"
+    },
+    {
+      "index": 141,
+      "start": 555.889,
+      "end": 561.527,
+      "duration": 5.638,
+      "duration_frames": 169.0,
+      "image": "analysis/frames/16080/16080_beat_0141.png"
+    },
+    {
+      "index": 142,
+      "start": 561.528,
+      "end": 562.361,
+      "duration": 0.833,
+      "duration_frames": 25.0,
+      "image": "analysis/frames/16080/16080_beat_0142.png"
+    },
+    {
+      "index": 143,
+      "start": 562.362,
+      "end": 563.996,
+      "duration": 1.634,
+      "duration_frames": 49.0,
+      "image": "analysis/frames/16080/16080_beat_0143.png"
+    },
+    {
+      "index": 144,
+      "start": 563.997,
+      "end": 566.865,
+      "duration": 2.869,
+      "duration_frames": 86.0,
+      "image": "analysis/frames/16080/16080_beat_0144.png"
+    },
+    {
+      "index": 145,
+      "start": 566.866,
+      "end": 569.902,
+      "duration": 3.035,
+      "duration_frames": 91.0,
+      "image": "analysis/frames/16080/16080_beat_0145.png"
+    },
+    {
+      "index": 146,
+      "start": 569.903,
+      "end": 577.776,
+      "duration": 7.874,
+      "duration_frames": 236.0,
+      "image": "analysis/frames/16080/16080_beat_0146.png"
+    },
+    {
+      "index": 147,
+      "start": 577.777,
+      "end": 580.846,
+      "duration": 3.069,
+      "duration_frames": 92.0,
+      "image": "analysis/frames/16080/16080_beat_0147.png"
+    },
+    {
+      "index": 148,
+      "start": 580.847,
+      "end": 584.616,
+      "duration": 3.769,
+      "duration_frames": 113.0,
+      "image": "analysis/frames/16080/16080_beat_0148.png"
+    },
+    {
+      "index": 149,
+      "start": 584.617,
+      "end": 594.593,
+      "duration": 9.976,
+      "duration_frames": 299.0,
+      "image": "analysis/frames/16080/16080_beat_0149.png"
+    },
+    {
+      "index": 150,
+      "start": 594.594,
+      "end": 598.897,
+      "duration": 4.303,
+      "duration_frames": 129.0,
+      "image": "analysis/frames/16080/16080_beat_0150.png"
+    },
+    {
+      "index": 151,
+      "start": 598.898,
+      "end": 602.601,
+      "duration": 3.703,
+      "duration_frames": 111.0,
+      "image": "analysis/frames/16080/16080_beat_0151.png"
+    },
+    {
+      "index": 152,
+      "start": 602.602,
+      "end": 609.641,
+      "duration": 7.039,
+      "duration_frames": 211.0,
+      "image": "analysis/frames/16080/16080_beat_0152.png"
+    },
+    {
+      "index": 153,
+      "start": 609.642,
+      "end": 612.711,
+      "duration": 3.069,
+      "duration_frames": 92.0,
+      "image": "analysis/frames/16080/16080_beat_0153.png"
+    },
+    {
+      "index": 154,
+      "start": 612.712,
+      "end": 619.384,
+      "duration": 6.672,
+      "duration_frames": 200.0,
+      "image": "analysis/frames/16080/16080_beat_0154.png"
+    },
+    {
+      "index": 155,
+      "start": 619.385,
+      "end": 623.188,
+      "duration": 3.803,
+      "duration_frames": 114.0,
+      "image": "analysis/frames/16080/16080_beat_0155.png"
+    },
+    {
+      "index": 156,
+      "start": 623.189,
+      "end": 627.693,
+      "duration": 4.504,
+      "duration_frames": 135.0,
+      "image": "analysis/frames/16080/16080_beat_0156.png"
+    },
+    {
+      "index": 157,
+      "start": 627.694,
+      "end": 637.9,
+      "duration": 10.206,
+      "duration_frames": 305.9,
+      "image": "analysis/frames/16080/16080_beat_0157.png"
+    }
+  ]
+}

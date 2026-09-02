@@ -2,3 +2,6 @@ projects/*/assets/models/
 __pycache__/
 *.pyc
 uploads/
+.venv/
+work/
+*.assembling
