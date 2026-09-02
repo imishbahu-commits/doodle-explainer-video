@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Render one part of History's Dumbest Wars.
+"""Render beats of History's Dumbest Wars.
 RULE (user's): one image per beat; image duration = that beat's VO length + 0.15s tail.
 NEVER stretch an image to cover a longer VO. Hard cuts only, locked camera (ref style).
+Usage:
+  make_video.py <part>          -> all beats with that part label (script.py)
+  make_video.py <lo> <hi>       -> exact beat range, e.g. 11 20
 """
 import sys, subprocess, json
 from pathlib import Path
@@ -19,11 +22,18 @@ def probe(path):
     return float(out)
 
 def main() -> None:
-    part = int(sys.argv[1])
+    if len(sys.argv) >= 3:
+        lo, hi = int(sys.argv[1]), int(sys.argv[2])
+        beats = [b for b in BEATS if lo <= b["n"] <= hi]
+        out = Path(f"dumbest_wars_part{lo}-{hi}.mp4")
+    else:
+        part = int(sys.argv[1])
+        beats = [b for b in BEATS if b["part"] == part]
+        out = Path(f"dumbest_wars_part{part}.mp4")
     assets = Path("assets"); audio = Path("audio"); tmp = Path("tmp"); tmp.mkdir(exist_ok=True)
-    beats = sorted([b for b in BEATS if b["part"] == part], key=lambda b: b["n"])
+    beats = sorted(beats, key=lambda b: b["n"])
     if not beats:
-        print(f"no beats for part {part}"); return
+        print("no beats in range"); return
     segs = []
     cursor = 0.0
     manifest = []
@@ -53,10 +63,9 @@ def main() -> None:
         print(f"beat{b['n']:02d}: vo={d:.2f}s hold={hold:.2f}s", flush=True)
     listf = tmp / "list.txt"
     listf.write_text("\n".join(f"file '{s.resolve()}'" for s in segs))
-    out = Path(f"dumbest_wars_part{part}.mp4")
+    Path(f"manifest_{out.stem}.json").write_text(json.dumps(manifest, indent=1))
     subprocess.run(["ffmpeg","-y","-loglevel","error","-f","concat","-safe","0",
                     "-i",str(listf),"-c","copy",str(out)])
-    Path(f"manifest_part{part}.json").write_text(json.dumps(manifest, indent=1))
     print(f"RENDER DONE: {out} ({out.stat().st_size/1e6:.1f} MB, {cursor:.1f}s)")
 
 if __name__ == "__main__":
