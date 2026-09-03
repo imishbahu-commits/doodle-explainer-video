@@ -20,7 +20,7 @@
  *
  * ELEMENT TYPES (x/y = centre unless noted):
  *   {"type":"label","x","y","text","size":72,"font":"caveat|patrick|kalam","rot":-2,"color":"#111111"}
- *   {"type":"stick","x","y","scale":1,"pose":"stand|point|raise|walk|sit"}
+ *   {"type":"stick","x","y","scale":1,"pose":"stand|point|raise|walk|sit|hold","flip":false}
  *   {"type":"face","x","y","r":60,"mood":"plain|smile|worried"}
  *   {"type":"box","x","y","w","h","label","sub","fill":"#FFE0AC","fillStyle":"hachure"}
  *   {"type":"circle","x","y","r","fill"}
@@ -163,10 +163,15 @@ export function renderScene(scene) {
   }
 
   // ----------------------------------------------------------- stick figure
+  // x-offsets go through X() so "flip": true mirrors the figure around its
+  // centre (e.g. facing left). "hold" = both arms forward at chest height
+  // (gripping something), mirroring the v2 person pose.
   const ctx2 = { rc, rnd, append, text };
   function stick(el) {
     const s = el.scale ?? 1;
     const y = el.y;
+    const f = el.flip ? -1 : 1;
+    const X = (d) => el.x + d * f;
     const headR = 46 * s;
     const headC = y - 205 * s;
     const neck = y - 159 * s;
@@ -182,32 +187,40 @@ export function renderScene(scene) {
     append(rc.line(el.x, neck, el.x, hip, { strokeWidth: 5 * s }));
     const legSwing = 48 * s, legLen = 118 * s;
     if (el.pose === "walk") {
-      append(rc.line(el.x, hip, el.x - legSwing * 1.1, hip + legLen));
-      append(rc.line(el.x, hip, el.x + legSwing * 1.1, hip + legLen * 0.8));
-      append(rc.line(el.x, neck + 30 * s, el.x - 60 * s, neck - 20 * s));
-      append(rc.line(el.x, neck + 30 * s, el.x + 60 * s, neck - 20 * s));
+      append(rc.line(el.x, hip, X(-legSwing * 1.1), hip + legLen));
+      append(rc.line(el.x, hip, X(legSwing * 1.1), hip + legLen * 0.8));
+      append(rc.line(el.x, neck + 30 * s, X(-60 * s), neck - 20 * s));
+      append(rc.line(el.x, neck + 30 * s, X(60 * s), neck - 20 * s));
     } else if (el.pose === "sit") {
-      append(rc.line(el.x, hip, el.x - legSwing, hip + 30 * s));
-      append(rc.line(el.x, hip, el.x + legSwing, hip + 30 * s));
-      append(rc.line(el.x - legSwing, hip + 30 * s, el.x + legSwing, hip + 30 * s));
-      append(rc.line(el.x, neck + 25 * s, el.x - 45 * s, neck + 45 * s));
-      append(rc.line(el.x, neck + 25 * s, el.x + 45 * s, neck + 45 * s));
+      append(rc.line(el.x, hip, X(-legSwing), hip + 30 * s));
+      append(rc.line(el.x, hip, X(legSwing), hip + 30 * s));
+      append(rc.line(X(-legSwing), hip + 30 * s, X(legSwing), hip + 30 * s));
+      append(rc.line(el.x, neck + 25 * s, X(-45 * s), neck + 45 * s));
+      append(rc.line(el.x, neck + 25 * s, X(45 * s), neck + 45 * s));
     } else if (el.pose === "point") {
-      append(rc.line(el.x, hip, el.x - legSwing, hip + legLen));
-      append(rc.line(el.x, hip, el.x + legSwing, hip + legLen));
-      append(rc.line(el.x, neck + 25 * s, el.x + 95 * s, neck - 15 * s)); // pointing arm
-      append(rc.line(el.x + 95 * s, neck - 15 * s, el.x + 150 * s, neck - 35 * s));
-      append(rc.line(el.x, neck + 25 * s, el.x - 55 * s, neck + 55 * s));
+      append(rc.line(el.x, hip, X(-legSwing), hip + legLen));
+      append(rc.line(el.x, hip, X(legSwing), hip + legLen));
+      append(rc.line(el.x, neck + 25 * s, X(95 * s), neck - 15 * s)); // pointing arm
+      append(rc.line(X(95 * s), neck - 15 * s, X(150 * s), neck - 35 * s));
+      append(rc.line(el.x, neck + 25 * s, X(-55 * s), neck + 55 * s));
     } else if (el.pose === "raise") {
-      append(rc.line(el.x, hip, el.x - legSwing, hip + legLen));
-      append(rc.line(el.x, hip, el.x + legSwing, hip + legLen));
-      append(rc.line(el.x, neck + 25 * s, el.x - 55 * s, neck - 40 * s));
-      append(rc.line(el.x, neck + 25 * s, el.x + 55 * s, neck - 40 * s));
+      append(rc.line(el.x, hip, X(-legSwing), hip + legLen));
+      append(rc.line(el.x, hip, X(legSwing), hip + legLen));
+      append(rc.line(el.x, neck + 25 * s, X(-55 * s), neck - 40 * s));
+      append(rc.line(el.x, neck + 25 * s, X(55 * s), neck - 40 * s));
+    } else if (el.pose === "hold") {
+      // both arms down-forward, hands together at mid-torso (gripping)
+      append(rc.line(el.x, hip, X(-legSwing), hip + legLen));
+      append(rc.line(el.x, hip, X(legSwing), hip + legLen));
+      append(rc.line(el.x, neck + 25 * s, X(55 * s), neck + 70 * s));
+      append(rc.line(X(55 * s), neck + 70 * s, X(88 * s), neck + 95 * s));
+      append(rc.line(el.x, neck + 25 * s, X(48 * s), neck + 62 * s));
+      append(rc.line(X(48 * s), neck + 62 * s, X(78 * s), neck + 86 * s));
     } else { // stand
-      append(rc.line(el.x, hip, el.x - legSwing, hip + legLen));
-      append(rc.line(el.x, hip, el.x + legSwing, hip + legLen));
-      append(rc.line(el.x, neck + 25 * s, el.x - 50 * s, neck + 50 * s));
-      append(rc.line(el.x, neck + 25 * s, el.x + 50 * s, neck + 50 * s));
+      append(rc.line(el.x, hip, X(-legSwing), hip + legLen));
+      append(rc.line(el.x, hip, X(legSwing), hip + legLen));
+      append(rc.line(el.x, neck + 25 * s, X(-50 * s), neck + 50 * s));
+      append(rc.line(el.x, neck + 25 * s, X(50 * s), neck + 50 * s));
     }
   }
 
