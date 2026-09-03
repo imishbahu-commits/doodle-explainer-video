@@ -43,3 +43,4 @@ projects/dinzo-mammoth/work/
 
 # raw reference uploads are big — never commit; reports+frames ARE committed
 tools/uploads/
+!tools/ref-videos/
