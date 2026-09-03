@@ -109,6 +109,26 @@ Then parts 4–12 continue female lure → male nose → the bite / fusion → k
 
 ---
 
+## Switch artwork + use YOUR voiceover
+
+Yes. Two things, in this order:
+
+1. Open **Fast ingest** (live preview on port 8088) and drop:
+   - **Voiceover** — one long track, or many per-beat mp3s
+   - **Reference** — a video (or images) of the art style you want
+2. Type **`uploaded`** in chat.
+
+Then I will:
+- Pull files from `uploads/inbox/voiceover/` and `uploads/inbox/reference/`
+- Lock the new doodle style to the reference (frames from the video)
+- Cut every image to the voiceover: **1 beat = 1 image = exact audio length**
+  - many files → filename order (`beat01.mp3`…)
+  - one long file → split by the script’s beats, weighted to the measured duration (same as `build.py`)
+
+Do **not** wait on the old `parts/` folder. New synced cuts still go into `assembly/`.
+
+---
+
 ## Rules that never change
 
 - 1 beat = 1 image = 1 voiceover. Never stretch or reuse.
