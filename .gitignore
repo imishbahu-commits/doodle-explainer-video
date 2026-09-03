@@ -8,6 +8,11 @@ build/
 image-search/
 uploads/
 
+# OmniVoice (cloned install + models — not part of this video repo)
+OmniVoice/
+omnivoice-venv/
+omnivoice-models/
+
 # OpenMontage preview demos (not committed per user request)
 projects/openmontage-demo/
 
