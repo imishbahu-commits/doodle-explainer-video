@@ -1,0 +1,66 @@
+{
+  "file": "speedtest1_style_sample.mp4",
+  "duration": 15.05,
+  "fps": 60.0,
+  "resolution": "1376x768",
+  "shots": 4,
+  "cut_cadence": {
+    "min": 0.33,
+    "p25": 3.5,
+    "median": 4.5,
+    "mean": 3.62,
+    "p75": 6.17,
+    "max": 6.17
+  },
+  "motion_budget": {
+    "frozen_pct": 7,
+    "camera_pct": 0,
+    "character_pct": 95
+  },
+  "camera_estimate": "locked + puppets",
+  "bg_color": [
+    142,
+    219,
+    218
+  ],
+  "brightness": 194,
+  "palette": [
+    "rgb(227,219,212)",
+    "rgb(136,208,203)",
+    "rgb(136,208,203)",
+    "rgb(136,208,203)",
+    "rgb(127,228,231)",
+    "rgb(127,228,231)"
+  ],
+  "shot_table": [
+    {
+      "start": 0.0,
+      "dur": 0.33,
+      "frozen": 100,
+      "cam": 0,
+      "active": 0
+    },
+    {
+      "start": 0.33,
+      "dur": 6.17,
+      "frozen": 8,
+      "cam": 0,
+      "active": 97
+    },
+    {
+      "start": 6.5,
+      "dur": 4.5,
+      "frozen": 4,
+      "cam": 0,
+      "active": 96
+    },
+    {
+      "start": 11.17,
+      "dur": 3.5,
+      "frozen": 0,
+      "cam": 0,
+      "active": 100
+    }
+  ],
+  "detected_at": "2026-09-03 08:52:04"
+}

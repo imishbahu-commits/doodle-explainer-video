@@ -1,0 +1,10 @@
+{
+  "file": "votest1_my_voiceover.mp3",
+  "kind": "audio",
+  "duration": 5.46,
+  "codec": "mp3",
+  "sample_rate": 44100,
+  "channels": "7.1",
+  "loudness_db": -20.2,
+  "detected_at": "2026-09-03 08:59:46"
+}

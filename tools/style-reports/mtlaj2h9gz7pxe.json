@@ -1,0 +1,458 @@
+{
+  "file": "mtlaj2h9gz7pxe_16064.mp4",
+  "duration": 557.21,
+  "fps": 29.97,
+  "resolution": "640x360",
+  "shots": 135,
+  "cut_cadence": {
+    "min": 0.67,
+    "p25": 2.17,
+    "median": 3.33,
+    "mean": 4.12,
+    "p75": 5.17,
+    "max": 16.5
+  },
+  "motion_budget": {
+    "frozen_pct": 94,
+    "camera_pct": 5,
+    "character_pct": 0
+  },
+  "camera_estimate": "locked + puppets",
+  "bg_color": [
+    140,
+    153,
+    151
+  ],
+  "brightness": 149,
+  "palette": [
+    "rgb(254,254,254)",
+    "rgb(37,37,37)",
+    "rgb(36,75,22)",
+    "rgb(83,106,64)",
+    "rgb(102,127,70)",
+    "rgb(102,127,70)"
+  ],
+  "shot_table": [
+    {
+      "start": 0.0,
+      "dur": 1.5,
+      "frozen": 89,
+      "cam": 0,
+      "active": 11
+    },
+    {
+      "start": 1.5,
+      "dur": 1.67,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 3.17,
+      "dur": 2.67,
+      "frozen": 94,
+      "cam": 6,
+      "active": 0
+    },
+    {
+      "start": 5.83,
+      "dur": 4.17,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 10.0,
+      "dur": 2.0,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 12.0,
+      "dur": 13.5,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 25.5,
+      "dur": 3.67,
+      "frozen": 91,
+      "cam": 9,
+      "active": 0
+    },
+    {
+      "start": 29.17,
+      "dur": 5.17,
+      "frozen": 94,
+      "cam": 6,
+      "active": 0
+    },
+    {
+      "start": 34.33,
+      "dur": 4.0,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 38.33,
+      "dur": 2.33,
+      "frozen": 93,
+      "cam": 7,
+      "active": 0
+    },
+    {
+      "start": 40.67,
+      "dur": 4.0,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 44.67,
+      "dur": 2.33,
+      "frozen": 93,
+      "cam": 7,
+      "active": 0
+    },
+    {
+      "start": 47.0,
+      "dur": 3.67,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 50.67,
+      "dur": 4.83,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 55.5,
+      "dur": 3.33,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 58.83,
+      "dur": 4.83,
+      "frozen": 93,
+      "cam": 7,
+      "active": 0
+    },
+    {
+      "start": 63.67,
+      "dur": 0.83,
+      "frozen": 80,
+      "cam": 20,
+      "active": 0
+    },
+    {
+      "start": 64.5,
+      "dur": 1.5,
+      "frozen": 89,
+      "cam": 11,
+      "active": 0
+    },
+    {
+      "start": 66.0,
+      "dur": 9.17,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 75.17,
+      "dur": 14.0,
+      "frozen": 94,
+      "cam": 5,
+      "active": 1
+    },
+    {
+      "start": 89.17,
+      "dur": 1.67,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 90.83,
+      "dur": 6.33,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 97.17,
+      "dur": 4.67,
+      "frozen": 93,
+      "cam": 4,
+      "active": 4
+    },
+    {
+      "start": 101.83,
+      "dur": 5.5,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 107.33,
+      "dur": 4.83,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 112.17,
+      "dur": 3.67,
+      "frozen": 91,
+      "cam": 5,
+      "active": 5
+    },
+    {
+      "start": 115.83,
+      "dur": 1.5,
+      "frozen": 89,
+      "cam": 11,
+      "active": 0
+    },
+    {
+      "start": 117.33,
+      "dur": 3.0,
+      "frozen": 94,
+      "cam": 6,
+      "active": 0
+    },
+    {
+      "start": 120.33,
+      "dur": 2.17,
+      "frozen": 85,
+      "cam": 15,
+      "active": 0
+    },
+    {
+      "start": 122.5,
+      "dur": 3.33,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 125.83,
+      "dur": 4.83,
+      "frozen": 93,
+      "cam": 3,
+      "active": 3
+    },
+    {
+      "start": 130.67,
+      "dur": 5.5,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 136.17,
+      "dur": 1.67,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 137.83,
+      "dur": 9.5,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 147.33,
+      "dur": 3.33,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 150.67,
+      "dur": 7.33,
+      "frozen": 93,
+      "cam": 7,
+      "active": 0
+    },
+    {
+      "start": 158.0,
+      "dur": 2.83,
+      "frozen": 94,
+      "cam": 6,
+      "active": 0
+    },
+    {
+      "start": 160.83,
+      "dur": 9.67,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 170.5,
+      "dur": 2.17,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 172.67,
+      "dur": 2.17,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 174.83,
+      "dur": 3.5,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 178.33,
+      "dur": 2.5,
+      "frozen": 93,
+      "cam": 7,
+      "active": 0
+    },
+    {
+      "start": 180.83,
+      "dur": 0.83,
+      "frozen": 80,
+      "cam": 20,
+      "active": 0
+    },
+    {
+      "start": 181.67,
+      "dur": 8.67,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 190.33,
+      "dur": 9.17,
+      "frozen": 98,
+      "cam": 2,
+      "active": 0
+    },
+    {
+      "start": 199.5,
+      "dur": 3.83,
+      "frozen": 91,
+      "cam": 9,
+      "active": 0
+    },
+    {
+      "start": 203.33,
+      "dur": 3.0,
+      "frozen": 94,
+      "cam": 6,
+      "active": 0
+    },
+    {
+      "start": 206.33,
+      "dur": 6.5,
+      "frozen": 97,
+      "cam": 3,
+      "active": 0
+    },
+    {
+      "start": 212.83,
+      "dur": 3.5,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 216.33,
+      "dur": 1.67,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 218.0,
+      "dur": 4.0,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 222.0,
+      "dur": 6.33,
+      "frozen": 95,
+      "cam": 5,
+      "active": 0
+    },
+    {
+      "start": 228.33,
+      "dur": 4.33,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 232.67,
+      "dur": 8.0,
+      "frozen": 96,
+      "cam": 4,
+      "active": 0
+    },
+    {
+      "start": 240.67,
+      "dur": 0.67,
+      "frozen": 75,
+      "cam": 25,
+      "active": 0
+    },
+    {
+      "start": 241.33,
+      "dur": 2.0,
+      "frozen": 92,
+      "cam": 8,
+      "active": 0
+    },
+    {
+      "start": 243.33,
+      "dur": 3.67,
+      "frozen": 91,
+      "cam": 9,
+      "active": 0
+    },
+    {
+      "start": 247.0,
+      "dur": 3.33,
+      "frozen": 90,
+      "cam": 10,
+      "active": 0
+    },
+    {
+      "start": 250.33,
+      "dur": 1.5,
+      "frozen": 89,
+      "cam": 11,
+      "active": 0
+    },
+    {
+      "start": 251.83,
+      "dur": 1.5,
+      "frozen": 89,
+      "cam": 11,
+      "active": 0
+    }
+  ],
+  "detected_at": "2026-09-03 08:56:56"
+}
