@@ -71,7 +71,7 @@ or the video pipeline).
 | `mirror` | x, y, w, h | oval standing mirror with sparkle |
 | `speckle` | count, color | paper-grain dots |
 | `frame` | margin | hand-drawn border (thumbnails) |
-| `stick` | x, y (feet centre), scale, pose: `stand`/`point`/`raise`/`walk`/`sit` | stick figure, dot eyes (v1 diagram mode) |
+| `stick` | x, y (feet centre), scale, pose: `stand`/`point`/`raise`/`walk`/`sit`/`hold`, flip | stick figure, dot eyes (v1 diagram mode); `hold` = arms forward at chest (gripping); `flip` mirrors facing |
 | `face` | x, y, r, mood: `plain`/`smile`/`worried` | stick-figure face |
 | `box` | x, y, w, h, label, sub, fill, fillStyle | labelled box, hachure fill |
 | `circle` | x, y, r, fill | circle, hachure fill |
