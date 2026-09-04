@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 7,
+  "video": "projects/vo-sync/parts/part07.mp4",
+  "start_s": 227.75,
+  "end_s": 265.644,
+  "duration_s": 37.894,
+  "note": "Original VO 227.75–265.644. Image holds until the next beat start.",
+  "beats": [
+    {"id": 61, "start": 227.75, "end": 230.607, "image": "beats/beat61.png", "line": "But it gets even worse. The guards outside the cell"},
+    {"id": 62, "start": 230.607, "end": 233.663, "image": "beats/beat62.png", "line": "wear cushioned shoes to silence their steps"},
+    {"id": 63, "start": 233.663, "end": 238.462, "image": "beats/beat63.png", "line": "ensuring that you never hear a single sound from the outside world"},
+    {"id": 64, "start": 238.462, "end": 243.41, "image": "beats/beat64.png", "line": "You see, the color white wasn't chosen because the guards are fans of minimalist design"},
+    {"id": 65, "start": 243.41, "end": 248.045, "image": "beats/beat65.png", "line": "White completely eliminates contrast, depth, and visual reference points"},
+    {"id": 66, "start": 248.045, "end": 252.852, "image": "beats/beat66.png", "line": "And since your brain is getting absolutely zero stimulation from the outside world"},
+    {"id": 67, "start": 252.852, "end": 255.488, "image": "beats/beat67.png", "line": "it eventually begins to create its own"},
+    {"id": 68, "start": 255.488, "end": 259.186, "image": "beats/beat68.png", "line": "Within a few days your mind begins to glitch itself"},
+    {"id": 69, "start": 259.186, "end": 262.4, "image": "beats/beat69.png", "line": "spawning extremely vivid hallucinations"},
+    {"id": 70, "start": 262.4, "end": 265.644, "image": "beats/beat70.png", "line": "and terrifying noises that are not actually there"}
+  ]
+}
