@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 5,
+  "video": "projects/vo-sync/parts/part05.mp4",
+  "start_s": 150.881,
+  "end_s": 191.301,
+  "duration_s": 40.42,
+  "note": "Original VO 150.881–191.301. Image holds until the next beat start.",
+  "beats": [
+    {"id": 41, "start": 150.881, "end": 155.425, "image": "beats/beat41.png", "line": "all frantically trying to find their way out in total darkness and"},
+    {"id": 42, "start": 155.425, "end": 159.132, "image": "beats/beat42.png", "line": "even the lucky few who make it to the deepest known section"},
+    {"id": 43, "start": 159.132, "end": 163.717, "image": "beats/beat43.png", "line": "a zone called the unknown you will have to turn back around if you wanna live"},
+    {"id": 44, "start": 163.717, "end": 167.476, "image": "beats/beat44.png", "line": "this area has zero visibility is extremely narrow and"},
+    {"id": 45, "start": 167.476, "end": 171.72, "image": "beats/beat45.png", "line": "has a strong undertow current to this day no one has"},
+    {"id": 46, "start": 171.72, "end": 174.539, "image": "beats/beat46.png", "line": "ever gone past this point and Jacob's Well's"},
+    {"id": 47, "start": 174.539, "end": 178.736, "image": "beats/beat47.png", "line": "true depth remains a complete mystery"},
+    {"id": 48, "start": 178.736, "end": 182.252, "image": "beats/beat48.png", "line": "Number four: the White Room"},
+    {"id": 49, "start": 182.252, "end": 186.132, "image": "beats/beat49.png", "line": "you don't always have to go deep underground to find a terrifying squeeze"},
+    {"id": 50, "start": 186.132, "end": 191.301, "image": "beats/beat50.png", "line": "sometimes the tightest and most inescapable space is inside your own mind"}
+  ]
+}
