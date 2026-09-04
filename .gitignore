@@ -8,10 +8,14 @@ build/
 image-search/
 uploads/
 
-# OmniVoice (cloned install + models — not part of this video repo)
+# Heavy TTS (does not fit this sandbox)
 OmniVoice/
 omnivoice-venv/
 omnivoice-models/
+
+# Lightweight Piper TTS (local venv + onnx voices)
+tts-venv/
+tts-voices/
 
 # OpenMontage preview demos (not committed per user request)
 projects/openmontage-demo/
