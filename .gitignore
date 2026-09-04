@@ -47,3 +47,6 @@ projects/dinzo-anglerfish/parts/
 !projects/dinzo-anglerfish/assembly/*.mp4
 !projects/dinzo-anglerfish/assembly/audio/
 !projects/dinzo-anglerfish/assembly/audio/*.mp3
+
+# Do not commit fish/anglerfish generated stills
+projects/dinzo-anglerfish/assets/*.png

@@ -1,0 +1,19 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 1,
+  "video": "projects/vo-sync/parts/part01.mp4",
+  "duration_s": 40.313,
+  "note": "Each image holds from this start until the next beat start (pauses stay on the previous frame). Audio is the original VO cut 0–40.313s.",
+  "beats": [
+    {"id": 1, "start": 0.0, "end": 3.02, "image": "beats/beat01.png", "line": "If you've ever played a video game you know the absolute"},
+    {"id": 2, "start": 3.02, "end": 6.324, "image": "beats/beat02.png", "line": "rage of getting hit with a status effect"},
+    {"id": 3, "start": 6.324, "end": 11.689, "image": "beats/beat03.png", "line": "or getting dropped into a level that is completely broken and unbalanced but as it turns out"},
+    {"id": 4, "start": 11.689, "end": 14.951, "image": "beats/beat04.png", "line": "the developers of real life have been releasing a terrible patch"},
+    {"id": 5, "start": 14.951, "end": 18.42, "image": "beats/beat05.png", "line": "and unfair map designs for thousands of years"},
+    {"id": 6, "start": 18.42, "end": 23.696, "image": "beats/beat06.png", "line": "and for some reason humans have a long documented history of looking at the most dangerous"},
+    {"id": 7, "start": 23.696, "end": 26.812, "image": "beats/beat07.png", "line": "claustrophobic glitch-filled zones on the planet"},
+    {"id": 8, "start": 26.812, "end": 30.55, "image": "beats/beat08.png", "line": "and voluntarily crawling directly into them so today"},
+    {"id": 9, "start": 30.55, "end": 36.069, "image": "beats/beat09.png", "line": "we start with the highly uncomfortable and slowly work our way towards the absolute stuff"},
+    {"id": 10, "start": 36.069, "end": 40.313, "image": "beats/beat10.png", "line": "of nightmares. Number five: Jacob's Well"}
+  ]
+}
