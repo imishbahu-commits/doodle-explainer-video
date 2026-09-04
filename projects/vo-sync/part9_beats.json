@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 9,
+  "video": "projects/vo-sync/parts/part09.mp4",
+  "start_s": 300.904,
+  "end_s": 340.472,
+  "duration_s": 39.568,
+  "note": "Original VO 300.904–340.472. Image holds until the next beat start.",
+  "beats": [
+    {"id": 81, "start": 300.904, "end": 304.754, "image": "beats/beat81.png", "line": "extending a massive two thousand two hundred nine meters down"},
+    {"id": 82, "start": 304.754, "end": 309.435, "image": "beats/beat82.png", "line": "for reference you could fit around twenty-four Statues of Liberty inside of it"},
+    {"id": 83, "start": 309.435, "end": 313.429, "image": "beats/beat83.png", "line": "or for my European audience, seven Eiffel Towers"},
+    {"id": 84, "start": 313.429, "end": 318.313, "image": "beats/beat84.png", "line": "and for the rest of the world, thirty-one thousand six hundred eighty Big Macs"},
+    {"id": 85, "start": 318.313, "end": 322.526, "image": "beats/beat85.png", "line": "Now there has only been one recorded death inside of the cave"},
+    {"id": 86, "start": 322.526, "end": 325.874, "image": "beats/beat86.png", "line": "but do not let that number fool you. This is easily one"},
+    {"id": 87, "start": 325.874, "end": 329.516, "image": "beats/beat87.png", "line": "of the most dangerous high-difficulty maps on the planet"},
+    {"id": 88, "start": 329.516, "end": 334.159, "image": "beats/beat88.png", "line": "As you begin your journey you will be presented with your first major challenge"},
+    {"id": 89, "start": 334.159, "end": 337.213, "image": "beats/beat89.png", "line": "simply finding it. The entrance to this massive"},
+    {"id": 90, "start": 337.213, "end": 340.472, "image": "beats/beat90.png", "line": "abyss is a tiny three-by-four-meter opening"}
+  ]
+}
