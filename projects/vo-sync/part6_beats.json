@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 6,
+  "video": "projects/vo-sync/parts/part06.mp4",
+  "start_s": 191.301,
+  "end_s": 227.75,
+  "duration_s": 36.449,
+  "note": "Original VO 191.301–227.75. Image holds until the next beat start.",
+  "beats": [
+    {"id": 51, "start": 191.301, "end": 195.265, "image": "beats/beat51.png", "line": "In Evin prison in Iran there is a punishment so terrifying"},
+    {"id": 52, "start": 195.265, "end": 199.51, "image": "beats/beat52.png", "line": "that it strikes fear into the hearts of even the most hardened criminals"},
+    {"id": 53, "start": 199.51, "end": 202.275, "image": "beats/beat53.png", "line": "It is simply known as the White Room"},
+    {"id": 54, "start": 202.275, "end": 204.934, "image": "beats/beat54.png", "line": "This is a small all-white isolation cell"},
+    {"id": 55, "start": 204.934, "end": 207.911, "image": "beats/beat55.png", "line": "where the bright overhead lights never turn off"},
+    {"id": 56, "start": 207.911, "end": 212.033, "image": "beats/beat56.png", "line": "and all outside noise and human contact cease to exist"},
+    {"id": 57, "start": 212.033, "end": 217.241, "image": "beats/beat57.png", "line": "Your playthrough of this nightmare begins with you being dressed in all-white clothes"},
+    {"id": 58, "start": 217.241, "end": 222.259, "image": "beats/beat58.png", "line": "before being thrown into a completely soundproof all-white cell. The bed,"},
+    {"id": 59, "start": 222.259, "end": 224.87, "image": "beats/beat59.png", "line": "the walls, the floors, and even the plate"},
+    {"id": 60, "start": 224.87, "end": 227.75, "image": "beats/beat60.png", "line": "and food you receive are all completely white"}
+  ]
+}
