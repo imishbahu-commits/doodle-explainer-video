@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 2,
+  "video": "projects/vo-sync/parts/part02.mp4",
+  "start_s": 40.632,
+  "end_s": 81.149,
+  "duration_s": 40.517,
+  "note": "Original VO 40.632–81.149. Image holds until the next beat start.",
+  "beats": [
+    {"id": 11, "start": 40.632, "end": 45.417, "image": "beats/beat11.png", "line": "Imagine naming the most universally hated and worst type of level"},
+    {"id": 12, "start": 45.417, "end": 48.616, "image": "beats/beat12.png", "line": "Water levels. Jacob's Well is a popular swimming"},
+    {"id": 13, "start": 48.616, "end": 52.144, "image": "beats/beat13.png", "line": "hole located a few miles away from Austin, Texas"},
+    {"id": 14, "start": 52.144, "end": 57.059, "image": "beats/beat14.png", "line": "And while it looks like a nice refreshing spot to hang out on a holiday"},
+    {"id": 15, "start": 57.059, "end": 60.35, "image": "beats/beat15.png", "line": "Underneath the surface lies a deadly cave system that has"},
+    {"id": 16, "start": 60.35, "end": 63.96, "image": "beats/beat16.png", "line": "taken the lives of at least nine divers in recent years"},
+    {"id": 17, "start": 63.96, "end": 67.834, "image": "beats/beat17.png", "line": "In fact some of their bodies remain inside the cave to this day"},
+    {"id": 18, "start": 67.834, "end": 72.875, "image": "beats/beat18.png", "line": "Now if for some strange reason you chose underwater cave exploring as a hobby"},
+    {"id": 19, "start": 72.875, "end": 77.881, "image": "beats/beat19.png", "line": "Your journey begins with a vertical descent into the cave but very soon"},
+    {"id": 20, "start": 77.881, "end": 81.149, "image": "beats/beat20.png", "line": "you will realize that the cave is slowly narrowing"}
+  ]
+}
