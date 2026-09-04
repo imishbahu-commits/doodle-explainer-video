@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 3,
+  "video": "projects/vo-sync/parts/part03.mp4",
+  "start_s": 81.149,
+  "end_s": 113.876,
+  "duration_s": 32.727,
+  "note": "Original VO 81.149–113.876. Image holds until the next beat start.",
+  "beats": [
+    {"id": 21, "start": 81.149, "end": 84.818, "image": "beats/beat21.png", "line": "leading you directly into a section called the restriction"},
+    {"id": 22, "start": 84.818, "end": 88.035, "image": "beats/beat22.png", "line": "in this area it is so tight divers must"},
+    {"id": 23, "start": 88.035, "end": 91.252, "image": "beats/beat23.png", "line": "unclip air tanks from their backs and haul"},
+    {"id": 24, "start": 91.252, "end": 94.742, "image": "beats/beat24.png", "line": "them at their sides just to squeeze through the rock"},
+    {"id": 25, "start": 94.742, "end": 97.95, "image": "beats/beat25.png", "line": "now thankfully we have all done this once before"},
+    {"id": 26, "start": 97.95, "end": 100.522, "image": "beats/beat26.png", "line": "so experience should play a factor"},
+    {"id": 27, "start": 100.522, "end": 103.213, "image": "beats/beat27.png", "line": "the following section is terrifying because"},
+    {"id": 28, "start": 103.213, "end": 106.071, "image": "beats/beat28.png", "line": "it looks exactly the same in either direction"},
+    {"id": 29, "start": 106.071, "end": 110.304, "image": "beats/beat29.png", "line": "if you lose focus or get disoriented even for a single second"},
+    {"id": 30, "start": 110.304, "end": 113.876, "image": "beats/beat30.png", "line": "you can completely lose track of which way you came from"}
+  ]
+}
