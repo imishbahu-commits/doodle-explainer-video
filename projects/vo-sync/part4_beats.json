@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 4,
+  "video": "projects/vo-sync/parts/part04.mp4",
+  "start_s": 113.876,
+  "end_s": 150.881,
+  "duration_s": 37.005,
+  "note": "Original VO 113.876–150.881. Image holds until the next beat start.",
+  "beats": [
+    {"id": 31, "start": 113.876, "end": 117.713, "image": "beats/beat31.png", "line": "this puts you in a deadly situation where you honestly believe"},
+    {"id": 32, "start": 117.713, "end": 122.997, "image": "beats/beat32.png", "line": "you're swimming towards the exit when in reality you're swimming deeper into the system"},
+    {"id": 33, "start": 122.997, "end": 128.02, "image": "beats/beat33.png", "line": "and if you somehow manage to stay focused you will eventually reach the silt-out"},
+    {"id": 34, "start": 128.02, "end": 131.051, "image": "beats/beat34.png", "line": "this is a narrow confined area where you must be extra"},
+    {"id": 35, "start": 131.051, "end": 134.297, "image": "beats/beat35.png", "line": "careful not to disturb the silt-covered floors"},
+    {"id": 36, "start": 134.297, "end": 137.976, "image": "beats/beat36.png", "line": "one wrong kick of your flippers will instantly stir the silt"},
+    {"id": 37, "start": 137.976, "end": 140.77, "image": "beats/beat37.png", "line": "causing the water to become extremely murky"},
+    {"id": 38, "start": 140.77, "end": 144.217, "image": "beats/beat38.png", "line": "and reducing your visibility to absolute zero"},
+    {"id": 39, "start": 144.217, "end": 147.466, "image": "beats/beat39.png", "line": "this is the exact moment that has killed many divers causing"},
+    {"id": 40, "start": 147.466, "end": 150.881, "image": "beats/beat40.png", "line": "them to lose the guidelines and eventually run out of air"}
+  ]
+}
