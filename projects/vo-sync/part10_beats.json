@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 10,
+  "video": "projects/vo-sync/parts/part10.mp4",
+  "start_s": 340.472,
+  "end_s": 385.192,
+  "duration_s": 44.72,
+  "note": "Original VO 340.472–385.192. Image holds until the next beat start.",
+  "beats": [
+    {"id": 91, "start": 340.472, "end": 345.24, "image": "beats/beat91.png", "line": "sitting in the middle of absolutely nowhere. And once you find the entrance"},
+    {"id": 92, "start": 345.24, "end": 348.239, "image": "beats/beat92.png", "line": "there is absolutely no warm-up. You begin the level"},
+    {"id": 93, "start": 348.239, "end": 351.679, "image": "beats/beat93.png", "line": "by rappelling down a pitch-black vertical drop"},
+    {"id": 94, "start": 351.679, "end": 356.784, "image": "beats/beat94.png", "line": "but this is just the beginning as the cave will spam vertical drops back to back"},
+    {"id": 95, "start": 356.784, "end": 361.138, "image": "beats/beat95.png", "line": "taking you deeper and deeper into the complex limestone system"},
+    {"id": 96, "start": 361.138, "end": 365.324, "image": "beats/beat96.png", "line": "as you continue to work your way down the temperatures will very quickly drop"},
+    {"id": 97, "start": 365.324, "end": 370.086, "image": "beats/beat97.png", "line": "and you're freezing and the humidity will skyrocket to one hundred percent"},
+    {"id": 98, "start": 370.086, "end": 375.292, "image": "beats/beat98.png", "line": "to make things more interesting the limestone walls and floors are extremely slippery"},
+    {"id": 99, "start": 375.292, "end": 380.214, "image": "beats/beat99.png", "line": "adding some much needed comedic relief to your slow descent into panic"},
+    {"id": 100, "start": 380.214, "end": 385.192, "image": "beats/beat100.png", "line": "but as you work your way from camp one, two, three, four, and finally camp five"}
+  ]
+}
