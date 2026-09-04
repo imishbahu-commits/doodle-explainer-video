@@ -37,14 +37,14 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8088
 
 CHUNK_MAX = 8 * 1024 * 1024          # reject a single chunk bigger than this
 PUT_MAX = 2 * 1024 * 1024 * 1024     # 2 GB
-KINDS = ("voiceover", "reference", "extra")
+KINDS = ("video", "voiceover", "reference", "extra")
 
 PAGE = r"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fast ingest — voiceover + reference</title>
+<title>Dev upload — drop video into the sandbox</title>
 <style>
   :root {
     --bg:#0e1017; --panel:#161a24; --panel2:#1d2230; --line:#262d3d;
@@ -65,8 +65,9 @@ PAGE = r"""<!doctype html>
   .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   @media (max-width:720px) { .grid { grid-template-columns:1fr; } }
   .drop { background:var(--panel); border:1.5px dashed var(--line); border-radius:14px;
-          padding:22px 18px; min-height:210px; cursor:pointer; transition:border-color .15s, background .15s; }
+          padding:22px 18px; min-height:180px; cursor:pointer; transition:border-color .15s, background .15s; }
   .drop:hover, .drop.drag { border-color:var(--accent); background:var(--panel2); }
+  .drop.video { border-color:#3d6a4a; min-height:240px; margin-bottom:14px; }
   .drop.vo { border-color:#2a4a70; }
   .drop.ref { border-color:#6a3d22; }
   .drop h2 { margin:0 0 6px; font-size:15px; }
@@ -87,6 +88,7 @@ PAGE = r"""<!doctype html>
   .lib li { font-size:13px; padding:8px 0; border-bottom:1px solid var(--line);
             display:flex; justify-content:space-between; gap:10px; }
   .lib .k { color:var(--vo); font-size:11px; text-transform:uppercase; letter-spacing:.6px; }
+  .lib .k.video { color:#34d399; }
   .lib .k.reference { color:var(--ref); }
   code { background:#11141c; padding:1px 6px; border-radius:4px; font-size:12px; }
   .next { margin-top:18px; padding:14px 16px; background:var(--panel2); border-radius:12px;
@@ -96,43 +98,45 @@ PAGE = r"""<!doctype html>
 <body>
 <header>
   <span class="dot"></span>
-  <h1>Fast ingest</h1>
-  <span class="sub">voiceover + reference video → sandbox</span>
+  <h1>Dev upload</h1>
+  <span class="sub">video → this sandbox</span>
 </header>
 <main>
-  <p class="lead">Drop your files here. They land in this workspace in seconds.
-     After they show ✅, go back to chat and type <code>uploaded</code>.
-     I will switch the artwork to match the reference, and cut every image
-     to your voiceover — 1 beat = 1 image, held for the exact audio length.</p>
+  <p class="lead">Drop a video here. It is written straight into this workspace.
+     After ✅, go back to chat and type <code>uploaded</code> — I read it from
+     <code>uploads/inbox/video/</code>.</p>
+  <label class="drop video" id="drop-video">
+    <h2>🎬 Video</h2>
+    <p>mp4 / mov / webm / mkv. Click or drag. Keep the tab open until it hits 100%.</p>
+    <p class="hint">Big files: 8 MB × 8 parallel chunks. Small files: one shot.</p>
+    <input type="file" id="file-video" accept="video/*,.mp4,.mov,.webm,.mkv,.m4v" multiple>
+  </label>
   <div class="grid">
     <label class="drop vo" id="drop-voiceover">
       <h2>🎙️ Voiceover</h2>
-      <p>Your narration. One long track or many per-beat files.
-         mp3 / wav / m4a / aac / ogg / flac.</p>
-      <p class="hint">Click or drop. Small files go in one shot — fastest.</p>
-      <input type="file" id="file-voiceover" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac,.mp4" multiple>
+      <p>Optional. mp3 / wav / m4a / aac / ogg / flac.</p>
+      <p class="hint">Lands in <code>uploads/inbox/voiceover/</code></p>
+      <input type="file" id="file-voiceover" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac" multiple>
     </label>
     <label class="drop ref" id="drop-reference">
-      <h2>🎬 Reference video / art</h2>
-      <p>The style you want. A Dinzo clip, a frame dump, a zip of doodles.
-         mp4 / mov / webm / mkv / png / jpg / zip.</p>
-      <p class="hint">Big videos use 4 MB parallel chunks — keep the tab open.</p>
+      <h2>🖼 Extra / reference</h2>
+      <p>Optional. Images, zip, another clip.</p>
+      <p class="hint">Lands in <code>uploads/inbox/reference/</code></p>
       <input type="file" id="file-reference" accept="video/*,image/*,.mp4,.mov,.webm,.mkv,.png,.jpg,.jpeg,.webp,.zip" multiple>
     </label>
   </div>
   <div id="jobs"></div>
-  <div class="next">When both are in: type <b>uploaded</b> in chat.
-    I grab files from <code>uploads/inbox/</code>, lock the new art style
-    from the reference, and sync images to the voiceover duration.</div>
+  <div class="next">When the bar is green: type <b>uploaded</b> in chat.
+    I grab files from <code>uploads/inbox/video/</code>.</div>
   <div class="lib">
     <h3>Already in the sandbox</h3>
     <ul id="lib"><li class="hint">loading…</li></ul>
   </div>
 </main>
 <script>
-const CHUNK = 4 * 1024 * 1024;
+const CHUNK = 8 * 1024 * 1024;
 const PARALLEL = 8;
-const SINGLE = 24 * 1024 * 1024;
+const SINGLE = 32 * 1024 * 1024;
 
 function $(id){ return document.getElementById(id); }
 function fmt(n){ return n < 1048576 ? (n/1024).toFixed(1)+' KB' : (n/1048576).toFixed(2)+' MB'; }
@@ -152,6 +156,7 @@ function bindDrop(kind) {
     input.value = '';
   });
 }
+bindDrop('video');
 bindDrop('voiceover');
 bindDrop('reference');
 
@@ -433,8 +438,7 @@ class Server(ThreadingHTTPServer):
 
 if __name__ == "__main__":
     INBOX.mkdir(parents=True, exist_ok=True)
-    (INBOX / "voiceover").mkdir(exist_ok=True)
-    (INBOX / "reference").mkdir(exist_ok=True)
-    (INBOX / "extra").mkdir(exist_ok=True)
-    print(f"Fast ingest on http://0.0.0.0:{PORT}  -> {INBOX}", flush=True)
+    for k in KINDS:
+        (INBOX / k).mkdir(exist_ok=True)
+    print(f"Dev upload on http://0.0.0.0:{PORT}  -> {INBOX}", flush=True)
     Server(("0.0.0.0", PORT), Handler).serve_forever()
