@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260904-075751_my_vouceover__160357619.mp3",
+  "part": 8,
+  "video": "projects/vo-sync/parts/part08.mp4",
+  "start_s": 265.644,
+  "end_s": 300.904,
+  "duration_s": 35.26,
+  "note": "Original VO 265.644–300.904. Image holds until the next beat start.",
+  "beats": [
+    {"id": 71, "start": 265.644, "end": 269.971, "image": "beats/beat71.png", "line": "And because those bright lights never turn off, you lose all sense of time"},
+    {"id": 72, "start": 269.971, "end": 274.13, "image": "beats/beat72.png", "line": "never knowing whether it's been days, weeks, or even months"},
+    {"id": 73, "start": 274.13, "end": 277.037, "image": "beats/beat73.png", "line": "since you last saw a shadow. There's been reports of"},
+    {"id": 74, "start": 277.037, "end": 280.226, "image": "beats/beat74.png", "line": "prisoners remaining locked in this sensory void"},
+    {"id": 75, "start": 280.226, "end": 282.894, "image": "beats/beat75.png", "line": "for up to eight months, and some of them"},
+    {"id": 76, "start": 282.894, "end": 285.942, "image": "beats/beat76.png", "line": "have claimed that even years after leaving"},
+    {"id": 77, "start": 285.942, "end": 291.148, "image": "beats/beat77.png", "line": "they have never been the same. Number three: Veryovkina Cave"},
+    {"id": 78, "start": 291.148, "end": 294.394, "image": "beats/beat78.png", "line": "Veryovkina Cave, also known as the Death Pit"},
+    {"id": 79, "start": 294.394, "end": 297.018, "image": "beats/beat79.png", "line": "is located in the mountain region of Georgia"},
+    {"id": 80, "start": 297.018, "end": 300.904, "image": "beats/beat80.png", "line": "and is officially the deepest known cave on the entire planet"}
+  ]
+}
