@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-070701_my_vouceover__160357619.mp3",
+  "part": 17,
+  "video": "projects/vo-sync/parts/part17.mp4",
+  "start_s": 619.193,
+  "end_s": 656.581,
+  "duration_s": 37.388,
+  "note": "Original VO 619.193–656.581. Image holds until the next beat start.",
+  "beats": [
+    {"id": 161, "start": 619.193, "end": 622.722, "image": "beats/beat161.png", "line": "the increased absorption of nitrogen under deep pressure"},
+    {"id": 162, "start": 622.722, "end": 625.621, "image": "beats/beat162.png", "line": "and it makes divers feel completely intoxicated"},
+    {"id": 163, "start": 625.621, "end": 629.228, "image": "beats/beat163.png", "line": "essentially like being drunk. So you're probably thinking"},
+    {"id": 164, "start": 629.228, "end": 632.856, "image": "beats/beat164.png", "line": "hey, cave diving is actually beginning to sound not so bad"},
+    {"id": 165, "start": 632.856, "end": 637.368, "image": "beats/beat165.png", "line": "Well the issue is that when people are drunk they tend to make terrible decisions"},
+    {"id": 166, "start": 637.368, "end": 641.294, "image": "beats/beat166.png", "line": "by taking unnecessary risks, losing track of time"},
+    {"id": 167, "start": 641.294, "end": 646.112, "image": "beats/beat167.png", "line": "and becoming uncoordinated. Now of course that shouldn't be a problem for you"},
+    {"id": 168, "start": 646.112, "end": 649.223, "image": "beats/beat168.png", "line": "since you were never coordinated to begin with. But let's say"},
+    {"id": 169, "start": 649.223, "end": 653.085, "image": "beats/beat169.png", "line": "you manage to squeeze and twist through this terrible section anyway"},
+    {"id": 170, "start": 653.085, "end": 656.581, "image": "beats/beat170.png", "line": "you'll now have to move past maze-like narrow passages"}
+  ]
+}
