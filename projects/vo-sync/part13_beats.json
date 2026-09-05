@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-053837_my_vouceover__160357619.mp3",
+  "part": 13,
+  "video": "projects/vo-sync/parts/part13.mp4",
+  "start_s": 460.998,
+  "end_s": 497.459,
+  "duration_s": 36.461,
+  "note": "Original VO 460.998–497.459. Image holds until the next beat start.",
+  "beats": [
+    {"id": 121, "start": 460.998, "end": 464.518, "image": "beats/beat121.png", "line": "angry rats heading straight toward the entrance of the dungeon"},
+    {"id": 122, "start": 464.518, "end": 467.799, "image": "beats/beat122.png", "line": "where they would come face to face with the chained prisoner"},
+    {"id": 123, "start": 467.799, "end": 471.53, "image": "beats/beat123.png", "line": "but to the unlucky prisoner they never actually saw anything at all"},
+    {"id": 124, "start": 471.53, "end": 476.232, "image": "beats/beat124.png", "line": "All they would hear in the pitch black were the soft scurries of rats' feet"},
+    {"id": 125, "start": 476.232, "end": 480.634, "image": "beats/beat125.png", "line": "entering the cell and within a matter of minutes those soft noises"},
+    {"id": 126, "start": 480.634, "end": 483.307, "image": "beats/beat126.png", "line": "were in the hundreds and they were all around him"},
+    {"id": 127, "start": 483.307, "end": 488.093, "image": "beats/beat127.png", "line": "these aggressive starving rats would then begin to take small bites from the prisoner"},
+    {"id": 128, "start": 488.093, "end": 491.155, "image": "beats/beat128.png", "line": "who had absolutely no way of defending himself. Now"},
+    {"id": 129, "start": 491.155, "end": 494.189, "image": "beats/beat129.png", "line": "you might be able to shake the rats off for a few hours but"},
+    {"id": 130, "start": 494.189, "end": 497.459, "image": "beats/beat130.png", "line": "eventually you would pass out from pure exhaustion"}
+  ]
+}
