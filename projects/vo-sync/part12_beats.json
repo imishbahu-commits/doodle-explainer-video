@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-053837_my_vouceover__160357619.mp3",
+  "part": 12,
+  "video": "projects/vo-sync/parts/part12.mp4",
+  "start_s": 422.166,
+  "end_s": 460.998,
+  "duration_s": 38.832,
+  "note": "Original VO 422.166–460.998. Image holds until the next beat start.",
+  "beats": [
+    {"id": 111, "start": 422.166, "end": 426.703, "image": "beats/beat111.png", "line": "How about being stuck in a space where the map actively spawns hungry enemies"},
+    {"id": 112, "start": 426.703, "end": 430.155, "image": "beats/beat112.png", "line": "If you lived in London, England during the medieval period"},
+    {"id": 113, "start": 430.155, "end": 433.864, "image": "beats/beat113.png", "line": "you would've definitely heard about the Rat Dungeon. And this punishment struck"},
+    {"id": 114, "start": 433.864, "end": 438.169, "image": "beats/beat114.png", "line": "a paralyzing fear into the hearts of even the most hardened criminals"},
+    {"id": 115, "start": 438.169, "end": 441.581, "image": "beats/beat115.png", "line": "This was a cell located at the bottom of the Tower of London"},
+    {"id": 116, "start": 441.581, "end": 446.531, "image": "beats/beat116.png", "line": "where prisoners were shackled and chained in complete darkness. But here's the twist"},
+    {"id": 117, "start": 446.531, "end": 449.134, "image": "beats/beat117.png", "line": "the dungeon was connected to the nearby river"},
+    {"id": 118, "start": 449.134, "end": 452.079, "image": "beats/beat118.png", "line": "and built just below the river's high water line"},
+    {"id": 119, "start": 452.079, "end": 457.426, "image": "beats/beat119.png", "line": "so when the tide rose, all the rats that lived on the riverbed were pushed out of their shelters"},
+    {"id": 120, "start": 457.426, "end": 460.998, "image": "beats/beat120.png", "line": "and forced to swim downstream. This left the hungry"}
+  ]
+}
