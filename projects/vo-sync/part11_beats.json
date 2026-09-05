@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-053837_my_vouceover__160357619.mp3",
+  "part": 11,
+  "video": "projects/vo-sync/parts/part11.mp4",
+  "start_s": 385.192,
+  "end_s": 422.166,
+  "duration_s": 36.974,
+  "note": "Original VO 385.192–422.166. Image holds until the next beat start.",
+  "beats": [
+    {"id": 101, "start": 385.192, "end": 388.115, "image": "beats/beat101.png", "line": "you will have to rappel all through freezing waterfalls"},
+    {"id": 102, "start": 388.115, "end": 391.104, "image": "beats/beat102.png", "line": "squeeze through multiple narrow twisty tunnels"},
+    {"id": 103, "start": 391.104, "end": 393.785, "image": "beats/beat103.png", "line": "that are barely the size of a human body"},
+    {"id": 104, "start": 393.785, "end": 396.629, "image": "beats/beat104.png", "line": "and walk through steep freezing waters"},
+    {"id": 105, "start": 396.629, "end": 401.084, "image": "beats/beat105.png", "line": "and after four long days of descending into pure agony"},
+    {"id": 106, "start": 401.084, "end": 406.454, "image": "beats/beat106.png", "line": "you finally make it to the bottom of the cave where your guide will take a small sample of dirt"},
+    {"id": 107, "start": 406.454, "end": 411.9, "image": "beats/beat107.png", "line": "pat you on the back and instruct you to turn back around since they got what they came for"},
+    {"id": 108, "start": 411.9, "end": 415.892, "image": "beats/beat108.png", "line": "Talk about a complete waste of time. Number two:"},
+    {"id": 109, "start": 415.892, "end": 418.824, "image": "beats/beat109.png", "line": "the Rat Dungeon. What could possibly be worse"},
+    {"id": 110, "start": 418.824, "end": 422.166, "image": "beats/beat110.png", "line": "than being stuck in a cold dark claustrophobic space"}
+  ]
+}
