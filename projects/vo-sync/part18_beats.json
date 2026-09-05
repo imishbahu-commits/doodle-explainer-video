@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-070701_my_vouceover__160357619.mp3",
+  "part": 18,
+  "video": "projects/vo-sync/parts/part18.mp4",
+  "start_s": 656.581,
+  "end_s": 695.299,
+  "duration_s": 38.718,
+  "note": "Original VO 656.581–695.299. Image holds until the next beat start.",
+  "beats": [
+    {"id": 171, "start": 656.581, "end": 659.796, "image": "beats/beat171.png", "line": "carefully avoiding disturbing silt-covered floors"},
+    {"id": 172, "start": 659.796, "end": 664.224, "image": "beats/beat172.png", "line": "because doing so will trigger a complete blackout, erasing all visibility"},
+    {"id": 173, "start": 664.224, "end": 667.997, "image": "beats/beat173.png", "line": "and destroying any hope of finding your way back out. But by some miracle"},
+    {"id": 174, "start": 667.997, "end": 672.304, "image": "beats/beat174.png", "line": "you manage to descend over three hundred feet to the deepest known section"},
+    {"id": 175, "start": 672.304, "end": 675.51, "image": "beats/beat175.png", "line": "a place known as the Room of Dreams"},
+    {"id": 176, "start": 675.51, "end": 679.551, "image": "beats/beat176.png", "line": "where you can be proud of the fact that you are one of the very few people on earth"},
+    {"id": 177, "start": 679.551, "end": 684.49, "image": "beats/beat177.png", "line": "to have ever laid eyes on it. The cave actually continues beyond this point"},
+    {"id": 178, "start": 684.49, "end": 687.335, "image": "beats/beat178.png", "line": "but no one has ever explored further due to depth,"},
+    {"id": 179, "start": 687.335, "end": 691.933, "image": "beats/beat179.png", "line": "pressure, extreme visibility issues, and technical challenges"},
+    {"id": 180, "start": 691.933, "end": 695.299, "image": "beats/beat180.png", "line": "so for anyone planning to visit this Florida swim hole"}
+  ]
+}
