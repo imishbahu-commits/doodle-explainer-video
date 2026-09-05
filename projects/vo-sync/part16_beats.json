@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-064048_my_vouceover__160357619.mp3",
+  "part": 16,
+  "video": "projects/vo-sync/parts/part16.mp4",
+  "start_s": 582.762,
+  "end_s": 619.193,
+  "duration_s": 36.431,
+  "note": "Original VO 582.762–619.193. Image holds until the next beat start.",
+  "beats": [
+    {"id": 151, "start": 582.762, "end": 587.739, "image": "beats/beat151.png", "line": "of course you continue anyway since this message is obviously meant for someone else"},
+    {"id": 152, "start": 587.739, "end": 590.956, "image": "beats/beat152.png", "line": "as you push deeper into the cave with your underwater scooter"},
+    {"id": 153, "start": 590.956, "end": 595.961, "image": "beats/beat153.png", "line": "you'll soon come across the most dangerous section of passage simply called the pit"},
+    {"id": 154, "start": 595.961, "end": 598.579, "image": "beats/beat154.png", "line": "this tight confined area requires divers"},
+    {"id": 155, "start": 598.579, "end": 601.609, "image": "beats/beat155.png", "line": "to carefully squeeze and twist their bodies through"},
+    {"id": 156, "start": 601.609, "end": 606.698, "image": "beats/beat156.png", "line": "without damaging their gear. It's not uncommon for divers to take multiple attempts"},
+    {"id": 157, "start": 606.698, "end": 610.225, "image": "beats/beat157.png", "line": "just to successfully pass through a single gap. Now"},
+    {"id": 158, "start": 610.225, "end": 612.891, "image": "beats/beat158.png", "line": "would also be a great time to mention the deadly stat:"},
+    {"id": 159, "start": 612.891, "end": 616.234, "image": "beats/beat159.png", "line": "this cave has claimed the lives of dozens of divers here"},
+    {"id": 160, "start": 616.234, "end": 619.193, "image": "beats/beat160.png", "line": "nitrogen narcosis. This has caused"}
+  ]
+}
