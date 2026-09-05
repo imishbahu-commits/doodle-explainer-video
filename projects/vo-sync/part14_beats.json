@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-064048_my_vouceover__160357619.mp3",
+  "part": 14,
+  "video": "projects/vo-sync/parts/part14.mp4",
+  "start_s": 497.459,
+  "end_s": 541.607,
+  "duration_s": 44.148,
+  "note": "Original VO 497.459–541.607. Image holds until the next beat start.",
+  "beats": [
+    {"id": 131, "start": 497.459, "end": 501.75, "image": "beats/beat131.png", "line": "and while you slept the rats would continue to gorge on your flesh"},
+    {"id": 132, "start": 501.75, "end": 506.567, "image": "beats/beat132.png", "line": "when you finally woke up you would discover hundreds of bites throughout your entire body"},
+    {"id": 133, "start": 506.567, "end": 511.246, "image": "beats/beat133.png", "line": "and depending on your crime you were left here for days or weeks on end"},
+    {"id": 134, "start": 511.246, "end": 516.51, "image": "beats/beat134.png", "line": "Towards the end of the medieval period the developers of this punishment got lazy"},
+    {"id": 135, "start": 516.51, "end": 521.424, "image": "beats/beat135.png", "line": "and it simply became a permanent execution zone where prisoners were thrown in"},
+    {"id": 136, "start": 521.424, "end": 525.305, "image": "beats/beat136.png", "line": "and completely forgotten about. Number one:"},
+    {"id": 137, "start": 525.305, "end": 528.242, "image": "beats/beat137.png", "line": "Eagle's Nest Cave. Eagle's Nest Cave"},
+    {"id": 138, "start": 528.242, "end": 531.473, "image": "beats/beat138.png", "line": "in Florida is the second deadliest cave on the planet"},
+    {"id": 139, "start": 531.473, "end": 536.202, "image": "beats/beat139.png", "line": "having claimed the lives of at least thirteen experienced divers in recent years"},
+    {"id": 140, "start": 536.202, "end": 541.607, "image": "beats/beat140.png", "line": "but from the outside looking in it actually appears to be a decent beautiful swimming hole"}
+  ]
+}
