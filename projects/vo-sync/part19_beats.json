@@ -1,0 +1,13 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-070701_my_vouceover__160357619.mp3",
+  "part": 19,
+  "video": "projects/vo-sync/parts/part19.mp4",
+  "start_s": 695.299,
+  "end_s": 703.03,
+  "duration_s": 7.731,
+  "note": "Original VO 695.299–703.03. Image holds until the next beat start / VO end.",
+  "beats": [
+    {"id": 181, "start": 695.299, "end": 698.784, "image": "beats/beat181.png", "line": "my only word of advice would be to admire it from afar"},
+    {"id": 182, "start": 698.784, "end": 703.03, "image": "beats/beat182.png", "line": "that way if you do black out at least you'll still be alive to regret it"}
+  ]
+}
