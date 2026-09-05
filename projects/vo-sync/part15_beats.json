@@ -1,0 +1,21 @@
+{
+  "voiceover": "uploads/inbox/voiceover/20260905-064048_my_vouceover__160357619.mp3",
+  "part": 15,
+  "video": "projects/vo-sync/parts/part15.mp4",
+  "start_s": 541.607,
+  "end_s": 582.762,
+  "duration_s": 41.155,
+  "note": "Original VO 541.607–582.762. Image holds until the next beat start.",
+  "beats": [
+    {"id": 141, "start": 541.607, "end": 544.517, "image": "beats/beat141.png", "line": "If it weren't, you know, Florida. Your deadly"},
+    {"id": 142, "start": 544.517, "end": 547.968, "image": "beats/beat142.png", "line": "adventure begins with a vertical descent into the water"},
+    {"id": 143, "start": 547.968, "end": 551.891, "image": "beats/beat143.png", "line": "but very quickly you will encounter your first real challenge"},
+    {"id": 144, "start": 551.891, "end": 556.303, "image": "beats/beat144.png", "line": "a section called the chimney. This is an incredibly tight squeeze"},
+    {"id": 145, "start": 556.303, "end": 560.354, "image": "beats/beat145.png", "line": "where you must be extremely careful not to snag the hoses to your tanks"},
+    {"id": 146, "start": 560.354, "end": 565.761, "image": "beats/beat146.png", "line": "causing them to disconnect from your life support. Once you pass through you'll enter the entrance room"},
+    {"id": 147, "start": 565.761, "end": 570.185, "image": "beats/beat147.png", "line": "a large open area that splits into two tunnel systems. But of course"},
+    {"id": 148, "start": 570.185, "end": 574.746, "image": "beats/beat148.png", "line": "for the sake of the video we're heading towards the deepest and deadliest section"},
+    {"id": 149, "start": 574.746, "end": 578.506, "image": "beats/beat149.png", "line": "here where you'll be greeted with this infamous terrifying sign"},
+    {"id": 150, "start": 578.506, "end": 582.762, "image": "beats/beat150.png", "line": "warning you to stop and turn back around to prevent your own death"}
+  ]
+}
