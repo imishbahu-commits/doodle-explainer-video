@@ -4,9 +4,10 @@ Source: user saw still + leaked-secrets video frames in git.
 Use this pack after a wipe. Do **not** use lumpy potato heads.
 
 ## Face plate
-- Perfect **white circle** (not oval-blob, not lumpy potato)
-- Pure white fill, **no shading**, no blush
-- Thick even **black outline**
+- **IRREGULAR** lumpy white paint blob (potato / cloud)
+- **NOT** a perfect circle, **NOT** a smooth oval
+- Bumpy uneven hand-drawn outline
+- White fill, thick **uneven** black outline, Extra History / Paint Explainer
 
 ## Hair
 - Short brown / orange-brown spikes
