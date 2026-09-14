@@ -1,0 +1,21 @@
+{
+  "voiceover": "projects/vo-sync/keep/voiceover.mp3",
+  "part": 1,
+  "video": "projects/vo-sync/parts/part01.mp4",
+  "start_s": 0.0,
+  "end_s": 38.8,
+  "duration_s": 38.8,
+  "note": "Creativity VO 0–38.80. Image holds until next beat start.",
+  "beats": [
+    {"id": 1, "start": 0.0, "end": 2.72, "image": "beats/cbeat01.png", "line": "Okay so here's the thing about creativity"},
+    {"id": 2, "start": 2.72, "end": 5.46, "image": "beats/cbeat02.png", "line": "Waiting around for inspiration to strike — that's a terrible strategy"},
+    {"id": 3, "start": 5.46, "end": 9.81, "image": "beats/cbeat03.png", "line": "You can't build anything reliable on maybe I'll feel inspired today"},
+    {"id": 4, "start": 9.81, "end": 13.18, "image": "beats/cbeat04.png", "line": "The truth is creativity isn't some magic spark that just happens to you"},
+    {"id": 5, "start": 13.18, "end": 16.94, "image": "beats/cbeat05.png", "line": "It's actually a system"},
+    {"id": 6, "start": 16.94, "end": 20.62, "image": "beats/cbeat06.png", "line": "And once you know the system you can force it on demand whenever you need it"},
+    {"id": 7, "start": 20.62, "end": 24.42, "image": "beats/cbeat07.png", "line": "Here are six ways to do that"},
+    {"id": 8, "start": 24.42, "end": 27.6, "image": "beats/cbeat08.png", "line": "Number one: give yourself a no-stimulation morning"},
+    {"id": 9, "start": 27.6, "end": 31.62, "image": "beats/cbeat09.png", "line": "Here's what I mean. For the first thirty to sixty minutes after you wake up"},
+    {"id": 10, "start": 31.62, "end": 38.8, "image": "beats/cbeat10.png", "line": "don't touch your phone, don't turn on the TV, nothing"}
+  ]
+}
