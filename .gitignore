@@ -8,6 +8,10 @@ build/
 image-search/
 uploads/
 
+# Persist voiceover + refs across wipes (copied here by fast_ingest)
+!projects/vo-sync/keep/
+!projects/vo-sync/keep/**
+
 # Heavy TTS (does not fit this sandbox)
 OmniVoice/
 omnivoice-venv/

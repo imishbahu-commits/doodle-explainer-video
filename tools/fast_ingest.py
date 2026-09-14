@@ -33,6 +33,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 ROOT = Path(__file__).resolve().parents[1]
 INBOX = ROOT / "uploads" / "inbox"
 PARTS = ROOT / "uploads" / ".parts"
+KEEP = ROOT / "projects" / "vo-sync" / "keep"
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8088
 
 CHUNK_MAX = 8 * 1024 * 1024          # reject a single chunk bigger than this
@@ -102,9 +103,9 @@ PAGE = r"""<!doctype html>
   <span class="sub">video → this sandbox</span>
 </header>
 <main>
-  <p class="lead">Drop a video here. It is written straight into this workspace.
-     After ✅, go back to chat and type <code>uploaded</code> — I read it from
-     <code>uploads/inbox/video/</code>.</p>
+  <p class="lead">Drop a video or voiceover. Files also copy to
+     <code>projects/vo-sync/keep/</code> so they survive sandbox wipes (git).
+     After ✅, type <code>uploaded</code> in chat.</p>
   <label class="drop video" id="drop-video">
     <h2>🎬 Video</h2>
     <p>mp4 / mov / webm / mkv. Click or drag. Keep the tab open until it hits 100%.</p>
@@ -115,7 +116,7 @@ PAGE = r"""<!doctype html>
     <label class="drop vo" id="drop-voiceover">
       <h2>🎙️ Voiceover</h2>
       <p>Optional. mp3 / wav / m4a / aac / ogg / flac.</p>
-      <p class="hint">Lands in <code>uploads/inbox/voiceover/</code></p>
+      <p class="hint">Lands in inbox AND is copied to <code>projects/vo-sync/keep/</code> (persistent)</p>
       <input type="file" id="file-voiceover" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac" multiple>
     </label>
     <label class="drop ref" id="drop-reference">
@@ -261,6 +262,25 @@ def kind_of(raw: str) -> str:
     return k if k in KINDS else "extra"
 
 
+def persist_keep(kind: str, src: Path) -> Path | None:
+    """Copy voiceover/reference into git-tracked keep/ so wipes don't eat them."""
+    if kind not in ("voiceover", "reference", "extra"):
+        return None
+    KEEP.mkdir(parents=True, exist_ok=True)
+    ext = src.suffix.lower() or ".bin"
+    if kind == "voiceover":
+        dest = KEEP / f"voiceover{ext}"
+    else:
+        dest = KEEP / f"{kind}_{src.name}"
+    try:
+        shutil.copy2(src, dest)
+        print(f"KEEP copy -> {dest}", flush=True)
+        return dest
+    except Exception as e:
+        print(f"KEEP copy failed: {e}", flush=True)
+        return None
+
+
 def dest_path(kind: str, name: str) -> Path:
     folder = INBOX / kind
     folder.mkdir(parents=True, exist_ok=True)
@@ -384,6 +404,7 @@ class Handler(BaseHTTPRequestHandler):
         dest = dest_path(kind, name)
         n = stream_copy(self.rfile, dest, length, PUT_MAX)
         print(f"PUT {kind} {n/1e6:.2f} MB -> {dest}", flush=True)
+        persist_keep(kind, dest)
         self._json(200, {"ok": True, "path": str(dest.relative_to(ROOT)), "size": n, "kind": kind})
 
     def _chunk(self):
@@ -424,6 +445,7 @@ class Handler(BaseHTTPRequestHandler):
                 part.unlink()
         tmp.replace(dest)
         print(f"DONE {kind} {size/1e6:.2f} MB -> {dest}", flush=True)
+        persist_keep(kind, dest)
         self._json(200, {"ok": True, "path": str(dest.relative_to(ROOT)), "size": size, "kind": kind})
 
     def log_message(self, fmt, *args):
@@ -438,6 +460,7 @@ class Server(ThreadingHTTPServer):
 
 if __name__ == "__main__":
     INBOX.mkdir(parents=True, exist_ok=True)
+    KEEP.mkdir(parents=True, exist_ok=True)
     for k in KINDS:
         (INBOX / k).mkdir(exist_ok=True)
     print(f"Dev upload on http://0.0.0.0:{PORT}  -> {INBOX}", flush=True)
